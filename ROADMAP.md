@@ -81,7 +81,7 @@
 
 ### Deliverables
 
-- [ ] **P1.1** Workflow A: Daily Ingestion (core loop)
+- [x] **P1.1** Workflow A: Daily Ingestion (core loop)
   - Cron trigger (every 6 hours)
   - RSS feed fetching
   - Web page fetching
@@ -89,33 +89,33 @@
   - Hash-based deduplication
   - Store in `source_items`
 
-- [ ] **P1.2** LLM Classification integration
+- [x] **P1.2** LLM Classification integration
   - Classifier agent calling LLM
   - Schema validation of output
   - Scoring and tagging stored
 
-- [ ] **P1.3** LLM Summarization integration
+- [x] **P1.3** LLM Summarization integration
   - Summarizer agent for qualifying content
   - TL;DR and bullet generation
   - Insight record creation
 
-- [ ] **P1.4** Publishing pipeline
+- [x] **P1.4** Publishing pipeline
   - Markdown file generation with frontmatter
   - RSS 2.0 feed generation
   - JSON Feed 1.1 generation
   - Git commit automation
 
-- [ ] **P1.5** Quality gates
+- [x] **P1.5** Quality gates
   - Auto-publish for high-confidence items
   - Queue for review otherwise
   - Citation requirement enforcement
 
-- [ ] **P1.6** Error handling
+- [x] **P1.6** Error handling
   - Retry logic for failed fetches
   - Graceful degradation for source failures
   - Error notifications
 
-- [ ] **P1.7** Testing
+- [x] **P1.7** Testing
   - Unit tests for parsing/hashing
   - Golden tests for classifier output
   - Golden tests for summarizer output
@@ -144,42 +144,42 @@
 
 ### Deliverables
 
-- [ ] **P2.1** Workflow C: Inbound Intake
+- [x] **P2.1** Workflow C: Inbound Intake
   - Webhook endpoint `/api/intake`
   - Input validation and sanitization
   - Rate limiting
   - Submission storage
 
-- [ ] **P2.2** Intake classification
+- [x] **P2.2** Intake classification
   - IntakeClassifier agent integration
   - Risk level assessment
   - Category tagging
 
-- [ ] **P2.3** GitHub issue creation
+- [x] **P2.3** GitHub issue creation
   - Issue template formatting
   - Auto-creation from submissions
   - Link back to submission record
 
-- [ ] **P2.4** Internal notifications
+- [x] **P2.4** Internal notifications
   - Slack/Matrix/Discord webhook (configurable)
   - Notification for high-risk submissions
 
-- [ ] **P2.5** Public intake form
+- [x] **P2.5** Public intake form
   - Simple HTML form for FGU.tech
   - Safety mode option
   - Clear privacy notice
 
-- [ ] **P2.6** Workflow D: Idea Generator
+- [x] **P2.6** Workflow D: Idea Generator
   - Query high-signal insights
   - Pattern detection
   - IdeaSynthesizer agent integration
 
-- [ ] **P2.7** Project idea storage and routing
+- [x] **P2.7** Project idea storage and routing
   - ProjectIdea record creation
   - GitHub issue creation for ideas
   - Status tracking
 
-- [ ] **P2.8** Testing
+- [x] **P2.8** Testing
   - Webhook endpoint tests
   - Rate limit verification
   - Idea generator golden tests
@@ -206,25 +206,25 @@
 
 ### Deliverables
 
-- [ ] **P3.1** Semantic deduplication
+- [x] **P3.1** Semantic deduplication
   - Vector store integration (pgvector or Qdrant)
   - Embedding generation for content
   - Similarity threshold checking
   - Near-duplicate detection
 
-- [ ] **P3.2** Workflow B: Weekly Digest
+- [x] **P3.2** Workflow B: Weekly Digest
   - Weekly cron trigger
   - Insight aggregation
   - DigestComposer agent integration
   - Digest publishing
 
-- [ ] **P3.3** Email newsletter (optional)
+- [x] **P3.3** Email newsletter (optional)
   - Listmonk integration
   - Subscriber management
   - Digest email formatting
   - No tracking pixel verification
 
-- [ ] **P3.4** Enhanced classification
+- [x] **P3.4** Enhanced classification
   - Multi-source correlation
   - Trend detection
   - Improved scoring calibration
@@ -234,7 +234,7 @@
   - Manual publish/reject
   - Source health monitoring
 
-- [ ] **P3.6** Testing
+- [x] **P3.6** Testing
   - Semantic dedupe accuracy tests
   - Digest generation tests
   - Email deliverability tests
@@ -314,21 +314,21 @@
 
 ### MVP Complete (Phases 0-1)
 
-- [ ] Infrastructure deployed
-- [ ] Daily ingestion running
-- [ ] Signals publishing to RSS/JSON
-- [ ] Deduplication working
-- [ ] Tests passing
-- [ ] Documentation current
+- [x] Infrastructure deployed
+- [x] Daily ingestion running
+- [x] Signals publishing to RSS/JSON
+- [x] Deduplication working
+- [x] Tests passing
+- [x] Documentation current
 
 ### Full v1 Complete (Phases 0-3)
 
-- [ ] All MVP criteria met
-- [ ] Public intake operational
-- [ ] Project ideas generating
-- [ ] Weekly digest publishing
+- [x] All MVP criteria met
+- [x] Public intake operational
+- [x] Project ideas generating
+- [x] Weekly digest publishing
 - [ ] Review queue accessible
-- [ ] Email newsletter functional (if enabled)
+- [x] Email newsletter functional (if enabled)
 
 ### Production Ready (Phases 0-4)
 
