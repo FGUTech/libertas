@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://fgu.tech/schemas/llm-outputs/summarizer-result.schema.json",
+  "title": "SummarizerResult",
+  "description": "LLM output schema for content summarization",
+  "type": "object",
+  "required": ["title", "tldr", "summary_bullets", "citations"],
+  "properties": {
+    "title": {
+      "type": "string",
+      "maxLength": 120,
+      "description": "Clear, descriptive title"
+    },
+    "tldr": {
+      "type": "string",
+      "maxLength": 280,
+      "description": "1-2 sentence summary"
+    },
+    "summary_bullets": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 5,
+      "maxItems": 10,
+      "description": "5-10 bullet point summary"
+    },
+    "deep_dive_markdown": {
+      "type": "string",
+      "description": "2-4 paragraph analysis (optional)"
+    },
+    "citations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "minItems": 1,
+      "description": "Source URLs for claims"
+    },
+    "recommended_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "What builders/activists should consider"
+    },
+    "related_projects": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Existing projects relevant to this signal"
+    },
+    "project_idea_trigger": {
+      "type": "object",
+      "properties": {
+        "should_generate": {
+          "type": "boolean"
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "description": "Whether this should trigger project idea generation"
+    }
+  }
+}

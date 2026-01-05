@@ -1,0 +1,94 @@
+# FGU Signal Engine - Source Configuration
+# This file defines seed sources for content ingestion.
+# Edit this file to add/remove sources without code deployment.
+
+sources:
+  # Tier 1: Primary, high-trust sources
+  - name: "Human Rights Foundation"
+    type: "rss"
+    url: "https://hrf.org/feed/"
+    tier: 1
+    tags: ["human-rights", "activism", "freedom"]
+    enabled: true
+
+  - name: "EFF Deeplinks"
+    type: "rss"
+    url: "https://www.eff.org/rss/updates.xml"
+    tier: 1
+    tags: ["privacy", "digital-rights", "surveillance"]
+    enabled: true
+
+  - name: "Bitcoin Magazine"
+    type: "rss"
+    url: "https://bitcoinmagazine.com/feed"
+    tier: 1
+    tags: ["bitcoin", "payments", "sovereignty"]
+    enabled: true
+
+  - name: "The Block"
+    type: "rss"
+    url: "https://www.theblock.co/rss.xml"
+    tier: 2
+    tags: ["bitcoin", "crypto", "regulation"]
+    enabled: true
+
+  - name: "Cointelegraph"
+    type: "rss"
+    url: "https://cointelegraph.com/rss"
+    tier: 2
+    tags: ["bitcoin", "crypto", "news"]
+    enabled: true
+
+  # Tier 2: Secondary sources, mixed content
+  - name: "Ars Technica - Security"
+    type: "rss"
+    url: "https://feeds.arstechnica.com/arstechnica/security"
+    tier: 2
+    tags: ["privacy", "security", "surveillance"]
+    enabled: true
+
+  - name: "Wired - Security"
+    type: "rss"
+    url: "https://www.wired.com/feed/category/security/latest/rss"
+    tier: 2
+    tags: ["privacy", "security", "surveillance"]
+    enabled: true
+
+  - name: "Access Now"
+    type: "rss"
+    url: "https://www.accessnow.org/feed/"
+    tier: 1
+    tags: ["digital-rights", "activism", "censorship-resistance"]
+    enabled: true
+
+  - name: "Rest of World"
+    type: "rss"
+    url: "https://restofworld.org/feed/latest/"
+    tier: 2
+    tags: ["global", "technology", "activism"]
+    enabled: true
+
+  - name: "OONI Reports"
+    type: "rss"
+    url: "https://ooni.org/rss.xml"
+    tier: 1
+    tags: ["censorship-resistance", "surveillance", "measurement"]
+    enabled: true
+
+# Source type definitions:
+# - rss: Standard RSS/Atom feed
+# - web: Generic web page (requires scraping)
+# - x_account: X/Twitter account (requires API)
+# - nostr: Nostr pubkey (requires relay)
+# - github: GitHub repo/user activity
+# - email: Email subscription/mailing list
+
+# Tier definitions:
+# 1: Primary, high-trust sources - process all content
+# 2: Secondary sources - apply stricter relevance filtering
+# 3: Discovery sources - only process high-signal items
+
+# Configuration notes:
+# - enabled: false will skip the source without removing config
+# - tags help with classification and routing
+# - url must be accessible without authentication (or auth configured separately)

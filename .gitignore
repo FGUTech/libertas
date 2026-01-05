@@ -137,3 +137,12 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# FGU Signal Engine specific
+.claude/*.local.*
+site-content/posts/*
+!site-content/posts/.gitkeep
+site-content/digests/*
+!site-content/digests/.gitkeep
+n8n/workflows/*.json
+!n8n/workflows/.gitkeep

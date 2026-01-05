@@ -1,0 +1,130 @@
+# FGU Signal Engine - Threshold Configuration
+# This file defines scoring thresholds for content processing.
+# Adjust values without code deployment.
+
+# Ingestion and Processing
+ingestion:
+  # Minimum freedom relevance score to generate an insight
+  relevance_threshold: 50
+
+  # Maximum items to process per workflow run (rate limiting)
+  max_items_per_run: 100
+
+  # Retry configuration for failed fetches
+  retry_attempts: 3
+  retry_delay_seconds: 60
+
+# Auto-Publishing Gates
+# Content is auto-published only when ALL conditions are met
+publishing:
+  # Minimum freedom relevance score for auto-publish
+  auto_publish_relevance: 70
+
+  # Minimum credibility score for auto-publish
+  auto_publish_credibility: 60
+
+  # Must have at least one citation
+  require_citations: true
+
+  # Must pass safety check (no sensitive content)
+  require_safety_check: true
+
+# Review Queue Triggers
+# Content goes to review queue when ANY condition is true
+review:
+  # Queue if relevance below this threshold
+  relevance_below: 70
+
+  # Queue if credibility below this threshold
+  credibility_below: 60
+
+  # Always queue if safety concern flagged
+  safety_concern_always_review: true
+
+# Deduplication Settings
+deduplication:
+  # Exact hash match (always enabled)
+  exact_match: true
+
+  # Semantic similarity threshold (0.0 - 1.0)
+  # Items with similarity above this are considered duplicates
+  semantic_threshold: 0.85
+
+  # Enable semantic deduplication (requires vector store)
+  semantic_enabled: false
+
+# Project Idea Generation
+ideas:
+  # Minimum relevance score to consider for idea generation
+  min_relevance_for_idea: 80
+
+  # Minimum feasibility score to create GitHub issue
+  min_feasibility: 50
+
+  # Minimum impact score to create GitHub issue
+  min_impact: 50
+
+  # Days to look back for pattern detection
+  lookback_days: 7
+
+# Vibe Coding Pipeline (Gated)
+vibe_coding:
+  # Requires human approval (cannot be disabled in v1)
+  requires_human_approval: true
+
+  # Categories allowed for auto-scaffolding
+  allowed_categories:
+    - internal-tooling
+    - documentation
+    - data-processing
+
+  # Categories blocked from auto-scaffolding
+  blocked_categories:
+    - security-critical
+    - user-facing-auth
+    - financial
+
+  # Minimum scores for vibe coding
+  min_feasibility: 70
+  min_impact: 60
+
+# Weekly Digest
+digest:
+  # Minimum insights required to generate digest
+  min_insights: 3
+
+  # Maximum insights to include per section
+  max_per_section: 10
+
+# Rate Limiting (Intake Webhook)
+rate_limiting:
+  # Requests per IP per minute
+  requests_per_minute: 10
+
+  # Requests per IP per hour
+  requests_per_hour: 100
+
+  # Global requests per minute
+  global_per_minute: 100
+
+# Circuit Breaker (Source Health)
+circuit_breaker:
+  # Consecutive failures before marking source as degraded
+  failure_threshold: 5
+
+  # Hours to wait before retrying degraded source
+  cooldown_hours: 24
+
+# Performance Targets (for monitoring, not enforcement)
+performance:
+  # Max seconds for single source ingestion
+  ingestion_latency_target: 30
+
+  # Max seconds for LLM classification
+  classification_latency_target: 10
+
+  # Max seconds end-to-end (fetch to publish)
+  end_to_end_target: 300
+
+  # Max seconds for webhook response
+  webhook_response_target: 0.5

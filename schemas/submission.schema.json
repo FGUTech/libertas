@@ -1,0 +1,84 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://fgu.tech/schemas/submission.schema.json",
+  "title": "Submission",
+  "description": "Public intake from external parties",
+  "type": "object",
+  "required": ["id", "submittedAt", "channel", "message", "tags", "riskLevel", "status", "createdAt", "updatedAt"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "UUIDv4 identifier"
+    },
+    "submittedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 UTC submission timestamp"
+    },
+    "channel": {
+      "type": "string",
+      "enum": ["web", "email", "nostr"],
+      "description": "Intake method"
+    },
+    "contact": {
+      "type": "string",
+      "description": "Optional contact info (encrypted at rest)"
+    },
+    "message": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Submission content"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Auto-generated tags"
+    },
+    "riskLevel": {
+      "type": "string",
+      "enum": ["low", "medium", "high"],
+      "description": "Safety classification"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["new", "triaged", "responded", "archived"],
+      "description": "Processing state"
+    },
+    "githubIssueUrl": {
+      "type": "string",
+      "format": "uri",
+      "description": "GitHub issue URL if converted"
+    },
+    "category": {
+      "type": "string",
+      "enum": ["tool-request", "idea", "report", "question", "collaboration", "other"],
+      "description": "Submission category"
+    },
+    "priority": {
+      "type": "string",
+      "enum": ["urgent", "normal", "low"],
+      "description": "Suggested priority"
+    },
+    "isSpam": {
+      "type": "boolean",
+      "description": "Whether submission was flagged as spam"
+    },
+    "requiresResponse": {
+      "type": "boolean",
+      "description": "Whether submitter expects a response"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Record creation timestamp"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last update timestamp"
+    }
+  }
+}

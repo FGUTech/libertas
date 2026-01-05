@@ -43,21 +43,21 @@
 
 ### Deliverables
 
-- [ ] **P0.1** Repository structure created per CLAUDE.md specification
-- [ ] **P0.2** Database schema deployed (Postgres)
+- [x] **P0.1** Repository structure created per CLAUDE.md specification
+- [x] **P0.2** Database schema deployed (Postgres)
   - `source_items` table
   - `insights` table
   - `project_ideas` table
   - `submissions` table
 - [ ] **P0.3** n8n instance deployed and accessible
 - [ ] **P0.4** Object storage configured (S3-compatible)
-- [ ] **P0.5** Environment variables documented and secrets configured
-- [ ] **P0.6** JSON schemas created in `/schemas/`
-- [ ] **P0.7** Initial prompt templates in `/prompts/`
-- [ ] **P0.8** Configuration files created
+- [x] **P0.5** Environment variables documented and secrets configured
+- [x] **P0.6** JSON schemas created in `/schemas/`
+- [x] **P0.7** Initial prompt templates in `/prompts/`
+- [x] **P0.8** Configuration files created
   - `config/sources.yml` with 10 seed sources
   - `config/thresholds.yml` with default values
-- [ ] **P0.9** Basic test infrastructure
+- [x] **P0.9** Basic test infrastructure
 
 ### Exit Criteria
 

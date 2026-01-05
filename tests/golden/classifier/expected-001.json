@@ -1,0 +1,10 @@
+{
+  "topics": ["comms", "bitcoin", "censorship-resistance", "activism"],
+  "freedom_relevance_score": 92,
+  "credibility_score": 75,
+  "geo": ["Uganda"],
+  "safety_concern": false,
+  "reasoning": "Direct example of freedom tech (mesh networking + Bitcoin) being used under real-world repression. Government response confirms tool effectiveness. Source is established news outlet. Score reflects high relevance but moderate credibility (single source, government claims not independently verified).",
+  "key_entities": ["Bitchat", "Uganda Communications Commission", "UCC", "Irene Ssewankambo"],
+  "should_summarize": true
+}

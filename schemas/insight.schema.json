@@ -1,0 +1,110 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://fgu.tech/schemas/insight.schema.json",
+  "title": "Insight",
+  "description": "Generated analysis derived from one or more SourceItems",
+  "type": "object",
+  "required": ["id", "sourceItemIds", "title", "tldr", "summaryBullets", "topics", "freedomRelevanceScore", "credibilityScore", "citations", "status", "createdAt", "updatedAt"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "UUIDv4 identifier"
+    },
+    "sourceItemIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "minItems": 1,
+      "description": "References to source items"
+    },
+    "title": {
+      "type": "string",
+      "maxLength": 120,
+      "description": "Generated title for the insight"
+    },
+    "tldr": {
+      "type": "string",
+      "maxLength": 280,
+      "description": "1-2 sentence summary"
+    },
+    "summaryBullets": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 5,
+      "maxItems": 10,
+      "description": "5-10 bullet point summary"
+    },
+    "deepDiveMarkdown": {
+      "type": "string",
+      "description": "Long-form analysis in markdown (optional)"
+    },
+    "topics": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["bitcoin", "zk", "censorship-resistance", "comms", "payments", "identity", "privacy", "surveillance", "activism", "sovereignty"]
+      },
+      "minItems": 1,
+      "maxItems": 5,
+      "description": "Classification tags"
+    },
+    "geo": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Geographic relevance (countries/regions)"
+    },
+    "freedomRelevanceScore": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Score indicating relevance to freedom tech mission"
+    },
+    "credibilityScore": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Score indicating source credibility"
+    },
+    "citations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "minItems": 1,
+      "description": "Source URLs for claims"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "queued", "published", "rejected"],
+      "description": "Workflow state"
+    },
+    "publishedUrl": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL where insight was published"
+    },
+    "publishedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Publication timestamp"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Record creation timestamp"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last update timestamp"
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://fgu.tech/schemas/llm-outputs/classification-result.schema.json",
+  "title": "ClassificationResult",
+  "description": "LLM output schema for content classification",
+  "type": "object",
+  "required": ["topics", "freedom_relevance_score", "credibility_score", "geo", "safety_concern", "reasoning"],
+  "properties": {
+    "topics": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["bitcoin", "zk", "censorship-resistance", "comms", "payments", "identity", "privacy", "surveillance", "activism", "sovereignty"]
+      },
+      "minItems": 1,
+      "maxItems": 5,
+      "description": "Relevant topic tags"
+    },
+    "freedom_relevance_score": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Score indicating relevance to freedom tech mission"
+    },
+    "credibility_score": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Score indicating source credibility"
+    },
+    "geo": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Countries or regions mentioned"
+    },
+    "safety_concern": {
+      "type": "boolean",
+      "description": "True if content could endanger activists if amplified"
+    },
+    "reasoning": {
+      "type": "string",
+      "description": "Brief explanation of scoring rationale"
+    },
+    "key_entities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "People, organizations, or projects mentioned"
+    },
+    "should_summarize": {
+      "type": "boolean",
+      "description": "True if content warrants full summary generation"
+    }
+  }
+}

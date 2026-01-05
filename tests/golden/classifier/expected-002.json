@@ -1,0 +1,10 @@
+{
+  "topics": ["privacy"],
+  "freedom_relevance_score": 15,
+  "credibility_score": 85,
+  "geo": ["United States"],
+  "safety_concern": false,
+  "reasoning": "General consumer tech news with no direct freedom tech relevance. Source is credible tech news outlet. No sovereignty, censorship resistance, or activism implications. Low priority for FGU coverage.",
+  "key_entities": ["Apple", "Tim Cook", "iPhone"],
+  "should_summarize": false
+}

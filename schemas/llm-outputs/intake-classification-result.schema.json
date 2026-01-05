@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://fgu.tech/schemas/llm-outputs/intake-classification-result.schema.json",
+  "title": "IntakeClassificationResult",
+  "description": "LLM output schema for intake submission classification",
+  "type": "object",
+  "required": ["category", "tags", "risk_level", "priority", "summary"],
+  "properties": {
+    "category": {
+      "type": "string",
+      "enum": ["tool-request", "idea", "report", "question", "collaboration", "other"],
+      "description": "Submission category"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Relevant topic tags"
+    },
+    "risk_level": {
+      "type": "string",
+      "enum": ["low", "medium", "high"],
+      "description": "Safety classification"
+    },
+    "priority": {
+      "type": "string",
+      "enum": ["urgent", "normal", "low"],
+      "description": "Suggested processing priority"
+    },
+    "summary": {
+      "type": "string",
+      "maxLength": 200,
+      "description": "Brief, non-sensitive summary for triage"
+    },
+    "is_spam": {
+      "type": "boolean",
+      "description": "Whether submission appears to be spam"
+    },
+    "requires_response": {
+      "type": "boolean",
+      "description": "Whether submitter expects a response"
+    },
+    "suggested_assignee": {
+      "type": "string",
+      "description": "Team or role best suited to handle"
+    }
+  }
+}

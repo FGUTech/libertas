@@ -1,0 +1,122 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://fgu.tech/schemas/project-idea.schema.json",
+  "title": "ProjectIdea",
+  "description": "Generated project proposal derived from insights",
+  "type": "object",
+  "required": ["id", "derivedFromInsightIds", "problemStatement", "threatModel", "affectedGroups", "proposedSolution", "mvpScope", "misuseRisks", "feasibilityScore", "impactScore", "status", "createdAt", "updatedAt"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "UUIDv4 identifier"
+    },
+    "derivedFromInsightIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "minItems": 1,
+      "description": "Source insight IDs"
+    },
+    "problemStatement": {
+      "type": "string",
+      "minLength": 50,
+      "maxLength": 500,
+      "description": "Clear problem definition"
+    },
+    "threatModel": {
+      "type": "string",
+      "minLength": 50,
+      "maxLength": 500,
+      "description": "Security/adversary context"
+    },
+    "affectedGroups": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "description": "Who would benefit from a solution"
+    },
+    "proposedSolution": {
+      "type": "string",
+      "minLength": 100,
+      "maxLength": 1000,
+      "description": "Solution overview"
+    },
+    "mvpScope": {
+      "type": "string",
+      "minLength": 50,
+      "maxLength": 500,
+      "description": "Minimum viable scope"
+    },
+    "misuseRisks": {
+      "type": "string",
+      "minLength": 50,
+      "maxLength": 500,
+      "description": "Potential for harm"
+    },
+    "feasibilityScore": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Technical feasibility score"
+    },
+    "impactScore": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Potential impact score"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["new", "triaged", "build_candidate", "prototyped", "rejected"],
+      "description": "Workflow state"
+    },
+    "githubIssueUrl": {
+      "type": "string",
+      "format": "uri",
+      "description": "GitHub issue URL if created"
+    },
+    "technicalDependencies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Required technical dependencies"
+    },
+    "suggestedStack": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Recommended technology stack"
+    },
+    "priorArt": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Existing projects to learn from"
+    },
+    "openQuestions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Unresolved questions"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Record creation timestamp"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last update timestamp"
+    }
+  }
+}
