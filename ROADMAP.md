@@ -206,11 +206,12 @@
 
 ### Deliverables
 
-- [x] **P3.1** Semantic deduplication
+- [ ] **P3.1** Semantic deduplication
   - Vector store integration (pgvector or Qdrant)
   - Embedding generation for content
   - Similarity threshold checking
   - Near-duplicate detection
+  - _Note: Interface exists in `deduper.ts` but returns no-op. Requires vector store._
 
 - [x] **P3.2** Workflow B: Weekly Digest
   - Weekly cron trigger
@@ -294,6 +295,13 @@
   - Operator runbook
   - Source onboarding guide
   - Troubleshooting guide
+
+- [ ] **P4.8** Wire JSON schemas for runtime validation
+  - Implement `loadSchema()` in `src/utils/validation.ts` (currently stubbed)
+  - Replace hand-written validators with AJV-compiled schemas from `/schemas/`
+  - Single source of truth: JSON schemas drive both documentation and runtime validation
+  - Add tests to ensure schemas and TypeScript types stay in sync
+  - _Technical debt: P0.6 created schemas but didn't wire them up_
 
 ### Exit Criteria
 
