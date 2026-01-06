@@ -5,8 +5,8 @@
 import { Feed } from 'feed';
 import type { Insight, JSONFeed, FeedItem } from '../types/index.js';
 
-const SITE_URL = process.env.SITE_BASE_URL || 'https://fgu.tech';
-const FEED_TITLE = 'FGU.tech Signals';
+const SITE_URL = process.env.SITE_BASE_URL || 'https://libertas.fgu.tech';
+const FEED_TITLE = 'Libertas Signals';
 const FEED_DESCRIPTION = 'Freedom Tech signals and insights';
 
 /**
@@ -20,7 +20,7 @@ export function generateRSSFeed(insights: Insight[]): string {
     link: SITE_URL,
     language: 'en',
     favicon: `${SITE_URL}/favicon.ico`,
-    copyright: `All rights reserved ${new Date().getFullYear()}, FGU`,
+    copyright: `All rights reserved ${new Date().getFullYear()}, Libertas`,
     feedLinks: {
       rss2: `${SITE_URL}/rss.xml`,
       json: `${SITE_URL}/feed.json`,
@@ -58,7 +58,7 @@ export function generateJSONFeed(insights: Insight[]): JSONFeed {
       content_text: [insight.tldr, '', ...insight.summaryBullets.map((b) => `• ${b}`)].join('\n'),
       date_published: insight.publishedAt || insight.createdAt,
       tags: insight.topics,
-      _fgu: {
+      _libertas: {
         freedom_relevance_score: insight.freedomRelevanceScore,
         credibility_score: insight.credibilityScore,
         citations: insight.citations,

@@ -1,5 +1,5 @@
 /**
- * FGU Signal Engine - Core Type Definitions
+ * Libertas - Core Type Definitions
  */
 
 // =============================================================================
@@ -305,7 +305,7 @@ export interface FeedItem {
   content_text?: string;
   date_published: string;
   tags: string[];
-  _fgu: {
+  _libertas: {
     freedom_relevance_score: number;
     credibility_score: number;
     citations: string[];

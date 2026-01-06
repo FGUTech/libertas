@@ -28,7 +28,7 @@ export interface FetchResult {
 const parser = new Parser({
   timeout: 30000,
   headers: {
-    'User-Agent': 'FGU-Signal-Engine/1.0 (https://fgu.tech)',
+    'User-Agent': 'Libertas/1.0 (https://libertas.fgu.tech)',
   },
 });
 
@@ -68,7 +68,7 @@ export async function fetchWebPage(url: string): Promise<FetchResult> {
 
     const response = await fetch(url, {
       headers: {
-        'User-Agent': 'FGU-Signal-Engine/1.0 (https://fgu.tech)',
+        'User-Agent': 'Libertas/1.0 (https://libertas.fgu.tech)',
         Accept: 'text/html,application/xhtml+xml',
       },
       signal: controller.signal,

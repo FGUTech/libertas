@@ -62,7 +62,7 @@ export function publishInsightMarkdown(insight: Insight): PublishResult {
     const markdown = generateInsightMarkdown(insight);
     writeFileSync(filePath, markdown, 'utf-8');
 
-    const siteBaseUrl = process.env.SITE_BASE_URL || 'https://fgu.tech';
+    const siteBaseUrl = process.env.SITE_BASE_URL || 'https://libertas.fgu.tech';
     const publishedUrl = `${siteBaseUrl}/signals/${insight.id}`;
 
     return {
@@ -107,7 +107,7 @@ export function publishDigestMarkdown(
     );
     writeFileSync(filePath, markdown, 'utf-8');
 
-    const siteBaseUrl = process.env.SITE_BASE_URL || 'https://fgu.tech';
+    const siteBaseUrl = process.env.SITE_BASE_URL || 'https://libertas.fgu.tech';
     const publishedUrl = `${siteBaseUrl}/digests/digest-${periodEnd}`;
 
     return {

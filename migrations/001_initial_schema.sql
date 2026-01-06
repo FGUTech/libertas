@@ -1,4 +1,4 @@
--- FGU Signal Engine - Initial Database Schema
+-- Libertas - Initial Database Schema
 -- Migration: 001_initial_schema
 -- Description: Creates core tables for the signal engine
 

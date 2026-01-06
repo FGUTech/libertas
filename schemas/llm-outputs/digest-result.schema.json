@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://fgu.tech/schemas/llm-outputs/digest-result.schema.json",
+  "$id": "https://libertas.fgu.tech/schemas/llm-outputs/digest-result.schema.json",
   "title": "DigestResult",
   "description": "LLM output schema for weekly digest composition",
   "type": "object",

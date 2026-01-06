@@ -202,7 +202,7 @@ function generateEmailHtml(
   periodStart: string,
   periodEnd: string
 ): string {
-  const siteUrl = process.env.SITE_BASE_URL || 'https://fgu.tech';
+  const siteUrl = process.env.SITE_BASE_URL || 'https://libertas.fgu.tech';
 
   return `<!DOCTYPE html>
 <html>
@@ -296,7 +296,7 @@ ${digest.emerging_patterns.map((p) => `- ${p.pattern}`).join('\n')}
   }
 
   text += `---
-FGU.tech | RSS: https://fgu.tech/rss.xml
+Libertas | RSS: https://libertas.fgu.tech/rss.xml
 Unsubscribe: {{UnsubscribeURL}}`;
 
   return text;

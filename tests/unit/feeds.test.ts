@@ -27,7 +27,7 @@ const mockInsight: Insight = {
   credibilityScore: 75,
   citations: ['https://nilepost.co.ug/news/312962/dont-be-excited-by-bitchat-ucc-boss-warns-ugandans'],
   status: 'published',
-  publishedUrl: 'https://fgu.tech/signals/test-insight-001',
+  publishedUrl: 'https://libertas.fgu.tech/signals/test-insight-001',
   publishedAt: '2026-01-05T00:00:00Z',
   createdAt: '2026-01-05T00:00:00Z',
   updatedAt: '2026-01-05T00:00:00Z',
@@ -66,17 +66,17 @@ describe('feed utilities', () => {
     it('should generate valid JSON Feed structure', () => {
       const feed = generateJSONFeed([mockInsight]);
       expect(feed.version).toBe('https://jsonfeed.org/version/1.1');
-      expect(feed.title).toBe('FGU.tech Signals');
+      expect(feed.title).toBe('Libertas Signals');
       expect(feed.items).toHaveLength(1);
     });
 
-    it('should include FGU-specific metadata', () => {
+    it('should include Libertas-specific metadata', () => {
       const feed = generateJSONFeed([mockInsight]);
       const item = feed.items[0];
-      expect(item?._fgu).toBeDefined();
-      expect(item?._fgu.freedom_relevance_score).toBe(92);
-      expect(item?._fgu.credibility_score).toBe(75);
-      expect(item?._fgu.citations).toHaveLength(1);
+      expect(item?._libertas).toBeDefined();
+      expect(item?._libertas.freedom_relevance_score).toBe(92);
+      expect(item?._libertas.credibility_score).toBe(75);
+      expect(item?._libertas.citations).toHaveLength(1);
     });
 
     it('should only include published insights', () => {

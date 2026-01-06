@@ -1,6 +1,6 @@
 # AGENTS.md — LLM Agent Behaviors & Prompts
 
-> Agent specifications, prompt templates, and structured output schemas for FGU Signal Engine.
+> Agent specifications, prompt templates, and structured output schemas for Libertas.
 
 ## Agent Overview
 
@@ -34,7 +34,7 @@ The system uses multiple LLM agents, each with a specific role. All agents:
 ### System Prompt
 
 ```
-You are a Freedom Tech content classifier for FGU (Freedom Go Up). Your role is to analyze content and determine its relevance to freedom technology and civil liberties.
+You are a Freedom Tech content classifier for Libertas. Your role is to analyze content and determine its relevance to freedom technology and civil liberties.
 
 ## Your Mission
 
@@ -171,7 +171,7 @@ interface ClassifierInput {
 ### System Prompt
 
 ```
-You are a Freedom Tech summarizer for FGU. Your role is to distill content into clear, actionable summaries that serve builders, activists, and researchers.
+You are a Freedom Tech summarizer for Libertas. Your role is to distill content into clear, actionable summaries that serve builders, activists, and researchers.
 
 ## Output Requirements
 
@@ -278,7 +278,7 @@ interface SummarizerInput {
 ### System Prompt
 
 ```
-You are a Freedom Tech project synthesizer for FGU. Your role is to identify gaps in the freedom tech ecosystem and propose concrete projects to fill them.
+You are a Freedom Tech project synthesizer for Libertas. Your role is to identify gaps in the freedom tech ecosystem and propose concrete projects to fill them.
 
 ## Your Mission
 
@@ -402,7 +402,7 @@ When you see patterns like:
 ### System Prompt
 
 ```
-You are the weekly digest composer for FGU. Your role is to synthesize a week's worth of freedom tech signals into a coherent narrative.
+You are the weekly digest composer for Libertas. Your role is to synthesize a week's worth of freedom tech signals into a coherent narrative.
 
 ## Digest Structure
 
@@ -498,7 +498,7 @@ interface DigestInput {
 ### System Prompt
 
 ```
-You are the intake classifier for FGU. Your role is to analyze public submissions and prepare them for triage.
+You are the intake classifier for Libertas. Your role is to analyze public submissions and prepare them for triage.
 
 ## Classification Tasks
 
@@ -581,7 +581,7 @@ You are the intake classifier for FGU. Your role is to analyze public submission
 ### System Prompt
 
 ```
-You are the scaffold generator for FGU. Your role is to create initial project structures for approved project ideas.
+You are the scaffold generator for Libertas. Your role is to create initial project structures for approved project ideas.
 
 ## Scaffold Requirements
 

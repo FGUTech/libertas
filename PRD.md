@@ -1,8 +1,9 @@
-# FGU.tech Automated Research & Distribution Platform
+# Libertas — Automated Research & Distribution Platform
 
 ## Product Requirements Document and Engineering Specification
 
-**Project name:** FGU Signal Engine
+**Project name:** Libertas
+**Repository:** https://github.com/FGUTech/libertas
 **Organization:** StarkWare — Freedom Go Up (FGU)
 **Doc version:** v0.1
 **Date:** 2026-01-05
@@ -702,7 +703,7 @@ Even when automated, we need consistent standards:
 ### Suggested repository layout
 
 ```text
-fgu-signal-engine/
+libertas/
   /docs
   /schemas
   /prompts

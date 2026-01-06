@@ -1,5 +1,5 @@
 /**
- * FGU Signal Engine - Main Entry Point
+ * Libertas - Main Entry Point
  *
  * This module exports the core utilities, services, and workflows for the signal engine.
  * Designed for use with n8n orchestration or standalone execution.

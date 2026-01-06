@@ -1,6 +1,6 @@
 # ROADMAP.md — Project Milestones
 
-> Phased delivery plan for FGU Signal Engine. No time estimates—focus on dependencies and deliverables.
+> Phased delivery plan for Libertas. No time estimates—focus on dependencies and deliverables.
 
 ## Phase Overview
 

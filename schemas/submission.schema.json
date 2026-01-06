@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://fgu.tech/schemas/submission.schema.json",
+  "$id": "https://libertas.fgu.tech/schemas/submission.schema.json",
   "title": "Submission",
   "description": "Public intake from external parties",
   "type": "object",

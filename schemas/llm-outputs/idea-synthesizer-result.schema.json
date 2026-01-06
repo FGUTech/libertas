@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://fgu.tech/schemas/llm-outputs/idea-synthesizer-result.schema.json",
+  "$id": "https://libertas.fgu.tech/schemas/llm-outputs/idea-synthesizer-result.schema.json",
   "title": "IdeaSynthesizerResult",
   "description": "LLM output schema for project idea generation",
   "type": "object",

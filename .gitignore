@@ -138,7 +138,7 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
-# FGU Signal Engine specific
+# Libertas specific
 .claude/*.local.*
 site-content/posts/*
 !site-content/posts/.gitkeep

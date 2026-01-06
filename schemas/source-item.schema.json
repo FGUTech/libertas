@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://fgu.tech/schemas/source-item.schema.json",
+  "$id": "https://libertas.fgu.tech/schemas/source-item.schema.json",
   "title": "SourceItem",
   "description": "Represents a single piece of fetched content from any source",
   "type": "object",

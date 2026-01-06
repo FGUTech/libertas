@@ -1,2 +1,5 @@
-# fgu-signal-engine
-FGU.tech Automated Research &amp; Distribution Platform
+# Libertas
+
+Automated Research & Distribution Platform for Freedom Tech
+
+> https://github.com/FGUTech/libertas

@@ -1,11 +1,12 @@
-# CLAUDE.md — FGU Signal Engine
+# CLAUDE.md — Libertas
 
 > Agentic context file for Claude Code. Read this first.
 
 ## Project Identity
 
-**FGU Signal Engine** is a fully automated, privacy-preserving research and publishing platform for Freedom Tech. It converts global signals about sovereignty, censorship resistance, and civil liberties into actionable insights, published content, and project ideas.
+**Libertas** is a fully automated, privacy-preserving research and publishing platform for Freedom Tech. It converts global signals about sovereignty, censorship resistance, and civil liberties into actionable insights, published content, and project ideas.
 
+**Repository:** https://github.com/FGUTech/libertas
 **Organization:** StarkWare — Freedom Go Up (FGU)
 **Core constraint:** n8n workflows as the orchestrator, agentic-first architecture.
 
@@ -40,7 +41,7 @@ These principles MUST shape every design decision:
 ## Repository Structure
 
 ```
-fgu-signal-engine/
+libertas/
 ├── CLAUDE.md            # This file
 ├── SPEC.md              # Technical specification
 ├── AGENTS.md            # Agent behaviors and prompts
