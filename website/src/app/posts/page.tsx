@@ -27,26 +27,6 @@ export default function PostsPage() {
           </Suspense>
         </div>
       </main>
-
-      {/* Footer */}
-      <footer className="border-t border-[var(--border-subtle)] py-8">
-        <div className="container">
-          <div className="flex items-center justify-between text-small text-[var(--fg-tertiary)]">
-            <span>
-              <span className="text-[var(--accent-primary)]">{">"}</span> built by{" "}
-              <a
-                href="https://github.com/FGUTech"
-                className="text-[var(--fg-secondary)] hover:text-[var(--accent-primary)]"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Freedom Go Up
-              </a>
-            </span>
-            <span className="tag">No tracking</span>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
