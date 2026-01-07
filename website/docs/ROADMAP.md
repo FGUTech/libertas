@@ -1,0 +1,604 @@
+# Roadmap
+
+Feature roadmap for the Libertas website, broken into MVP, Nice-to-have, and Future phases.
+
+---
+
+# Phase 0: Foundation Setup
+
+Prerequisites and scaffolding before implementing features.
+
+### 0.1 Project Structure
+
+**Description**: Create the folder structure for organizing code.
+
+**Requirements**:
+- [ ] Create `src/lib/` directory for core logic modules
+- [ ] Create `src/components/` directory for React components
+- [ ] Create `src/hooks/` directory for custom React hooks
+- [ ] Create `src/app/(auth)/` route group for auth pages
+- [ ] Create `src/app/(app)/` route group for authenticated app pages
+- [ ] Create `src/types/` directory for TypeScript definitions
+
+**Implementation Notes**:
+- Route groups (parentheses) allow shared layouts without affecting URL
+- Keep flat structure within each directory initially
+- Add `.gitkeep` files to preserve empty directories
+
+---
+
+### 0.2 Base Styling
+
+**Description**: Apply the design system CSS variables to the project.
+
+**Requirements**:
+- [ ] Add CSS variables from STYLES.md to `globals.css`
+- [ ] Set up dark theme as default
+- [ ] Configure light theme variables (optional toggle)
+- [ ] Add base typography styles
+- [ ] Add utility classes for common patterns
+- [ ] Configure Tailwind to use CSS variables
+
+**Implementation Notes**:
+- Reference `docs/STYLES.md` for all values
+- Use `prefers-color-scheme` media query for system preference
+- Store user preference in localStorage
+
+---
+
+### 0.3 TypeScript Types
+
+**Description**: Define core TypeScript interfaces and types.
+
+**Requirements**:
+- [ ] Define `Post` interface matching site-content schema
+- [ ] Define `Comment` interface
+- [ ] Define `Reaction` type
+- [ ] Define `User` and `UserProfile` interfaces
+- [ ] Define `IntakeSubmission` interface
+- [ ] Define API response types
+
+**Implementation Notes**:
+- Match types to existing JSON schemas in `/schemas/`
+- Use Zod for runtime validation where needed
+
+---
+
+### 0.4 Environment Configuration
+
+**Description**: Set up environment variables and configuration.
+
+**Requirements**:
+- [ ] Create `.env.example` with all required variables
+- [ ] Create `src/lib/config.ts` for typed env access
+- [ ] Set up environment validation on app start
+- [ ] Document variables in README
+
+**Implementation Notes**:
+- Use `zod` to validate environment at build time
+- Never expose `SUPABASE_SERVICE_ROLE_KEY` to client
+
+---
+
+# Phase 1: MVP
+
+Core features for initial launch. Focus on content display and intake.
+
+### 1.1 Landing Page
+
+**Description**: Create the main landing page with mission statement and content preview.
+
+**Requirements**:
+- [ ] Hero section with Libertas mission statement
+- [ ] Recent posts preview (3-5 posts)
+- [ ] Call-to-action for submissions
+- [ ] Quick links to RSS/JSON feeds
+- [ ] Responsive design (mobile-first)
+- [ ] Semantic HTML with accessibility
+
+**Implementation Notes**:
+- Hero should convey "Freedom Tech" identity immediately
+- Use matrix-inspired design elements (see STYLES.md)
+- Posts preview should link to full feed
+- Consider animated terminal-style text for hero
+
+---
+
+### 1.2 Posts Feed Page
+
+**Description**: Display all published posts with filtering and pagination.
+
+**Requirements**:
+- [ ] List view of all posts with previews
+- [ ] Filter by category/tag
+- [ ] Pagination (10-20 posts per page)
+- [ ] Sort options (newest, relevance)
+- [ ] Loading states and skeletons
+- [ ] Empty state for no results
+
+**Implementation Notes**:
+- Use ISR for initial page load
+- Client-side filtering for instant UX
+- Preserve filter state in URL params
+- Consider infinite scroll as alternative to pagination
+
+---
+
+### 1.3 Individual Post Page
+
+**Description**: Full post view with metadata and content.
+
+**Requirements**:
+- [ ] Render markdown content with syntax highlighting
+- [ ] Display post metadata (date, author, tags, sources)
+- [ ] Citation links with preview on hover
+- [ ] Table of contents for long posts
+- [ ] Social sharing buttons (copy link, Twitter, Nostr)
+- [ ] Previous/Next post navigation
+
+**Implementation Notes**:
+- Use `next-mdx-remote` or similar for markdown
+- Syntax highlighting with `shiki` for code blocks
+- Lazy-load heavy components (code blocks, images)
+
+---
+
+### 1.4 Intake Form Page
+
+**Description**: Public submission form for stories, projects, and feedback.
+
+**Requirements**:
+- [ ] Form with type selector (project/story/feedback)
+- [ ] Dynamic fields based on submission type
+- [ ] Client-side validation with helpful errors
+- [ ] Rate limiting feedback (not blocked, just warned)
+- [ ] Success confirmation with submission ID
+- [ ] Privacy notice about data handling
+
+**Implementation Notes**:
+- Submit to `/api/intake` which proxies to n8n webhook
+- Use `react-hook-form` for form state
+- Consider optional contact field (not required)
+- Store no PII unless explicitly provided
+
+---
+
+### 1.5 RSS/JSON Feed Access
+
+**Description**: Easy access to machine-readable feeds.
+
+**Requirements**:
+- [ ] Feed discovery page explaining formats
+- [ ] Direct links to RSS and JSON feeds
+- [ ] Code examples for common readers
+- [ ] Feed validation status indicator
+
+**Implementation Notes**:
+- Feeds generated by n8n, served from GCS
+- This page just provides documentation and links
+
+---
+
+### 1.6 Header & Navigation
+
+**Description**: Global navigation header component.
+
+**Requirements**:
+- [ ] Logo/wordmark linking to home
+- [ ] Main navigation links (Posts, Intake, Feeds)
+- [ ] Theme toggle (dark/light)
+- [ ] Mobile hamburger menu
+- [ ] Smooth transitions
+
+**Implementation Notes**:
+- Sticky header with backdrop blur on scroll
+- Use Tailwind's `group` for hover effects
+
+---
+
+### 1.7 Footer
+
+**Description**: Global footer with links and info.
+
+**Requirements**:
+- [ ] Quick links to main sections
+- [ ] RSS/JSON feed links with icons
+- [ ] GitHub repository link
+- [ ] "Built by FGU" attribution
+- [ ] No tracking notice badge
+
+**Implementation Notes**:
+- Terminal-inspired design
+- Keep minimal, don't distract from content
+
+---
+
+### 1.8 API Routes
+
+**Description**: Server-side API routes for form submission.
+
+**Requirements**:
+- [ ] `POST /api/intake` - Forward submissions to n8n
+- [ ] Rate limiting (10 requests/minute per IP)
+- [ ] Input validation and sanitization
+- [ ] Error handling with helpful messages
+- [ ] Request logging (no PII)
+
+**Implementation Notes**:
+- Use `next/server` for Edge runtime if possible
+- Validate against intake schema
+- Return structured error responses
+
+---
+
+### 1.9 Content Fetching
+
+**Description**: Logic to fetch and parse posts from content source.
+
+**Requirements**:
+- [ ] Fetch `feed.json` from GCS bucket
+- [ ] Parse individual post markdown files
+- [ ] Cache responses appropriately
+- [ ] Handle fetch errors gracefully
+- [ ] Support both build-time and runtime fetching
+
+**Implementation Notes**:
+- Use `fetch` with revalidation for ISR
+- Parse frontmatter from markdown posts
+- Consider fallback to local content for development
+
+---
+
+### 1.10 SEO & Meta
+
+**Description**: SEO optimization and meta tags.
+
+**Requirements**:
+- [ ] Dynamic meta tags per page
+- [ ] Open Graph tags for social sharing
+- [ ] Twitter card support
+- [ ] JSON-LD structured data for posts
+- [ ] Sitemap generation
+- [ ] robots.txt
+
+**Implementation Notes**:
+- Use Next.js metadata API
+- Generate sitemap at build time
+- Include post schema.org markup
+
+---
+
+# Phase 2: Nice-to-have
+
+Features that enhance the experience but aren't critical for launch.
+
+### 2.1 User Authentication (Supabase)
+
+**Description**: Allow users to create accounts and log in.
+
+**Requirements**:
+- [ ] Email/password registration
+- [ ] Magic link authentication
+- [ ] Password reset flow
+- [ ] Session persistence
+- [ ] Protected routes
+- [ ] Auth context provider
+
+**Implementation Notes**:
+- Use `@supabase/auth-helpers-nextjs`
+- Store minimal user data
+- Consider optional OAuth providers (GitHub)
+
+---
+
+### 2.2 User Profiles
+
+**Description**: Basic user profile pages and settings.
+
+**Requirements**:
+- [ ] Profile page showing user info
+- [ ] Edit display name
+- [ ] Link Starknet wallet (preparation for 2.5)
+- [ ] View user's comments history
+- [ ] Delete account option
+
+**Implementation Notes**:
+- Profile data in `user_profiles` table
+- Keep profile page simple initially
+
+---
+
+### 2.3 Comments System
+
+**Description**: Allow authenticated users to comment on posts.
+
+**Requirements**:
+- [ ] Comment form on post pages
+- [ ] Threaded replies (1 level deep)
+- [ ] Edit/delete own comments
+- [ ] Markdown support in comments
+- [ ] Spam prevention (rate limiting)
+- [ ] Report inappropriate comments
+
+**Implementation Notes**:
+- Store in Supabase `comments` table
+- Real-time updates with Supabase subscriptions
+- Sanitize markdown output
+
+---
+
+### 2.4 Reactions (Like/Dislike)
+
+**Description**: Allow authenticated users to react to posts.
+
+**Requirements**:
+- [ ] Like/dislike buttons on posts
+- [ ] One reaction per user per post
+- [ ] Toggle reaction on second click
+- [ ] Display reaction counts
+- [ ] Optimistic UI updates
+
+**Implementation Notes**:
+- Store in Supabase `reactions` table
+- Consider anonymous reactions option (no account needed)
+- Prepare schema for Starknet integration
+
+---
+
+### 2.5 Starknet Wallet Connect
+
+**Description**: Allow users to connect Starknet wallets.
+
+**Requirements**:
+- [ ] Wallet connection modal
+- [ ] Support Argent X and Braavos
+- [ ] Store wallet address in profile
+- [ ] Sign-In With Starknet (SIWS)
+- [ ] Display wallet status in header
+
+**Implementation Notes**:
+- Use `starknet-react` or `get-starknet`
+- Optional: Use wallet as primary auth method
+- Prepare for on-chain reactions in Phase 3
+
+---
+
+### 2.6 Dark/Light Theme Toggle
+
+**Description**: Persistent theme preference.
+
+**Requirements**:
+- [ ] Toggle button in header
+- [ ] System preference detection
+- [ ] Persist preference in localStorage
+- [ ] Smooth transition between themes
+- [ ] No FOUC (flash of unstyled content)
+
+**Implementation Notes**:
+- Use `next-themes` or similar
+- Apply theme class to `<html>` element
+- Default to dark theme (brand identity)
+
+---
+
+### 2.7 Search Functionality
+
+**Description**: Search across posts content.
+
+**Requirements**:
+- [ ] Search input in header
+- [ ] Full-text search of post content
+- [ ] Search results page with highlighting
+- [ ] Filter by date range, tags
+
+**Implementation Notes**:
+- Use Supabase full-text search or client-side
+- Consider Algolia/Meilisearch for better UX
+- Start with simple title/tag matching
+
+---
+
+### 2.8 Reading Progress
+
+**Description**: Show reading progress on long posts.
+
+**Requirements**:
+- [ ] Progress bar at top of post
+- [ ] Estimated reading time
+- [ ] "Back to top" button
+
+**Implementation Notes**:
+- Use Intersection Observer for progress
+- Calculate reading time from word count
+
+---
+
+### 2.9 Keyboard Shortcuts
+
+**Description**: Power-user keyboard navigation.
+
+**Requirements**:
+- [ ] `j/k` for next/prev post in feed
+- [ ] `/` to focus search
+- [ ] `?` for shortcuts help modal
+- [ ] `Esc` to close modals
+
+**Implementation Notes**:
+- Use `react-hotkeys-hook` or similar
+- Don't conflict with browser shortcuts
+
+---
+
+### 2.10 Email Newsletter Signup
+
+**Description**: Optional newsletter subscription.
+
+**Requirements**:
+- [ ] Email input in footer
+- [ ] Send to n8n for processing
+- [ ] Confirmation message
+- [ ] Double opt-in via email
+- [ ] No tracking pixels in emails
+
+**Implementation Notes**:
+- Integrate with Resend via n8n
+- Store subscribers in Supabase
+- Provide easy unsubscribe
+
+---
+
+# Phase 3: Future Improvements
+
+Features for future consideration after core functionality is stable.
+
+### 3.1 On-chain Reactions (Starknet Contract)
+
+**Description**: Store reactions on Starknet for transparency and permanence.
+
+**Features**:
+- Deploy Cairo contract for reactions storage
+- Transaction submission from frontend
+- Event indexing for reaction counts
+- Hybrid mode (off-chain + on-chain)
+- Gas abstraction / session keys
+
+**Rationale**: Provides censorship-resistant proof of engagement and aligns with Freedom Tech values.
+
+---
+
+### 3.2 On-chain Comments
+
+**Description**: Store comments on Starknet or IPFS with Starknet anchoring.
+
+**Features**:
+- Content addressing (IPFS) for comment text
+- Starknet transaction for comment metadata
+- Edit history preserved on-chain
+- Moderation without deletion (hide, not remove)
+
+**Rationale**: Ensures comments cannot be silently censored.
+
+---
+
+### 3.3 Nostr Integration
+
+**Description**: Publish posts and interact via Nostr protocol.
+
+**Features**:
+- Cross-post to Nostr relays
+- Read comments from Nostr
+- Nostr key as auth method
+- NIP-05 verification
+
+**Rationale**: Aligns with decentralized, censorship-resistant ethos.
+
+---
+
+### 3.4 Post Bookmarks & Reading Lists
+
+**Description**: Save posts for later reading.
+
+**Features**:
+- Save/unsave posts
+- Reading list page
+- Mark as read
+- Export reading list
+
+---
+
+### 3.5 Content Notifications
+
+**Description**: Notify users of new content.
+
+**Features**:
+- Web push notifications (opt-in)
+- Email digest preferences
+- Follow specific tags/topics
+
+---
+
+### 3.6 Contributor Attribution
+
+**Description**: Credit and highlight content contributors.
+
+**Features**:
+- Contributor profiles
+- Contribution history
+- Leaderboard (optional)
+- Badges/achievements
+
+---
+
+### 3.7 Multi-language Support
+
+**Description**: Internationalization for global reach.
+
+**Features**:
+- UI translation framework
+- Content translation workflow
+- Language selector
+- RTL support
+
+---
+
+### 3.8 Offline Mode (PWA)
+
+**Description**: Progressive Web App for offline reading.
+
+**Features**:
+- Service worker caching
+- Offline post reading
+- Sync when back online
+- Install prompt
+
+---
+
+### 3.9 API for Third-party Apps
+
+**Description**: Public API for developers.
+
+**Features**:
+- REST/GraphQL API
+- API key management
+- Rate limiting per key
+- Usage analytics
+
+---
+
+### 3.10 Decentralized Hosting
+
+**Description**: Reduce reliance on centralized infrastructure.
+
+**Features**:
+- IPFS mirroring
+- Arweave archival
+- ENS/SNS domain
+- Self-hosting documentation
+
+---
+
+# Implementation Priority Matrix
+
+| Feature | Impact | Effort | Priority |
+|---------|--------|--------|----------|
+| Landing Page | High | Low | P0 |
+| Posts Feed | High | Medium | P0 |
+| Post View | High | Medium | P0 |
+| Intake Form | High | Low | P0 |
+| User Auth | Medium | Medium | P1 |
+| Comments | Medium | Medium | P1 |
+| Reactions | Medium | Low | P1 |
+| Starknet Wallet | Medium | High | P1 |
+| On-chain Reactions | Low | High | P2 |
+| Nostr Integration | Low | High | P2 |
+
+---
+
+# Milestones
+
+| Milestone | Features | Target |
+|-----------|----------|--------|
+| **Alpha** | Phase 0 + MVP (1.1-1.10) | Week 1-2 |
+| **Beta** | Nice-to-have (2.1-2.5) | Week 3-4 |
+| **v1.0** | Nice-to-have (2.6-2.10) | Week 5-6 |
+| **v2.0** | Future (3.1-3.5) | TBD |
