@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { PostCard } from "@/components/PostCard";
 import type { Post } from "@/types";
 
@@ -133,12 +134,12 @@ export default function Home() {
           </p>
 
           <div className="flex flex-wrap gap-4">
-            <a href="/posts" className="btn btn-primary">
+            <Link href="/posts" className="btn btn-primary">
               Explore Posts
-            </a>
-            <a href="/intake" className="btn btn-secondary">
+            </Link>
+            <Link href="/intake" className="btn btn-secondary">
               Submit a Signal
-            </a>
+            </Link>
           </div>
 
           {/* Decorative terminal lines */}
@@ -161,20 +162,20 @@ export default function Home() {
         <div className="container">
           <div className="mb-8 flex items-center justify-between">
             <h2 className="text-h2">Recent Signals</h2>
-            <a
+            <Link
               href="/posts"
               className="btn btn-ghost text-sm text-[var(--fg-secondary)] hover:text-[var(--accent-primary)]"
             >
               View all
               <ArrowRightIcon />
-            </a>
+            </Link>
           </div>
 
           <div className="grid-posts">
             {mockPosts.map((post) => (
-              <a key={post.id} href={`/posts/${post.slug}`}>
+              <Link key={post.id} href={`/posts/${post.slug}`}>
                 <PostCard post={post} />
-              </a>
+              </Link>
             ))}
           </div>
         </div>
@@ -189,9 +190,9 @@ export default function Home() {
               Submit stories, project ideas, or feedback about freedom tech. We
               review every submission and publish relevant insights.
             </p>
-            <a href="/intake" className="btn btn-primary">
+            <Link href="/intake" className="btn btn-primary">
               Submit Now
-            </a>
+            </Link>
           </div>
         </div>
       </section>

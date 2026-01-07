@@ -6,51 +6,11 @@ Feature roadmap for the Libertas website, broken into MVP, Nice-to-have, and Fut
 
 ## Prompt Initialization
 
-Hey, I am working to implement features for the libertas website from the roadmap. Let's start with implementing:
+Hey, I am working to implement features for the libertas website from the roadmap. Let's continue with implementing:
 
 # Phase 1: MVP
 
 Core features for initial launch. Focus on content display and intake.
-
-### 1.1 Landing Page
-
-**Description**: Create the main landing page with mission statement and content preview.
-
-**Requirements**:
-- [ ] Hero section with Libertas mission statement
-- [ ] Recent posts preview (3-5 posts)
-- [ ] Call-to-action for submissions
-- [ ] Quick links to RSS/JSON feeds
-- [ ] Responsive design (mobile-first)
-- [ ] Semantic HTML with accessibility
-
-**Implementation Notes**:
-- Hero should convey "Freedom Tech" identity immediately
-- Use matrix-inspired design elements (see STYLES.md)
-- Posts preview should link to full feed
-- Consider animated terminal-style text for hero
-
----
-
-### 1.2 Posts Feed Page
-
-**Description**: Display all published posts with filtering and pagination.
-
-**Requirements**:
-- [ ] List view of all posts with previews
-- [ ] Filter by category/tag
-- [ ] Pagination (10-20 posts per page)
-- [ ] Sort options (newest, relevance)
-- [ ] Loading states and skeletons
-- [ ] Empty state for no results
-
-**Implementation Notes**:
-- Use ISR for initial page load
-- Client-side filtering for instant UX
-- Preserve filter state in URL params
-- Consider infinite scroll as alternative to pagination
-
----
 
 ### 1.3 Individual Post Page
 
