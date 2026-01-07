@@ -4,81 +4,9 @@ Feature roadmap for the Libertas website, broken into MVP, Nice-to-have, and Fut
 
 ---
 
-# Phase 0: Foundation Setup
+## Prompt Initialization
 
-Prerequisites and scaffolding before implementing features.
-
-### 0.1 Project Structure
-
-**Description**: Create the folder structure for organizing code.
-
-**Requirements**:
-- [ ] Create `src/lib/` directory for core logic modules
-- [ ] Create `src/components/` directory for React components
-- [ ] Create `src/hooks/` directory for custom React hooks
-- [ ] Create `src/app/(auth)/` route group for auth pages
-- [ ] Create `src/app/(app)/` route group for authenticated app pages
-- [ ] Create `src/types/` directory for TypeScript definitions
-
-**Implementation Notes**:
-- Route groups (parentheses) allow shared layouts without affecting URL
-- Keep flat structure within each directory initially
-- Add `.gitkeep` files to preserve empty directories
-
----
-
-### 0.2 Base Styling
-
-**Description**: Apply the design system CSS variables to the project.
-
-**Requirements**:
-- [ ] Add CSS variables from STYLES.md to `globals.css`
-- [ ] Set up dark theme as default
-- [ ] Configure light theme variables (optional toggle)
-- [ ] Add base typography styles
-- [ ] Add utility classes for common patterns
-- [ ] Configure Tailwind to use CSS variables
-
-**Implementation Notes**:
-- Reference `docs/STYLES.md` for all values
-- Use `prefers-color-scheme` media query for system preference
-- Store user preference in localStorage
-
----
-
-### 0.3 TypeScript Types
-
-**Description**: Define core TypeScript interfaces and types.
-
-**Requirements**:
-- [ ] Define `Post` interface matching site-content schema
-- [ ] Define `Comment` interface
-- [ ] Define `Reaction` type
-- [ ] Define `User` and `UserProfile` interfaces
-- [ ] Define `IntakeSubmission` interface
-- [ ] Define API response types
-
-**Implementation Notes**:
-- Match types to existing JSON schemas in `/schemas/`
-- Use Zod for runtime validation where needed
-
----
-
-### 0.4 Environment Configuration
-
-**Description**: Set up environment variables and configuration.
-
-**Requirements**:
-- [ ] Create `.env.example` with all required variables
-- [ ] Create `src/lib/config.ts` for typed env access
-- [ ] Set up environment validation on app start
-- [ ] Document variables in README
-
-**Implementation Notes**:
-- Use `zod` to validate environment at build time
-- Never expose `SUPABASE_SERVICE_ROLE_KEY` to client
-
----
+Hey, I am working to implement features for the libertas website from the roadmap. Let's start with implementing:
 
 # Phase 1: MVP
 

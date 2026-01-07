@@ -92,18 +92,51 @@ website/
 
 ## Environment Variables
 
+Copy `.env.example` to `.env.local` and configure:
+
 ```bash
-# Supabase
-NEXT_PUBLIC_SUPABASE_URL=        # Supabase project URL
-NEXT_PUBLIC_SUPABASE_ANON_KEY=   # Supabase anon key
-SUPABASE_SERVICE_ROLE_KEY=       # Server-side operations
-
-# n8n Integration
-N8N_WEBHOOK_URL=                 # Intake form submission endpoint
-
-# Content
-CONTENT_BASE_URL=                # URL to site-content (GCS or local)
+cp .env.example .env.local
 ```
+
+### Required Variables
+
+| Variable | Type | Description |
+|----------|------|-------------|
+| `NEXT_PUBLIC_SUPABASE_URL` | Public | Supabase project URL |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Public | Supabase anonymous key (safe for browser) |
+
+### Optional Variables
+
+| Variable | Type | Default | Description |
+|----------|------|---------|-------------|
+| `SUPABASE_SERVICE_ROLE_KEY` | Server | - | Service role key for server-side operations |
+| `N8N_WEBHOOK_URL` | Server | - | n8n webhook URL for intake submissions |
+| `N8N_WEBHOOK_SECRET` | Server | - | Shared secret for webhook auth |
+| `CONTENT_BASE_URL` | Server | - | Base URL for site-content (GCS or local) |
+| `GCS_BUCKET_NAME` | Server | `libertas-content` | Google Cloud Storage bucket name |
+| `NEXT_PUBLIC_STARKNET_NETWORK` | Public | `sepolia` | Starknet network (`mainnet` or `sepolia`) |
+
+### Validation
+
+Environment variables are validated at build time using Zod. Invalid configuration will cause the build to fail with descriptive error messages.
+
+```typescript
+// Import typed config in your code
+import { env, publicEnv, isDevelopment } from '@/lib/config';
+
+// Access validated env vars
+const supabaseUrl = env.NEXT_PUBLIC_SUPABASE_URL;
+
+// Server-only access (throws on client)
+import { getServerEnv } from '@/lib/config';
+const serviceKey = getServerEnv('SUPABASE_SERVICE_ROLE_KEY');
+```
+
+### Security Notes
+
+- Variables prefixed with `NEXT_PUBLIC_` are exposed to the browser
+- `SUPABASE_SERVICE_ROLE_KEY` must NEVER be exposed to clients
+- Use `getServerEnv()` for server-only variables to prevent accidental client exposure
 
 ## Scripts
 
