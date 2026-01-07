@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import "./globals.css";
 
 const inter = Inter({
@@ -80,7 +81,8 @@ export default function RootLayout({
         className={`${inter.variable} ${jetbrainsMono.variable} ${spaceGrotesk.variable} antialiased`}
       >
         <Header />
-        {children}
+        <main className="min-h-[calc(100vh-16rem)]">{children}</main>
+        <Footer />
       </body>
     </html>
   );
