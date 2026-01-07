@@ -251,19 +251,7 @@ export default function IntakePage() {
 
   return (
     <div className="matrix-bg min-h-screen">
-      {/* Header */}
-      <header className="border-b border-[var(--border-subtle)] py-4">
-        <div className="container">
-          <Link
-            href="/"
-            className="text-mono text-sm text-[var(--fg-secondary)] hover:text-[var(--accent-primary)]"
-          >
-            <span className="text-[var(--accent-primary)]">{'<'}</span> Back to Home
-          </Link>
-        </div>
-      </header>
-
-      <main className="container container-narrow py-12 md:py-20">
+      <main className="container container-narrow py-8 md:py-12">
         {/* Page Header */}
         <div className="mb-8 pt-4">
           <div className="mb-4 flex items-center gap-2">

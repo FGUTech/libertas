@@ -1,5 +1,4 @@
 import { Suspense } from "react";
-import Link from "next/link";
 import { PostsFeed } from "./PostsFeed";
 import { PostsFeedSkeleton } from "./PostsFeedSkeleton";
 import type { Metadata } from "next";
@@ -13,30 +12,8 @@ export const metadata: Metadata = {
 export default function PostsPage() {
   return (
     <div className="matrix-bg min-h-screen">
-      {/* Header */}
-      <header className="border-b border-[var(--border-subtle)]">
-        <div className="container py-4">
-          <nav className="flex items-center justify-between">
-            <Link
-              href="/"
-              className="text-mono text-[var(--accent-primary)] hover:glow-text transition-all"
-            >
-              {">"} libertas
-            </Link>
-            <div className="flex items-center gap-4">
-              <Link
-                href="/intake"
-                className="btn btn-ghost text-sm"
-              >
-                Submit Signal
-              </Link>
-            </div>
-          </nav>
-        </div>
-      </header>
-
       {/* Main Content */}
-      <main className="py-12 md:py-16">
+      <main className="py-8 md:py-12">
         <div className="container">
           <div className="mb-8">
             <h1 className="text-h1 mb-2">All Signals</h1>

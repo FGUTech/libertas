@@ -71,30 +71,8 @@ export default async function PostPage({ params }: PostPageProps) {
 
   return (
     <div className="matrix-bg min-h-screen">
-      {/* Header */}
-      <header className="border-b border-[var(--border-subtle)]">
-        <div className="container py-4">
-          <nav className="flex items-center justify-between">
-            <Link
-              href="/"
-              className="text-mono text-[var(--accent-primary)] hover:glow-text transition-all"
-            >
-              {">"} libertas
-            </Link>
-            <div className="flex items-center gap-4">
-              <Link href="/posts" className="btn btn-ghost text-sm">
-                All Signals
-              </Link>
-              <Link href="/intake" className="btn btn-ghost text-sm">
-                Submit Signal
-              </Link>
-            </div>
-          </nav>
-        </div>
-      </header>
-
       {/* Main Content */}
-      <main className="py-12 md:py-16">
+      <main className="py-8 md:py-12">
         <div className="container">
           <div className="flex gap-8">
             {/* Article */}
@@ -148,7 +126,7 @@ export default async function PostPage({ params }: PostPageProps) {
             {/* Table of Contents Sidebar */}
             {showToc && (
               <aside className="hidden lg:block w-64 flex-shrink-0">
-                <div className="sticky top-8">
+                <div className="sticky top-24">
                   <TableOfContents items={tocItems} />
                 </div>
               </aside>

@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { CopyButton } from './CopyButton';
 
 // Feed URLs - these would come from env vars in production
@@ -10,21 +9,9 @@ const FEED_URLS = {
 export default function FeedsPage() {
   return (
     <div className="matrix-bg min-h-screen">
-      {/* Header */}
-      <header className="border-b border-[var(--border-subtle)] py-4">
-        <div className="container">
-          <Link
-            href="/"
-            className="text-mono text-sm text-[var(--fg-secondary)] hover:text-[var(--accent-primary)]"
-          >
-            <span className="text-[var(--accent-primary)]">{'<'}</span> Back to Home
-          </Link>
-        </div>
-      </header>
-
-      <main className="container container-narrow py-16 md:py-24">
+      <main className="container container-narrow py-8 md:py-12">
         {/* Page Header */}
-        <div className="mb-12 pt-8">
+        <div className="mb-12">
           <div className="mb-4 flex items-center gap-2">
             <span className="text-mono text-[var(--accent-primary)]">{'>'} feeds</span>
             <span className="terminal-cursor inline-block h-4 w-2 bg-[var(--accent-primary)]" />
