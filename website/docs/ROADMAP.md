@@ -12,41 +12,6 @@ Hey, I am working to implement features for the libertas website from the roadma
 
 Core features for initial launch. Focus on content display and intake.
 
-### 1.6 Header & Navigation
-
-**Description**: Global navigation header component.
-
-**Requirements**:
-- [ ] Logo/wordmark linking to home ( see posts page wordmark )
-- [ ] Main navigation links (Posts, Submit, Feeds)
-- [ ] Theme toggle (dark/light)
-- [ ] Mobile hamburger menu
-- [ ] Smooth transitions
-
-**Implementation Notes**:
-- Sticky header with backdrop blur on scroll
-- Use Tailwind's `group` for hover effects
-
----
-
-### 1.7 Footer
-
-**Description**: Global footer with links and info.
-
-**Requirements**:
-- [ ] Quick links to main sections
-- [ ] RSS/JSON feed links with icons
-- [ ] GitHub repository link
-- [ ] "Built by FGU" attribution
-- [ ] No tracking notice badge
-
-**Implementation Notes**:
-- Terminal-inspired design
-- Keep minimal, don't distract from content
-- See existing footer on home page for reference
-
----
-
 ### 1.8 API Routes
 
 **Description**: Server-side API routes for form submission.

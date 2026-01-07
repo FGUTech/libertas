@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Privacy: Vercel Analytics disabled via vercel.json
+  // Privacy: Run `npx next telemetry disable` to opt out of Next.js telemetry
 };
 
 export default nextConfig;
