@@ -229,6 +229,13 @@ export default function Home() {
 
             <p className="mt-6 text-small text-[var(--fg-tertiary)]">
               Works with any feed reader. No tracking, no analytics.
+              <br />
+              <Link
+                href="/feeds"
+                className="text-[var(--fg-secondary)] hover:text-[var(--accent-primary)]"
+              >
+                View feed documentation
+              </Link>
             </p>
           </div>
         </div>
