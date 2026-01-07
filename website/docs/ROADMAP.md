@@ -12,25 +12,6 @@ Hey, I am working to implement features for the libertas website from the roadma
 
 Core features for initial launch. Focus on content display and intake.
 
-### 1.3 Individual Post Page
-
-**Description**: Full post view with metadata and content.
-
-**Requirements**:
-- [ ] Render markdown content with syntax highlighting
-- [ ] Display post metadata (date, author, tags, sources)
-- [ ] Citation links with preview on hover
-- [ ] Table of contents for long posts
-- [ ] Social sharing buttons (copy link, Twitter, Nostr)
-- [ ] Previous/Next post navigation
-
-**Implementation Notes**:
-- Use `next-mdx-remote` or similar for markdown
-- Syntax highlighting with `shiki` for code blocks
-- Lazy-load heavy components (code blocks, images)
-
----
-
 ### 1.4 Intake Form Page
 
 **Description**: Public submission form for stories, projects, and feedback.
