@@ -44,13 +44,14 @@
 ### Deliverables
 
 - [x] **P0.1** Repository structure created per CLAUDE.md specification
-- [x] **P0.2** Database schema deployed (Postgres)
+- [x] **P0.2** Database schema deployed (Supabase Postgres + pgvector)
   - `source_items` table
   - `insights` table
   - `project_ideas` table
   - `submissions` table
-- [ ] **P0.3** n8n instance deployed and accessible
-- [ ] **P0.4** Object storage configured (S3-compatible)
+  - pgvector extension enabled
+- [ ] **P0.3** n8n instance deployed on Railway
+- [ ] **P0.4** GCP Cloud Storage bucket configured (`libertas-content`)
 - [x] **P0.5** Environment variables documented and secrets configured
 - [x] **P0.6** JSON schemas created in `/schemas/`
 - [x] **P0.7** Initial prompt templates in `/prompts/`
@@ -58,19 +59,25 @@
   - `config/sources.yml` with 10 seed sources
   - `config/thresholds.yml` with default values
 - [x] **P0.9** Basic test infrastructure
+- [ ] **P0.10** Vercel project created and linked to repo
+- [ ] **P0.11** Resend account configured with API key
 
 ### Exit Criteria
 
-- n8n can connect to Postgres
-- n8n can connect to object storage
-- n8n can make LLM API calls
+- Railway n8n can connect to Supabase Postgres
+- Railway n8n can connect to GCP Cloud Storage
+- Railway n8n can make Claude API calls
+- Vercel deploys on push to main
 - All config files load without errors
 
 ### Dependencies
 
-- Cloud/hosting environment provisioned
-- Database credentials available
-- LLM API key available
+- Railway account created
+- Supabase project created
+- GCP project with Cloud Storage enabled
+- Vercel account linked to GitHub repo
+- Resend account created
+- Anthropic API key available
 - GitHub repo created
 
 ---
@@ -207,11 +214,11 @@
 ### Deliverables
 
 - [ ] **P3.1** Semantic deduplication
-  - Vector store integration (pgvector or Qdrant)
-  - Embedding generation for content
+  - pgvector integration via Supabase
+  - Embedding generation for content (Claude API)
   - Similarity threshold checking
   - Near-duplicate detection
-  - _Note: Interface exists in `deduper.ts` but returns no-op. Requires vector store._
+  - _Note: Interface exists in `deduper.ts` but returns no-op. Requires pgvector setup._
 
 - [x] **P3.2** Workflow B: Weekly Digest
   - Weekly cron trigger
@@ -219,11 +226,11 @@
   - DigestComposer agent integration
   - Digest publishing
 
-- [x] **P3.3** Email newsletter (optional)
-  - Listmonk integration
+- [x] **P3.3** Email newsletter
+  - Resend integration
   - Subscriber management
   - Digest email formatting
-  - No tracking pixel verification
+  - No tracking pixel verification (Resend default)
 
 - [x] **P3.4** Enhanced classification
   - Multi-source correlation
@@ -365,21 +372,26 @@
 
 Decisions that should be made before proceeding:
 
-### Before Phase 1
+### Before Phase 1 ✅ RESOLVED
 
-- [ ] Which LLM provider (Anthropic Claude, OpenAI, other)?
-- [ ] Self-hosted n8n or cloud?
-- [ ] Which hosting provider for infrastructure?
+- [x] Which LLM provider? → **Claude API (Anthropic)** — best structured output support
+- [x] Self-hosted n8n or cloud? → **Railway** — managed hosting, ~$5-20/mo
+- [x] Which hosting provider for infrastructure?
+  - **Railway** for n8n orchestration
+  - **Supabase** for Postgres + pgvector
+  - **GCP Cloud Storage** for raw content and feeds
+  - **Vercel** for Next.js static site
+  - **Resend** for email delivery
 
 ### Before Phase 2
 
-- [ ] GitHub org for issues/repos?
+- [ ] GitHub org for issues/repos? → Likely `FGUTech/libertas`
 - [ ] Notification channel preference (Slack/Matrix/Discord)?
 
-### Before Phase 3
+### Before Phase 3 ✅ RESOLVED
 
-- [ ] Include email newsletter in scope?
-- [ ] Vector store choice (pgvector vs external)?
+- [x] Include email newsletter in scope? → **Yes, via Resend**
+- [x] Vector store choice? → **pgvector via Supabase** (no separate service needed)
 
 ### Before Phase 4
 

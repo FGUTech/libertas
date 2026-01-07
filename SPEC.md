@@ -7,58 +7,70 @@
 ### Component Overview
 
 ```
-┌─────────────────────────────────────────────────────────────────────────┐
-│                            ORCHESTRATION LAYER                          │
-│                                  (n8n)                                  │
-│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐      │
-│  │Workflow A│ │Workflow B│ │Workflow C│ │Workflow D│ │Workflow E│      │
-│  │ Ingest   │ │ Digest   │ │ Intake   │ │  Ideas   │ │  Vibe    │      │
-│  └────┬─────┘ └────┬─────┘ └────┬─────┘ └────┬─────┘ └────┬─────┘      │
-└───────┼────────────┼────────────┼────────────┼────────────┼────────────┘
-        │            │            │            │            │
-        ▼            ▼            ▼            ▼            ▼
-┌─────────────────────────────────────────────────────────────────────────┐
-│                            PROCESSING LAYER                             │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐                  │
-│  │   Fetcher    │  │  Normalizer  │  │   Deduper    │                  │
-│  │  (HTTP/RSS)  │  │ (HTML→Text)  │  │ (Hash+Embed) │                  │
-│  └──────────────┘  └──────────────┘  └──────────────┘                  │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐                  │
-│  │  Classifier  │  │  Summarizer  │  │ Idea Synth   │                  │
-│  │    (LLM)     │  │    (LLM)     │  │    (LLM)     │                  │
-│  └──────────────┘  └──────────────┘  └──────────────┘                  │
-└─────────────────────────────────────────────────────────────────────────┘
-        │            │            │            │            │
-        ▼            ▼            ▼            ▼            ▼
-┌─────────────────────────────────────────────────────────────────────────┐
-│                            PERSISTENCE LAYER                            │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐                  │
-│  │   Postgres   │  │Object Storage│  │ Vector Store │                  │
-│  │  (entities)  │  │    (raw)     │  │  (optional)  │                  │
-│  └──────────────┘  └──────────────┘  └──────────────┘                  │
-└─────────────────────────────────────────────────────────────────────────┘
-        │
-        ▼
-┌─────────────────────────────────────────────────────────────────────────┐
-│                            PUBLISHING LAYER                             │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐                  │
-│  │  Git Commit  │  │  RSS/JSON    │  │   GitHub     │                  │
-│  │ (Markdown)   │  │   Feeds      │  │   Issues     │                  │
-│  └──────────────┘  └──────────────┘  └──────────────┘                  │
-└─────────────────────────────────────────────────────────────────────────┘
+                              ┌─────────────────┐
+                              │   Claude API    │
+                              │   (Anthropic)   │
+                              └────────┬────────┘
+                                       │ LLM calls
+                                       ▼
+┌─────────────┐  webhook    ┌─────────────────────────────────┐  issues/PRs   ┌─────────────┐
+│   Vercel    │ ──────────► │         Railway (n8n)           │ ─────────────►│   GitHub    │
+│  (Next.js)  │             │                                 │               │             │
+│             │ ◄────────── │  • Workflow A: Ingest           │ ◄─────────────│  • Issues   │
+│  • Site     │  query      │  • Workflow B: Digest           │  deploy hook  │  • PRs      │
+│  • Intake   │             │  • Workflow C: Intake           │               │  • Actions  │
+│  • Feeds    │             │  • Workflow D: Ideas            │               │  • Content  │
+└──────┬──────┘             │  • Workflow E: Vibe Code        │               └─────────────┘
+       │                    └──────────┬──────────────────────┘
+       │                               │
+       │ fetch                         │ read/write
+       │ insights                      │
+       ▼                               ▼
+┌─────────────────────────────────────────────────────────────┐
+│                        Supabase                             │
+│                   (Postgres + pgvector)                     │
+│                                                             │
+│  source_items │ insights │ project_ideas │ submissions      │
+└─────────────────────────────────────────────────────────────┘
+       │
+       │
+┌──────┴──────────────────────────────────────────────────────┐
+│                                                             │
+│  ┌─────────────────┐             ┌─────────────────┐       │
+│  │   GCP Cloud     │             │     Resend      │       │
+│  │   Storage       │             │                 │       │
+│  │                 │             │  Weekly digest  │       │
+│  │  • /raw/        │◄── n8n     │  emails         │◄── n8n│
+│  │  • /published/  │  (write)    │                 │       │
+│  └─────────────────┘             └─────────────────┘       │
+│         │                                                   │
+│         └──────────────► Vercel (read feeds)               │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
 ```
+
+### Integration Flow by Workflow
+
+| Workflow | Services Touched | Data Flow |
+|----------|------------------|-----------|
+| **A: Daily Ingest** | n8n → Claude API → Supabase → GCS → GitHub | Fetch sources → LLM classify → Store entities → Save raw to GCS → Commit markdown |
+| **B: Weekly Digest** | n8n → Supabase → Claude API → GCS → Resend → GitHub | Query week's insights → LLM summarize → Update feeds in GCS → Send email → Commit digest |
+| **C: Intake** | Vercel → n8n → Supabase → Claude API → GitHub | Form submit → Webhook → Store submission → LLM classify risk → Create issue |
+| **D: Ideas** | n8n → Supabase → Claude API → GitHub | Query high-score insights → LLM generate idea → Store → Create issue |
+| **E: Vibe Code** | n8n → GitHub → Claude API | Trigger on build_candidate → Create branch → LLM scaffold → Open PR |
 
 ### Technology Stack
 
-| Component | Technology | Rationale |
-|-----------|------------|-----------|
-| Orchestrator | n8n (self-hosted) | Visual workflows, built-in retry, webhook support |
-| Database | PostgreSQL 15+ | JSON support, reliability, n8n native integration |
-| Object Storage | S3-compatible (MinIO/R2) | Raw document storage, cost-effective |
-| Vector Store | pgvector OR Qdrant | Semantic deduplication (optional for MVP) |
-| LLM Runtime | Claude API / OpenAI | Structured output support required |
-| Publishing | Git + Static Site | Version control, audit trail, resilience |
-| Email | Listmonk (self-hosted) | Privacy-preserving, no tracking |
+| Component | Technology | Integrates With | Rationale |
+|-----------|------------|-----------------|-----------|
+| Orchestrator | Railway (n8n) | Supabase, GCS, Claude API, GitHub, Resend, Vercel | Managed hosting, simple deployment, persistent storage |
+| Database | Supabase (Postgres + pgvector) | n8n (read/write), Vercel (read), GitHub Actions | Managed Postgres with built-in vector support, great API |
+| Object Storage | GCP Cloud Storage | n8n (write raw), Vercel (read feeds) | Existing GCP setup, reliable, cost-effective |
+| Vector Store | pgvector (via Supabase) | n8n (semantic dedup queries) | No separate service needed, included with Supabase |
+| LLM Runtime | Claude API (Anthropic) | n8n (HTTP request nodes) | Best structured output support, coding capability |
+| Static Site | Vercel (Next.js) | Supabase, GCS, n8n webhooks, GitHub | Best-in-class DX for Next.js, preview deployments |
+| Email | Resend | n8n (trigger sends) | Privacy-friendly, modern API, no tracking pixels |
+| Code/Publishing | GitHub | n8n (issues/PRs), Vercel (deploy) | Issues, PRs, Actions, content repo |
 
 ---
 

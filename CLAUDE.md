@@ -19,9 +19,11 @@
 | `AGENTS.md` | LLM agent behaviors, prompts, structured outputs. |
 | `ROADMAP.md` | Milestones, phases, and delivery checkpoints. |
 | `PRD.md` | Full product requirements (source of truth for scope). |
+| `INFRASTRUCTURE.md` | Deployment guide for Railway, Supabase, GCP, Vercel. |
 
 **Always read `SPEC.md` before implementing data models or workflows.**
 **Always read `AGENTS.md` before writing LLM prompts or agent logic.**
+**Always read `INFRASTRUCTURE.md` before deploying or configuring services.**
 
 ---
 
@@ -222,19 +224,41 @@ See `SPEC.md` for detailed workflow specifications.
 
 ## Environment Variables
 
-```bash
-# Required
-DATABASE_URL=           # Postgres connection string
-N8N_WEBHOOK_URL=        # Base URL for n8n webhooks
-LLM_API_KEY=            # API key for LLM provider
-GITHUB_TOKEN=           # For creating issues/PRs
+### Railway (n8n)
 
-# Optional
-OBJECT_STORAGE_URL=     # S3-compatible storage
-SMTP_HOST=              # Email sending
-SMTP_USER=
-SMTP_PASS=
-VECTOR_DB_URL=          # For semantic deduplication
+```bash
+# Database (Supabase)
+DATABASE_URL=                          # Supabase Postgres connection string
+DB_TYPE=postgresdb
+DB_POSTGRESDB_DATABASE=postgres
+DB_POSTGRESDB_USER=postgres
+DB_POSTGRESDB_HOST=db.xxx.supabase.co
+DB_POSTGRESDB_PORT=5432
+
+# n8n Config
+N8N_ENCRYPTION_KEY=                    # Generate with: openssl rand -base64 42
+N8N_WEBHOOK_URL=                       # Railway app URL
+
+# External Services
+ANTHROPIC_API_KEY=                     # Claude API key
+GITHUB_TOKEN=                          # For creating issues/PRs
+RESEND_API_KEY=                        # Email sending
+GOOGLE_APPLICATION_CREDENTIALS=        # GCS service account JSON (base64 or path)
+```
+
+### Vercel (Next.js)
+
+```bash
+# Supabase
+NEXT_PUBLIC_SUPABASE_URL=              # Supabase project URL
+NEXT_PUBLIC_SUPABASE_ANON_KEY=         # Supabase anon key
+SUPABASE_SERVICE_ROLE_KEY=             # For server-side operations
+
+# n8n Integration
+N8N_WEBHOOK_URL=                       # Railway n8n URL for intake form
+
+# GCS (for feed serving, optional)
+GCS_BUCKET_NAME=libertas-content
 ```
 
 ---
@@ -248,6 +272,12 @@ When making architectural decisions, document them here:
 | 2026-01-05 | n8n as orchestrator | Low-code, visual debugging, built-in retry logic |
 | 2026-01-05 | Postgres for persistence | Reliable, supports JSON, good n8n integration |
 | 2026-01-05 | Git-based publishing | Version control, audit trail, works offline |
+| 2026-01-06 | Railway for n8n hosting | Simple deployment, managed service, persistent storage, ~$5-20/mo |
+| 2026-01-06 | Supabase for database | Managed Postgres + pgvector (no separate vector DB), great API, free tier |
+| 2026-01-06 | GCP Cloud Storage | Existing GCP setup, reliable for raw content and feed storage |
+| 2026-01-06 | Vercel for static site | Best-in-class Next.js DX, preview deployments, free tier |
+| 2026-01-06 | Resend for email | Privacy-friendly, no tracking pixels, modern API |
+| 2026-01-06 | Claude API (Anthropic) | Best structured output support, strong coding capability |
 
 ---
 

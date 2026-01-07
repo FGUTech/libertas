@@ -368,39 +368,45 @@ Every published item must include:
 
 ### 10.1 High-level components
 
-* **n8n** (self-hosted) — orchestrator
-* **Postgres** — persistent database
-* **Object storage** (S3-compatible or filesystem) — raw documents + snapshots
-* **Vector store** (optional but recommended) — semantic dedupe, retrieval
-* **Website publishing target**
-
-  * Option A: Git-based static publishing (commit Markdown + regenerate RSS)
-  * Option B: CMS API (if FGU.tech uses one)
-* **Email sender**
-
-  * Prefer self-hosted / privacy-friendly list manager (e.g., listmonk) or SMTP
-* **LLM runtime**
-
-  * Can be external or local; must support structured output (JSON)
+| Component | Service | Purpose |
+|-----------|---------|---------|
+| Orchestrator | **Railway (n8n)** | Workflow automation, scheduling, webhooks |
+| Database | **Supabase (Postgres + pgvector)** | Entity storage, semantic deduplication |
+| Object Storage | **GCP Cloud Storage** | Raw documents, published feeds |
+| Static Site | **Vercel (Next.js)** | FGU.tech website, intake form |
+| Email | **Resend** | Privacy-friendly newsletter delivery |
+| LLM Runtime | **Claude API (Anthropic)** | Classification, summarization, idea generation |
+| Code/Publishing | **GitHub** | Issues, PRs, content repo, deploy triggers |
 
 ### 10.2 Data flow overview
 
-```text
-[Sources] --> [Ingestion] --> [Normalization] --> [Store Raw + Text]
-                                   |
-                                   v
-                            [Dedup + Classify]
-                                   |
-                                   v
-                           [Summaries + Insights]
-                                   |
-             +---------------------+---------------------+
-             |                                           |
-             v                                           v
-      [Publish: RSS/JSON/MD]                      [Project Ideas]
-             |                                           |
-             v                                           v
-        [FGU.tech]                                [GitHub Issues]
+```
+                              ┌─────────────────┐
+                              │   Claude API    │
+                              └────────┬────────┘
+                                       │
+┌─────────────┐  webhook    ┌──────────▼──────────────────────┐   issues    ┌─────────────┐
+│   Vercel    │ ──────────► │         Railway (n8n)           │ ──────────► │   GitHub    │
+│  (Next.js)  │             │  Workflows A, B, C, D, E        │             │             │
+│             │ ◄────────── └──────────┬──────────────────────┘             └─────────────┘
+└──────┬──────┘                        │
+       │                               │
+       │ fetch                         │ read/write
+       ▼                               ▼
+┌─────────────────────────────────────────────────────────────┐
+│                        Supabase                             │
+│                   (Postgres + pgvector)                     │
+│  source_items │ insights │ project_ideas │ submissions      │
+└─────────────────────────────────────────────────────────────┘
+                               │
+         ┌─────────────────────┼─────────────────────┐
+         ▼                     │                     ▼
+┌─────────────────┐            │            ┌─────────────────┐
+│  GCP Cloud      │            │            │     Resend      │
+│  Storage        │◄───────────┘            │  (email)        │
+│  /raw/          │                         └─────────────────┘
+│  /published/    │───────────► Vercel (serve feeds)
+└─────────────────┘
 ```
 
 ---
