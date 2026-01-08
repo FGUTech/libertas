@@ -1,0 +1,601 @@
+{
+  "name": "Libertas - Daily Ingestion - Workflow A",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 6
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [0, 0],
+      "id": "cron-trigger",
+      "name": "Every 6 Hours"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Load sources from config (hardcoded for n8n)\n// In production, this could fetch from a config endpoint\nconst sources = [\n  {\n    name: \"Human Rights Foundation\",\n    type: \"rss\",\n    url: \"https://hrf.org/feed/\",\n    tier: 1,\n    tags: [\"human-rights\", \"activism\", \"freedom\"],\n    enabled: true\n  },\n  {\n    name: \"EFF Deeplinks\",\n    type: \"rss\",\n    url: \"https://www.eff.org/rss/updates.xml\",\n    tier: 1,\n    tags: [\"privacy\", \"digital-rights\", \"surveillance\"],\n    enabled: true\n  },\n  {\n    name: \"Bitcoin Magazine\",\n    type: \"rss\",\n    url: \"https://bitcoinmagazine.com/feed\",\n    tier: 1,\n    tags: [\"bitcoin\", \"payments\", \"sovereignty\"],\n    enabled: true\n  },\n  {\n    name: \"Access Now\",\n    type: \"rss\",\n    url: \"https://www.accessnow.org/feed/\",\n    tier: 1,\n    tags: [\"digital-rights\", \"activism\", \"censorship-resistance\"],\n    enabled: true\n  },\n  {\n    name: \"OONI Reports\",\n    type: \"rss\",\n    url: \"https://ooni.org/rss.xml\",\n    tier: 1,\n    tags: [\"censorship-resistance\", \"surveillance\", \"measurement\"],\n    enabled: true\n  }\n];\n\n// Filter to enabled sources only\nconst enabledSources = sources.filter(s => s.enabled);\n\n// Return each source as a separate item for parallel processing\nreturn enabledSources.map(source => ({ json: source }));"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [220, 0],
+      "id": "load-sources",
+      "name": "Load Sources"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.url }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1.1,
+      "position": [440, 0],
+      "id": "fetch-rss",
+      "name": "Fetch RSS Feed",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Process RSS items from feed\nconst items = $input.all();\nconst sourceInfo = $('Load Sources').first().json;\n\n// Handle fetch errors\nif (!items || items.length === 0) {\n  console.log(`No items from ${sourceInfo.name}`);\n  return [];\n}\n\n// Limit items per source (rate limiting)\nconst maxItems = 20;\nconst processItems = items.slice(0, maxItems);\n\nreturn processItems.map(item => {\n  const data = item.json;\n  return {\n    json: {\n      // Source metadata\n      sourceName: sourceInfo.name,\n      sourceUrl: sourceInfo.url,\n      sourceTier: sourceInfo.tier,\n      sourceTags: sourceInfo.tags,\n      platform: 'rss',\n      \n      // Item data\n      itemUrl: data.link || data.guid || '',\n      title: data.title || '',\n      content: data.content || data.description || data['content:encoded'] || '',\n      author: data.creator || data.author || sourceInfo.name,\n      publishedAt: data.pubDate || data.isoDate || new Date().toISOString(),\n      \n      // Will be computed\n      contentHash: null,\n      extractedText: null\n    }\n  };\n}).filter(item => item.json.itemUrl && item.json.content);"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [660, 0],
+      "id": "extract-items",
+      "name": "Extract Feed Items"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extract clean text from HTML content\nconst item = $input.first().json;\n\n// Strip HTML tags for clean text extraction\nfunction stripHtml(html) {\n  if (!html) return '';\n  return html\n    .replace(/<script[^>]*>[\\s\\S]*?<\\/script>/gi, '')\n    .replace(/<style[^>]*>[\\s\\S]*?<\\/style>/gi, '')\n    .replace(/<[^>]+>/g, ' ')\n    .replace(/&nbsp;/g, ' ')\n    .replace(/&amp;/g, '&')\n    .replace(/&lt;/g, '<')\n    .replace(/&gt;/g, '>')\n    .replace(/&quot;/g, '\"')\n    .replace(/&#39;/g, \"'\")\n    .replace(/\\s+/g, ' ')\n    .trim();\n}\n\nconst extractedText = stripHtml(item.content);\n\nreturn [{\n  json: {\n    ...item,\n    extractedText: extractedText.substring(0, 50000)\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [880, 0],
+      "id": "extract-text",
+      "name": "Extract Text"
+    },
+    {
+      "parameters": {
+        "action": "hash",
+        "type": "SHA256",
+        "value": "={{ $json.extractedText }}",
+        "dataPropertyName": "contentHash",
+        "encoding": "hex"
+      },
+      "type": "n8n-nodes-base.crypto",
+      "typeVersion": 1,
+      "position": [990, 0],
+      "id": "compute-hash",
+      "name": "Compute Hash"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT id FROM source_items WHERE content_hash = $1 LIMIT 1",
+        "options": {
+          "queryReplacement": "={{ $json.contentHash }}"
+        }
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [1100, 0],
+      "id": "check-duplicate",
+      "name": "Check Duplicate",
+      "alwaysOutputData": true,
+      "credentials": {
+        "postgres": {
+          "id": "CREDENTIAL_ID",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Evaluate duplicate check result and merge with original data\nconst duplicateResult = $input.all();\nconst originalData = $('Compute Hash').first().json;\n\n// Postgres returns empty array if no rows found\n// If we got any rows back, it's a duplicate\nconst isDuplicate = duplicateResult.length > 0 && duplicateResult[0].json && duplicateResult[0].json.id;\n\nreturn [{\n  json: {\n    ...originalData,\n    isNew: !isDuplicate,\n    duplicateId: isDuplicate ? duplicateResult[0].json.id : null\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1210, 0],
+      "id": "evaluate-duplicate",
+      "name": "Evaluate Duplicate"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "is-new",
+              "leftValue": "={{ $json.isNew }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [1320, 0],
+      "id": "is-new-item",
+      "name": "Is New Item?"
+    },
+    {
+      "parameters": {
+        "operation": "insert",
+        "table": {
+          "__rl": true,
+          "value": "source_items",
+          "mode": "list",
+          "cachedResultName": "source_items"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "url": "={{ $('Evaluate Duplicate').first().json.itemUrl }}",
+            "platform": "={{ $('Evaluate Duplicate').first().json.platform }}",
+            "extracted_text": "={{ $('Evaluate Duplicate').first().json.extractedText }}",
+            "content_hash": "={{ $('Evaluate Duplicate').first().json.contentHash }}",
+            "author": "={{ $('Evaluate Duplicate').first().json.author }}",
+            "published_at": "={{ $('Evaluate Duplicate').first().json.publishedAt }}",
+            "metadata": "={{ JSON.stringify({ sourceName: $('Evaluate Duplicate').first().json.sourceName, sourceTier: $('Evaluate Duplicate').first().json.sourceTier, sourceTags: $('Evaluate Duplicate').first().json.sourceTags, title: $('Evaluate Duplicate').first().json.title }) }}"
+          }
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [1540, -100],
+      "id": "insert-source-item",
+      "name": "Insert Source Item",
+      "credentials": {
+        "postgres": {
+          "id": "CREDENTIAL_ID",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// STUB: Classifier Agent\n// Simulates Claude API response format for classification\n// Replace with real HTTP Request to Claude API when ready\n\nconst sourceItem = $('Insert Source Item').first().json;\nconst metadata = $('Evaluate Duplicate').first().json;\nconst text = sourceItem.extracted_text || '';\nconst textLower = text.toLowerCase();\n\n// Simple keyword-based classification for testing\nconst topics = [];\n\nif (textLower.includes('bitcoin') || textLower.includes('btc') || textLower.includes('satoshi')) {\n  topics.push('bitcoin');\n}\nif (textLower.includes('privacy') || textLower.includes('encryption') || textLower.includes('encrypted')) {\n  topics.push('privacy');\n}\nif (textLower.includes('censorship') || textLower.includes('blocked') || textLower.includes('banned')) {\n  topics.push('censorship-resistance');\n}\nif (textLower.includes('surveillance') || textLower.includes('tracking') || textLower.includes('monitoring')) {\n  topics.push('surveillance');\n}\nif (textLower.includes('activist') || textLower.includes('protest') || textLower.includes('dissent')) {\n  topics.push('activism');\n}\nif (textLower.includes('identity') || textLower.includes('kyc') || textLower.includes('anonymous')) {\n  topics.push('identity');\n}\nif (textLower.includes('payment') || textLower.includes('transaction') || textLower.includes('transfer')) {\n  topics.push('payments');\n}\nif (textLower.includes('messaging') || textLower.includes('signal') || textLower.includes('communication')) {\n  topics.push('comms');\n}\nif (textLower.includes('zero knowledge') || textLower.includes('zk-') || textLower.includes('zkp')) {\n  topics.push('zk');\n}\nif (textLower.includes('sovereign') || textLower.includes('self-custody') || textLower.includes('freedom')) {\n  topics.push('sovereignty');\n}\n\n// Default topic if none found\nif (topics.length === 0) {\n  topics.push('sovereignty');\n}\n\n// Score based on keyword density and source tier\nconst tier = metadata.sourceTier || 2;\nconst keywordCount = topics.length;\nconst baseRelevance = Math.min(40 + (keywordCount * 15), 95);\nconst tierBonus = tier === 1 ? 10 : 0;\nconst freedomRelevanceScore = Math.min(baseRelevance + tierBonus, 100);\n\n// Credibility based on source tier\nconst credibilityScore = tier === 1 ? 75 : tier === 2 ? 60 : 45;\n\n// Check for safety concerns\nconst safetyConcern = textLower.includes('location') && \n  (textLower.includes('activist') || textLower.includes('dissident'));\n\nconst classification = {\n  topics: topics.slice(0, 5),\n  freedom_relevance_score: freedomRelevanceScore,\n  credibility_score: credibilityScore,\n  geo: [],\n  safety_concern: safetyConcern,\n  reasoning: `Stub classification based on ${keywordCount} topic keywords. Tier ${tier} source.`,\n  key_entities: [],\n  should_summarize: freedomRelevanceScore >= 50\n};\n\n// Return in Claude API response format for easy swap later\nreturn [{\n  json: {\n    content: [{\n      type: 'text',\n      text: JSON.stringify(classification)\n    }],\n    // Pass through source item data\n    _sourceItemId: sourceItem.id,\n    _sourceItemUrl: sourceItem.url,\n    _extractedText: sourceItem.extracted_text,\n    _metadata: metadata\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1760, -100],
+      "id": "classify-stub",
+      "name": "Classify Stub (Claude)"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "x-api-key",
+              "value": "={{ $env.ANTHROPIC_API_KEY }}"
+            },
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 1024,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": \"You are a Freedom Tech content classifier. Analyze this content and respond with ONLY valid JSON.\\n\\nContent URL: {{ $('Insert Source Item').first().json.url }}\\nContent: {{ $('Insert Source Item').first().json.extracted_text.substring(0, 8000) }}\\n\\nRespond with JSON matching this schema:\\n{\\n  \\\"topics\\\": [\\\"array of 1-5 topics from: bitcoin, zk, censorship-resistance, comms, payments, identity, privacy, surveillance, activism, sovereignty\\\"],\\n  \\\"freedom_relevance_score\\\": \\\"0-100 integer\\\",\\n  \\\"credibility_score\\\": \\\"0-100 integer\\\",\\n  \\\"geo\\\": [\\\"countries/regions mentioned\\\"],\\n  \\\"safety_concern\\\": \\\"boolean - true if could endanger activists\\\",\\n  \\\"reasoning\\\": \\\"brief explanation\\\",\\n  \\\"key_entities\\\": [\\\"people, orgs, projects mentioned\\\"],\\n  \\\"should_summarize\\\": \\\"boolean - true if relevance >= 50\\\"\\n}\"\n  }]\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [1760, 100],
+      "id": "classify-real",
+      "name": "Classify with Claude (Disabled)"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse classification result from Claude API format\nconst input = $input.first().json;\nlet classification;\n\ntry {\n  const text = input.content[0].text;\n  classification = JSON.parse(text);\n} catch (e) {\n  // Fallback if parsing fails\n  classification = {\n    topics: ['sovereignty'],\n    freedom_relevance_score: 30,\n    credibility_score: 50,\n    geo: [],\n    safety_concern: false,\n    reasoning: 'Failed to parse LLM response',\n    key_entities: [],\n    should_summarize: false\n  };\n}\n\n// Merge with source item data\nreturn [{\n  json: {\n    sourceItemId: input._sourceItemId,\n    sourceItemUrl: input._sourceItemUrl,\n    extractedText: input._extractedText,\n    metadata: input._metadata,\n    classification\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1980, -100],
+      "id": "parse-classification",
+      "name": "Parse Classification"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "meets-threshold",
+              "leftValue": "={{ $json.classification.freedom_relevance_score }}",
+              "rightValue": 50,
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
+            },
+            {
+              "id": "should-summarize",
+              "leftValue": "={{ $json.classification.should_summarize }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [2200, -100],
+      "id": "check-threshold",
+      "name": "Meets Threshold?"
+    },
+    {
+      "parameters": {
+        "jsCode": "// STUB: Summarizer Agent\n// Generates insight content from classified source item\n// Replace with real Claude API call when ready\n\nconst data = $input.first().json;\nconst classification = data.classification;\nconst text = data.extractedText || '';\nconst metadata = data.metadata || {};\n\n// Extract title from metadata or generate from text\nconst title = metadata.title || text.substring(0, 100).split('.')[0] + '...';\n\n// Generate TL;DR\nconst tldr = text.substring(0, 250).trim() + '...';\n\n// Generate summary bullets\nconst sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 20);\nconst summaryBullets = sentences.slice(0, 7).map(s => s.trim());\n\n// Ensure minimum bullets\nwhile (summaryBullets.length < 5) {\n  summaryBullets.push('Additional analysis pending.');\n}\n\nconst summary = {\n  title: title.substring(0, 120),\n  tldr: tldr.substring(0, 280),\n  summary_bullets: summaryBullets.slice(0, 10),\n  deep_dive_markdown: classification.freedom_relevance_score >= 85 \n    ? `## Analysis\\n\\n${text.substring(0, 2000)}...\\n\\n## Implications\\n\\nFurther analysis needed.`\n    : null,\n  citations: [data.sourceItemUrl],\n  recommended_actions: [],\n  related_projects: [],\n  project_idea_trigger: {\n    should_generate: classification.freedom_relevance_score >= 80,\n    reason: classification.freedom_relevance_score >= 80 \n      ? 'High relevance score suggests potential project opportunity'\n      : null\n  }\n};\n\n// Return in Claude API response format\nreturn [{\n  json: {\n    content: [{\n      type: 'text',\n      text: JSON.stringify(summary)\n    }],\n    _sourceItemId: data.sourceItemId,\n    _classification: classification,\n    _sourceItemUrl: data.sourceItemUrl\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2420, -200],
+      "id": "summarize-stub",
+      "name": "Summarize Stub (Claude)"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse summary and determine publish status\nconst input = $input.first().json;\nlet summary;\n\ntry {\n  const text = input.content[0].text;\n  summary = JSON.parse(text);\n} catch (e) {\n  summary = {\n    title: 'Parse Error',\n    tldr: 'Failed to parse summary',\n    summary_bullets: ['Error processing content'],\n    citations: [],\n    deep_dive_markdown: null\n  };\n}\n\nconst classification = input._classification;\n\n// Determine publish status based on gates\n// Auto-publish: relevance >= 70 AND credibility >= 60 AND has citations\nconst canAutoPublish = \n  classification.freedom_relevance_score >= 70 &&\n  classification.credibility_score >= 60 &&\n  summary.citations.length > 0 &&\n  !classification.safety_concern;\n\nconst status = canAutoPublish ? 'published' : 'queued';\nconst publishedAt = canAutoPublish ? new Date().toISOString() : null;\nconst publishedUrl = canAutoPublish \n  ? `https://libertas.fgu.tech/signals/${input._sourceItemId}`\n  : null;\n\nreturn [{\n  json: {\n    sourceItemId: input._sourceItemId,\n    sourceItemUrl: input._sourceItemUrl,\n    title: summary.title,\n    tldr: summary.tldr,\n    summaryBullets: summary.summary_bullets,\n    deepDiveMarkdown: summary.deep_dive_markdown,\n    topics: classification.topics,\n    geo: classification.geo,\n    freedomRelevanceScore: classification.freedom_relevance_score,\n    credibilityScore: classification.credibility_score,\n    citations: summary.citations,\n    status,\n    publishedUrl,\n    publishedAt,\n    safetyConcern: classification.safety_concern\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2640, -200],
+      "id": "parse-summary",
+      "name": "Parse Summary & Gates"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Build complete INSERT query with proper escaping\nconst data = $input.first().json;\n\nfunction escapeStr(str) {\n  if (str === null || str === undefined) return 'NULL';\n  // Escape single quotes by doubling them\n  return \"'\" + String(str).replace(/'/g, \"''\") + \"'\";\n}\n\nfunction formatPgArray(arr) {\n  if (!arr || arr.length === 0) return \"'{}'\";\n  const escaped = arr.map(s => '\"' + String(s).replace(/\"/g, '\\\\\"').replace(/'/g, \"''\") + '\"');\n  return \"'{\" + escaped.join(',') + \"}'\";\n}\n\nfunction formatUuidArray(arr) {\n  if (!arr || arr.length === 0) return \"'{}'\";\n  return \"'{\" + arr.join(',') + \"}'\";\n}\n\nconst query = `INSERT INTO insights (\n  source_item_ids, title, tldr, summary_bullets, deep_dive_markdown,\n  topics, geo, freedom_relevance_score, credibility_score, citations,\n  status, published_url, published_at\n) VALUES (\n  ${formatUuidArray([data.sourceItemId])},\n  ${escapeStr(data.title || 'Untitled')},\n  ${escapeStr(data.tldr || '')},\n  ${formatPgArray(data.summaryBullets || [])},\n  ${data.deepDiveMarkdown ? escapeStr(data.deepDiveMarkdown) : 'NULL'},\n  ${formatPgArray(data.topics || [])},\n  ${formatPgArray(data.geo || [])},\n  ${data.freedomRelevanceScore},\n  ${data.credibilityScore},\n  ${formatPgArray(data.citations || [])},\n  ${escapeStr(data.status)},\n  ${data.publishedUrl ? escapeStr(data.publishedUrl) : 'NULL'},\n  ${data.publishedAt ? escapeStr(data.publishedAt) : 'NULL'}\n) RETURNING id, title, status, published_url`;\n\nreturn [{ json: { query, sourceData: data } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2750, -200],
+      "id": "prepare-insight",
+      "name": "Build Insight Query"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "={{ $json.query }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [2860, -200],
+      "id": "insert-insight",
+      "name": "Insert Insight",
+      "credentials": {
+        "postgres": {
+          "id": "CREDENTIAL_ID",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Log skipped items (below threshold)\nconst data = $input.first().json;\nconsole.log(`Skipped: ${data.sourceItemUrl} - Relevance: ${data.classification.freedom_relevance_score}`);\n\nreturn [{\n  json: {\n    skipped: true,\n    sourceItemId: data.sourceItemId,\n    reason: 'Below relevance threshold',\n    score: data.classification.freedom_relevance_score\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2420, 0],
+      "id": "log-skipped",
+      "name": "Log Skipped"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Log duplicate items\nconsole.log('Duplicate item detected, skipping');\n\nreturn [{\n  json: {\n    skipped: true,\n    reason: 'Duplicate content hash'\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1540, 100],
+      "id": "log-duplicate",
+      "name": "Log Duplicate"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Aggregate results from all branches\n// This runs at the end to summarize the workflow execution\n\nconst allItems = $input.all();\n\nlet published = 0;\nlet queued = 0;\nlet skipped = 0;\nlet duplicates = 0;\nlet errors = 0;\n\nfor (const item of allItems) {\n  const data = item.json;\n  if (data.status === 'published') published++;\n  else if (data.status === 'queued') queued++;\n  else if (data.skipped && data.reason === 'Duplicate content hash') duplicates++;\n  else if (data.skipped) skipped++;\n  else errors++;\n}\n\nconst summary = {\n  executedAt: new Date().toISOString(),\n  results: {\n    published,\n    queued,\n    skipped,\n    duplicates,\n    errors,\n    total: allItems.length\n  }\n};\n\nconsole.log('Workflow A Summary:', JSON.stringify(summary, null, 2));\n\nreturn [{ json: summary }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [3080, -100],
+      "id": "aggregate-results",
+      "name": "Aggregate Results"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "UPDATE source_health\nSET \n  last_success_at = NOW(),\n  consecutive_failures = 0,\n  status = 'healthy',\n  updated_at = NOW()\nWHERE source_url = $1",
+        "options": {
+          "queryReplacement": "={{ $('Load Sources').first().json.url }}"
+        }
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [660, 200],
+      "id": "update-source-health-success",
+      "name": "Update Source Health (Success)",
+      "credentials": {
+        "postgres": {
+          "id": "CREDENTIAL_ID",
+          "name": "Postgres account"
+        }
+      },
+      "disabled": true
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Every 6 Hours": {
+      "main": [
+        [
+          {
+            "node": "Load Sources",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Load Sources": {
+      "main": [
+        [
+          {
+            "node": "Fetch RSS Feed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch RSS Feed": {
+      "main": [
+        [
+          {
+            "node": "Extract Feed Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Feed Items": {
+      "main": [
+        [
+          {
+            "node": "Extract Text",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Text": {
+      "main": [
+        [
+          {
+            "node": "Compute Hash",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Compute Hash": {
+      "main": [
+        [
+          {
+            "node": "Check Duplicate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Duplicate": {
+      "main": [
+        [
+          {
+            "node": "Evaluate Duplicate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Evaluate Duplicate": {
+      "main": [
+        [
+          {
+            "node": "Is New Item?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Is New Item?": {
+      "main": [
+        [
+          {
+            "node": "Insert Source Item",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Log Duplicate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Insert Source Item": {
+      "main": [
+        [
+          {
+            "node": "Classify Stub (Claude)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Classify Stub (Claude)": {
+      "main": [
+        [
+          {
+            "node": "Parse Classification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Classification": {
+      "main": [
+        [
+          {
+            "node": "Meets Threshold?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Meets Threshold?": {
+      "main": [
+        [
+          {
+            "node": "Summarize Stub (Claude)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Log Skipped",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Summarize Stub (Claude)": {
+      "main": [
+        [
+          {
+            "node": "Parse Summary & Gates",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Summary & Gates": {
+      "main": [
+        [
+          {
+            "node": "Build Insight Query",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Insight Query": {
+      "main": [
+        [
+          {
+            "node": "Insert Insight",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Insert Insight": {
+      "main": [
+        [
+          {
+            "node": "Aggregate Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log Skipped": {
+      "main": [
+        [
+          {
+            "node": "Aggregate Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log Duplicate": {
+      "main": [
+        [
+          {
+            "node": "Aggregate Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "",
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "instanceId": ""
+  },
+  "id": "",
+  "tags": []
+}

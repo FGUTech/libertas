@@ -97,13 +97,18 @@ Features that enhance the experience but aren't critical for launch.
 **Requirements**:
 - [ ] Profile page showing user info
 - [ ] Edit display name
+- [ ] Edit bio
+- [ ] Edit profile picture (Handful of avatars to choose from)
 - [ ] Link Starknet wallet (preparation for 2.5)
+- [ ] View intake form submissions
+- [ ] View liked posts
 - [ ] View user's comments history
 - [ ] Delete account option
 
 **Implementation Notes**:
 - Profile data in `user_profiles` table
 - Keep profile page simple initially
+- For starknet implmentation use starknetjs and starknet-react
 
 ---
 
