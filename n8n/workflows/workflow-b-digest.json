@@ -1,0 +1,456 @@
+{
+  "name": "Libertas - Weekly Digest - Workflow B",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 9 * * 0"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [0, 0],
+      "id": "cron-trigger",
+      "name": "Weekly Sunday 9am UTC"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Calculate date range for digest\n// Period: last 7 days ending yesterday\nconst now = new Date();\nconst periodEnd = new Date(now);\nperiodEnd.setUTCDate(periodEnd.getUTCDate() - 1); // Yesterday\nperiodEnd.setUTCHours(23, 59, 59, 999);\n\nconst periodStart = new Date(periodEnd);\nperiodStart.setUTCDate(periodStart.getUTCDate() - 6); // 7 days ago\nperiodStart.setUTCHours(0, 0, 0, 0);\n\n// Format dates for SQL query and display\nconst formatDateSQL = (d) => d.toISOString();\nconst formatDateDisplay = (d) => d.toISOString().split('T')[0];\n\nreturn [{\n  json: {\n    periodStartSQL: formatDateSQL(periodStart),\n    periodEndSQL: formatDateSQL(periodEnd),\n    periodStartDisplay: formatDateDisplay(periodStart),\n    periodEndDisplay: formatDateDisplay(periodEnd),\n    digestId: `digest-${formatDateDisplay(periodEnd)}`,\n    generatedAt: now.toISOString()\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [220, 0],
+      "id": "calculate-period",
+      "name": "Calculate Period"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT \n  id, title, tldr, summary_bullets, deep_dive_markdown,\n  topics, geo, freedom_relevance_score, credibility_score,\n  citations, status, published_url, published_at, created_at\nFROM insights \nWHERE status = 'published' \n  AND published_at >= $1::timestamptz \n  AND published_at <= $2::timestamptz\nORDER BY freedom_relevance_score DESC, published_at DESC",
+        "options": {
+          "queryReplacement": "={{ $json.periodStartSQL }}, {{ $json.periodEndSQL }}"
+        }
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [440, 0],
+      "id": "query-insights",
+      "name": "Query Published Insights",
+      "alwaysOutputData": true,
+      "credentials": {
+        "postgres": {
+          "id": "CREDENTIAL_ID",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Merge insights with period data and check if we have any\nconst insights = $input.all().map(item => item.json);\nconst periodData = $('Calculate Period').first().json;\n\n// If no insights, we still want to continue (create an empty digest or skip)\nif (!insights || insights.length === 0 || !insights[0].id) {\n  return [{\n    json: {\n      ...periodData,\n      insights: [],\n      insightCount: 0,\n      hasInsights: false\n    }\n  }];\n}\n\nreturn [{\n  json: {\n    ...periodData,\n    insights: insights,\n    insightCount: insights.length,\n    hasInsights: true\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [660, 0],
+      "id": "merge-insights",
+      "name": "Merge Insights with Period"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "has-insights",
+              "leftValue": "={{ $json.hasInsights }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [880, 0],
+      "id": "check-has-insights",
+      "name": "Has Insights?"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Group insights by topic and prepare aggregated data\nconst data = $input.first().json;\nconst insights = data.insights || [];\n\n// Group insights by primary topic (first topic in array)\nconst byTopic = {};\nconst topicCounts = {};\n\nfor (const insight of insights) {\n  const topics = insight.topics || [];\n  const primaryTopic = topics[0] || 'other';\n  \n  if (!byTopic[primaryTopic]) {\n    byTopic[primaryTopic] = [];\n    topicCounts[primaryTopic] = 0;\n  }\n  byTopic[primaryTopic].push(insight);\n  topicCounts[primaryTopic]++;\n  \n  // Also count all topics for ranking\n  for (const topic of topics) {\n    if (topic !== primaryTopic) {\n      topicCounts[topic] = (topicCounts[topic] || 0) + 1;\n    }\n  }\n}\n\n// Sort topics by count for top_topics\nconst topTopics = Object.entries(topicCounts)\n  .sort((a, b) => b[1] - a[1])\n  .slice(0, 5)\n  .map(([topic]) => topic);\n\n// Collect all citations\nconst allCitations = [];\nfor (const insight of insights) {\n  if (insight.citations) {\n    allCitations.push(...insight.citations);\n  }\n}\nconst uniqueCitations = [...new Set(allCitations)];\n\n// Build sections data for LLM\nconst sections = Object.entries(byTopic).map(([topic, topicInsights]) => ({\n  topic,\n  insightCount: topicInsights.length,\n  insights: topicInsights.map(i => ({\n    id: i.id,\n    title: i.title,\n    tldr: i.tldr,\n    score: i.freedom_relevance_score,\n    published_url: i.published_url,\n    citations: i.citations\n  }))\n}));\n\nreturn [{\n  json: {\n    ...data,\n    byTopic,\n    sections,\n    topTopics,\n    uniqueCitations,\n    topicSummary: Object.entries(topicCounts).map(([t, c]) => `${t}: ${c}`).join(', ')\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1100, -100],
+      "id": "aggregate-by-topic",
+      "name": "Aggregate by Topic"
+    },
+    {
+      "parameters": {
+        "jsCode": "// STUB: DigestComposer Agent\n// Simulates Claude API response for digest generation\n// Replace with real HTTP Request to Claude API when ready\n\nconst data = $input.first().json;\nconst insights = data.insights || [];\nconst sections = data.sections || [];\nconst topTopics = data.topTopics || [];\n\n// Topic display names\nconst topicNames = {\n  'bitcoin': 'Bitcoin & Payments',\n  'zk': 'Zero Knowledge',\n  'censorship-resistance': 'Censorship Resistance',\n  'comms': 'Secure Communications',\n  'payments': 'Payments & Finance',\n  'identity': 'Identity & Privacy',\n  'privacy': 'Privacy',\n  'surveillance': 'Surveillance',\n  'activism': 'Activism',\n  'sovereignty': 'Sovereignty'\n};\n\n// Generate executive TL;DR\nconst topInsights = insights.slice(0, 3);\nlet executiveTldr = `This week brought ${data.insightCount} signals across ${topTopics.length} key areas of freedom technology. `;\n\nif (topInsights.length > 0) {\n  executiveTldr += `Top stories include: ${topInsights.map(i => i.title).join('; ')}. `;\n}\n\nif (topTopics.length > 0) {\n  executiveTldr += `Most active topics: ${topTopics.slice(0, 3).map(t => topicNames[t] || t).join(', ')}.`;\n}\n\n// Generate sections markdown\nconst sectionMarkdowns = [];\n\nfor (const section of sections) {\n  const topicTitle = topicNames[section.topic] || section.topic;\n  let md = `### ${topicTitle}\\n\\n`;\n  \n  for (const insight of section.insights) {\n    const url = insight.published_url || '#';\n    md += `- [${insight.title}](${url}) \\u2014 ${insight.tldr}\\n`;\n  }\n  \n  sectionMarkdowns.push({\n    title: topicTitle,\n    content_markdown: md,\n    insight_ids: section.insights.map(i => i.id)\n  });\n}\n\n// Identify emerging patterns (stub - simple keyword analysis)\nconst emergingPatterns = [];\nif (data.insightCount >= 3) {\n  emergingPatterns.push({\n    pattern: `Increased activity in ${topTopics[0] || 'freedom tech'} space`,\n    supporting_signals: insights.slice(0, 2).map(i => i.id)\n  });\n}\nif (insights.some(i => (i.geo || []).length > 0)) {\n  const geos = [...new Set(insights.flatMap(i => i.geo || []))];\n  if (geos.length > 0) {\n    emergingPatterns.push({\n      pattern: `Geographic focus on ${geos.slice(0, 3).join(', ')}`,\n      supporting_signals: insights.filter(i => (i.geo || []).length > 0).slice(0, 2).map(i => i.id)\n    });\n  }\n}\n\n// Looking ahead suggestions\nconst lookingAhead = [\n  'Continue monitoring developments in ' + (topTopics[0] ? (topicNames[topTopics[0]] || topTopics[0]) : 'key freedom tech areas'),\n  'Watch for regulatory responses to emerging tools',\n  'Track adoption metrics for highlighted projects'\n];\n\n// Build full digest content\nconst digestOutput = {\n  executive_tldr: executiveTldr,\n  sections: sectionMarkdowns,\n  emerging_patterns: emergingPatterns,\n  looking_ahead: lookingAhead,\n  insight_count: data.insightCount,\n  top_topics: topTopics\n};\n\n// Format as Claude API response structure\nreturn [{\n  json: {\n    content: [{\n      type: 'text',\n      text: JSON.stringify(digestOutput)\n    }],\n    _periodData: {\n      periodStartDisplay: data.periodStartDisplay,\n      periodEndDisplay: data.periodEndDisplay,\n      digestId: data.digestId\n    },\n    _uniqueCitations: data.uniqueCitations\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1320, -100],
+      "id": "digest-composer-stub",
+      "name": "DigestComposer Stub (Claude)"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "x-api-key",
+              "value": "={{ $env.ANTHROPIC_API_KEY }}"
+            },
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 4096,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": \"You are the weekly digest composer for Libertas. Create a digest from these insights.\\n\\nPeriod: {{ $('Calculate Period').first().json.periodStartDisplay }} to {{ $('Calculate Period').first().json.periodEndDisplay }}\\n\\nInsights by topic:\\n{{ JSON.stringify($json.sections, null, 2) }}\\n\\nRespond with JSON:\\n{\\n  \\\"executive_tldr\\\": \\\"2-3 sentence summary of the week\\\",\\n  \\\"sections\\\": [{\\\"title\\\": \\\"Topic Name\\\", \\\"content_markdown\\\": \\\"markdown content\\\", \\\"insight_ids\\\": []}],\\n  \\\"emerging_patterns\\\": [{\\\"pattern\\\": \\\"description\\\", \\\"supporting_signals\\\": []}],\\n  \\\"looking_ahead\\\": [\\\"what to watch\\\"],\\n  \\\"insight_count\\\": number,\\n  \\\"top_topics\\\": [\\\"topic1\\\", \\\"topic2\\\"]\\n}\"\n  }]\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [1320, 100],
+      "id": "digest-composer-real",
+      "name": "DigestComposer with Claude (Disabled)"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse digest output from Claude API format\nconst input = $input.first().json;\nlet digest;\n\ntry {\n  const text = input.content[0].text;\n  digest = JSON.parse(text);\n} catch (e) {\n  // Fallback if parsing fails\n  digest = {\n    executive_tldr: 'Failed to generate digest summary.',\n    sections: [],\n    emerging_patterns: [],\n    looking_ahead: ['Review source insights manually'],\n    insight_count: 0,\n    top_topics: []\n  };\n}\n\nconst periodData = input._periodData;\nconst uniqueCitations = input._uniqueCitations || [];\n\n// Build full markdown content for digest\nlet contentMarkdown = `---\\nid: \"${periodData.digestId}\"\\ntype: \"weekly-digest\"\\npublished_at: \"${new Date().toISOString()}\"\\nperiod_start: \"${periodData.periodStartDisplay}\"\\nperiod_end: \"${periodData.periodEndDisplay}\"\\ninsight_count: ${digest.insight_count}\\n---\\n\\n`;\n\ncontentMarkdown += `# Weekly Freedom Tech Digest\\n\\n`;\ncontentMarkdown += `*${periodData.periodStartDisplay} to ${periodData.periodEndDisplay}*\\n\\n`;\n\ncontentMarkdown += `## TL;DR\\n\\n${digest.executive_tldr}\\n\\n`;\n\ncontentMarkdown += `## Top Signals\\n\\n`;\nfor (const section of digest.sections) {\n  contentMarkdown += section.content_markdown + '\\n';\n}\n\nif (digest.emerging_patterns && digest.emerging_patterns.length > 0) {\n  contentMarkdown += `## Emerging Patterns\\n\\n`;\n  for (const pattern of digest.emerging_patterns) {\n    contentMarkdown += `- **${pattern.pattern}**\\n`;\n  }\n  contentMarkdown += '\\n';\n}\n\nif (digest.looking_ahead && digest.looking_ahead.length > 0) {\n  contentMarkdown += `## Looking Ahead\\n\\n`;\n  for (const item of digest.looking_ahead) {\n    contentMarkdown += `- ${item}\\n`;\n  }\n  contentMarkdown += '\\n';\n}\n\nif (uniqueCitations && uniqueCitations.length > 0) {\n  contentMarkdown += `## Sources This Week\\n\\n`;\n  for (const citation of uniqueCitations.slice(0, 20)) {\n    contentMarkdown += `- ${citation}\\n`;\n  }\n}\n\n// Prepare data for database insert\nreturn [{\n  json: {\n    periodStart: periodData.periodStartDisplay,\n    periodEnd: periodData.periodEndDisplay,\n    insightCount: digest.insight_count,\n    executiveTldr: digest.executive_tldr,\n    contentMarkdown: contentMarkdown,\n    topTopics: digest.top_topics || [],\n    digestId: periodData.digestId\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1540, -100],
+      "id": "parse-digest",
+      "name": "Parse Digest Output"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Build INSERT query for digests table with proper escaping\nconst data = $input.first().json;\n\nfunction escapeStr(str) {\n  if (str === null || str === undefined) return 'NULL';\n  return \"'\" + String(str).replace(/'/g, \"''\") + \"'\";\n}\n\nfunction formatPgArray(arr) {\n  if (!arr || arr.length === 0) return \"'{}'\";\n  const escaped = arr.map(s => '\"' + String(s).replace(/\"/g, '\\\\\"').replace(/'/g, \"''\") + '\"');\n  return \"'{\" + escaped.join(',') + \"}'\";\n}\n\nconst publishedAt = new Date().toISOString();\nconst publishedUrl = `https://libertas.fgu.tech/digests/${data.digestId}`;\n\nconst query = `INSERT INTO digests (\n  period_start, period_end, insight_count, executive_tldr,\n  content_markdown, top_topics, published_url, published_at\n) VALUES (\n  ${escapeStr(data.periodStart)}::date,\n  ${escapeStr(data.periodEnd)}::date,\n  ${data.insightCount},\n  ${escapeStr(data.executiveTldr)},\n  ${escapeStr(data.contentMarkdown)},\n  ${formatPgArray(data.topTopics)},\n  ${escapeStr(publishedUrl)},\n  ${escapeStr(publishedAt)}::timestamptz\n) ON CONFLICT (period_start, period_end) \nDO UPDATE SET\n  insight_count = EXCLUDED.insight_count,\n  executive_tldr = EXCLUDED.executive_tldr,\n  content_markdown = EXCLUDED.content_markdown,\n  top_topics = EXCLUDED.top_topics,\n  published_url = EXCLUDED.published_url,\n  published_at = EXCLUDED.published_at,\n  updated_at = NOW()\nRETURNING id, period_start, period_end, published_url`;\n\nreturn [{ \n  json: { \n    query, \n    digestData: {\n      ...data,\n      publishedUrl,\n      publishedAt\n    }\n  } \n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1760, -100],
+      "id": "build-digest-query",
+      "name": "Build Digest Query"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "={{ $json.query }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [1980, -100],
+      "id": "insert-digest",
+      "name": "Insert/Update Digest",
+      "credentials": {
+        "postgres": {
+          "id": "CREDENTIAL_ID",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Merge insert result with digest data\nconst insertResult = $input.first().json;\nconst digestData = $('Build Digest Query').first().json.digestData;\n\nreturn [{\n  json: {\n    digestId: insertResult.id,\n    periodStart: insertResult.period_start || digestData.periodStart,\n    periodEnd: insertResult.period_end || digestData.periodEnd,\n    publishedUrl: insertResult.published_url || digestData.publishedUrl,\n    contentMarkdown: digestData.contentMarkdown,\n    insightCount: digestData.insightCount,\n    executiveTldr: digestData.executiveTldr\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2200, -100],
+      "id": "merge-insert-result",
+      "name": "Merge Insert Result"
+    },
+    {
+      "parameters": {
+        "jsCode": "// STUB: GitHub commit for digest markdown\n// Creates the markdown file content and simulates GitHub API response\n// Replace with real HTTP Request to GitHub API when ready\n\nconst data = $input.first().json;\n\n// Prepare file path and content for GitHub\nconst filePath = `site-content/posts/weekly/${data.periodEnd}.md`;\nconst fileContent = data.contentMarkdown;\nconst commitMessage = `Add weekly digest for ${data.periodStart} to ${data.periodEnd}`;\n\n// Simulate successful GitHub commit response\nreturn [{\n  json: {\n    success: true,\n    commit: {\n      sha: 'stub-sha-' + Date.now(),\n      message: commitMessage\n    },\n    content: {\n      path: filePath,\n      sha: 'stub-file-sha-' + Date.now()\n    },\n    _digestData: data,\n    _filePath: filePath,\n    _commitMessage: commitMessage,\n    _fileContentBase64: Buffer.from(fileContent).toString('base64')\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2420, -100],
+      "id": "github-commit-stub",
+      "name": "GitHub Commit Stub"
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "=https://api.github.com/repos/FGUTech/libertas/contents/{{ $('GitHub Commit Stub').first().json._filePath }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $env.GITHUB_TOKEN }}"
+            },
+            {
+              "name": "Accept",
+              "value": "application/vnd.github.v3+json"
+            },
+            {
+              "name": "X-GitHub-Api-Version",
+              "value": "2022-11-28"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"message\": \"{{ $('GitHub Commit Stub').first().json._commitMessage }}\",\n  \"content\": \"{{ $('GitHub Commit Stub').first().json._fileContentBase64 }}\",\n  \"branch\": \"main\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [2420, 100],
+      "id": "github-commit-real",
+      "name": "GitHub Commit (Disabled)"
+    },
+    {
+      "parameters": {
+        "jsCode": "// STUB: Send email via Resend\n// Generates email content and simulates Resend API response\n// Replace with real HTTP Request to Resend API when ready\n\nconst prevData = $input.first().json;\nconst digestData = prevData._digestData;\n\n// Generate email HTML content\nconst emailHtml = `\n<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <style>\n    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; }\n    h1 { color: #1a1a1a; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; }\n    h2 { color: #444; margin-top: 30px; }\n    .tldr { background: #f8f9fa; padding: 15px; border-left: 4px solid #007acc; margin: 20px 0; }\n    .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; font-size: 12px; color: #666; }\n    a { color: #007acc; }\n  </style>\n</head>\n<body>\n  <h1>Weekly Freedom Tech Digest</h1>\n  <p><em>${digestData.periodStart} to ${digestData.periodEnd}</em></p>\n  \n  <div class=\"tldr\">\n    <strong>TL;DR:</strong> ${digestData.executiveTldr}\n  </div>\n  \n  <p><strong>${digestData.insightCount}</strong> signals published this week.</p>\n  \n  <p><a href=\"${digestData.publishedUrl}\">Read the full digest on the web &rarr;</a></p>\n  \n  <div class=\"footer\">\n    <p>You're receiving this because you subscribed to Libertas Freedom Tech updates.</p>\n    <p><a href=\"https://libertas.fgu.tech\">libertas.fgu.tech</a> | <a href=\"{{{unsubscribe}}}\">Unsubscribe</a></p>\n  </div>\n</body>\n</html>\n`;\n\nconst emailSubject = `Freedom Tech Digest: ${digestData.periodStart} - ${digestData.periodEnd}`;\n\n// Simulate Resend API response\nreturn [{\n  json: {\n    success: true,\n    id: 'stub-email-' + Date.now(),\n    from: 'Libertas <digest@libertas.fgu.tech>',\n    to: ['subscribers@libertas.fgu.tech'],\n    subject: emailSubject,\n    _emailHtml: emailHtml,\n    _digestData: digestData,\n    _resendPayload: {\n      from: 'Libertas <digest@libertas.fgu.tech>',\n      to: ['subscribers@libertas.fgu.tech'],\n      subject: emailSubject,\n      html: emailHtml\n    }\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2640, -100],
+      "id": "resend-email-stub",
+      "name": "Resend Email Stub"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.resend.com/emails",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $env.RESEND_API_KEY }}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($('Resend Email Stub').first().json._resendPayload) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [2640, 100],
+      "id": "resend-email-real",
+      "name": "Resend Email (Disabled)"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Final summary of workflow execution\nconst emailResult = $input.first().json;\nconst digestData = emailResult._digestData;\n\nconst summary = {\n  executedAt: new Date().toISOString(),\n  success: true,\n  digest: {\n    periodStart: digestData.periodStart,\n    periodEnd: digestData.periodEnd,\n    insightCount: digestData.insightCount,\n    publishedUrl: digestData.publishedUrl\n  },\n  actions: {\n    databaseInsert: 'completed',\n    githubCommit: 'stub (enable for production)',\n    emailSent: 'stub (enable for production)'\n  }\n};\n\nconsole.log('Workflow B Summary:', JSON.stringify(summary, null, 2));\n\nreturn [{ json: summary }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2860, -100],
+      "id": "final-summary",
+      "name": "Final Summary"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Handle case when no insights were published in the period\nconst data = $input.first().json;\n\nconsole.log(`No insights published for period ${data.periodStartDisplay} to ${data.periodEndDisplay}. Skipping digest generation.`);\n\nreturn [{\n  json: {\n    executedAt: new Date().toISOString(),\n    success: true,\n    skipped: true,\n    reason: 'No published insights in period',\n    period: {\n      start: data.periodStartDisplay,\n      end: data.periodEndDisplay\n    }\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1100, 100],
+      "id": "skip-no-insights",
+      "name": "Skip - No Insights"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Weekly Sunday 9am UTC": {
+      "main": [
+        [
+          {
+            "node": "Calculate Period",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculate Period": {
+      "main": [
+        [
+          {
+            "node": "Query Published Insights",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Query Published Insights": {
+      "main": [
+        [
+          {
+            "node": "Merge Insights with Period",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge Insights with Period": {
+      "main": [
+        [
+          {
+            "node": "Has Insights?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Has Insights?": {
+      "main": [
+        [
+          {
+            "node": "Aggregate by Topic",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Skip - No Insights",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate by Topic": {
+      "main": [
+        [
+          {
+            "node": "DigestComposer Stub (Claude)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DigestComposer Stub (Claude)": {
+      "main": [
+        [
+          {
+            "node": "Parse Digest Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Digest Output": {
+      "main": [
+        [
+          {
+            "node": "Build Digest Query",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Digest Query": {
+      "main": [
+        [
+          {
+            "node": "Insert/Update Digest",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Insert/Update Digest": {
+      "main": [
+        [
+          {
+            "node": "Merge Insert Result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge Insert Result": {
+      "main": [
+        [
+          {
+            "node": "GitHub Commit Stub",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GitHub Commit Stub": {
+      "main": [
+        [
+          {
+            "node": "Resend Email Stub",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Resend Email Stub": {
+      "main": [
+        [
+          {
+            "node": "Final Summary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "",
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "instanceId": ""
+  },
+  "id": "",
+  "tags": []
+}
