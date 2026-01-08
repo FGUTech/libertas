@@ -1,0 +1,523 @@
+{
+  "name": "Libertas - Project Idea Generator - Workflow D",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 10 * * *"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [0, 0],
+      "id": "cron-trigger",
+      "name": "Daily 10am UTC"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Calculate date range for idea generation\n// Look back 7 days from now\nconst now = new Date();\n\nconst periodEnd = new Date(now);\nperiodEnd.setUTCHours(23, 59, 59, 999);\n\nconst periodStart = new Date(now);\nperiodStart.setUTCDate(periodStart.getUTCDate() - 7);\nperiodStart.setUTCHours(0, 0, 0, 0);\n\n// Format dates for SQL query\nconst formatDateSQL = (d) => d.toISOString();\n\nreturn [{\n  json: {\n    periodStartSQL: formatDateSQL(periodStart),\n    periodEndSQL: formatDateSQL(periodEnd),\n    generatedAt: now.toISOString(),\n    minRelevanceScore: 80\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [220, 0],
+      "id": "calculate-period",
+      "name": "Calculate Period"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT \n  i.id, i.title, i.tldr, i.summary_bullets, i.deep_dive_markdown,\n  i.topics, i.geo, i.freedom_relevance_score, i.credibility_score,\n  i.citations, i.status, i.published_url, i.published_at, i.created_at\nFROM insights i\nWHERE i.status = 'published'\n  AND i.freedom_relevance_score >= $1\n  AND i.created_at >= $2::timestamptz\n  AND i.created_at <= $3::timestamptz\n  AND NOT EXISTS (\n    SELECT 1 FROM project_ideas p\n    WHERE i.id = ANY(p.derived_from_insight_ids)\n  )\nORDER BY i.freedom_relevance_score DESC, i.created_at DESC",
+        "options": {
+          "queryReplacement": "={{ $json.minRelevanceScore }}, {{ $json.periodStartSQL }}, {{ $json.periodEndSQL }}"
+        }
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [440, 0],
+      "id": "query-insights",
+      "name": "Query High-Signal Insights",
+      "alwaysOutputData": true,
+      "credentials": {
+        "postgres": {
+          "id": "CREDENTIAL_ID",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Merge insights with period data and check if we have any\nconst insights = $input.all().map(item => item.json);\nconst periodData = $('Calculate Period').first().json;\n\n// Filter out empty results (when query returns no rows)\nconst validInsights = insights.filter(i => i.id);\n\nif (validInsights.length === 0) {\n  return [{\n    json: {\n      ...periodData,\n      insights: [],\n      insightCount: 0,\n      hasInsights: false\n    }\n  }];\n}\n\nreturn [{\n  json: {\n    ...periodData,\n    insights: validInsights,\n    insightCount: validInsights.length,\n    hasInsights: true\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [660, 0],
+      "id": "merge-insights",
+      "name": "Merge Insights with Period"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "has-insights",
+              "leftValue": "={{ $json.hasInsights }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [880, 0],
+      "id": "check-has-insights",
+      "name": "Has Insights?"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Cluster insights by primary topic/theme\n// Groups related insights together for idea generation\nconst data = $input.first().json;\nconst insights = data.insights || [];\n\n// Group insights by primary topic (first topic in array)\nconst clusters = {};\n\nfor (const insight of insights) {\n  const topics = insight.topics || [];\n  const primaryTopic = topics[0] || 'general';\n  \n  if (!clusters[primaryTopic]) {\n    clusters[primaryTopic] = {\n      topic: primaryTopic,\n      insights: [],\n      allTopics: new Set(),\n      totalScore: 0\n    };\n  }\n  \n  clusters[primaryTopic].insights.push(insight);\n  clusters[primaryTopic].totalScore += insight.freedom_relevance_score;\n  \n  // Track all topics across cluster\n  for (const t of topics) {\n    clusters[primaryTopic].allTopics.add(t);\n  }\n}\n\n// Convert to array and sort by average score\nconst clusterArray = Object.values(clusters).map(c => ({\n  topic: c.topic,\n  insights: c.insights,\n  insightCount: c.insights.length,\n  avgScore: Math.round(c.totalScore / c.insights.length),\n  relatedTopics: Array.from(c.allTopics)\n})).sort((a, b) => b.avgScore - a.avgScore);\n\n// Only process clusters with at least 1 insight\n// Return as separate items for loop processing\nconst items = clusterArray.map(cluster => ({\n  json: {\n    cluster,\n    _periodData: {\n      generatedAt: data.generatedAt,\n      periodStartSQL: data.periodStartSQL,\n      periodEndSQL: data.periodEndSQL\n    }\n  }\n}));\n\nreturn items.length > 0 ? items : [{ json: { noValidClusters: true } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1100, -100],
+      "id": "cluster-by-topic",
+      "name": "Cluster by Topic"
+    },
+    {
+      "parameters": {
+        "jsCode": "// STUB: IdeaSynthesizer Agent\n// Simulates Claude API response for project idea generation\n// Replace with real HTTP Request to Claude API when ready\n\nconst input = $input.first().json;\nconst cluster = input.cluster;\nconst periodData = input._periodData;\n\n// Skip if no valid cluster\nif (input.noValidClusters) {\n  return [{\n    json: {\n      content: [{ type: 'text', text: JSON.stringify({ skip: true, reason: 'No valid clusters' }) }],\n      _periodData: periodData,\n      _cluster: null,\n      _skip: true\n    }\n  }];\n}\n\nconst insights = cluster.insights || [];\nconst topic = cluster.topic;\nconst relatedTopics = cluster.relatedTopics || [];\n\n// Collect all insight IDs for this cluster\nconst derivedFromInsightIds = insights.map(i => i.id);\n\n// Collect all citations from cluster insights\nconst allCitations = [];\nfor (const insight of insights) {\n  if (insight.citations && Array.isArray(insight.citations)) {\n    allCitations.push(...insight.citations);\n  }\n}\nconst uniqueCitations = [...new Set(allCitations)];\n\n// Generate stub project idea based on cluster content\nconst topicDisplayNames = {\n  'bitcoin': 'Bitcoin & Payments',\n  'zk': 'Zero Knowledge Technology',\n  'censorship-resistance': 'Censorship Resistance',\n  'comms': 'Secure Communications',\n  'payments': 'Payment Systems',\n  'identity': 'Identity & Privacy',\n  'privacy': 'Privacy Tools',\n  'surveillance': 'Anti-Surveillance',\n  'activism': 'Activism Tools',\n  'sovereignty': 'Digital Sovereignty'\n};\n\nconst topicName = topicDisplayNames[topic] || topic;\nconst insightTitles = insights.slice(0, 3).map(i => i.title).join('; ');\nconst insightTldrs = insights.slice(0, 3).map(i => i.tldr).join(' ');\n\n// Generate scores based on cluster quality\nconst avgScore = cluster.avgScore || 80;\nconst feasibilityScore = Math.min(100, Math.max(40, 60 + Math.floor(Math.random() * 30)));\nconst impactScore = Math.min(100, Math.max(40, avgScore - 10 + Math.floor(Math.random() * 20)));\n\nconst ideaOutput = {\n  problem_statement: `Based on ${cluster.insightCount} signals in ${topicName}, there is a clear need for improved tooling. Key observations: ${insightTldrs.substring(0, 400)}...`,\n  threat_model: `Adversaries include state-level actors with network monitoring capabilities, platform operators with content moderation powers, and sophisticated attackers targeting ${topicName.toLowerCase()} infrastructure. Users require protection against traffic analysis, metadata correlation, and targeted deanonymization attacks.`,\n  affected_groups: [\n    'Activists in regions with internet censorship',\n    'Journalists protecting sources',\n    'Human rights organizations',\n    `Users of ${topicName.toLowerCase()} tools under surveillance`\n  ],\n  proposed_solution: `Develop a ${topicName.toLowerCase()} enhancement that addresses the gaps identified in recent signals. The solution should focus on: (1) improving usability for non-technical users, (2) adding offline/low-bandwidth support, (3) implementing defense-in-depth against the threat model described. Key insights driving this: ${insightTitles}.`,\n  mvp_scope: `Phase 1: Build a proof-of-concept that demonstrates the core ${topic} functionality with basic UI. Include: CLI interface, configuration file support, basic documentation, and integration tests. Target: usable by technical early adopters within first release.`,\n  misuse_risks: `This tool could potentially be misused for: (1) evading legitimate law enforcement in non-authoritarian contexts, (2) coordinating harmful activities under cover of privacy, (3) spreading misinformation without accountability. Mitigations: implement transparency reporting, add voluntary identity binding options, and include clear usage guidelines.`,\n  feasibility_score: feasibilityScore,\n  impact_score: impactScore,\n  technical_dependencies: [\n    'Cryptographic libraries (libsodium or equivalent)',\n    'Networking stack with proxy support',\n    'Cross-platform runtime (Rust or Go preferred)'\n  ],\n  suggested_stack: [\n    'Rust for core components',\n    'TypeScript for any web interfaces',\n    'SQLite for local storage',\n    'libp2p for P2P networking'\n  ],\n  prior_art: [\n    'Tor Project',\n    'Signal Protocol',\n    'Briar Messenger',\n    'Lokinet'\n  ],\n  open_questions: [\n    'What is the minimum viable UX for non-technical users?',\n    'How to handle key management without trusted third parties?',\n    'What jurisdictions should be prioritized for initial deployment?',\n    'How to fund ongoing development sustainably?'\n  ]\n};\n\n// Format as Claude API response structure\nreturn [{\n  json: {\n    content: [{\n      type: 'text',\n      text: JSON.stringify(ideaOutput)\n    }],\n    _periodData: periodData,\n    _cluster: cluster,\n    _derivedFromInsightIds: derivedFromInsightIds,\n    _citations: uniqueCitations,\n    _topic: topic\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1320, -100],
+      "id": "idea-synthesizer-stub",
+      "name": "IdeaSynthesizer Stub (Claude)"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "x-api-key",
+              "value": "={{ $env.ANTHROPIC_API_KEY }}"
+            },
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 4096,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": \"You are the IdeaSynthesizer for Libertas. Generate a project idea from these clustered insights.\\n\\nTopic: {{ $json.cluster.topic }}\\nInsight Count: {{ $json.cluster.insightCount }}\\nAverage Freedom Relevance Score: {{ $json.cluster.avgScore }}\\n\\nInsights:\\n{{ JSON.stringify($json.cluster.insights.map(i => ({ title: i.title, tldr: i.tldr, topics: i.topics, score: i.freedom_relevance_score })), null, 2) }}\\n\\nRespond with JSON matching this schema:\\n{\\n  \\\"problem_statement\\\": \\\"50-500 chars\\\",\\n  \\\"threat_model\\\": \\\"50-500 chars\\\",\\n  \\\"affected_groups\\\": [\\\"group1\\\", \\\"group2\\\"],\\n  \\\"proposed_solution\\\": \\\"100-1000 chars\\\",\\n  \\\"mvp_scope\\\": \\\"50-500 chars\\\",\\n  \\\"misuse_risks\\\": \\\"50-500 chars\\\",\\n  \\\"feasibility_score\\\": 0-100,\\n  \\\"impact_score\\\": 0-100,\\n  \\\"technical_dependencies\\\": [],\\n  \\\"suggested_stack\\\": [],\\n  \\\"prior_art\\\": [],\\n  \\\"open_questions\\\": []\\n}\"\n  }]\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [1320, 100],
+      "id": "idea-synthesizer-real",
+      "name": "IdeaSynthesizer with Claude (Disabled)"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse and validate LLM output for project idea\nconst input = $input.first().json;\n\n// Check for skip signal\nif (input._skip) {\n  return [{\n    json: {\n      skip: true,\n      reason: 'No valid clusters to process'\n    }\n  }];\n}\n\nlet idea;\ntry {\n  const text = input.content[0].text;\n  idea = JSON.parse(text);\n} catch (e) {\n  return [{\n    json: {\n      skip: true,\n      reason: 'Failed to parse LLM output: ' + e.message,\n      validationErrors: ['JSON parse error']\n    }\n  }];\n}\n\n// Skip if idea parsing returned skip signal\nif (idea.skip) {\n  return [{\n    json: {\n      skip: true,\n      reason: idea.reason || 'Skipped by LLM'\n    }\n  }];\n}\n\n// Validate required fields\nconst requiredFields = [\n  'problem_statement',\n  'threat_model',\n  'affected_groups',\n  'proposed_solution',\n  'mvp_scope',\n  'misuse_risks',\n  'feasibility_score',\n  'impact_score'\n];\n\nconst errors = [];\nfor (const field of requiredFields) {\n  if (!idea[field]) {\n    errors.push(`Missing required field: ${field}`);\n  }\n}\n\n// Validate score ranges\nif (typeof idea.feasibility_score !== 'number' || idea.feasibility_score < 0 || idea.feasibility_score > 100) {\n  errors.push('feasibility_score must be 0-100');\n}\nif (typeof idea.impact_score !== 'number' || idea.impact_score < 0 || idea.impact_score > 100) {\n  errors.push('impact_score must be 0-100');\n}\n\n// Validate affected_groups is array\nif (!Array.isArray(idea.affected_groups) || idea.affected_groups.length === 0) {\n  errors.push('affected_groups must be non-empty array');\n}\n\nif (errors.length > 0) {\n  return [{\n    json: {\n      skip: true,\n      reason: 'Validation failed',\n      validationErrors: errors,\n      rawIdea: idea\n    }\n  }];\n}\n\n// Normalize optional array fields\nidea.technical_dependencies = idea.technical_dependencies || [];\nidea.suggested_stack = idea.suggested_stack || [];\nidea.prior_art = idea.prior_art || [];\nidea.open_questions = idea.open_questions || [];\n\nreturn [{\n  json: {\n    idea,\n    derivedFromInsightIds: input._derivedFromInsightIds,\n    citations: input._citations,\n    topic: input._topic,\n    cluster: input._cluster,\n    meetsThreshold: idea.feasibility_score >= 50 && idea.impact_score >= 50,\n    skip: false\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1540, -100],
+      "id": "validate-idea",
+      "name": "Validate Idea Output"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "not-skip",
+              "leftValue": "={{ $json.skip }}",
+              "rightValue": false,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            },
+            {
+              "id": "meets-threshold",
+              "leftValue": "={{ $json.meetsThreshold }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [1760, -100],
+      "id": "check-threshold",
+      "name": "Meets Threshold?"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Build INSERT query for project_ideas table with proper escaping\nconst data = $input.first().json;\nconst idea = data.idea;\n\nfunction escapeStr(str) {\n  if (str === null || str === undefined) return 'NULL';\n  return \"'\" + String(str).replace(/'/g, \"''\") + \"'\";\n}\n\nfunction formatPgArray(arr) {\n  if (!arr || arr.length === 0) return \"'{}'\";\n  const escaped = arr.map(s => '\"' + String(s).replace(/\"/g, '\\\\\"').replace(/'/g, \"''\") + '\"');\n  return \"'{\" + escaped.join(',') + \"}'\";\n}\n\nfunction formatUuidArray(arr) {\n  if (!arr || arr.length === 0) return \"'{}'\";\n  return \"'{\" + arr.join(',') + \"}'\";\n}\n\nconst query = `INSERT INTO project_ideas (\n  derived_from_insight_ids,\n  problem_statement,\n  threat_model,\n  affected_groups,\n  proposed_solution,\n  mvp_scope,\n  misuse_risks,\n  feasibility_score,\n  impact_score,\n  status\n) VALUES (\n  ${formatUuidArray(data.derivedFromInsightIds)},\n  ${escapeStr(idea.problem_statement)},\n  ${escapeStr(idea.threat_model)},\n  ${formatPgArray(idea.affected_groups)},\n  ${escapeStr(idea.proposed_solution)},\n  ${escapeStr(idea.mvp_scope)},\n  ${escapeStr(idea.misuse_risks)},\n  ${idea.feasibility_score},\n  ${idea.impact_score},\n  'new'\n) RETURNING id, feasibility_score, impact_score, created_at`;\n\nreturn [{\n  json: {\n    query,\n    _ideaData: {\n      idea,\n      topic: data.topic,\n      derivedFromInsightIds: data.derivedFromInsightIds,\n      citations: data.citations,\n      cluster: data.cluster\n    }\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1980, -200],
+      "id": "build-idea-query",
+      "name": "Build Idea Query"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "={{ $json.query }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [2200, -200],
+      "id": "insert-idea",
+      "name": "Insert Project Idea",
+      "credentials": {
+        "postgres": {
+          "id": "CREDENTIAL_ID",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Merge insert result with idea data\nconst insertResult = $input.first().json;\nconst ideaData = $('Build Idea Query').first().json._ideaData;\n\nreturn [{\n  json: {\n    ideaId: insertResult.id,\n    feasibilityScore: insertResult.feasibility_score,\n    impactScore: insertResult.impact_score,\n    createdAt: insertResult.created_at,\n    idea: ideaData.idea,\n    topic: ideaData.topic,\n    derivedFromInsightIds: ideaData.derivedFromInsightIds,\n    citations: ideaData.citations,\n    insightCount: ideaData.cluster ? ideaData.cluster.insightCount : 0\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2420, -200],
+      "id": "merge-insert-result",
+      "name": "Merge Insert Result"
+    },
+    {
+      "parameters": {
+        "jsCode": "// STUB: Create GitHub issue for the project idea\n// Simulates GitHub API response\n// Replace with real HTTP Request to GitHub API when ready\n\nconst data = $input.first().json;\nconst idea = data.idea;\n\n// Build issue title\nconst issueTitle = `[Idea] ${idea.problem_statement.substring(0, 80)}...`;\n\n// Build issue body markdown\nconst affectedGroupsList = idea.affected_groups.map(g => `- ${g}`).join('\\n');\nconst dependenciesList = (idea.technical_dependencies || []).map(d => `- ${d}`).join('\\n') || '_None specified_';\nconst stackList = (idea.suggested_stack || []).map(s => `- ${s}`).join('\\n') || '_None specified_';\nconst priorArtList = (idea.prior_art || []).map(p => `- ${p}`).join('\\n') || '_None specified_';\nconst questionsList = (idea.open_questions || []).map(q => `- ${q}`).join('\\n') || '_None specified_';\n\n// Build derived insights links (placeholder URLs)\nconst insightLinks = data.derivedFromInsightIds.map(id => \n  `- https://libertas.fgu.tech/signals/${id}`\n).join('\\n');\n\nconst issueBody = `## Problem Statement\n\n${idea.problem_statement}\n\n## Threat Model\n\n${idea.threat_model}\n\n## Affected Groups\n\n${affectedGroupsList}\n\n## Proposed Solution\n\n${idea.proposed_solution}\n\n## MVP Scope\n\n${idea.mvp_scope}\n\n## Misuse Risks\n\n${idea.misuse_risks}\n\n## Scores\n\n- **Feasibility:** ${idea.feasibility_score}/100\n- **Impact:** ${idea.impact_score}/100\n\n## Technical Dependencies\n\n${dependenciesList}\n\n## Suggested Stack\n\n${stackList}\n\n## Prior Art\n\n${priorArtList}\n\n## Open Questions\n\n${questionsList}\n\n## Derived From\n\n${insightLinks}\n\n---\n*Auto-generated by Libertas Workflow D*\n*Idea ID: ${data.ideaId}*`;\n\n// Simulate GitHub issue creation response\nconst stubIssueNumber = 100 + Math.floor(Math.random() * 900);\nconst stubIssueUrl = `https://github.com/FGUTech/libertas/issues/${stubIssueNumber}`;\n\nreturn [{\n  json: {\n    success: true,\n    issueNumber: stubIssueNumber,\n    issueUrl: stubIssueUrl,\n    issueTitle,\n    _ideaId: data.ideaId,\n    _issueBody: issueBody,\n    _ideaData: data\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2640, -200],
+      "id": "github-issue-stub",
+      "name": "GitHub Issue Stub"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.github.com/repos/FGUTech/libertas/issues",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $env.GITHUB_TOKEN }}"
+            },
+            {
+              "name": "Accept",
+              "value": "application/vnd.github.v3+json"
+            },
+            {
+              "name": "X-GitHub-Api-Version",
+              "value": "2022-11-28"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"title\": \"{{ $('GitHub Issue Stub').first().json.issueTitle }}\",\n  \"body\": {{ JSON.stringify($('GitHub Issue Stub').first().json._issueBody) }},\n  \"labels\": [\"project-idea\", \"auto-generated\"]\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [2640, 0],
+      "id": "github-issue-real",
+      "name": "GitHub Issue (Disabled)"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Build UPDATE query to set github_issue_url on the project idea\nconst data = $input.first().json;\n\nfunction escapeStr(str) {\n  if (str === null || str === undefined) return 'NULL';\n  return \"'\" + String(str).replace(/'/g, \"''\") + \"'\";\n}\n\nconst query = `UPDATE project_ideas \nSET github_issue_url = ${escapeStr(data.issueUrl)},\n    updated_at = NOW()\nWHERE id = ${escapeStr(data._ideaId)}::uuid\nRETURNING id, github_issue_url`;\n\nreturn [{\n  json: {\n    query,\n    _issueData: data\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2860, -200],
+      "id": "build-update-query",
+      "name": "Build Update Query"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "={{ $json.query }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [3080, -200],
+      "id": "update-idea-url",
+      "name": "Update Idea with Issue URL",
+      "credentials": {
+        "postgres": {
+          "id": "CREDENTIAL_ID",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Final summary for successfully processed idea\nconst updateResult = $input.first().json;\nconst issueData = $('Build Update Query').first().json._issueData;\nconst ideaData = issueData._ideaData;\n\nreturn [{\n  json: {\n    success: true,\n    ideaId: updateResult.id,\n    githubIssueUrl: updateResult.github_issue_url,\n    topic: ideaData.topic,\n    feasibilityScore: ideaData.feasibilityScore,\n    impactScore: ideaData.impactScore,\n    derivedFromCount: ideaData.derivedFromInsightIds.length,\n    processedAt: new Date().toISOString()\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [3300, -200],
+      "id": "success-summary",
+      "name": "Success Summary"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Log ideas that were skipped due to low scores\nconst data = $input.first().json;\n\nconst reason = data.skip \n  ? (data.reason || 'Skipped') \n  : 'Scores below threshold (feasibility >= 50 AND impact >= 50 required)';\n\nconst scores = data.idea ? {\n  feasibility: data.idea.feasibility_score,\n  impact: data.idea.impact_score\n} : null;\n\nconsole.log(`Skipped idea generation: ${reason}`);\nif (data.validationErrors) {\n  console.log('Validation errors:', data.validationErrors);\n}\n\nreturn [{\n  json: {\n    success: true,\n    skipped: true,\n    reason,\n    scores,\n    validationErrors: data.validationErrors || null,\n    topic: data.topic || null,\n    processedAt: new Date().toISOString()\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1980, 0],
+      "id": "skip-low-score",
+      "name": "Skip - Low Score"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Handle case when no high-signal insights were found\nconst data = $input.first().json;\n\nconsole.log('No high-signal insights found for idea generation. Criteria: freedom_relevance_score >= 80, status = published, last 7 days, not already used.');\n\nreturn [{\n  json: {\n    executedAt: new Date().toISOString(),\n    success: true,\n    skipped: true,\n    reason: 'No eligible high-signal insights found',\n    criteria: {\n      minRelevanceScore: data.minRelevanceScore || 80,\n      periodStartSQL: data.periodStartSQL,\n      periodEndSQL: data.periodEndSQL\n    }\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1100, 100],
+      "id": "skip-no-insights",
+      "name": "Skip - No Insights"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Daily 10am UTC": {
+      "main": [
+        [
+          {
+            "node": "Calculate Period",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculate Period": {
+      "main": [
+        [
+          {
+            "node": "Query High-Signal Insights",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Query High-Signal Insights": {
+      "main": [
+        [
+          {
+            "node": "Merge Insights with Period",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge Insights with Period": {
+      "main": [
+        [
+          {
+            "node": "Has Insights?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Has Insights?": {
+      "main": [
+        [
+          {
+            "node": "Cluster by Topic",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Skip - No Insights",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cluster by Topic": {
+      "main": [
+        [
+          {
+            "node": "IdeaSynthesizer Stub (Claude)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IdeaSynthesizer Stub (Claude)": {
+      "main": [
+        [
+          {
+            "node": "Validate Idea Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate Idea Output": {
+      "main": [
+        [
+          {
+            "node": "Meets Threshold?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Meets Threshold?": {
+      "main": [
+        [
+          {
+            "node": "Build Idea Query",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Skip - Low Score",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Idea Query": {
+      "main": [
+        [
+          {
+            "node": "Insert Project Idea",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Insert Project Idea": {
+      "main": [
+        [
+          {
+            "node": "Merge Insert Result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge Insert Result": {
+      "main": [
+        [
+          {
+            "node": "GitHub Issue Stub",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GitHub Issue Stub": {
+      "main": [
+        [
+          {
+            "node": "Build Update Query",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Update Query": {
+      "main": [
+        [
+          {
+            "node": "Update Idea with Issue URL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Idea with Issue URL": {
+      "main": [
+        [
+          {
+            "node": "Success Summary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "",
+  "meta": {
+    "templateCredsSetupCompleted": false,
+    "instanceId": ""
+  },
+  "id": "",
+  "tags": []
+}
