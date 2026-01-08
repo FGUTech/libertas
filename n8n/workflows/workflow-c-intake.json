@@ -1,0 +1,334 @@
+{
+  "name": "Libertas - Intake - Workflow C",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "intake",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        -192
+      ],
+      "id": "5a24f684-7105-4b33-ab24-d15b16d32e71",
+      "name": "Webhook",
+      "webhookId": "0a2430f5-cb3e-42ff-b05f-5d502240cc04"
+    },
+    {
+      "parameters": {
+        "jsCode": "const body = $input.first().json.body;\n\nif (!body?.message || body.message.trim().length < 10) {\n  throw new Error('Message required (min 10 chars)');\n}\n\nreturn [{\n  json: {\n    message: body.message.trim(),\n    contact: body.contact || null,\n    category: body.category || 'other',\n    safetyMode: body.safetyMode || false\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        208,
+        -192
+      ],
+      "id": "f2395950-791e-40aa-89f6-00c41f28866e",
+      "name": "Validate Input"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT INTO submissions (message, contact, category, channel)\n  VALUES ($1, $2, $3, 'web')\n  RETURNING id, message",
+        "options": {
+          "queryReplacement": "={{ $json.message }}, {{ $json.contact }}, {{ $json.category }}"
+        }
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        416,
+        -192
+      ],
+      "id": "f4b0a9a8-7bd0-4306-bd9f-181e85015176",
+      "name": "Insert Submission",
+      "credentials": {
+        "postgres": {
+          "id": "qDXwbsZ3b2DpBCrd",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "x-api-key",
+              "value": "={{ $env.ANTHROPIC_API_KEY }}"
+            },
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 512,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": \"Classify this Freedom Tech submission. Respond with ONLY valid JSON.\\n\\nSubmission: {{ $('Insert Submission').first().json.message }}\\n\\nJSON format:\\n{\\\"tags\\\": [\\\"2-4 relevant tags\\\"], \\\"risk_level\\\": \\\"low|medium|high\\\", \\\"summary\\\": \\\"brief title for GitHub issue\\\"}\"\n  }]\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        -16,
+        32
+      ],
+      "id": "8d4a91f3-2fb2-4be9-9d5f-0bc2ebc6a3be",
+      "name": "Classify with Claude"
+    },
+    {
+      "parameters": {
+        "jsCode": "const message = $('Insert Submission').first().json.message;\n\n// Simple keyword-based classification for testing\nconst tags = [];\nif (message.toLowerCase().includes('messaging') || message.toLowerCase().includes('comms')) tags.push('comms');\nif (message.toLowerCase().includes('offline')) tags.push('censorship-resistance');\nif (message.toLowerCase().includes('secure') || message.toLowerCase().includes('privacy')) tags.push('privacy');\nif (tags.length === 0) tags.push('general');\n\nconst result = {\n  tags,\n  risk_level: 'low',\n  summary: message.substring(0, 50) + '...'\n};\n\n// Match Claude API response format\nreturn [{\n  json: {\n    content: [{\n      type: 'text',\n      text: JSON.stringify(result)\n    }]\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        208,
+        32
+      ],
+      "id": "b0d80e32-5e56-4553-8037-9011a2c680f1",
+      "name": "Classify Stub"
+    },
+    {
+      "parameters": {
+        "jsCode": "const content = $input.first().json.content[0].text;\nconst parsed = JSON.parse(content);\nconst submissionId = $('Insert Submission').first().json.id;\nconst message = $('Insert Submission').first().json.message;\n\nreturn [{ json: { ...parsed, submissionId, message } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        416,
+        32
+      ],
+      "id": "2c3ce832-b8bc-4645-a849-4d340ec89943",
+      "name": "Parse LLM Response"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "UPDATE submissions\n  SET tags = ARRAY(SELECT json_array_elements_text($1::json)),\n      risk_level = $2,\n      status = 'triaged'\n  WHERE id = $3::uuid",
+        "options": {
+          "queryReplacement": "={{ JSON.stringify($json.tags) }}, {{ $json.risk_level }}, {{ $json.submissionId }}"
+        }
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        624,
+        32
+      ],
+      "id": "584cdc58-21d3-4526-accc-14cfdc4c4f3d",
+      "name": "Update Submission",
+      "credentials": {
+        "postgres": {
+          "id": "qDXwbsZ3b2DpBCrd",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.github.com/repos/FGUTech/libertas/issues",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $env.GITHUB_TOKEN }}"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n    \"title\": \"[Intake] {{ $json.summary }}\",\n    \"body\": \"## Submission\\n\\n{{ $json.message }}\\n\\n---\\n\\n**ID:** `{{ $json.submissionId }}`\\n**Risk Level:** {{ $json.risk_level }}\\n**Tags:** {{ $json.tags.join(', ') }}\\n\\n---\\n*Auto-generated by Libertas*\",\n    \"labels\": [\"intake\"]\n  }",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        -16,
+        304
+      ],
+      "id": "2fb51810-cc40-4e23-876f-0c497c77d25e",
+      "name": "Create GitHub Issue"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "UPDATE submissions\n  SET github_issue_url = $1\n  WHERE id = $2::uuid",
+        "options": {
+          "queryReplacement": "={{ $json.html_url }}, {{ $('Parse LLM Response').first().json.submissionId }}"
+        }
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        416,
+        304
+      ],
+      "id": "41b4f10a-baf9-4fbe-a482-5737b1d56e01",
+      "name": "Save Issue URL",
+      "credentials": {
+        "postgres": {
+          "id": "qDXwbsZ3b2DpBCrd",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const submissionId = $('Parse LLM Response').first().json.submissionId;\nconst summary = $('Parse LLM Response').first().json.summary;\n\nreturn [{\n  json: {\n    html_url: `https://github.com/FGUTech/libertas/issues/MOCK-${submissionId.slice(0, 8)}`,\n    number: Math.floor(Math.random() * 1000),\n    title: `[Intake] ${summary}`,\n    state: 'open'\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        208,
+        304
+      ],
+      "id": "5325ad90-f9e6-4d20-98d7-2a5a66df3daf",
+      "name": "Github Stub"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"id\": \"{{ $('Parse LLM Response').first().json.submissionId }}\",\n  \"status\": \"received\",\n  \"message\": \"Thank you for your submission.\"\n}",
+        "options": {
+          "responseCode": 201
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        624,
+        304
+      ],
+      "id": "144e0a40-14fc-4208-9e48-d8ee2b5a343d",
+      "name": "Respond to Webhook"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Validate Input",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate Input": {
+      "main": [
+        [
+          {
+            "node": "Insert Submission",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Insert Submission": {
+      "main": [
+        [
+          {
+            "node": "Classify Stub",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Classify Stub": {
+      "main": [
+        [
+          {
+            "node": "Parse LLM Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse LLM Response": {
+      "main": [
+        [
+          {
+            "node": "Update Submission",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Submission": {
+      "main": [
+        [
+          {
+            "node": "Github Stub",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create GitHub Issue": {
+      "main": [
+        []
+      ]
+    },
+    "Github Stub": {
+      "main": [
+        [
+          {
+            "node": "Save Issue URL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Issue URL": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": false
+  },
+  "versionId": "5452bd0b-cf72-466a-80e8-66df9ab9f279",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "3c52e1b61141902bda826728d3cf15d2a867de8395f358b7459edf58ff4157ae"
+  },
+  "id": "Dtx0MhjeNh67vD7SpsXmt",
+  "tags": []
+}
