@@ -370,10 +370,11 @@ Every published item must include:
 
 | Component | Service | Purpose |
 |-----------|---------|---------|
-| Orchestrator | **Railway (n8n)** | Workflow automation, scheduling, webhooks |
-| Database | **Supabase (Postgres + pgvector)** | Entity storage, semantic deduplication |
+| Orchestrator | **Managed n8n Hosting** | Workflow automation, scheduling, webhooks |
+| Database | **GCP Cloud SQL (Postgres + pgvector)** | Entity storage, semantic deduplication |
 | Object Storage | **GCP Cloud Storage** | Raw documents, published feeds |
 | Static Site | **Vercel (Next.js)** | FGU.tech website, intake form |
+| Auth | **Firebase Auth** | User authentication, session management |
 | Email | **Resend** | Privacy-friendly newsletter delivery |
 | LLM Runtime | **Claude API (Anthropic)** | Classification, summarization, idea generation |
 | Code/Publishing | **GitHub** | Issues, PRs, content repo, deploy triggers |
@@ -386,7 +387,7 @@ Every published item must include:
                               └────────┬────────┘
                                        │
 ┌─────────────┐  webhook    ┌──────────▼──────────────────────┐   issues    ┌─────────────┐
-│   Vercel    │ ──────────► │         Railway (n8n)           │ ──────────► │   GitHub    │
+│   Vercel    │ ──────────► │      Managed n8n Hosting        │ ──────────► │   GitHub    │
 │  (Next.js)  │             │  Workflows A, B, C, D, E        │             │             │
 │             │ ◄────────── └──────────┬──────────────────────┘             └─────────────┘
 └──────┬──────┘                        │
@@ -394,7 +395,7 @@ Every published item must include:
        │ fetch                         │ read/write
        ▼                               ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                        Supabase                             │
+│                      GCP Cloud SQL                          │
 │                   (Postgres + pgvector)                     │
 │  source_items │ insights │ project_ideas │ submissions      │
 └─────────────────────────────────────────────────────────────┘

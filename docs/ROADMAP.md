@@ -44,13 +44,13 @@
 ### Deliverables
 
 - [x] **P0.1** Repository structure created per CLAUDE.md specification
-- [x] **P0.2** Database schema deployed (Supabase Postgres + pgvector)
+- [x] **P0.2** Database schema deployed (GCP Cloud SQL Postgres + pgvector)
   - `source_items` table
   - `insights` table
   - `project_ideas` table
   - `submissions` table
   - pgvector extension enabled
-- [ ] **P0.3** n8n instance deployed on Railway
+- [x] **P0.3** n8n instance deployed on managed n8n hosting
 - [ ] **P0.4** GCP Cloud Storage bucket configured (`libertas-content`)
 - [x] **P0.5** Environment variables documented and secrets configured
 - [x] **P0.6** JSON schemas created in `/schemas/`
@@ -64,17 +64,17 @@
 
 ### Exit Criteria
 
-- Railway n8n can connect to Supabase Postgres
-- Railway n8n can connect to GCP Cloud Storage
-- Railway n8n can make Claude API calls
+- n8n can connect to GCP Cloud SQL Postgres
+- n8n can connect to GCP Cloud Storage
+- n8n can make Claude API calls
 - Vercel deploys on push to main
 - All config files load without errors
 
 ### Dependencies
 
-- Railway account created
-- Supabase project created
-- GCP project with Cloud Storage enabled
+- Managed n8n hosting account configured
+- GCP project with Cloud SQL and Cloud Storage enabled
+- Firebase project created for auth
 - Vercel account linked to GitHub repo
 - Resend account created
 - Anthropic API key available
@@ -214,7 +214,7 @@
 ### Deliverables
 
 - [ ] **P3.1** Semantic deduplication
-  - pgvector integration via Supabase
+  - pgvector integration via GCP Cloud SQL
   - Embedding generation for content (Claude API)
   - Similarity threshold checking
   - Near-duplicate detection
@@ -375,11 +375,12 @@ Decisions that should be made before proceeding:
 ### Before Phase 1 ✅ RESOLVED
 
 - [x] Which LLM provider? → **Claude API (Anthropic)** — best structured output support
-- [x] Self-hosted n8n or cloud? → **Railway** — managed hosting, ~$5-20/mo
+- [x] Self-hosted n8n or cloud? → **Managed n8n hosting** — dedicated hosting, reduced operational overhead
 - [x] Which hosting provider for infrastructure?
-  - **Railway** for n8n orchestration
-  - **Supabase** for Postgres + pgvector
+  - **Managed n8n hosting** for workflow orchestration
+  - **GCP Cloud SQL** for Postgres + pgvector
   - **GCP Cloud Storage** for raw content and feeds
+  - **Firebase Auth** for user authentication
   - **Vercel** for Next.js static site
   - **Resend** for email delivery
 
@@ -391,7 +392,7 @@ Decisions that should be made before proceeding:
 ### Before Phase 3 ✅ RESOLVED
 
 - [x] Include email newsletter in scope? → **Yes, via Resend**
-- [x] Vector store choice? → **pgvector via Supabase** (no separate service needed)
+- [x] Vector store choice? → **pgvector via GCP Cloud SQL** (no separate service needed)
 
 ### Before Phase 4
 

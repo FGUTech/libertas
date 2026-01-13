@@ -72,7 +72,8 @@ Located in `src/types/index.ts`:
 ## Integration Points
 
 This website connects to:
-- **Supabase** — database for posts, reactions, comments (env: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`)
+- **GCP Cloud SQL** — database for posts, reactions, comments (env: `DATABASE_URL`)
+- **Firebase Auth** — user authentication (env: `NEXT_PUBLIC_FIREBASE_*`)
 - **n8n webhook** — intake form submissions (env: `N8N_WEBHOOK_URL`)
 - **GCS** — feed storage (optional, for static feed serving)
 

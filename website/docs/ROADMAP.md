@@ -71,22 +71,26 @@ Core features for initial launch. Focus on content display and intake.
 
 Features that enhance the experience but aren't critical for launch.
 
-### 2.1 User Authentication (Supabase)
+### 2.1 User Authentication (Firebase)
 
 **Description**: Allow users to create accounts and log in.
 
 **Requirements**:
+- [ ] Install Firebase SDK (`firebase`)
+- [ ] Create Firebase auth config (`lib/firebase.ts`)
+- [ ] Create AuthContext provider with lazy-loaded SDK
 - [ ] Email/password registration
-- [ ] Magic link authentication
+- [ ] Magic link (email link) authentication
 - [ ] Password reset flow
 - [ ] Session persistence
-- [ ] Protected routes
-- [ ] Auth context provider
+- [ ] Protected routes helper
+- [ ] Auth state hook (`useAuth`)
 
 **Implementation Notes**:
-- Use `@supabase/auth-helpers-nextjs`
-- Store minimal user data
-- Consider optional OAuth providers (GitHub)
+- Lazy-load Firebase SDK to avoid loading for non-auth users
+- Use `firebase/auth` with `signInWithEmailAndPassword`, `createUserWithEmailAndPassword`
+- Store minimal user profile in Cloud SQL (uid, display_name, created_at)
+- Consider optional OAuth providers (Google, GitHub)
 
 ---
 
@@ -95,10 +99,13 @@ Features that enhance the experience but aren't critical for launch.
 **Description**: Basic user profile pages and settings.
 
 **Requirements**:
+- [ ] Create `user_profiles` migration for Cloud SQL
+- [ ] Create API route `GET /api/profile`
+- [ ] Create API route `PATCH /api/profile`
 - [ ] Profile page showing user info
 - [ ] Edit display name
 - [ ] Edit bio
-- [ ] Edit profile picture (Handful of avatars to choose from)
+- [ ] Edit profile picture (handful of avatars to choose from)
 - [ ] Link Starknet wallet (preparation for 2.5)
 - [ ] View intake form submissions
 - [ ] View liked posts
@@ -106,9 +113,10 @@ Features that enhance the experience but aren't critical for launch.
 - [ ] Delete account option
 
 **Implementation Notes**:
-- Profile data in `user_profiles` table
+- Profile data in Cloud SQL `user_profiles` table (uid, display_name, bio, avatar_id, wallet_address, created_at)
+- Verify Firebase auth token in API routes
 - Keep profile page simple initially
-- For starknet implmentation use starknetjs and starknet-react
+- For Starknet implementation use starknetjs and starknet-react
 
 ---
 
@@ -117,6 +125,8 @@ Features that enhance the experience but aren't critical for launch.
 **Description**: Allow authenticated users to comment on posts.
 
 **Requirements**:
+- [ ] Create API route `POST /api/comments`
+- [ ] Create API route `GET /api/comments/[postId]`
 - [ ] Comment form on post pages
 - [ ] Threaded replies (1 level deep)
 - [ ] Edit/delete own comments
@@ -125,9 +135,10 @@ Features that enhance the experience but aren't critical for launch.
 - [ ] Report inappropriate comments
 
 **Implementation Notes**:
-- Store in Supabase `comments` table
-- Real-time updates with Supabase subscriptions
+- Store in Cloud SQL `comments` table
+- Verify Firebase auth token in API routes
 - Sanitize markdown output
+- Consider polling or SSE for near-real-time updates
 
 ---
 
@@ -136,6 +147,8 @@ Features that enhance the experience but aren't critical for launch.
 **Description**: Allow authenticated users to react to posts.
 
 **Requirements**:
+- [ ] Create API route `POST /api/reactions`
+- [ ] Create API route `GET /api/reactions/[postId]`
 - [ ] Like/dislike buttons on posts
 - [ ] One reaction per user per post
 - [ ] Toggle reaction on second click
@@ -143,7 +156,8 @@ Features that enhance the experience but aren't critical for launch.
 - [ ] Optimistic UI updates
 
 **Implementation Notes**:
-- Store in Supabase `reactions` table
+- Store in Cloud SQL `reactions` table
+- Verify Firebase auth token in API routes
 - Consider anonymous reactions option (no account needed)
 - Prepare schema for Starknet integration
 
@@ -196,7 +210,7 @@ Features that enhance the experience but aren't critical for launch.
 - [ ] Filter by date range, tags
 
 **Implementation Notes**:
-- Use Supabase full-text search or client-side
+- Use Cloud SQL full-text search or client-side filtering
 - Consider Algolia/Meilisearch for better UX
 - Start with simple title/tag matching
 
@@ -246,7 +260,7 @@ Features that enhance the experience but aren't critical for launch.
 
 **Implementation Notes**:
 - Integrate with Resend via n8n
-- Store subscribers in Supabase
+- Store subscribers in Cloud SQL
 - Provide easy unsubscribe
 
 ---

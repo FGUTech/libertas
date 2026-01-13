@@ -12,8 +12,8 @@ Frontend for the Libertas research and publishing platform. A privacy-preserving
 | Animation | Motion (Framer Motion) |
 | Icons | Tabler Icons |
 | Notifications | Sonner (toasts) |
-| Database | Supabase (Postgres) |
-| Auth | Supabase Auth + Starknet (wallet connect) |
+| Database | GCP Cloud SQL (Postgres) |
+| Auth | Firebase Auth + Starknet (wallet connect) |
 | Deployment | Vercel |
 
 ## Getting Started
@@ -76,7 +76,7 @@ website/
 - Dark mode design system
 
 ### Planned
-- User accounts (Supabase Auth)
+- User accounts (Firebase Auth)
 - Starknet wallet authentication
 - Like/dislike/comment on posts
 - Social sharing features
@@ -102,14 +102,16 @@ cp .env.example .env.local
 
 | Variable | Type | Description |
 |----------|------|-------------|
-| `NEXT_PUBLIC_SUPABASE_URL` | Public | Supabase project URL |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Public | Supabase anonymous key (safe for browser) |
+| `DATABASE_URL` | Server | Cloud SQL Postgres connection string |
+| `NEXT_PUBLIC_FIREBASE_API_KEY` | Public | Firebase web app API key |
+| `NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN` | Public | Firebase auth domain |
+| `NEXT_PUBLIC_FIREBASE_PROJECT_ID` | Public | Firebase/GCP project ID |
+| `NEXT_PUBLIC_FIREBASE_APP_ID` | Public | Firebase app ID |
 
 ### Optional Variables
 
 | Variable | Type | Default | Description |
 |----------|------|---------|-------------|
-| `SUPABASE_SERVICE_ROLE_KEY` | Server | - | Service role key for server-side operations |
 | `N8N_WEBHOOK_URL` | Server | - | n8n webhook URL for intake submissions |
 | `N8N_WEBHOOK_SECRET` | Server | - | Shared secret for webhook auth |
 | `CONTENT_BASE_URL` | Server | - | Base URL for site-content (GCS or local) |
@@ -125,17 +127,17 @@ Environment variables are validated at build time using Zod. Invalid configurati
 import { env, publicEnv, isDevelopment } from '@/lib/config';
 
 // Access validated env vars
-const supabaseUrl = env.NEXT_PUBLIC_SUPABASE_URL;
+const firebaseApiKey = env.NEXT_PUBLIC_FIREBASE_API_KEY;
 
 // Server-only access (throws on client)
 import { getServerEnv } from '@/lib/config';
-const serviceKey = getServerEnv('SUPABASE_SERVICE_ROLE_KEY');
+const databaseUrl = getServerEnv('DATABASE_URL');
 ```
 
 ### Security Notes
 
 - Variables prefixed with `NEXT_PUBLIC_` are exposed to the browser
-- `SUPABASE_SERVICE_ROLE_KEY` must NEVER be exposed to clients
+- `DATABASE_URL` must NEVER be exposed to clients
 - Use `getServerEnv()` for server-only variables to prevent accidental client exposure
 
 ## Scripts

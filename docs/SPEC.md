@@ -14,7 +14,7 @@
                                        │ LLM calls
                                        ▼
 ┌─────────────┐  webhook    ┌─────────────────────────────────┐  issues/PRs   ┌─────────────┐
-│   Vercel    │ ──────────► │         Railway (n8n)           │ ─────────────►│   GitHub    │
+│   Vercel    │ ──────────► │      Managed n8n Hosting        │ ─────────────►│   GitHub    │
 │  (Next.js)  │             │                                 │               │             │
 │             │ ◄────────── │  • Workflow A: Ingest           │ ◄─────────────│  • Issues   │
 │  • Site     │  query      │  • Workflow B: Digest           │  deploy hook  │  • PRs      │
@@ -27,7 +27,7 @@
        │ insights                      │
        ▼                               ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                        Supabase                             │
+│                      GCP Cloud SQL                          │
 │                   (Postgres + pgvector)                     │
 │                                                             │
 │  source_items │ insights │ project_ideas │ submissions      │
@@ -53,22 +53,23 @@
 
 | Workflow | Services Touched | Data Flow |
 |----------|------------------|-----------|
-| **A: Daily Ingest** | n8n → Claude API → Supabase → GCS → GitHub | Fetch sources → LLM classify → Store entities → Save raw to GCS → Commit markdown |
-| **B: Weekly Digest** | n8n → Supabase → Claude API → GCS → Resend → GitHub | Query week's insights → LLM summarize → Update feeds in GCS → Send email → Commit digest |
-| **C: Intake** | Vercel → n8n → Supabase → Claude API → GitHub | Form submit → Webhook → Store submission → LLM classify risk → Create issue |
-| **D: Ideas** | n8n → Supabase → Claude API → GitHub | Query high-score insights → LLM generate idea → Store → Create issue |
+| **A: Daily Ingest** | n8n → Claude API → Cloud SQL → GCS → GitHub | Fetch sources → LLM classify → Store entities → Save raw to GCS → Commit markdown |
+| **B: Weekly Digest** | n8n → Cloud SQL → Claude API → GCS → Resend → GitHub | Query week's insights → LLM summarize → Update feeds in GCS → Send email → Commit digest |
+| **C: Intake** | Vercel → n8n → Cloud SQL → Claude API → GitHub | Form submit → Webhook → Store submission → LLM classify risk → Create issue |
+| **D: Ideas** | n8n → Cloud SQL → Claude API → GitHub | Query high-score insights → LLM generate idea → Store → Create issue |
 | **E: Vibe Code** | n8n → GitHub → Claude API | Trigger on build_candidate → Create branch → LLM scaffold → Open PR |
 
 ### Technology Stack
 
 | Component | Technology | Integrates With | Rationale |
 |-----------|------------|-----------------|-----------|
-| Orchestrator | Railway (n8n) | Supabase, GCS, Claude API, GitHub, Resend, Vercel | Managed hosting, simple deployment, persistent storage |
-| Database | Supabase (Postgres + pgvector) | n8n (read/write), Vercel (read), GitHub Actions | Managed Postgres with built-in vector support, great API |
+| Orchestrator | Managed n8n Hosting | Cloud SQL, GCS, Claude API, GitHub, Resend, Vercel | Dedicated n8n hosting, reduced operational overhead |
+| Database | GCP Cloud SQL (Postgres + pgvector) | n8n (read/write), Vercel (read), GitHub Actions | Managed Postgres with built-in vector support, unified GCP |
 | Object Storage | GCP Cloud Storage | n8n (write raw), Vercel (read feeds) | Existing GCP setup, reliable, cost-effective |
-| Vector Store | pgvector (via Supabase) | n8n (semantic dedup queries) | No separate service needed, included with Supabase |
+| Vector Store | pgvector (via Cloud SQL) | n8n (semantic dedup queries) | No separate service needed, included with Cloud SQL |
 | LLM Runtime | Claude API (Anthropic) | n8n (HTTP request nodes) | Best structured output support, coding capability |
-| Static Site | Vercel (Next.js) | Supabase, GCS, n8n webhooks, GitHub | Best-in-class DX for Next.js, preview deployments |
+| Static Site | Vercel (Next.js) | Cloud SQL, GCS, n8n webhooks, GitHub | Best-in-class DX for Next.js, preview deployments |
+| Auth | Firebase Auth | Vercel (user sessions), Cloud SQL (user data) | Unified GCP auth, multiple providers, easy integration |
 | Email | Resend | n8n (trigger sends) | Privacy-friendly, modern API, no tracking pixels |
 | Code/Publishing | GitHub | n8n (issues/PRs), Vercel (deploy) | Issues, PRs, Actions, content repo |
 

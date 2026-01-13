@@ -6,7 +6,7 @@
  *
  * Usage:
  *   import { env } from '@/lib/config';
- *   console.log(env.NEXT_PUBLIC_SUPABASE_URL);
+ *   console.log(env.NEXT_PUBLIC_FIREBASE_PROJECT_ID);
  *
  * IMPORTANT:
  * - Server-only variables must NOT be accessed in client components
@@ -24,17 +24,27 @@ import { z } from 'zod';
  * All variables must be prefixed with NEXT_PUBLIC_.
  */
 const publicEnvSchema = z.object({
-  // Supabase
-  NEXT_PUBLIC_SUPABASE_URL: z
-    .string()
-    .url()
-    .optional()
-    .describe('Supabase project URL'),
-  NEXT_PUBLIC_SUPABASE_ANON_KEY: z
+  // Firebase Auth
+  NEXT_PUBLIC_FIREBASE_API_KEY: z
     .string()
     .min(1)
     .optional()
-    .describe('Supabase anonymous key'),
+    .describe('Firebase web app API key'),
+  NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN: z
+    .string()
+    .min(1)
+    .optional()
+    .describe('Firebase auth domain'),
+  NEXT_PUBLIC_FIREBASE_PROJECT_ID: z
+    .string()
+    .min(1)
+    .optional()
+    .describe('Firebase/GCP project ID'),
+  NEXT_PUBLIC_FIREBASE_APP_ID: z
+    .string()
+    .min(1)
+    .optional()
+    .describe('Firebase app ID'),
 
   // Starknet
   NEXT_PUBLIC_STARKNET_NETWORK: z
@@ -56,12 +66,12 @@ const publicEnvSchema = z.object({
  * These are validated only on the server side.
  */
 const serverEnvSchema = z.object({
-  // Supabase (server-side)
-  SUPABASE_SERVICE_ROLE_KEY: z
+  // Database (Cloud SQL)
+  DATABASE_URL: z
     .string()
     .min(1)
     .optional()
-    .describe('Supabase service role key (server-only)'),
+    .describe('Cloud SQL Postgres connection string (server-only)'),
 
   // n8n Integration
   N8N_WEBHOOK_URL: z
@@ -119,8 +129,10 @@ function validateEnv(): Env {
   // On client, only validate public env vars
   if (!isServer) {
     const result = publicEnvSchema.safeParse({
-      NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
-      NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+      NEXT_PUBLIC_FIREBASE_API_KEY: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+      NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+      NEXT_PUBLIC_FIREBASE_PROJECT_ID: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+      NEXT_PUBLIC_FIREBASE_APP_ID: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
       NEXT_PUBLIC_STARKNET_NETWORK: process.env.NEXT_PUBLIC_STARKNET_NETWORK,
       NEXT_PUBLIC_REACTIONS_CONTRACT_ADDRESS:
         process.env.NEXT_PUBLIC_REACTIONS_CONTRACT_ADDRESS,
@@ -141,15 +153,17 @@ function validateEnv(): Env {
   // On server, validate all env vars
   const result = envSchema.safeParse({
     // Public
-    NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
-    NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+    NEXT_PUBLIC_FIREBASE_API_KEY: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+    NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+    NEXT_PUBLIC_FIREBASE_PROJECT_ID: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+    NEXT_PUBLIC_FIREBASE_APP_ID: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
     NEXT_PUBLIC_STARKNET_NETWORK: process.env.NEXT_PUBLIC_STARKNET_NETWORK,
     NEXT_PUBLIC_REACTIONS_CONTRACT_ADDRESS:
       process.env.NEXT_PUBLIC_REACTIONS_CONTRACT_ADDRESS,
     NEXT_PUBLIC_COMMENTS_CONTRACT_ADDRESS:
       process.env.NEXT_PUBLIC_COMMENTS_CONTRACT_ADDRESS,
     // Server
-    SUPABASE_SERVICE_ROLE_KEY: process.env.SUPABASE_SERVICE_ROLE_KEY,
+    DATABASE_URL: process.env.DATABASE_URL,
     N8N_WEBHOOK_URL: process.env.N8N_WEBHOOK_URL,
     N8N_WEBHOOK_SECRET: process.env.N8N_WEBHOOK_SECRET,
     CONTENT_BASE_URL: process.env.CONTENT_BASE_URL,
@@ -172,7 +186,7 @@ function validateEnv(): Env {
  *
  * @example
  * import { env } from '@/lib/config';
- * const url = env.NEXT_PUBLIC_SUPABASE_URL;
+ * const projectId = env.NEXT_PUBLIC_FIREBASE_PROJECT_ID;
  */
 export const env = validateEnv();
 
@@ -181,8 +195,10 @@ export const env = validateEnv();
  * Use this when you need to pass env to client code.
  */
 export const publicEnv: PublicEnv = {
-  NEXT_PUBLIC_SUPABASE_URL: env.NEXT_PUBLIC_SUPABASE_URL,
-  NEXT_PUBLIC_SUPABASE_ANON_KEY: env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+  NEXT_PUBLIC_FIREBASE_API_KEY: env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN: env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  NEXT_PUBLIC_FIREBASE_PROJECT_ID: env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  NEXT_PUBLIC_FIREBASE_APP_ID: env.NEXT_PUBLIC_FIREBASE_APP_ID,
   NEXT_PUBLIC_STARKNET_NETWORK: env.NEXT_PUBLIC_STARKNET_NETWORK,
   NEXT_PUBLIC_REACTIONS_CONTRACT_ADDRESS:
     env.NEXT_PUBLIC_REACTIONS_CONTRACT_ADDRESS,

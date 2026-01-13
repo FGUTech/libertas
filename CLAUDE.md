@@ -19,11 +19,11 @@
 | `AGENTS.md` | LLM agent behaviors, prompts, structured outputs. |
 | `ROADMAP.md` | Milestones, phases, and delivery checkpoints. |
 | `PRD.md` | Full product requirements (source of truth for scope). |
-| `INFRASTRUCTURE.md` | Deployment guide for Railway, Supabase, GCP, Vercel. |
+| `INFRA_DEPLOY.md` | Deployment guide for GCP Cloud SQL, managed n8n hosting, Vercel. |
 
 **Always read `SPEC.md` before implementing data models or workflows.**
 **Always read `AGENTS.md` before writing LLM prompts or agent logic.**
-**Always read `INFRASTRUCTURE.md` before deploying or configuring services.**
+**Always read `INFRA_DEPLOY.md` before deploying or configuring services.**
 
 ---
 
@@ -224,20 +224,20 @@ See `SPEC.md` for detailed workflow specifications.
 
 ## Environment Variables
 
-### Railway (n8n)
+### Managed n8n Hosting
 
 ```bash
-# Database (Supabase)
-DATABASE_URL=                          # Supabase Postgres connection string
+# Database (GCP Cloud SQL)
+DATABASE_URL=                          # Cloud SQL Postgres connection string
 DB_TYPE=postgresdb
-DB_POSTGRESDB_DATABASE=postgres
-DB_POSTGRESDB_USER=postgres
-DB_POSTGRESDB_HOST=db.xxx.supabase.co
+DB_POSTGRESDB_DATABASE=libertas
+DB_POSTGRESDB_USER=n8n-user
+DB_POSTGRESDB_HOST=/cloudsql/PROJECT:REGION:libertas-db  # Unix socket for Cloud SQL
 DB_POSTGRESDB_PORT=5432
 
 # n8n Config
 N8N_ENCRYPTION_KEY=                    # Generate with: openssl rand -base64 42
-N8N_WEBHOOK_URL=                       # Railway app URL
+N8N_WEBHOOK_URL=                       # n8n instance URL
 
 # External Services
 ANTHROPIC_API_KEY=                     # Claude API key
@@ -249,13 +249,18 @@ GOOGLE_APPLICATION_CREDENTIALS=        # GCS service account JSON (base64 or pat
 ### Vercel (Next.js)
 
 ```bash
-# Supabase
-NEXT_PUBLIC_SUPABASE_URL=              # Supabase project URL
-NEXT_PUBLIC_SUPABASE_ANON_KEY=         # Supabase anon key
-SUPABASE_SERVICE_ROLE_KEY=             # For server-side operations
+# Database (GCP Cloud SQL)
+DATABASE_URL=                          # Cloud SQL Postgres connection string
+# Format: postgresql://user:password@/database?host=/cloudsql/PROJECT:REGION:INSTANCE
+
+# Firebase Auth
+NEXT_PUBLIC_FIREBASE_API_KEY=          # Firebase web app API key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=      # Firebase auth domain
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=       # Firebase/GCP project ID
+NEXT_PUBLIC_FIREBASE_APP_ID=           # Firebase app ID
 
 # n8n Integration
-N8N_WEBHOOK_URL=                       # Railway n8n URL for intake form
+N8N_WEBHOOK_URL=                       # n8n instance URL for intake form
 
 # GCS (for feed serving, optional)
 GCS_BUCKET_NAME=libertas-content
@@ -272,12 +277,13 @@ When making architectural decisions, document them here:
 | 2026-01-05 | n8n as orchestrator | Low-code, visual debugging, built-in retry logic |
 | 2026-01-05 | Postgres for persistence | Reliable, supports JSON, good n8n integration |
 | 2026-01-05 | Git-based publishing | Version control, audit trail, works offline |
-| 2026-01-06 | Railway for n8n hosting | Simple deployment, managed service, persistent storage, ~$5-20/mo |
-| 2026-01-06 | Supabase for database | Managed Postgres + pgvector (no separate vector DB), great API, free tier |
 | 2026-01-06 | GCP Cloud Storage | Existing GCP setup, reliable for raw content and feed storage |
 | 2026-01-06 | Vercel for static site | Best-in-class Next.js DX, preview deployments, free tier |
 | 2026-01-06 | Resend for email | Privacy-friendly, no tracking pixels, modern API |
 | 2026-01-06 | Claude API (Anthropic) | Best structured output support, strong coding capability |
+| 2026-01-13 | GCP Cloud SQL for database | Managed Postgres + pgvector, unified GCP infrastructure, reliable |
+| 2026-01-13 | Managed n8n hosting | Dedicated n8n hosting, reduced operational overhead |
+| 2026-01-13 | Firebase Auth | Unified GCP auth, easy integration, multiple providers |
 
 ---
 

@@ -2,7 +2,7 @@ import type { Post } from "@/types";
 
 /**
  * Mock posts data for development
- * Will be replaced with real data fetching from Supabase
+ * Will be replaced with real data fetching from Cloud SQL
  */
 export const mockPosts: Post[] = [
   {

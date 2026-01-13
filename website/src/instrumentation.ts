@@ -15,7 +15,8 @@ export async function register() {
   if (isDevelopment()) {
     console.log('✅ Environment configuration validated');
     console.log(`   NODE_ENV: ${env.NODE_ENV}`);
-    console.log(`   Supabase: ${env.NEXT_PUBLIC_SUPABASE_URL ? 'configured' : 'not configured'}`);
+    console.log(`   Firebase: ${env.NEXT_PUBLIC_FIREBASE_PROJECT_ID ? 'configured' : 'not configured'}`);
+    console.log(`   Database: ${env.DATABASE_URL ? 'configured' : 'not configured'}`);
     console.log(`   n8n: ${env.N8N_WEBHOOK_URL ? 'configured' : 'not configured'}`);
     console.log(`   Starknet: ${env.NEXT_PUBLIC_STARKNET_NETWORK}`);
   }

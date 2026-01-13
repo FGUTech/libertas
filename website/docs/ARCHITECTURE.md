@@ -16,7 +16,8 @@ System design, modules, and data flows for the Libertas website.
 | Animation | Motion (Framer) | Micro-interactions, transitions |
 | Icons | Tabler Icons | 5000+ stroke icons |
 | Notifications | Sonner | Toast notifications |
-| Database | Supabase | Postgres + Auth + Realtime |
+| Database | GCP Cloud SQL | Postgres + pgvector |
+| Auth | Firebase Auth | User authentication |
 | Blockchain | Starknet | On-chain reactions (future) |
 
 ---
@@ -29,8 +30,8 @@ System design, modules, and data flows for the Libertas website.
 ├─────────────────────────────────────────────────────────────────────────────┤
 │                                                                             │
 │  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐    ┌─────────────┐  │
-│  │   Sources   │───▶│  n8n Core   │───▶│  Supabase   │◀──▶│   Website   │  │
-│  │  (RSS/Web)  │    │  (Railway)  │    │  (Postgres) │    │  (Vercel)   │  │
+│  │   Sources   │───▶│  n8n Core   │───▶│  Cloud SQL  │◀──▶│   Website   │  │
+│  │  (RSS/Web)  │    │  (Managed)  │    │  (Postgres) │    │  (Vercel)   │  │
 │  └─────────────┘    └──────┬──────┘    └──────┬──────┘    └──────┬──────┘  │
 │                            │                  │                  │          │
 │                            ▼                  │                  │          │
@@ -70,7 +71,7 @@ System design, modules, and data flows for the Libertas website.
 │  ┌─────────────────────────────────▼───────────────────────────────────┐   │
 │  │                           LOGIC LAYER                                │   │
 │  │  ┌───────────┐  ┌───────────┐  ┌───────────┐  ┌───────────┐        │   │
-│  │  │ supabase/ │  │ content/  │  │   auth/   │  │ starknet/ │        │   │
+│  │  │    db/    │  │ content/  │  │   auth/   │  │ starknet/ │        │   │
 │  │  │  client   │  │  fetcher  │  │  session  │  │  wallet   │        │   │
 │  │  └───────────┘  └───────────┘  └───────────┘  └───────────┘        │   │
 │  └─────────────────────────────────────────────────────────────────────┘   │
@@ -90,7 +91,7 @@ System design, modules, and data flows for the Libertas website.
 | `/posts` | Posts feed with filtering and pagination |
 | `/posts/[slug]` | Individual post view with comments |
 | `/intake` | Public submission form |
-| `/login` | Supabase auth login |
+| `/login` | Firebase auth login |
 | `/profile` | User profile and preferences |
 
 ### `/src/components/` — React Components
@@ -110,10 +111,11 @@ System design, modules, and data flows for the Libertas website.
 
 | Module | Purpose |
 |--------|---------|
-| `supabase/client.ts` | Supabase client initialization |
-| `supabase/auth.ts` | Authentication helpers |
-| `supabase/db.ts` | Database query functions |
-| `content/fetcher.ts` | Fetch posts from GCS/Supabase |
+| `db/client.ts` | Cloud SQL client initialization |
+| `db/queries.ts` | Database query functions |
+| `auth/firebase.ts` | Firebase Auth initialization |
+| `auth/session.ts` | Session management helpers |
+| `content/fetcher.ts` | Fetch posts from GCS/Cloud SQL |
 | `content/parser.ts` | Parse markdown with frontmatter |
 | `starknet/wallet.ts` | Starknet wallet connection |
 | `starknet/contract.ts` | Contract interaction helpers |
@@ -144,7 +146,7 @@ site-content/      →  GCS Bucket  →  Website (fetch at build/runtime)
 ### Intake Flow
 
 ```
-User Form  →  Website API  →  n8n Webhook  →  Supabase (submissions table)
+User Form  →  Website API  →  n8n Webhook  →  Cloud SQL (submissions table)
               /api/intake                         ↓
                                             n8n Processing
 ```
@@ -157,13 +159,13 @@ User Form  →  Website API  →  n8n Webhook  →  Supabase (submissions table)
 ├─────────────────────────────────────────────────────────────────┤
 │                                                                 │
 │  ┌─────────────┐                    ┌─────────────┐            │
-│  │   Supabase  │                    │  Starknet   │            │
+│  │  Firebase   │                    │  Starknet   │            │
 │  │    Auth     │                    │   Wallet    │            │
 │  └──────┬──────┘                    └──────┬──────┘            │
 │         │                                  │                    │
 │         │  Email/Password                  │  Wallet Signature  │
 │         │  Magic Link                      │  (SIWS)            │
-│         │  OAuth (optional)                │                    │
+│         │  OAuth (Google, GitHub)          │                    │
 │         │                                  │                    │
 │         └──────────────┬───────────────────┘                   │
 │                        │                                        │
@@ -183,19 +185,20 @@ User Action  →  Frontend  →  Starknet Contract  →  Event Emitted
    (like)          ↓              ↓                     ↓
               Update UI     On-chain State       Indexer Updates
                                                        ↓
-                                                  Supabase Sync
+                                                  Cloud SQL Sync
 ```
 
 ---
 
-## Database Schema (Supabase)
+## Database Schema (Cloud SQL)
 
-### `users` (Supabase Auth + Extension)
+### `users` (Firebase Auth + Cloud SQL Extension)
 
 ```sql
--- Extended user profile
+-- Extended user profile (linked to Firebase Auth UID)
 CREATE TABLE user_profiles (
-  id UUID PRIMARY KEY REFERENCES auth.users(id),
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  firebase_uid TEXT UNIQUE NOT NULL,  -- Firebase Auth UID
   display_name TEXT,
   starknet_address TEXT UNIQUE,
   created_at TIMESTAMPTZ DEFAULT now(),
@@ -207,8 +210,8 @@ CREATE TABLE user_profiles (
 
 ```sql
 CREATE TABLE reactions (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  user_id UUID REFERENCES auth.users(id),
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id UUID REFERENCES user_profiles(id),
   post_slug TEXT NOT NULL,
   reaction_type TEXT CHECK (reaction_type IN ('like', 'dislike')),
   starknet_tx_hash TEXT,  -- If submitted on-chain
@@ -221,8 +224,8 @@ CREATE TABLE reactions (
 
 ```sql
 CREATE TABLE comments (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  user_id UUID REFERENCES auth.users(id),
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id UUID REFERENCES user_profiles(id),
   post_slug TEXT NOT NULL,
   parent_id UUID REFERENCES comments(id),  -- For threading
   content TEXT NOT NULL,
@@ -350,12 +353,14 @@ Submit reaction (requires auth).
 
 ```bash
 # Public (exposed to browser)
-NEXT_PUBLIC_SUPABASE_URL=
-NEXT_PUBLIC_SUPABASE_ANON_KEY=
+NEXT_PUBLIC_FIREBASE_API_KEY=
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=
+NEXT_PUBLIC_FIREBASE_APP_ID=
 NEXT_PUBLIC_STARKNET_NETWORK=mainnet|sepolia
 
 # Private (server only)
-SUPABASE_SERVICE_ROLE_KEY=
+DATABASE_URL=                          # Cloud SQL connection string
 N8N_WEBHOOK_URL=
 N8N_WEBHOOK_SECRET=
 GCS_BUCKET_NAME=
