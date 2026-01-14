@@ -1,0 +1,12 @@
+# Libertas - Freedom Tech Research & Publishing
+# https://libertas.fgu.tech
+
+User-agent: *
+Allow: /
+
+# Feeds
+# RSS: /rss.xml
+# JSON: /feed.json
+
+# Sitemap
+Sitemap: https://libertas.fgu.tech/sitemap.xml

@@ -19,9 +19,9 @@ export const metadata: Metadata = {
   },
 };
 
-// Feed URLs - these would come from env vars in production
+// Feed URLs - static files served from public/
 const FEED_URLS = {
-  rss: '/feed.xml',
+  rss: '/rss.xml',
   json: '/feed.json',
 };
 

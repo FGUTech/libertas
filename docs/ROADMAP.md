@@ -32,7 +32,7 @@ runtime:
 - When `false`: Routes to real API nodes (Claude, GitHub, Resend)
 - Toggle by committing change to `thresholds.yml`
 
-This pattern is implemented across: 1.5, 1.6, 1.9, 1.10, 1.11, 1.13, 1.14, 1.15
+This pattern is implemented across: 1.6, 1.10, 1.11, 1.15
 
 ### 1.0 n8n Migration to Managed Hosting
 
@@ -99,50 +99,6 @@ This pattern is implemented across: 1.5, 1.6, 1.9, 1.10, 1.11, 1.13, 1.14, 1.15
 
 ---
 
-### 1.5 Workflow A: Claude API Integration ✅
-
-**Description**: Replace classification and summarization stubs with real Claude API calls, with config-driven toggle for stub/real mode.
-
-**Requirements**:
-- [x] Add `use_stubs` config to `thresholds.yml` under new `runtime` section
-- [x] Set up n8n credential for Anthropic API (Header Auth with x-api-key)
-- [x] Add IF node to check `runtime.use_stubs` config value
-- [x] Wire Classify Stub and real Claude API node to IF branches
-- [x] Wire Summarize Stub and real Claude API node to IF branches
-- [x] Real Claude nodes load prompts from `agents/classify.md` and `agents/summarize.md`
-- [x] Validate output against JSON schemas (per 1.4)
-- [x] Test with golden test cases in both stub and real modes
-
-**Implementation Notes**:
-- Claude API nodes exist but are disabled; wire to IF node instead of deleting
-- Keep stubs functional for local dev/testing without API costs
-- Use structured output mode for reliable JSON parsing
-- Config toggle allows switching modes via `thresholds.yml` commit
-
----
-
-### 1.6 Workflow A: Feed Publishing
-
-**Description**: Generate and publish RSS/JSON feeds for consumed content, with config-driven toggle for stub/real mode.
-
-**Requirements**:
-- [ ] Add node to generate/update RSS feed (`/rss.xml`)
-- [ ] Add node to generate/update JSON feed (`/feed.json`)
-- [ ] Add IF node to check `runtime.use_stubs` config value
-- [ ] Wire GitHub Commit Stub and real GitHub API node to IF branches
-- [ ] Real GitHub node commits published insights to repo as markdown files
-- [ ] Set up n8n credential for GitHub API (Bearer token)
-- [ ] Validate RSS 2.0 and JSON Feed 1.1 compliance
-
-**Implementation Notes**:
-- Feeds should include all published insights with status='published'
-- Markdown files go in `/content/insights/{year}/{month}/{slug}.md`
-- Use frontmatter format matching website expectations
-- Keep stub for local dev/testing without GitHub commits
-- Config toggle via `runtime.use_stubs` in `thresholds.yml`
-
----
-
 ### 1.7 Workflow A: Raw Content Storage
 
 **Description**: Archive raw HTML content to GCS for provenance.
@@ -172,41 +128,6 @@ This pattern is implemented across: 1.5, 1.6, 1.9, 1.10, 1.11, 1.13, 1.14, 1.15
 **Implementation Notes**:
 - `source_health` table and triggers already exist in schema
 - Circuit breaker logic exists but node is disabled
-
----
-
-### 1.9 Workflow B: Claude API Integration ✅
-
-**Description**: Replace digest composer stub with real Claude API, with config-driven toggle for stub/real mode.
-
-**Requirements**:
-- [x] Add IF node to check `runtime.use_stubs` config value
-- [x] Wire DigestComposer Stub and real Claude API node to IF branches
-- [x] Real Claude node uses `agents/digest.md` prompt
-- [x] Set up n8n credential for Anthropic API (if not already from 1.5)
-- [x] Include emerging patterns and trend detection in prompt
-- [x] Validate digest output structure
-- [ ] Test in both stub and real modes
-
-**Implementation Notes**:
-- DigestComposer node exists but is disabled; wire to IF node instead of deleting
-- Keep stub for local dev/testing without API costs
-- Config toggle via `runtime.use_stubs` in `thresholds.yml`
-- Consider fallback if Claude API fails (publish digest without LLM enhancement)
-
-**Lessons from 1.5 Implementation**:
-- Claude returns JSON wrapped in markdown code blocks (` ```json...``` `). Parsing code must strip these before `JSON.parse()`:
-  ```javascript
-  text = text.trim();
-  if (text.startsWith('```')) {
-    text = text.replace(/^```(?:json)?\s*\n?/, '').replace(/\n?```\s*$/, '');
-  }
-  ```
-- n8n blocks `$env` variable access - hardcode URLs (e.g., `https://libertas.fgu.tech/api/...`) instead of `$env.WEBSITE_URL`
-- When fetching multiple configs/prompts in parallel, use chained Merge nodes (mode: "append") to wait for all results before processing
-- Thread `runtime.use_stubs` through the entire workflow chain - ensure it's included in data passed between nodes
-- Anthropic credential setup: Header Auth type, Name = `x-api-key`, Value = API key
-- Node positions need ~200px horizontal spacing to avoid label overlap in n8n UI
 
 ---
 
@@ -266,45 +187,6 @@ This pattern is implemented across: 1.5, 1.6, 1.9, 1.10, 1.11, 1.13, 1.14, 1.15
 **Implementation Notes**:
 - Query `project_ideas` table for items with `created_at` in digest period
 - Only include ideas with status='pending' or 'approved'
-
----
-
-### 1.13 Workflow C: API Integration Verification
-
-**Description**: Complete intake workflow API integrations, with config-driven toggle for stub/real mode.
-
-**Requirements**:
-- [x] Webhook endpoint functional (implemented)
-- [x] Database insertion working (implemented)
-- [ ] Set up n8n credential for Anthropic API (Header Auth with x-api-key)
-- [ ] Set up n8n credential for GitHub API (Bearer token)
-- [ ] Add IF node to check `runtime.use_stubs` config value
-- [ ] Wire Classify Stub and real Claude API node to IF branches (use `agents/intake-classify.md`)
-- [ ] Wire GitHub Issue Stub and real GitHub API node to IF branches
-- [ ] Populate `priority`, `is_spam`, `requires_response` fields via LLM classification
-- [ ] Add rate limiting node after webhook (prevent abuse)
-- [ ] Add error handling nodes with retry logic
-- [ ] Test in both stub and real modes
-
-**Implementation Notes**:
-- This workflow is marked active (`"active": true`)
-- Keep stubs for local dev/testing without API costs
-- Config toggle via `runtime.use_stubs` in `thresholds.yml`
-- Credentials may be shared with Workflow A (1.5) and Workflow D (1.14) if already configured
-
-**Lessons from 1.5 Implementation**:
-- Claude returns JSON wrapped in markdown code blocks (` ```json...``` `). Parsing code must strip these before `JSON.parse()`:
-  ```javascript
-  text = text.trim();
-  if (text.startsWith('```')) {
-    text = text.replace(/^```(?:json)?\s*\n?/, '').replace(/\n?```\s*$/, '');
-  }
-  ```
-- n8n blocks `$env` variable access - hardcode URLs (e.g., `https://libertas.fgu.tech/api/...`) instead of `$env.WEBSITE_URL`
-- When fetching multiple configs/prompts in parallel, use chained Merge nodes (mode: "append") to wait for all results before processing
-- Thread `runtime.use_stubs` through the entire workflow chain - ensure it's included in data passed between nodes
-- Anthropic credential setup: Header Auth type, Name = `x-api-key`, Value = API key
-- Node positions need ~200px horizontal spacing to avoid label overlap in n8n UI
 
 ---
 
@@ -396,43 +278,6 @@ This pattern is implemented across: 1.5, 1.6, 1.9, 1.10, 1.11, 1.13, 1.14, 1.15
 - Spam detection is critical for this intake type (public feedback forms attract abuse)
 - Consider auto-closing duplicate issues if similar feedback already exists
 - Inherits stub/real toggle from parent 1.13 workflow
-
----
-
-### 1.14 Workflow D: Claude API Integration
-
-**Description**: Replace idea synthesizer stub with real Claude API, with config-driven toggle for stub/real mode.
-
-**Requirements**:
-- [x] Set up n8n credential for Anthropic API (Header Auth with x-api-key)
-- [x] Add IF node to check `runtime.use_stubs` config value
-- [x] Wire IdeaSynthesizer Stub and real Claude API node to IF branches (use `agents/generate-idea.md` prompt)
-- [x] Validate generated idea against project_idea schema
-- [x] Handle empty clusters edge case gracefully
-- [x] Add logging/alerting for failed LLM calls
-- [x] Add error handling nodes with retry logic
-- [ ] Test in both stub and real modes
-
-**Implementation Notes**:
-- Stub currently generates complete proposals with threat_model, MVP scope
-- Keep stub for local dev/testing without API costs
-- Config toggle via `runtime.use_stubs` in `thresholds.yml`
-- Real API should maintain same output structure
-- Credentials may be shared with Workflow A (1.5) and Workflow C (1.13) if already configured
-
-**Lessons from 1.5 Implementation**:
-- Claude returns JSON wrapped in markdown code blocks (` ```json...``` `). Parsing code must strip these before `JSON.parse()`:
-  ```javascript
-  text = text.trim();
-  if (text.startsWith('```')) {
-    text = text.replace(/^```(?:json)?\s*\n?/, '').replace(/\n?```\s*$/, '');
-  }
-  ```
-- n8n blocks `$env` variable access - hardcode URLs (e.g., `https://libertas.fgu.tech/api/...`) instead of `$env.WEBSITE_URL`
-- When fetching multiple configs/prompts in parallel, use chained Merge nodes (mode: "append") to wait for all results before processing
-- Thread `runtime.use_stubs` through the entire workflow chain - ensure it's included in data passed between nodes
-- Anthropic credential setup: Header Auth type, Name = `x-api-key`, Value = API key
-- Node positions need ~200px horizontal spacing to avoid label overlap in n8n UI
 
 ---
 
@@ -797,17 +642,17 @@ Features for future consideration after core functionality is stable.
 | Agent Prompts (integration) | 100% | Workflows load prompts from GitHub raw URLs (1.3 complete) |
 | Config Files (files) | 100% | sources.yml and thresholds.yml configured |
 | Config Files (integration) | 100% | Workflows load config from GitHub raw URLs (1.2 complete) |
-| Runtime Stub Toggle | 50% | `runtime.use_stubs` in thresholds.yml; Workflow A & B wired with IF nodes |
+| Runtime Stub Toggle | 60% | `runtime.use_stubs` in thresholds.yml; Workflow A (classify, summarize, publish), B wired with IF nodes |
 | JSON Schemas (files) | 100% | All schemas exist in `schemas/` |
 | JSON Schemas (validation) | 25% | Workflow A has inline validation; other workflows pending |
-| Workflow A Structure | 95% | Complete pipeline with stub/real toggle, validation nodes, pending golden tests |
+| Workflow A Structure | 100% | Complete pipeline with stub/real toggle for classify, summarize, and feed publishing |
 | Workflow B Structure | 95% | Complete pipeline with stub/real toggle for DigestComposer, pending testing |
 | Workflow C Structure | 90% | Active workflow, needs IF toggle for APIs |
 | Workflow D Structure | 80% | Complete pipeline, stubs active, need IF toggle |
 | Firebase Auth | 0% | Documented but not implemented |
 | GCS Integration | 0% | Not implemented |
 | Resend Email | 20% | Template exists, API not wired, need IF toggle |
-| Feed Generation | 10% | Doc page exists, endpoints missing |
+| Feed Generation | 100% | RSS 2.0 and JSON Feed 1.1 generation implemented in Workflow A (1.6 complete) |
 
 ---
 

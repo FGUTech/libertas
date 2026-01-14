@@ -569,13 +569,344 @@
     },
     {
       "parameters": {
-        "jsCode": "// Aggregate results from all branches\n// This runs at the end to summarize the workflow execution\n\nconst allItems = $input.all();\n\nlet published = 0;\nlet queued = 0;\nlet skipped = 0;\nlet duplicates = 0;\nlet errors = 0;\n\nfor (const item of allItems) {\n  const data = item.json;\n  if (data.status === 'published') published++;\n  else if (data.status === 'queued') queued++;\n  else if (data.skipped && data.reason === 'Duplicate content hash') duplicates++;\n  else if (data.skipped) skipped++;\n  else errors++;\n}\n\nconst summary = {\n  executedAt: new Date().toISOString(),\n  results: {\n    published,\n    queued,\n    skipped,\n    duplicates,\n    errors,\n    total: allItems.length\n  }\n};\n\nconsole.log('Workflow A Summary:', JSON.stringify(summary, null, 2));\n\nreturn [{ json: summary }];"
+        "jsCode": "// Aggregate results from all branches\n// This runs at the end to summarize the workflow execution\n\nconst allItems = $input.all();\n\nlet published = 0;\nlet queued = 0;\nlet skipped = 0;\nlet duplicates = 0;\nlet errors = 0;\nlet feedsPublished = 0;\n\nfor (const item of allItems) {\n  const data = item.json;\n  if (data.feedsCommitted) feedsPublished++;\n  else if (data.status === 'published') published++;\n  else if (data.status === 'queued') queued++;\n  else if (data.skipped && data.reason === 'Duplicate content hash') duplicates++;\n  else if (data.skipped) skipped++;\n  else errors++;\n}\n\nconst summary = {\n  executedAt: new Date().toISOString(),\n  results: {\n    published,\n    queued,\n    skipped,\n    duplicates,\n    errors,\n    feedsPublished,\n    total: allItems.length\n  }\n};\n\nconsole.log('Workflow A Summary:', JSON.stringify(summary, null, 2));\n\nreturn [{ json: summary }];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [5090, -200],
+      "position": [6200, -200],
       "id": "aggregate-results",
       "name": "Aggregate Results"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "is-published",
+              "leftValue": "={{ $('Build Insight Query').first().json.sourceData.status }}",
+              "rightValue": "published",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [5060, -200],
+      "id": "is-published",
+      "name": "Is Published?"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT \n  id, title, tldr, summary_bullets, deep_dive_markdown,\n  topics, geo, freedom_relevance_score, credibility_score,\n  citations, status, published_url, published_at, created_at, updated_at\nFROM insights \nWHERE status = 'published'\nORDER BY published_at DESC\nLIMIT 100",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [5280, -300],
+      "id": "query-all-published",
+      "name": "Query All Published Insights",
+      "alwaysOutputData": true,
+      "credentials": {
+        "postgres": {
+          "id": "CREDENTIAL_ID",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Generate RSS 2.0 feed from all published insights\nconst insights = $input.all().map(item => item.json).filter(i => i.id);\nconst newInsightData = $('Build Insight Query').first().json.sourceData;\n\n// Site metadata\nconst siteUrl = 'https://libertas.fgu.tech';\nconst feedTitle = 'Libertas - Freedom Tech Signals';\nconst feedDescription = 'Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.';\nconst feedLanguage = 'en-us';\nconst buildDate = new Date().toUTCString();\n\n// Helper to escape XML\nfunction escapeXml(str) {\n  if (!str) return '';\n  return String(str)\n    .replace(/&/g, '&amp;')\n    .replace(/</g, '&lt;')\n    .replace(/>/g, '&gt;')\n    .replace(/\"/g, '&quot;')\n    .replace(/'/g, '&apos;');\n}\n\n// Generate RSS items\nconst items = insights.map(insight => {\n  const pubDate = insight.published_at ? new Date(insight.published_at).toUTCString() : buildDate;\n  const topics = Array.isArray(insight.topics) ? insight.topics : [];\n  const categories = topics.map(t => `    <category>${escapeXml(t)}</category>`).join('\\n');\n  \n  // Generate slug from title\n  const slug = insight.title\n    .toLowerCase()\n    .replace(/[^a-z0-9]+/g, '-')\n    .replace(/^-|-$/g, '')\n    .substring(0, 60);\n  \n  const link = `${siteUrl}/signals/${insight.id}`;\n  \n  return `  <item>\n    <title>${escapeXml(insight.title)}</title>\n    <link>${link}</link>\n    <guid isPermaLink=\"true\">${link}</guid>\n    <pubDate>${pubDate}</pubDate>\n    <description>${escapeXml(insight.tldr)}</description>\n${categories}\n  </item>`;\n}).join('\\n');\n\n// Build complete RSS feed\nconst rssFeed = `<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<rss version=\"2.0\" xmlns:atom=\"http://www.w3.org/2005/Atom\">\n<channel>\n  <title>${escapeXml(feedTitle)}</title>\n  <link>${siteUrl}</link>\n  <description>${escapeXml(feedDescription)}</description>\n  <language>${feedLanguage}</language>\n  <lastBuildDate>${buildDate}</lastBuildDate>\n  <atom:link href=\"${siteUrl}/rss.xml\" rel=\"self\" type=\"application/rss+xml\"/>\n  <generator>Libertas n8n Workflow</generator>\n${items}\n</channel>\n</rss>`;\n\nconsole.log(`Generated RSS feed with ${insights.length} items`);\n\nreturn [{\n  json: {\n    rssFeed,\n    insightCount: insights.length,\n    insights,\n    newInsightData\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [5500, -300],
+      "id": "generate-rss-feed",
+      "name": "Generate RSS Feed"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Generate JSON Feed 1.1 from all published insights\nconst data = $input.first().json;\nconst insights = data.insights || [];\nconst rssFeed = data.rssFeed;\nconst newInsightData = data.newInsightData;\n\n// Site metadata\nconst siteUrl = 'https://libertas.fgu.tech';\n\n// Build JSON Feed 1.1 structure\nconst jsonFeed = {\n  version: 'https://jsonfeed.org/version/1.1',\n  title: 'Libertas - Freedom Tech Signals',\n  home_page_url: siteUrl,\n  feed_url: `${siteUrl}/feed.json`,\n  description: 'Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.',\n  language: 'en-US',\n  items: insights.map(insight => {\n    // Generate slug from title\n    const slug = insight.title\n      .toLowerCase()\n      .replace(/[^a-z0-9]+/g, '-')\n      .replace(/^-|-$/g, '')\n      .substring(0, 60);\n    \n    const topics = Array.isArray(insight.topics) ? insight.topics : [];\n    \n    return {\n      id: insight.id,\n      url: `${siteUrl}/signals/${insight.id}`,\n      title: insight.title,\n      summary: insight.tldr,\n      content_text: Array.isArray(insight.summary_bullets) \n        ? insight.summary_bullets.join('\\n• ') \n        : insight.tldr,\n      date_published: insight.published_at || insight.created_at,\n      date_modified: insight.updated_at || insight.published_at,\n      tags: topics,\n      _libertas: {\n        freedom_relevance_score: insight.freedom_relevance_score,\n        credibility_score: insight.credibility_score,\n        citations: insight.citations || []\n      }\n    };\n  })\n};\n\nconst jsonFeedString = JSON.stringify(jsonFeed, null, 2);\n\nconsole.log(`Generated JSON feed with ${insights.length} items`);\n\nreturn [{\n  json: {\n    rssFeed,\n    jsonFeed: jsonFeedString,\n    insightCount: insights.length,\n    newInsightData\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [5720, -300],
+      "id": "generate-json-feed",
+      "name": "Generate JSON Feed"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Generate frontmatter markdown for the newly published insight\nconst data = $input.first().json;\nconst insight = data.newInsightData;\nconst rssFeed = data.rssFeed;\nconst jsonFeed = data.jsonFeed;\n\n// Generate slug from title\nconst slug = insight.title\n  .toLowerCase()\n  .replace(/[^a-z0-9]+/g, '-')\n  .replace(/^-|-$/g, '')\n  .substring(0, 60);\n\n// Get year and month from published date\nconst publishedAt = new Date(insight.publishedAt || new Date());\nconst year = publishedAt.getFullYear();\nconst month = String(publishedAt.getMonth() + 1).padStart(2, '0');\n\n// Build frontmatter\nconst topics = Array.isArray(insight.topics) ? insight.topics : [];\nconst geo = Array.isArray(insight.geo) ? insight.geo : [];\nconst citations = Array.isArray(insight.citations) ? insight.citations : [];\nconst summaryBullets = Array.isArray(insight.summaryBullets) ? insight.summaryBullets : [];\n\nlet markdown = `---\ntitle: \"${insight.title.replace(/\"/g, '\\\\\"')}\"\nslug: \"${slug}\"\npublished_at: \"${insight.publishedAt}\"\nstatus: \"published\"\ntopics:\n${topics.map(t => `  - \"${t}\"`).join('\\n')}\nfreedom_relevance_score: ${insight.freedomRelevanceScore}\ncredibility_score: ${insight.credibilityScore}\n`;\n\nif (geo.length > 0) {\n  markdown += `geo:\n${geo.map(g => `  - \"${g}\"`).join('\\n')}\n`;\n}\n\nmarkdown += `citations:\n${citations.map(c => `  - \"${c}\"`).join('\\n')}\n---\n\n# ${insight.title}\n\n**TL;DR:** ${insight.tldr}\n\n## Key Points\n\n${summaryBullets.map(b => `- ${b}`).join('\\n')}\n`;\n\nif (insight.deepDiveMarkdown) {\n  markdown += `\\n## Deep Dive\\n\\n${insight.deepDiveMarkdown}\\n`;\n}\n\nmarkdown += `\\n## Sources\\n\\n${citations.map(c => `- ${c}`).join('\\n')}\\n`;\n\n// File path for GitHub\nconst filePath = `content/insights/${year}/${month}/${slug}.md`;\n\nconsole.log(`Generated markdown for insight: ${filePath}`);\n\nreturn [{\n  json: {\n    rssFeed,\n    jsonFeed,\n    insightMarkdown: markdown,\n    insightFilePath: filePath,\n    slug,\n    year,\n    month,\n    insight\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [5940, -300],
+      "id": "generate-insight-markdown",
+      "name": "Generate Insight Markdown"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "use-stubs-publish",
+              "leftValue": "={{ $('Load Sources').first().json._thresholds?.runtime?.use_stubs ?? true }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [5940, -100],
+      "id": "use-stubs-publish",
+      "name": "Use Stubs for Publishing?"
+    },
+    {
+      "parameters": {
+        "jsCode": "// STUB: GitHub commit for feed publishing\n// Simulates committing RSS, JSON feeds, and insight markdown to GitHub\n// Uses updated paths: website/public/ for feeds, website/public/content/ for insights\n\nconst data = $input.first().json;\n\n// Updated paths matching real commit flow\nconst insightPath = `website/public/content/insights/${data.year}/${data.month}/${data.slug}.md`;\n\n// Simulate successful GitHub commit response\nconst commitSha = 'stub-sha-' + Date.now();\nconst commitMessage = `Publish insight: ${data.slug} and update feeds\\n\\nCo-authored-by: Claude <noreply@anthropic.com>`;\n\nconsole.log(`[STUB] Would commit to GitHub (single atomic commit):`);\nconsole.log(`  - website/public/rss.xml (${data.rssFeed.length} bytes)`);\nconsole.log(`  - website/public/feed.json (${data.jsonFeed.length} bytes)`);\nconsole.log(`  - ${insightPath} (${data.insightMarkdown.length} bytes)`);\nconsole.log(`  - Co-authored by Claude`);\n\nreturn [{\n  json: {\n    success: true,\n    feedsCommitted: true,\n    stub: true,\n    commit: {\n      sha: commitSha,\n      message: commitMessage\n    },\n    files: [\n      { path: 'website/public/rss.xml', action: 'upsert' },\n      { path: 'website/public/feed.json', action: 'upsert' },\n      { path: insightPath, action: 'upsert' }\n    ],\n    insight: {\n      title: data.insight.title,\n      slug: data.slug,\n      path: insightPath\n    }\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [6200, -400],
+      "id": "github-commit-stub-publish",
+      "name": "GitHub Commit Stub (Feeds)"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Prepare files for atomic GitHub commit via Git Data API\n// Updated paths: feeds go to website/public/, insights to website/public/content/\nconst data = $input.first().json;\n\n// Update insight path to website/public/content/\nconst insightPath = `website/public/content/insights/${data.year}/${data.month}/${data.slug}.md`;\n\nreturn [{\n  json: {\n    ...data,\n    _github: {\n      owner: 'FGUTech',\n      repo: 'libertas',\n      branch: 'main',\n      commitMessage: `Publish insight: ${data.slug} and update feeds\\n\\nCo-authored-by: Claude <noreply@anthropic.com>`,\n      files: [\n        {\n          path: 'website/public/rss.xml',\n          content: data.rssFeed\n        },\n        {\n          path: 'website/public/feed.json',\n          content: data.jsonFeed\n        },\n        {\n          path: insightPath,\n          content: data.insightMarkdown\n        }\n      ]\n    },\n    insightFilePath: insightPath\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [6200, 0],
+      "id": "prepare-github-commit",
+      "name": "Prepare GitHub Commit"
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "=https://api.github.com/repos/{{ $json._github.owner }}/{{ $json._github.repo }}/git/ref/heads/{{ $json._github.branch }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/vnd.github.v3+json"
+            },
+            {
+              "name": "X-GitHub-Api-Version",
+              "value": "2022-11-28"
+            }
+          ]
+        },
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [6420, 0],
+      "id": "get-branch-ref",
+      "name": "Get Branch Ref",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "GITHUB_CREDENTIAL_ID",
+          "name": "GitHub API Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "=https://api.github.com/repos/{{ $('Prepare GitHub Commit').first().json._github.owner }}/{{ $('Prepare GitHub Commit').first().json._github.repo }}/git/commits/{{ $json.object.sha }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/vnd.github.v3+json"
+            },
+            {
+              "name": "X-GitHub-Api-Version",
+              "value": "2022-11-28"
+            }
+          ]
+        },
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [6640, 0],
+      "id": "get-base-tree",
+      "name": "Get Base Tree",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "GITHUB_CREDENTIAL_ID",
+          "name": "GitHub API Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Build tree entries for all files\nconst commitData = $('Prepare GitHub Commit').first().json;\nconst baseTreeSha = $input.first().json.tree.sha;\nconst parentCommitSha = $('Get Branch Ref').first().json.object.sha;\n\nconst treeEntries = commitData._github.files.map(file => ({\n  path: file.path,\n  mode: '100644',\n  type: 'blob',\n  content: file.content\n}));\n\nreturn [{\n  json: {\n    _github: commitData._github,\n    _baseTreeSha: baseTreeSha,\n    _parentCommitSha: parentCommitSha,\n    _treeEntries: treeEntries,\n    insightFilePath: commitData.insightFilePath,\n    slug: commitData.slug,\n    insight: commitData.insight\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [6860, 0],
+      "id": "build-tree-entries",
+      "name": "Build Tree Entries"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.github.com/repos/{{ $json._github.owner }}/{{ $json._github.repo }}/git/trees",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/vnd.github.v3+json"
+            },
+            {
+              "name": "X-GitHub-Api-Version",
+              "value": "2022-11-28"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ base_tree: $json._baseTreeSha, tree: $json._treeEntries }) }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [7080, 0],
+      "id": "create-tree",
+      "name": "Create Tree",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "GITHUB_CREDENTIAL_ID",
+          "name": "GitHub API Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.github.com/repos/{{ $('Build Tree Entries').first().json._github.owner }}/{{ $('Build Tree Entries').first().json._github.repo }}/git/commits",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/vnd.github.v3+json"
+            },
+            {
+              "name": "X-GitHub-Api-Version",
+              "value": "2022-11-28"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ message: $('Build Tree Entries').first().json._github.commitMessage, tree: $json.sha, parents: [$('Build Tree Entries').first().json._parentCommitSha] }) }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [7300, 0],
+      "id": "create-commit",
+      "name": "Create Commit",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "GITHUB_CREDENTIAL_ID",
+          "name": "GitHub API Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://api.github.com/repos/{{ $('Build Tree Entries').first().json._github.owner }}/{{ $('Build Tree Entries').first().json._github.repo }}/git/refs/heads/{{ $('Build Tree Entries').first().json._github.branch }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/vnd.github.v3+json"
+            },
+            {
+              "name": "X-GitHub-Api-Version",
+              "value": "2022-11-28"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ sha: $json.sha, force: false }) }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [7520, 0],
+      "id": "update-branch-ref",
+      "name": "Update Branch Ref",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "GITHUB_CREDENTIAL_ID",
+          "name": "GitHub API Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Summarize atomic commit result\nconst updateResult = $input.first().json;\nconst commitResult = $('Create Commit').first().json;\nconst buildData = $('Build Tree Entries').first().json;\n\nconst success = updateResult.object && updateResult.object.sha;\n\nconsole.log(`GitHub atomic commit: ${success ? 'SUCCESS' : 'FAILED'}`);\nconsole.log(`Commit SHA: ${commitResult.sha}`);\nconsole.log(`Files committed: ${buildData._github.files.length}`);\n\nreturn [{\n  json: {\n    success,\n    feedsCommitted: true,\n    stub: false,\n    commit: {\n      sha: commitResult.sha,\n      message: buildData._github.commitMessage,\n      url: commitResult.html_url\n    },\n    files: buildData._github.files.map(f => ({ path: f.path, action: 'upsert' })),\n    insight: {\n      title: buildData.insight?.title,\n      slug: buildData.slug,\n      path: buildData.insightFilePath\n    }\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [7740, 0],
+      "id": "wrap-github-response",
+      "name": "Wrap GitHub Response"
     },
     {
       "parameters": {
@@ -1008,6 +1339,185 @@
       ]
     },
     "Insert Insight": {
+      "main": [
+        [
+          {
+            "node": "Is Published?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Is Published?": {
+      "main": [
+        [
+          {
+            "node": "Query All Published Insights",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Aggregate Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Query All Published Insights": {
+      "main": [
+        [
+          {
+            "node": "Generate RSS Feed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate RSS Feed": {
+      "main": [
+        [
+          {
+            "node": "Generate JSON Feed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate JSON Feed": {
+      "main": [
+        [
+          {
+            "node": "Generate Insight Markdown",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Insight Markdown": {
+      "main": [
+        [
+          {
+            "node": "Use Stubs for Publishing?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Use Stubs for Publishing?": {
+      "main": [
+        [
+          {
+            "node": "GitHub Commit Stub (Feeds)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Prepare GitHub Commit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GitHub Commit Stub (Feeds)": {
+      "main": [
+        [
+          {
+            "node": "Aggregate Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare GitHub Commit": {
+      "main": [
+        [
+          {
+            "node": "Get Branch Ref",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Branch Ref": {
+      "main": [
+        [
+          {
+            "node": "Get Base Tree",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Base Tree": {
+      "main": [
+        [
+          {
+            "node": "Build Tree Entries",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Tree Entries": {
+      "main": [
+        [
+          {
+            "node": "Create Tree",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Tree": {
+      "main": [
+        [
+          {
+            "node": "Create Commit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Commit": {
+      "main": [
+        [
+          {
+            "node": "Update Branch Ref",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Branch Ref": {
+      "main": [
+        [
+          {
+            "node": "Wrap GitHub Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wrap GitHub Response": {
       "main": [
         [
           {
