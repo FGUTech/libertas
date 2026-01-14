@@ -6,7 +6,7 @@
 runtime:
   # Set to true for local dev/testing (uses stubs, no API calls)
   # Set to false for production (uses real Claude, GitHub, Resend APIs)
-  use_stubs: true
+  use_stubs: false
 
 # Ingestion and Processing
 ingestion:

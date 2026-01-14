@@ -20,7 +20,7 @@
     },
     {
       "parameters": {
-        "url": "={{ $env.WEBSITE_URL || 'http://localhost:3000' }}/api/config/thresholds",
+        "url": "=https://libertas.fgu.tech/api/config/thresholds",
         "options": {
           "timeout": 5000
         }
@@ -33,7 +33,7 @@
     },
     {
       "parameters": {
-        "url": "={{ $env.WEBSITE_URL || 'http://localhost:3000' }}/api/agents/intake-classify",
+        "url": "=https://libertas.fgu.tech/api/agents/intake-classify",
         "options": {
           "timeout": 5000
         }

@@ -20,7 +20,7 @@
     },
     {
       "parameters": {
-        "url": "={{ $env.WEBSITE_URL || 'http://localhost:3000' }}/api/config/sources",
+        "url": "https://libertas.fgu.tech/api/config/sources",
         "options": {
           "timeout": 10000
         }
@@ -33,7 +33,7 @@
     },
     {
       "parameters": {
-        "url": "={{ $env.WEBSITE_URL || 'http://localhost:3000' }}/api/config/thresholds",
+        "url": "https://libertas.fgu.tech/api/config/thresholds",
         "options": {
           "timeout": 10000
         }
@@ -46,7 +46,7 @@
     },
     {
       "parameters": {
-        "url": "={{ $env.WEBSITE_URL || 'http://localhost:3000' }}/api/agents/classify",
+        "url": "https://libertas.fgu.tech/api/agents/classify",
         "options": {
           "timeout": 10000
         }
@@ -59,7 +59,7 @@
     },
     {
       "parameters": {
-        "url": "={{ $env.WEBSITE_URL || 'http://localhost:3000' }}/api/agents/summarize",
+        "url": "https://libertas.fgu.tech/api/agents/summarize",
         "options": {
           "timeout": 10000
         }
@@ -72,11 +72,44 @@
     },
     {
       "parameters": {
-        "jsCode": "// Merge all config and agent prompts into a single object\n// Inputs from: Fetch Sources Config, Fetch Thresholds Config, Fetch Classify Prompt, Fetch Summarize Prompt\n\nconst sourcesConfig = $('Fetch Sources Config').first().json;\nconst thresholdsConfig = $('Fetch Thresholds Config').first().json;\nconst classifyPrompt = $('Fetch Classify Prompt').first().json;\nconst summarizePrompt = $('Fetch Summarize Prompt').first().json;\n\nreturn [{\n  json: {\n    _sources: sourcesConfig,\n    _thresholdsConfig: thresholdsConfig,\n    _agents: {\n      classify: classifyPrompt.content,\n      summarize: summarizePrompt.content\n    }\n  }\n}];"
+        "mode": "append",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.1,
+      "position": [440, 0],
+      "id": "merge-configs",
+      "name": "Merge Configs"
+    },
+    {
+      "parameters": {
+        "mode": "append",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.1,
+      "position": [440, 300],
+      "id": "merge-prompts",
+      "name": "Merge Prompts"
+    },
+    {
+      "parameters": {
+        "mode": "append",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.1,
+      "position": [660, 150],
+      "id": "merge-all",
+      "name": "Merge All"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Merge all config and agent prompts into a single object\n// All 4 fetch results are now available via the chained Merge nodes\nconst allItems = $input.all();\n\n// Find each config by checking the response structure\nlet sourcesConfig, thresholdsConfig, classifyPrompt, summarizePrompt;\n\nfor (const item of allItems) {\n  const data = item.json;\n  if (data.sources) sourcesConfig = data;\n  else if (data.ingestion || data.publishing || data.runtime) thresholdsConfig = data;\n  else if (data.content && data.name === 'classify') classifyPrompt = data;\n  else if (data.content && data.name === 'summarize') summarizePrompt = data;\n  else if (data.content) {\n    // Fallback: check content for agent type hints\n    if (data.content.includes('freedom_relevance_score')) classifyPrompt = data;\n    else summarizePrompt = data;\n  }\n}\n\nreturn [{\n  json: {\n    _sources: sourcesConfig || {},\n    _thresholdsConfig: thresholdsConfig || {},\n    _agents: {\n      classify: classifyPrompt?.content || '',\n      summarize: summarizePrompt?.content || ''\n    }\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [440, 200],
+      "position": [880, 150],
       "id": "merge-config",
       "name": "Merge Config & Agents"
     },
@@ -86,7 +119,7 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [660, 0],
+      "position": [1100, 150],
       "id": "load-sources",
       "name": "Load Sources"
     },
@@ -99,7 +132,7 @@
       },
       "type": "n8n-nodes-base.rssFeedRead",
       "typeVersion": 1.1,
-      "position": [880, 0],
+      "position": [1320, 150],
       "id": "fetch-rss",
       "name": "Fetch RSS Feed",
       "onError": "continueRegularOutput"
@@ -598,7 +631,7 @@
       "main": [
         [
           {
-            "node": "Merge Config & Agents",
+            "node": "Merge Configs",
             "type": "main",
             "index": 0
           }
@@ -609,9 +642,9 @@
       "main": [
         [
           {
-            "node": "Merge Config & Agents",
+            "node": "Merge Configs",
             "type": "main",
-            "index": 0
+            "index": 1
           }
         ]
       ]
@@ -620,7 +653,7 @@
       "main": [
         [
           {
-            "node": "Merge Config & Agents",
+            "node": "Merge Prompts",
             "type": "main",
             "index": 0
           }
@@ -628,6 +661,39 @@
       ]
     },
     "Fetch Summarize Prompt": {
+      "main": [
+        [
+          {
+            "node": "Merge Prompts",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge Configs": {
+      "main": [
+        [
+          {
+            "node": "Merge All",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge Prompts": {
+      "main": [
+        [
+          {
+            "node": "Merge All",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge All": {
       "main": [
         [
           {

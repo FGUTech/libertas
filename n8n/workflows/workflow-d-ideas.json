@@ -20,7 +20,7 @@
     },
     {
       "parameters": {
-        "url": "={{ $env.WEBSITE_URL || 'http://localhost:3000' }}/api/config/thresholds",
+        "url": "=https://libertas.fgu.tech/api/config/thresholds",
         "options": {
           "timeout": 10000
         }
@@ -33,7 +33,7 @@
     },
     {
       "parameters": {
-        "url": "={{ $env.WEBSITE_URL || 'http://localhost:3000' }}/api/agents/generate-idea",
+        "url": "=https://libertas.fgu.tech/api/agents/generate-idea",
         "options": {
           "timeout": 10000
         }
