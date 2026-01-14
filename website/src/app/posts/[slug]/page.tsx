@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { getPostBySlug, getAdjacentPosts, getAllPosts } from "@/lib/mock-posts";
+import { getPostBySlug, getAdjacentPosts, getAllPosts } from "@/lib/posts";
 import { extractToc } from "@/lib/markdown";
 import { MarkdownRenderer } from "@/components/MarkdownRenderer";
 import { PostMetadata } from "@/components/PostMetadata";

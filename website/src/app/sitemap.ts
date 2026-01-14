@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { getAllPosts } from "@/lib/mock-posts";
+import { getAllPosts } from "@/lib/posts";
 
 /**
  * Generates a sitemap for the website

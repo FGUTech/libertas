@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import { PostsFeed } from "./PostsFeed";
 import { PostsFeedSkeleton } from "./PostsFeedSkeleton";
+import { getAllPosts } from "@/lib/posts";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -22,6 +23,9 @@ export const metadata: Metadata = {
 };
 
 export default function PostsPage() {
+  // Load posts server-side (uses filesystem at build time)
+  const posts = getAllPosts();
+
   return (
     <div className="matrix-bg min-h-screen">
       {/* Main Content */}
@@ -35,7 +39,7 @@ export default function PostsPage() {
           </div>
 
           <Suspense fallback={<PostsFeedSkeleton />}>
-            <PostsFeed />
+            <PostsFeed posts={posts} />
           </Suspense>
         </div>
       </main>

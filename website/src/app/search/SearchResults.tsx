@@ -5,7 +5,7 @@ import { useMemo, useCallback, useTransition } from 'react';
 import Link from 'next/link';
 import { SearchInput } from '@/components/SearchInput';
 import { DateRangeFilter } from './DateRangeFilter';
-import { searchPosts, type SearchResult } from '@/lib/mock-posts';
+import { searchPosts, type SearchResult } from '@/lib/posts';
 import type { Topic } from '@/types';
 import { TOPICS } from '@/types';
 

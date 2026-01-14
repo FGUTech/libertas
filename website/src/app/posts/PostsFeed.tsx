@@ -8,15 +8,19 @@ import { TopicFilter } from "./TopicFilter";
 import { SortSelect } from "./SortSelect";
 import { Pagination } from "./Pagination";
 import { EmptyState } from "./EmptyState";
-import { getAllPosts } from "@/lib/mock-posts";
-import type { Topic } from "@/types";
+import type { Post, Topic } from "@/types";
 import { TOPICS } from "@/types";
 
 const POSTS_PER_PAGE = 12;
 
 type SortOption = "newest" | "relevance";
 
-export function PostsFeed() {
+interface PostsFeedProps {
+  /** Posts loaded server-side and passed as props */
+  posts: Post[];
+}
+
+export function PostsFeed({ posts: allPosts }: PostsFeedProps) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -88,7 +92,7 @@ export function PostsFeed() {
 
   // Filter and sort posts
   const filteredPosts = useMemo(() => {
-    let posts = getAllPosts();
+    let posts = [...allPosts];
 
     // Filter by topics
     if (selectedTopics.length > 0) {
