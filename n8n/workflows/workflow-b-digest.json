@@ -27,17 +27,40 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [220, 0],
+      "position": [220, -100],
       "id": "fetch-thresholds-config",
       "name": "Fetch Thresholds Config"
     },
     {
       "parameters": {
-        "jsCode": "// Calculate date range for digest\n// Uses config values for thresholds\n\nconst thresholdsConfig = $input.first().json;\nconst digestConfig = thresholdsConfig.digest || {};\n\n// Get thresholds from config\nconst minInsights = digestConfig.min_insights || 3;\nconst maxPerSection = digestConfig.max_per_section || 10;\n\nconst now = new Date();\nconst periodEnd = new Date(now);\nperiodEnd.setUTCDate(periodEnd.getUTCDate() - 1); // Yesterday\nperiodEnd.setUTCHours(23, 59, 59, 999);\n\nconst periodStart = new Date(periodEnd);\nperiodStart.setUTCDate(periodStart.getUTCDate() - 6); // 7 days ago\nperiodStart.setUTCHours(0, 0, 0, 0);\n\n// Format dates for SQL query and display\nconst formatDateSQL = (d) => d.toISOString();\nconst formatDateDisplay = (d) => d.toISOString().split('T')[0];\n\nconsole.log(`Using thresholds from config: minInsights=${minInsights}, maxPerSection=${maxPerSection}`);\n\nreturn [{\n  json: {\n    periodStartSQL: formatDateSQL(periodStart),\n    periodEndSQL: formatDateSQL(periodEnd),\n    periodStartDisplay: formatDateDisplay(periodStart),\n    periodEndDisplay: formatDateDisplay(periodEnd),\n    digestId: `digest-${formatDateDisplay(periodEnd)}`,\n    generatedAt: now.toISOString(),\n    _thresholds: {\n      minInsights,\n      maxPerSection\n    }\n  }\n}];"
+        "url": "={{ $env.WEBSITE_URL || 'http://localhost:3000' }}/api/agents/digest",
+        "options": {
+          "timeout": 10000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [220, 100],
+      "id": "fetch-digest-prompt",
+      "name": "Fetch Digest Prompt"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Merge thresholds config and digest agent prompt\nconst thresholdsConfig = $('Fetch Thresholds Config').first().json;\nconst digestPrompt = $('Fetch Digest Prompt').first().json;\n\nreturn [{\n  json: {\n    ...thresholdsConfig,\n    _agents: {\n      digest: digestPrompt.content\n    }\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [440, 0],
+      "id": "merge-config-agents",
+      "name": "Merge Config & Agents"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Calculate date range for digest\n// Uses config values from merged config + agents\n\nconst merged = $input.first().json;\nconst digestConfig = merged.digest || {};\nconst agents = merged._agents;\n\n// Get thresholds from config\nconst minInsights = digestConfig.min_insights || 3;\nconst maxPerSection = digestConfig.max_per_section || 10;\n\nconst now = new Date();\nconst periodEnd = new Date(now);\nperiodEnd.setUTCDate(periodEnd.getUTCDate() - 1); // Yesterday\nperiodEnd.setUTCHours(23, 59, 59, 999);\n\nconst periodStart = new Date(periodEnd);\nperiodStart.setUTCDate(periodStart.getUTCDate() - 6); // 7 days ago\nperiodStart.setUTCHours(0, 0, 0, 0);\n\n// Format dates for SQL query and display\nconst formatDateSQL = (d) => d.toISOString();\nconst formatDateDisplay = (d) => d.toISOString().split('T')[0];\n\nconsole.log(`Using thresholds from config: minInsights=${minInsights}, maxPerSection=${maxPerSection}`);\nconsole.log(`Loaded digest agent prompt: ${agents?.digest?.length || 0} chars`);\n\nreturn [{\n  json: {\n    periodStartSQL: formatDateSQL(periodStart),\n    periodEndSQL: formatDateSQL(periodEnd),\n    periodStartDisplay: formatDateDisplay(periodStart),\n    periodEndDisplay: formatDateDisplay(periodEnd),\n    digestId: `digest-${formatDateDisplay(periodEnd)}`,\n    generatedAt: now.toISOString(),\n    _thresholds: {\n      minInsights,\n      maxPerSection\n    },\n    _agents: agents\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [660, 0],
       "id": "calculate-period",
       "name": "Calculate Period"
     },
@@ -64,7 +87,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Merge insights with period data and check if we have enough\nconst insights = $input.all().map(item => item.json);\nconst periodData = $('Calculate Period').first().json;\nconst thresholds = periodData._thresholds || {};\nconst minInsights = thresholds.minInsights || 3;\n\n// Filter out empty results\nconst validInsights = insights.filter(i => i.id);\n\n// Check if we have minimum required insights from config\nif (!validInsights || validInsights.length < minInsights) {\n  console.log(`Only ${validInsights.length} insights found, minimum required: ${minInsights}`);\n  return [{\n    json: {\n      ...periodData,\n      insights: validInsights,\n      insightCount: validInsights.length,\n      hasInsights: false,\n      skipReason: `Insufficient insights (${validInsights.length}/${minInsights} required)`\n    }\n  }];\n}\n\nreturn [{\n  json: {\n    ...periodData,\n    insights: validInsights,\n    insightCount: validInsights.length,\n    hasInsights: true\n  }\n}];"
+        "jsCode": "// Merge insights with period data and check if we have enough\nconst insights = $input.all().map(item => item.json);\nconst periodData = $('Calculate Period').first().json;\nconst thresholds = periodData._thresholds || {};\nconst agents = periodData._agents;\nconst minInsights = thresholds.minInsights || 3;\n\n// Filter out empty results\nconst validInsights = insights.filter(i => i.id);\n\n// Check if we have minimum required insights from config\nif (!validInsights || validInsights.length < minInsights) {\n  console.log(`Only ${validInsights.length} insights found, minimum required: ${minInsights}`);\n  return [{\n    json: {\n      ...periodData,\n      insights: validInsights,\n      insightCount: validInsights.length,\n      hasInsights: false,\n      skipReason: `Insufficient insights (${validInsights.length}/${minInsights} required)`,\n      _agents: agents\n    }\n  }];\n}\n\nreturn [{\n  json: {\n    ...periodData,\n    insights: validInsights,\n    insightCount: validInsights.length,\n    hasInsights: true,\n    _agents: agents\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -103,7 +126,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Group insights by topic and prepare aggregated data\n// Uses maxPerSection threshold from config\nconst data = $input.first().json;\nconst insights = data.insights || [];\nconst thresholds = data._thresholds || {};\nconst maxPerSection = thresholds.maxPerSection || 10;\n\n// Group insights by primary topic (first topic in array)\nconst byTopic = {};\nconst topicCounts = {};\n\nfor (const insight of insights) {\n  const topics = insight.topics || [];\n  const primaryTopic = topics[0] || 'other';\n  \n  if (!byTopic[primaryTopic]) {\n    byTopic[primaryTopic] = [];\n    topicCounts[primaryTopic] = 0;\n  }\n  byTopic[primaryTopic].push(insight);\n  topicCounts[primaryTopic]++;\n  \n  // Also count all topics for ranking\n  for (const topic of topics) {\n    if (topic !== primaryTopic) {\n      topicCounts[topic] = (topicCounts[topic] || 0) + 1;\n    }\n  }\n}\n\n// Sort topics by count for top_topics\nconst topTopics = Object.entries(topicCounts)\n  .sort((a, b) => b[1] - a[1])\n  .slice(0, 5)\n  .map(([topic]) => topic);\n\n// Collect all citations\nconst allCitations = [];\nfor (const insight of insights) {\n  if (insight.citations) {\n    allCitations.push(...insight.citations);\n  }\n}\nconst uniqueCitations = [...new Set(allCitations)];\n\n// Build sections data for LLM - limit per section using maxPerSection from config\nconst sections = Object.entries(byTopic).map(([topic, topicInsights]) => ({\n  topic,\n  insightCount: topicInsights.length,\n  insights: topicInsights.slice(0, maxPerSection).map(i => ({\n    id: i.id,\n    title: i.title,\n    tldr: i.tldr,\n    score: i.freedom_relevance_score,\n    published_url: i.published_url,\n    citations: i.citations\n  }))\n}));\n\nconsole.log(`Aggregated insights into ${sections.length} sections (max ${maxPerSection} per section)`);\n\nreturn [{\n  json: {\n    ...data,\n    byTopic,\n    sections,\n    topTopics,\n    uniqueCitations,\n    topicSummary: Object.entries(topicCounts).map(([t, c]) => `${t}: ${c}`).join(', '),\n    _usedThresholds: {\n      maxPerSection\n    }\n  }\n}];"
+        "jsCode": "// Group insights by topic and prepare aggregated data\n// Uses maxPerSection threshold from config\nconst data = $input.first().json;\nconst insights = data.insights || [];\nconst thresholds = data._thresholds || {};\nconst agents = data._agents;\nconst maxPerSection = thresholds.maxPerSection || 10;\n\n// Group insights by primary topic (first topic in array)\nconst byTopic = {};\nconst topicCounts = {};\n\nfor (const insight of insights) {\n  const topics = insight.topics || [];\n  const primaryTopic = topics[0] || 'other';\n  \n  if (!byTopic[primaryTopic]) {\n    byTopic[primaryTopic] = [];\n    topicCounts[primaryTopic] = 0;\n  }\n  byTopic[primaryTopic].push(insight);\n  topicCounts[primaryTopic]++;\n  \n  // Also count all topics for ranking\n  for (const topic of topics) {\n    if (topic !== primaryTopic) {\n      topicCounts[topic] = (topicCounts[topic] || 0) + 1;\n    }\n  }\n}\n\n// Sort topics by count for top_topics\nconst topTopics = Object.entries(topicCounts)\n  .sort((a, b) => b[1] - a[1])\n  .slice(0, 5)\n  .map(([topic]) => topic);\n\n// Collect all citations\nconst allCitations = [];\nfor (const insight of insights) {\n  if (insight.citations) {\n    allCitations.push(...insight.citations);\n  }\n}\nconst uniqueCitations = [...new Set(allCitations)];\n\n// Build sections data for LLM - limit per section using maxPerSection from config\nconst sections = Object.entries(byTopic).map(([topic, topicInsights]) => ({\n  topic,\n  insightCount: topicInsights.length,\n  insights: topicInsights.slice(0, maxPerSection).map(i => ({\n    id: i.id,\n    title: i.title,\n    tldr: i.tldr,\n    score: i.freedom_relevance_score,\n    published_url: i.published_url,\n    citations: i.citations\n  }))\n}));\n\nconsole.log(`Aggregated insights into ${sections.length} sections (max ${maxPerSection} per section)`);\n\nreturn [{\n  json: {\n    ...data,\n    byTopic,\n    sections,\n    topTopics,\n    uniqueCitations,\n    topicSummary: Object.entries(topicCounts).map(([t, c]) => `${t}: ${c}`).join(', '),\n    _usedThresholds: {\n      maxPerSection\n    }\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -113,7 +136,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// STUB: DigestComposer Agent\n// Simulates Claude API response for digest generation\n// Replace with real HTTP Request to Claude API when ready\n\nconst data = $input.first().json;\nconst insights = data.insights || [];\nconst sections = data.sections || [];\nconst topTopics = data.topTopics || [];\n\n// Topic display names\nconst topicNames = {\n  'bitcoin': 'Bitcoin & Payments',\n  'zk': 'Zero Knowledge',\n  'censorship-resistance': 'Censorship Resistance',\n  'comms': 'Secure Communications',\n  'payments': 'Payments & Finance',\n  'identity': 'Identity & Privacy',\n  'privacy': 'Privacy',\n  'surveillance': 'Surveillance',\n  'activism': 'Activism',\n  'sovereignty': 'Sovereignty'\n};\n\n// Generate executive TL;DR\nconst topInsights = insights.slice(0, 3);\nlet executiveTldr = `This week brought ${data.insightCount} signals across ${topTopics.length} key areas of freedom technology. `;\n\nif (topInsights.length > 0) {\n  executiveTldr += `Top stories include: ${topInsights.map(i => i.title).join('; ')}. `;\n}\n\nif (topTopics.length > 0) {\n  executiveTldr += `Most active topics: ${topTopics.slice(0, 3).map(t => topicNames[t] || t).join(', ')}.`;\n}\n\n// Generate sections markdown\nconst sectionMarkdowns = [];\n\nfor (const section of sections) {\n  const topicTitle = topicNames[section.topic] || section.topic;\n  let md = `### ${topicTitle}\\n\\n`;\n  \n  for (const insight of section.insights) {\n    const url = insight.published_url || '#';\n    md += `- [${insight.title}](${url}) \\u2014 ${insight.tldr}\\n`;\n  }\n  \n  sectionMarkdowns.push({\n    title: topicTitle,\n    content_markdown: md,\n    insight_ids: section.insights.map(i => i.id)\n  });\n}\n\n// Identify emerging patterns (stub - simple keyword analysis)\nconst emergingPatterns = [];\nif (data.insightCount >= 3) {\n  emergingPatterns.push({\n    pattern: `Increased activity in ${topTopics[0] || 'freedom tech'} space`,\n    supporting_signals: insights.slice(0, 2).map(i => i.id)\n  });\n}\nif (insights.some(i => (i.geo || []).length > 0)) {\n  const geos = [...new Set(insights.flatMap(i => i.geo || []))];\n  if (geos.length > 0) {\n    emergingPatterns.push({\n      pattern: `Geographic focus on ${geos.slice(0, 3).join(', ')}`,\n      supporting_signals: insights.filter(i => (i.geo || []).length > 0).slice(0, 2).map(i => i.id)\n    });\n  }\n}\n\n// Looking ahead suggestions\nconst lookingAhead = [\n  'Continue monitoring developments in ' + (topTopics[0] ? (topicNames[topTopics[0]] || topTopics[0]) : 'key freedom tech areas'),\n  'Watch for regulatory responses to emerging tools',\n  'Track adoption metrics for highlighted projects'\n];\n\n// Build full digest content\nconst digestOutput = {\n  executive_tldr: executiveTldr,\n  sections: sectionMarkdowns,\n  emerging_patterns: emergingPatterns,\n  looking_ahead: lookingAhead,\n  insight_count: data.insightCount,\n  top_topics: topTopics\n};\n\n// Format as Claude API response structure\nreturn [{\n  json: {\n    content: [{\n      type: 'text',\n      text: JSON.stringify(digestOutput)\n    }],\n    _periodData: {\n      periodStartDisplay: data.periodStartDisplay,\n      periodEndDisplay: data.periodEndDisplay,\n      digestId: data.digestId\n    },\n    _uniqueCitations: data.uniqueCitations\n  }\n}];"
+        "jsCode": "// STUB: DigestComposer Agent\n// Simulates Claude API response for digest generation\n// Replace with real HTTP Request to Claude API when ready\n\nconst data = $input.first().json;\nconst insights = data.insights || [];\nconst sections = data.sections || [];\nconst topTopics = data.topTopics || [];\n\n// Topic display names\nconst topicNames = {\n  'bitcoin': 'Bitcoin & Payments',\n  'zk': 'Zero Knowledge',\n  'censorship-resistance': 'Censorship Resistance',\n  'comms': 'Secure Communications',\n  'payments': 'Payments & Finance',\n  'identity': 'Identity & Privacy',\n  'privacy': 'Privacy',\n  'surveillance': 'Surveillance',\n  'activism': 'Activism',\n  'sovereignty': 'Sovereignty'\n};\n\n// Generate executive TL;DR\nconst topInsights = insights.slice(0, 3);\nlet executiveTldr = `This week brought ${data.insightCount} signals across ${topTopics.length} key areas of freedom technology. `;\n\nif (topInsights.length > 0) {\n  executiveTldr += `Top stories include: ${topInsights.map(i => i.title).join('; ')}. `;\n}\n\nif (topTopics.length > 0) {\n  executiveTldr += `Most active topics: ${topTopics.slice(0, 3).map(t => topicNames[t] || t).join(', ')}.`;\n}\n\n// Generate sections markdown\nconst sectionMarkdowns = [];\n\nfor (const section of sections) {\n  const topicTitle = topicNames[section.topic] || section.topic;\n  let md = `### ${topicTitle}\\n\\n`;\n  \n  for (const insight of section.insights) {\n    const url = insight.published_url || '#';\n    md += `- [${insight.title}](${url}) \\u2014 ${insight.tldr}\\n`;\n  }\n  \n  sectionMarkdowns.push({\n    title: topicTitle,\n    content_markdown: md,\n    insight_ids: section.insights.map(i => i.id)\n  });\n}\n\n// Identify emerging patterns (stub - simple keyword analysis)\nconst emergingPatterns = [];\nif (data.insightCount >= 3) {\n  emergingPatterns.push({\n    pattern: `Increased activity in ${topTopics[0] || 'freedom tech'} space`,\n    supporting_signals: insights.slice(0, 2).map(i => i.id)\n  });\n}\nif (insights.some(i => (i.geo || []).length > 0)) {\n  const geos = [...new Set(insights.flatMap(i => i.geo || []))];\n  if (geos.length > 0) {\n    emergingPatterns.push({\n      pattern: `Geographic focus on ${geos.slice(0, 3).join(', ')}`,\n      supporting_signals: insights.filter(i => (i.geo || []).length > 0).slice(0, 2).map(i => i.id)\n    });\n  }\n}\n\n// Looking ahead suggestions\nconst lookingAhead = [\n  'Continue monitoring developments in ' + (topTopics[0] ? (topicNames[topTopics[0]] || topTopics[0]) : 'key freedom tech areas'),\n  'Watch for regulatory responses to emerging tools',\n  'Track adoption metrics for highlighted projects'\n];\n\n// Build full digest content\nconst digestOutput = {\n  executive_tldr: executiveTldr,\n  sections: sectionMarkdowns,\n  emerging_patterns: emergingPatterns,\n  looking_ahead: lookingAhead,\n  insight_count: data.insightCount,\n  top_topics: topTopics\n};\n\n// Format as Claude API response structure\nreturn [{\n  json: {\n    content: [{\n      type: 'text',\n      text: JSON.stringify(digestOutput)\n    }],\n    _periodData: {\n      periodStartDisplay: data.periodStartDisplay,\n      periodEndDisplay: data.periodEndDisplay,\n      digestId: data.digestId\n    },\n    _uniqueCitations: data.uniqueCitations,\n    _agents: data._agents\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -144,7 +167,7 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 4096,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": \"You are the weekly digest composer for Libertas. Create a digest from these insights.\\n\\nPeriod: {{ $('Calculate Period').first().json.periodStartDisplay }} to {{ $('Calculate Period').first().json.periodEndDisplay }}\\n\\nInsights by topic:\\n{{ JSON.stringify($json.sections, null, 2) }}\\n\\nRespond with JSON:\\n{\\n  \\\"executive_tldr\\\": \\\"2-3 sentence summary of the week\\\",\\n  \\\"sections\\\": [{\\\"title\\\": \\\"Topic Name\\\", \\\"content_markdown\\\": \\\"markdown content\\\", \\\"insight_ids\\\": []}],\\n  \\\"emerging_patterns\\\": [{\\\"pattern\\\": \\\"description\\\", \\\"supporting_signals\\\": []}],\\n  \\\"looking_ahead\\\": [\\\"what to watch\\\"],\\n  \\\"insight_count\\\": number,\\n  \\\"top_topics\\\": [\\\"topic1\\\", \\\"topic2\\\"]\\n}\"\n  }]\n}",
+        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 4096,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": {{ JSON.stringify($json._agents?.digest + \"\\n\\n# Input\\n\\nPeriod: \" + $('Calculate Period').first().json.periodStartDisplay + \" to \" + $('Calculate Period').first().json.periodEndDisplay + \"\\n\\nInsights by topic:\\n\" + JSON.stringify($json.sections, null, 2)) }}\n  }]\n}",
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
@@ -311,11 +334,38 @@
             "node": "Fetch Thresholds Config",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "Fetch Digest Prompt",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
     },
     "Fetch Thresholds Config": {
+      "main": [
+        [
+          {
+            "node": "Merge Config & Agents",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Digest Prompt": {
+      "main": [
+        [
+          {
+            "node": "Merge Config & Agents",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge Config & Agents": {
       "main": [
         [
           {

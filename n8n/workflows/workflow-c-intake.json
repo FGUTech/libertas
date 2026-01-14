@@ -27,16 +27,36 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [
-        104,
-        -192
-      ],
+      "position": [104, -292],
       "id": "fetch-thresholds-config",
       "name": "Fetch Thresholds Config"
     },
     {
       "parameters": {
-        "jsCode": "// Validate input with thresholds from config\nconst thresholdsConfig = $input.first().json;\nconst rateLimiting = thresholdsConfig.rate_limiting || {};\nconst webhookBody = $('Webhook').first().json.body;\n\n// Store rate limiting config for reference (actual enforcement at infrastructure level)\nconst configInfo = {\n  requestsPerMinute: rateLimiting.requests_per_minute || 10,\n  requestsPerHour: rateLimiting.requests_per_hour || 100,\n  globalPerMinute: rateLimiting.global_per_minute || 100\n};\n\nconsole.log(`Rate limiting config loaded: ${JSON.stringify(configInfo)}`);\n\nif (!webhookBody?.message || webhookBody.message.trim().length < 10) {\n  throw new Error('Message required (min 10 chars)');\n}\n\nreturn [{\n  json: {\n    message: webhookBody.message.trim(),\n    contact: webhookBody.contact || null,\n    category: webhookBody.category || 'other',\n    safetyMode: webhookBody.safetyMode || false,\n    _rateLimitConfig: configInfo\n  }\n}];"
+        "url": "={{ $env.WEBSITE_URL || 'http://localhost:3000' }}/api/agents/intake-classify",
+        "options": {
+          "timeout": 5000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [104, -92],
+      "id": "fetch-intake-classify-prompt",
+      "name": "Fetch Intake Classify Prompt"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Merge thresholds config and intake-classify agent prompt\nconst thresholdsConfig = $('Fetch Thresholds Config').first().json;\nconst intakeClassifyPrompt = $('Fetch Intake Classify Prompt').first().json;\n\nreturn [{\n  json: {\n    ...thresholdsConfig,\n    _agents: {\n      intakeClassify: intakeClassifyPrompt.content\n    }\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [208, -192],
+      "id": "merge-config-agents",
+      "name": "Merge Config & Agents"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Validate input with thresholds from config\nconst merged = $input.first().json;\nconst rateLimiting = merged.rate_limiting || {};\nconst agents = merged._agents;\nconst webhookBody = $('Webhook').first().json.body;\n\n// Store rate limiting config for reference (actual enforcement at infrastructure level)\nconst configInfo = {\n  requestsPerMinute: rateLimiting.requests_per_minute || 10,\n  requestsPerHour: rateLimiting.requests_per_hour || 100,\n  globalPerMinute: rateLimiting.global_per_minute || 100\n};\n\nconsole.log(`Rate limiting config loaded: ${JSON.stringify(configInfo)}`);\nconsole.log(`Loaded intake-classify agent prompt: ${agents?.intakeClassify?.length || 0} chars`);\n\nif (!webhookBody?.message || webhookBody.message.trim().length < 10) {\n  throw new Error('Message required (min 10 chars)');\n}\n\nreturn [{\n  json: {\n    message: webhookBody.message.trim(),\n    contact: webhookBody.contact || null,\n    category: webhookBody.category || 'other',\n    safetyMode: webhookBody.safetyMode || false,\n    _rateLimitConfig: configInfo,\n    _agents: agents\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -93,7 +113,7 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 512,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": \"Classify this Freedom Tech submission. Respond with ONLY valid JSON.\\n\\nSubmission: {{ $('Insert Submission').first().json.message }}\\n\\nJSON format:\\n{\\\"tags\\\": [\\\"2-4 relevant tags\\\"], \\\"risk_level\\\": \\\"low|medium|high\\\", \\\"summary\\\": \\\"brief title for GitHub issue\\\"}\"\n  }]\n}",
+        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 512,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": {{ JSON.stringify($('Validate Input').first().json._agents?.intakeClassify + \"\\n\\n# Input\\n\\nSubmission: \" + $('Insert Submission').first().json.message) }}\n  }]\n}",
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
@@ -248,11 +268,38 @@
             "node": "Fetch Thresholds Config",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "Fetch Intake Classify Prompt",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
     },
     "Fetch Thresholds Config": {
+      "main": [
+        [
+          {
+            "node": "Merge Config & Agents",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Intake Classify Prompt": {
+      "main": [
+        [
+          {
+            "node": "Merge Config & Agents",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge Config & Agents": {
       "main": [
         [
           {

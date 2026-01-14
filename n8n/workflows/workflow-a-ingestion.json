@@ -46,22 +46,43 @@
     },
     {
       "parameters": {
-        "mode": "combine",
-        "mergeByFields": {
-          "values": []
-        },
-        "combinationMode": "multiplex",
-        "options": {}
+        "url": "={{ $env.WEBSITE_URL || 'http://localhost:3000' }}/api/agents/classify",
+        "options": {
+          "timeout": 10000
+        }
       },
-      "type": "n8n-nodes-base.merge",
-      "typeVersion": 3.1,
-      "position": [440, 0],
-      "id": "merge-config",
-      "name": "Merge Config"
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [220, 300],
+      "id": "fetch-classify-prompt",
+      "name": "Fetch Classify Prompt"
     },
     {
       "parameters": {
-        "jsCode": "// Load sources from API config\n// Fetches from /api/config/sources which reads config/sources.yml\n\nconst sourcesConfig = $('Fetch Sources Config').first().json;\nconst thresholdsConfig = $('Fetch Thresholds Config').first().json;\n\n// Store thresholds in first item for reference by downstream nodes\nconst thresholds = {\n  ingestion: thresholdsConfig.ingestion || { relevance_threshold: 50 },\n  publishing: thresholdsConfig.publishing || { auto_publish_relevance: 70, auto_publish_credibility: 60 },\n  ideas: thresholdsConfig.ideas || { min_relevance_for_idea: 80 }\n};\n\n// Get sources from config\nconst sources = sourcesConfig.sources || [];\n\n// Filter to enabled sources only\nconst enabledSources = sources.filter(s => s.enabled);\n\nif (enabledSources.length === 0) {\n  console.log('Warning: No enabled sources found in config');\n  return [];\n}\n\nconsole.log(`Loaded ${enabledSources.length} sources from config`);\n\n// Return each source as a separate item for parallel processing\n// Include thresholds in each item so downstream nodes can access them\nreturn enabledSources.map(source => ({ \n  json: {\n    ...source,\n    _thresholds: thresholds\n  }\n}));"
+        "url": "={{ $env.WEBSITE_URL || 'http://localhost:3000' }}/api/agents/summarize",
+        "options": {
+          "timeout": 10000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [220, 500],
+      "id": "fetch-summarize-prompt",
+      "name": "Fetch Summarize Prompt"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Merge all config and agent prompts into a single object\n// Inputs from: Fetch Sources Config, Fetch Thresholds Config, Fetch Classify Prompt, Fetch Summarize Prompt\n\nconst sourcesConfig = $('Fetch Sources Config').first().json;\nconst thresholdsConfig = $('Fetch Thresholds Config').first().json;\nconst classifyPrompt = $('Fetch Classify Prompt').first().json;\nconst summarizePrompt = $('Fetch Summarize Prompt').first().json;\n\nreturn [{\n  json: {\n    _sources: sourcesConfig,\n    _thresholdsConfig: thresholdsConfig,\n    _agents: {\n      classify: classifyPrompt.content,\n      summarize: summarizePrompt.content\n    }\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [440, 200],
+      "id": "merge-config",
+      "name": "Merge Config & Agents"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Load sources from API config and agent prompts\n// Reads from merged config node output\n\nconst merged = $('Merge Config & Agents').first().json;\nconst sourcesConfig = merged._sources;\nconst thresholdsConfig = merged._thresholdsConfig;\nconst agents = merged._agents;\n\n// Store thresholds in first item for reference by downstream nodes\nconst thresholds = {\n  ingestion: thresholdsConfig.ingestion || { relevance_threshold: 50 },\n  publishing: thresholdsConfig.publishing || { auto_publish_relevance: 70, auto_publish_credibility: 60 },\n  ideas: thresholdsConfig.ideas || { min_relevance_for_idea: 80 }\n};\n\n// Get sources from config\nconst sources = sourcesConfig.sources || [];\n\n// Filter to enabled sources only\nconst enabledSources = sources.filter(s => s.enabled);\n\nif (enabledSources.length === 0) {\n  console.log('Warning: No enabled sources found in config');\n  return [];\n}\n\nconsole.log(`Loaded ${enabledSources.length} sources from config`);\nconsole.log(`Loaded agent prompts: classify (${agents.classify?.length || 0} chars), summarize (${agents.summarize?.length || 0} chars)`);\n\n// Return each source as a separate item for parallel processing\n// Include thresholds and agent prompts in each item so downstream nodes can access them\nreturn enabledSources.map(source => ({ \n  json: {\n    ...source,\n    _thresholds: thresholds,\n    _agents: agents\n  }\n}));"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -85,7 +106,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Process RSS items from feed\nconst items = $input.all();\nconst sourceInfo = $('Load Sources').first().json;\n\n// Handle fetch errors\nif (!items || items.length === 0) {\n  console.log(`No items from ${sourceInfo.name}`);\n  return [];\n}\n\n// Limit items per source (rate limiting)\nconst maxItems = 20;\nconst processItems = items.slice(0, maxItems);\n\nreturn processItems.map(item => {\n  const data = item.json;\n  return {\n    json: {\n      // Source metadata\n      sourceName: sourceInfo.name,\n      sourceUrl: sourceInfo.url,\n      sourceTier: sourceInfo.tier,\n      sourceTags: sourceInfo.tags,\n      platform: 'rss',\n      \n      // Thresholds from config\n      _thresholds: sourceInfo._thresholds,\n      \n      // Item data\n      itemUrl: data.link || data.guid || '',\n      title: data.title || '',\n      content: data.content || data.description || data['content:encoded'] || '',\n      author: data.creator || data.author || sourceInfo.name,\n      publishedAt: data.pubDate || data.isoDate || new Date().toISOString(),\n      \n      // Will be computed\n      contentHash: null,\n      extractedText: null\n    }\n  };\n}).filter(item => item.json.itemUrl && item.json.content);"
+        "jsCode": "// Process RSS items from feed\nconst items = $input.all();\nconst sourceInfo = $('Load Sources').first().json;\n\n// Handle fetch errors\nif (!items || items.length === 0) {\n  console.log(`No items from ${sourceInfo.name}`);\n  return [];\n}\n\n// Limit items per source (rate limiting)\nconst maxItems = 20;\nconst processItems = items.slice(0, maxItems);\n\nreturn processItems.map(item => {\n  const data = item.json;\n  return {\n    json: {\n      // Source metadata\n      sourceName: sourceInfo.name,\n      sourceUrl: sourceInfo.url,\n      sourceTier: sourceInfo.tier,\n      sourceTags: sourceInfo.tags,\n      platform: 'rss',\n      \n      // Thresholds and agents from config\n      _thresholds: sourceInfo._thresholds,\n      _agents: sourceInfo._agents,\n      \n      // Item data\n      itemUrl: data.link || data.guid || '',\n      title: data.title || '',\n      content: data.content || data.description || data['content:encoded'] || '',\n      author: data.creator || data.author || sourceInfo.name,\n      publishedAt: data.pubDate || data.isoDate || new Date().toISOString(),\n      \n      // Will be computed\n      contentHash: null,\n      extractedText: null\n    }\n  };\n}).filter(item => item.json.itemUrl && item.json.content);"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -95,7 +116,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Extract clean text from HTML content\nconst item = $input.first().json;\n\n// Strip HTML tags for clean text extraction\nfunction stripHtml(html) {\n  if (!html) return '';\n  return html\n    .replace(/<script[^>]*>[\\s\\S]*?<\\/script>/gi, '')\n    .replace(/<style[^>]*>[\\s\\S]*?<\\/style>/gi, '')\n    .replace(/<[^>]+>/g, ' ')\n    .replace(/&nbsp;/g, ' ')\n    .replace(/&amp;/g, '&')\n    .replace(/&lt;/g, '<')\n    .replace(/&gt;/g, '>')\n    .replace(/&quot;/g, '\"')\n    .replace(/&#39;/g, \"'\")\n    .replace(/\\s+/g, ' ')\n    .trim();\n}\n\nconst extractedText = stripHtml(item.content);\n\nreturn [{\n  json: {\n    ...item,\n    extractedText: extractedText.substring(0, 50000)\n  }\n}];"
+        "jsCode": "// Extract clean text from HTML content\nconst item = $input.first().json;\n\n// Strip HTML tags for clean text extraction\nfunction stripHtml(html) {\n  if (!html) return '';\n  return html\n    .replace(/<script[^>]*>[\\s\\S]*?<\\/script>/gi, '')\n    .replace(/<style[^>]*>[\\s\\S]*?<\\/style>/gi, '')\n    .replace(/<[^>]+>/g, ' ')\n    .replace(/&nbsp;/g, ' ')\n    .replace(/&amp;/g, '&')\n    .replace(/&lt;/g, '<')\n    .replace(/&gt;/g, '>')\n    .replace(/&quot;/g, '\"')\n    .replace(/&#39;/g, \"'\")\n    .replace(/\\s+/g, ' ')\n    .trim();\n}\n\nconst extractedText = stripHtml(item.content);\n\n// Pass through _agents for downstream use\nreturn [{\n  json: {\n    ...item,\n    extractedText: extractedText.substring(0, 50000)\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -214,7 +235,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// STUB: Classifier Agent\n// Simulates Claude API response format for classification\n// Replace with real HTTP Request to Claude API when ready\n\nconst sourceItem = $('Insert Source Item').first().json;\nconst metadata = $('Evaluate Duplicate').first().json;\nconst thresholds = metadata._thresholds || {};\nconst text = sourceItem.extracted_text || '';\nconst textLower = text.toLowerCase();\n\n// Get relevance threshold from config\nconst relevanceThreshold = thresholds.ingestion?.relevance_threshold || 50;\n\n// Simple keyword-based classification for testing\nconst topics = [];\n\nif (textLower.includes('bitcoin') || textLower.includes('btc') || textLower.includes('satoshi')) {\n  topics.push('bitcoin');\n}\nif (textLower.includes('privacy') || textLower.includes('encryption') || textLower.includes('encrypted')) {\n  topics.push('privacy');\n}\nif (textLower.includes('censorship') || textLower.includes('blocked') || textLower.includes('banned')) {\n  topics.push('censorship-resistance');\n}\nif (textLower.includes('surveillance') || textLower.includes('tracking') || textLower.includes('monitoring')) {\n  topics.push('surveillance');\n}\nif (textLower.includes('activist') || textLower.includes('protest') || textLower.includes('dissent')) {\n  topics.push('activism');\n}\nif (textLower.includes('identity') || textLower.includes('kyc') || textLower.includes('anonymous')) {\n  topics.push('identity');\n}\nif (textLower.includes('payment') || textLower.includes('transaction') || textLower.includes('transfer')) {\n  topics.push('payments');\n}\nif (textLower.includes('messaging') || textLower.includes('signal') || textLower.includes('communication')) {\n  topics.push('comms');\n}\nif (textLower.includes('zero knowledge') || textLower.includes('zk-') || textLower.includes('zkp')) {\n  topics.push('zk');\n}\nif (textLower.includes('sovereign') || textLower.includes('self-custody') || textLower.includes('freedom')) {\n  topics.push('sovereignty');\n}\n\n// Default topic if none found\nif (topics.length === 0) {\n  topics.push('sovereignty');\n}\n\n// Score based on keyword density and source tier\nconst tier = metadata.sourceTier || 2;\nconst keywordCount = topics.length;\nconst baseRelevance = Math.min(40 + (keywordCount * 15), 95);\nconst tierBonus = tier === 1 ? 10 : 0;\nconst freedomRelevanceScore = Math.min(baseRelevance + tierBonus, 100);\n\n// Credibility based on source tier\nconst credibilityScore = tier === 1 ? 75 : tier === 2 ? 60 : 45;\n\n// Check for safety concerns\nconst safetyConcern = textLower.includes('location') && \n  (textLower.includes('activist') || textLower.includes('dissident'));\n\n// Use threshold from config\nconst shouldSummarize = freedomRelevanceScore >= relevanceThreshold;\n\nconst classification = {\n  topics: topics.slice(0, 5),\n  freedom_relevance_score: freedomRelevanceScore,\n  credibility_score: credibilityScore,\n  geo: [],\n  safety_concern: safetyConcern,\n  reasoning: `Stub classification based on ${keywordCount} topic keywords. Tier ${tier} source.`,\n  key_entities: [],\n  should_summarize: shouldSummarize\n};\n\n// Return in Claude API response format for easy swap later\nreturn [{\n  json: {\n    content: [{\n      type: 'text',\n      text: JSON.stringify(classification)\n    }],\n    // Pass through source item data\n    _sourceItemId: sourceItem.id,\n    _sourceItemUrl: sourceItem.url,\n    _extractedText: sourceItem.extracted_text,\n    _metadata: metadata,\n    _thresholds: thresholds\n  }\n}];"
+        "jsCode": "// STUB: Classifier Agent\n// Simulates Claude API response format for classification\n// Replace with real HTTP Request to Claude API when ready\n\nconst sourceItem = $('Insert Source Item').first().json;\nconst metadata = $('Evaluate Duplicate').first().json;\nconst thresholds = metadata._thresholds || {};\nconst text = sourceItem.extracted_text || '';\nconst textLower = text.toLowerCase();\n\n// Get relevance threshold from config\nconst relevanceThreshold = thresholds.ingestion?.relevance_threshold || 50;\n\n// Simple keyword-based classification for testing\nconst topics = [];\n\nif (textLower.includes('bitcoin') || textLower.includes('btc') || textLower.includes('satoshi')) {\n  topics.push('bitcoin');\n}\nif (textLower.includes('privacy') || textLower.includes('encryption') || textLower.includes('encrypted')) {\n  topics.push('privacy');\n}\nif (textLower.includes('censorship') || textLower.includes('blocked') || textLower.includes('banned')) {\n  topics.push('censorship-resistance');\n}\nif (textLower.includes('surveillance') || textLower.includes('tracking') || textLower.includes('monitoring')) {\n  topics.push('surveillance');\n}\nif (textLower.includes('activist') || textLower.includes('protest') || textLower.includes('dissent')) {\n  topics.push('activism');\n}\nif (textLower.includes('identity') || textLower.includes('kyc') || textLower.includes('anonymous')) {\n  topics.push('identity');\n}\nif (textLower.includes('payment') || textLower.includes('transaction') || textLower.includes('transfer')) {\n  topics.push('payments');\n}\nif (textLower.includes('messaging') || textLower.includes('signal') || textLower.includes('communication')) {\n  topics.push('comms');\n}\nif (textLower.includes('zero knowledge') || textLower.includes('zk-') || textLower.includes('zkp')) {\n  topics.push('zk');\n}\nif (textLower.includes('sovereign') || textLower.includes('self-custody') || textLower.includes('freedom')) {\n  topics.push('sovereignty');\n}\n\n// Default topic if none found\nif (topics.length === 0) {\n  topics.push('sovereignty');\n}\n\n// Score based on keyword density and source tier\nconst tier = metadata.sourceTier || 2;\nconst keywordCount = topics.length;\nconst baseRelevance = Math.min(40 + (keywordCount * 15), 95);\nconst tierBonus = tier === 1 ? 10 : 0;\nconst freedomRelevanceScore = Math.min(baseRelevance + tierBonus, 100);\n\n// Credibility based on source tier\nconst credibilityScore = tier === 1 ? 75 : tier === 2 ? 60 : 45;\n\n// Check for safety concerns\nconst safetyConcern = textLower.includes('location') && \n  (textLower.includes('activist') || textLower.includes('dissident'));\n\n// Use threshold from config\nconst shouldSummarize = freedomRelevanceScore >= relevanceThreshold;\n\nconst classification = {\n  topics: topics.slice(0, 5),\n  freedom_relevance_score: freedomRelevanceScore,\n  credibility_score: credibilityScore,\n  geo: [],\n  safety_concern: safetyConcern,\n  reasoning: `Stub classification based on ${keywordCount} topic keywords. Tier ${tier} source.`,\n  key_entities: [],\n  should_summarize: shouldSummarize\n};\n\n// Return in Claude API response format for easy swap later\nreturn [{\n  json: {\n    content: [{\n      type: 'text',\n      text: JSON.stringify(classification)\n    }],\n    // Pass through source item data\n    _sourceItemId: sourceItem.id,\n    _sourceItemUrl: sourceItem.url,\n    _extractedText: sourceItem.extracted_text,\n    _metadata: metadata,\n    _thresholds: thresholds,\n    _agents: metadata._agents\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -245,7 +266,7 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 1024,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": \"You are a Freedom Tech content classifier. Analyze this content and respond with ONLY valid JSON.\\n\\nContent URL: {{ $('Insert Source Item').first().json.url }}\\nContent: {{ $('Insert Source Item').first().json.extracted_text.substring(0, 8000) }}\\n\\nRespond with JSON matching this schema:\\n{\\n  \\\"topics\\\": [\\\"array of 1-5 topics from: bitcoin, zk, censorship-resistance, comms, payments, identity, privacy, surveillance, activism, sovereignty\\\"],\\n  \\\"freedom_relevance_score\\\": \\\"0-100 integer\\\",\\n  \\\"credibility_score\\\": \\\"0-100 integer\\\",\\n  \\\"geo\\\": [\\\"countries/regions mentioned\\\"],\\n  \\\"safety_concern\\\": \\\"boolean - true if could endanger activists\\\",\\n  \\\"reasoning\\\": \\\"brief explanation\\\",\\n  \\\"key_entities\\\": [\\\"people, orgs, projects mentioned\\\"],\\n  \\\"should_summarize\\\": \\\"boolean - true if relevance >= 50\\\"\\n}\"\n  }]\n}",
+        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 1024,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": {{ JSON.stringify($('Evaluate Duplicate').first().json._agents?.classify + \"\\n\\n# Input\\n\\nContent URL: \" + $('Insert Source Item').first().json.url + \"\\nContent: \" + $('Insert Source Item').first().json.extracted_text.substring(0, 8000)) }}\n  }]\n}",
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
@@ -256,7 +277,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Parse classification result from Claude API format\nconst input = $input.first().json;\nlet classification;\n\ntry {\n  const text = input.content[0].text;\n  classification = JSON.parse(text);\n} catch (e) {\n  // Fallback if parsing fails\n  classification = {\n    topics: ['sovereignty'],\n    freedom_relevance_score: 30,\n    credibility_score: 50,\n    geo: [],\n    safety_concern: false,\n    reasoning: 'Failed to parse LLM response',\n    key_entities: [],\n    should_summarize: false\n  };\n}\n\n// Merge with source item data\nreturn [{\n  json: {\n    sourceItemId: input._sourceItemId,\n    sourceItemUrl: input._sourceItemUrl,\n    extractedText: input._extractedText,\n    metadata: input._metadata,\n    classification,\n    _thresholds: input._thresholds\n  }\n}];"
+        "jsCode": "// Parse classification result from Claude API format\nconst input = $input.first().json;\nlet classification;\n\ntry {\n  const text = input.content[0].text;\n  classification = JSON.parse(text);\n} catch (e) {\n  // Fallback if parsing fails\n  classification = {\n    topics: ['sovereignty'],\n    freedom_relevance_score: 30,\n    credibility_score: 50,\n    geo: [],\n    safety_concern: false,\n    reasoning: 'Failed to parse LLM response',\n    key_entities: [],\n    should_summarize: false\n  };\n}\n\n// Merge with source item data\nreturn [{\n  json: {\n    sourceItemId: input._sourceItemId,\n    sourceItemUrl: input._sourceItemUrl,\n    extractedText: input._extractedText,\n    metadata: input._metadata,\n    classification,\n    _thresholds: input._thresholds,\n    _agents: input._agents\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -266,7 +287,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Check if content meets relevance threshold from config\nconst data = $input.first().json;\nconst thresholds = data._thresholds || {};\nconst relevanceThreshold = thresholds.ingestion?.relevance_threshold || 50;\n\nconst score = data.classification.freedom_relevance_score;\nconst shouldSummarize = data.classification.should_summarize;\n\n// Content meets threshold if score >= config threshold AND should_summarize is true\nconst meetsThreshold = score >= relevanceThreshold && shouldSummarize;\n\nreturn [{\n  json: {\n    ...data,\n    meetsThreshold,\n    usedThreshold: relevanceThreshold\n  }\n}];"
+        "jsCode": "// Check if content meets relevance threshold from config\nconst data = $input.first().json;\nconst thresholds = data._thresholds || {};\nconst relevanceThreshold = thresholds.ingestion?.relevance_threshold || 50;\n\nconst score = data.classification.freedom_relevance_score;\nconst shouldSummarize = data.classification.should_summarize;\n\n// Content meets threshold if score >= config threshold AND should_summarize is true\nconst meetsThreshold = score >= relevanceThreshold && shouldSummarize;\n\n// Pass through all data including _agents\nreturn [{\n  json: {\n    ...data,\n    meetsThreshold,\n    usedThreshold: relevanceThreshold\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -305,13 +326,45 @@
     },
     {
       "parameters": {
-        "jsCode": "// STUB: Summarizer Agent\n// Generates insight content from classified source item\n// Replace with real Claude API call when ready\n\nconst data = $input.first().json;\nconst classification = data.classification;\nconst thresholds = data._thresholds || {};\nconst text = data.extractedText || '';\nconst metadata = data.metadata || {};\n\n// Get idea generation threshold from config\nconst ideaThreshold = thresholds.ideas?.min_relevance_for_idea || 80;\n\n// Extract title from metadata or generate from text\nconst title = metadata.title || text.substring(0, 100).split('.')[0] + '...';\n\n// Generate TL;DR\nconst tldr = text.substring(0, 250).trim() + '...';\n\n// Generate summary bullets\nconst sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 20);\nconst summaryBullets = sentences.slice(0, 7).map(s => s.trim());\n\n// Ensure minimum bullets\nwhile (summaryBullets.length < 5) {\n  summaryBullets.push('Additional analysis pending.');\n}\n\nconst summary = {\n  title: title.substring(0, 120),\n  tldr: tldr.substring(0, 280),\n  summary_bullets: summaryBullets.slice(0, 10),\n  deep_dive_markdown: classification.freedom_relevance_score >= 85 \n    ? `## Analysis\\n\\n${text.substring(0, 2000)}...\\n\\n## Implications\\n\\nFurther analysis needed.`\n    : null,\n  citations: [data.sourceItemUrl],\n  recommended_actions: [],\n  related_projects: [],\n  project_idea_trigger: {\n    should_generate: classification.freedom_relevance_score >= ideaThreshold,\n    reason: classification.freedom_relevance_score >= ideaThreshold \n      ? 'High relevance score suggests potential project opportunity'\n      : null\n  }\n};\n\n// Return in Claude API response format\nreturn [{\n  json: {\n    content: [{\n      type: 'text',\n      text: JSON.stringify(summary)\n    }],\n    _sourceItemId: data.sourceItemId,\n    _classification: classification,\n    _sourceItemUrl: data.sourceItemUrl,\n    _thresholds: thresholds\n  }\n}];"
+        "jsCode": "// STUB: Summarizer Agent\n// Generates insight content from classified source item\n// Replace with real Claude API call when ready\n\nconst data = $input.first().json;\nconst classification = data.classification;\nconst thresholds = data._thresholds || {};\nconst text = data.extractedText || '';\nconst metadata = data.metadata || {};\n\n// Get idea generation threshold from config\nconst ideaThreshold = thresholds.ideas?.min_relevance_for_idea || 80;\n\n// Extract title from metadata or generate from text\nconst title = metadata.title || text.substring(0, 100).split('.')[0] + '...';\n\n// Generate TL;DR\nconst tldr = text.substring(0, 250).trim() + '...';\n\n// Generate summary bullets\nconst sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 20);\nconst summaryBullets = sentences.slice(0, 7).map(s => s.trim());\n\n// Ensure minimum bullets\nwhile (summaryBullets.length < 5) {\n  summaryBullets.push('Additional analysis pending.');\n}\n\nconst summary = {\n  title: title.substring(0, 120),\n  tldr: tldr.substring(0, 280),\n  summary_bullets: summaryBullets.slice(0, 10),\n  deep_dive_markdown: classification.freedom_relevance_score >= 85 \n    ? `## Analysis\\n\\n${text.substring(0, 2000)}...\\n\\n## Implications\\n\\nFurther analysis needed.`\n    : null,\n  citations: [data.sourceItemUrl],\n  recommended_actions: [],\n  related_projects: [],\n  project_idea_trigger: {\n    should_generate: classification.freedom_relevance_score >= ideaThreshold,\n    reason: classification.freedom_relevance_score >= ideaThreshold \n      ? 'High relevance score suggests potential project opportunity'\n      : null\n  }\n};\n\n// Return in Claude API response format\nreturn [{\n  json: {\n    content: [{\n      type: 'text',\n      text: JSON.stringify(summary)\n    }],\n    _sourceItemId: data.sourceItemId,\n    _classification: classification,\n    _sourceItemUrl: data.sourceItemUrl,\n    _thresholds: thresholds,\n    _agents: data._agents\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [3080, -200],
       "id": "summarize-stub",
       "name": "Summarize Stub (Claude)"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "x-api-key",
+              "value": "={{ $env.ANTHROPIC_API_KEY }}"
+            },
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 2048,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": {{ JSON.stringify($json._agents?.summarize + \"\\n\\n# Input\\n\\nContent URL: \" + $json.sourceItemUrl + \"\\nClassification: \" + JSON.stringify($json.classification) + \"\\nContent: \" + $json.extractedText.substring(0, 8000)) }}\n  }]\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [3080, 0],
+      "id": "summarize-real",
+      "name": "Summarize with Claude (Disabled)"
     },
     {
       "parameters": {
@@ -417,6 +470,16 @@
             "node": "Fetch Thresholds Config",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "Fetch Classify Prompt",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Fetch Summarize Prompt",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -425,7 +488,7 @@
       "main": [
         [
           {
-            "node": "Merge Config",
+            "node": "Merge Config & Agents",
             "type": "main",
             "index": 0
           }
@@ -436,14 +499,36 @@
       "main": [
         [
           {
-            "node": "Merge Config",
+            "node": "Merge Config & Agents",
             "type": "main",
-            "index": 1
+            "index": 0
           }
         ]
       ]
     },
-    "Merge Config": {
+    "Fetch Classify Prompt": {
+      "main": [
+        [
+          {
+            "node": "Merge Config & Agents",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Summarize Prompt": {
+      "main": [
+        [
+          {
+            "node": "Merge Config & Agents",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge Config & Agents": {
       "main": [
         [
           {

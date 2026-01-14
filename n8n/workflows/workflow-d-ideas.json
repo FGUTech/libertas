@@ -27,17 +27,40 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [220, 0],
+      "position": [220, -100],
       "id": "fetch-thresholds-config",
       "name": "Fetch Thresholds Config"
     },
     {
       "parameters": {
-        "jsCode": "// Calculate date range for idea generation\n// Uses config values for thresholds\n\nconst thresholdsConfig = $input.first().json;\nconst ideasConfig = thresholdsConfig.ideas || {};\n\n// Get thresholds from config\nconst minRelevanceScore = ideasConfig.min_relevance_for_idea || 80;\nconst minFeasibility = ideasConfig.min_feasibility || 50;\nconst minImpact = ideasConfig.min_impact || 50;\nconst lookbackDays = ideasConfig.lookback_days || 7;\n\nconst now = new Date();\n\nconst periodEnd = new Date(now);\nperiodEnd.setUTCHours(23, 59, 59, 999);\n\nconst periodStart = new Date(now);\nperiodStart.setUTCDate(periodStart.getUTCDate() - lookbackDays);\nperiodStart.setUTCHours(0, 0, 0, 0);\n\n// Format dates for SQL query\nconst formatDateSQL = (d) => d.toISOString();\n\nconsole.log(`Using thresholds from config: minRelevanceScore=${minRelevanceScore}, minFeasibility=${minFeasibility}, minImpact=${minImpact}, lookbackDays=${lookbackDays}`);\n\nreturn [{\n  json: {\n    periodStartSQL: formatDateSQL(periodStart),\n    periodEndSQL: formatDateSQL(periodEnd),\n    generatedAt: now.toISOString(),\n    minRelevanceScore,\n    _thresholds: {\n      minRelevanceScore,\n      minFeasibility,\n      minImpact,\n      lookbackDays\n    }\n  }\n}];"
+        "url": "={{ $env.WEBSITE_URL || 'http://localhost:3000' }}/api/agents/generate-idea",
+        "options": {
+          "timeout": 10000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [220, 100],
+      "id": "fetch-generate-idea-prompt",
+      "name": "Fetch Generate Idea Prompt"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Merge thresholds config and generate-idea agent prompt\nconst thresholdsConfig = $('Fetch Thresholds Config').first().json;\nconst generateIdeaPrompt = $('Fetch Generate Idea Prompt').first().json;\n\nreturn [{\n  json: {\n    ...thresholdsConfig,\n    _agents: {\n      generateIdea: generateIdeaPrompt.content\n    }\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [440, 0],
+      "id": "merge-config-agents",
+      "name": "Merge Config & Agents"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Calculate date range for idea generation\n// Uses config values from merged config + agents\n\nconst merged = $input.first().json;\nconst ideasConfig = merged.ideas || {};\nconst agents = merged._agents;\n\n// Get thresholds from config\nconst minRelevanceScore = ideasConfig.min_relevance_for_idea || 80;\nconst minFeasibility = ideasConfig.min_feasibility || 50;\nconst minImpact = ideasConfig.min_impact || 50;\nconst lookbackDays = ideasConfig.lookback_days || 7;\n\nconst now = new Date();\n\nconst periodEnd = new Date(now);\nperiodEnd.setUTCHours(23, 59, 59, 999);\n\nconst periodStart = new Date(now);\nperiodStart.setUTCDate(periodStart.getUTCDate() - lookbackDays);\nperiodStart.setUTCHours(0, 0, 0, 0);\n\n// Format dates for SQL query\nconst formatDateSQL = (d) => d.toISOString();\n\nconsole.log(`Using thresholds from config: minRelevanceScore=${minRelevanceScore}, minFeasibility=${minFeasibility}, minImpact=${minImpact}, lookbackDays=${lookbackDays}`);\nconsole.log(`Loaded generate-idea agent prompt: ${agents?.generateIdea?.length || 0} chars`);\n\nreturn [{\n  json: {\n    periodStartSQL: formatDateSQL(periodStart),\n    periodEndSQL: formatDateSQL(periodEnd),\n    generatedAt: now.toISOString(),\n    minRelevanceScore,\n    _thresholds: {\n      minRelevanceScore,\n      minFeasibility,\n      minImpact,\n      lookbackDays\n    },\n    _agents: agents\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [660, 0],
       "id": "calculate-period",
       "name": "Calculate Period"
     },
@@ -64,7 +87,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Merge insights with period data and check if we have any\nconst insights = $input.all().map(item => item.json);\nconst periodData = $('Calculate Period').first().json;\n\n// Filter out empty results (when query returns no rows)\nconst validInsights = insights.filter(i => i.id);\n\nif (validInsights.length === 0) {\n  return [{\n    json: {\n      ...periodData,\n      insights: [],\n      insightCount: 0,\n      hasInsights: false\n    }\n  }];\n}\n\nreturn [{\n  json: {\n    ...periodData,\n    insights: validInsights,\n    insightCount: validInsights.length,\n    hasInsights: true\n  }\n}];"
+        "jsCode": "// Merge insights with period data and check if we have any\nconst insights = $input.all().map(item => item.json);\nconst periodData = $('Calculate Period').first().json;\nconst agents = periodData._agents;\n\n// Filter out empty results (when query returns no rows)\nconst validInsights = insights.filter(i => i.id);\n\nif (validInsights.length === 0) {\n  return [{\n    json: {\n      ...periodData,\n      insights: [],\n      insightCount: 0,\n      hasInsights: false,\n      _agents: agents\n    }\n  }];\n}\n\nreturn [{\n  json: {\n    ...periodData,\n    insights: validInsights,\n    insightCount: validInsights.length,\n    hasInsights: true,\n    _agents: agents\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -103,7 +126,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Cluster insights by primary topic/theme\n// Groups related insights together for idea generation\nconst data = $input.first().json;\nconst insights = data.insights || [];\nconst thresholds = data._thresholds || {};\n\n// Group insights by primary topic (first topic in array)\nconst clusters = {};\n\nfor (const insight of insights) {\n  const topics = insight.topics || [];\n  const primaryTopic = topics[0] || 'general';\n  \n  if (!clusters[primaryTopic]) {\n    clusters[primaryTopic] = {\n      topic: primaryTopic,\n      insights: [],\n      allTopics: new Set(),\n      totalScore: 0\n    };\n  }\n  \n  clusters[primaryTopic].insights.push(insight);\n  clusters[primaryTopic].totalScore += insight.freedom_relevance_score;\n  \n  // Track all topics across cluster\n  for (const t of topics) {\n    clusters[primaryTopic].allTopics.add(t);\n  }\n}\n\n// Convert to array and sort by average score\nconst clusterArray = Object.values(clusters).map(c => ({\n  topic: c.topic,\n  insights: c.insights,\n  insightCount: c.insights.length,\n  avgScore: Math.round(c.totalScore / c.insights.length),\n  relatedTopics: Array.from(c.allTopics)\n})).sort((a, b) => b.avgScore - a.avgScore);\n\n// Only process clusters with at least 1 insight\n// Return as separate items for loop processing\nconst items = clusterArray.map(cluster => ({\n  json: {\n    cluster,\n    _periodData: {\n      generatedAt: data.generatedAt,\n      periodStartSQL: data.periodStartSQL,\n      periodEndSQL: data.periodEndSQL\n    },\n    _thresholds: thresholds\n  }\n}));\n\nreturn items.length > 0 ? items : [{ json: { noValidClusters: true, _thresholds: thresholds } }];"
+        "jsCode": "// Cluster insights by primary topic/theme\n// Groups related insights together for idea generation\nconst data = $input.first().json;\nconst insights = data.insights || [];\nconst thresholds = data._thresholds || {};\n\n// Group insights by primary topic (first topic in array)\nconst clusters = {};\n\nfor (const insight of insights) {\n  const topics = insight.topics || [];\n  const primaryTopic = topics[0] || 'general';\n  \n  if (!clusters[primaryTopic]) {\n    clusters[primaryTopic] = {\n      topic: primaryTopic,\n      insights: [],\n      allTopics: new Set(),\n      totalScore: 0\n    };\n  }\n  \n  clusters[primaryTopic].insights.push(insight);\n  clusters[primaryTopic].totalScore += insight.freedom_relevance_score;\n  \n  // Track all topics across cluster\n  for (const t of topics) {\n    clusters[primaryTopic].allTopics.add(t);\n  }\n}\n\n// Convert to array and sort by average score\nconst clusterArray = Object.values(clusters).map(c => ({\n  topic: c.topic,\n  insights: c.insights,\n  insightCount: c.insights.length,\n  avgScore: Math.round(c.totalScore / c.insights.length),\n  relatedTopics: Array.from(c.allTopics)\n})).sort((a, b) => b.avgScore - a.avgScore);\n\n// Only process clusters with at least 1 insight\n// Return as separate items for loop processing\nconst agents = data._agents;\nconst items = clusterArray.map(cluster => ({\n  json: {\n    cluster,\n    _periodData: {\n      generatedAt: data.generatedAt,\n      periodStartSQL: data.periodStartSQL,\n      periodEndSQL: data.periodEndSQL\n    },\n    _thresholds: thresholds,\n    _agents: agents\n  }\n}));\n\nreturn items.length > 0 ? items : [{ json: { noValidClusters: true, _thresholds: thresholds, _agents: agents } }];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -113,7 +136,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// STUB: IdeaSynthesizer Agent\n// Simulates Claude API response for project idea generation\n// Replace with real HTTP Request to Claude API when ready\n\nconst input = $input.first().json;\nconst cluster = input.cluster;\nconst periodData = input._periodData;\nconst thresholds = input._thresholds || {};\n\n// Skip if no valid cluster\nif (input.noValidClusters) {\n  return [{\n    json: {\n      content: [{ type: 'text', text: JSON.stringify({ skip: true, reason: 'No valid clusters' }) }],\n      _periodData: periodData,\n      _cluster: null,\n      _skip: true,\n      _thresholds: thresholds\n    }\n  }];\n}\n\nconst insights = cluster.insights || [];\nconst topic = cluster.topic;\nconst relatedTopics = cluster.relatedTopics || [];\n\n// Collect all insight IDs for this cluster\nconst derivedFromInsightIds = insights.map(i => i.id);\n\n// Collect all citations from cluster insights\nconst allCitations = [];\nfor (const insight of insights) {\n  if (insight.citations && Array.isArray(insight.citations)) {\n    allCitations.push(...insight.citations);\n  }\n}\nconst uniqueCitations = [...new Set(allCitations)];\n\n// Generate stub project idea based on cluster content\nconst topicDisplayNames = {\n  'bitcoin': 'Bitcoin & Payments',\n  'zk': 'Zero Knowledge Technology',\n  'censorship-resistance': 'Censorship Resistance',\n  'comms': 'Secure Communications',\n  'payments': 'Payment Systems',\n  'identity': 'Identity & Privacy',\n  'privacy': 'Privacy Tools',\n  'surveillance': 'Anti-Surveillance',\n  'activism': 'Activism Tools',\n  'sovereignty': 'Digital Sovereignty'\n};\n\nconst topicName = topicDisplayNames[topic] || topic;\nconst insightTitles = insights.slice(0, 3).map(i => i.title).join('; ');\nconst insightTldrs = insights.slice(0, 3).map(i => i.tldr).join(' ');\n\n// Generate scores based on cluster quality\nconst avgScore = cluster.avgScore || 80;\nconst feasibilityScore = Math.min(100, Math.max(40, 60 + Math.floor(Math.random() * 30)));\nconst impactScore = Math.min(100, Math.max(40, avgScore - 10 + Math.floor(Math.random() * 20)));\n\nconst ideaOutput = {\n  problem_statement: `Based on ${cluster.insightCount} signals in ${topicName}, there is a clear need for improved tooling. Key observations: ${insightTldrs.substring(0, 400)}...`,\n  threat_model: `Adversaries include state-level actors with network monitoring capabilities, platform operators with content moderation powers, and sophisticated attackers targeting ${topicName.toLowerCase()} infrastructure. Users require protection against traffic analysis, metadata correlation, and targeted deanonymization attacks.`,\n  affected_groups: [\n    'Activists in regions with internet censorship',\n    'Journalists protecting sources',\n    'Human rights organizations',\n    `Users of ${topicName.toLowerCase()} tools under surveillance`\n  ],\n  proposed_solution: `Develop a ${topicName.toLowerCase()} enhancement that addresses the gaps identified in recent signals. The solution should focus on: (1) improving usability for non-technical users, (2) adding offline/low-bandwidth support, (3) implementing defense-in-depth against the threat model described. Key insights driving this: ${insightTitles}.`,\n  mvp_scope: `Phase 1: Build a proof-of-concept that demonstrates the core ${topic} functionality with basic UI. Include: CLI interface, configuration file support, basic documentation, and integration tests. Target: usable by technical early adopters within first release.`,\n  misuse_risks: `This tool could potentially be misused for: (1) evading legitimate law enforcement in non-authoritarian contexts, (2) coordinating harmful activities under cover of privacy, (3) spreading misinformation without accountability. Mitigations: implement transparency reporting, add voluntary identity binding options, and include clear usage guidelines.`,\n  feasibility_score: feasibilityScore,\n  impact_score: impactScore,\n  technical_dependencies: [\n    'Cryptographic libraries (libsodium or equivalent)',\n    'Networking stack with proxy support',\n    'Cross-platform runtime (Rust or Go preferred)'\n  ],\n  suggested_stack: [\n    'Rust for core components',\n    'TypeScript for any web interfaces',\n    'SQLite for local storage',\n    'libp2p for P2P networking'\n  ],\n  prior_art: [\n    'Tor Project',\n    'Signal Protocol',\n    'Briar Messenger',\n    'Lokinet'\n  ],\n  open_questions: [\n    'What is the minimum viable UX for non-technical users?',\n    'How to handle key management without trusted third parties?',\n    'What jurisdictions should be prioritized for initial deployment?',\n    'How to fund ongoing development sustainably?'\n  ]\n};\n\n// Format as Claude API response structure\nreturn [{\n  json: {\n    content: [{\n      type: 'text',\n      text: JSON.stringify(ideaOutput)\n    }],\n    _periodData: periodData,\n    _cluster: cluster,\n    _derivedFromInsightIds: derivedFromInsightIds,\n    _citations: uniqueCitations,\n    _topic: topic,\n    _thresholds: thresholds\n  }\n}];"
+        "jsCode": "// STUB: IdeaSynthesizer Agent\n// Simulates Claude API response for project idea generation\n// Replace with real HTTP Request to Claude API when ready\n\nconst input = $input.first().json;\nconst cluster = input.cluster;\nconst periodData = input._periodData;\nconst thresholds = input._thresholds || {};\n\n// Skip if no valid cluster\nif (input.noValidClusters) {\n  return [{\n    json: {\n      content: [{ type: 'text', text: JSON.stringify({ skip: true, reason: 'No valid clusters' }) }],\n      _periodData: periodData,\n      _cluster: null,\n      _skip: true,\n      _thresholds: thresholds,\n      _agents: input._agents\n    }\n  }];\n}\n\nconst insights = cluster.insights || [];\nconst topic = cluster.topic;\nconst relatedTopics = cluster.relatedTopics || [];\n\n// Collect all insight IDs for this cluster\nconst derivedFromInsightIds = insights.map(i => i.id);\n\n// Collect all citations from cluster insights\nconst allCitations = [];\nfor (const insight of insights) {\n  if (insight.citations && Array.isArray(insight.citations)) {\n    allCitations.push(...insight.citations);\n  }\n}\nconst uniqueCitations = [...new Set(allCitations)];\n\n// Generate stub project idea based on cluster content\nconst topicDisplayNames = {\n  'bitcoin': 'Bitcoin & Payments',\n  'zk': 'Zero Knowledge Technology',\n  'censorship-resistance': 'Censorship Resistance',\n  'comms': 'Secure Communications',\n  'payments': 'Payment Systems',\n  'identity': 'Identity & Privacy',\n  'privacy': 'Privacy Tools',\n  'surveillance': 'Anti-Surveillance',\n  'activism': 'Activism Tools',\n  'sovereignty': 'Digital Sovereignty'\n};\n\nconst topicName = topicDisplayNames[topic] || topic;\nconst insightTitles = insights.slice(0, 3).map(i => i.title).join('; ');\nconst insightTldrs = insights.slice(0, 3).map(i => i.tldr).join(' ');\n\n// Generate scores based on cluster quality\nconst avgScore = cluster.avgScore || 80;\nconst feasibilityScore = Math.min(100, Math.max(40, 60 + Math.floor(Math.random() * 30)));\nconst impactScore = Math.min(100, Math.max(40, avgScore - 10 + Math.floor(Math.random() * 20)));\n\nconst ideaOutput = {\n  problem_statement: `Based on ${cluster.insightCount} signals in ${topicName}, there is a clear need for improved tooling. Key observations: ${insightTldrs.substring(0, 400)}...`,\n  threat_model: `Adversaries include state-level actors with network monitoring capabilities, platform operators with content moderation powers, and sophisticated attackers targeting ${topicName.toLowerCase()} infrastructure. Users require protection against traffic analysis, metadata correlation, and targeted deanonymization attacks.`,\n  affected_groups: [\n    'Activists in regions with internet censorship',\n    'Journalists protecting sources',\n    'Human rights organizations',\n    `Users of ${topicName.toLowerCase()} tools under surveillance`\n  ],\n  proposed_solution: `Develop a ${topicName.toLowerCase()} enhancement that addresses the gaps identified in recent signals. The solution should focus on: (1) improving usability for non-technical users, (2) adding offline/low-bandwidth support, (3) implementing defense-in-depth against the threat model described. Key insights driving this: ${insightTitles}.`,\n  mvp_scope: `Phase 1: Build a proof-of-concept that demonstrates the core ${topic} functionality with basic UI. Include: CLI interface, configuration file support, basic documentation, and integration tests. Target: usable by technical early adopters within first release.`,\n  misuse_risks: `This tool could potentially be misused for: (1) evading legitimate law enforcement in non-authoritarian contexts, (2) coordinating harmful activities under cover of privacy, (3) spreading misinformation without accountability. Mitigations: implement transparency reporting, add voluntary identity binding options, and include clear usage guidelines.`,\n  feasibility_score: feasibilityScore,\n  impact_score: impactScore,\n  technical_dependencies: [\n    'Cryptographic libraries (libsodium or equivalent)',\n    'Networking stack with proxy support',\n    'Cross-platform runtime (Rust or Go preferred)'\n  ],\n  suggested_stack: [\n    'Rust for core components',\n    'TypeScript for any web interfaces',\n    'SQLite for local storage',\n    'libp2p for P2P networking'\n  ],\n  prior_art: [\n    'Tor Project',\n    'Signal Protocol',\n    'Briar Messenger',\n    'Lokinet'\n  ],\n  open_questions: [\n    'What is the minimum viable UX for non-technical users?',\n    'How to handle key management without trusted third parties?',\n    'What jurisdictions should be prioritized for initial deployment?',\n    'How to fund ongoing development sustainably?'\n  ]\n};\n\n// Format as Claude API response structure\nreturn [{\n  json: {\n    content: [{\n      type: 'text',\n      text: JSON.stringify(ideaOutput)\n    }],\n    _periodData: periodData,\n    _cluster: cluster,\n    _derivedFromInsightIds: derivedFromInsightIds,\n    _citations: uniqueCitations,\n    _topic: topic,\n    _thresholds: thresholds,\n    _agents: input._agents\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -144,7 +167,7 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 4096,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": \"You are the IdeaSynthesizer for Libertas. Generate a project idea from these clustered insights.\\n\\nTopic: {{ $json.cluster.topic }}\\nInsight Count: {{ $json.cluster.insightCount }}\\nAverage Freedom Relevance Score: {{ $json.cluster.avgScore }}\\n\\nInsights:\\n{{ JSON.stringify($json.cluster.insights.map(i => ({ title: i.title, tldr: i.tldr, topics: i.topics, score: i.freedom_relevance_score })), null, 2) }}\\n\\nRespond with JSON matching this schema:\\n{\\n  \\\"problem_statement\\\": \\\"50-500 chars\\\",\\n  \\\"threat_model\\\": \\\"50-500 chars\\\",\\n  \\\"affected_groups\\\": [\\\"group1\\\", \\\"group2\\\"],\\n  \\\"proposed_solution\\\": \\\"100-1000 chars\\\",\\n  \\\"mvp_scope\\\": \\\"50-500 chars\\\",\\n  \\\"misuse_risks\\\": \\\"50-500 chars\\\",\\n  \\\"feasibility_score\\\": 0-100,\\n  \\\"impact_score\\\": 0-100,\\n  \\\"technical_dependencies\\\": [],\\n  \\\"suggested_stack\\\": [],\\n  \\\"prior_art\\\": [],\\n  \\\"open_questions\\\": []\\n}\"\n  }]\n}",
+        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 4096,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": {{ JSON.stringify($json._agents?.generateIdea + \"\\n\\n# Input\\n\\nTopic: \" + $json.cluster.topic + \"\\nInsight Count: \" + $json.cluster.insightCount + \"\\nAverage Freedom Relevance Score: \" + $json.cluster.avgScore + \"\\n\\nInsights:\\n\" + JSON.stringify($json.cluster.insights.map(i => ({ title: i.title, tldr: i.tldr, topics: i.topics, score: i.freedom_relevance_score })), null, 2)) }}\n  }]\n}",
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
@@ -349,11 +372,38 @@
             "node": "Fetch Thresholds Config",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "Fetch Generate Idea Prompt",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
     },
     "Fetch Thresholds Config": {
+      "main": [
+        [
+          {
+            "node": "Merge Config & Agents",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Generate Idea Prompt": {
+      "main": [
+        [
+          {
+            "node": "Merge Config & Agents",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge Config & Agents": {
       "main": [
         [
           {

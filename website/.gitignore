@@ -22,6 +22,8 @@
 
 # config files copied from ../config at build time
 /config
+# agent files copied from ../agents at build time
+/agents
 
 # misc
 .DS_Store
