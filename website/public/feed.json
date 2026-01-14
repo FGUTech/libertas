@@ -1,0 +1,32 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "Libertas - Freedom Tech Signals",
+  "home_page_url": "https://libertas.fgu.tech",
+  "feed_url": "https://libertas.fgu.tech/feed.json",
+  "description": "Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.",
+  "language": "en-US",
+  "items": [
+    {
+      "id": "71005a65-6894-458f-a99e-5f893f156bb7",
+      "url": "https://libertas.fgu.tech/signals/71005a65-6894-458f-a99e-5f893f156bb7",
+      "title": "EFF Guide to Navigating Age Verification Gates While Protecting Privacy",
+      "summary": "EFF releases practical guide for users forced to comply with age verification mandates, offering privacy-preserving strategies when faced with age gates on major platforms.",
+      "content_text": "EFF provides harm reduction guidance for mandatory age verification despite opposing all age verification mandates\n• Recommends submitting absolute minimum data possible to reduce breach exposure\n• Facial age estimation works poorly for people of color, trans/nonbinary people, and people with disabilities\n• Meta uses Yoti for face scans, which uploads photos to third-party servers with tracker concerns\n• Document verification creates identity exposure beyond age - Discord breach leaked 70,000 ID photos\n• Some services like Incode (used by TikTok) retain ID images indefinitely by default\n• Credit card and email database verification offer less sensitive alternatives but still undermine anonymity\n• Guide covers evaluation framework: data required, access, retention, audits, and visibility",
+      "date_published": "2026-01-14T22:58:54.644Z",
+      "date_modified": "2026-01-14T22:58:54.844Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "identity",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/01/so-youve-hit-age-gate-what-now"
+        ]
+      }
+    }
+  ]
+}

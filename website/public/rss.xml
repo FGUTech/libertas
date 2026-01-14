@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Libertas - Freedom Tech Signals</title>
+  <link>https://libertas.fgu.tech</link>
+  <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
+  <language>en-us</language>
+  <lastBuildDate>Wed, 14 Jan 2026 22:58:54 GMT</lastBuildDate>
+  <atom:link href="https://libertas.fgu.tech/rss.xml" rel="self" type="application/rss+xml"/>
+  <generator>Libertas n8n Workflow</generator>
+  <item>
+    <title>EFF Guide to Navigating Age Verification Gates While Protecting Privacy</title>
+    <link>https://libertas.fgu.tech/signals/71005a65-6894-458f-a99e-5f893f156bb7</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/signals/71005a65-6894-458f-a99e-5f893f156bb7</guid>
+    <pubDate>Wed, 14 Jan 2026 22:58:54 GMT</pubDate>
+    <description>EFF releases practical guide for users forced to comply with age verification mandates, offering privacy-preserving strategies when faced with age gates on major platforms.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>identity</category>
+    <category>censorship-resistance</category>
+  </item>
+</channel>
+</rss>
