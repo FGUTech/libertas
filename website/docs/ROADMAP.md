@@ -185,48 +185,20 @@ Features that enhance the experience but aren't critical for launch.
 
 ---
 
-### 2.7 Search Functionality (COMPLETE)
-
-**Description**: Search across posts content.
-
-**Requirements**:
-- [x] Search input in header
-- [x] Full-text search of post content
-- [x] Search results page with highlighting
-- [x] Filter by date range, tags
-
-**Implementation Notes**:
-- Use Cloud SQL full-text search or client-side filtering
-- Consider Algolia/Meilisearch for better UX
-- Start with simple title/tag matching
-
-**Implemented**:
-- `SearchInput` component with debounced input and keyboard shortcut (Cmd+K)
-- Compact search in header (desktop) and Search link in mobile nav
-- `/search` page with full search functionality
-- Full-text search across title, summary, content, tags, and topics
-- Relevance scoring with weighted matches (title > tags > summary > content)
-- Search result highlighting with `<mark>` tags
-- Date range filter with quick presets (7 days, 30 days, 3 months, year)
-- Topic filtering
-- Sort by relevance, newest, or oldest
-- Pagination of results
-
----
-
 ### 2.8 Reading Progress
 
 **Description**: Show reading progress on long posts.
 
 **Requirements**:
-- [ ] Progress bar at top of post
-- [ ] Estimated reading time
-- [ ] "Back to top" button
+- [x] Progress bar at top of post
+- [x] Estimated reading time
+- [x] "Back to top" button
 
 **Implementation Notes**:
-- Use Intersection Observer for progress
-- Calculate reading time from word count
+- Use scroll events for progress tracking (more reliable than IntersectionObserver for this use case)
+- Calculate reading time from word count (200 WPM average)
 - Smooth scroll for "Back to top"
+- Matrix green accent glow on progress bar
 
 ---
 
@@ -405,6 +377,7 @@ Features for future consideration after core functionality is stable.
 | SEO & Meta | Medium | Low | P0 | Done |
 | Dark/Light Theme | Medium | Low | P1 | Done |
 | Search Functionality | Medium | Medium | P1 | Done |
+| Reading Progress | Low | Low | P1 | Done |
 | User Auth (Firebase + Starknet) | High | Medium | P1 | |
 | User Profiles | Medium | Medium | P1 | |
 | Comments | Medium | Medium | P1 | |

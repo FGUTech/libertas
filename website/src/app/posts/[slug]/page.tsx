@@ -10,6 +10,8 @@ import { ShareButtons } from "@/components/ShareButtons";
 import { CitationList } from "@/components/CitationList";
 import { PostNavigation } from "@/components/PostNavigation";
 import { PostJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
+import { ReadingProgress, ReadingTime } from "@/components/ReadingProgress";
+import { calculateReadingTime } from "@/lib/reading-time";
 
 interface PostPageProps {
   params: Promise<{ slug: string }>;
@@ -74,6 +76,7 @@ export default async function PostPage({ params }: PostPageProps) {
   const { previous, next } = getAdjacentPosts(slug);
   const tocItems = extractToc(post.content);
   const showToc = tocItems.length >= 3;
+  const readingTime = calculateReadingTime(post.content);
 
   // Build the full URL for sharing
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://libertas.fgu.tech";
@@ -91,6 +94,9 @@ export default async function PostPage({ params }: PostPageProps) {
       {/* JSON-LD Structured Data */}
       <PostJsonLd post={post} url={postUrl} />
       <BreadcrumbJsonLd items={breadcrumbItems} />
+
+      {/* Reading Progress */}
+      <ReadingProgress />
 
       {/* Main Content */}
       <main className="py-8 md:py-12">
@@ -116,8 +122,9 @@ export default async function PostPage({ params }: PostPageProps) {
               </p>
 
               {/* Metadata */}
-              <div className="mb-8">
+              <div className="mb-8 flex flex-wrap items-center gap-4">
                 <PostMetadata post={post} />
+                <ReadingTime minutes={readingTime} />
               </div>
 
               {/* Share buttons */}
