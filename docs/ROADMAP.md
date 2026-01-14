@@ -175,17 +175,17 @@ This pattern is implemented across: 1.5, 1.6, 1.9, 1.10, 1.11, 1.13, 1.14, 1.15
 
 ---
 
-### 1.9 Workflow B: Claude API Integration
+### 1.9 Workflow B: Claude API Integration ✅
 
 **Description**: Replace digest composer stub with real Claude API, with config-driven toggle for stub/real mode.
 
 **Requirements**:
-- [ ] Add IF node to check `runtime.use_stubs` config value
-- [ ] Wire DigestComposer Stub and real Claude API node to IF branches
-- [ ] Real Claude node uses `agents/digest.md` prompt
-- [ ] Set up n8n credential for Anthropic API (if not already from 1.5)
-- [ ] Include emerging patterns and trend detection in prompt
-- [ ] Validate digest output structure
+- [x] Add IF node to check `runtime.use_stubs` config value
+- [x] Wire DigestComposer Stub and real Claude API node to IF branches
+- [x] Real Claude node uses `agents/digest.md` prompt
+- [x] Set up n8n credential for Anthropic API (if not already from 1.5)
+- [x] Include emerging patterns and trend detection in prompt
+- [x] Validate digest output structure
 - [ ] Test in both stub and real modes
 
 **Implementation Notes**:
@@ -797,11 +797,11 @@ Features for future consideration after core functionality is stable.
 | Agent Prompts (integration) | 100% | Workflows load prompts from GitHub raw URLs (1.3 complete) |
 | Config Files (files) | 100% | sources.yml and thresholds.yml configured |
 | Config Files (integration) | 100% | Workflows load config from GitHub raw URLs (1.2 complete) |
-| Runtime Stub Toggle | 25% | `runtime.use_stubs` added to thresholds.yml; Workflow A wired with IF nodes |
+| Runtime Stub Toggle | 50% | `runtime.use_stubs` in thresholds.yml; Workflow A & B wired with IF nodes |
 | JSON Schemas (files) | 100% | All schemas exist in `schemas/` |
 | JSON Schemas (validation) | 25% | Workflow A has inline validation; other workflows pending |
 | Workflow A Structure | 95% | Complete pipeline with stub/real toggle, validation nodes, pending golden tests |
-| Workflow B Structure | 80% | Complete pipeline, stubs active, need IF toggle |
+| Workflow B Structure | 95% | Complete pipeline with stub/real toggle for DigestComposer, pending testing |
 | Workflow C Structure | 90% | Active workflow, needs IF toggle for APIs |
 | Workflow D Structure | 80% | Complete pipeline, stubs active, need IF toggle |
 | Firebase Auth | 0% | Documented but not implemented |

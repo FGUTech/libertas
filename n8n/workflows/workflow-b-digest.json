@@ -46,21 +46,32 @@
     },
     {
       "parameters": {
-        "jsCode": "// Merge thresholds config and digest agent prompt\nconst thresholdsConfig = $('Fetch Thresholds Config').first().json;\nconst digestPrompt = $('Fetch Digest Prompt').first().json;\n\nreturn [{\n  json: {\n    ...thresholdsConfig,\n    _agents: {\n      digest: digestPrompt.content\n    }\n  }\n}];"
+        "mode": "append",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.1,
+      "position": [440, 0],
+      "id": "merge-fetches",
+      "name": "Wait for Fetches"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Merge thresholds config and digest agent prompt from fetched data\nconst allItems = $input.all();\n\nlet thresholdsConfig = {};\nlet digestPrompt = null;\n\nfor (const item of allItems) {\n  const data = item.json;\n  // Thresholds config has runtime/ingestion/publishing sections\n  if (data.runtime || data.ingestion || data.publishing) {\n    thresholdsConfig = data;\n  }\n  // Digest prompt has content and name fields\n  else if (data.content && (data.name === 'digest' || data.content.includes('digest'))) {\n    digestPrompt = data;\n  }\n}\n\nconsole.log(`Loaded thresholds config: runtime.use_stubs=${thresholdsConfig.runtime?.use_stubs}`);\nconsole.log(`Loaded digest prompt: ${digestPrompt?.content?.length || 0} chars`);\n\nreturn [{\n  json: {\n    ...thresholdsConfig,\n    _agents: {\n      digest: digestPrompt?.content || ''\n    }\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [440, 0],
+      "position": [660, 0],
       "id": "merge-config-agents",
       "name": "Merge Config & Agents"
     },
     {
       "parameters": {
-        "jsCode": "// Calculate date range for digest\n// Uses config values from merged config + agents\n\nconst merged = $input.first().json;\nconst digestConfig = merged.digest || {};\nconst agents = merged._agents;\n\n// Get thresholds from config\nconst minInsights = digestConfig.min_insights || 3;\nconst maxPerSection = digestConfig.max_per_section || 10;\n\nconst now = new Date();\nconst periodEnd = new Date(now);\nperiodEnd.setUTCDate(periodEnd.getUTCDate() - 1); // Yesterday\nperiodEnd.setUTCHours(23, 59, 59, 999);\n\nconst periodStart = new Date(periodEnd);\nperiodStart.setUTCDate(periodStart.getUTCDate() - 6); // 7 days ago\nperiodStart.setUTCHours(0, 0, 0, 0);\n\n// Format dates for SQL query and display\nconst formatDateSQL = (d) => d.toISOString();\nconst formatDateDisplay = (d) => d.toISOString().split('T')[0];\n\nconsole.log(`Using thresholds from config: minInsights=${minInsights}, maxPerSection=${maxPerSection}`);\nconsole.log(`Loaded digest agent prompt: ${agents?.digest?.length || 0} chars`);\n\nreturn [{\n  json: {\n    periodStartSQL: formatDateSQL(periodStart),\n    periodEndSQL: formatDateSQL(periodEnd),\n    periodStartDisplay: formatDateDisplay(periodStart),\n    periodEndDisplay: formatDateDisplay(periodEnd),\n    digestId: `digest-${formatDateDisplay(periodEnd)}`,\n    generatedAt: now.toISOString(),\n    _thresholds: {\n      minInsights,\n      maxPerSection\n    },\n    _agents: agents\n  }\n}];"
+        "jsCode": "// Calculate date range for digest\n// Uses config values from merged config + agents\n\nconst merged = $input.first().json;\nconst digestConfig = merged.digest || {};\nconst runtimeConfig = merged.runtime || { use_stubs: true };\nconst agents = merged._agents;\n\n// Get thresholds from config\nconst minInsights = digestConfig.min_insights || 3;\nconst maxPerSection = digestConfig.max_per_section || 10;\n\nconst now = new Date();\nconst periodEnd = new Date(now);\nperiodEnd.setUTCDate(periodEnd.getUTCDate() - 1); // Yesterday\nperiodEnd.setUTCHours(23, 59, 59, 999);\n\nconst periodStart = new Date(periodEnd);\nperiodStart.setUTCDate(periodStart.getUTCDate() - 6); // 7 days ago\nperiodStart.setUTCHours(0, 0, 0, 0);\n\n// Format dates for SQL query and display\nconst formatDateSQL = (d) => d.toISOString();\nconst formatDateDisplay = (d) => d.toISOString().split('T')[0];\n\nconsole.log(`Using thresholds from config: minInsights=${minInsights}, maxPerSection=${maxPerSection}`);\nconsole.log(`Runtime config: use_stubs=${runtimeConfig.use_stubs}`);\nconsole.log(`Loaded digest agent prompt: ${agents?.digest?.length || 0} chars`);\n\nreturn [{\n  json: {\n    periodStartSQL: formatDateSQL(periodStart),\n    periodEndSQL: formatDateSQL(periodEnd),\n    periodStartDisplay: formatDateDisplay(periodStart),\n    periodEndDisplay: formatDateDisplay(periodEnd),\n    digestId: `digest-${formatDateDisplay(periodEnd)}`,\n    generatedAt: now.toISOString(),\n    _thresholds: {\n      runtime: runtimeConfig,\n      minInsights,\n      maxPerSection\n    },\n    _agents: agents\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [660, 0],
+      "position": [880, 0],
       "id": "calculate-period",
       "name": "Calculate Period"
     },
@@ -74,7 +85,7 @@
       },
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
-      "position": [440, 0],
+      "position": [1100, 0],
       "id": "query-insights",
       "name": "Query Published Insights",
       "alwaysOutputData": true,
@@ -91,7 +102,7 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [660, 0],
+      "position": [1320, 0],
       "id": "merge-insights",
       "name": "Merge Insights with Period"
     },
@@ -120,19 +131,48 @@
       },
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
-      "position": [880, 0],
+      "position": [1540, 0],
       "id": "check-has-insights",
       "name": "Has Insights?"
     },
     {
       "parameters": {
-        "jsCode": "// Group insights by topic and prepare aggregated data\n// Uses maxPerSection threshold from config\nconst data = $input.first().json;\nconst insights = data.insights || [];\nconst thresholds = data._thresholds || {};\nconst agents = data._agents;\nconst maxPerSection = thresholds.maxPerSection || 10;\n\n// Group insights by primary topic (first topic in array)\nconst byTopic = {};\nconst topicCounts = {};\n\nfor (const insight of insights) {\n  const topics = insight.topics || [];\n  const primaryTopic = topics[0] || 'other';\n  \n  if (!byTopic[primaryTopic]) {\n    byTopic[primaryTopic] = [];\n    topicCounts[primaryTopic] = 0;\n  }\n  byTopic[primaryTopic].push(insight);\n  topicCounts[primaryTopic]++;\n  \n  // Also count all topics for ranking\n  for (const topic of topics) {\n    if (topic !== primaryTopic) {\n      topicCounts[topic] = (topicCounts[topic] || 0) + 1;\n    }\n  }\n}\n\n// Sort topics by count for top_topics\nconst topTopics = Object.entries(topicCounts)\n  .sort((a, b) => b[1] - a[1])\n  .slice(0, 5)\n  .map(([topic]) => topic);\n\n// Collect all citations\nconst allCitations = [];\nfor (const insight of insights) {\n  if (insight.citations) {\n    allCitations.push(...insight.citations);\n  }\n}\nconst uniqueCitations = [...new Set(allCitations)];\n\n// Build sections data for LLM - limit per section using maxPerSection from config\nconst sections = Object.entries(byTopic).map(([topic, topicInsights]) => ({\n  topic,\n  insightCount: topicInsights.length,\n  insights: topicInsights.slice(0, maxPerSection).map(i => ({\n    id: i.id,\n    title: i.title,\n    tldr: i.tldr,\n    score: i.freedom_relevance_score,\n    published_url: i.published_url,\n    citations: i.citations\n  }))\n}));\n\nconsole.log(`Aggregated insights into ${sections.length} sections (max ${maxPerSection} per section)`);\n\nreturn [{\n  json: {\n    ...data,\n    byTopic,\n    sections,\n    topTopics,\n    uniqueCitations,\n    topicSummary: Object.entries(topicCounts).map(([t, c]) => `${t}: ${c}`).join(', '),\n    _usedThresholds: {\n      maxPerSection\n    }\n  }\n}];"
+        "jsCode": "// Group insights by topic and prepare aggregated data\n// Uses maxPerSection threshold from config\nconst data = $input.first().json;\nconst insights = data.insights || [];\nconst thresholds = data._thresholds || {};\nconst agents = data._agents;\nconst maxPerSection = thresholds.maxPerSection || 10;\n\n// Group insights by primary topic (first topic in array)\nconst byTopic = {};\nconst topicCounts = {};\n\nfor (const insight of insights) {\n  const topics = insight.topics || [];\n  const primaryTopic = topics[0] || 'other';\n  \n  if (!byTopic[primaryTopic]) {\n    byTopic[primaryTopic] = [];\n    topicCounts[primaryTopic] = 0;\n  }\n  byTopic[primaryTopic].push(insight);\n  topicCounts[primaryTopic]++;\n  \n  // Also count all topics for ranking\n  for (const topic of topics) {\n    if (topic !== primaryTopic) {\n      topicCounts[topic] = (topicCounts[topic] || 0) + 1;\n    }\n  }\n}\n\n// Sort topics by count for top_topics\nconst topTopics = Object.entries(topicCounts)\n  .sort((a, b) => b[1] - a[1])\n  .slice(0, 5)\n  .map(([topic]) => topic);\n\n// Collect all citations\nconst allCitations = [];\nfor (const insight of insights) {\n  if (insight.citations) {\n    allCitations.push(...insight.citations);\n  }\n}\nconst uniqueCitations = [...new Set(allCitations)];\n\n// Build sections data for LLM - limit per section using maxPerSection from config\nconst sections = Object.entries(byTopic).map(([topic, topicInsights]) => ({\n  topic,\n  insightCount: topicInsights.length,\n  insights: topicInsights.slice(0, maxPerSection).map(i => ({\n    id: i.id,\n    title: i.title,\n    tldr: i.tldr,\n    score: i.freedom_relevance_score,\n    published_url: i.published_url,\n    citations: i.citations\n  }))\n}));\n\nconsole.log(`Aggregated insights into ${sections.length} sections (max ${maxPerSection} per section)`);\n\n// Pass through runtime config for stub/real toggle\nconst runtime = data._thresholds?.runtime || { use_stubs: true };\n\nreturn [{\n  json: {\n    ...data,\n    byTopic,\n    sections,\n    topTopics,\n    uniqueCitations,\n    topicSummary: Object.entries(topicCounts).map(([t, c]) => `${t}: ${c}`).join(', '),\n    _usedThresholds: {\n      maxPerSection\n    },\n    _runtime: runtime\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [1100, -100],
+      "position": [1760, -100],
       "id": "aggregate-by-topic",
       "name": "Aggregate by Topic"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "use-stubs-digest",
+              "leftValue": "={{ $json._runtime?.use_stubs ?? true }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [1980, -100],
+      "id": "use-stubs-digest",
+      "name": "Use Stubs for DigestComposer?"
     },
     {
       "parameters": {
@@ -140,7 +180,7 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [1320, -100],
+      "position": [2200, -200],
       "id": "digest-composer-stub",
       "name": "DigestComposer Stub (Claude)"
     },
@@ -148,13 +188,11 @@
       "parameters": {
         "method": "POST",
         "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
-            {
-              "name": "x-api-key",
-              "value": "={{ $env.ANTHROPIC_API_KEY }}"
-            },
             {
               "name": "anthropic-version",
               "value": "2023-06-01"
@@ -167,22 +205,40 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 4096,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": {{ JSON.stringify($json._agents?.digest + \"\\n\\n# Input\\n\\nPeriod: \" + $('Calculate Period').first().json.periodStartDisplay + \" to \" + $('Calculate Period').first().json.periodEndDisplay + \"\\n\\nInsights by topic:\\n\" + JSON.stringify($json.sections, null, 2)) }}\n  }]\n}",
-        "options": {}
+        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 4096,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": {{ JSON.stringify($('Aggregate by Topic').first().json._agents?.digest + \"\\n\\n# Input\\n\\nPeriod: \" + $('Aggregate by Topic').first().json.periodStartDisplay + \" to \" + $('Aggregate by Topic').first().json.periodEndDisplay + \"\\n\\nInsights by topic:\\n\" + JSON.stringify($('Aggregate by Topic').first().json.sections, null, 2) + \"\\n\\nProject Ideas from this week: []\\n\\nTotal insight count: \" + $('Aggregate by Topic').first().json.insightCount) }}\n  }]\n}",
+        "options": {
+          "timeout": 60000
+        }
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [1320, 100],
+      "position": [2200, 0],
       "id": "digest-composer-real",
-      "name": "DigestComposer with Claude (Disabled)"
+      "name": "DigestComposer with Claude API",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "ANTHROPIC_CREDENTIAL_ID",
+          "name": "Anthropic API Key"
+        }
+      }
     },
     {
       "parameters": {
-        "jsCode": "// Parse digest output from Claude API format\nconst input = $input.first().json;\nlet digest;\n\ntry {\n  const text = input.content[0].text;\n  digest = JSON.parse(text);\n} catch (e) {\n  // Fallback if parsing fails\n  digest = {\n    executive_tldr: 'Failed to generate digest summary.',\n    sections: [],\n    emerging_patterns: [],\n    looking_ahead: ['Review source insights manually'],\n    insight_count: 0,\n    top_topics: []\n  };\n}\n\nconst periodData = input._periodData;\nconst uniqueCitations = input._uniqueCitations || [];\n\n// Build full markdown content for digest\nlet contentMarkdown = `---\\nid: \"${periodData.digestId}\"\\ntype: \"weekly-digest\"\\npublished_at: \"${new Date().toISOString()}\"\\nperiod_start: \"${periodData.periodStartDisplay}\"\\nperiod_end: \"${periodData.periodEndDisplay}\"\\ninsight_count: ${digest.insight_count}\\n---\\n\\n`;\n\ncontentMarkdown += `# Weekly Freedom Tech Digest\\n\\n`;\ncontentMarkdown += `*${periodData.periodStartDisplay} to ${periodData.periodEndDisplay}*\\n\\n`;\n\ncontentMarkdown += `## TL;DR\\n\\n${digest.executive_tldr}\\n\\n`;\n\ncontentMarkdown += `## Top Signals\\n\\n`;\nfor (const section of digest.sections) {\n  contentMarkdown += section.content_markdown + '\\n';\n}\n\nif (digest.emerging_patterns && digest.emerging_patterns.length > 0) {\n  contentMarkdown += `## Emerging Patterns\\n\\n`;\n  for (const pattern of digest.emerging_patterns) {\n    contentMarkdown += `- **${pattern.pattern}**\\n`;\n  }\n  contentMarkdown += '\\n';\n}\n\nif (digest.looking_ahead && digest.looking_ahead.length > 0) {\n  contentMarkdown += `## Looking Ahead\\n\\n`;\n  for (const item of digest.looking_ahead) {\n    contentMarkdown += `- ${item}\\n`;\n  }\n  contentMarkdown += '\\n';\n}\n\nif (uniqueCitations && uniqueCitations.length > 0) {\n  contentMarkdown += `## Sources This Week\\n\\n`;\n  for (const citation of uniqueCitations.slice(0, 20)) {\n    contentMarkdown += `- ${citation}\\n`;\n  }\n}\n\n// Prepare data for database insert\nreturn [{\n  json: {\n    periodStart: periodData.periodStartDisplay,\n    periodEnd: periodData.periodEndDisplay,\n    insightCount: digest.insight_count,\n    executiveTldr: digest.executive_tldr,\n    contentMarkdown: contentMarkdown,\n    topTopics: digest.top_topics || [],\n    digestId: periodData.digestId\n  }\n}];"
+        "jsCode": "// Process real Claude API response and add pass-through data for digest\nconst claudeResponse = $input.first().json;\nconst aggregateData = $('Aggregate by Topic').first().json;\n\n// Return in same format as stub for Parse Digest Output compatibility\nreturn [{\n  json: {\n    content: claudeResponse.content,\n    _periodData: {\n      periodStartDisplay: aggregateData.periodStartDisplay,\n      periodEndDisplay: aggregateData.periodEndDisplay,\n      digestId: aggregateData.digestId\n    },\n    _uniqueCitations: aggregateData.uniqueCitations,\n    _agents: aggregateData._agents\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [1540, -100],
+      "position": [2420, 0],
+      "id": "wrap-digest-response",
+      "name": "Wrap Claude Digest Response"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse digest output from Claude API format\nconst input = $input.first().json;\nlet digest;\n\ntry {\n  let text = input.content[0].text;\n  \n  // Strip markdown code blocks if present (Claude often wraps JSON in ```json...```)\n  text = text.trim();\n  if (text.startsWith('```')) {\n    // Remove opening fence (```json or ```)\n    text = text.replace(/^```(?:json)?\\s*\\n?/, '');\n    // Remove closing fence\n    text = text.replace(/\\n?```\\s*$/, '');\n  }\n  \n  digest = JSON.parse(text.trim());\n} catch (e) {\n  // Fallback if parsing fails\n  console.log('Parse Digest error:', e.message);\n  console.log('Raw text:', input.content?.[0]?.text?.substring(0, 200));\n  digest = {\n    executive_tldr: 'Failed to generate digest summary: ' + e.message,\n    sections: [],\n    emerging_patterns: [],\n    looking_ahead: ['Review source insights manually'],\n    insight_count: 0,\n    top_topics: []\n  };\n}\n\nconst periodData = input._periodData;\nconst uniqueCitations = input._uniqueCitations || [];\n\n// Build full markdown content for digest\nlet contentMarkdown = `---\\nid: \"${periodData.digestId}\"\\ntype: \"weekly-digest\"\\npublished_at: \"${new Date().toISOString()}\"\\nperiod_start: \"${periodData.periodStartDisplay}\"\\nperiod_end: \"${periodData.periodEndDisplay}\"\\ninsight_count: ${digest.insight_count}\\n---\\n\\n`;\n\ncontentMarkdown += `# Weekly Freedom Tech Digest\\n\\n`;\ncontentMarkdown += `*${periodData.periodStartDisplay} to ${periodData.periodEndDisplay}*\\n\\n`;\n\ncontentMarkdown += `## TL;DR\\n\\n${digest.executive_tldr}\\n\\n`;\n\ncontentMarkdown += `## Top Signals\\n\\n`;\nfor (const section of (digest.sections || [])) {\n  contentMarkdown += section.content_markdown + '\\n';\n}\n\nif (digest.emerging_patterns && digest.emerging_patterns.length > 0) {\n  contentMarkdown += `## Emerging Patterns\\n\\n`;\n  for (const pattern of digest.emerging_patterns) {\n    contentMarkdown += `- **${pattern.pattern}**\\n`;\n  }\n  contentMarkdown += '\\n';\n}\n\nif (digest.looking_ahead && digest.looking_ahead.length > 0) {\n  contentMarkdown += `## Looking Ahead\\n\\n`;\n  for (const item of digest.looking_ahead) {\n    contentMarkdown += `- ${item}\\n`;\n  }\n  contentMarkdown += '\\n';\n}\n\nif (uniqueCitations && uniqueCitations.length > 0) {\n  contentMarkdown += `## Sources This Week\\n\\n`;\n  for (const citation of uniqueCitations.slice(0, 20)) {\n    contentMarkdown += `- ${citation}\\n`;\n  }\n}\n\n// Prepare data for database insert\nreturn [{\n  json: {\n    periodStart: periodData.periodStartDisplay,\n    periodEnd: periodData.periodEndDisplay,\n    insightCount: digest.insight_count,\n    executiveTldr: digest.executive_tldr,\n    contentMarkdown: contentMarkdown,\n    topTopics: digest.top_topics || [],\n    digestId: periodData.digestId\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2640, -100],
       "id": "parse-digest",
       "name": "Parse Digest Output"
     },
@@ -192,7 +248,7 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [1760, -100],
+      "position": [2860, -100],
       "id": "build-digest-query",
       "name": "Build Digest Query"
     },
@@ -204,7 +260,7 @@
       },
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
-      "position": [1980, -100],
+      "position": [3080, -100],
       "id": "insert-digest",
       "name": "Insert/Update Digest",
       "credentials": {
@@ -220,7 +276,7 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [2200, -100],
+      "position": [3300, -100],
       "id": "merge-insert-result",
       "name": "Merge Insert Result"
     },
@@ -230,7 +286,7 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [2420, -100],
+      "position": [3520, -100],
       "id": "github-commit-stub",
       "name": "GitHub Commit Stub"
     },
@@ -262,7 +318,7 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [2420, 100],
+      "position": [3520, 100],
       "id": "github-commit-real",
       "name": "GitHub Commit (Disabled)"
     },
@@ -272,7 +328,7 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [2640, -100],
+      "position": [3740, -100],
       "id": "resend-email-stub",
       "name": "Resend Email Stub"
     },
@@ -300,7 +356,7 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [2640, 100],
+      "position": [3740, 100],
       "id": "resend-email-real",
       "name": "Resend Email (Disabled)"
     },
@@ -310,7 +366,7 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [2860, -100],
+      "position": [3960, -100],
       "id": "final-summary",
       "name": "Final Summary"
     },
@@ -320,7 +376,7 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [1100, 100],
+      "position": [1760, 100],
       "id": "skip-no-insights",
       "name": "Skip - No Insights"
     }
@@ -347,7 +403,7 @@
       "main": [
         [
           {
-            "node": "Merge Config & Agents",
+            "node": "Wait for Fetches",
             "type": "main",
             "index": 0
           }
@@ -355,6 +411,17 @@
       ]
     },
     "Fetch Digest Prompt": {
+      "main": [
+        [
+          {
+            "node": "Wait for Fetches",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Wait for Fetches": {
       "main": [
         [
           {
@@ -431,7 +498,47 @@
       "main": [
         [
           {
+            "node": "Use Stubs for DigestComposer?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Use Stubs for DigestComposer?": {
+      "main": [
+        [
+          {
             "node": "DigestComposer Stub (Claude)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "DigestComposer with Claude API",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DigestComposer with Claude API": {
+      "main": [
+        [
+          {
+            "node": "Wrap Claude Digest Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wrap Claude Digest Response": {
+      "main": [
+        [
+          {
+            "node": "Parse Digest Output",
             "type": "main",
             "index": 0
           }
