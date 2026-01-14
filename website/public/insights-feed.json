@@ -2,7 +2,7 @@
   "version": "https://jsonfeed.org/version/1.1",
   "title": "Libertas - Freedom Tech Signals",
   "home_page_url": "https://libertas.fgu.tech",
-  "feed_url": "https://libertas.fgu.tech/feed.json",
+  "feed_url": "https://libertas.fgu.tech/insights-feed.json",
   "description": "Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.",
   "language": "en-US",
   "items": [

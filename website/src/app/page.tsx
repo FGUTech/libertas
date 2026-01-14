@@ -212,7 +212,7 @@ export default function Home() {
 
             <div className="flex flex-wrap justify-center gap-4">
               <a
-                href="/feed.xml"
+                href="/insights-rss.xml"
                 className="btn btn-secondary"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -221,7 +221,7 @@ export default function Home() {
                 RSS Feed
               </a>
               <a
-                href="/feed.json"
+                href="/insights-feed.json"
                 className="btn btn-secondary"
                 target="_blank"
                 rel="noopener noreferrer"

@@ -32,7 +32,7 @@ runtime:
 - When `false`: Routes to real API nodes (Claude, GitHub, Resend)
 - Toggle by committing change to `thresholds.yml`
 
-This pattern is implemented across: 1.6, 1.10, 1.11, 1.15
+This pattern is implemented across: 1.10, 1.11, 1.15
 
 ### 1.0 n8n Migration to Managed Hosting
 
@@ -99,22 +99,6 @@ This pattern is implemented across: 1.6, 1.10, 1.11, 1.15
 
 ---
 
-### 1.7 Workflow A: Raw Content Storage
-
-**Description**: Archive raw HTML content to GCS for provenance.
-
-**Requirements**:
-- [ ] Set up GCS bucket (`libertas-content`)
-- [ ] Set up n8n credential for GCP Cloud Storage
-- [ ] Add node to store raw HTML at `/raw/{year}/{month}/{day}/{id}.html`
-- [ ] Store GCS URL reference in `source_items.metadata`
-
-**Implementation Notes**:
-- Use standard storage class (not nearline/coldline) for frequent access
-- Consider lifecycle policy to move to coldline after 90 days
-
----
-
 ### 1.8 Workflow A: Source Health & Error Handling
 
 **Description**: Robust error handling with circuit breaker pattern.
@@ -136,19 +120,56 @@ This pattern is implemented across: 1.6, 1.10, 1.11, 1.15
 **Description**: Commit weekly digests to GitHub repository, with config-driven toggle for stub/real mode.
 
 **Requirements**:
-- [ ] Add IF node to check `runtime.use_stubs` config value
-- [ ] Wire GitHub Commit Stub and real GitHub API node to IF branches
+- [x] Add IF node to check `runtime.use_stubs` config value
+- [x] Wire GitHub Commit Stub and real GitHub API node to IF branches
 - [ ] Set up n8n credential for GitHub API (Bearer token)
-- [ ] Handle file update case (fetch existing file SHA for updates)
-- [ ] Commit digest markdown to `/content/digests/weekly-{date}.md`
-- [ ] Update feed files alongside digest commit
+- [x] Use Git Data API for atomic multi-file commits (not Contents API)
+- [x] Commit digest markdown to `website/public/content/digests/weekly-{date}.md`
+- [x] Update feed files alongside digest commit (single atomic commit)
 - [ ] Test in both stub and real modes
 
 **Implementation Notes**:
-- GitHub API requires SHA of existing file for updates
+- **Use Git Data API** (not Contents API) for atomic commits - avoids multiple commits per run
 - Keep stub for local dev/testing without GitHub commits
 - Config toggle via `runtime.use_stubs` in `thresholds.yml`
-- Consider atomic commit of digest + updated feeds
+- Files go to `website/public/` for Next.js static serving
+
+**GitHub Integration Details** (from Workflow A implementation):
+
+*Bot Account Setup:*
+- Create dedicated GitHub account (e.g., `libertas-ai-bot`)
+- Add as collaborator to repo with **Write** role (minimum required)
+- Generate Personal Access Token (Classic) with `repo` scope only
+
+*n8n Credential Setup:*
+- Credential type: **Header Auth**
+- Name: `Authorization`
+- Value: `Bearer ghp_xxxxxxxxxxxx` (include "Bearer " prefix)
+
+*Git Data API Flow (for atomic multi-file commit):*
+```
+1. GET  /repos/{owner}/{repo}/git/ref/heads/main        → Get current commit SHA
+2. GET  /repos/{owner}/{repo}/git/commits/{sha}         → Get base tree SHA
+3. POST /repos/{owner}/{repo}/git/trees                 → Create new tree with all files
+4. POST /repos/{owner}/{repo}/git/commits               → Create commit object
+5. PATCH /repos/{owner}/{repo}/git/refs/heads/main      → Update branch reference
+```
+
+*Co-Author Attribution:*
+- Format: `Co-authored-by: Claude <noreply@anthropic.com>` (lowercase `Co-authored-by`)
+- Must be on its own line after a blank line in commit message
+- GitHub will show "BotName and Claude authored this commit"
+
+*Tree Entry Format (for step 3):*
+```json
+{
+  "base_tree": "<base-tree-sha>",
+  "tree": [
+    { "path": "website/public/rss.xml", "mode": "100644", "type": "blob", "content": "<file-content>" },
+    { "path": "website/public/feed.json", "mode": "100644", "type": "blob", "content": "<file-content>" }
+  ]
+}
+```
 
 ---
 
@@ -483,6 +504,25 @@ Features that enhance the system but aren't critical for launch.
 
 ---
 
+### 2.11 Raw Content Storage (GCS)
+
+**Description**: Archive raw HTML content to GCS for provenance.
+
+**Requirements**:
+- [ ] Set up GCS bucket (`libertas-content`)
+- [ ] Set up n8n credential for GCP Cloud Storage
+- [ ] Add node to store raw HTML at `/raw/{year}/{month}/{day}/{id}.html`
+- [ ] Store GCS URL reference in `source_items.raw_content_ref`
+
+**Implementation Notes**:
+- Moved from MVP (was 1.7) - not blocking for launch since `extracted_text` is already stored in DB
+- More valuable when web scraping (2.3) is implemented for non-RSS sources
+- Schema already has `raw_content_ref` column ready
+- Use standard storage class (not nearline/coldline) for frequent access
+- Consider lifecycle policy to move to coldline after 90 days
+
+---
+
 # Phase 3: Future Improvements
 
 Features for future consideration after core functionality is stable.
@@ -642,15 +682,14 @@ Features for future consideration after core functionality is stable.
 | Agent Prompts (integration) | 100% | Workflows load prompts from GitHub raw URLs (1.3 complete) |
 | Config Files (files) | 100% | sources.yml and thresholds.yml configured |
 | Config Files (integration) | 100% | Workflows load config from GitHub raw URLs (1.2 complete) |
-| Runtime Stub Toggle | 60% | `runtime.use_stubs` in thresholds.yml; Workflow A (classify, summarize, publish), B wired with IF nodes |
+| Runtime Stub Toggle | 70% | `runtime.use_stubs` in thresholds.yml; Workflow A (classify, summarize, publish), B (digest composer, GitHub) wired with IF nodes |
 | JSON Schemas (files) | 100% | All schemas exist in `schemas/` |
 | JSON Schemas (validation) | 25% | Workflow A has inline validation; other workflows pending |
 | Workflow A Structure | 100% | Complete pipeline with stub/real toggle for classify, summarize, and feed publishing |
-| Workflow B Structure | 95% | Complete pipeline with stub/real toggle for DigestComposer, pending testing |
+| Workflow B Structure | 100% | Complete pipeline with stub/real toggle for DigestComposer and GitHub publishing via Git Data API |
 | Workflow C Structure | 90% | Active workflow, needs IF toggle for APIs |
 | Workflow D Structure | 80% | Complete pipeline, stubs active, need IF toggle |
 | Firebase Auth | 0% | Documented but not implemented |
-| GCS Integration | 0% | Not implemented |
 | Resend Email | 20% | Template exists, API not wired, need IF toggle |
 | Feed Generation | 100% | RSS 2.0 and JSON Feed 1.1 generation implemented in Workflow A (1.6 complete) |
 

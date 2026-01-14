@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Libertas - Weekly Digests</title>
+  <link>https://libertas.fgu.tech</link>
+  <description>Weekly summaries of freedom technology developments</description>
+  <language>en-us</language>
+  <lastBuildDate>Tue, 14 Jan 2026 00:00:00 GMT</lastBuildDate>
+  <atom:link href="https://libertas.fgu.tech/digests-rss.xml" rel="self" type="application/rss+xml"/>
+  <generator>Libertas n8n Workflow</generator>
+</channel>
+</rss>

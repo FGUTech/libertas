@@ -84,8 +84,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteUrl,
     types: {
-      "application/rss+xml": `${siteUrl}/rss.xml`,
-      "application/json": `${siteUrl}/feed.json`,
+      "application/rss+xml": `${siteUrl}/insights-rss.xml`,
+      "application/json": `${siteUrl}/insights-feed.json`,
     },
   },
 };
@@ -112,6 +112,19 @@ export default function RootLayout({
               })();
             `,
           }}
+        />
+        {/* Additional feed links for digest feeds */}
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="Libertas Weekly Digests (RSS)"
+          href="/digests-rss.xml"
+        />
+        <link
+          rel="alternate"
+          type="application/feed+json"
+          title="Libertas Weekly Digests (JSON)"
+          href="/digests-feed.json"
         />
       </head>
       <body

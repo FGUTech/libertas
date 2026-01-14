@@ -6,7 +6,7 @@
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
   <lastBuildDate>Wed, 14 Jan 2026 22:58:54 GMT</lastBuildDate>
-  <atom:link href="https://libertas.fgu.tech/rss.xml" rel="self" type="application/rss+xml"/>
+  <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
     <title>EFF Guide to Navigating Age Verification Gates While Protecting Privacy</title>

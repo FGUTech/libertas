@@ -1,0 +1,9 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "Libertas - Weekly Digests",
+  "home_page_url": "https://libertas.fgu.tech",
+  "feed_url": "https://libertas.fgu.tech/digests-feed.json",
+  "description": "Weekly summaries of freedom technology developments",
+  "language": "en-US",
+  "items": []
+}

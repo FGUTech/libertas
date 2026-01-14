@@ -21,8 +21,14 @@ export const metadata: Metadata = {
 
 // Feed URLs - static files served from public/
 const FEED_URLS = {
-  rss: '/rss.xml',
-  json: '/feed.json',
+  insights: {
+    rss: '/insights-rss.xml',
+    json: '/insights-feed.json',
+  },
+  digests: {
+    rss: '/digests-rss.xml',
+    json: '/digests-feed.json',
+  },
 };
 
 export default function FeedsPage() {
@@ -47,23 +53,52 @@ export default function FeedsPage() {
         {/* Feed Status */}
         <FeedStatus />
 
-        {/* Available Feeds */}
+        {/* Insights Feeds */}
         <section className="mb-12">
-          <h2 className="text-h2 mb-6">Available Feeds</h2>
+          <h2 className="text-h2 mb-6">Insights Feeds</h2>
+          <p className="text-body text-[var(--fg-secondary)] mb-4">
+            Individual insights published as they are processed. Updated multiple times per day.
+          </p>
 
           <div className="grid gap-4 md:grid-cols-2">
             <FeedCard
-              title="RSS 2.0"
-              description="Standard RSS feed compatible with all major feed readers. Great for Feedly, Inoreader, and newsreader apps."
-              url={FEED_URLS.rss}
+              title="Insights RSS"
+              description="Standard RSS feed of all published insights. Compatible with all major feed readers."
+              url={FEED_URLS.insights.rss}
               icon={<RssIcon />}
               format="XML"
             />
 
             <FeedCard
-              title="JSON Feed"
-              description="Modern JSON Feed format for easy programmatic access. Ideal for custom integrations and applications."
-              url={FEED_URLS.json}
+              title="Insights JSON"
+              description="JSON Feed of insights for programmatic access. Includes freedom scores and citations."
+              url={FEED_URLS.insights.json}
+              icon={<JsonIcon />}
+              format="JSON"
+            />
+          </div>
+        </section>
+
+        {/* Digest Feeds */}
+        <section className="mb-12">
+          <h2 className="text-h2 mb-6">Weekly Digest Feeds</h2>
+          <p className="text-body text-[var(--fg-secondary)] mb-4">
+            Weekly summaries of freedom tech developments. Published every Sunday.
+          </p>
+
+          <div className="grid gap-4 md:grid-cols-2">
+            <FeedCard
+              title="Digests RSS"
+              description="RSS feed of weekly digest summaries. Great for weekly roundup subscriptions."
+              url={FEED_URLS.digests.rss}
+              icon={<RssIcon />}
+              format="XML"
+            />
+
+            <FeedCard
+              title="Digests JSON"
+              description="JSON Feed of weekly digests with insight counts and period metadata."
+              url={FEED_URLS.digests.json}
               icon={<JsonIcon />}
               format="JSON"
             />
@@ -78,26 +113,29 @@ export default function FeedsPage() {
             <CodeExample
               title="cURL"
               description="Fetch feeds from the command line"
-              code={`# RSS Feed
-curl -s ${FEED_URLS.rss}
+              code={`# Insights RSS Feed
+curl -s ${FEED_URLS.insights.rss}
 
-# JSON Feed
-curl -s ${FEED_URLS.json} | jq .`}
+# Insights JSON Feed
+curl -s ${FEED_URLS.insights.json} | jq .
+
+# Weekly Digests
+curl -s ${FEED_URLS.digests.rss}`}
               language="bash"
             />
 
             <CodeExample
               title="JavaScript / TypeScript"
               description="Fetch and parse the JSON feed in your application"
-              code={`// Fetch the JSON feed
-const response = await fetch('${FEED_URLS.json}');
+              code={`// Fetch the insights feed
+const response = await fetch('${FEED_URLS.insights.json}');
 const feed = await response.json();
 
 // Access posts
 feed.items.forEach(item => {
   console.log(item.title);
   console.log(item.url);
-  console.log(item.content_text);
+  console.log(item._libertas.freedom_relevance_score);
 });`}
               language="javascript"
             />
@@ -107,8 +145,8 @@ feed.items.forEach(item => {
               description="Parse the RSS feed with feedparser"
               code={`import feedparser
 
-# Parse the RSS feed
-feed = feedparser.parse('${FEED_URLS.rss}')
+# Parse the insights RSS feed
+feed = feedparser.parse('${FEED_URLS.insights.rss}')
 
 # Access posts
 for entry in feed.entries:
@@ -123,7 +161,7 @@ for entry in feed.entries:
               description="Ingest Libertas posts into your n8n automation"
               code={`// HTTP Request Node configuration
 {
-  "url": "${FEED_URLS.json}",
+  "url": "${FEED_URLS.insights.json}",
   "method": "GET",
   "responseFormat": "json"
 }
@@ -140,11 +178,18 @@ for entry in feed.entries:
 
           <div className="card">
             <p className="text-body mb-4 text-[var(--fg-secondary)]">
-              Copy the RSS feed URL and add it to your preferred reader:
+              Copy the RSS feed URLs and add them to your preferred reader:
             </p>
 
-            <div className="mb-6">
-              <CopyableUrl url={FEED_URLS.rss} />
+            <div className="space-y-3 mb-6">
+              <div>
+                <p className="text-xs text-[var(--fg-tertiary)] mb-1">Insights (daily updates)</p>
+                <CopyableUrl url={FEED_URLS.insights.rss} />
+              </div>
+              <div>
+                <p className="text-xs text-[var(--fg-tertiary)] mb-1">Weekly Digests</p>
+                <CopyableUrl url={FEED_URLS.digests.rss} />
+              </div>
             </div>
 
             <div className="grid gap-3 sm:grid-cols-2">
@@ -179,20 +224,19 @@ for entry in feed.entries:
             <div className="code-block">
               <pre className="text-sm">{`{
   "version": "https://jsonfeed.org/version/1.1",
-  "title": "Libertas",
+  "title": "Libertas - Freedom Tech Signals",
   "home_page_url": "https://libertas.fgu.tech",
-  "feed_url": "https://libertas.fgu.tech/feed.json",
+  "feed_url": "https://libertas.fgu.tech/insights-feed.json",
   "items": [
     {
       "id": "unique-post-id",
       "url": "https://libertas.fgu.tech/posts/example-post",
       "title": "Post Title",
-      "content_text": "Plain text content...",
-      "content_html": "<p>HTML content...</p>",
+      "summary": "TL;DR of the insight...",
+      "content_text": "Key points...",
       "date_published": "2026-01-07T12:00:00Z",
       "tags": ["bitcoin", "privacy"],
       "_libertas": {
-        "topics": ["bitcoin", "sovereignty"],
         "freedom_relevance_score": 85,
         "credibility_score": 90,
         "citations": [...]

@@ -5,8 +5,10 @@ User-agent: *
 Allow: /
 
 # Feeds
-# RSS: /rss.xml
-# JSON: /feed.json
+# Insights RSS: /insights-rss.xml
+# Insights JSON: /insights-feed.json
+# Digests RSS: /digests-rss.xml
+# Digests JSON: /digests-feed.json
 
 # Sitemap
 Sitemap: https://libertas.fgu.tech/sitemap.xml

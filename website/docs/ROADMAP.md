@@ -33,6 +33,40 @@ Core features for initial launch. Focus on content display and intake.
 
 ---
 
+### 1.10 Digest Viewing in Unified Feed
+
+**Description**: Display weekly digests alongside insights in the posts feed, with distinct styling and a dedicated detail page.
+
+**Requirements**:
+- [ ] Create `Digest` TypeScript type in `types/index.ts`
+- [ ] Create unified `ContentItem` discriminated union type (`Post | Digest`)
+- [ ] Extend content loader (`lib/posts.ts`) to read from `/content/digests/` directory
+- [ ] Merge and sort insights + digests by date in unified feed
+- [ ] Update `PostCard` component to detect content type and render differently for digests:
+  - Different border color (amber/gold vs green for insights)
+  - "Weekly Digest" badge/label
+  - Date range display (e.g., "Jan 7 - Jan 13, 2026")
+  - Insight count instead of relevance score
+  - Top topics preview
+- [ ] Create `/digests/[slug]` route for digest detail pages
+- [ ] Create `DigestDetail` component showing:
+  - Executive TL;DR
+  - Sections grouped by topic with linked insights
+  - Emerging patterns
+  - Looking ahead section
+  - Sources list
+- [ ] Update topic filtering to include digests when `top_topics` matches active filter
+- [ ] Ensure digests appear in feed when no filter is active
+
+**Implementation Notes**:
+- Digests use slug format `weekly-{YYYY-MM-DD}` (end date of the period)
+- Digest frontmatter fields: `type`, `period_start`, `period_end`, `insight_count`, `top_topics`, `published_at`
+- Reuse existing card grid layout — digests are just a different card variant
+- Detail page is separate route (`/digests/[slug]`) since content structure differs significantly from insights
+- No changes to navigation needed — digests discovered through the unified posts feed
+
+---
+
 # Phase 2: Nice-to-have
 
 Features that enhance the experience but aren't critical for launch.
@@ -361,6 +395,8 @@ Features for future consideration after core functionality is stable.
 | Dark/Light Theme | Medium | Low | P1 | Done |
 | Search Functionality | Medium | Medium | P1 | Done |
 | Reading Progress | Low | Low | P1 | Done |
+| Static Content (1.9) | High | Medium | P0 | |
+| Digest Viewing (1.10) | High | Medium | P0 | |
 | User Auth (Firebase + Starknet) | High | Medium | P1 | |
 | User Profiles | Medium | Medium | P1 | |
 | Comments | Medium | Medium | P1 | |
@@ -376,7 +412,7 @@ Features for future consideration after core functionality is stable.
 
 | Milestone | Features | Description |
 |-----------|----------|-------------|
-| **Alpha** | Phase 0 + MVP (1.1-1.10) | Core content display and intake |
+| **Alpha** | Phase 0 + MVP (1.1-1.10) | Core content display (insights + digests) and intake |
 | **Beta** | Auth + User Features (2.1-2.5) | Firebase/Starknet auth, profiles, comments, reactions, wallet integration |
 | **v1.0** | Polish (2.6-2.10) | Theme, search, reading UX, newsletter |
 | **v2.0** | On-chain (3.1-3.5) | Starknet contracts, Nostr, decentralized features |

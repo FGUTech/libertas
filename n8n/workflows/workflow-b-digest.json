@@ -272,7 +272,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Merge insert result with digest data\nconst insertResult = $input.first().json;\nconst digestData = $('Build Digest Query').first().json.digestData;\n\nreturn [{\n  json: {\n    digestId: insertResult.id,\n    periodStart: insertResult.period_start || digestData.periodStart,\n    periodEnd: insertResult.period_end || digestData.periodEnd,\n    publishedUrl: insertResult.published_url || digestData.publishedUrl,\n    contentMarkdown: digestData.contentMarkdown,\n    insightCount: digestData.insightCount,\n    executiveTldr: digestData.executiveTldr\n  }\n}];"
+        "jsCode": "// Merge insert result with digest data, generate feeds, and pass through runtime config\nconst insertResult = $input.first().json;\nconst digestData = $('Build Digest Query').first().json.digestData;\nconst periodData = $('Calculate Period').first().json;\nconst runtime = periodData._thresholds?.runtime || { use_stubs: true };\n\nconst digestId = insertResult.id;\n\n// Extract just the date portion (YYYY-MM-DD) from ISO timestamps or date strings\n// Database returns ISO timestamps like \"2026-01-13T00:00:00.000Z\"\nfunction formatDate(dateVal) {\n  if (!dateVal) return '';\n  const str = String(dateVal);\n  // If it's already YYYY-MM-DD format, return as-is\n  if (/^\\d{4}-\\d{2}-\\d{2}$/.test(str)) return str;\n  // Extract date from ISO timestamp\n  return str.split('T')[0];\n}\n\nconst periodStart = formatDate(insertResult.period_start || digestData.periodStart);\nconst periodEnd = formatDate(insertResult.period_end || digestData.periodEnd);\nconst publishedUrl = insertResult.published_url || digestData.publishedUrl;\n\n// Site metadata\nconst siteUrl = 'https://libertas.fgu.tech';\nconst buildDate = new Date().toUTCString();\n\n// Helper to escape XML\nfunction escapeXml(str) {\n  if (!str) return '';\n  return String(str)\n    .replace(/&/g, '&amp;')\n    .replace(/</g, '&lt;')\n    .replace(/>/g, '&gt;')\n    .replace(/\\\"/g, '&quot;')\n    .replace(/'/g, '&apos;');\n}\n\n// Generate digest slug\nconst digestSlug = `weekly-${periodEnd}`;\nconst digestLink = `${siteUrl}/digests/${digestSlug}`;\n\n// Generate RSS feed for digests\nconst rssItem = `  <item>\\n    <title>Weekly Digest: ${escapeXml(periodStart)} to ${escapeXml(periodEnd)}</title>\\n    <link>${digestLink}</link>\\n    <guid isPermaLink=\\\"true\\\">${digestLink}</guid>\\n    <pubDate>${buildDate}</pubDate>\\n    <description>${escapeXml(digestData.executiveTldr)}</description>\\n    <category>weekly-digest</category>\\n  </item>`;\n\nconst digestsRssFeed = `<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?>\\n<rss version=\\\"2.0\\\" xmlns:atom=\\\"http://www.w3.org/2005/Atom\\\">\\n<channel>\\n  <title>Libertas - Weekly Digests</title>\\n  <link>${siteUrl}</link>\\n  <description>Weekly summaries of freedom technology developments</description>\\n  <language>en-us</language>\\n  <lastBuildDate>${buildDate}</lastBuildDate>\\n  <atom:link href=\\\"${siteUrl}/digests-rss.xml\\\" rel=\\\"self\\\" type=\\\"application/rss+xml\\\"/>\\n  <generator>Libertas n8n Workflow</generator>\\n${rssItem}\\n</channel>\\n</rss>`;\n\n// Generate JSON Feed for digests\nconst digestsJsonFeed = JSON.stringify({\n  version: 'https://jsonfeed.org/version/1.1',\n  title: 'Libertas - Weekly Digests',\n  home_page_url: siteUrl,\n  feed_url: `${siteUrl}/digests-feed.json`,\n  description: 'Weekly summaries of freedom technology developments',\n  language: 'en-US',\n  items: [{\n    id: digestId,\n    url: digestLink,\n    title: `Weekly Digest: ${periodStart} to ${periodEnd}`,\n    summary: digestData.executiveTldr,\n    content_text: digestData.executiveTldr,\n    date_published: new Date().toISOString(),\n    tags: ['weekly-digest'],\n    _libertas: {\n      insight_count: digestData.insightCount,\n      period_start: periodStart,\n      period_end: periodEnd\n    }\n  }]\n}, null, 2);\n\nconsole.log(`Generated digest feeds for ${periodStart} to ${periodEnd}`);\n\nreturn [{\n  json: {\n    digestId,\n    periodStart,\n    periodEnd,\n    publishedUrl,\n    contentMarkdown: digestData.contentMarkdown,\n    insightCount: digestData.insightCount,\n    executiveTldr: digestData.executiveTldr,\n    digestsRssFeed,\n    digestsJsonFeed,\n    _runtime: runtime\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -282,25 +282,142 @@
     },
     {
       "parameters": {
-        "jsCode": "// STUB: GitHub commit for digest markdown\n// Creates the markdown file content and simulates GitHub API response\n// Replace with real HTTP Request to GitHub API when ready\n\nconst data = $input.first().json;\n\n// Prepare file path and content for GitHub\nconst filePath = `site-content/posts/weekly/${data.periodEnd}.md`;\nconst fileContent = data.contentMarkdown;\nconst commitMessage = `Add weekly digest for ${data.periodStart} to ${data.periodEnd}\n\nCo-Authored-By: Claude <noreply@anthropic.com>`;\n\n// Simulate successful GitHub commit response\nreturn [{\n  json: {\n    success: true,\n    commit: {\n      sha: 'stub-sha-' + Date.now(),\n      message: commitMessage\n    },\n    content: {\n      path: filePath,\n      sha: 'stub-file-sha-' + Date.now()\n    },\n    _digestData: data,\n    _filePath: filePath,\n    _commitMessage: commitMessage,\n    _fileContentBase64: Buffer.from(fileContent).toString('base64')\n  }\n}];"
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "use-stubs-github",
+              "leftValue": "={{ $json._runtime?.use_stubs ?? true }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [3520, -100],
+      "id": "use-stubs-github",
+      "name": "Use Stubs for GitHub?"
+    },
+    {
+      "parameters": {
+        "jsCode": "// STUB: GitHub commit for digest markdown and feeds\n// Creates the markdown file content and simulates GitHub API response\n// Updated to use website/public/content/digests/ path\n\nconst data = $input.first().json;\n\n// Prepare file paths and content for GitHub\n// Using website/public/content/digests/ for Next.js static serving\nconst digestPath = `website/public/content/digests/weekly-${data.periodEnd}.md`;\nconst commitMessage = `Add weekly digest for ${data.periodStart} to ${data.periodEnd} and update feeds\\n\\nCo-authored-by: Claude <noreply@anthropic.com>`;\n\nconsole.log(`[STUB] Would commit to GitHub (single atomic commit):`);\nconsole.log(`  - ${digestPath} (${data.contentMarkdown.length} bytes)`);\nconsole.log(`  - website/public/digests-rss.xml (${data.digestsRssFeed.length} bytes)`);\nconsole.log(`  - website/public/digests-feed.json (${data.digestsJsonFeed.length} bytes)`);\nconsole.log(`  - Co-authored by Claude`);\n\n// Simulate successful GitHub commit response\nreturn [{\n  json: {\n    success: true,\n    stub: true,\n    commit: {\n      sha: 'stub-sha-' + Date.now(),\n      message: commitMessage\n    },\n    files: [\n      { path: digestPath, action: 'upsert' },\n      { path: 'website/public/digests-rss.xml', action: 'upsert' },\n      { path: 'website/public/digests-feed.json', action: 'upsert' }\n    ],\n    _digestData: data,\n    _digestPath: digestPath\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3520, -100],
+      "position": [3740, -250],
       "id": "github-commit-stub",
       "name": "GitHub Commit Stub"
     },
     {
       "parameters": {
-        "method": "PUT",
-        "url": "=https://api.github.com/repos/FGUTech/libertas/contents/{{ $('GitHub Commit Stub').first().json._filePath }}",
+        "jsCode": "// Prepare files for atomic GitHub commit via Git Data API\n// Updated paths: digest goes to website/public/content/digests/, feeds to website/public/\nconst data = $input.first().json;\n\n// Digest file path\nconst digestPath = `website/public/content/digests/weekly-${data.periodEnd}.md`;\n\nreturn [{\n  json: {\n    ...data,\n    _github: {\n      owner: 'FGUTech',\n      repo: 'libertas',\n      branch: 'main',\n      commitMessage: `Add weekly digest for ${data.periodStart} to ${data.periodEnd} and update feeds\\n\\nCo-authored-by: Claude <noreply@anthropic.com>`,\n      files: [\n        {\n          path: digestPath,\n          content: data.contentMarkdown\n        },\n        {\n          path: 'website/public/digests-rss.xml',\n          content: data.digestsRssFeed\n        },\n        {\n          path: 'website/public/digests-feed.json',\n          content: data.digestsJsonFeed\n        }\n      ]\n    },\n    _digestPath: digestPath\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [3740, 50],
+      "id": "prepare-github-commit-digest",
+      "name": "Prepare GitHub Commit"
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "=https://api.github.com/repos/{{ $json._github.owner }}/{{ $json._github.repo }}/git/ref/heads/{{ $json._github.branch }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
             {
-              "name": "Authorization",
-              "value": "=Bearer {{ $env.GITHUB_TOKEN }}"
+              "name": "Accept",
+              "value": "application/vnd.github.v3+json"
             },
+            {
+              "name": "X-GitHub-Api-Version",
+              "value": "2022-11-28"
+            }
+          ]
+        },
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [3960, 50],
+      "id": "get-branch-ref-digest",
+      "name": "Get Branch Ref",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "GITHUB_CREDENTIAL_ID",
+          "name": "GitHub API Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "=https://api.github.com/repos/{{ $('Prepare GitHub Commit').first().json._github.owner }}/{{ $('Prepare GitHub Commit').first().json._github.repo }}/git/commits/{{ $json.object.sha }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/vnd.github.v3+json"
+            },
+            {
+              "name": "X-GitHub-Api-Version",
+              "value": "2022-11-28"
+            }
+          ]
+        },
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [4180, 50],
+      "id": "get-base-tree-digest",
+      "name": "Get Base Tree",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "GITHUB_CREDENTIAL_ID",
+          "name": "GitHub API Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Build tree entries for all files\nconst commitData = $('Prepare GitHub Commit').first().json;\nconst baseTreeSha = $input.first().json.tree.sha;\nconst parentCommitSha = $('Get Branch Ref').first().json.object.sha;\n\nconst treeEntries = commitData._github.files.map(file => ({\n  path: file.path,\n  mode: '100644',\n  type: 'blob',\n  content: file.content\n}));\n\nreturn [{\n  json: {\n    _github: commitData._github,\n    _baseTreeSha: baseTreeSha,\n    _parentCommitSha: parentCommitSha,\n    _treeEntries: treeEntries,\n    _digestPath: commitData._digestPath,\n    _digestData: {\n      digestId: commitData.digestId,\n      periodStart: commitData.periodStart,\n      periodEnd: commitData.periodEnd,\n      publishedUrl: commitData.publishedUrl,\n      insightCount: commitData.insightCount,\n      executiveTldr: commitData.executiveTldr\n    }\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [4400, 50],
+      "id": "build-tree-entries-digest",
+      "name": "Build Tree Entries"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.github.com/repos/{{ $json._github.owner }}/{{ $json._github.repo }}/git/trees",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
             {
               "name": "Accept",
               "value": "application/vnd.github.v3+json"
@@ -313,14 +430,108 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n  \"message\": \"{{ $('GitHub Commit Stub').first().json._commitMessage }}\",\n  \"content\": \"{{ $('GitHub Commit Stub').first().json._fileContentBase64 }}\",\n  \"branch\": \"main\"\n}",
-        "options": {}
+        "jsonBody": "={{ JSON.stringify({ base_tree: $json._baseTreeSha, tree: $json._treeEntries }) }}",
+        "options": {
+          "timeout": 30000
+        }
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [3520, 100],
-      "id": "github-commit-real",
-      "name": "GitHub Commit (Disabled)"
+      "position": [4620, 50],
+      "id": "create-tree-digest",
+      "name": "Create Tree",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "GITHUB_CREDENTIAL_ID",
+          "name": "GitHub API Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.github.com/repos/{{ $('Build Tree Entries').first().json._github.owner }}/{{ $('Build Tree Entries').first().json._github.repo }}/git/commits",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/vnd.github.v3+json"
+            },
+            {
+              "name": "X-GitHub-Api-Version",
+              "value": "2022-11-28"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ message: $('Build Tree Entries').first().json._github.commitMessage, tree: $json.sha, parents: [$('Build Tree Entries').first().json._parentCommitSha] }) }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [4840, 50],
+      "id": "create-commit-digest",
+      "name": "Create Commit",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "GITHUB_CREDENTIAL_ID",
+          "name": "GitHub API Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=https://api.github.com/repos/{{ $('Build Tree Entries').first().json._github.owner }}/{{ $('Build Tree Entries').first().json._github.repo }}/git/refs/heads/{{ $('Build Tree Entries').first().json._github.branch }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/vnd.github.v3+json"
+            },
+            {
+              "name": "X-GitHub-Api-Version",
+              "value": "2022-11-28"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ sha: $json.sha, force: false }) }}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [5060, 50],
+      "id": "update-branch-ref-digest",
+      "name": "Update Branch Ref",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "GITHUB_CREDENTIAL_ID",
+          "name": "GitHub API Token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Summarize atomic commit result\nconst updateResult = $input.first().json;\nconst commitResult = $('Create Commit').first().json;\nconst buildData = $('Build Tree Entries').first().json;\n\nconst success = updateResult.object && updateResult.object.sha;\n\nconsole.log(`GitHub atomic commit: ${success ? 'SUCCESS' : 'FAILED'}`);\nconsole.log(`Commit SHA: ${commitResult.sha}`);\nconsole.log(`Files committed: ${buildData._github.files.length}`);\n\nreturn [{\n  json: {\n    success,\n    stub: false,\n    commit: {\n      sha: commitResult.sha,\n      message: buildData._github.commitMessage,\n      url: commitResult.html_url\n    },\n    files: buildData._github.files.map(f => ({ path: f.path, action: 'upsert' })),\n    _digestData: buildData._digestData,\n    _digestPath: buildData._digestPath\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [5280, 50],
+      "id": "wrap-github-response-digest",
+      "name": "Wrap GitHub Response"
     },
     {
       "parameters": {
@@ -328,7 +539,7 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3740, -100],
+      "position": [5500, -100],
       "id": "resend-email-stub",
       "name": "Resend Email Stub"
     },
@@ -356,17 +567,17 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [3740, 100],
+      "position": [5500, 100],
       "id": "resend-email-real",
       "name": "Resend Email (Disabled)"
     },
     {
       "parameters": {
-        "jsCode": "// Final summary of workflow execution\nconst emailResult = $input.first().json;\nconst digestData = emailResult._digestData;\n\nconst summary = {\n  executedAt: new Date().toISOString(),\n  success: true,\n  digest: {\n    periodStart: digestData.periodStart,\n    periodEnd: digestData.periodEnd,\n    insightCount: digestData.insightCount,\n    publishedUrl: digestData.publishedUrl\n  },\n  actions: {\n    databaseInsert: 'completed',\n    githubCommit: 'stub (enable for production)',\n    emailSent: 'stub (enable for production)'\n  }\n};\n\nconsole.log('Workflow B Summary:', JSON.stringify(summary, null, 2));\n\nreturn [{ json: summary }];"
+        "jsCode": "// Final summary of workflow execution\nconst emailResult = $input.first().json;\nconst digestData = emailResult._digestData;\n\n// Get GitHub result to determine if stub or real was used\nlet githubMode = 'unknown';\ntry {\n  const stubResult = $('GitHub Commit Stub')?.first()?.json;\n  const realResult = $('Wrap GitHub Response')?.first()?.json;\n  if (stubResult && stubResult.stub === true) {\n    githubMode = 'stub';\n  } else if (realResult && realResult.stub === false) {\n    githubMode = 'real (Git Data API)';\n  }\n} catch (e) {\n  // One of the branches wasn't executed\n  githubMode = 'completed';\n}\n\nconst summary = {\n  executedAt: new Date().toISOString(),\n  success: true,\n  digest: {\n    periodStart: digestData.periodStart,\n    periodEnd: digestData.periodEnd,\n    insightCount: digestData.insightCount,\n    publishedUrl: digestData.publishedUrl\n  },\n  actions: {\n    databaseInsert: 'completed',\n    githubCommit: githubMode,\n    emailSent: 'stub (enable for production)'\n  }\n};\n\nconsole.log('Workflow B Summary:', JSON.stringify(summary, null, 2));\n\nreturn [{ json: summary }];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3960, -100],
+      "position": [5720, -100],
       "id": "final-summary",
       "name": "Final Summary"
     },
@@ -593,7 +804,25 @@
       "main": [
         [
           {
+            "node": "Use Stubs for GitHub?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Use Stubs for GitHub?": {
+      "main": [
+        [
+          {
             "node": "GitHub Commit Stub",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Prepare GitHub Commit",
             "type": "main",
             "index": 0
           }
@@ -601,6 +830,94 @@
       ]
     },
     "GitHub Commit Stub": {
+      "main": [
+        [
+          {
+            "node": "Resend Email Stub",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare GitHub Commit": {
+      "main": [
+        [
+          {
+            "node": "Get Branch Ref",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Branch Ref": {
+      "main": [
+        [
+          {
+            "node": "Get Base Tree",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Base Tree": {
+      "main": [
+        [
+          {
+            "node": "Build Tree Entries",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Tree Entries": {
+      "main": [
+        [
+          {
+            "node": "Create Tree",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Tree": {
+      "main": [
+        [
+          {
+            "node": "Create Commit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Commit": {
+      "main": [
+        [
+          {
+            "node": "Update Branch Ref",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Branch Ref": {
+      "main": [
+        [
+          {
+            "node": "Wrap GitHub Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wrap GitHub Response": {
       "main": [
         [
           {
