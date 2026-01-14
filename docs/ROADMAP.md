@@ -6,6 +6,10 @@ Feature roadmap for Libertas backend infrastructure and n8n workflows, broken in
 
 ---
 
+## Prompt Initialization
+
+Hey, I am working to implement features for the libertas website from the roadmap. Let's continue with implementing:
+
 # Phase 1: MVP
 
 Core infrastructure and workflow features required for initial launch.
@@ -91,9 +95,7 @@ Core infrastructure and workflow features required for initial launch.
 
 **Implementation Notes**:
 - Agent prompts exist but aren't loaded dynamically; currently would need copy/paste into n8n nodes
-- **Option A**: GitHub raw URL (e.g., `https://raw.githubusercontent.com/{org}/libertas/main/agents/classify.md`)
-- **Option B**: Next.js API route that serves prompt files
-- **Option C**: Symlink/copy to `website/public/agents/` for static serving
+- Follow same pattern as config files for fetching prompts ( see 1.2/last commit )
 - Prompt updates via git push; no workflow changes needed
 - `agents/AGENTS.md` contains prompt engineering guidelines for reference
 

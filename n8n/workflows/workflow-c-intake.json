@@ -20,12 +20,28 @@
     },
     {
       "parameters": {
-        "jsCode": "const body = $input.first().json.body;\n\nif (!body?.message || body.message.trim().length < 10) {\n  throw new Error('Message required (min 10 chars)');\n}\n\nreturn [{\n  json: {\n    message: body.message.trim(),\n    contact: body.contact || null,\n    category: body.category || 'other',\n    safetyMode: body.safetyMode || false\n  }\n}];"
+        "url": "={{ $env.WEBSITE_URL || 'http://localhost:3000' }}/api/config/thresholds",
+        "options": {
+          "timeout": 5000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        104,
+        -192
+      ],
+      "id": "fetch-thresholds-config",
+      "name": "Fetch Thresholds Config"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Validate input with thresholds from config\nconst thresholdsConfig = $input.first().json;\nconst rateLimiting = thresholdsConfig.rate_limiting || {};\nconst webhookBody = $('Webhook').first().json.body;\n\n// Store rate limiting config for reference (actual enforcement at infrastructure level)\nconst configInfo = {\n  requestsPerMinute: rateLimiting.requests_per_minute || 10,\n  requestsPerHour: rateLimiting.requests_per_hour || 100,\n  globalPerMinute: rateLimiting.global_per_minute || 100\n};\n\nconsole.log(`Rate limiting config loaded: ${JSON.stringify(configInfo)}`);\n\nif (!webhookBody?.message || webhookBody.message.trim().length < 10) {\n  throw new Error('Message required (min 10 chars)');\n}\n\nreturn [{\n  json: {\n    message: webhookBody.message.trim(),\n    contact: webhookBody.contact || null,\n    category: webhookBody.category || 'other',\n    safetyMode: webhookBody.safetyMode || false,\n    _rateLimitConfig: configInfo\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        208,
+        312,
         -192
       ],
       "id": "f2395950-791e-40aa-89f6-00c41f28866e",
@@ -226,6 +242,17 @@
   "pinData": {},
   "connections": {
     "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Fetch Thresholds Config",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Thresholds Config": {
       "main": [
         [
           {

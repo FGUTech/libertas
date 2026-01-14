@@ -20,11 +20,24 @@
     },
     {
       "parameters": {
-        "jsCode": "// Calculate date range for digest\n// Period: last 7 days ending yesterday\nconst now = new Date();\nconst periodEnd = new Date(now);\nperiodEnd.setUTCDate(periodEnd.getUTCDate() - 1); // Yesterday\nperiodEnd.setUTCHours(23, 59, 59, 999);\n\nconst periodStart = new Date(periodEnd);\nperiodStart.setUTCDate(periodStart.getUTCDate() - 6); // 7 days ago\nperiodStart.setUTCHours(0, 0, 0, 0);\n\n// Format dates for SQL query and display\nconst formatDateSQL = (d) => d.toISOString();\nconst formatDateDisplay = (d) => d.toISOString().split('T')[0];\n\nreturn [{\n  json: {\n    periodStartSQL: formatDateSQL(periodStart),\n    periodEndSQL: formatDateSQL(periodEnd),\n    periodStartDisplay: formatDateDisplay(periodStart),\n    periodEndDisplay: formatDateDisplay(periodEnd),\n    digestId: `digest-${formatDateDisplay(periodEnd)}`,\n    generatedAt: now.toISOString()\n  }\n}];"
+        "url": "={{ $env.WEBSITE_URL || 'http://localhost:3000' }}/api/config/thresholds",
+        "options": {
+          "timeout": 10000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [220, 0],
+      "id": "fetch-thresholds-config",
+      "name": "Fetch Thresholds Config"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Calculate date range for digest\n// Uses config values for thresholds\n\nconst thresholdsConfig = $input.first().json;\nconst digestConfig = thresholdsConfig.digest || {};\n\n// Get thresholds from config\nconst minInsights = digestConfig.min_insights || 3;\nconst maxPerSection = digestConfig.max_per_section || 10;\n\nconst now = new Date();\nconst periodEnd = new Date(now);\nperiodEnd.setUTCDate(periodEnd.getUTCDate() - 1); // Yesterday\nperiodEnd.setUTCHours(23, 59, 59, 999);\n\nconst periodStart = new Date(periodEnd);\nperiodStart.setUTCDate(periodStart.getUTCDate() - 6); // 7 days ago\nperiodStart.setUTCHours(0, 0, 0, 0);\n\n// Format dates for SQL query and display\nconst formatDateSQL = (d) => d.toISOString();\nconst formatDateDisplay = (d) => d.toISOString().split('T')[0];\n\nconsole.log(`Using thresholds from config: minInsights=${minInsights}, maxPerSection=${maxPerSection}`);\n\nreturn [{\n  json: {\n    periodStartSQL: formatDateSQL(periodStart),\n    periodEndSQL: formatDateSQL(periodEnd),\n    periodStartDisplay: formatDateDisplay(periodStart),\n    periodEndDisplay: formatDateDisplay(periodEnd),\n    digestId: `digest-${formatDateDisplay(periodEnd)}`,\n    generatedAt: now.toISOString(),\n    _thresholds: {\n      minInsights,\n      maxPerSection\n    }\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [220, 0],
+      "position": [440, 0],
       "id": "calculate-period",
       "name": "Calculate Period"
     },
@@ -51,7 +64,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Merge insights with period data and check if we have any\nconst insights = $input.all().map(item => item.json);\nconst periodData = $('Calculate Period').first().json;\n\n// If no insights, we still want to continue (create an empty digest or skip)\nif (!insights || insights.length === 0 || !insights[0].id) {\n  return [{\n    json: {\n      ...periodData,\n      insights: [],\n      insightCount: 0,\n      hasInsights: false\n    }\n  }];\n}\n\nreturn [{\n  json: {\n    ...periodData,\n    insights: insights,\n    insightCount: insights.length,\n    hasInsights: true\n  }\n}];"
+        "jsCode": "// Merge insights with period data and check if we have enough\nconst insights = $input.all().map(item => item.json);\nconst periodData = $('Calculate Period').first().json;\nconst thresholds = periodData._thresholds || {};\nconst minInsights = thresholds.minInsights || 3;\n\n// Filter out empty results\nconst validInsights = insights.filter(i => i.id);\n\n// Check if we have minimum required insights from config\nif (!validInsights || validInsights.length < minInsights) {\n  console.log(`Only ${validInsights.length} insights found, minimum required: ${minInsights}`);\n  return [{\n    json: {\n      ...periodData,\n      insights: validInsights,\n      insightCount: validInsights.length,\n      hasInsights: false,\n      skipReason: `Insufficient insights (${validInsights.length}/${minInsights} required)`\n    }\n  }];\n}\n\nreturn [{\n  json: {\n    ...periodData,\n    insights: validInsights,\n    insightCount: validInsights.length,\n    hasInsights: true\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -90,7 +103,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Group insights by topic and prepare aggregated data\nconst data = $input.first().json;\nconst insights = data.insights || [];\n\n// Group insights by primary topic (first topic in array)\nconst byTopic = {};\nconst topicCounts = {};\n\nfor (const insight of insights) {\n  const topics = insight.topics || [];\n  const primaryTopic = topics[0] || 'other';\n  \n  if (!byTopic[primaryTopic]) {\n    byTopic[primaryTopic] = [];\n    topicCounts[primaryTopic] = 0;\n  }\n  byTopic[primaryTopic].push(insight);\n  topicCounts[primaryTopic]++;\n  \n  // Also count all topics for ranking\n  for (const topic of topics) {\n    if (topic !== primaryTopic) {\n      topicCounts[topic] = (topicCounts[topic] || 0) + 1;\n    }\n  }\n}\n\n// Sort topics by count for top_topics\nconst topTopics = Object.entries(topicCounts)\n  .sort((a, b) => b[1] - a[1])\n  .slice(0, 5)\n  .map(([topic]) => topic);\n\n// Collect all citations\nconst allCitations = [];\nfor (const insight of insights) {\n  if (insight.citations) {\n    allCitations.push(...insight.citations);\n  }\n}\nconst uniqueCitations = [...new Set(allCitations)];\n\n// Build sections data for LLM\nconst sections = Object.entries(byTopic).map(([topic, topicInsights]) => ({\n  topic,\n  insightCount: topicInsights.length,\n  insights: topicInsights.map(i => ({\n    id: i.id,\n    title: i.title,\n    tldr: i.tldr,\n    score: i.freedom_relevance_score,\n    published_url: i.published_url,\n    citations: i.citations\n  }))\n}));\n\nreturn [{\n  json: {\n    ...data,\n    byTopic,\n    sections,\n    topTopics,\n    uniqueCitations,\n    topicSummary: Object.entries(topicCounts).map(([t, c]) => `${t}: ${c}`).join(', ')\n  }\n}];"
+        "jsCode": "// Group insights by topic and prepare aggregated data\n// Uses maxPerSection threshold from config\nconst data = $input.first().json;\nconst insights = data.insights || [];\nconst thresholds = data._thresholds || {};\nconst maxPerSection = thresholds.maxPerSection || 10;\n\n// Group insights by primary topic (first topic in array)\nconst byTopic = {};\nconst topicCounts = {};\n\nfor (const insight of insights) {\n  const topics = insight.topics || [];\n  const primaryTopic = topics[0] || 'other';\n  \n  if (!byTopic[primaryTopic]) {\n    byTopic[primaryTopic] = [];\n    topicCounts[primaryTopic] = 0;\n  }\n  byTopic[primaryTopic].push(insight);\n  topicCounts[primaryTopic]++;\n  \n  // Also count all topics for ranking\n  for (const topic of topics) {\n    if (topic !== primaryTopic) {\n      topicCounts[topic] = (topicCounts[topic] || 0) + 1;\n    }\n  }\n}\n\n// Sort topics by count for top_topics\nconst topTopics = Object.entries(topicCounts)\n  .sort((a, b) => b[1] - a[1])\n  .slice(0, 5)\n  .map(([topic]) => topic);\n\n// Collect all citations\nconst allCitations = [];\nfor (const insight of insights) {\n  if (insight.citations) {\n    allCitations.push(...insight.citations);\n  }\n}\nconst uniqueCitations = [...new Set(allCitations)];\n\n// Build sections data for LLM - limit per section using maxPerSection from config\nconst sections = Object.entries(byTopic).map(([topic, topicInsights]) => ({\n  topic,\n  insightCount: topicInsights.length,\n  insights: topicInsights.slice(0, maxPerSection).map(i => ({\n    id: i.id,\n    title: i.title,\n    tldr: i.tldr,\n    score: i.freedom_relevance_score,\n    published_url: i.published_url,\n    citations: i.citations\n  }))\n}));\n\nconsole.log(`Aggregated insights into ${sections.length} sections (max ${maxPerSection} per section)`);\n\nreturn [{\n  json: {\n    ...data,\n    byTopic,\n    sections,\n    topTopics,\n    uniqueCitations,\n    topicSummary: Object.entries(topicCounts).map(([t, c]) => `${t}: ${c}`).join(', '),\n    _usedThresholds: {\n      maxPerSection\n    }\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -292,6 +305,17 @@
   "pinData": {},
   "connections": {
     "Weekly Sunday 9am UTC": {
+      "main": [
+        [
+          {
+            "node": "Fetch Thresholds Config",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Thresholds Config": {
       "main": [
         [
           {

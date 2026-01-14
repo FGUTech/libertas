@@ -20,6 +20,9 @@
 # production
 /build
 
+# config files copied from ../config at build time
+/config
+
 # misc
 .DS_Store
 *.pem

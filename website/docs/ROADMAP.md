@@ -185,23 +185,6 @@ Features that enhance the experience but aren't critical for launch.
 
 ---
 
-### 2.8 Reading Progress
-
-**Description**: Show reading progress on long posts.
-
-**Requirements**:
-- [x] Progress bar at top of post
-- [x] Estimated reading time
-- [x] "Back to top" button
-
-**Implementation Notes**:
-- Use scroll events for progress tracking (more reliable than IntersectionObserver for this use case)
-- Calculate reading time from word count (200 WPM average)
-- Smooth scroll for "Back to top"
-- Matrix green accent glow on progress bar
-
----
-
 ### 2.9 Keyboard Shortcuts
 
 **Description**: Power-user keyboard navigation.
