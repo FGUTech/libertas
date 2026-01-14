@@ -279,6 +279,93 @@ Core infrastructure and workflow features required for initial launch.
 
 ---
 
+### 1.13a Workflow C: Story Intake Processing
+
+**Description**: Process "story" type submissions through the content pipeline to generate insights.
+
+**Requirements**:
+- [ ] Add conditional branch in Workflow C to detect `type: 'story'` submissions
+- [ ] Route story submissions to classification step (reuse `agents/classify.md` or create `agents/intake-story-classify.md`)
+- [ ] Extract and validate `sourceUrl` if provided; fetch source content for classification
+- [ ] Score story for `freedom_relevance_score` and `credibility_score`
+- [ ] If scores meet threshold (per `thresholds.yml`), queue for insight generation via Workflow A pipeline
+- [ ] Store `region` field in `source_items.metadata.geo` if provided
+- [ ] Create GitHub issue for manual review if source URL is missing or credibility is uncertain
+- [ ] Update submission status to `triaged` after processing
+
+**Implementation Notes**:
+- Stories from the public are treated similar to external sources but with extra verification
+- `sourceUrl` provides provenance; stories without URLs need manual verification
+- Consider lower auto-publish threshold for community-submitted stories (require editorial review)
+- Link resulting insight back to original submission via `source_item_ids`
+
+---
+
+### 1.13b Workflow C: Project Idea Intake Processing
+
+**Description**: Process "project" type submissions as community-sourced project ideas.
+
+**Requirements**:
+- [ ] Add conditional branch in Workflow C to detect `type: 'project'` submissions
+- [ ] Map submission fields to `project_ideas` schema:
+  - `title` → used in GitHub issue title
+  - `problemStatement` → `problem_statement`
+  - `description` → `proposed_solution`
+- [ ] Use Claude API to evaluate and enrich submission:
+  - Generate `threat_model` from problem statement
+  - Identify `affected_groups`
+  - Assess `feasibility_score` and `impact_score`
+  - Flag `misuse_risks`
+  - Suggest `technical_dependencies` and `suggested_stack`
+- [ ] Create or extend `agents/intake-project-evaluate.md` prompt for project idea assessment
+- [ ] Insert into `project_ideas` table with `status: 'new'`
+- [ ] Create GitHub issue with `project-idea` and `community-submitted` labels
+- [ ] Update `project_ideas.github_issue_url` with created issue URL
+- [ ] Update submission status to `triaged` after processing
+
+**Implementation Notes**:
+- Community project ideas follow same schema as auto-generated ideas from Workflow D
+- Add `community-submitted` label to distinguish from auto-generated ideas
+- Consider expedited review path for high-impact submissions (`urgency: 'urgent'`)
+- Link `project_ideas.derived_from_insight_ids` to any related insights if submission references existing content
+
+---
+
+### 1.13c Workflow C: Feedback Intake Processing
+
+**Description**: Process "feedback" type submissions to create GitHub issues for platform improvements.
+
+**Requirements**:
+- [ ] Add conditional branch in Workflow C to detect `type: 'feedback'` submissions
+- [ ] Map `category` field to GitHub issue labels:
+  - `bug` → labels: `bug`, `feedback`
+  - `feature` → labels: `enhancement`, `feedback`
+  - `content` → labels: `content`, `feedback`
+  - `other` → labels: `feedback`, `triage-needed`
+- [ ] Use Claude API to:
+  - Detect spam/abuse and set `is_spam` flag
+  - Assess priority based on content severity
+  - Extract actionable items from message
+  - Suggest appropriate assignees or project areas
+- [ ] Create GitHub issue in appropriate repository:
+  - `bug`/`feature` → main Libertas repo
+  - `content` → potentially separate content issues or same repo with label
+- [ ] Format issue body with:
+  - Original feedback message
+  - Submission ID for reference
+  - Contact email (if provided and user consented to follow-up)
+  - Category and priority assessment
+- [ ] Update submission status to `triaged` after issue creation
+- [ ] If `requires_response: true`, add to response queue
+
+**Implementation Notes**:
+- Feedback submissions do NOT generate insights or project ideas
+- Use simpler processing path than story/project types
+- Spam detection is critical for this intake type (public feedback forms attract abuse)
+- Consider auto-closing duplicate issues if similar feedback already exists
+
+---
+
 ### 1.14 Workflow D: Claude API Integration
 
 **Description**: Replace idea synthesizer stub with real Claude API.
@@ -630,6 +717,9 @@ Features for future consideration after core functionality is stable.
 | Workflow A Claude Integration | High | Medium | P0 |
 | Workflow A Feed Publishing | High | Medium | P0 |
 | Workflow B Email Newsletter | High | Low | P0 |
+| Workflow C Story Intake (1.13a) | Medium | Medium | P0 |
+| Workflow C Project Intake (1.13b) | Medium | Medium | P0 |
+| Workflow C Feedback Intake (1.13c) | Medium | Low | P0 |
 | Workflow D GitHub Issues | Medium | Low | P0 |
 | Vercel Deployment | High | Low | P0 |
 | Semantic Deduplication | Medium | High | P1 |

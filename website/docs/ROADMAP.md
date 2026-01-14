@@ -17,12 +17,12 @@ Core features for initial launch. Focus on content display and intake.
 **Description**: Public intake form submits directly to n8n webhook.
 
 **Requirements**:
-- [ ] Intake form component with validation (name, email, message, url, category)
-- [ ] Client-side input validation before submission
-- [ ] Submit directly to n8n webhook URL (`NEXT_PUBLIC_N8N_INTAKE_WEBHOOK_URL`)
-- [ ] Loading states and user feedback during submission
-- [ ] Success/error messaging with helpful next steps
-- [ ] Honeypot field for basic spam prevention
+- [x] Intake form component with validation (name, email, message, url, category)
+- [x] Client-side input validation before submission
+- [x] Submit directly to n8n webhook URL (`NEXT_PUBLIC_N8N_INTAKE_WEBHOOK_URL`)
+- [x] Loading states and user feedback during submission
+- [x] Success/error messaging with helpful next steps
+- [x] Honeypot field for basic spam prevention
 
 **Implementation Notes**:
 - No server-side API route needed — form submits directly to n8n webhook
@@ -50,25 +50,6 @@ Core features for initial launch. Focus on content display and intake.
 - Use `gray-matter` for frontmatter parsing
 - Content structure: `/content/insights/{year}/{month}/{slug}.md`
 - Feeds generated during `next build` and served as static files
-
----
-
-### 1.10 SEO & Meta
-
-**Description**: SEO optimization and meta tags.
-
-**Requirements**:
-- [ ] Dynamic meta tags per page
-- [ ] Open Graph tags for social sharing
-- [ ] Twitter card support
-- [ ] JSON-LD structured data for posts
-- [ ] Sitemap generation
-- [ ] robots.txt
-
-**Implementation Notes**:
-- Use Next.js metadata API
-- Generate sitemap at build time
-- Include post schema.org markup
 
 ---
 

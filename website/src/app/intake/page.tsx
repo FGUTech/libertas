@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { z } from 'zod';
 
@@ -55,46 +55,14 @@ interface IntakeResponse {
 }
 
 // =============================================================================
-// Rate Limiting
+// Honeypot Spam Prevention
 // =============================================================================
 
-const RATE_LIMIT_KEY = 'libertas_intake_submissions';
-const RATE_LIMIT_WINDOW = 60 * 60 * 1000; // 1 hour
-const RATE_LIMIT_MAX = 3; // Max 3 submissions per hour
+// Honeypot field name - bots will fill this, humans won't see it
+const HONEYPOT_FIELD = 'website_url';
 
-function checkRateLimit(): { allowed: boolean; remaining: number; resetIn: number } {
-  if (typeof window === 'undefined') return { allowed: true, remaining: RATE_LIMIT_MAX, resetIn: 0 };
-
-  const stored = localStorage.getItem(RATE_LIMIT_KEY);
-  const submissions: number[] = stored ? JSON.parse(stored) : [];
-  const now = Date.now();
-
-  // Filter to only recent submissions
-  const recent = submissions.filter((ts: number) => now - ts < RATE_LIMIT_WINDOW);
-
-  const remaining = Math.max(0, RATE_LIMIT_MAX - recent.length);
-  const resetIn = recent.length > 0 ? Math.ceil((RATE_LIMIT_WINDOW - (now - recent[0])) / 1000 / 60) : 0;
-
-  return {
-    allowed: recent.length < RATE_LIMIT_MAX,
-    remaining,
-    resetIn,
-  };
-}
-
-function recordSubmission(): void {
-  if (typeof window === 'undefined') return;
-
-  const stored = localStorage.getItem(RATE_LIMIT_KEY);
-  const submissions: number[] = stored ? JSON.parse(stored) : [];
-  const now = Date.now();
-
-  // Keep only recent + new
-  const recent = submissions.filter((ts: number) => now - ts < RATE_LIMIT_WINDOW);
-  recent.push(now);
-
-  localStorage.setItem(RATE_LIMIT_KEY, JSON.stringify(recent));
-}
+// Minimum time (ms) a human would take to fill the form
+const MIN_SUBMISSION_TIME = 3000; // 3 seconds
 
 // =============================================================================
 // Component
@@ -106,12 +74,10 @@ export default function IntakePage() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitResult, setSubmitResult] = useState<IntakeResponse | null>(null);
-  const [rateLimit, setRateLimit] = useState({ allowed: true, remaining: RATE_LIMIT_MAX, resetIn: 0 });
 
-  // Check rate limit on mount
-  useEffect(() => {
-    setRateLimit(checkRateLimit());
-  }, []);
+  // Honeypot and timing-based spam prevention
+  const [honeypot, setHoneypot] = useState('');
+  const [formLoadTime] = useState(() => Date.now());
 
   const handleTypeChange = (newType: IntakeType) => {
     setType(newType);
@@ -168,12 +134,18 @@ export default function IntakePage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Check rate limit
-    const limit = checkRateLimit();
-    setRateLimit(limit);
+    // Honeypot check - if filled, silently "succeed" (bot trap)
+    if (honeypot) {
+      // Fake success to confuse bots
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+      setSubmitResult({ success: true, id: 'LIB-RECEIVED' });
+      return;
+    }
 
-    if (!limit.allowed) {
-      setErrors({ _form: `Rate limit reached. Please try again in ${limit.resetIn} minutes.` });
+    // Timing check - reject if form was submitted too quickly
+    const timeSpent = Date.now() - formLoadTime;
+    if (timeSpent < MIN_SUBMISSION_TIME) {
+      setErrors({ _form: 'Please take a moment to review your submission before sending.' });
       return;
     }
 
@@ -183,28 +155,63 @@ export default function IntakePage() {
     setIsSubmitting(true);
     setErrors({});
 
+    // Get webhook URL from environment
+    const webhookUrl = process.env.NEXT_PUBLIC_N8N_INTAKE_WEBHOOK_URL;
+
+    if (!webhookUrl) {
+      console.error('N8N webhook URL not configured');
+      setErrors({ _form: 'Submission service is temporarily unavailable. Please try again later.' });
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
-      const response = await fetch('/api/intake', {
+      // Generate a client-side submission ID for user reference
+      const submissionId = generateSubmissionId();
+
+      // Prepare payload for n8n webhook
+      const webhookPayload = {
+        id: submissionId,
+        submittedAt: new Date().toISOString(),
+        channel: 'web',
+        ...validated,
+        // Normalize contact field
+        contact: validated.contact || null,
+      };
+
+      const response = await fetch(webhookUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(validated),
+        body: JSON.stringify(webhookPayload),
       });
 
-      const result: IntakeResponse = await response.json();
-
-      if (result.success) {
-        recordSubmission();
-        setRateLimit(checkRateLimit());
-        setSubmitResult(result);
+      if (response.ok) {
+        setSubmitResult({ success: true, id: submissionId });
       } else {
-        setErrors({ _form: result.error || 'Submission failed. Please try again.' });
+        // n8n may return error details
+        const errorText = await response.text().catch(() => '');
+        console.error('Webhook error:', response.status, errorText);
+        setErrors({ _form: 'Submission failed. Please try again later.' });
       }
-    } catch {
+    } catch (error) {
+      console.error('Webhook connection error:', error);
       setErrors({ _form: 'Network error. Please check your connection and try again.' });
     } finally {
       setIsSubmitting(false);
     }
   };
+
+  // Generate a human-readable submission ID
+  function generateSubmissionId(): string {
+    const date = new Date();
+    const dateStr = date.toISOString().slice(0, 10).replace(/-/g, '');
+    const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+    let random = '';
+    for (let i = 0; i < 4; i++) {
+      random += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return `LIB-${dateStr}-${random}`;
+  }
 
   // Success state
   if (submitResult?.success) {
@@ -267,23 +274,6 @@ export default function IntakePage() {
           </p>
         </div>
 
-        {/* Rate Limit Warning */}
-        {!rateLimit.allowed && (
-          <div className="mb-6 rounded-md border border-[var(--warning)] bg-[var(--warning)]/10 p-4">
-            <p className="text-sm text-[var(--warning)]">
-              Rate limit reached. You can submit again in {rateLimit.resetIn} minutes.
-            </p>
-          </div>
-        )}
-
-        {rateLimit.allowed && rateLimit.remaining <= 2 && (
-          <div className="mb-6 rounded-md border border-[var(--border-default)] bg-[var(--bg-secondary)] p-4">
-            <p className="text-sm text-[var(--fg-secondary)]">
-              {rateLimit.remaining} submission{rateLimit.remaining !== 1 ? 's' : ''} remaining this hour.
-            </p>
-          </div>
-        )}
-
         {/* Type Selector */}
         <div className="mb-8">
           <label className="mb-3 block text-small font-medium text-[var(--fg-primary)]">
@@ -306,6 +296,22 @@ export default function IntakePage() {
 
         {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Honeypot field - hidden from humans, bots will fill it */}
+          <div aria-hidden="true" className="absolute -left-[9999px] -top-[9999px]">
+            <label htmlFor={HONEYPOT_FIELD}>
+              Leave this field empty
+            </label>
+            <input
+              type="text"
+              id={HONEYPOT_FIELD}
+              name={HONEYPOT_FIELD}
+              value={honeypot}
+              onChange={(e) => setHoneypot(e.target.value)}
+              tabIndex={-1}
+              autoComplete="off"
+            />
+          </div>
+
           {/* Global Error */}
           {errors._form && (
             <div className="rounded-md border border-[var(--error)] bg-[var(--error)]/10 p-4">
@@ -393,7 +399,7 @@ export default function IntakePage() {
           <div className="flex items-center justify-between pt-4 pb-8">
             <button
               type="submit"
-              disabled={isSubmitting || !rateLimit.allowed}
+              disabled={isSubmitting}
               className="btn btn-primary"
             >
               {isSubmitting ? (
