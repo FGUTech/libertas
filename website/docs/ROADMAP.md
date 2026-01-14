@@ -71,26 +71,35 @@ Core features for initial launch. Focus on content display and intake.
 
 Features that enhance the experience but aren't critical for launch.
 
-### 2.1 User Authentication (Firebase)
+### 2.1 User Authentication (Firebase + Starknet)
 
-**Description**: Allow users to create accounts and log in.
+**Description**: Allow users to create accounts and log in via Firebase (social/email) OR Starknet wallet. Users choose their preferred auth method at login.
 
 **Requirements**:
 - [ ] Install Firebase SDK (`firebase`)
 - [ ] Create Firebase auth config (`lib/firebase.ts`)
-- [ ] Create AuthContext provider with lazy-loaded SDK
+- [ ] Create unified AuthContext provider supporting both Firebase and Starknet
+- [ ] **Auth Method Selection UI** - modal/page where users choose: "Continue with Social" or "Connect Wallet"
 - [ ] Email/password registration
 - [ ] Magic link (email link) authentication
+- [ ] **Google OAuth login**
+- [ ] **GitHub OAuth login**
+- [ ] **Twitter/X OAuth login**
 - [ ] Password reset flow
-- [ ] Session persistence
-- [ ] Protected routes helper
-- [ ] Auth state hook (`useAuth`)
+- [ ] Session persistence (both Firebase and Starknet sessions)
+- [ ] Protected routes helper (works with either auth method)
+- [ ] Auth state hook (`useAuth`) - unified interface for both auth types
+- [ ] **Starknet as primary auth** - Sign-In With Starknet (SIWS) flow
+- [ ] **Account linking** - Link Firebase account to Starknet wallet (and vice versa)
 
 **Implementation Notes**:
 - Lazy-load Firebase SDK to avoid loading for non-auth users
 - Use `firebase/auth` with `signInWithEmailAndPassword`, `createUserWithEmailAndPassword`
-- Store minimal user profile in Cloud SQL (uid, display_name, created_at)
-- Consider optional OAuth providers (Google, GitHub)
+- For social logins use `signInWithPopup` with GoogleAuthProvider, GithubAuthProvider, TwitterAuthProvider
+- Store minimal user profile in Cloud SQL (uid, display_name, auth_type, wallet_address, created_at)
+- For Starknet auth, use `starknet-react` with SIWS standard
+- Unified user identity: Firebase uid OR Starknet wallet address as primary key
+- Support linking accounts: user can add wallet to Firebase account or add email to wallet account
 
 ---
 
@@ -103,81 +112,110 @@ Features that enhance the experience but aren't critical for launch.
 - [ ] Create API route `GET /api/profile`
 - [ ] Create API route `PATCH /api/profile`
 - [ ] Profile page showing user info
+- [ ] Display auth method indicator (Firebase social, email, or Starknet wallet)
 - [ ] Edit display name
 - [ ] Edit bio
 - [ ] Edit profile picture (handful of avatars to choose from)
-- [ ] Link Starknet wallet (preparation for 2.5)
+- [ ] **Link/unlink Starknet wallet** (for Firebase-primary users)
+- [ ] **Link/unlink email** (for Starknet-primary users)
+- [ ] **Connected accounts section** - show all linked auth methods
 - [ ] View intake form submissions
 - [ ] View liked posts
 - [ ] View user's comments history
-- [ ] Delete account option
+- [ ] Account settings (email preferences, notification preferences)
+- [ ] Delete account option (with confirmation)
 
 **Implementation Notes**:
-- Profile data in Cloud SQL `user_profiles` table (uid, display_name, bio, avatar_id, wallet_address, created_at)
-- Verify Firebase auth token in API routes
-- Keep profile page simple initially
+- Profile data in Cloud SQL `user_profiles` table:
+  - `id` (internal UUID)
+  - `firebase_uid` (nullable - set if Firebase auth)
+  - `wallet_address` (nullable - set if Starknet auth)
+  - `primary_auth_type` (enum: 'firebase' | 'starknet')
+  - `display_name`, `bio`, `avatar_id`
+  - `email` (nullable, for notifications even if wallet-primary)
+  - `created_at`, `updated_at`
+- Verify Firebase auth token OR Starknet signature in API routes
+- Use unified auth middleware that handles both auth types
 - For Starknet implementation use starknetjs and starknet-react
 
 ---
 
 ### 2.3 Comments System
 
-**Description**: Allow authenticated users to comment on posts.
+**Description**: Allow authenticated users (Firebase OR Starknet) to comment on posts.
 
 **Requirements**:
+- [ ] Create `comments` table migration for Cloud SQL
 - [ ] Create API route `POST /api/comments`
 - [ ] Create API route `GET /api/comments/[postId]`
-- [ ] Comment form on post pages
+- [ ] Create API route `PATCH /api/comments/[commentId]` (edit)
+- [ ] Create API route `DELETE /api/comments/[commentId]`
+- [ ] Comment form on post pages (requires auth)
+- [ ] Display commenter info (name, avatar, auth type badge)
 - [ ] Threaded replies (1 level deep)
 - [ ] Edit/delete own comments
 - [ ] Markdown support in comments
-- [ ] Spam prevention (rate limiting)
+- [ ] Spam prevention (rate limiting per user)
 - [ ] Report inappropriate comments
+- [ ] Comment count display on post cards
 
 **Implementation Notes**:
-- Store in Cloud SQL `comments` table
-- Verify Firebase auth token in API routes
-- Sanitize markdown output
+- Store in Cloud SQL `comments` table (id, post_id, user_id, parent_id, content, created_at, updated_at)
+- Use unified auth middleware (accepts Firebase token OR Starknet signature)
+- Sanitize markdown output (prevent XSS)
 - Consider polling or SSE for near-real-time updates
+- Prepare schema for on-chain migration (Phase 3)
 
 ---
 
 ### 2.4 Reactions (Like/Dislike)
 
-**Description**: Allow authenticated users to react to posts.
+**Description**: Allow authenticated users (Firebase OR Starknet) to react to posts.
 
 **Requirements**:
+- [ ] Create `reactions` table migration for Cloud SQL
 - [ ] Create API route `POST /api/reactions`
 - [ ] Create API route `GET /api/reactions/[postId]`
+- [ ] Create API route `DELETE /api/reactions/[postId]` (remove reaction)
 - [ ] Like/dislike buttons on posts
 - [ ] One reaction per user per post
-- [ ] Toggle reaction on second click
+- [ ] Toggle reaction on second click (like → dislike → none)
 - [ ] Display reaction counts
 - [ ] Optimistic UI updates
+- [ ] Show user's own reaction state when logged in
+- [ ] Reaction animations (subtle feedback)
 
 **Implementation Notes**:
-- Store in Cloud SQL `reactions` table
-- Verify Firebase auth token in API routes
-- Consider anonymous reactions option (no account needed)
-- Prepare schema for Starknet integration
+- Store in Cloud SQL `reactions` table (id, post_id, user_id, reaction_type, created_at)
+- Use unified auth middleware (accepts Firebase token OR Starknet signature)
+- `user_id` references `user_profiles.id` (works for both auth types)
+- Prepare schema for on-chain migration (Phase 3) - add optional `tx_hash` column
+- Consider caching reaction counts for performance
 
 ---
 
-### 2.5 Starknet Wallet Connect
+### 2.5 Starknet Wallet Integration (Extended)
 
-**Description**: Allow users to connect Starknet wallets.
+**Description**: Deep Starknet wallet integration beyond basic auth (which is covered in 2.1).
 
 **Requirements**:
-- [ ] Wallet connection modal
-- [ ] Support Argent X and Braavos
-- [ ] Store wallet address in profile
-- [ ] Sign-In With Starknet (SIWS)
-- [ ] Display wallet status in header
+- [ ] Wallet connection modal with network selection (mainnet/sepolia)
+- [ ] Support Argent X wallet
+- [ ] Support Braavos wallet
+- [ ] Support other Starknet wallets via `get-starknet`
+- [ ] Display connected wallet in header (truncated address + network indicator)
+- [ ] Wallet disconnect flow
+- [ ] Network switching prompt
+- [ ] Transaction signing UI (for on-chain actions)
+- [ ] Session keys support (for gasless UX)
+- [ ] Display wallet balance (optional)
 
 **Implementation Notes**:
-- Use `starknet-react` or `get-starknet`
-- Optional: Use wallet as primary auth method
-- Prepare for on-chain reactions in Phase 3
+- Use `starknet-react` for React hooks and provider
+- Use `get-starknet` for wallet discovery
+- SIWS auth flow is handled in 2.1
+- This section prepares infrastructure for on-chain reactions/comments in Phase 3
+- Consider Paymaster integration for sponsored transactions
 
 ---
 
@@ -403,20 +441,22 @@ Features for future consideration after core functionality is stable.
 | Posts Feed | High | Medium | P0 |
 | Post View | High | Medium | P0 |
 | Intake Form | High | Low | P0 |
-| User Auth | Medium | Medium | P1 |
+| User Auth (Firebase + Starknet) | High | Medium | P1 |
+| User Profiles | Medium | Medium | P1 |
 | Comments | Medium | Medium | P1 |
 | Reactions | Medium | Low | P1 |
-| Starknet Wallet | Medium | High | P1 |
+| Starknet Wallet (Extended) | Medium | Medium | P1 |
 | On-chain Reactions | Low | High | P2 |
+| On-chain Comments | Low | High | P2 |
 | Nostr Integration | Low | High | P2 |
 
 ---
 
 # Milestones
 
-| Milestone | Features | Target |
-|-----------|----------|--------|
-| **Alpha** | Phase 0 + MVP (1.1-1.10) | Week 1-2 |
-| **Beta** | Nice-to-have (2.1-2.5) | Week 3-4 |
-| **v1.0** | Nice-to-have (2.6-2.10) | Week 5-6 |
-| **v2.0** | Future (3.1-3.5) | TBD |
+| Milestone | Features | Description |
+|-----------|----------|-------------|
+| **Alpha** | Phase 0 + MVP (1.1-1.10) | Core content display and intake |
+| **Beta** | Auth + User Features (2.1-2.5) | Firebase/Starknet auth, profiles, comments, reactions, wallet integration |
+| **v1.0** | Polish (2.6-2.10) | Theme, search, reading UX, newsletter |
+| **v2.0** | On-chain (3.1-3.5) | Starknet contracts, Nostr, decentralized features |

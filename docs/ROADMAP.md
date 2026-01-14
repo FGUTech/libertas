@@ -515,6 +515,8 @@ Features for future consideration after core functionality is stable.
 
 **Notes**: Human approval is a hard requirement; never auto-merge.
 
+**Implementation Consideration**: The [Claude Agent SDK](https://platform.claude.com/docs/en/agent-sdk/overview) is a strong candidate for the ScaffoldGenerator component. Unlike Workflows A-D (which are content pipelines suited for n8n), Workflow E is a coding task — exactly what the Agent SDK is designed for. It provides autonomous file reading/writing, bash execution (git operations), and PR creation out of the box. Recommended approach: keep n8n as the orchestrator with human approval gates, and call an Agent SDK-based service for the actual code generation step.
+
 ---
 
 ### 3.2 Social Media Bots
