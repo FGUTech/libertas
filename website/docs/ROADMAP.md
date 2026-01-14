@@ -12,26 +12,6 @@ Hey, I am working to implement features for the libertas website from the roadma
 
 Core features for initial launch. Focus on content display and intake.
 
-### 1.8 Intake Form Submission
-
-**Description**: Public intake form submits directly to n8n webhook.
-
-**Requirements**:
-- [x] Intake form component with validation (name, email, message, url, category)
-- [x] Client-side input validation before submission
-- [x] Submit directly to n8n webhook URL (`NEXT_PUBLIC_N8N_INTAKE_WEBHOOK_URL`)
-- [x] Loading states and user feedback during submission
-- [x] Success/error messaging with helpful next steps
-- [x] Honeypot field for basic spam prevention
-
-**Implementation Notes**:
-- No server-side API route needed — form submits directly to n8n webhook
-- n8n Workflow C handles rate limiting, classification, and GitHub issue creation
-- Use environment variable for webhook URL (different per environment)
-- Validate against intake schema client-side for UX, but n8n is source of truth
-
----
-
 ### 1.9 Static Content from Repository
 
 **Description**: Serve content statically from Git-committed markdown files.
@@ -205,21 +185,23 @@ Features that enhance the experience but aren't critical for launch.
 
 ---
 
-### 2.6 Dark/Light Theme Toggle
+### 2.6 Dark/Light Theme Toggle ✅
 
 **Description**: Persistent theme preference.
 
 **Requirements**:
-- [ ] Toggle button in header
-- [ ] System preference detection
-- [ ] Persist preference in localStorage
-- [ ] Smooth transition between themes
-- [ ] No FOUC (flash of unstyled content)
+- [x] Toggle button in header
+- [x] System preference detection
+- [x] Persist preference in localStorage
+- [x] Smooth transition between themes
+- [x] No FOUC (flash of unstyled content)
 
 **Implementation Notes**:
-- Use `next-themes` or similar
-- Apply theme class to `<html>` element
+- Uses native implementation (no `next-themes` needed)
+- Apply theme via `data-theme` attribute on `<html>` element
 - Default to dark theme (brand identity)
+- FOUC prevention script in `<head>` reads localStorage before render
+- Smooth transitions enabled via `.theme-transition` class after initial load
 
 ---
 
@@ -252,6 +234,7 @@ Features that enhance the experience but aren't critical for launch.
 **Implementation Notes**:
 - Use Intersection Observer for progress
 - Calculate reading time from word count
+- Smooth scroll for "Back to top"
 
 ---
 

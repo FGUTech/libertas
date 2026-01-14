@@ -44,6 +44,15 @@ export function Header() {
     };
   }, [isMobileMenuOpen]);
 
+  // Enable smooth transitions after initial load (prevents FOUC)
+  useEffect(() => {
+    // Small delay to ensure initial render is complete
+    const timer = setTimeout(() => {
+      document.documentElement.classList.add('theme-transition');
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
+
   const toggleTheme = useCallback(() => {
     const newTheme = theme === 'dark' ? 'light' : 'dark';
     setTheme(newTheme);
