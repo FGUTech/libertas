@@ -136,6 +136,34 @@ gcloud run services update n8n \
   --update-env-vars="N8N_HOST=$(echo $SERVICE_URL | sed 's/https:\/\///'),WEBHOOK_URL=$SERVICE_URL,N8N_EDITOR_BASE_URL=$SERVICE_URL"
 ```
 
+### Configure n8n Credentials
+
+Before importing workflows, set up the required credentials in n8n:
+
+#### Anthropic API (Claude)
+
+1. Go to **Settings → Credentials → Add Credential**
+2. Search for **Header Auth** and select it
+3. Configure:
+   - **Name**: `Anthropic API Key`
+   - **Header Name**: `x-api-key`
+   - **Header Value**: Your Anthropic API key (or use `$ANTHROPIC_API_KEY` if using env var)
+4. Save the credential
+
+The workflow nodes reference this credential by name. The credential ID in the workflow JSON (`ANTHROPIC_CREDENTIAL_ID`) is a placeholder - n8n will update it when you assign the credential to the HTTP Request nodes.
+
+#### Postgres Database
+
+1. Go to **Settings → Credentials → Add Credential**
+2. Search for **Postgres** and select it
+3. Configure:
+   - **Name**: `Postgres account`
+   - **Host**: `/cloudsql/PROJECT_ID:REGION:libertas-db` (Cloud SQL socket path)
+   - **Database**: `libertas`
+   - **User**: `n8n-user`
+   - **Password**: Your database password
+4. Save the credential
+
 ### Import Workflows
 
 1. Open n8n at your Cloud Run URL
@@ -145,7 +173,10 @@ gcloud run services update n8n \
    - workflow-b-digest.json
    - workflow-c-intake.json
    - workflow-d-ideas.json
-4. Re-activate workflows and re-enter any credentials if encryption key changed
+4. After importing, open each workflow and:
+   - Assign the **Anthropic API Key** credential to Claude HTTP Request nodes
+   - Assign the **Postgres account** credential to database nodes
+5. Re-activate workflows
 
 ---
 

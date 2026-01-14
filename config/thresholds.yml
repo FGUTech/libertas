@@ -2,6 +2,12 @@
 # This file defines scoring thresholds for content processing.
 # Adjust values without code deployment.
 
+# Runtime Settings
+runtime:
+  # Set to true for local dev/testing (uses stubs, no API calls)
+  # Set to false for production (uses real Claude, GitHub, Resend APIs)
+  use_stubs: true
+
 # Ingestion and Processing
 ingestion:
   # Minimum freedom relevance score to generate an insight

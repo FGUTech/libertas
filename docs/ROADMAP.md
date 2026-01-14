@@ -14,6 +14,26 @@ Hey, I am working to implement features for the libertas website from the roadma
 
 Core infrastructure and workflow features required for initial launch.
 
+## Runtime Configuration Pattern
+
+All workflows use a config-driven stub toggle via `thresholds.yml`:
+
+```yaml
+# Runtime Settings
+runtime:
+  # Set to true for local dev/testing (uses stubs, no API calls)
+  # Set to false for production (uses real Claude, GitHub, Resend APIs)
+  use_stubs: true
+```
+
+**How it works:**
+- Each workflow has IF nodes that check `runtime.use_stubs`
+- When `true`: Routes to stub nodes (no API costs, safe for testing)
+- When `false`: Routes to real API nodes (Claude, GitHub, Resend)
+- Toggle by committing change to `thresholds.yml`
+
+This pattern is implemented across: 1.5, 1.6, 1.9, 1.10, 1.11, 1.13, 1.14, 1.15
+
 ### 1.0 n8n Migration to Managed Hosting
 
 **Description**: Migrate from Railway-hosted n8n instance to n8n's managed hosting service and connect to GCP Cloud SQL.
@@ -57,50 +77,6 @@ Core infrastructure and workflow features required for initial launch.
 
 ---
 
-### 1.2 Integrate Config Files into Workflows
-
-**Description**: Wire `config/sources.yml` and `config/thresholds.yml` into n8n workflows.
-
-**Requirements**:
-- [ ] Fetch `sources.yml` from GitHub raw URL or website endpoint
-- [ ] Replace hardcoded source list in Workflow A with dynamic source loading
-- [ ] Fetch `thresholds.yml` values for scoring gates (relevance >= 70, credibility >= 60)
-- [ ] Load `thresholds.yml` values for circuit breaker settings (5 failures, 24hr cooldown)
-- [ ] Load `thresholds.yml` values for idea generation thresholds (relevance >= 80)
-- [ ] Load `thresholds.yml` rate limiting values for intake webhook
-- [ ] Parse YAML in n8n (use Code node or HTTP + yaml parser)
-
-**Implementation Notes**:
-- Currently Workflow A has 6 hardcoded sources; `sources.yml` defines 10
-- Threshold values are hardcoded throughout workflows instead of reading from config
-- **Option A**: GitHub raw URL (e.g., `https://raw.githubusercontent.com/{org}/libertas/main/config/sources.yml`)
-- **Option B**: Next.js API route that reads and serves the config files as JSON
-- **Option C**: Symlink/copy configs to `website/public/` for static serving
-- Config changes require git push but not workflow redeployment
-
----
-
-### 1.3 Integrate Agent Prompts into Workflows
-
-**Description**: Load agent prompts from `agents/*.md` files for Claude API calls.
-
-**Requirements**:
-- [ ] Fetch prompt templates from GitHub raw URLs or website endpoint
-- [ ] Workflow A: Load `agents/classify.md` for classifier prompt
-- [ ] Workflow A: Load `agents/summarize.md` for summarizer prompt
-- [ ] Workflow B: Load `agents/digest.md` for digest composer prompt
-- [ ] Workflow C: Load `agents/intake-classify.md` for intake classification prompt
-- [ ] Workflow D: Load `agents/generate-idea.md` for idea synthesizer prompt
-- [ ] Cache prompts in workflow (avoid fetching on every item)
-
-**Implementation Notes**:
-- Agent prompts exist but aren't loaded dynamically; currently would need copy/paste into n8n nodes
-- Follow same pattern as config files for fetching prompts ( see 1.2/last commit )
-- Prompt updates via git push; no workflow changes needed
-- `agents/AGENTS.md` contains prompt engineering guidelines for reference
-
----
-
 ### 1.4 Integrate JSON Schemas for Validation
 
 **Description**: Wire `schemas/*.json` for runtime validation of LLM outputs and data.
@@ -116,41 +92,45 @@ Core infrastructure and workflow features required for initial launch.
 
 **Implementation Notes**:
 - Schemas exist but validation currently uses hand-written checks or none
-- **Option A**: GitHub raw URL (e.g., `https://raw.githubusercontent.com/{org}/libertas/main/schemas/insight.schema.json`)
-- **Option B**: Next.js API route or static serving from `website/public/schemas/`
+- Use same pattern as ./configs & ./agents use to load from API on site ( done in commits 8a2eaf265b27e093d065e382e48e91958bc1d6d8 & 19384adc6e44d34d60ab036b6714250be27c53ce )
 - n8n has built-in JSON Schema validation via Code node or IF node with JSON parse
 - Validation catches malformed LLM outputs before database insertion
 - Cache schemas; they change rarely
 
 ---
 
-### 1.5 Workflow A: Claude API Integration
+### 1.5 Workflow A: Claude API Integration ✅
 
-**Description**: Replace classification and summarization stubs with real Claude API calls.
+**Description**: Replace classification and summarization stubs with real Claude API calls, with config-driven toggle for stub/real mode.
 
 **Requirements**:
-- [ ] Set up n8n credential for Anthropic API (Header Auth with x-api-key)
-- [ ] Swap Classify Stub → real Claude API HTTP request (load from `agents/classify.md`)
-- [ ] Swap Summarize Stub → real Claude API HTTP request (load from `agents/summarize.md`)
-- [ ] Validate output against JSON schemas (per 1.4)
-- [ ] Test with golden test cases
+- [x] Add `use_stubs` config to `thresholds.yml` under new `runtime` section
+- [x] Set up n8n credential for Anthropic API (Header Auth with x-api-key)
+- [x] Add IF node to check `runtime.use_stubs` config value
+- [x] Wire Classify Stub and real Claude API node to IF branches
+- [x] Wire Summarize Stub and real Claude API node to IF branches
+- [x] Real Claude nodes load prompts from `agents/classify.md` and `agents/summarize.md`
+- [x] Validate output against JSON schemas (per 1.4)
+- [ ] Test with golden test cases in both stub and real modes
 
 **Implementation Notes**:
-- Claude API nodes exist but are disabled; enable by setting `disabled: false`
+- Claude API nodes exist but are disabled; wire to IF node instead of deleting
+- Keep stubs functional for local dev/testing without API costs
 - Use structured output mode for reliable JSON parsing
-- Current stub uses keyword-based fallback classifier
-- Depends on 1.3 (agent prompt loading) and 1.4 (schema validation)
+- Config toggle allows switching modes via `thresholds.yml` commit
 
 ---
 
 ### 1.6 Workflow A: Feed Publishing
 
-**Description**: Generate and publish RSS/JSON feeds for consumed content.
+**Description**: Generate and publish RSS/JSON feeds for consumed content, with config-driven toggle for stub/real mode.
 
 **Requirements**:
 - [ ] Add node to generate/update RSS feed (`/rss.xml`)
 - [ ] Add node to generate/update JSON feed (`/feed.json`)
-- [ ] Add node to commit published insights to GitHub repo as markdown files
+- [ ] Add IF node to check `runtime.use_stubs` config value
+- [ ] Wire GitHub Commit Stub and real GitHub API node to IF branches
+- [ ] Real GitHub node commits published insights to repo as markdown files
 - [ ] Set up n8n credential for GitHub API (Bearer token)
 - [ ] Validate RSS 2.0 and JSON Feed 1.1 compliance
 
@@ -158,6 +138,8 @@ Core infrastructure and workflow features required for initial launch.
 - Feeds should include all published insights with status='published'
 - Markdown files go in `/content/insights/{year}/{month}/{slug}.md`
 - Use frontmatter format matching website expectations
+- Keep stub for local dev/testing without GitHub commits
+- Config toggle via `runtime.use_stubs` in `thresholds.yml`
 
 ---
 
@@ -195,51 +177,64 @@ Core infrastructure and workflow features required for initial launch.
 
 ### 1.9 Workflow B: Claude API Integration
 
-**Description**: Replace digest composer stub with real Claude API.
+**Description**: Replace digest composer stub with real Claude API, with config-driven toggle for stub/real mode.
 
 **Requirements**:
-- [ ] Swap DigestComposer Stub → real Claude API HTTP request (use `agents/digest.md` prompt)
+- [ ] Add IF node to check `runtime.use_stubs` config value
+- [ ] Wire DigestComposer Stub and real Claude API node to IF branches
+- [ ] Real Claude node uses `agents/digest.md` prompt
 - [ ] Set up n8n credential for Anthropic API (if not already from 1.5)
 - [ ] Include emerging patterns and trend detection in prompt
 - [ ] Validate digest output structure
+- [ ] Test in both stub and real modes
 
 **Implementation Notes**:
-- DigestComposer node exists but is disabled; stub is active
+- DigestComposer node exists but is disabled; wire to IF node instead of deleting
+- Keep stub for local dev/testing without API costs
+- Config toggle via `runtime.use_stubs` in `thresholds.yml`
 - Consider fallback if Claude API fails (publish digest without LLM enhancement)
 
 ---
 
 ### 1.10 Workflow B: GitHub Publishing
 
-**Description**: Commit weekly digests to GitHub repository.
+**Description**: Commit weekly digests to GitHub repository, with config-driven toggle for stub/real mode.
 
 **Requirements**:
-- [ ] Swap GitHub Commit Stub → real GitHub API HTTP request
+- [ ] Add IF node to check `runtime.use_stubs` config value
+- [ ] Wire GitHub Commit Stub and real GitHub API node to IF branches
 - [ ] Set up n8n credential for GitHub API (Bearer token)
 - [ ] Handle file update case (fetch existing file SHA for updates)
 - [ ] Commit digest markdown to `/content/digests/weekly-{date}.md`
 - [ ] Update feed files alongside digest commit
+- [ ] Test in both stub and real modes
 
 **Implementation Notes**:
 - GitHub API requires SHA of existing file for updates
+- Keep stub for local dev/testing without GitHub commits
+- Config toggle via `runtime.use_stubs` in `thresholds.yml`
 - Consider atomic commit of digest + updated feeds
 
 ---
 
 ### 1.11 Workflow B: Email Newsletter (Resend)
 
-**Description**: Send weekly digest via email using Resend.
+**Description**: Send weekly digest via email using Resend, with config-driven toggle for stub/real mode.
 
 **Requirements**:
 - [ ] Set up Resend account with API key
 - [ ] Set up n8n credential for Resend API (Bearer token)
-- [ ] Swap Resend Email Stub → real Resend API HTTP request
+- [ ] Add IF node to check `runtime.use_stubs` config value
+- [ ] Wire Resend Email Stub and real Resend API node to IF branches
 - [ ] Configure subscriber list/audience management
 - [ ] Add unsubscribe link handling
 - [ ] Verify no tracking pixels in emails (Resend default)
+- [ ] Test in both stub and real modes
 
 **Implementation Notes**:
 - Email template stub exists and generates proper HTML
+- Keep stub for local dev/testing without sending real emails
+- Config toggle via `runtime.use_stubs` in `thresholds.yml`
 - Resend API endpoint: `https://api.resend.com/emails`
 - Consider double opt-in for subscribers
 
@@ -262,22 +257,26 @@ Core infrastructure and workflow features required for initial launch.
 
 ### 1.13 Workflow C: API Integration Verification
 
-**Description**: Complete intake workflow API integrations.
+**Description**: Complete intake workflow API integrations, with config-driven toggle for stub/real mode.
 
 **Requirements**:
 - [x] Webhook endpoint functional (implemented)
 - [x] Database insertion working (implemented)
 - [ ] Set up n8n credential for Anthropic API (Header Auth with x-api-key)
 - [ ] Set up n8n credential for GitHub API (Bearer token)
-- [ ] Swap Classify Stub → real Claude API HTTP request (use `agents/intake-classify.md`)
-- [ ] Swap GitHub Issue Stub → real GitHub API HTTP request
+- [ ] Add IF node to check `runtime.use_stubs` config value
+- [ ] Wire Classify Stub and real Claude API node to IF branches (use `agents/intake-classify.md`)
+- [ ] Wire GitHub Issue Stub and real GitHub API node to IF branches
 - [ ] Populate `priority`, `is_spam`, `requires_response` fields via LLM classification
 - [ ] Add rate limiting node after webhook (prevent abuse)
 - [ ] Add error handling nodes with retry logic
+- [ ] Test in both stub and real modes
 
 **Implementation Notes**:
 - This workflow is marked active (`"active": true`)
-- Credentials may be shared with Workflow A (1.5) and Workflow D (1.15) if already configured
+- Keep stubs for local dev/testing without API costs
+- Config toggle via `runtime.use_stubs` in `thresholds.yml`
+- Credentials may be shared with Workflow A (1.5) and Workflow D (1.14) if already configured
 
 ---
 
@@ -288,11 +287,12 @@ Core infrastructure and workflow features required for initial launch.
 **Requirements**:
 - [ ] Add conditional branch in Workflow C to detect `type: 'story'` submissions
 - [ ] Route story submissions to classification step (reuse `agents/classify.md` or create `agents/intake-story-classify.md`)
+- [ ] Classification uses `runtime.use_stubs` toggle (shares IF node pattern from 1.13)
 - [ ] Extract and validate `sourceUrl` if provided; fetch source content for classification
 - [ ] Score story for `freedom_relevance_score` and `credibility_score`
 - [ ] If scores meet threshold (per `thresholds.yml`), queue for insight generation via Workflow A pipeline
 - [ ] Store `region` field in `source_items.metadata.geo` if provided
-- [ ] Create GitHub issue for manual review if source URL is missing or credibility is uncertain
+- [ ] GitHub issue creation uses `runtime.use_stubs` toggle (shares IF node pattern from 1.13)
 - [ ] Update submission status to `triaged` after processing
 
 **Implementation Notes**:
@@ -300,6 +300,7 @@ Core infrastructure and workflow features required for initial launch.
 - `sourceUrl` provides provenance; stories without URLs need manual verification
 - Consider lower auto-publish threshold for community-submitted stories (require editorial review)
 - Link resulting insight back to original submission via `source_item_ids`
+- Inherits stub/real toggle from parent 1.13 workflow
 
 ---
 
@@ -313,7 +314,7 @@ Core infrastructure and workflow features required for initial launch.
   - `title` → used in GitHub issue title
   - `problemStatement` → `problem_statement`
   - `description` → `proposed_solution`
-- [ ] Use Claude API to evaluate and enrich submission:
+- [ ] Claude API evaluation uses `runtime.use_stubs` toggle (shares IF node pattern from 1.13):
   - Generate `threat_model` from problem statement
   - Identify `affected_groups`
   - Assess `feasibility_score` and `impact_score`
@@ -321,7 +322,7 @@ Core infrastructure and workflow features required for initial launch.
   - Suggest `technical_dependencies` and `suggested_stack`
 - [ ] Create or extend `agents/intake-project-evaluate.md` prompt for project idea assessment
 - [ ] Insert into `project_ideas` table with `status: 'new'`
-- [ ] Create GitHub issue with `project-idea` and `community-submitted` labels
+- [ ] GitHub issue creation uses `runtime.use_stubs` toggle (shares IF node pattern from 1.13)
 - [ ] Update `project_ideas.github_issue_url` with created issue URL
 - [ ] Update submission status to `triaged` after processing
 
@@ -330,6 +331,7 @@ Core infrastructure and workflow features required for initial launch.
 - Add `community-submitted` label to distinguish from auto-generated ideas
 - Consider expedited review path for high-impact submissions (`urgency: 'urgent'`)
 - Link `project_ideas.derived_from_insight_ids` to any related insights if submission references existing content
+- Inherits stub/real toggle from parent 1.13 workflow
 
 ---
 
@@ -344,12 +346,12 @@ Core infrastructure and workflow features required for initial launch.
   - `feature` → labels: `enhancement`, `feedback`
   - `content` → labels: `content`, `feedback`
   - `other` → labels: `feedback`, `triage-needed`
-- [ ] Use Claude API to:
+- [ ] Claude API assessment uses `runtime.use_stubs` toggle (shares IF node pattern from 1.13):
   - Detect spam/abuse and set `is_spam` flag
   - Assess priority based on content severity
   - Extract actionable items from message
   - Suggest appropriate assignees or project areas
-- [ ] Create GitHub issue in appropriate repository:
+- [ ] GitHub issue creation uses `runtime.use_stubs` toggle (shares IF node pattern from 1.13):
   - `bug`/`feature` → main Libertas repo
   - `content` → potentially separate content issues or same repo with label
 - [ ] Format issue body with:
@@ -365,23 +367,28 @@ Core infrastructure and workflow features required for initial launch.
 - Use simpler processing path than story/project types
 - Spam detection is critical for this intake type (public feedback forms attract abuse)
 - Consider auto-closing duplicate issues if similar feedback already exists
+- Inherits stub/real toggle from parent 1.13 workflow
 
 ---
 
 ### 1.14 Workflow D: Claude API Integration
 
-**Description**: Replace idea synthesizer stub with real Claude API.
+**Description**: Replace idea synthesizer stub with real Claude API, with config-driven toggle for stub/real mode.
 
 **Requirements**:
 - [ ] Set up n8n credential for Anthropic API (Header Auth with x-api-key)
-- [ ] Swap IdeaSynthesizer Stub → real Claude API HTTP request (use `agents/generate-idea.md` prompt)
+- [ ] Add IF node to check `runtime.use_stubs` config value
+- [ ] Wire IdeaSynthesizer Stub and real Claude API node to IF branches (use `agents/generate-idea.md` prompt)
 - [ ] Validate generated idea against project_idea schema
 - [ ] Handle empty clusters edge case gracefully
 - [ ] Add logging/alerting for failed LLM calls
 - [ ] Add error handling nodes with retry logic
+- [ ] Test in both stub and real modes
 
 **Implementation Notes**:
 - Stub currently generates complete proposals with threat_model, MVP scope
+- Keep stub for local dev/testing without API costs
+- Config toggle via `runtime.use_stubs` in `thresholds.yml`
 - Real API should maintain same output structure
 - Credentials may be shared with Workflow A (1.5) and Workflow C (1.13) if already configured
 
@@ -389,16 +396,20 @@ Core infrastructure and workflow features required for initial launch.
 
 ### 1.15 Workflow D: GitHub Issue Creation
 
-**Description**: Create GitHub issues for generated project ideas.
+**Description**: Create GitHub issues for generated project ideas, with config-driven toggle for stub/real mode.
 
 **Requirements**:
-- [ ] Swap GitHub Issue Stub → real GitHub API HTTP request
+- [ ] Add IF node to check `runtime.use_stubs` config value
+- [ ] Wire GitHub Issue Stub and real GitHub API node to IF branches
 - [ ] Set up n8n credential for GitHub API (if not already)
 - [ ] Configure labels (currently hardcoded: `project-idea`, `auto-generated`)
 - [ ] Link derived insights in issue body to actual published URLs
 - [ ] Update `project_ideas.github_issue_url` with created issue URL
+- [ ] Test in both stub and real modes
 
 **Implementation Notes**:
+- Keep stub for local dev/testing without GitHub API calls
+- Config toggle via `runtime.use_stubs` in `thresholds.yml`
 - Consider adding assignees or project board integration
 - Issue template should include problem statement, threat model, MVP scope
 
@@ -741,18 +752,19 @@ Features for future consideration after core functionality is stable.
 | n8n Migration | 0% | Workflows on Railway; need migration to managed n8n hosting |
 | Database Schema | 100% | Fully implemented with all tables and indexes |
 | Agent Prompts (files) | 100% | All 6 agent prompts written in `agents/` |
-| Agent Prompts (integration) | 0% | Not loaded by workflows; prompts need copy/paste |
+| Agent Prompts (integration) | 100% | Workflows load prompts from GitHub raw URLs (1.3 complete) |
 | Config Files (files) | 100% | sources.yml and thresholds.yml configured |
-| Config Files (integration) | 0% | Workflows use hardcoded values, not config files |
+| Config Files (integration) | 100% | Workflows load config from GitHub raw URLs (1.2 complete) |
+| Runtime Stub Toggle | 25% | `runtime.use_stubs` added to thresholds.yml; Workflow A wired with IF nodes |
 | JSON Schemas (files) | 100% | All schemas exist in `schemas/` |
-| JSON Schemas (validation) | 0% | Not wired for runtime validation |
-| Workflow A Structure | 85% | Complete pipeline, Claude nodes disabled |
-| Workflow B Structure | 80% | Complete pipeline, stubs active |
-| Workflow C Structure | 90% | Active workflow, needs verification |
-| Workflow D Structure | 80% | Complete pipeline, stubs active |
+| JSON Schemas (validation) | 25% | Workflow A has inline validation; other workflows pending |
+| Workflow A Structure | 95% | Complete pipeline with stub/real toggle, validation nodes, pending golden tests |
+| Workflow B Structure | 80% | Complete pipeline, stubs active, need IF toggle |
+| Workflow C Structure | 90% | Active workflow, needs IF toggle for APIs |
+| Workflow D Structure | 80% | Complete pipeline, stubs active, need IF toggle |
 | Firebase Auth | 0% | Documented but not implemented |
 | GCS Integration | 0% | Not implemented |
-| Resend Email | 20% | Template exists, API not wired |
+| Resend Email | 20% | Template exists, API not wired, need IF toggle |
 | Feed Generation | 10% | Doc page exists, endpoints missing |
 
 ---

@@ -239,21 +239,58 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [2200, -100],
+      "position": [2310, -200],
       "id": "classify-stub",
       "name": "Classify Stub (Claude)"
     },
     {
       "parameters": {
+        "jsCode": "// Process real Claude API response and add pass-through data\nconst claudeResponse = $input.first().json;\nconst sourceItem = $('Insert Source Item').first().json;\nconst metadata = $('Evaluate Duplicate').first().json;\nconst thresholds = metadata._thresholds || {};\n\n// Return in same format as stub for Parse Classification compatibility\nreturn [{\n  json: {\n    content: claudeResponse.content,\n    _sourceItemId: sourceItem.id,\n    _sourceItemUrl: sourceItem.url,\n    _extractedText: sourceItem.extracted_text,\n    _metadata: metadata,\n    _thresholds: thresholds,\n    _agents: metadata._agents\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2530, 100],
+      "id": "wrap-classify-response",
+      "name": "Wrap Claude Classify Response"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "use-stubs-classify",
+              "leftValue": "={{ $('Evaluate Duplicate').first().json._thresholds?.runtime?.use_stubs ?? true }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [2090, -100],
+      "id": "use-stubs-classify",
+      "name": "Use Stubs for Classify?"
+    },
+    {
+      "parameters": {
         "method": "POST",
         "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
-            {
-              "name": "x-api-key",
-              "value": "={{ $env.ANTHROPIC_API_KEY }}"
-            },
             {
               "name": "anthropic-version",
               "value": "2023-06-01"
@@ -266,14 +303,22 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 1024,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": {{ JSON.stringify($('Evaluate Duplicate').first().json._agents?.classify + \"\\n\\n# Input\\n\\nContent URL: \" + $('Insert Source Item').first().json.url + \"\\nContent: \" + $('Insert Source Item').first().json.extracted_text.substring(0, 8000)) }}\n  }]\n}",
-        "options": {}
+        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 1024,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": {{ JSON.stringify($('Evaluate Duplicate').first().json._agents?.classify + \"\\n\\n# Input\\n\\n\" + JSON.stringify({ sourceUrl: $('Insert Source Item').first().json.url, extractedText: $('Insert Source Item').first().json.extracted_text.substring(0, 8000), platform: $('Evaluate Duplicate').first().json.platform, author: $('Evaluate Duplicate').first().json.author, publishedAt: $('Evaluate Duplicate').first().json.publishedAt })) }}\n  }]\n}",
+        "options": {
+          "timeout": 30000
+        }
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [2200, 100],
+      "position": [2310, 100],
       "id": "classify-real",
-      "name": "Classify with Claude (Disabled)"
+      "name": "Classify with Claude API",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "ANTHROPIC_CREDENTIAL_ID",
+          "name": "Anthropic API Key"
+        }
+      }
     },
     {
       "parameters": {
@@ -287,11 +332,21 @@
     },
     {
       "parameters": {
+        "jsCode": "// Validate classification output against schema\nconst data = $input.first().json;\nconst classification = data.classification;\nconst errors = [];\n\n// Valid topics enum\nconst validTopics = ['bitcoin', 'zk', 'censorship-resistance', 'comms', 'payments', 'identity', 'privacy', 'surveillance', 'activism', 'sovereignty'];\n\n// Validate topics\nif (!Array.isArray(classification.topics)) {\n  errors.push('topics must be an array');\n} else {\n  if (classification.topics.length < 1) errors.push('topics must have at least 1 item');\n  if (classification.topics.length > 5) errors.push('topics must have at most 5 items');\n  for (const topic of classification.topics) {\n    if (!validTopics.includes(topic)) {\n      errors.push(`Invalid topic: ${topic}. Must be one of: ${validTopics.join(', ')}`);\n    }\n  }\n}\n\n// Validate scores\nif (typeof classification.freedom_relevance_score !== 'number' || classification.freedom_relevance_score < 0 || classification.freedom_relevance_score > 100) {\n  errors.push('freedom_relevance_score must be an integer between 0 and 100');\n}\nif (typeof classification.credibility_score !== 'number' || classification.credibility_score < 0 || classification.credibility_score > 100) {\n  errors.push('credibility_score must be an integer between 0 and 100');\n}\n\n// Validate geo\nif (!Array.isArray(classification.geo)) {\n  errors.push('geo must be an array');\n}\n\n// Validate safety_concern\nif (typeof classification.safety_concern !== 'boolean') {\n  errors.push('safety_concern must be a boolean');\n}\n\n// Validate should_summarize\nif (typeof classification.should_summarize !== 'boolean') {\n  errors.push('should_summarize must be a boolean');\n}\n\n// Log validation result\nif (errors.length > 0) {\n  console.log('Classification validation errors:', errors);\n}\n\nreturn [{\n  json: {\n    ...data,\n    _validationErrors: errors,\n    _validationPassed: errors.length === 0\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2530, -200],
+      "id": "validate-classification",
+      "name": "Validate Classification"
+    },
+    {
+      "parameters": {
         "jsCode": "// Check if content meets relevance threshold from config\nconst data = $input.first().json;\nconst thresholds = data._thresholds || {};\nconst relevanceThreshold = thresholds.ingestion?.relevance_threshold || 50;\n\nconst score = data.classification.freedom_relevance_score;\nconst shouldSummarize = data.classification.should_summarize;\n\n// Content meets threshold if score >= config threshold AND should_summarize is true\nconst meetsThreshold = score >= relevanceThreshold && shouldSummarize;\n\n// Pass through all data including _agents\nreturn [{\n  json: {\n    ...data,\n    meetsThreshold,\n    usedThreshold: relevanceThreshold\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [2640, -100],
+      "position": [2640, -200],
       "id": "apply-threshold",
       "name": "Apply Threshold"
     },
@@ -320,7 +375,7 @@
       },
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
-      "position": [2860, -100],
+      "position": [2750, -200],
       "id": "check-threshold",
       "name": "Meets Threshold?"
     },
@@ -330,21 +385,48 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3080, -200],
+      "position": [3190, -300],
       "id": "summarize-stub",
       "name": "Summarize Stub (Claude)"
     },
     {
       "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "use-stubs-summarize",
+              "leftValue": "={{ $json._thresholds?.runtime?.use_stubs ?? true }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [2970, -200],
+      "id": "use-stubs-summarize",
+      "name": "Use Stubs for Summarize?"
+    },
+    {
+      "parameters": {
         "method": "POST",
         "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
-            {
-              "name": "x-api-key",
-              "value": "={{ $env.ANTHROPIC_API_KEY }}"
-            },
             {
               "name": "anthropic-version",
               "value": "2023-06-01"
@@ -357,14 +439,32 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 2048,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": {{ JSON.stringify($json._agents?.summarize + \"\\n\\n# Input\\n\\nContent URL: \" + $json.sourceItemUrl + \"\\nClassification: \" + JSON.stringify($json.classification) + \"\\nContent: \" + $json.extractedText.substring(0, 8000)) }}\n  }]\n}",
-        "options": {}
+        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 2048,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": {{ JSON.stringify($json._agents?.summarize + \"\\n\\n# Input\\n\\n\" + JSON.stringify({ sourceUrl: $json.sourceItemUrl, extractedText: $json.extractedText.substring(0, 8000), classification: $json.classification, includeDeepDive: $json.classification.freedom_relevance_score >= 85 })) }}\n  }]\n}",
+        "options": {
+          "timeout": 60000
+        }
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [3080, 0],
+      "position": [3190, -100],
       "id": "summarize-real",
-      "name": "Summarize with Claude (Disabled)"
+      "name": "Summarize with Claude API",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "ANTHROPIC_CREDENTIAL_ID",
+          "name": "Anthropic API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Process real Claude API response and add pass-through data for summarization\nconst claudeResponse = $input.first().json;\nconst applyThresholdData = $('Apply Threshold').first().json;\n\n// Return in same format as stub for Parse Summary compatibility\nreturn [{\n  json: {\n    content: claudeResponse.content,\n    _sourceItemId: applyThresholdData.sourceItemId,\n    _classification: applyThresholdData.classification,\n    _sourceItemUrl: applyThresholdData.sourceItemUrl,\n    _thresholds: applyThresholdData._thresholds,\n    _agents: applyThresholdData._agents\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [3410, -100],
+      "id": "wrap-summarize-response",
+      "name": "Wrap Claude Summarize Response"
     },
     {
       "parameters": {
@@ -372,9 +472,19 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3300, -200],
+      "position": [3520, -300],
       "id": "parse-summary",
       "name": "Parse Summary & Gates"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Validate summary output against insight schema\nconst data = $input.first().json;\nconst errors = [];\n\n// Validate title\nif (typeof data.title !== 'string') {\n  errors.push('title must be a string');\n} else if (data.title.length > 120) {\n  errors.push('title must be at most 120 characters');\n}\n\n// Validate tldr\nif (typeof data.tldr !== 'string') {\n  errors.push('tldr must be a string');\n} else if (data.tldr.length > 280) {\n  errors.push('tldr must be at most 280 characters');\n}\n\n// Validate summaryBullets\nif (!Array.isArray(data.summaryBullets)) {\n  errors.push('summaryBullets must be an array');\n} else {\n  if (data.summaryBullets.length < 5) errors.push('summaryBullets must have at least 5 items');\n  if (data.summaryBullets.length > 10) errors.push('summaryBullets must have at most 10 items');\n}\n\n// Validate topics\nconst validTopics = ['bitcoin', 'zk', 'censorship-resistance', 'comms', 'payments', 'identity', 'privacy', 'surveillance', 'activism', 'sovereignty'];\nif (!Array.isArray(data.topics)) {\n  errors.push('topics must be an array');\n} else {\n  for (const topic of data.topics) {\n    if (!validTopics.includes(topic)) {\n      errors.push(`Invalid topic: ${topic}`);\n    }\n  }\n}\n\n// Validate scores\nif (typeof data.freedomRelevanceScore !== 'number' || data.freedomRelevanceScore < 0 || data.freedomRelevanceScore > 100) {\n  errors.push('freedomRelevanceScore must be an integer between 0 and 100');\n}\nif (typeof data.credibilityScore !== 'number' || data.credibilityScore < 0 || data.credibilityScore > 100) {\n  errors.push('credibilityScore must be an integer between 0 and 100');\n}\n\n// Validate citations\nif (!Array.isArray(data.citations)) {\n  errors.push('citations must be an array');\n}\n\n// Validate status\nconst validStatuses = ['draft', 'queued', 'published', 'rejected'];\nif (!validStatuses.includes(data.status)) {\n  errors.push(`status must be one of: ${validStatuses.join(', ')}`);\n}\n\n// Log validation result\nif (errors.length > 0) {\n  console.log('Summary validation errors:', errors);\n}\n\nreturn [{\n  json: {\n    ...data,\n    _summaryValidationErrors: errors,\n    _summaryValidationPassed: errors.length === 0\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [3630, -300],
+      "id": "validate-summary",
+      "name": "Validate Summary"
     },
     {
       "parameters": {
@@ -382,7 +492,7 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3410, -200],
+      "position": [3740, -300],
       "id": "prepare-insight",
       "name": "Build Insight Query"
     },
@@ -394,7 +504,7 @@
       },
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
-      "position": [3520, -200],
+      "position": [3850, -300],
       "id": "insert-insight",
       "name": "Insert Insight",
       "credentials": {
@@ -410,7 +520,7 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3080, 0],
+      "position": [3080, 100],
       "id": "log-skipped",
       "name": "Log Skipped"
     },
@@ -430,7 +540,7 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3740, -100],
+      "position": [3960, -200],
       "id": "aggregate-results",
       "name": "Aggregate Results"
     },
@@ -638,7 +748,47 @@
       "main": [
         [
           {
+            "node": "Use Stubs for Classify?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Use Stubs for Classify?": {
+      "main": [
+        [
+          {
             "node": "Classify Stub (Claude)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Classify with Claude API",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Classify with Claude API": {
+      "main": [
+        [
+          {
+            "node": "Wrap Claude Classify Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wrap Claude Classify Response": {
+      "main": [
+        [
+          {
+            "node": "Parse Classification",
             "type": "main",
             "index": 0
           }
@@ -657,6 +807,17 @@
       ]
     },
     "Parse Classification": {
+      "main": [
+        [
+          {
+            "node": "Validate Classification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate Classification": {
       "main": [
         [
           {
@@ -682,7 +843,7 @@
       "main": [
         [
           {
-            "node": "Summarize Stub (Claude)",
+            "node": "Use Stubs for Summarize?",
             "type": "main",
             "index": 0
           }
@@ -690,6 +851,46 @@
         [
           {
             "node": "Log Skipped",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Use Stubs for Summarize?": {
+      "main": [
+        [
+          {
+            "node": "Summarize Stub (Claude)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Summarize with Claude API",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Summarize with Claude API": {
+      "main": [
+        [
+          {
+            "node": "Wrap Claude Summarize Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wrap Claude Summarize Response": {
+      "main": [
+        [
+          {
+            "node": "Parse Summary & Gates",
             "type": "main",
             "index": 0
           }
@@ -708,6 +909,17 @@
       ]
     },
     "Parse Summary & Gates": {
+      "main": [
+        [
+          {
+            "node": "Validate Summary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate Summary": {
       "main": [
         [
           {
