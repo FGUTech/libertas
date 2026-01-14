@@ -20,7 +20,7 @@
     },
     {
       "parameters": {
-        "url": "=https://libertas.fgu.tech/api/config/thresholds",
+        "url": "https://libertas.fgu.tech/api/config/thresholds",
         "options": {
           "timeout": 10000
         }
@@ -33,7 +33,7 @@
     },
     {
       "parameters": {
-        "url": "=https://libertas.fgu.tech/api/agents/generate-idea",
+        "url": "https://libertas.fgu.tech/api/agents/generate-idea",
         "options": {
           "timeout": 10000
         }
@@ -46,21 +46,32 @@
     },
     {
       "parameters": {
-        "jsCode": "// Merge thresholds config and generate-idea agent prompt\nconst thresholdsConfig = $('Fetch Thresholds Config').first().json;\nconst generateIdeaPrompt = $('Fetch Generate Idea Prompt').first().json;\n\nreturn [{\n  json: {\n    ...thresholdsConfig,\n    _agents: {\n      generateIdea: generateIdeaPrompt.content\n    }\n  }\n}];"
+        "mode": "append",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.1,
+      "position": [440, 0],
+      "id": "merge-configs",
+      "name": "Merge Config & Prompt"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Merge thresholds config and generate-idea agent prompt\n// Uses $input.all() to get both merged items from parallel fetches\nconst allItems = $input.all();\n\nlet thresholdsConfig = null;\nlet generateIdeaPrompt = null;\n\nfor (const item of allItems) {\n  const data = item.json;\n  // Identify thresholds config by presence of runtime/ideas/publishing sections\n  if (data.runtime || data.ideas || data.publishing || data.ingestion) {\n    thresholdsConfig = data;\n  }\n  // Identify agent prompt by presence of content field\n  else if (data.content && data.name === 'generate-idea') {\n    generateIdeaPrompt = data;\n  }\n  else if (data.content) {\n    // Fallback: assume it's the agent prompt\n    generateIdeaPrompt = data;\n  }\n}\n\nif (!thresholdsConfig) {\n  console.log('Warning: Could not find thresholds config');\n  thresholdsConfig = { runtime: { use_stubs: true }, ideas: {} };\n}\n\nif (!generateIdeaPrompt) {\n  console.log('Warning: Could not find generate-idea agent prompt');\n  generateIdeaPrompt = { content: '' };\n}\n\nreturn [{\n  json: {\n    ...thresholdsConfig,\n    _agents: {\n      generateIdea: generateIdeaPrompt.content\n    }\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [440, 0],
+      "position": [660, 0],
       "id": "merge-config-agents",
       "name": "Merge Config & Agents"
     },
     {
       "parameters": {
-        "jsCode": "// Calculate date range for idea generation\n// Uses config values from merged config + agents\n\nconst merged = $input.first().json;\nconst ideasConfig = merged.ideas || {};\nconst agents = merged._agents;\n\n// Get thresholds from config\nconst minRelevanceScore = ideasConfig.min_relevance_for_idea || 80;\nconst minFeasibility = ideasConfig.min_feasibility || 50;\nconst minImpact = ideasConfig.min_impact || 50;\nconst lookbackDays = ideasConfig.lookback_days || 7;\n\nconst now = new Date();\n\nconst periodEnd = new Date(now);\nperiodEnd.setUTCHours(23, 59, 59, 999);\n\nconst periodStart = new Date(now);\nperiodStart.setUTCDate(periodStart.getUTCDate() - lookbackDays);\nperiodStart.setUTCHours(0, 0, 0, 0);\n\n// Format dates for SQL query\nconst formatDateSQL = (d) => d.toISOString();\n\nconsole.log(`Using thresholds from config: minRelevanceScore=${minRelevanceScore}, minFeasibility=${minFeasibility}, minImpact=${minImpact}, lookbackDays=${lookbackDays}`);\nconsole.log(`Loaded generate-idea agent prompt: ${agents?.generateIdea?.length || 0} chars`);\n\nreturn [{\n  json: {\n    periodStartSQL: formatDateSQL(periodStart),\n    periodEndSQL: formatDateSQL(periodEnd),\n    generatedAt: now.toISOString(),\n    minRelevanceScore,\n    _thresholds: {\n      minRelevanceScore,\n      minFeasibility,\n      minImpact,\n      lookbackDays\n    },\n    _agents: agents\n  }\n}];"
+        "jsCode": "// Calculate date range for idea generation\n// Uses config values from merged config + agents\n\nconst merged = $input.first().json;\nconst ideasConfig = merged.ideas || {};\nconst agents = merged._agents;\nconst runtime = merged.runtime || { use_stubs: true };\n\n// Get thresholds from config\nconst minRelevanceScore = ideasConfig.min_relevance_for_idea || 80;\nconst minFeasibility = ideasConfig.min_feasibility || 50;\nconst minImpact = ideasConfig.min_impact || 50;\nconst lookbackDays = ideasConfig.lookback_days || 7;\n\nconst now = new Date();\n\nconst periodEnd = new Date(now);\nperiodEnd.setUTCHours(23, 59, 59, 999);\n\nconst periodStart = new Date(now);\nperiodStart.setUTCDate(periodStart.getUTCDate() - lookbackDays);\nperiodStart.setUTCHours(0, 0, 0, 0);\n\n// Format dates for SQL query\nconst formatDateSQL = (d) => d.toISOString();\n\nconsole.log(`Using thresholds from config: minRelevanceScore=${minRelevanceScore}, minFeasibility=${minFeasibility}, minImpact=${minImpact}, lookbackDays=${lookbackDays}`);\nconsole.log(`Loaded generate-idea agent prompt: ${agents?.generateIdea?.length || 0} chars`);\nconsole.log(`Runtime mode: use_stubs=${runtime.use_stubs}`);\n\nreturn [{\n  json: {\n    periodStartSQL: formatDateSQL(periodStart),\n    periodEndSQL: formatDateSQL(periodEnd),\n    generatedAt: now.toISOString(),\n    minRelevanceScore,\n    _thresholds: {\n      runtime: runtime,\n      minRelevanceScore,\n      minFeasibility,\n      minImpact,\n      lookbackDays\n    },\n    _agents: agents\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [660, 0],
+      "position": [880, 0],
       "id": "calculate-period",
       "name": "Calculate Period"
     },
@@ -74,7 +85,7 @@
       },
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
-      "position": [660, 0],
+      "position": [1100, 0],
       "id": "query-insights",
       "name": "Query High-Signal Insights",
       "alwaysOutputData": true,
@@ -87,11 +98,11 @@
     },
     {
       "parameters": {
-        "jsCode": "// Merge insights with period data and check if we have any\nconst insights = $input.all().map(item => item.json);\nconst periodData = $('Calculate Period').first().json;\nconst agents = periodData._agents;\n\n// Filter out empty results (when query returns no rows)\nconst validInsights = insights.filter(i => i.id);\n\nif (validInsights.length === 0) {\n  return [{\n    json: {\n      ...periodData,\n      insights: [],\n      insightCount: 0,\n      hasInsights: false,\n      _agents: agents\n    }\n  }];\n}\n\nreturn [{\n  json: {\n    ...periodData,\n    insights: validInsights,\n    insightCount: validInsights.length,\n    hasInsights: true,\n    _agents: agents\n  }\n}];"
+        "jsCode": "// Merge insights with period data and check if we have any\nconst insights = $input.all().map(item => item.json);\nconst periodData = $('Calculate Period').first().json;\nconst agents = periodData._agents;\nconst thresholds = periodData._thresholds;\n\n// Filter out empty results (when query returns no rows)\nconst validInsights = insights.filter(i => i.id);\n\nif (validInsights.length === 0) {\n  return [{\n    json: {\n      ...periodData,\n      insights: [],\n      insightCount: 0,\n      hasInsights: false,\n      _agents: agents,\n      _thresholds: thresholds\n    }\n  }];\n}\n\nreturn [{\n  json: {\n    ...periodData,\n    insights: validInsights,\n    insightCount: validInsights.length,\n    hasInsights: true,\n    _agents: agents,\n    _thresholds: thresholds\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [880, 0],
+      "position": [1320, 0],
       "id": "merge-insights",
       "name": "Merge Insights with Period"
     },
@@ -120,19 +131,48 @@
       },
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
-      "position": [1100, 0],
+      "position": [1540, 0],
       "id": "check-has-insights",
       "name": "Has Insights?"
     },
     {
       "parameters": {
-        "jsCode": "// Cluster insights by primary topic/theme\n// Groups related insights together for idea generation\nconst data = $input.first().json;\nconst insights = data.insights || [];\nconst thresholds = data._thresholds || {};\n\n// Group insights by primary topic (first topic in array)\nconst clusters = {};\n\nfor (const insight of insights) {\n  const topics = insight.topics || [];\n  const primaryTopic = topics[0] || 'general';\n  \n  if (!clusters[primaryTopic]) {\n    clusters[primaryTopic] = {\n      topic: primaryTopic,\n      insights: [],\n      allTopics: new Set(),\n      totalScore: 0\n    };\n  }\n  \n  clusters[primaryTopic].insights.push(insight);\n  clusters[primaryTopic].totalScore += insight.freedom_relevance_score;\n  \n  // Track all topics across cluster\n  for (const t of topics) {\n    clusters[primaryTopic].allTopics.add(t);\n  }\n}\n\n// Convert to array and sort by average score\nconst clusterArray = Object.values(clusters).map(c => ({\n  topic: c.topic,\n  insights: c.insights,\n  insightCount: c.insights.length,\n  avgScore: Math.round(c.totalScore / c.insights.length),\n  relatedTopics: Array.from(c.allTopics)\n})).sort((a, b) => b.avgScore - a.avgScore);\n\n// Only process clusters with at least 1 insight\n// Return as separate items for loop processing\nconst agents = data._agents;\nconst items = clusterArray.map(cluster => ({\n  json: {\n    cluster,\n    _periodData: {\n      generatedAt: data.generatedAt,\n      periodStartSQL: data.periodStartSQL,\n      periodEndSQL: data.periodEndSQL\n    },\n    _thresholds: thresholds,\n    _agents: agents\n  }\n}));\n\nreturn items.length > 0 ? items : [{ json: { noValidClusters: true, _thresholds: thresholds, _agents: agents } }];"
+        "jsCode": "// Cluster insights by primary topic/theme\n// Groups related insights together for idea generation\nconst data = $input.first().json;\nconst insights = data.insights || [];\nconst thresholds = data._thresholds || {};\nconst agents = data._agents || {};\n\n// Group insights by primary topic (first topic in array)\nconst clusters = {};\n\nfor (const insight of insights) {\n  const topics = insight.topics || [];\n  const primaryTopic = topics[0] || 'general';\n  \n  if (!clusters[primaryTopic]) {\n    clusters[primaryTopic] = {\n      topic: primaryTopic,\n      insights: [],\n      allTopics: new Set(),\n      totalScore: 0\n    };\n  }\n  \n  clusters[primaryTopic].insights.push(insight);\n  clusters[primaryTopic].totalScore += insight.freedom_relevance_score;\n  \n  // Track all topics across cluster\n  for (const t of topics) {\n    clusters[primaryTopic].allTopics.add(t);\n  }\n}\n\n// Convert to array and sort by average score\nconst clusterArray = Object.values(clusters).map(c => ({\n  topic: c.topic,\n  insights: c.insights,\n  insightCount: c.insights.length,\n  avgScore: Math.round(c.totalScore / c.insights.length),\n  relatedTopics: Array.from(c.allTopics)\n})).sort((a, b) => b.avgScore - a.avgScore);\n\n// Only process clusters with at least 1 insight\n// Return as separate items for loop processing\nconst items = clusterArray.map(cluster => ({\n  json: {\n    cluster,\n    _periodData: {\n      generatedAt: data.generatedAt,\n      periodStartSQL: data.periodStartSQL,\n      periodEndSQL: data.periodEndSQL\n    },\n    _thresholds: thresholds,\n    _agents: agents\n  }\n}));\n\nreturn items.length > 0 ? items : [{ json: { noValidClusters: true, _thresholds: thresholds, _agents: agents } }];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [1320, -100],
+      "position": [1760, -100],
       "id": "cluster-by-topic",
       "name": "Cluster by Topic"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "use-stubs-idea",
+              "leftValue": "={{ $json._thresholds?.runtime?.use_stubs ?? true }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [1980, -100],
+      "id": "use-stubs-idea",
+      "name": "Use Stubs for IdeaSynthesizer?"
     },
     {
       "parameters": {
@@ -140,7 +180,7 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [1540, -100],
+      "position": [2200, -200],
       "id": "idea-synthesizer-stub",
       "name": "IdeaSynthesizer Stub (Claude)"
     },
@@ -148,13 +188,11 @@
       "parameters": {
         "method": "POST",
         "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
-            {
-              "name": "x-api-key",
-              "value": "={{ $env.ANTHROPIC_API_KEY }}"
-            },
             {
               "name": "anthropic-version",
               "value": "2023-06-01"
@@ -167,22 +205,40 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 4096,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": {{ JSON.stringify($json._agents?.generateIdea + \"\\n\\n# Input\\n\\nTopic: \" + $json.cluster.topic + \"\\nInsight Count: \" + $json.cluster.insightCount + \"\\nAverage Freedom Relevance Score: \" + $json.cluster.avgScore + \"\\n\\nInsights:\\n\" + JSON.stringify($json.cluster.insights.map(i => ({ title: i.title, tldr: i.tldr, topics: i.topics, score: i.freedom_relevance_score })), null, 2)) }}\n  }]\n}",
-        "options": {}
+        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 4096,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": {{ JSON.stringify($json._agents?.generateIdea + \"\\n\\n# Input\\n\\nTopic: \" + $json.cluster.topic + \"\\nInsight Count: \" + $json.cluster.insightCount + \"\\nAverage Freedom Relevance Score: \" + $json.cluster.avgScore + \"\\nRelated Topics: \" + $json.cluster.relatedTopics.join(\", \") + \"\\n\\nInsights:\\n\" + JSON.stringify($json.cluster.insights.map(i => ({ title: i.title, tldr: i.tldr, topics: i.topics, score: i.freedom_relevance_score, geo: i.geo || [] })), null, 2)) }}\n  }]\n}",
+        "options": {
+          "timeout": 60000
+        }
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [1540, 100],
+      "position": [2200, 0],
       "id": "idea-synthesizer-real",
-      "name": "IdeaSynthesizer with Claude (Disabled)"
+      "name": "IdeaSynthesizer with Claude API",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "ANTHROPIC_CREDENTIAL_ID",
+          "name": "Anthropic API Key"
+        }
+      }
     },
     {
       "parameters": {
-        "jsCode": "// Parse and validate LLM output for project idea\n// Uses thresholds from config for scoring gates\nconst input = $input.first().json;\nconst thresholds = input._thresholds || {};\n\n// Get thresholds from config\nconst minFeasibility = thresholds.minFeasibility || 50;\nconst minImpact = thresholds.minImpact || 50;\n\n// Check for skip signal\nif (input._skip) {\n  return [{\n    json: {\n      skip: true,\n      reason: 'No valid clusters to process',\n      _thresholds: thresholds\n    }\n  }];\n}\n\nlet idea;\ntry {\n  const text = input.content[0].text;\n  idea = JSON.parse(text);\n} catch (e) {\n  return [{\n    json: {\n      skip: true,\n      reason: 'Failed to parse LLM output: ' + e.message,\n      validationErrors: ['JSON parse error'],\n      _thresholds: thresholds\n    }\n  }];\n}\n\n// Skip if idea parsing returned skip signal\nif (idea.skip) {\n  return [{\n    json: {\n      skip: true,\n      reason: idea.reason || 'Skipped by LLM',\n      _thresholds: thresholds\n    }\n  }];\n}\n\n// Validate required fields\nconst requiredFields = [\n  'problem_statement',\n  'threat_model',\n  'affected_groups',\n  'proposed_solution',\n  'mvp_scope',\n  'misuse_risks',\n  'feasibility_score',\n  'impact_score'\n];\n\nconst errors = [];\nfor (const field of requiredFields) {\n  if (!idea[field]) {\n    errors.push(`Missing required field: ${field}`);\n  }\n}\n\n// Validate score ranges\nif (typeof idea.feasibility_score !== 'number' || idea.feasibility_score < 0 || idea.feasibility_score > 100) {\n  errors.push('feasibility_score must be 0-100');\n}\nif (typeof idea.impact_score !== 'number' || idea.impact_score < 0 || idea.impact_score > 100) {\n  errors.push('impact_score must be 0-100');\n}\n\n// Validate affected_groups is array\nif (!Array.isArray(idea.affected_groups) || idea.affected_groups.length === 0) {\n  errors.push('affected_groups must be non-empty array');\n}\n\nif (errors.length > 0) {\n  return [{\n    json: {\n      skip: true,\n      reason: 'Validation failed',\n      validationErrors: errors,\n      rawIdea: idea,\n      _thresholds: thresholds\n    }\n  }];\n}\n\n// Normalize optional array fields\nidea.technical_dependencies = idea.technical_dependencies || [];\nidea.suggested_stack = idea.suggested_stack || [];\nidea.prior_art = idea.prior_art || [];\nidea.open_questions = idea.open_questions || [];\n\n// Use thresholds from config for the gate check\nconst meetsThreshold = idea.feasibility_score >= minFeasibility && idea.impact_score >= minImpact;\n\nconsole.log(`Idea scores: feasibility=${idea.feasibility_score} (min: ${minFeasibility}), impact=${idea.impact_score} (min: ${minImpact}) => meetsThreshold=${meetsThreshold}`);\n\nreturn [{\n  json: {\n    idea,\n    derivedFromInsightIds: input._derivedFromInsightIds,\n    citations: input._citations,\n    topic: input._topic,\n    cluster: input._cluster,\n    meetsThreshold,\n    skip: false,\n    _thresholds: thresholds,\n    _usedThresholds: {\n      minFeasibility,\n      minImpact\n    }\n  }\n}];"
+        "jsCode": "// Process real Claude API response and add pass-through data\n// Wraps real API response to match stub format for downstream compatibility\nconst claudeResponse = $input.first().json;\nconst inputData = $('Use Stubs for IdeaSynthesizer?').first().json;\nconst cluster = inputData.cluster;\nconst periodData = inputData._periodData;\nconst thresholds = inputData._thresholds || {};\n\n// Handle case where there's no valid cluster (shouldn't happen in real branch, but be safe)\nif (inputData.noValidClusters || !cluster) {\n  return [{\n    json: {\n      content: [{ type: 'text', text: JSON.stringify({ skip: true, reason: 'No valid clusters' }) }],\n      _periodData: periodData,\n      _cluster: null,\n      _skip: true,\n      _thresholds: thresholds,\n      _agents: inputData._agents\n    }\n  }];\n}\n\nconst insights = cluster.insights || [];\nconst topic = cluster.topic;\n\n// Collect all insight IDs for this cluster\nconst derivedFromInsightIds = insights.map(i => i.id);\n\n// Collect all citations from cluster insights\nconst allCitations = [];\nfor (const insight of insights) {\n  if (insight.citations && Array.isArray(insight.citations)) {\n    allCitations.push(...insight.citations);\n  }\n}\nconst uniqueCitations = [...new Set(allCitations)];\n\n// Return in same format as stub for downstream node compatibility\nreturn [{\n  json: {\n    content: claudeResponse.content,\n    _periodData: periodData,\n    _cluster: cluster,\n    _derivedFromInsightIds: derivedFromInsightIds,\n    _citations: uniqueCitations,\n    _topic: topic,\n    _thresholds: thresholds,\n    _agents: inputData._agents\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [1760, -100],
+      "position": [2420, 0],
+      "id": "wrap-idea-response",
+      "name": "Wrap Claude Idea Response"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse and validate LLM output for project idea\n// Uses thresholds from config for scoring gates\n// Handles both stub and real API responses\nconst input = $input.first().json;\nconst thresholds = input._thresholds || {};\n\n// Get thresholds from config\nconst minFeasibility = thresholds.minFeasibility || 50;\nconst minImpact = thresholds.minImpact || 50;\n\n// Check for skip signal\nif (input._skip) {\n  return [{\n    json: {\n      skip: true,\n      reason: 'No valid clusters to process',\n      _thresholds: thresholds\n    }\n  }];\n}\n\nlet idea;\ntry {\n  let text = input.content[0].text;\n  \n  // Strip markdown code blocks if present (Claude often wraps JSON in ```json...```)\n  text = text.trim();\n  if (text.startsWith('```')) {\n    // Remove opening fence (```json or ```)\n    text = text.replace(/^```(?:json)?\\s*\\n?/, '');\n    // Remove closing fence\n    text = text.replace(/\\n?```\\s*$/, '');\n  }\n  \n  idea = JSON.parse(text.trim());\n} catch (e) {\n  console.log('Parse Idea error:', e.message);\n  console.log('Raw text:', input.content?.[0]?.text?.substring(0, 500));\n  return [{\n    json: {\n      skip: true,\n      reason: 'Failed to parse LLM output: ' + e.message,\n      validationErrors: ['JSON parse error: ' + e.message],\n      _thresholds: thresholds\n    }\n  }];\n}\n\n// Skip if idea parsing returned skip signal\nif (idea.skip) {\n  return [{\n    json: {\n      skip: true,\n      reason: idea.reason || 'Skipped by LLM',\n      _thresholds: thresholds\n    }\n  }];\n}\n\n// Validate required fields\nconst requiredFields = [\n  'problem_statement',\n  'threat_model',\n  'affected_groups',\n  'proposed_solution',\n  'mvp_scope',\n  'misuse_risks',\n  'feasibility_score',\n  'impact_score'\n];\n\nconst errors = [];\nfor (const field of requiredFields) {\n  if (!idea[field]) {\n    errors.push(`Missing required field: ${field}`);\n  }\n}\n\n// Validate score ranges\nif (typeof idea.feasibility_score !== 'number' || idea.feasibility_score < 0 || idea.feasibility_score > 100) {\n  errors.push('feasibility_score must be 0-100');\n}\nif (typeof idea.impact_score !== 'number' || idea.impact_score < 0 || idea.impact_score > 100) {\n  errors.push('impact_score must be 0-100');\n}\n\n// Validate affected_groups is array\nif (!Array.isArray(idea.affected_groups) || idea.affected_groups.length === 0) {\n  errors.push('affected_groups must be non-empty array');\n}\n\nif (errors.length > 0) {\n  console.log('Idea validation errors:', errors);\n  return [{\n    json: {\n      skip: true,\n      reason: 'Validation failed',\n      validationErrors: errors,\n      rawIdea: idea,\n      _thresholds: thresholds\n    }\n  }];\n}\n\n// Normalize optional array fields\nidea.technical_dependencies = idea.technical_dependencies || [];\nidea.suggested_stack = idea.suggested_stack || [];\nidea.prior_art = idea.prior_art || [];\nidea.open_questions = idea.open_questions || [];\n\n// Use thresholds from config for the gate check\nconst meetsThreshold = idea.feasibility_score >= minFeasibility && idea.impact_score >= minImpact;\n\nconsole.log(`Idea scores: feasibility=${idea.feasibility_score} (min: ${minFeasibility}), impact=${idea.impact_score} (min: ${minImpact}) => meetsThreshold=${meetsThreshold}`);\n\nreturn [{\n  json: {\n    idea,\n    derivedFromInsightIds: input._derivedFromInsightIds,\n    citations: input._citations,\n    topic: input._topic,\n    cluster: input._cluster,\n    meetsThreshold,\n    skip: false,\n    _thresholds: thresholds,\n    _usedThresholds: {\n      minFeasibility,\n      minImpact\n    }\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2640, -100],
       "id": "validate-idea",
       "name": "Validate Idea Output"
     },
@@ -220,7 +276,7 @@
       },
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
-      "position": [1980, -100],
+      "position": [2860, -100],
       "id": "check-threshold",
       "name": "Meets Threshold?"
     },
@@ -230,7 +286,7 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [2200, -200],
+      "position": [3080, -200],
       "id": "build-idea-query",
       "name": "Build Idea Query"
     },
@@ -242,7 +298,7 @@
       },
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
-      "position": [2420, -200],
+      "position": [3300, -200],
       "id": "insert-idea",
       "name": "Insert Project Idea",
       "credentials": {
@@ -258,7 +314,7 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [2640, -200],
+      "position": [3520, -200],
       "id": "merge-insert-result",
       "name": "Merge Insert Result"
     },
@@ -268,7 +324,7 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [2860, -200],
+      "position": [3740, -200],
       "id": "github-issue-stub",
       "name": "GitHub Issue Stub"
     },
@@ -300,7 +356,7 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [2860, 0],
+      "position": [3740, 0],
       "id": "github-issue-real",
       "name": "GitHub Issue (Disabled)"
     },
@@ -310,7 +366,7 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3080, -200],
+      "position": [3960, -200],
       "id": "build-update-query",
       "name": "Build Update Query"
     },
@@ -322,7 +378,7 @@
       },
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
-      "position": [3300, -200],
+      "position": [4180, -200],
       "id": "update-idea-url",
       "name": "Update Idea with Issue URL",
       "credentials": {
@@ -338,7 +394,7 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3520, -200],
+      "position": [4400, -200],
       "id": "success-summary",
       "name": "Success Summary"
     },
@@ -348,7 +404,7 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [2200, 0],
+      "position": [3080, 0],
       "id": "skip-low-score",
       "name": "Skip - Low Score"
     },
@@ -358,7 +414,7 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [1320, 100],
+      "position": [1760, 100],
       "id": "skip-no-insights",
       "name": "Skip - No Insights"
     }
@@ -385,7 +441,7 @@
       "main": [
         [
           {
-            "node": "Merge Config & Agents",
+            "node": "Merge Config & Prompt",
             "type": "main",
             "index": 0
           }
@@ -393,6 +449,17 @@
       ]
     },
     "Fetch Generate Idea Prompt": {
+      "main": [
+        [
+          {
+            "node": "Merge Config & Prompt",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge Config & Prompt": {
       "main": [
         [
           {
@@ -469,7 +536,25 @@
       "main": [
         [
           {
+            "node": "Use Stubs for IdeaSynthesizer?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Use Stubs for IdeaSynthesizer?": {
+      "main": [
+        [
+          {
             "node": "IdeaSynthesizer Stub (Claude)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "IdeaSynthesizer with Claude API",
             "type": "main",
             "index": 0
           }
@@ -477,6 +562,28 @@
       ]
     },
     "IdeaSynthesizer Stub (Claude)": {
+      "main": [
+        [
+          {
+            "node": "Validate Idea Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IdeaSynthesizer with Claude API": {
+      "main": [
+        [
+          {
+            "node": "Wrap Claude Idea Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wrap Claude Idea Response": {
       "main": [
         [
           {

@@ -10,60 +10,75 @@
       },
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2.1,
-      "position": [
-        0,
-        -192
-      ],
+      "position": [0, 0],
       "id": "5a24f684-7105-4b33-ab24-d15b16d32e71",
       "name": "Webhook",
       "webhookId": "0a2430f5-cb3e-42ff-b05f-5d502240cc04"
     },
     {
       "parameters": {
-        "url": "=https://libertas.fgu.tech/api/config/thresholds",
+        "jsCode": "// Rate limiting check using in-memory window\n// Note: For production, use external rate limiter (Redis, etc.)\n// This stub provides structure for rate limiting logic\n\n// n8n webhook puts POST body directly in $json (not $json.body)\nconst webhookData = $('Webhook').first().json;\nconst webhookBody = webhookData.body || webhookData; // Handle both formats\nconst clientIp = webhookData.headers?.['x-forwarded-for'] || \n                 webhookData.headers?.['x-real-ip'] || \n                 'unknown';\n\n// Log rate limit check (actual enforcement at infrastructure level)\nconsole.log(`Rate limit check for IP: ${clientIp}`);\nconsole.log(`Webhook body keys: ${Object.keys(webhookBody).join(', ')}`);\n\n// Pass through with rate limit metadata\nreturn [{\n  json: {\n    ...webhookBody,\n    _rateLimitMeta: {\n      clientIp,\n      timestamp: new Date().toISOString(),\n      // In production, check against Redis/memory store\n      allowed: true\n    }\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [200, 0],
+      "id": "rate-limit-check",
+      "name": "Rate Limit Check"
+    },
+    {
+      "parameters": {
+        "url": "https://libertas.fgu.tech/api/config/thresholds",
         "options": {
           "timeout": 5000
         }
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [104, -292],
+      "position": [420, -100],
       "id": "fetch-thresholds-config",
       "name": "Fetch Thresholds Config"
     },
     {
       "parameters": {
-        "url": "=https://libertas.fgu.tech/api/agents/intake-classify",
+        "url": "https://libertas.fgu.tech/api/agents/intake-classify",
         "options": {
           "timeout": 5000
         }
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [104, -92],
+      "position": [420, 100],
       "id": "fetch-intake-classify-prompt",
       "name": "Fetch Intake Classify Prompt"
     },
     {
       "parameters": {
-        "jsCode": "// Merge thresholds config and intake-classify agent prompt\nconst thresholdsConfig = $('Fetch Thresholds Config').first().json;\nconst intakeClassifyPrompt = $('Fetch Intake Classify Prompt').first().json;\n\nreturn [{\n  json: {\n    ...thresholdsConfig,\n    _agents: {\n      intakeClassify: intakeClassifyPrompt.content\n    }\n  }\n}];"
+        "mode": "append",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.1,
+      "position": [640, 0],
+      "id": "wait-for-fetches",
+      "name": "Wait for Fetches"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Merge thresholds config and intake-classify agent prompt from fetched data\nconst allItems = $input.all();\nconst webhookData = $('Rate Limit Check').first().json;\n\nlet thresholdsConfig = {};\nlet intakeClassifyPrompt = null;\n\nfor (const item of allItems) {\n  const data = item.json;\n  // Thresholds config has runtime/ingestion/publishing sections\n  if (data.runtime || data.ingestion || data.publishing || data.rate_limiting) {\n    thresholdsConfig = data;\n  }\n  // Intake classify prompt has content field\n  else if (data.content && (data.name === 'intake-classify' || data.content.includes('intake classifier'))) {\n    intakeClassifyPrompt = data;\n  } else if (data.content) {\n    // Fallback: any content is likely the prompt\n    intakeClassifyPrompt = data;\n  }\n}\n\n// Get rate limiting config\nconst rateLimiting = thresholdsConfig.rate_limiting || {};\nconst configInfo = {\n  requestsPerMinute: rateLimiting.requests_per_minute || 10,\n  requestsPerHour: rateLimiting.requests_per_hour || 100,\n  globalPerMinute: rateLimiting.global_per_minute || 100\n};\n\nconsole.log(`Loaded thresholds config: runtime.use_stubs=${thresholdsConfig.runtime?.use_stubs}`);\nconsole.log(`Loaded intake-classify prompt: ${intakeClassifyPrompt?.content?.length || 0} chars`);\nconsole.log(`Rate limiting config loaded: ${JSON.stringify(configInfo)}`);\n\nreturn [{\n  json: {\n    ...thresholdsConfig,\n    _agents: {\n      intakeClassify: intakeClassifyPrompt?.content || ''\n    },\n    _webhookData: webhookData,\n    _rateLimitConfig: configInfo\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [208, -192],
+      "position": [860, 0],
       "id": "merge-config-agents",
       "name": "Merge Config & Agents"
     },
     {
       "parameters": {
-        "jsCode": "// Validate input with thresholds from config\nconst merged = $input.first().json;\nconst rateLimiting = merged.rate_limiting || {};\nconst agents = merged._agents;\nconst webhookBody = $('Webhook').first().json.body;\n\n// Store rate limiting config for reference (actual enforcement at infrastructure level)\nconst configInfo = {\n  requestsPerMinute: rateLimiting.requests_per_minute || 10,\n  requestsPerHour: rateLimiting.requests_per_hour || 100,\n  globalPerMinute: rateLimiting.global_per_minute || 100\n};\n\nconsole.log(`Rate limiting config loaded: ${JSON.stringify(configInfo)}`);\nconsole.log(`Loaded intake-classify agent prompt: ${agents?.intakeClassify?.length || 0} chars`);\n\nif (!webhookBody?.message || webhookBody.message.trim().length < 10) {\n  throw new Error('Message required (min 10 chars)');\n}\n\nreturn [{\n  json: {\n    message: webhookBody.message.trim(),\n    contact: webhookBody.contact || null,\n    category: webhookBody.category || 'other',\n    safetyMode: webhookBody.safetyMode || false,\n    _rateLimitConfig: configInfo,\n    _agents: agents\n  }\n}];"
+        "jsCode": "// Validate input with thresholds from config\nconst merged = $input.first().json;\nconst rateLimiting = merged._rateLimitConfig || {};\nconst agents = merged._agents;\nconst webhookData = merged._webhookData;\nconst runtimeConfig = merged.runtime || { use_stubs: true };\n\nif (!webhookData?.message || webhookData.message.trim().length < 10) {\n  throw new Error('Message required (min 10 chars)');\n}\n\nreturn [{\n  json: {\n    message: webhookData.message.trim(),\n    contact: webhookData.contact || null,\n    category: webhookData.category || 'other',\n    safetyMode: webhookData.safetyMode || false,\n    _rateLimitConfig: rateLimiting,\n    _agents: agents,\n    _runtime: runtimeConfig\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [
-        312,
-        -192
-      ],
+      "position": [1080, 0],
       "id": "f2395950-791e-40aa-89f6-00c41f28866e",
       "name": "Validate Input"
     },
@@ -77,10 +92,7 @@
       },
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
-      "position": [
-        416,
-        -192
-      ],
+      "position": [1300, 0],
       "id": "f4b0a9a8-7bd0-4306-bd9f-181e85015176",
       "name": "Insert Submission",
       "credentials": {
@@ -92,15 +104,52 @@
     },
     {
       "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "use-stubs-classify",
+              "leftValue": "={{ $('Validate Input').first().json._runtime?.use_stubs ?? true }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [1520, 0],
+      "id": "use-stubs-classify",
+      "name": "Use Stubs for Classify?"
+    },
+    {
+      "parameters": {
+        "jsCode": "const message = $('Insert Submission').first().json.message;\nconst validateInput = $('Validate Input').first().json;\n\n// Simple keyword-based classification for testing\nconst tags = [];\nif (message.toLowerCase().includes('messaging') || message.toLowerCase().includes('comms')) tags.push('comms');\nif (message.toLowerCase().includes('offline')) tags.push('censorship-resistance');\nif (message.toLowerCase().includes('secure') || message.toLowerCase().includes('privacy')) tags.push('privacy');\nif (message.toLowerCase().includes('bitcoin') || message.toLowerCase().includes('btc')) tags.push('bitcoin');\nif (message.toLowerCase().includes('tool') || message.toLowerCase().includes('build')) tags.push('sovereignty');\nif (tags.length === 0) tags.push('general');\n\n// Determine category from content\nlet category = 'other';\nif (message.toLowerCase().includes('tool') || message.toLowerCase().includes('need')) category = 'tool-request';\nelse if (message.toLowerCase().includes('idea') || message.toLowerCase().includes('what if')) category = 'idea';\nelse if (message.toLowerCase().includes('report') || message.toLowerCase().includes('observed')) category = 'report';\nelse if (message.toLowerCase().includes('question') || message.includes('?')) category = 'question';\nelse if (message.toLowerCase().includes('partner') || message.toLowerCase().includes('collaborate')) category = 'collaboration';\n\n// Determine risk level\nlet risk_level = 'low';\nif (message.toLowerCase().includes('activist') || message.toLowerCase().includes('dissident')) risk_level = 'medium';\nif (message.toLowerCase().includes('location') && risk_level === 'medium') risk_level = 'high';\n\n// Determine priority\nlet priority = 'normal';\nif (message.toLowerCase().includes('urgent') || message.toLowerCase().includes('emergency')) priority = 'urgent';\nif (message.toLowerCase().includes('fyi') || message.toLowerCase().includes('just sharing')) priority = 'low';\n\n// Check for spam patterns\nconst is_spam = message.toLowerCase().includes('crypto airdrop') || \n                message.toLowerCase().includes('click here') ||\n                (message.match(/https?:\\/\\//g) || []).length > 5;\n\n// Determine if response is needed\nconst requires_response = category !== 'other' && !is_spam && \n                          (message.includes('?') || category === 'tool-request' || category === 'collaboration');\n\n// Generate summary\nconst summary = message.substring(0, 180).replace(/\\n/g, ' ').trim() + (message.length > 180 ? '...' : '');\n\n// Suggested assignee\nlet suggested_assignee = 'triage';\nif (category === 'tool-request') suggested_assignee = 'engineering';\nelse if (category === 'collaboration') suggested_assignee = 'partnerships';\nelse if (category === 'report') suggested_assignee = 'research';\n\nconst result = {\n  category,\n  tags,\n  risk_level,\n  priority,\n  summary,\n  is_spam,\n  requires_response,\n  suggested_assignee\n};\n\n// Match Claude API response format\nreturn [{\n  json: {\n    content: [{\n      type: 'text',\n      text: JSON.stringify(result)\n    }],\n    _submissionId: $('Insert Submission').first().json.id,\n    _message: message,\n    _agents: validateInput._agents,\n    _runtime: validateInput._runtime\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1740, -100],
+      "id": "b0d80e32-5e56-4553-8037-9011a2c680f1",
+      "name": "Classify Stub"
+    },
+    {
+      "parameters": {
         "method": "POST",
         "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
-            {
-              "name": "x-api-key",
-              "value": "={{ $env.ANTHROPIC_API_KEY }}"
-            },
             {
               "name": "anthropic-version",
               "value": "2023-06-01"
@@ -113,58 +162,55 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 512,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": {{ JSON.stringify($('Validate Input').first().json._agents?.intakeClassify + \"\\n\\n# Input\\n\\nSubmission: \" + $('Insert Submission').first().json.message) }}\n  }]\n}",
-        "options": {}
+        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 512,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": {{ JSON.stringify($('Validate Input').first().json._agents?.intakeClassify + \"\\n\\n# Input\\n\\n\" + JSON.stringify({ message: $('Insert Submission').first().json.message, contact: $('Validate Input').first().json.contact ? '[provided]' : null, category: $('Validate Input').first().json.category, safetyMode: $('Validate Input').first().json.safetyMode })) }}\n  }]\n}",
+        "options": {
+          "timeout": 30000
+        }
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [
-        -16,
-        32
-      ],
+      "position": [1740, 100],
       "id": "8d4a91f3-2fb2-4be9-9d5f-0bc2ebc6a3be",
-      "name": "Classify with Claude"
+      "name": "Classify with Claude API",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "ANTHROPIC_CREDENTIAL_ID",
+          "name": "Anthropic API Key"
+        }
+      },
+      "onError": "continueErrorOutput"
     },
     {
       "parameters": {
-        "jsCode": "const message = $('Insert Submission').first().json.message;\n\n// Simple keyword-based classification for testing\nconst tags = [];\nif (message.toLowerCase().includes('messaging') || message.toLowerCase().includes('comms')) tags.push('comms');\nif (message.toLowerCase().includes('offline')) tags.push('censorship-resistance');\nif (message.toLowerCase().includes('secure') || message.toLowerCase().includes('privacy')) tags.push('privacy');\nif (tags.length === 0) tags.push('general');\n\nconst result = {\n  tags,\n  risk_level: 'low',\n  summary: message.substring(0, 50) + '...'\n};\n\n// Match Claude API response format\nreturn [{\n  json: {\n    content: [{\n      type: 'text',\n      text: JSON.stringify(result)\n    }]\n  }\n}];"
+        "jsCode": "// Process real Claude API response and add pass-through data\nconst claudeResponse = $input.first().json;\nconst validateInput = $('Validate Input').first().json;\nconst submissionData = $('Insert Submission').first().json;\n\n// Return in same format as stub for Parse LLM Response compatibility\nreturn [{\n  json: {\n    content: claudeResponse.content,\n    _submissionId: submissionData.id,\n    _message: submissionData.message,\n    _agents: validateInput._agents,\n    _runtime: validateInput._runtime\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [
-        208,
-        32
-      ],
-      "id": "b0d80e32-5e56-4553-8037-9011a2c680f1",
-      "name": "Classify Stub"
+      "position": [1960, 100],
+      "id": "wrap-classify-response",
+      "name": "Wrap Claude Classify Response"
     },
     {
       "parameters": {
-        "jsCode": "const content = $input.first().json.content[0].text;\nconst parsed = JSON.parse(content);\nconst submissionId = $('Insert Submission').first().json.id;\nconst message = $('Insert Submission').first().json.message;\n\nreturn [{ json: { ...parsed, submissionId, message } }];"
+        "jsCode": "// Parse LLM response (handles both stub and real Claude responses)\n// Strips markdown code blocks that Claude often wraps JSON in\nconst input = $input.first().json;\nlet parsed;\n\ntry {\n  let text = input.content[0].text;\n  \n  // Strip markdown code blocks if present (Claude often wraps JSON in ```json...```)\n  text = text.trim();\n  if (text.startsWith('```')) {\n    // Remove opening fence (```json or ```)\n    text = text.replace(/^```(?:json)?\\s*\\n?/, '');\n    // Remove closing fence\n    text = text.replace(/\\n?```\\s*$/, '');\n  }\n  \n  parsed = JSON.parse(text.trim());\n} catch (e) {\n  console.log('Parse LLM Response error:', e.message);\n  console.log('Raw text:', input.content?.[0]?.text?.substring(0, 200));\n  // Fallback classification if parsing fails\n  parsed = {\n    category: 'other',\n    tags: ['general'],\n    risk_level: 'low',\n    priority: 'normal',\n    summary: 'Failed to parse classification: ' + e.message,\n    is_spam: false,\n    requires_response: false,\n    suggested_assignee: 'triage'\n  };\n}\n\n// Ensure all required fields are present\nconst result = {\n  category: parsed.category || 'other',\n  tags: Array.isArray(parsed.tags) ? parsed.tags : ['general'],\n  risk_level: parsed.risk_level || 'low',\n  priority: parsed.priority || 'normal',\n  summary: (parsed.summary || '').substring(0, 200),\n  is_spam: Boolean(parsed.is_spam),\n  requires_response: Boolean(parsed.requires_response),\n  suggested_assignee: parsed.suggested_assignee || 'triage',\n  submissionId: input._submissionId,\n  message: input._message,\n  _runtime: input._runtime\n};\n\nreturn [{ json: result }];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [
-        416,
-        32
-      ],
+      "position": [2180, 0],
       "id": "2c3ce832-b8bc-4645-a849-4d340ec89943",
       "name": "Parse LLM Response"
     },
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "UPDATE submissions\n  SET tags = ARRAY(SELECT json_array_elements_text($1::json)),\n      risk_level = $2,\n      status = 'triaged'\n  WHERE id = $3::uuid",
+        "query": "UPDATE submissions\n  SET tags = ARRAY(SELECT json_array_elements_text($1::json)),\n      risk_level = $2,\n      priority = $3,\n      is_spam = $4,\n      requires_response = $5,\n      status = 'triaged'\n  WHERE id = $6::uuid",
         "options": {
-          "queryReplacement": "={{ JSON.stringify($json.tags) }}, {{ $json.risk_level }}, {{ $json.submissionId }}"
+          "queryReplacement": "={{ JSON.stringify($json.tags) }}, {{ $json.risk_level }}, {{ $json.priority }}, {{ $json.is_spam }}, {{ $json.requires_response }}, {{ $json.submissionId }}"
         }
       },
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
-      "position": [
-        624,
-        32
-      ],
+      "position": [2400, 0],
       "id": "584cdc58-21d3-4526-accc-14cfdc4c4f3d",
       "name": "Update Submission",
       "credentials": {
@@ -176,49 +222,103 @@
     },
     {
       "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "use-stubs-github",
+              "leftValue": "={{ $('Parse LLM Response').first().json._runtime?.use_stubs ?? true }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [2620, 0],
+      "id": "use-stubs-github",
+      "name": "Use Stubs for GitHub?"
+    },
+    {
+      "parameters": {
+        "jsCode": "const parsed = $('Parse LLM Response').first().json;\n\nreturn [{\n  json: {\n    html_url: `https://github.com/FGUTech/libertas/issues/MOCK-${parsed.submissionId.slice(0, 8)}`,\n    number: Math.floor(Math.random() * 1000),\n    title: `[Intake] ${parsed.summary.substring(0, 60)}`,\n    state: 'open',\n    _parsedData: parsed\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2840, -100],
+      "id": "5325ad90-f9e6-4d20-98d7-2a5a66df3daf",
+      "name": "GitHub Stub"
+    },
+    {
+      "parameters": {
         "method": "POST",
         "url": "https://api.github.com/repos/FGUTech/libertas/issues",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
         "sendHeaders": true,
         "headerParameters": {
           "parameters": [
             {
-              "name": "Authorization",
-              "value": "=Bearer {{ $env.GITHUB_TOKEN }}"
+              "name": "Accept",
+              "value": "application/vnd.github.v3+json"
             },
             {
-              "name": "content-type",
-              "value": "application/json"
+              "name": "X-GitHub-Api-Version",
+              "value": "2022-11-28"
             }
           ]
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n    \"title\": \"[Intake] {{ $json.summary }}\",\n    \"body\": \"## Submission\\n\\n{{ $json.message }}\\n\\n---\\n\\n**ID:** `{{ $json.submissionId }}`\\n**Risk Level:** {{ $json.risk_level }}\\n**Tags:** {{ $json.tags.join(', ') }}\\n\\n---\\n*Auto-generated by Libertas*\",\n    \"labels\": [\"intake\"]\n  }",
-        "options": {}
+        "jsonBody": "={\n  \"title\": \"[Intake] {{ $('Parse LLM Response').first().json.summary.substring(0, 60) }}\",\n  \"body\": \"## Submission\\n\\n{{ $('Parse LLM Response').first().json.message.replace(/\"/g, '\\\\\"').replace(/\\n/g, '\\\\n') }}\\n\\n---\\n\\n**ID:** `{{ $('Parse LLM Response').first().json.submissionId }}`\\n**Category:** {{ $('Parse LLM Response').first().json.category }}\\n**Risk Level:** {{ $('Parse LLM Response').first().json.risk_level }}\\n**Priority:** {{ $('Parse LLM Response').first().json.priority }}\\n**Tags:** {{ $('Parse LLM Response').first().json.tags.join(', ') }}\\n**Requires Response:** {{ $('Parse LLM Response').first().json.requires_response }}\\n**Suggested Assignee:** {{ $('Parse LLM Response').first().json.suggested_assignee }}\\n\\n---\\n*Auto-generated by Libertas*\",\n  \"labels\": [\"intake\", \"{{ $('Parse LLM Response').first().json.priority }}\"]\n}",
+        "options": {
+          "timeout": 30000
+        }
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [
-        -16,
-        304
-      ],
+      "position": [2840, 100],
       "id": "2fb51810-cc40-4e23-876f-0c497c77d25e",
-      "name": "Create GitHub Issue"
+      "name": "Create GitHub Issue",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "GITHUB_CREDENTIAL_ID",
+          "name": "GitHub API Token"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Process real GitHub API response and add pass-through data\nconst githubResponse = $input.first().json;\nconst parsedData = $('Parse LLM Response').first().json;\n\nreturn [{\n  json: {\n    html_url: githubResponse.html_url,\n    number: githubResponse.number,\n    title: githubResponse.title,\n    state: githubResponse.state,\n    _parsedData: parsedData\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [3060, 100],
+      "id": "wrap-github-response",
+      "name": "Wrap GitHub Response"
     },
     {
       "parameters": {
         "operation": "executeQuery",
         "query": "UPDATE submissions\n  SET github_issue_url = $1\n  WHERE id = $2::uuid",
         "options": {
-          "queryReplacement": "={{ $json.html_url }}, {{ $('Parse LLM Response').first().json.submissionId }}"
+          "queryReplacement": "={{ $json.html_url }}, {{ $json._parsedData.submissionId }}"
         }
       },
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
-      "position": [
-        416,
-        304
-      ],
+      "position": [3280, 0],
       "id": "41b4f10a-baf9-4fbe-a482-5737b1d56e01",
       "name": "Save Issue URL",
       "credentials": {
@@ -230,19 +330,6 @@
     },
     {
       "parameters": {
-        "jsCode": "const submissionId = $('Parse LLM Response').first().json.submissionId;\nconst summary = $('Parse LLM Response').first().json.summary;\n\nreturn [{\n  json: {\n    html_url: `https://github.com/FGUTech/libertas/issues/MOCK-${submissionId.slice(0, 8)}`,\n    number: Math.floor(Math.random() * 1000),\n    title: `[Intake] ${summary}`,\n    state: 'open'\n  }\n}];"
-      },
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [
-        208,
-        304
-      ],
-      "id": "5325ad90-f9e6-4d20-98d7-2a5a66df3daf",
-      "name": "Github Stub"
-    },
-    {
-      "parameters": {
         "respondWith": "json",
         "responseBody": "={\n  \"id\": \"{{ $('Parse LLM Response').first().json.submissionId }}\",\n  \"status\": \"received\",\n  \"message\": \"Thank you for your submission.\"\n}",
         "options": {
@@ -251,17 +338,45 @@
       },
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1.5,
-      "position": [
-        624,
-        304
-      ],
+      "position": [3500, 0],
       "id": "144e0a40-14fc-4208-9e48-d8ee2b5a343d",
       "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Handle errors from Claude API call\n// This provides graceful degradation when API fails\n\nconst error = $input.first().json;\nconst validateInput = $('Validate Input').first().json;\nconst submissionData = $('Insert Submission').first().json;\n\nconsole.log('Claude API error:', JSON.stringify(error));\n\n// Create fallback classification\nconst fallbackClassification = {\n  category: 'other',\n  tags: ['needs-review'],\n  risk_level: 'medium',  // Conservative default\n  priority: 'normal',\n  summary: 'Auto-classified due to API error - requires manual review',\n  is_spam: false,\n  requires_response: true,\n  suggested_assignee: 'triage'\n};\n\n// Return in same format as successful response\nreturn [{\n  json: {\n    content: [{\n      type: 'text',\n      text: JSON.stringify(fallbackClassification)\n    }],\n    _submissionId: submissionData.id,\n    _message: submissionData.message,\n    _agents: validateInput._agents,\n    _runtime: validateInput._runtime,\n    _apiError: true\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1960, 200],
+      "id": "handle-claude-error",
+      "name": "Handle Claude Error"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Handle errors from GitHub API call\n// This provides graceful degradation when API fails\n\nconst error = $input.first().json;\nconst parsedData = $('Parse LLM Response').first().json;\n\nconsole.log('GitHub API error:', JSON.stringify(error));\n\n// Return mock issue URL to allow workflow to continue\nreturn [{\n  json: {\n    html_url: null,  // No issue created\n    number: null,\n    title: `[Intake] ${parsedData.summary.substring(0, 60)}`,\n    state: 'error',\n    _parsedData: parsedData,\n    _apiError: true,\n    _errorMessage: 'GitHub issue creation failed - will retry later'\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [3060, 200],
+      "id": "handle-github-error",
+      "name": "Handle GitHub Error"
     }
   ],
   "pinData": {},
   "connections": {
     "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Rate Limit Check",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rate Limit Check": {
       "main": [
         [
           {
@@ -281,7 +396,7 @@
       "main": [
         [
           {
-            "node": "Merge Config & Agents",
+            "node": "Wait for Fetches",
             "type": "main",
             "index": 0
           }
@@ -289,6 +404,17 @@
       ]
     },
     "Fetch Intake Classify Prompt": {
+      "main": [
+        [
+          {
+            "node": "Wait for Fetches",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Wait for Fetches": {
       "main": [
         [
           {
@@ -325,7 +451,25 @@
       "main": [
         [
           {
+            "node": "Use Stubs for Classify?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Use Stubs for Classify?": {
+      "main": [
+        [
+          {
             "node": "Classify Stub",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Classify with Claude API",
             "type": "main",
             "index": 0
           }
@@ -333,6 +477,46 @@
       ]
     },
     "Classify Stub": {
+      "main": [
+        [
+          {
+            "node": "Parse LLM Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Classify with Claude API": {
+      "main": [
+        [
+          {
+            "node": "Wrap Claude Classify Response",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Handle Claude Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wrap Claude Classify Response": {
+      "main": [
+        [
+          {
+            "node": "Parse LLM Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Handle Claude Error": {
       "main": [
         [
           {
@@ -358,7 +542,36 @@
       "main": [
         [
           {
-            "node": "Github Stub",
+            "node": "Use Stubs for GitHub?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Use Stubs for GitHub?": {
+      "main": [
+        [
+          {
+            "node": "GitHub Stub",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Create GitHub Issue",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GitHub Stub": {
+      "main": [
+        [
+          {
+            "node": "Save Issue URL",
             "type": "main",
             "index": 0
           }
@@ -367,10 +580,34 @@
     },
     "Create GitHub Issue": {
       "main": [
-        []
+        [
+          {
+            "node": "Wrap GitHub Response",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Handle GitHub Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
       ]
     },
-    "Github Stub": {
+    "Wrap GitHub Response": {
+      "main": [
+        [
+          {
+            "node": "Save Issue URL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Handle GitHub Error": {
       "main": [
         [
           {
@@ -398,7 +635,7 @@
     "executionOrder": "v1",
     "availableInMCP": false
   },
-  "versionId": "5452bd0b-cf72-466a-80e8-66df9ab9f279",
+  "versionId": "5452bd0b-cf72-466a-80e8-66df9ab9f280",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "3c52e1b61141902bda826728d3cf15d2a867de8395f358b7459edf58ff4157ae"
