@@ -111,7 +111,7 @@ This pattern is implemented across: 1.5, 1.6, 1.9, 1.10, 1.11, 1.13, 1.14, 1.15
 - [x] Wire Summarize Stub and real Claude API node to IF branches
 - [x] Real Claude nodes load prompts from `agents/classify.md` and `agents/summarize.md`
 - [x] Validate output against JSON schemas (per 1.4)
-- [ ] Test with golden test cases in both stub and real modes
+- [x] Test with golden test cases in both stub and real modes
 
 **Implementation Notes**:
 - Claude API nodes exist but are disabled; wire to IF node instead of deleting
@@ -193,6 +193,20 @@ This pattern is implemented across: 1.5, 1.6, 1.9, 1.10, 1.11, 1.13, 1.14, 1.15
 - Keep stub for local dev/testing without API costs
 - Config toggle via `runtime.use_stubs` in `thresholds.yml`
 - Consider fallback if Claude API fails (publish digest without LLM enhancement)
+
+**Lessons from 1.5 Implementation**:
+- Claude returns JSON wrapped in markdown code blocks (` ```json...``` `). Parsing code must strip these before `JSON.parse()`:
+  ```javascript
+  text = text.trim();
+  if (text.startsWith('```')) {
+    text = text.replace(/^```(?:json)?\s*\n?/, '').replace(/\n?```\s*$/, '');
+  }
+  ```
+- n8n blocks `$env` variable access - hardcode URLs (e.g., `https://libertas.fgu.tech/api/...`) instead of `$env.WEBSITE_URL`
+- When fetching multiple configs/prompts in parallel, use chained Merge nodes (mode: "append") to wait for all results before processing
+- Thread `runtime.use_stubs` through the entire workflow chain - ensure it's included in data passed between nodes
+- Anthropic credential setup: Header Auth type, Name = `x-api-key`, Value = API key
+- Node positions need ~200px horizontal spacing to avoid label overlap in n8n UI
 
 ---
 
@@ -277,6 +291,20 @@ This pattern is implemented across: 1.5, 1.6, 1.9, 1.10, 1.11, 1.13, 1.14, 1.15
 - Keep stubs for local dev/testing without API costs
 - Config toggle via `runtime.use_stubs` in `thresholds.yml`
 - Credentials may be shared with Workflow A (1.5) and Workflow D (1.14) if already configured
+
+**Lessons from 1.5 Implementation**:
+- Claude returns JSON wrapped in markdown code blocks (` ```json...``` `). Parsing code must strip these before `JSON.parse()`:
+  ```javascript
+  text = text.trim();
+  if (text.startsWith('```')) {
+    text = text.replace(/^```(?:json)?\s*\n?/, '').replace(/\n?```\s*$/, '');
+  }
+  ```
+- n8n blocks `$env` variable access - hardcode URLs (e.g., `https://libertas.fgu.tech/api/...`) instead of `$env.WEBSITE_URL`
+- When fetching multiple configs/prompts in parallel, use chained Merge nodes (mode: "append") to wait for all results before processing
+- Thread `runtime.use_stubs` through the entire workflow chain - ensure it's included in data passed between nodes
+- Anthropic credential setup: Header Auth type, Name = `x-api-key`, Value = API key
+- Node positions need ~200px horizontal spacing to avoid label overlap in n8n UI
 
 ---
 
@@ -391,6 +419,20 @@ This pattern is implemented across: 1.5, 1.6, 1.9, 1.10, 1.11, 1.13, 1.14, 1.15
 - Config toggle via `runtime.use_stubs` in `thresholds.yml`
 - Real API should maintain same output structure
 - Credentials may be shared with Workflow A (1.5) and Workflow C (1.13) if already configured
+
+**Lessons from 1.5 Implementation**:
+- Claude returns JSON wrapped in markdown code blocks (` ```json...``` `). Parsing code must strip these before `JSON.parse()`:
+  ```javascript
+  text = text.trim();
+  if (text.startsWith('```')) {
+    text = text.replace(/^```(?:json)?\s*\n?/, '').replace(/\n?```\s*$/, '');
+  }
+  ```
+- n8n blocks `$env` variable access - hardcode URLs (e.g., `https://libertas.fgu.tech/api/...`) instead of `$env.WEBSITE_URL`
+- When fetching multiple configs/prompts in parallel, use chained Merge nodes (mode: "append") to wait for all results before processing
+- Thread `runtime.use_stubs` through the entire workflow chain - ensure it's included in data passed between nodes
+- Anthropic credential setup: Header Auth type, Name = `x-api-key`, Value = API key
+- Node positions need ~200px horizontal spacing to avoid label overlap in n8n UI
 
 ---
 

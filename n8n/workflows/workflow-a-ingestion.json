@@ -115,7 +115,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Load sources from API config and agent prompts\n// Reads from merged config node output\n\nconst merged = $('Merge Config & Agents').first().json;\nconst sourcesConfig = merged._sources;\nconst thresholdsConfig = merged._thresholdsConfig;\nconst agents = merged._agents;\n\n// Store thresholds in first item for reference by downstream nodes\nconst thresholds = {\n  ingestion: thresholdsConfig.ingestion || { relevance_threshold: 50 },\n  publishing: thresholdsConfig.publishing || { auto_publish_relevance: 70, auto_publish_credibility: 60 },\n  ideas: thresholdsConfig.ideas || { min_relevance_for_idea: 80 }\n};\n\n// Get sources from config\nconst sources = sourcesConfig.sources || [];\n\n// Filter to enabled sources only\nconst enabledSources = sources.filter(s => s.enabled);\n\nif (enabledSources.length === 0) {\n  console.log('Warning: No enabled sources found in config');\n  return [];\n}\n\nconsole.log(`Loaded ${enabledSources.length} sources from config`);\nconsole.log(`Loaded agent prompts: classify (${agents.classify?.length || 0} chars), summarize (${agents.summarize?.length || 0} chars)`);\n\n// Return each source as a separate item for parallel processing\n// Include thresholds and agent prompts in each item so downstream nodes can access them\nreturn enabledSources.map(source => ({ \n  json: {\n    ...source,\n    _thresholds: thresholds,\n    _agents: agents\n  }\n}));"
+        "jsCode": "// Load sources from API config and agent prompts\n// Reads from merged config node output\n\nconst merged = $('Merge Config & Agents').first().json;\nconst sourcesConfig = merged._sources;\nconst thresholdsConfig = merged._thresholdsConfig;\nconst agents = merged._agents;\n\n// Store thresholds in first item for reference by downstream nodes\n// Include runtime section for stub/real mode toggle\nconst thresholds = {\n  runtime: thresholdsConfig.runtime || { use_stubs: true },\n  ingestion: thresholdsConfig.ingestion || { relevance_threshold: 50 },\n  publishing: thresholdsConfig.publishing || { auto_publish_relevance: 70, auto_publish_credibility: 60 },\n  ideas: thresholdsConfig.ideas || { min_relevance_for_idea: 80 }\n};\n\n// Get sources from config\nconst sources = sourcesConfig.sources || [];\n\n// Filter to enabled sources only\nconst enabledSources = sources.filter(s => s.enabled);\n\nif (enabledSources.length === 0) {\n  console.log('Warning: No enabled sources found in config');\n  return [];\n}\n\nconsole.log(`Loaded ${enabledSources.length} sources from config`);\nconsole.log(`Loaded agent prompts: classify (${agents.classify?.length || 0} chars), summarize (${agents.summarize?.length || 0} chars)`);\n\n// Return each source as a separate item for parallel processing\n// Include thresholds and agent prompts in each item so downstream nodes can access them\nreturn enabledSources.map(source => ({ \n  json: {\n    ...source,\n    _thresholds: thresholds,\n    _agents: agents\n  }\n}));"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -282,7 +282,7 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [2530, 100],
+      "position": [2600, 100],
       "id": "wrap-classify-response",
       "name": "Wrap Claude Classify Response"
     },
@@ -355,11 +355,11 @@
     },
     {
       "parameters": {
-        "jsCode": "// Parse classification result from Claude API format\nconst input = $input.first().json;\nlet classification;\n\ntry {\n  const text = input.content[0].text;\n  classification = JSON.parse(text);\n} catch (e) {\n  // Fallback if parsing fails\n  classification = {\n    topics: ['sovereignty'],\n    freedom_relevance_score: 30,\n    credibility_score: 50,\n    geo: [],\n    safety_concern: false,\n    reasoning: 'Failed to parse LLM response',\n    key_entities: [],\n    should_summarize: false\n  };\n}\n\n// Merge with source item data\nreturn [{\n  json: {\n    sourceItemId: input._sourceItemId,\n    sourceItemUrl: input._sourceItemUrl,\n    extractedText: input._extractedText,\n    metadata: input._metadata,\n    classification,\n    _thresholds: input._thresholds,\n    _agents: input._agents\n  }\n}];"
+        "jsCode": "// Parse classification result from Claude API format\nconst input = $input.first().json;\nlet classification;\n\ntry {\n  let text = input.content[0].text;\n  \n  // Strip markdown code blocks if present (Claude often wraps JSON in ```json...```)\n  text = text.trim();\n  if (text.startsWith('```')) {\n    // Remove opening fence (```json or ```)\n    text = text.replace(/^```(?:json)?\\s*\\n?/, '');\n    // Remove closing fence\n    text = text.replace(/\\n?```\\s*$/, '');\n  }\n  \n  classification = JSON.parse(text.trim());\n} catch (e) {\n  // Fallback if parsing fails\n  console.log('Parse Classification error:', e.message);\n  console.log('Raw text:', input.content?.[0]?.text?.substring(0, 200));\n  classification = {\n    topics: ['sovereignty'],\n    freedom_relevance_score: 30,\n    credibility_score: 50,\n    geo: [],\n    safety_concern: false,\n    reasoning: 'Failed to parse LLM response: ' + e.message,\n    key_entities: [],\n    should_summarize: false\n  };\n}\n\n// Merge with source item data\nreturn [{\n  json: {\n    sourceItemId: input._sourceItemId,\n    sourceItemUrl: input._sourceItemUrl,\n    extractedText: input._extractedText,\n    metadata: input._metadata,\n    classification,\n    _thresholds: input._thresholds,\n    _agents: input._agents\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [2420, -100],
+      "position": [2420, -200],
       "id": "parse-classification",
       "name": "Parse Classification"
     },
@@ -369,7 +369,7 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [2530, -200],
+      "position": [2650, -200],
       "id": "validate-classification",
       "name": "Validate Classification"
     },
@@ -379,7 +379,7 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [2640, -200],
+      "position": [2880, -200],
       "id": "apply-threshold",
       "name": "Apply Threshold"
     },
@@ -408,7 +408,7 @@
       },
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
-      "position": [2750, -200],
+      "position": [3110, -200],
       "id": "check-threshold",
       "name": "Meets Threshold?"
     },
@@ -418,7 +418,7 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3190, -300],
+      "position": [3590, -350],
       "id": "summarize-stub",
       "name": "Summarize Stub (Claude)"
     },
@@ -447,7 +447,7 @@
       },
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
-      "position": [2970, -200],
+      "position": [3340, -200],
       "id": "use-stubs-summarize",
       "name": "Use Stubs for Summarize?"
     },
@@ -479,7 +479,7 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [3190, -100],
+      "position": [3590, -50],
       "id": "summarize-real",
       "name": "Summarize with Claude API",
       "credentials": {
@@ -495,17 +495,17 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3410, -100],
+      "position": [3840, -50],
       "id": "wrap-summarize-response",
       "name": "Wrap Claude Summarize Response"
     },
     {
       "parameters": {
-        "jsCode": "// Parse summary and determine publish status using thresholds from config\nconst input = $input.first().json;\nconst thresholds = input._thresholds || {};\nlet summary;\n\ntry {\n  const text = input.content[0].text;\n  summary = JSON.parse(text);\n} catch (e) {\n  summary = {\n    title: 'Parse Error',\n    tldr: 'Failed to parse summary',\n    summary_bullets: ['Error processing content'],\n    citations: [],\n    deep_dive_markdown: null\n  };\n}\n\nconst classification = input._classification;\n\n// Get thresholds from config\nconst autoPublishRelevance = thresholds.publishing?.auto_publish_relevance || 70;\nconst autoPublishCredibility = thresholds.publishing?.auto_publish_credibility || 60;\n\n// Determine publish status based on gates from config\n// Auto-publish: relevance >= config threshold AND credibility >= config threshold AND has citations\nconst canAutoPublish = \n  classification.freedom_relevance_score >= autoPublishRelevance &&\n  classification.credibility_score >= autoPublishCredibility &&\n  summary.citations.length > 0 &&\n  !classification.safety_concern;\n\nconst status = canAutoPublish ? 'published' : 'queued';\nconst publishedAt = canAutoPublish ? new Date().toISOString() : null;\nconst publishedUrl = canAutoPublish \n  ? `https://libertas.fgu.tech/signals/${input._sourceItemId}`\n  : null;\n\nconsole.log(`Publishing gate: relevance ${classification.freedom_relevance_score} >= ${autoPublishRelevance}, credibility ${classification.credibility_score} >= ${autoPublishCredibility} => ${status}`);\n\nreturn [{\n  json: {\n    sourceItemId: input._sourceItemId,\n    sourceItemUrl: input._sourceItemUrl,\n    title: summary.title,\n    tldr: summary.tldr,\n    summaryBullets: summary.summary_bullets,\n    deepDiveMarkdown: summary.deep_dive_markdown,\n    topics: classification.topics,\n    geo: classification.geo,\n    freedomRelevanceScore: classification.freedom_relevance_score,\n    credibilityScore: classification.credibility_score,\n    citations: summary.citations,\n    status,\n    publishedUrl,\n    publishedAt,\n    safetyConcern: classification.safety_concern,\n    _usedThresholds: {\n      autoPublishRelevance,\n      autoPublishCredibility\n    }\n  }\n}];"
+        "jsCode": "// Parse summary and determine publish status using thresholds from config\nconst input = $input.first().json;\nconst thresholds = input._thresholds || {};\nlet summary;\n\ntry {\n  let text = input.content[0].text;\n  \n  // Strip markdown code blocks if present (Claude often wraps JSON in ```json...```)\n  text = text.trim();\n  if (text.startsWith('```')) {\n    // Remove opening fence (```json or ```)\n    text = text.replace(/^```(?:json)?\\s*\\n?/, '');\n    // Remove closing fence\n    text = text.replace(/\\n?```\\s*$/, '');\n  }\n  \n  summary = JSON.parse(text.trim());\n} catch (e) {\n  console.log('Parse Summary error:', e.message);\n  console.log('Raw text:', input.content?.[0]?.text?.substring(0, 200));\n  summary = {\n    title: 'Parse Error',\n    tldr: 'Failed to parse summary: ' + e.message,\n    summary_bullets: ['Error processing content'],\n    citations: [],\n    deep_dive_markdown: null\n  };\n}\n\nconst classification = input._classification;\n\n// Get thresholds from config\nconst autoPublishRelevance = thresholds.publishing?.auto_publish_relevance || 70;\nconst autoPublishCredibility = thresholds.publishing?.auto_publish_credibility || 60;\n\n// Determine publish status based on gates from config\n// Auto-publish: relevance >= config threshold AND credibility >= config threshold AND has citations\nconst canAutoPublish = \n  classification.freedom_relevance_score >= autoPublishRelevance &&\n  classification.credibility_score >= autoPublishCredibility &&\n  summary.citations.length > 0 &&\n  !classification.safety_concern;\n\nconst status = canAutoPublish ? 'published' : 'queued';\nconst publishedAt = canAutoPublish ? new Date().toISOString() : null;\nconst publishedUrl = canAutoPublish \n  ? `https://libertas.fgu.tech/signals/${input._sourceItemId}`\n  : null;\n\nconsole.log(`Publishing gate: relevance ${classification.freedom_relevance_score} >= ${autoPublishRelevance}, credibility ${classification.credibility_score} >= ${autoPublishCredibility} => ${status}`);\n\nreturn [{\n  json: {\n    sourceItemId: input._sourceItemId,\n    sourceItemUrl: input._sourceItemUrl,\n    title: summary.title,\n    tldr: summary.tldr,\n    summaryBullets: summary.summary_bullets,\n    deepDiveMarkdown: summary.deep_dive_markdown,\n    topics: classification.topics,\n    geo: classification.geo,\n    freedomRelevanceScore: classification.freedom_relevance_score,\n    credibilityScore: classification.credibility_score,\n    citations: summary.citations,\n    status,\n    publishedUrl,\n    publishedAt,\n    safetyConcern: classification.safety_concern,\n    _usedThresholds: {\n      autoPublishRelevance,\n      autoPublishCredibility\n    }\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3520, -300],
+      "position": [4090, -200],
       "id": "parse-summary",
       "name": "Parse Summary & Gates"
     },
@@ -515,7 +515,7 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3630, -300],
+      "position": [4340, -200],
       "id": "validate-summary",
       "name": "Validate Summary"
     },
@@ -525,7 +525,7 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3740, -300],
+      "position": [4590, -200],
       "id": "prepare-insight",
       "name": "Build Insight Query"
     },
@@ -537,7 +537,7 @@
       },
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
-      "position": [3850, -300],
+      "position": [4840, -200],
       "id": "insert-insight",
       "name": "Insert Insight",
       "credentials": {
@@ -553,7 +553,7 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3080, 100],
+      "position": [3340, 100],
       "id": "log-skipped",
       "name": "Log Skipped"
     },
@@ -573,7 +573,7 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3960, -200],
+      "position": [5090, -200],
       "id": "aggregate-results",
       "name": "Aggregate Results"
     },
@@ -587,7 +587,7 @@
       },
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
-      "position": [1100, 200],
+      "position": [1320, 350],
       "id": "update-source-health-success",
       "name": "Update Source Health (Success)",
       "credentials": {
