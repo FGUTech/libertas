@@ -162,5 +162,5 @@ MIT - See [LICENSE](../LICENSE) for details.
 ## Related
 
 - [Libertas Main Repo](../) - Backend workflows and content pipeline
-- [PRD](../PRD.md) - Full product requirements
-- [SPEC](../SPEC.md) - Technical specification
+- [PRD](../docs/PRD.md) - Full product requirements
+- [SPEC](../docs/SPEC.md) - Technical specification

@@ -1,449 +1,687 @@
-# ROADMAP.md — Project Milestones
+# Roadmap
 
-> Phased delivery plan for Libertas. No time estimates—focus on dependencies and deliverables.
+Feature roadmap for Libertas backend infrastructure and n8n workflows, broken into MVP, Nice-to-have, and Future phases.
 
-## Phase Overview
-
-```
-┌─────────────────────────────────────────────────────────────────────────┐
-│  PHASE 0: Foundation                                                    │
-│  Infrastructure, schemas, basic n8n setup                               │
-└─────────────────────────────────────────────────────────────────────────┘
-                                    │
-                                    ▼
-┌─────────────────────────────────────────────────────────────────────────┐
-│  PHASE 1: MVP                                                           │
-│  Daily signals, RSS/JSON feeds, basic publishing                        │
-└─────────────────────────────────────────────────────────────────────────┘
-                                    │
-                                    ▼
-┌─────────────────────────────────────────────────────────────────────────┐
-│  PHASE 2: Inbound & Ideas                                               │
-│  Public intake, project idea generation                                 │
-└─────────────────────────────────────────────────────────────────────────┘
-                                    │
-                                    ▼
-┌─────────────────────────────────────────────────────────────────────────┐
-│  PHASE 3: Enhancement                                                   │
-│  Semantic dedupe, digest, email newsletter                              │
-└─────────────────────────────────────────────────────────────────────────┘
-                                    │
-                                    ▼
-┌─────────────────────────────────────────────────────────────────────────┐
-│  PHASE 4: Automation                                                    │
-│  Vibe coding pipeline, advanced features                                │
-└─────────────────────────────────────────────────────────────────────────┘
-```
+> **Note:** Website-specific features are tracked in `website/docs/ROADMAP.md`.
 
 ---
 
-## Phase 0: Foundation
+# Phase 1: MVP
 
-**Goal:** Establish infrastructure and core patterns.
+Core infrastructure and workflow features required for initial launch.
 
-### Deliverables
+### 1.0 n8n Migration to Managed Hosting
 
-- [x] **P0.1** Repository structure created per CLAUDE.md specification
-- [x] **P0.2** Database schema deployed (GCP Cloud SQL Postgres + pgvector)
-  - `source_items` table
-  - `insights` table
-  - `project_ideas` table
-  - `submissions` table
-  - pgvector extension enabled
-- [x] **P0.3** n8n instance deployed on managed n8n hosting
-- [ ] **P0.4** GCP Cloud Storage bucket configured (`libertas-content`)
-- [x] **P0.5** Environment variables documented and secrets configured
-- [x] **P0.6** JSON schemas created in `/schemas/`
-- [x] **P0.7** Initial prompt templates in `/prompts/`
-- [x] **P0.8** Configuration files created
-  - `config/sources.yml` with 10 seed sources
-  - `config/thresholds.yml` with default values
-- [x] **P0.9** Basic test infrastructure
-- [ ] **P0.10** Vercel project created and linked to repo
-- [ ] **P0.11** Resend account configured with API key
+**Description**: Migrate from Railway-hosted n8n instance to n8n's managed hosting service and connect to GCP Cloud SQL.
 
-### Exit Criteria
+**Requirements**:
+- [ ] Set up n8n managed hosting account/instance
+- [ ] Configure Cloud SQL connection from managed n8n (replace Railway DB)
+- [ ] Export workflow JSONs from Railway n8n instance
+- [ ] Import Workflow A (Daily Ingestion) to managed n8n
+- [ ] Import Workflow B (Weekly Digest) to managed n8n
+- [ ] Import Workflow C (Inbound Intake) to managed n8n
+- [ ] Import Workflow D (Idea Generator) to managed n8n
+- [ ] Set up credentials in new instance (Anthropic API, GitHub API, Resend API)
+- [ ] Test each workflow end-to-end in new environment
+- [ ] Verify database connectivity and data persistence
+- [ ] Update webhook URLs in Vercel/website config
+- [ ] Decommission Railway n8n instance after successful migration
 
-- n8n can connect to GCP Cloud SQL Postgres
-- n8n can connect to GCP Cloud Storage
-- n8n can make Claude API calls
-- Vercel deploys on push to main
-- All config files load without errors
-
-### Dependencies
-
-- Managed n8n hosting account configured
-- GCP project with Cloud SQL and Cloud Storage enabled
-- Firebase project created for auth
-- Vercel account linked to GitHub repo
-- Resend account created
-- Anthropic API key available
-- GitHub repo created
+**Implementation Notes**:
+- Workflows A-D were developed on Railway-hosted n8n; need migration to managed hosting
+- Cloud SQL connection string format differs from Railway Postgres
+- Credentials will need to be re-entered (encryption keys differ between instances)
+- Test with non-production data before switching over
+- Keep Railway instance running until migration verified
 
 ---
 
-## Phase 1: MVP — Daily Signals Pipeline
+### 1.1 Firebase Authentication Setup
 
-**Goal:** Automated ingestion and publishing of daily signals.
+**Description**: Configure Firebase Auth for the platform.
 
-### Deliverables
+**Requirements**:
+- [ ] Create Firebase project and enable Auth
+- [ ] Configure email/password authentication provider
+- [ ] Set up Firebase environment variables
+- [ ] Document auth integration for website team
 
-- [x] **P1.1** Workflow A: Daily Ingestion (core loop)
-  - Cron trigger (every 6 hours)
-  - RSS feed fetching
-  - Web page fetching
-  - Content extraction (HTML → text)
-  - Hash-based deduplication
-  - Store in `source_items`
-
-- [x] **P1.2** LLM Classification integration
-  - Classifier agent calling LLM
-  - Schema validation of output
-  - Scoring and tagging stored
-
-- [x] **P1.3** LLM Summarization integration
-  - Summarizer agent for qualifying content
-  - TL;DR and bullet generation
-  - Insight record creation
-
-- [x] **P1.4** Publishing pipeline
-  - Markdown file generation with frontmatter
-  - RSS 2.0 feed generation
-  - JSON Feed 1.1 generation
-  - Git commit automation
-
-- [x] **P1.5** Quality gates
-  - Auto-publish for high-confidence items
-  - Queue for review otherwise
-  - Citation requirement enforcement
-
-- [x] **P1.6** Error handling
-  - Retry logic for failed fetches
-  - Graceful degradation for source failures
-  - Error notifications
-
-- [x] **P1.7** Testing
-  - Unit tests for parsing/hashing
-  - Golden tests for classifier output
-  - Golden tests for summarizer output
-  - Feed validation tests
-
-### Exit Criteria
-
-- Workflow runs automatically every 6 hours
-- At least 1 signal published per day (with real sources)
-- RSS feed validates against RSS 2.0 spec
-- JSON feed validates against JSON Feed 1.1 spec
-- No duplicate content after multiple runs
-- All tests passing
-
-### Dependencies
-
-- Phase 0 complete
-- At least 10 seed sources in config
-- LLM API configured and tested
+**Implementation Notes**:
+- Firebase project should be in same GCP organization
+- Environment vars: `FIREBASE_PROJECT_ID`, `FIREBASE_API_KEY`, etc.
 
 ---
 
-## Phase 2: Inbound & Ideas
+### 1.2 Integrate Config Files into Workflows
 
-**Goal:** Public intake and project idea generation.
+**Description**: Wire `config/sources.yml` and `config/thresholds.yml` into n8n workflows.
 
-### Deliverables
+**Requirements**:
+- [ ] Fetch `sources.yml` from GitHub raw URL or website endpoint
+- [ ] Replace hardcoded source list in Workflow A with dynamic source loading
+- [ ] Fetch `thresholds.yml` values for scoring gates (relevance >= 70, credibility >= 60)
+- [ ] Load `thresholds.yml` values for circuit breaker settings (5 failures, 24hr cooldown)
+- [ ] Load `thresholds.yml` values for idea generation thresholds (relevance >= 80)
+- [ ] Load `thresholds.yml` rate limiting values for intake webhook
+- [ ] Parse YAML in n8n (use Code node or HTTP + yaml parser)
 
-- [x] **P2.1** Workflow C: Inbound Intake
-  - Webhook endpoint `/api/intake`
-  - Input validation and sanitization
-  - Rate limiting
-  - Submission storage
-
-- [x] **P2.2** Intake classification
-  - IntakeClassifier agent integration
-  - Risk level assessment
-  - Category tagging
-
-- [x] **P2.3** GitHub issue creation
-  - Issue template formatting
-  - Auto-creation from submissions
-  - Link back to submission record
-
-- [x] **P2.4** Internal notifications
-  - Slack/Matrix/Discord webhook (configurable)
-  - Notification for high-risk submissions
-
-- [x] **P2.5** Public intake form
-  - Simple HTML form for FGU.tech
-  - Safety mode option
-  - Clear privacy notice
-
-- [x] **P2.6** Workflow D: Idea Generator
-  - Query high-signal insights
-  - Pattern detection
-  - IdeaSynthesizer agent integration
-
-- [x] **P2.7** Project idea storage and routing
-  - ProjectIdea record creation
-  - GitHub issue creation for ideas
-  - Status tracking
-
-- [x] **P2.8** Testing
-  - Webhook endpoint tests
-  - Rate limit verification
-  - Idea generator golden tests
-
-### Exit Criteria
-
-- Public can submit via web form
-- Submissions appear as GitHub issues
-- At least 3 project ideas generated per week (with real inputs)
-- No PII stored unless explicitly provided
-- Rate limiting prevents abuse
-
-### Dependencies
-
-- Phase 1 complete
-- GitHub repo/org configured for issues
-- Notification channel configured
+**Implementation Notes**:
+- Currently Workflow A has 6 hardcoded sources; `sources.yml` defines 10
+- Threshold values are hardcoded throughout workflows instead of reading from config
+- **Option A**: GitHub raw URL (e.g., `https://raw.githubusercontent.com/{org}/libertas/main/config/sources.yml`)
+- **Option B**: Next.js API route that reads and serves the config files as JSON
+- **Option C**: Symlink/copy configs to `website/public/` for static serving
+- Config changes require git push but not workflow redeployment
 
 ---
 
-## Phase 3: Enhancement
+### 1.3 Integrate Agent Prompts into Workflows
 
-**Goal:** Improved quality and additional distribution channels.
+**Description**: Load agent prompts from `agents/*.md` files for Claude API calls.
 
-### Deliverables
+**Requirements**:
+- [ ] Fetch prompt templates from GitHub raw URLs or website endpoint
+- [ ] Workflow A: Load `agents/classify.md` for classifier prompt
+- [ ] Workflow A: Load `agents/summarize.md` for summarizer prompt
+- [ ] Workflow B: Load `agents/digest.md` for digest composer prompt
+- [ ] Workflow C: Load `agents/intake-classify.md` for intake classification prompt
+- [ ] Workflow D: Load `agents/generate-idea.md` for idea synthesizer prompt
+- [ ] Cache prompts in workflow (avoid fetching on every item)
 
-- [ ] **P3.1** Semantic deduplication
-  - pgvector integration via GCP Cloud SQL
-  - Embedding generation for content (Claude API)
-  - Similarity threshold checking
-  - Near-duplicate detection
-  - _Note: Interface exists in `deduper.ts` but returns no-op. Requires pgvector setup._
-
-- [x] **P3.2** Workflow B: Weekly Digest
-  - Weekly cron trigger
-  - Insight aggregation
-  - DigestComposer agent integration
-  - Digest publishing
-
-- [x] **P3.3** Email newsletter
-  - Resend integration
-  - Subscriber management
-  - Digest email formatting
-  - No tracking pixel verification (Resend default)
-
-- [x] **P3.4** Enhanced classification
-  - Multi-source correlation
-  - Trend detection
-  - Improved scoring calibration
-
-- [ ] **P3.5** Admin dashboard (optional)
-  - Review queue interface
-  - Manual publish/reject
-  - Source health monitoring
-
-- [x] **P3.6** Testing
-  - Semantic dedupe accuracy tests
-  - Digest generation tests
-  - Email deliverability tests
-
-### Exit Criteria
-
-- Weekly digest publishes automatically
-- Semantic duplicates detected (< 5% duplicate rate)
-- Email newsletter sends without tracking
-- Review queue accessible for manual intervention
-
-### Dependencies
-
-- Phase 2 complete
-- Vector store provisioned (if using)
-- Email infrastructure configured (if using)
+**Implementation Notes**:
+- Agent prompts exist but aren't loaded dynamically; currently would need copy/paste into n8n nodes
+- **Option A**: GitHub raw URL (e.g., `https://raw.githubusercontent.com/{org}/libertas/main/agents/classify.md`)
+- **Option B**: Next.js API route that serves prompt files
+- **Option C**: Symlink/copy to `website/public/agents/` for static serving
+- Prompt updates via git push; no workflow changes needed
+- `agents/AGENTS.md` contains prompt engineering guidelines for reference
 
 ---
 
-## Phase 4: Automation
+### 1.4 Integrate JSON Schemas for Validation
 
-**Goal:** Advanced automation including vibe coding pipeline.
+**Description**: Wire `schemas/*.json` for runtime validation of LLM outputs and data.
 
-### Deliverables
+**Requirements**:
+- [ ] Fetch schemas from GitHub raw URLs or website endpoint
+- [ ] Validate classifier output against `schemas/source-item.schema.json`
+- [ ] Validate insight output against `schemas/insight.schema.json`
+- [ ] Validate project idea output against `schemas/project-idea.schema.json`
+- [ ] Validate intake submission against `schemas/submission.schema.json`
+- [ ] Add validation nodes in workflows after LLM responses
+- [ ] Handle validation failures gracefully (log, retry, or queue for review)
 
-- [ ] **P4.1** Workflow E: Vibe Coding Pipeline
-  - Gate validation logic
-  - Category allowlist enforcement
-  - Branch creation automation
-
-- [ ] **P4.2** Scaffold generation
-  - ScaffoldGenerator agent integration
-  - File generation and commit
-  - CI workflow inclusion
-
-- [ ] **P4.3** PR automation
-  - Draft PR creation
-  - Reviewer assignment
-  - Status tracking
-
-- [ ] **P4.4** Safety controls
-  - Human approval requirement (hard-coded)
-  - Audit logging
-  - Rollback capability
-
-- [ ] **P4.5** Additional source types
-  - Nostr integration (if desired)
-  - GitHub repo watching
-  - Mailing list ingestion
-
-- [ ] **P4.6** Advanced analytics (privacy-preserving)
-  - Aggregate metrics dashboard
-  - Workflow success rates
-  - Content quality trends
-
-- [ ] **P4.7** Documentation
-  - Operator runbook
-  - Source onboarding guide
-  - Troubleshooting guide
-
-- [ ] **P4.8** Wire JSON schemas for runtime validation
-  - Implement `loadSchema()` in `src/utils/validation.ts` (currently stubbed)
-  - Replace hand-written validators with AJV-compiled schemas from `/schemas/`
-  - Single source of truth: JSON schemas drive both documentation and runtime validation
-  - Add tests to ensure schemas and TypeScript types stay in sync
-  - _Technical debt: P0.6 created schemas but didn't wire them up_
-
-### Exit Criteria
-
-- Vibe coding creates PRs (never auto-merged)
-- All safety gates enforced
-- Comprehensive documentation complete
-- System runs reliably for 30 consecutive days
-
-### Dependencies
-
-- Phase 3 complete
-- Human reviewer process defined
-- Full test coverage
+**Implementation Notes**:
+- Schemas exist but validation currently uses hand-written checks or none
+- **Option A**: GitHub raw URL (e.g., `https://raw.githubusercontent.com/{org}/libertas/main/schemas/insight.schema.json`)
+- **Option B**: Next.js API route or static serving from `website/public/schemas/`
+- n8n has built-in JSON Schema validation via Code node or IF node with JSON parse
+- Validation catches malformed LLM outputs before database insertion
+- Cache schemas; they change rarely
 
 ---
 
-## Milestone Checklist
+### 1.5 Workflow A: Claude API Integration
 
-### MVP Complete (Phases 0-1)
+**Description**: Replace classification and summarization stubs with real Claude API calls.
 
-- [x] Infrastructure deployed
-- [x] Daily ingestion running
-- [x] Signals publishing to RSS/JSON
-- [x] Deduplication working
-- [x] Tests passing
-- [x] Documentation current
+**Requirements**:
+- [ ] Set up n8n credential for Anthropic API (Header Auth with x-api-key)
+- [ ] Swap Classify Stub → real Claude API HTTP request (load from `agents/classify.md`)
+- [ ] Swap Summarize Stub → real Claude API HTTP request (load from `agents/summarize.md`)
+- [ ] Validate output against JSON schemas (per 1.4)
+- [ ] Test with golden test cases
 
-### Full v1 Complete (Phases 0-3)
-
-- [x] All MVP criteria met
-- [x] Public intake operational
-- [x] Project ideas generating
-- [x] Weekly digest publishing
-- [ ] Review queue accessible
-- [x] Email newsletter functional (if enabled)
-
-### Production Ready (Phases 0-4)
-
-- [ ] All v1 criteria met
-- [ ] Vibe coding pipeline gated and working
-- [ ] 30-day reliability demonstrated
-- [ ] Runbook complete
-- [ ] Monitoring and alerting configured
+**Implementation Notes**:
+- Claude API nodes exist but are disabled; enable by setting `disabled: false`
+- Use structured output mode for reliable JSON parsing
+- Current stub uses keyword-based fallback classifier
+- Depends on 1.3 (agent prompt loading) and 1.4 (schema validation)
 
 ---
 
-## Risk Register
+### 1.6 Workflow A: Feed Publishing
 
-| Risk | Likelihood | Impact | Mitigation |
-|------|------------|--------|------------|
-| X/Twitter API restrictions | High | Medium | Prioritize RSS; treat X as optional |
-| LLM rate limits | Medium | High | Caching, fallback models, queue management |
-| Source availability | Medium | Medium | Circuit breaker pattern, multiple sources |
-| Prompt injection | Medium | High | Input sanitization, output validation |
-| Low-quality content published | Medium | Medium | Conservative thresholds, review queue |
-| Activist safety incident | Low | Critical | Safety checks, human review, redaction |
+**Description**: Generate and publish RSS/JSON feeds for consumed content.
+
+**Requirements**:
+- [ ] Add node to generate/update RSS feed (`/rss.xml`)
+- [ ] Add node to generate/update JSON feed (`/feed.json`)
+- [ ] Add node to commit published insights to GitHub repo as markdown files
+- [ ] Set up n8n credential for GitHub API (Bearer token)
+- [ ] Validate RSS 2.0 and JSON Feed 1.1 compliance
+
+**Implementation Notes**:
+- Feeds should include all published insights with status='published'
+- Markdown files go in `/content/insights/{year}/{month}/{slug}.md`
+- Use frontmatter format matching website expectations
 
 ---
 
-## Decision Points
+### 1.7 Workflow A: Raw Content Storage
 
-Decisions that should be made before proceeding:
+**Description**: Archive raw HTML content to GCS for provenance.
 
-### Before Phase 1 ✅ RESOLVED
+**Requirements**:
+- [ ] Set up GCS bucket (`libertas-content`)
+- [ ] Set up n8n credential for GCP Cloud Storage
+- [ ] Add node to store raw HTML at `/raw/{year}/{month}/{day}/{id}.html`
+- [ ] Store GCS URL reference in `source_items.metadata`
 
-- [x] Which LLM provider? → **Claude API (Anthropic)** — best structured output support
-- [x] Self-hosted n8n or cloud? → **Managed n8n hosting** — dedicated hosting, reduced operational overhead
-- [x] Which hosting provider for infrastructure?
-  - **Managed n8n hosting** for workflow orchestration
-  - **GCP Cloud SQL** for Postgres + pgvector
-  - **GCP Cloud Storage** for raw content and feeds
-  - **Firebase Auth** for user authentication
-  - **Vercel** for Next.js static site
-  - **Resend** for email delivery
+**Implementation Notes**:
+- Use standard storage class (not nearline/coldline) for frequent access
+- Consider lifecycle policy to move to coldline after 90 days
+
+---
+
+### 1.8 Workflow A: Source Health & Error Handling
+
+**Description**: Robust error handling with circuit breaker pattern.
+
+**Requirements**:
+- [ ] Enable Update Source Health node (currently disabled)
+- [ ] Add error handling nodes with retry logic per source
+- [ ] Add node to skip degraded sources (check `source_health` table)
+- [ ] Configure circuit breaker: 5 failures → 24hr cooldown (per `thresholds.yml`)
+
+**Implementation Notes**:
+- `source_health` table and triggers already exist in schema
+- Circuit breaker logic exists but node is disabled
+
+---
+
+### 1.9 Workflow B: Claude API Integration
+
+**Description**: Replace digest composer stub with real Claude API.
+
+**Requirements**:
+- [ ] Swap DigestComposer Stub → real Claude API HTTP request (use `agents/digest.md` prompt)
+- [ ] Set up n8n credential for Anthropic API (if not already from 1.5)
+- [ ] Include emerging patterns and trend detection in prompt
+- [ ] Validate digest output structure
+
+**Implementation Notes**:
+- DigestComposer node exists but is disabled; stub is active
+- Consider fallback if Claude API fails (publish digest without LLM enhancement)
+
+---
+
+### 1.10 Workflow B: GitHub Publishing
+
+**Description**: Commit weekly digests to GitHub repository.
+
+**Requirements**:
+- [ ] Swap GitHub Commit Stub → real GitHub API HTTP request
+- [ ] Set up n8n credential for GitHub API (Bearer token)
+- [ ] Handle file update case (fetch existing file SHA for updates)
+- [ ] Commit digest markdown to `/content/digests/weekly-{date}.md`
+- [ ] Update feed files alongside digest commit
+
+**Implementation Notes**:
+- GitHub API requires SHA of existing file for updates
+- Consider atomic commit of digest + updated feeds
+
+---
+
+### 1.11 Workflow B: Email Newsletter (Resend)
+
+**Description**: Send weekly digest via email using Resend.
+
+**Requirements**:
+- [ ] Set up Resend account with API key
+- [ ] Set up n8n credential for Resend API (Bearer token)
+- [ ] Swap Resend Email Stub → real Resend API HTTP request
+- [ ] Configure subscriber list/audience management
+- [ ] Add unsubscribe link handling
+- [ ] Verify no tracking pixels in emails (Resend default)
+
+**Implementation Notes**:
+- Email template stub exists and generates proper HTML
+- Resend API endpoint: `https://api.resend.com/emails`
+- Consider double opt-in for subscribers
+
+---
+
+### 1.12 Workflow B: Project Ideas in Digest
+
+**Description**: Include generated project ideas in weekly digest.
+
+**Requirements**:
+- [ ] Re-add Query Recent Project Ideas node
+- [ ] Wire project ideas into DigestComposer input
+- [ ] Include "Project Ideas Generated This Week" section in digest output
+
+**Implementation Notes**:
+- Query `project_ideas` table for items with `created_at` in digest period
+- Only include ideas with status='pending' or 'approved'
+
+---
+
+### 1.13 Workflow C: API Integration Verification
+
+**Description**: Complete intake workflow API integrations.
+
+**Requirements**:
+- [x] Webhook endpoint functional (implemented)
+- [x] Database insertion working (implemented)
+- [ ] Set up n8n credential for Anthropic API (Header Auth with x-api-key)
+- [ ] Set up n8n credential for GitHub API (Bearer token)
+- [ ] Swap Classify Stub → real Claude API HTTP request (use `agents/intake-classify.md`)
+- [ ] Swap GitHub Issue Stub → real GitHub API HTTP request
+- [ ] Populate `priority`, `is_spam`, `requires_response` fields via LLM classification
+- [ ] Add rate limiting node after webhook (prevent abuse)
+- [ ] Add error handling nodes with retry logic
+
+**Implementation Notes**:
+- This workflow is marked active (`"active": true`)
+- Credentials may be shared with Workflow A (1.5) and Workflow D (1.15) if already configured
+
+---
+
+### 1.14 Workflow D: Claude API Integration
+
+**Description**: Replace idea synthesizer stub with real Claude API.
+
+**Requirements**:
+- [ ] Set up n8n credential for Anthropic API (Header Auth with x-api-key)
+- [ ] Swap IdeaSynthesizer Stub → real Claude API HTTP request (use `agents/generate-idea.md` prompt)
+- [ ] Validate generated idea against project_idea schema
+- [ ] Handle empty clusters edge case gracefully
+- [ ] Add logging/alerting for failed LLM calls
+- [ ] Add error handling nodes with retry logic
+
+**Implementation Notes**:
+- Stub currently generates complete proposals with threat_model, MVP scope
+- Real API should maintain same output structure
+- Credentials may be shared with Workflow A (1.5) and Workflow C (1.13) if already configured
+
+---
+
+### 1.15 Workflow D: GitHub Issue Creation
+
+**Description**: Create GitHub issues for generated project ideas.
+
+**Requirements**:
+- [ ] Swap GitHub Issue Stub → real GitHub API HTTP request
+- [ ] Set up n8n credential for GitHub API (if not already)
+- [ ] Configure labels (currently hardcoded: `project-idea`, `auto-generated`)
+- [ ] Link derived insights in issue body to actual published URLs
+- [ ] Update `project_ideas.github_issue_url` with created issue URL
+
+**Implementation Notes**:
+- Consider adding assignees or project board integration
+- Issue template should include problem statement, threat model, MVP scope
+
+---
+
+### 1.16 Vercel Deployment
+
+**Description**: Configure Vercel project for automatic deployments.
+
+**Requirements**:
+- [ ] Create Vercel project linked to GitHub repo
+- [ ] Configure environment variables in Vercel dashboard
+- [ ] Set up automatic deploys on push to main
+- [ ] Configure preview deployments for PRs
+
+**Implementation Notes**:
+- Website is in `/website` subdirectory; configure root directory in Vercel
+- Required env vars documented in `.env.example`
+
+---
+
+# Phase 2: Nice-to-have
+
+Features that enhance the system but aren't critical for launch.
+
+### 2.1 Semantic Deduplication
+
+**Description**: Use vector embeddings to detect near-duplicate content.
+
+**Requirements**:
+- [ ] Enable pgvector extension in Cloud SQL (already in schema)
+- [ ] Generate embeddings for content via Claude API
+- [ ] Implement similarity threshold checking (0.85 per `thresholds.yml`)
+- [ ] Add near-duplicate detection before insight generation
+- [ ] Wire up `deduper.ts` interface (currently returns no-op)
+
+**Implementation Notes**:
+- Interface exists in codebase but returns no-op
+- pgvector enabled in migration but not utilized
+- Consider embedding only title+tldr for efficiency
+
+---
+
+### 2.2 Config Management UI
+
+**Description**: Web UI for editing config files without direct repo access.
+
+**Requirements**:
+- [ ] Admin page to view/edit `sources.yml` content
+- [ ] Admin page to view/edit `thresholds.yml` content
+- [ ] Commit changes back to GitHub via API
+- [ ] Preview changes before committing
+- [ ] Audit trail via git history
+
+**Implementation Notes**:
+- Basic config loading implemented in 1.2 (MVP) via GitHub raw URLs
+- This adds a UI layer for non-developers to manage configs
+- Uses GitHub API to commit changes (no separate backend needed)
+- Alternative: direct file editing via GitHub web UI
+
+---
+
+### 2.3 Additional Source Types
+
+**Description**: Support non-RSS content sources.
+
+**Requirements**:
+- [ ] Web scraping for pages without RSS
+- [ ] X/Twitter API integration (with rate limit awareness)
+- [ ] Nostr relay subscription
+- [ ] Email list ingestion (OP_DAILY, Bitcoin mailing list)
+- [ ] GitHub repo watching for relevant projects
+
+**Implementation Notes**:
+- Source types defined in `sources.yml`: rss, web, x_account, nostr, github, email
+- X/Twitter has high API restriction risk; deprioritize
+- Email sources require parsing mailing list archives
+
+---
+
+### 2.4 Enhanced Classification Fields
+
+**Description**: Extract additional metadata in classifier.
+
+**Requirements**:
+- [ ] Add geo extraction (countries/regions mentioned)
+- [ ] Add key_entities extraction (people, orgs, technologies)
+- [ ] Store extracted fields in `source_items.metadata`
+
+**Implementation Notes**:
+- Classifier prompt can be extended for these fields
+- Currently returns empty arrays for geo
+
+---
+
+### 2.5 Cross-topic Pattern Detection
+
+**Description**: Detect patterns spanning multiple topics for idea generation.
+
+**Requirements**:
+- [ ] Improve clustering algorithm (currently groups by primary topic only)
+- [ ] Identify insights that span multiple themes
+- [ ] Feed cross-topic patterns to IdeaSynthesizer
+
+**Implementation Notes**:
+- Current clustering in Workflow D is single-topic
+- Consider topic co-occurrence analysis
+
+---
+
+### 2.6 Project Idea Deduplication
+
+**Description**: Prevent near-duplicate project proposals.
+
+**Requirements**:
+- [ ] Add deduplication check before idea creation
+- [ ] Use semantic similarity on problem statements
+- [ ] Skip or merge similar proposals
+
+**Implementation Notes**:
+- Requires 2.1 (Semantic Deduplication) as foundation
+
+---
+
+### 2.7 Extended Idea Metadata Storage
+
+**Description**: Store additional fields from idea generation.
+
+**Requirements**:
+- [ ] Store `technical_dependencies` array
+- [ ] Store `suggested_stack` recommendations
+- [ ] Store `prior_art` references
+- [ ] Store `open_questions` list
+
+**Implementation Notes**:
+- These fields are generated by stub but not inserted into DB
+- May require schema migration to add columns
+
+---
+
+### 2.8 Idea Creation Notifications
+
+**Description**: Notify team when new project ideas are generated.
+
+**Requirements**:
+- [ ] Add notification on idea creation
+- [ ] Support Slack, Discord, or email channels
+- [ ] Include idea summary and GitHub issue link
+
+**Implementation Notes**:
+- Configurable notification channel per `sources.yml` pattern
+
+---
+
+### 2.9 Admin Dashboard
+
+**Description**: Web interface for content review and system monitoring.
+
+**Requirements**:
+- [ ] Review queue interface for pending insights
+- [ ] Manual publish/reject actions
+- [ ] Source health monitoring display
+- [ ] Workflow execution status
+
+**Implementation Notes**:
+- Could be separate admin section in website
+- Or standalone tool (n8n has limited UI capabilities)
+
+---
+
+### 2.10 JSON Schema Runtime Validation
+
+**Description**: Wire JSON schemas for runtime validation throughout system.
+
+**Requirements**:
+- [ ] Implement `loadSchema()` in validation utilities
+- [ ] Replace hand-written validators with AJV-compiled schemas from `/schemas/`
+- [ ] Single source of truth: schemas drive docs and runtime validation
+- [ ] Add tests to ensure schemas and TypeScript types stay in sync
+
+**Implementation Notes**:
+- Schemas exist in `/schemas/` but aren't wired up
+- Technical debt from Phase 0
+
+---
+
+# Phase 3: Future Improvements
+
+Features for future consideration after core functionality is stable.
+
+### 3.1 Workflow E: Vibe Coding Pipeline
+
+**Description**: Automated code scaffolding from approved project ideas.
+
+**Requirements**:
+- Gate validation logic (human approval required)
+- Category allowlist enforcement
+- Branch creation automation
+- ScaffoldGenerator agent integration
+- File generation and commit
+- Draft PR creation with reviewer assignment
+- Audit logging and rollback capability
+
+**Notes**: Human approval is a hard requirement; never auto-merge.
+
+---
+
+### 3.2 Social Media Bots
+
+**Description**: Automated posting to social platforms.
+
+**Requirements**:
+- Twitter/X bot for insight highlights
+- Nostr relay publishing
+- LinkedIn professional updates
+- TikTok content adaptation (if applicable)
+
+**Notes**: Each platform has different content formatting needs.
+
+---
+
+### 3.3 Self-hosted LLM
+
+**Description**: Run local LLM for cost reduction and privacy.
+
+**Requirements**:
+- Evaluate MiniMax or similar models
+- Self-hosting infrastructure
+- Fallback to Claude for complex tasks
+- Performance benchmarking vs Claude
+
+**Notes**: Only pursue if API costs become prohibitive.
+
+---
+
+### 3.4 Nostr Deep Integration
+
+**Description**: Full Nostr protocol support for decentralized publishing.
+
+**Requirements**:
+- Cross-post insights to Nostr relays
+- Read comments from Nostr
+- NIP-05 verification for Libertas identity
+- Nostr key management
+
+**Notes**: Aligns with censorship-resistant ethos.
+
+---
+
+### 3.5 Advanced Analytics Dashboard
+
+**Description**: Privacy-preserving system analytics.
+
+**Requirements**:
+- Aggregate metrics (no individual tracking)
+- Workflow success rates
+- Content quality trends over time
+- Source reliability metrics
+
+**Notes**: Must maintain no-tracking privacy commitment.
+
+---
+
+### 3.6 Multi-language Content Support
+
+**Description**: Process and publish content in multiple languages.
+
+**Requirements**:
+- Language detection in classifier
+- Translation pipeline (or language-specific prompts)
+- Multi-language feed generation
+- RTL support for Arabic/Hebrew sources
+
+**Notes**: Start with Spanish given freedom tech community.
+
+---
+
+### 3.7 Comprehensive Documentation
+
+**Description**: Complete operational documentation.
+
+**Requirements**:
+- Operator runbook
+- Source onboarding guide
+- Troubleshooting guide
+- Disaster recovery procedures
+- Backup and restore documentation
+
+**Notes**: Critical for team onboarding and incident response.
+
+---
+
+### 3.8 Monitoring and Alerting
+
+**Description**: Production monitoring infrastructure.
+
+**Requirements**:
+- Workflow failure alerts
+- Database performance monitoring
+- API rate limit warnings
+- Source degradation notifications
+
+**Notes**: Consider Grafana or similar for dashboards.
+
+---
+
+# Implementation Priority Matrix
+
+| Feature | Impact | Effort | Priority |
+|---------|--------|--------|----------|
+| n8n Migration to Managed Hosting | Critical | Medium | P0 |
+| Firebase Auth Setup | High | Low | P0 |
+| Config Files Integration | High | Medium | P0 |
+| Agent Prompts Integration | High | Medium | P0 |
+| JSON Schema Validation | High | Medium | P0 |
+| Workflow A Claude Integration | High | Medium | P0 |
+| Workflow A Feed Publishing | High | Medium | P0 |
+| Workflow B Email Newsletter | High | Low | P0 |
+| Workflow D GitHub Issues | Medium | Low | P0 |
+| Vercel Deployment | High | Low | P0 |
+| Semantic Deduplication | Medium | High | P1 |
+| Config Management UI | Low | Medium | P1 |
+| Additional Source Types | Medium | High | P1 |
+| Admin Dashboard | Medium | High | P1 |
+| Vibe Coding Pipeline | Low | High | P2 |
+| Social Media Bots | Low | High | P2 |
+| Self-hosted LLM | Low | High | P2 |
+
+---
+
+# Current State Summary
+
+| Component | Status | Notes |
+|-----------|--------|-------|
+| n8n Migration | 0% | Workflows on Railway; need migration to managed n8n hosting |
+| Database Schema | 100% | Fully implemented with all tables and indexes |
+| Agent Prompts (files) | 100% | All 6 agent prompts written in `agents/` |
+| Agent Prompts (integration) | 0% | Not loaded by workflows; prompts need copy/paste |
+| Config Files (files) | 100% | sources.yml and thresholds.yml configured |
+| Config Files (integration) | 0% | Workflows use hardcoded values, not config files |
+| JSON Schemas (files) | 100% | All schemas exist in `schemas/` |
+| JSON Schemas (validation) | 0% | Not wired for runtime validation |
+| Workflow A Structure | 85% | Complete pipeline, Claude nodes disabled |
+| Workflow B Structure | 80% | Complete pipeline, stubs active |
+| Workflow C Structure | 90% | Active workflow, needs verification |
+| Workflow D Structure | 80% | Complete pipeline, stubs active |
+| Firebase Auth | 0% | Documented but not implemented |
+| GCS Integration | 0% | Not implemented |
+| Resend Email | 20% | Template exists, API not wired |
+| Feed Generation | 10% | Doc page exists, endpoints missing |
+
+---
+
+# Decision Points
+
+### Before MVP Launch
+
+- [ ] GitHub org for issues/repos (likely `FGUTech/libertas`)
+- [ ] Notification channel preference (Slack/Matrix/Discord)
+- [ ] Subscriber list management strategy
 
 ### Before Phase 2
 
-- [ ] GitHub org for issues/repos? → Likely `FGUTech/libertas`
-- [ ] Notification channel preference (Slack/Matrix/Discord)?
+- [ ] Vector embedding model selection (Claude vs dedicated embedding model)
+- [ ] Source expansion priority order
 
-### Before Phase 3 ✅ RESOLVED
+### Before Phase 3
 
-- [x] Include email newsletter in scope? → **Yes, via Resend**
-- [x] Vector store choice? → **pgvector via GCP Cloud SQL** (no separate service needed)
-
-### Before Phase 4
-
-- [ ] Categories allowed for vibe coding?
-- [ ] Human reviewer assignment process?
+- [ ] Categories allowed for vibe coding
+- [ ] Human reviewer assignment process
+- [ ] Social platform account ownership
 
 ---
 
-## Success Metrics by Phase
-
-### Phase 1 Success
-
-- Workflow success rate ≥ 95%
-- ≥ 1 signal/day published
-- 0 duplicate content
-- RSS/JSON feeds valid
-
-### Phase 2 Success
-
-- Intake → GitHub issue latency < 5 minutes
-- ≥ 3 project ideas/week
-- 0 PII leaks
-- Rate limiting effective
-
-### Phase 3 Success
-
-- < 5% semantic duplicate rate
-- Weekly digest published on schedule
-- Email unsubscribe works (if applicable)
-
-### Phase 4 Success
-
-- 100% human review on vibe coding PRs
-- 30-day uptime ≥ 99%
-- Documentation completeness verified
-
----
-
-## Definition of Done (v1)
-
-The project is v1 complete when:
-
-1. **Workflows A, B, C, D** exist, are exportable, and run reliably
-2. **FGU.tech** receives new posts automatically
-3. **RSS + JSON feeds** are generated and valid
-4. **Inbound form** creates GitHub issues
-5. **Provenance** is stored for all content
-6. **Deduplication** prevents duplicates
-7. **Configuration** is editable without code changes
-8. **Documentation** is complete and current
-
----
-
-*Update this roadmap as phases complete and requirements evolve.*
+*Last updated based on codebase analysis. Update as phases complete.*

@@ -1,299 +1,126 @@
-# CLAUDE.md — Libertas
+# CLAUDE.md
 
-> Agentic context file for Claude Code. Read this first.
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Project Identity
+## Project Overview
 
-**Libertas** is a fully automated, privacy-preserving research and publishing platform for Freedom Tech. It converts global signals about sovereignty, censorship resistance, and civil liberties into actionable insights, published content, and project ideas.
+Libertas is an automated, privacy-preserving research and publishing platform for Freedom Tech topics. Built by the Freedom Go Up (FGU) squad at StarkWare, it ingests content from curated sources, classifies relevance using Claude AI, generates insights and project ideas, and publishes via RSS/JSON feeds and email newsletters.
 
-**Repository:** https://github.com/FGUTech/libertas
-**Organization:** StarkWare — Freedom Go Up (FGU)
-**Core constraint:** n8n workflows as the orchestrator, agentic-first architecture.
-
-## Quick Context Files
-
-| File | Purpose |
-|------|---------|
-| `CLAUDE.md` | You are here. Overall guidance and conventions. |
-| `SPEC.md` | Technical architecture, data models, API contracts. |
-| `AGENTS.md` | LLM agent behaviors, prompts, structured outputs. |
-| `ROADMAP.md` | Milestones, phases, and delivery checkpoints. |
-| `PRD.md` | Full product requirements (source of truth for scope). |
-| `INFRA_DEPLOY.md` | Deployment guide for GCP Cloud SQL, managed n8n hosting, Vercel. |
-
-**Always read `SPEC.md` before implementing data models or workflows.**
-**Always read `AGENTS.md` before writing LLM prompts or agent logic.**
-**Always read `INFRA_DEPLOY.md` before deploying or configuring services.**
-
----
-
-## Guiding Principles (Non-Negotiable)
-
-These principles MUST shape every design decision:
-
-1. **Permissionless** — No accounts, paywalls, or gatekeepers for outputs.
-2. **Open source** — Permissive licensing. Default to transparency.
-3. **Resilient** — Graceful degradation. Workflows must handle failures.
-4. **Privacy-first** — No tracking pixels. No fingerprinting. Minimal logs.
-5. **Idempotent** — Re-running any workflow produces identical results (no duplicates).
-6. **Citation-grounded** — Every insight must cite sources. No hallucinated claims.
-
----
-
-## Repository Structure
+## Architecture
 
 ```
-libertas/
-├── CLAUDE.md            # This file
-├── SPEC.md              # Technical specification
-├── AGENTS.md            # Agent behaviors and prompts
-├── ROADMAP.md           # Project milestones
-├── PRD.md               # Product requirements
-├── docs/                # Additional documentation
-├── schemas/             # JSON schemas for data models
-│   ├── source-item.schema.json
-│   ├── insight.schema.json
-│   ├── project-idea.schema.json
-│   └── submission.schema.json
-├── prompts/             # Versioned LLM prompt templates
-│   ├── classify.md
-│   ├── summarize.md
-│   ├── generate-idea.md
-│   └── digest.md
-├── config/              # Runtime configuration
-│   ├── sources.yml      # Seed sources (editable without deploy)
-│   └── thresholds.yml   # Scoring thresholds
-├── n8n/                 # n8n workflow exports
-│   └── workflows/
-├── site-content/        # Published content output
-│   ├── posts/
-│   ├── rss.xml
-│   └── feed.json
-├── scripts/             # Utility scripts
-└── tests/               # Test suites
-    ├── unit/
-    ├── integration/
-    └── golden/          # LLM output validation snapshots
+┌─────────────────────────────────────────────────────────────┐
+│            ORCHESTRATION: Managed n8n Hosting               │
+│  Workflow A: Daily Ingestion  │  Workflow B: Weekly Digest  │
+│  Workflow C: Inbound Intake   │  Workflow D: Idea Generator │
+│  Workflow E: Vibe Coding (gated, requires human approval)   │
+└─────────────────────────────────────────────────────────────┘
+        │                   │                     │
+        ▼                   ▼                     ▼
+┌───────────────┐    ┌───────────────┐    ┌───────────────┐
+│  Claude API   │    │    GitHub     │    │    Vercel     │
+│  (Anthropic)  │    │ (Issues/PRs)  │    │  (Next.js)    │
+└───────────────┘    └───────────────┘    └───────────────┘
+                            │
+        ┌───────────────────┴───────────────────┐
+        │  GCP Cloud SQL (Postgres + pgvector)  │
+        │  source_items | insights | project_   │
+        │  ideas | submissions | digests        │
+        └───────────────────────────────────────┘
 ```
 
----
+## Directory Structure
 
-## Coding Conventions
+| Directory | Purpose |
+|-----------|---------|
+| `agents/` | LLM prompt templates (classify, summarize, digest, generate-idea, intake-classify) |
+| `config/` | Runtime config: `sources.yml` (content sources), `thresholds.yml` (scoring gates) |
+| `docs/` | PRD, SPEC, ROADMAP, infrastructure guides |
+| `migrations/` | Postgres migration files |
+| `n8n/workflows/` | n8n workflow JSON definitions |
+| `schemas/` | JSON Schema definitions for data validation |
+| `website/` | Next.js 16 frontend (see `website/CLAUDE.md`) |
 
-### General
+## Commands
 
-- **Language:** TypeScript for scripts and utilities. YAML for config.
-- **Style:** Functional where possible. Explicit over implicit.
-- **Naming:** `kebab-case` for files, `camelCase` for variables, `PascalCase` for types.
-- **Comments:** Only where logic isn't self-evident. No boilerplate comments.
-
-### n8n Workflows
-
-- One workflow per logical pipeline (A, B, C, D, E as defined in PRD).
-- Use descriptive node names: `fetch-rss-sources`, `dedupe-by-hash`, `llm-classify`.
-- Always include error handling nodes with retry logic.
-- Store workflow exports as JSON in `/n8n/workflows/`.
-
-### Data Handling
-
-- **All fetched content is untrusted.** Sanitize before processing.
-- **Hash everything:** SHA-256 for content deduplication.
-- **Timestamps:** ISO 8601 format, UTC timezone.
-- **IDs:** UUIDv4 for all entities.
-
-### LLM Interactions
-
-- **Always use structured output** (JSON with schema validation).
-- **Never trust LLM output blindly** — validate against schemas before persisting.
-- **Prompts are versioned** — changes go through PR review.
-- See `AGENTS.md` for prompt templates and expected behaviors.
-
----
-
-## Security Requirements
-
-### Threat Model
-
-| Threat | Mitigation |
-|--------|------------|
-| Prompt injection via scraped content | Treat all input as untrusted. Sanitize. Use structured output schemas. |
-| Malicious links in sources | Mark external links. Consider safe redirect/preview. |
-| Credential leakage | Secrets in env vars only. Never log secrets. |
-| Intake endpoint abuse | Rate limiting. Spam scoring. Optional captcha. |
-| Activist safety | Never publish operational details. Redaction heuristics. |
-
-### Hard Rules
-
-- **NEVER** store passwords, API keys, or secrets in code or config files.
-- **NEVER** log full request bodies that might contain sensitive data.
-- **NEVER** publish content that could endanger activists (operational details, locations, identities).
-- **ALWAYS** validate LLM output against schema before publishing.
-- **ALWAYS** include citations — refuse to publish uncited claims.
-
----
-
-## Testing Requirements
-
-| Type | Location | Purpose |
-|------|----------|---------|
-| Unit | `/tests/unit/` | Parsing, normalization, hashing functions |
-| Integration | `/tests/integration/` | n8n workflow end-to-end |
-| Golden | `/tests/golden/` | LLM output schema conformance |
-| Snapshot | `/tests/` | Feed generation (RSS, JSON) |
-
-**Before merging:**
-- All tests must pass.
-- New LLM prompts require golden test cases.
-- Schema changes require migration plan.
-
----
-
-## Quality Gates
-
-Content is auto-published only when ALL conditions are met:
-
-```yaml
-publish_automatically:
-  freedom_relevance_score: >= 70
-  credibility_score: >= 60
-  has_citations: true
-  passed_safety_check: true
-
-queue_for_review:
-  freedom_relevance_score: < 70
-  OR credibility_score: < 60
-  OR has_citations: false
-```
-
----
-
-## Key Workflows Reference
-
-| Workflow | Trigger | Purpose |
-|----------|---------|---------|
-| A: Daily Ingestion | Cron (6h) | Fetch, normalize, classify, publish signals |
-| B: Weekly Digest | Cron (weekly) | Aggregate insights into digest |
-| C: Inbound Intake | Webhook | Process public submissions |
-| D: Idea Generator | Daily/triggered | Convert patterns into project ideas |
-| E: Vibe Coding | Manual gate | Scaffold prototypes (human review required) |
-
-See `SPEC.md` for detailed workflow specifications.
-
----
-
-## Common Tasks
-
-### Adding a New Source
-
-1. Edit `/config/sources.yml`
-2. Add entry with: `name`, `type`, `url`, `tier`, `tags`
-3. No code deployment needed — n8n reads config at runtime.
-
-### Adjusting Thresholds
-
-1. Edit `/config/thresholds.yml`
-2. Changes take effect on next workflow run.
-
-### Adding a New Prompt
-
-1. Create file in `/prompts/` with `.md` extension.
-2. Include structured output schema in prompt.
-3. Add golden test case in `/tests/golden/`.
-4. Update `AGENTS.md` with behavior documentation.
-
-### Debugging Failed Workflows
-
-1. Check n8n execution logs.
-2. Look for validation errors in LLM output.
-3. Check for source availability (external dependencies).
-4. Review rate limits and retry counts.
-
----
-
-## Anti-Patterns (Do NOT)
-
-- **Don't bypass deduplication** — even for "important" content.
-- **Don't publish without citations** — queue for review instead.
-- **Don't store IP addresses** from submissions unless legally required.
-- **Don't add tracking pixels** — ever, for any reason.
-- **Don't commit secrets** — use environment variables.
-- **Don't ignore LLM validation errors** — fix the prompt or schema.
-- **Don't auto-merge vibe coding PRs** — human review is mandatory.
-
----
-
-## Environment Variables
-
-### Managed n8n Hosting
-
+### Website Development
 ```bash
-# Database (GCP Cloud SQL)
-DATABASE_URL=                          # Cloud SQL Postgres connection string
-DB_TYPE=postgresdb
-DB_POSTGRESDB_DATABASE=libertas
-DB_POSTGRESDB_USER=n8n-user
-DB_POSTGRESDB_HOST=/cloudsql/PROJECT:REGION:libertas-db  # Unix socket for Cloud SQL
-DB_POSTGRESDB_PORT=5432
-
-# n8n Config
-N8N_ENCRYPTION_KEY=                    # Generate with: openssl rand -base64 42
-N8N_WEBHOOK_URL=                       # n8n instance URL
-
-# External Services
-ANTHROPIC_API_KEY=                     # Claude API key
-GITHUB_TOKEN=                          # For creating issues/PRs
-RESEND_API_KEY=                        # Email sending
-GOOGLE_APPLICATION_CREDENTIALS=        # GCS service account JSON (base64 or path)
+cd website
+npm install
+npm run dev          # Dev server at localhost:3000
+npm run build        # Production build
+npm run lint         # ESLint
 ```
 
-### Vercel (Next.js)
-
+### Database
 ```bash
-# Database (GCP Cloud SQL)
-DATABASE_URL=                          # Cloud SQL Postgres connection string
-# Format: postgresql://user:password@/database?host=/cloudsql/PROJECT:REGION:INSTANCE
-
-# Firebase Auth
-NEXT_PUBLIC_FIREBASE_API_KEY=          # Firebase web app API key
-NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=      # Firebase auth domain
-NEXT_PUBLIC_FIREBASE_PROJECT_ID=       # Firebase/GCP project ID
-NEXT_PUBLIC_FIREBASE_APP_ID=           # Firebase app ID
-
-# n8n Integration
-N8N_WEBHOOK_URL=                       # n8n instance URL for intake form
-
-# GCS (for feed serving, optional)
-GCS_BUCKET_NAME=libertas-content
+# Apply migrations
+psql $DATABASE_URL < migrations/001_initial_schema.sql
 ```
 
----
+### Agent Testing
+```bash
+# Test LLM agents against golden tests
+npm run test:agents
+npm run test:agents -- --agent=classifier
+npm run test:agents -- --agent=classifier --update-golden
+```
 
-## Decision Log
+## Core Data Models
 
-When making architectural decisions, document them here:
+| Entity | Description | Key Fields |
+|--------|-------------|------------|
+| **SourceItem** | Raw fetched content | `url`, `platform`, `content_hash`, `extracted_text` |
+| **Insight** | Generated analysis | `title`, `tldr`, `topics[]`, `freedom_relevance_score`, `credibility_score`, `status` |
+| **ProjectIdea** | Project proposals | `problem_statement`, `proposed_solution`, `feasibility_score`, `impact_score`, `status` |
+| **Submission** | Public intake | `message`, `channel`, `risk_level`, `status` |
+| **Digest** | Weekly rollups | `period_start`, `period_end`, `executive_tldr`, `content_markdown` |
 
-| Date | Decision | Rationale |
-|------|----------|-----------|
-| 2026-01-05 | n8n as orchestrator | Low-code, visual debugging, built-in retry logic |
-| 2026-01-05 | Postgres for persistence | Reliable, supports JSON, good n8n integration |
-| 2026-01-05 | Git-based publishing | Version control, audit trail, works offline |
-| 2026-01-06 | GCP Cloud Storage | Existing GCP setup, reliable for raw content and feed storage |
-| 2026-01-06 | Vercel for static site | Best-in-class Next.js DX, preview deployments, free tier |
-| 2026-01-06 | Resend for email | Privacy-friendly, no tracking pixels, modern API |
-| 2026-01-06 | Claude API (Anthropic) | Best structured output support, strong coding capability |
-| 2026-01-13 | GCP Cloud SQL for database | Managed Postgres + pgvector, unified GCP infrastructure, reliable |
-| 2026-01-13 | Managed n8n hosting | Dedicated n8n hosting, reduced operational overhead |
-| 2026-01-13 | Firebase Auth | Unified GCP auth, easy integration, multiple providers |
+## Key Configuration
 
----
+### Source Tiers (`config/sources.yml`)
+- **Tier 1**: High-trust (HRF, EFF, Bitcoin Magazine, Access Now, OONI) - process all content
+- **Tier 2**: Secondary - apply stricter relevance filtering
+- **Tier 3**: Discovery - only high-signal items
 
-## Getting Help
+### Publishing Thresholds (`config/thresholds.yml`)
+- Relevance threshold: 50 (minimum to generate insight)
+- Auto-publish: relevance >= 70 AND credibility >= 60
+- Idea generation: relevance >= 80
 
-- **PRD questions:** See `PRD.md` for full requirements context.
-- **Technical details:** See `SPEC.md` for architecture and schemas.
-- **Agent behavior:** See `AGENTS.md` for prompts and LLM guidelines.
-- **Timeline/scope:** See `ROADMAP.md` for milestones.
+## Workflow Pipeline
 
----
+1. **Workflow A (Daily Ingestion)**: Fetch → Dedupe (content hash) → Classify → Score → Summarize → Publish
+2. **Workflow B (Weekly Digest)**: Query week's insights → Group by topic → Generate digest → Email via Resend
+3. **Workflow C (Inbound Intake)**: Webhook → Risk assess → Create GitHub issue
+4. **Workflow D (Idea Generator)**: Cluster high-signal insights → Generate project proposals → Create issues
+5. **Workflow E (Vibe Coding)**: Scaffold code from approved ideas → Open draft PR (human review mandatory)
 
-*This file is the entry point for agentic development. Keep it current.*
+## Agent Prompts
+
+Located in `agents/`, follow this structure:
+```markdown
+# Role → # Context → # Task → # Input → # Output Requirements → # Hard Rules → # Examples
+```
+
+Key agents:
+- `classify.md` - Content classification and scoring
+- `summarize.md` - Insight generation
+- `digest.md` - Weekly digest composition
+- `generate-idea.md` - Project proposal synthesis
+- `intake-classify.md` - Submission risk assessment
+
+## Privacy Requirements
+
+Per project manifesto:
+- No tracking pixels or fingerprinting
+- No third-party analytics by default
+- Minimal metadata storage
+- Optional email with no tracking
+- All outputs permissionless and open
+
+## Type System
+
+TypeScript types in `website/src/types/index.ts` with Zod schemas for runtime validation. Types match JSON schemas in `schemas/`.
+
+Topics enum: `bitcoin`, `zk`, `censorship-resistance`, `comms`, `payments`, `identity`, `privacy`, `surveillance`, `activism`, `sovereignty`
