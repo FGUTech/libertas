@@ -9,6 +9,7 @@ import { TableOfContents } from "@/components/TableOfContents";
 import { ShareButtons } from "@/components/ShareButtons";
 import { CitationList } from "@/components/CitationList";
 import { PostNavigation } from "@/components/PostNavigation";
+import { PostJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 
 interface PostPageProps {
   params: Promise<{ slug: string }>;
@@ -19,24 +20,33 @@ export async function generateMetadata({
 }: PostPageProps): Promise<Metadata> {
   const { slug } = await params;
   const post = getPostBySlug(slug);
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://libertas.fgu.tech";
 
   if (!post) {
     return {
-      title: "Post Not Found | Libertas",
+      title: "Post Not Found",
     };
   }
 
+  const postUrl = `${baseUrl}/posts/${post.slug}`;
+
   return {
-    title: `${post.title} | Libertas`,
+    title: post.title,
     description: post.summary,
     keywords: [...post.topics, ...post.tags],
+    alternates: {
+      canonical: postUrl,
+    },
     openGraph: {
       title: post.title,
       description: post.summary,
       type: "article",
+      url: postUrl,
       publishedTime: post.publishedAt,
-      authors: post.author ? [post.author] : undefined,
+      modifiedTime: post.updatedAt || post.publishedAt,
+      authors: post.author ? [post.author] : ["Libertas Research"],
       tags: post.topics,
+      section: post.topics[0],
     },
     twitter: {
       card: "summary_large_image",
@@ -69,8 +79,19 @@ export default async function PostPage({ params }: PostPageProps) {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://libertas.fgu.tech";
   const postUrl = `${baseUrl}/posts/${post.slug}`;
 
+  // Breadcrumb data for structured data
+  const breadcrumbItems = [
+    { name: "Home", url: baseUrl },
+    { name: "Signals", url: `${baseUrl}/posts` },
+    { name: post.title, url: postUrl },
+  ];
+
   return (
     <div className="matrix-bg min-h-screen">
+      {/* JSON-LD Structured Data */}
+      <PostJsonLd post={post} url={postUrl} />
+      <BreadcrumbJsonLd items={breadcrumbItems} />
+
       {/* Main Content */}
       <main className="py-8 md:py-12">
         <div className="container">

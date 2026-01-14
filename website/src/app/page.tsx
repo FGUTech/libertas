@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { PostCard } from "@/components/PostCard";
+import { WebsiteJsonLd } from "@/components/JsonLd";
 import type { Post } from "@/types";
 
 // Mock data for recent posts - will be replaced with real data fetching
@@ -111,6 +112,9 @@ const mockPosts: Post[] = [
 export default function Home() {
   return (
     <div className="matrix-bg min-h-screen">
+      {/* JSON-LD Structured Data */}
+      <WebsiteJsonLd />
+
       {/* Hero Section */}
       <section className="relative overflow-hidden pb-16 pt-20 md:pb-24 md:pt-32">
         <div className="container container-narrow">

@@ -12,39 +12,44 @@ Hey, I am working to implement features for the libertas website from the roadma
 
 Core features for initial launch. Focus on content display and intake.
 
-### 1.8 API Routes
+### 1.8 Intake Form Submission
 
-**Description**: Server-side API routes for form submission.
+**Description**: Public intake form submits directly to n8n webhook.
 
 **Requirements**:
-- [ ] `POST /api/intake` - Forward submissions to n8n
-- [ ] Rate limiting (10 requests/minute per IP)
-- [ ] Input validation and sanitization
-- [ ] Error handling with helpful messages
-- [ ] Request logging (no PII)
+- [ ] Intake form component with validation (name, email, message, url, category)
+- [ ] Client-side input validation before submission
+- [ ] Submit directly to n8n webhook URL (`NEXT_PUBLIC_N8N_INTAKE_WEBHOOK_URL`)
+- [ ] Loading states and user feedback during submission
+- [ ] Success/error messaging with helpful next steps
+- [ ] Honeypot field for basic spam prevention
 
 **Implementation Notes**:
-- Use `next/server` for Edge runtime if possible
-- Validate against intake schema
-- Return structured error responses
+- No server-side API route needed — form submits directly to n8n webhook
+- n8n Workflow C handles rate limiting, classification, and GitHub issue creation
+- Use environment variable for webhook URL (different per environment)
+- Validate against intake schema client-side for UX, but n8n is source of truth
 
 ---
 
-### 1.9 Content Fetching
+### 1.9 Static Content from Repository
 
-**Description**: Logic to fetch and parse posts from content source.
+**Description**: Serve content statically from Git-committed markdown files.
 
 **Requirements**:
-- [ ] Fetch `feed.json` from GCS bucket
-- [ ] Parse individual post markdown files
-- [ ] Cache responses appropriately
-- [ ] Handle fetch errors gracefully
-- [ ] Support both build-time and runtime fetching
+- [ ] Read posts from `/content/insights/` directory at build time
+- [ ] Read digests from `/content/digests/` directory at build time
+- [ ] Parse frontmatter metadata (title, date, tags, scores, citations)
+- [ ] Generate `feed.json` and `rss.xml` at build time from content files
+- [ ] Symlink or copy content directory into website build
 
 **Implementation Notes**:
-- Use `fetch` with revalidation for ISR
-- Parse frontmatter from markdown posts
-- Consider fallback to local content for development
+- Content is committed to repo by n8n Workflow A (insights) and Workflow B (digests)
+- Vercel auto-redeploys when content commits are pushed to main branch
+- No runtime fetching or ISR needed — pure static site generation
+- Use `gray-matter` for frontmatter parsing
+- Content structure: `/content/insights/{year}/{month}/{slug}.md`
+- Feeds generated during `next build` and served as static files
 
 ---
 

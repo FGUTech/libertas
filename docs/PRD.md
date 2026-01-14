@@ -541,7 +541,7 @@ Below are the concrete workflows Brandon should implement. The goal is to keep e
 
 ### Workflow C — Inbound submissions intake
 
-**Trigger:** Webhook endpoint (`/api/intake`)
+**Trigger:** n8n Webhook (direct submission from website intake form)
 
 **Steps**
 

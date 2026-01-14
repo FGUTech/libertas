@@ -72,10 +72,16 @@ Located in `src/types/index.ts`:
 ## Integration Points
 
 This website connects to:
-- **GCP Cloud SQL** — database for posts, reactions, comments (env: `DATABASE_URL`)
+- **GCP Cloud SQL** — database for reactions, comments, user profiles (env: `DATABASE_URL`)
 - **Firebase Auth** — user authentication (env: `NEXT_PUBLIC_FIREBASE_*`)
-- **n8n webhook** — intake form submissions (env: `N8N_WEBHOOK_URL`)
-- **GCS** — feed storage (optional, for static feed serving)
+- **n8n webhook** — intake form submits directly to n8n (env: `NEXT_PUBLIC_N8N_INTAKE_WEBHOOK_URL`)
+
+## Content Source
+
+Posts and digests are served statically from the repository (not fetched at runtime):
+- Content is committed to `/content/` by n8n workflows
+- Vercel auto-redeploys on push to main branch
+- Feeds (`/rss.xml`, `/feed.json`) are generated at build time
 
 ## Privacy Requirements
 

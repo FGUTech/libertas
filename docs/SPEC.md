@@ -452,7 +452,7 @@ insight_count: 12
 
 ### Workflow C: Inbound Submissions Intake
 
-**Trigger:** Webhook endpoint `POST /api/intake`
+**Trigger:** n8n Webhook (receives direct form submissions from website)
 
 **Request Schema:**
 
@@ -636,10 +636,12 @@ vibe_coding_gates:
 
 ## API Contracts
 
-### Webhook: Intake Endpoint
+### Webhook: Intake Endpoint (n8n)
+
+The intake form on the website submits directly to the n8n webhook URL (configured via `NEXT_PUBLIC_N8N_INTAKE_WEBHOOK_URL` environment variable).
 
 ```
-POST /api/intake
+POST ${N8N_WEBHOOK_URL}/webhook/intake
 Content-Type: application/json
 
 Request:

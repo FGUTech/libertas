@@ -137,19 +137,25 @@ System design, modules, and data flows for the Libertas website.
 ### Content Flow
 
 ```
-site-content/      →  GCS Bucket  →  Website (fetch at build/runtime)
-    posts/                              ↓
-    rss.xml                         Parse & Display
-    feed.json
+n8n Workflow A/B  →  Git Commit  →  Vercel Redeploy  →  Static Site
+      ↓                   ↓
+  /content/insights/   Push to main
+  /content/digests/        ↓
+  /content/feed.json   Build triggers
+  /content/rss.xml
 ```
+
+**Note:** Content is committed directly to the repository by n8n workflows. Vercel auto-redeploys on push to main, serving fully static pages.
 
 ### Intake Flow
 
 ```
-User Form  →  Website API  →  n8n Webhook  →  Cloud SQL (submissions table)
-              /api/intake                         ↓
-                                            n8n Processing
+User Form  →  n8n Webhook (direct)  →  Cloud SQL (submissions table)
+                    ↓                         ↓
+              Workflow C              Classification & GitHub Issue
 ```
+
+**Note:** The intake form submits directly to the n8n webhook URL (no Next.js API proxy). Rate limiting and processing happen in n8n.
 
 ### Auth Flow
 
@@ -275,12 +281,16 @@ CREATE TABLE comments (
 
 ## API Routes
 
-### `/api/intake` (POST)
+### Intake Submission (External)
 
-Submit intake form to n8n webhook.
+Intake form submits directly to n8n webhook (not a Next.js API route):
+
+```
+POST ${NEXT_PUBLIC_N8N_INTAKE_WEBHOOK_URL}
+```
 
 ```typescript
-// Request
+// Request body
 {
   type: "project" | "story" | "feedback",
   title: string,
@@ -289,25 +299,18 @@ Submit intake form to n8n webhook.
   urgency?: "low" | "medium" | "high"
 }
 
-// Response
+// Response from n8n
 { success: true, id: string }
 ```
 
-### `/api/posts` (GET)
+### Static Content (No API)
 
-Fetch posts (SSR/ISR cached).
+Posts and digests are served statically from the repository. No `/api/posts` route needed:
 
-```typescript
-// Query params
-?page=1&limit=10&tag=bitcoin
-
-// Response
-{
-  posts: Post[],
-  total: number,
-  hasMore: boolean
-}
-```
+- Posts are read from `/content/insights/` at build time
+- Digests are read from `/content/digests/` at build time
+- Feeds are generated during build: `/feed.json`, `/rss.xml`
+- Pagination is handled via static page generation
 
 ### `/api/reactions` (POST)
 
@@ -328,11 +331,13 @@ Submit reaction (requires auth).
 
 ## Caching Strategy
 
-| Resource | Strategy | TTL |
-|----------|----------|-----|
-| Posts list | ISR | 5 min |
-| Individual post | ISR | 10 min |
-| Reactions count | SWR | 1 min |
+| Resource | Strategy | Notes |
+|----------|----------|-------|
+| Posts list | Static | Rebuilt on deploy (content commit triggers redeploy) |
+| Individual post | Static | Rebuilt on deploy |
+| Feeds (RSS, JSON) | Static | Generated at build time |
+| Reactions count | SWR | Client-side fetch, 1 min revalidation |
+| Comments | SWR | Client-side fetch, real-time optional |
 | Comments | SWR | 30 sec |
 | User profile | Client cache | Session |
 

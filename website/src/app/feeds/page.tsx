@@ -1,4 +1,23 @@
+import type { Metadata } from "next";
 import { CopyButton } from './CopyButton';
+
+export const metadata: Metadata = {
+  title: "RSS & JSON Feeds",
+  description:
+    "Access Libertas content programmatically via RSS and JSON feeds. No accounts, no API keys, no tracking. Subscribe with any feed reader.",
+  openGraph: {
+    title: "RSS & JSON Feeds | Libertas",
+    description:
+      "Access Libertas content programmatically. No accounts, no API keys, no tracking.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "RSS & JSON Feeds | Libertas",
+    description:
+      "Access Libertas content programmatically. No accounts, no API keys, no tracking.",
+  },
+};
 
 // Feed URLs - these would come from env vars in production
 const FEED_URLS = {

@@ -280,13 +280,13 @@ publishing:
 
 ---
 
-## API Endpoints
+## Endpoints
 
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/api/intake` | POST | Submit public requests |
-| `/api/feeds/rss` | GET | RSS 2.0 feed |
-| `/api/feeds/json` | GET | JSON Feed 1.1 |
+| Endpoint | Type | Description |
+|----------|------|-------------|
+| n8n Webhook | External | Intake form submissions (Workflow C) |
+| `/rss.xml` | Static | RSS 2.0 feed (generated at build) |
+| `/feed.json` | Static | JSON Feed 1.1 (generated at build) |
 
 ---
 

@@ -4,9 +4,21 @@ import { PostsFeedSkeleton } from "./PostsFeedSkeleton";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Posts | Libertas",
+  title: "All Signals",
   description:
     "Browse all published freedom tech research and insights. Filter by topic, sort by relevance or date.",
+  openGraph: {
+    title: "All Signals | Libertas",
+    description:
+      "Browse published research and insights on freedom tech, privacy, and censorship resistance.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "All Signals | Libertas",
+    description:
+      "Browse published research and insights on freedom tech, privacy, and censorship resistance.",
+  },
 };
 
 export default function PostsPage() {
