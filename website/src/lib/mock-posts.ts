@@ -1,4 +1,4 @@
-import type { Post } from "@/types";
+import type { Post, Topic } from "@/types";
 
 /**
  * Mock posts data for development
@@ -940,4 +940,220 @@ export function getAdjacentPosts(slug: string): {
     previous: currentIndex < sortedPosts.length - 1 ? sortedPosts[currentIndex + 1] : null,
     next: currentIndex > 0 ? sortedPosts[currentIndex - 1] : null,
   };
+}
+
+/**
+ * Search options for filtering posts
+ */
+export interface SearchOptions {
+  query?: string;
+  topics?: Topic[];
+  dateFrom?: string; // ISO date string
+  dateTo?: string; // ISO date string
+  sortBy?: 'relevance' | 'newest' | 'oldest';
+}
+
+/**
+ * Search result with match information
+ */
+export interface SearchResult {
+  post: Post;
+  score: number;
+  matchedFields: ('title' | 'summary' | 'content' | 'tags' | 'topics')[];
+  highlights: {
+    title?: string;
+    summary?: string;
+  };
+}
+
+/**
+ * Escape regex special characters
+ */
+function escapeRegex(str: string): string {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+/**
+ * Create a highlighted snippet with search terms marked
+ */
+function createHighlight(text: string, query: string, maxLength: number = 200): string {
+  const words = query.toLowerCase().split(/\s+/).filter(Boolean);
+  if (words.length === 0) return text.slice(0, maxLength);
+
+  // Find the first occurrence of any search word
+  const lowerText = text.toLowerCase();
+  let firstMatchIndex = text.length;
+
+  for (const word of words) {
+    const index = lowerText.indexOf(word);
+    if (index !== -1 && index < firstMatchIndex) {
+      firstMatchIndex = index;
+    }
+  }
+
+  // Calculate start position to center around the match
+  let start = Math.max(0, firstMatchIndex - 50);
+  if (start > 0) {
+    // Find the start of the word
+    while (start > 0 && text[start - 1] !== ' ') {
+      start--;
+    }
+  }
+
+  let snippet = text.slice(start, start + maxLength);
+
+  // Add ellipsis if truncated
+  if (start > 0) snippet = '...' + snippet;
+  if (start + maxLength < text.length) snippet = snippet + '...';
+
+  // Wrap matched words with <mark> tags
+  for (const word of words) {
+    const regex = new RegExp(`(${escapeRegex(word)})`, 'gi');
+    snippet = snippet.replace(regex, '<mark>$1</mark>');
+  }
+
+  return snippet;
+}
+
+/**
+ * Calculate search relevance score
+ */
+function calculateScore(post: Post, query: string): { score: number; matchedFields: SearchResult['matchedFields'] } {
+  if (!query.trim()) {
+    return { score: 0, matchedFields: [] };
+  }
+
+  const words = query.toLowerCase().split(/\s+/).filter(Boolean);
+  let score = 0;
+  const matchedFields: SearchResult['matchedFields'] = [];
+
+  // Title matches (highest weight)
+  const titleLower = post.title.toLowerCase();
+  for (const word of words) {
+    if (titleLower.includes(word)) {
+      score += 10;
+      if (!matchedFields.includes('title')) matchedFields.push('title');
+    }
+  }
+  // Exact title match bonus
+  if (words.every(word => titleLower.includes(word))) {
+    score += 5;
+  }
+
+  // Summary matches (high weight)
+  const summaryLower = post.summary.toLowerCase();
+  for (const word of words) {
+    if (summaryLower.includes(word)) {
+      score += 5;
+      if (!matchedFields.includes('summary')) matchedFields.push('summary');
+    }
+  }
+
+  // Tag matches (high weight)
+  for (const tag of post.tags) {
+    const tagLower = tag.toLowerCase();
+    for (const word of words) {
+      if (tagLower.includes(word)) {
+        score += 8;
+        if (!matchedFields.includes('tags')) matchedFields.push('tags');
+      }
+    }
+  }
+
+  // Topic matches (medium weight)
+  for (const topic of post.topics) {
+    const topicLower = topic.toLowerCase();
+    for (const word of words) {
+      if (topicLower.includes(word)) {
+        score += 6;
+        if (!matchedFields.includes('topics')) matchedFields.push('topics');
+      }
+    }
+  }
+
+  // Content matches (lower weight but still important)
+  const contentLower = post.content.toLowerCase();
+  for (const word of words) {
+    // Count occurrences (up to a limit)
+    const matches = (contentLower.match(new RegExp(escapeRegex(word), 'g')) || []).length;
+    if (matches > 0) {
+      score += Math.min(matches, 5); // Cap at 5 points per word
+      if (!matchedFields.includes('content')) matchedFields.push('content');
+    }
+  }
+
+  return { score, matchedFields };
+}
+
+/**
+ * Search posts with full-text search and filtering
+ */
+export function searchPosts(options: SearchOptions): SearchResult[] {
+  const { query = '', topics = [], dateFrom, dateTo, sortBy = 'relevance' } = options;
+
+  let results: SearchResult[] = [];
+
+  for (const post of mockPosts) {
+    // Apply topic filter
+    if (topics.length > 0) {
+      const hasMatchingTopic = topics.some(topic => post.topics.includes(topic));
+      if (!hasMatchingTopic) continue;
+    }
+
+    // Apply date range filter
+    const postDate = new Date(post.publishedAt);
+    if (dateFrom && postDate < new Date(dateFrom)) continue;
+    if (dateTo && postDate > new Date(dateTo)) continue;
+
+    // Calculate search score
+    const { score, matchedFields } = calculateScore(post, query);
+
+    // If there's a query, only include posts with matches
+    if (query.trim() && score === 0) continue;
+
+    // Create highlights
+    const highlights: SearchResult['highlights'] = {};
+    if (query.trim()) {
+      if (matchedFields.includes('title')) {
+        highlights.title = createHighlight(post.title, query, 100);
+      }
+      if (matchedFields.includes('summary') || matchedFields.includes('content')) {
+        highlights.summary = createHighlight(
+          matchedFields.includes('summary') ? post.summary : post.content,
+          query,
+          200
+        );
+      }
+    }
+
+    results.push({
+      post,
+      score,
+      matchedFields,
+      highlights,
+    });
+  }
+
+  // Sort results
+  switch (sortBy) {
+    case 'relevance':
+      // Sort by score descending, then by date descending
+      results.sort((a, b) => {
+        if (b.score !== a.score) return b.score - a.score;
+        return new Date(b.post.publishedAt).getTime() - new Date(a.post.publishedAt).getTime();
+      });
+      break;
+    case 'newest':
+      results.sort((a, b) =>
+        new Date(b.post.publishedAt).getTime() - new Date(a.post.publishedAt).getTime()
+      );
+      break;
+    case 'oldest':
+      results.sort((a, b) =>
+        new Date(a.post.publishedAt).getTime() - new Date(b.post.publishedAt).getTime()
+      );
+      break;
+  }
+
+  return results;
 }

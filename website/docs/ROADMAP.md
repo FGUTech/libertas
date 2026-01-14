@@ -185,40 +185,32 @@ Features that enhance the experience but aren't critical for launch.
 
 ---
 
-### 2.6 Dark/Light Theme Toggle ✅
-
-**Description**: Persistent theme preference.
-
-**Requirements**:
-- [x] Toggle button in header
-- [x] System preference detection
-- [x] Persist preference in localStorage
-- [x] Smooth transition between themes
-- [x] No FOUC (flash of unstyled content)
-
-**Implementation Notes**:
-- Uses native implementation (no `next-themes` needed)
-- Apply theme via `data-theme` attribute on `<html>` element
-- Default to dark theme (brand identity)
-- FOUC prevention script in `<head>` reads localStorage before render
-- Smooth transitions enabled via `.theme-transition` class after initial load
-
----
-
-### 2.7 Search Functionality
+### 2.7 Search Functionality (COMPLETE)
 
 **Description**: Search across posts content.
 
 **Requirements**:
-- [ ] Search input in header
-- [ ] Full-text search of post content
-- [ ] Search results page with highlighting
-- [ ] Filter by date range, tags
+- [x] Search input in header
+- [x] Full-text search of post content
+- [x] Search results page with highlighting
+- [x] Filter by date range, tags
 
 **Implementation Notes**:
 - Use Cloud SQL full-text search or client-side filtering
 - Consider Algolia/Meilisearch for better UX
 - Start with simple title/tag matching
+
+**Implemented**:
+- `SearchInput` component with debounced input and keyboard shortcut (Cmd+K)
+- Compact search in header (desktop) and Search link in mobile nav
+- `/search` page with full search functionality
+- Full-text search across title, summary, content, tags, and topics
+- Relevance scoring with weighted matches (title > tags > summary > content)
+- Search result highlighting with `<mark>` tags
+- Date range filter with quick presets (7 days, 30 days, 3 months, year)
+- Topic filtering
+- Sort by relevance, newest, or oldest
+- Pagination of results
 
 ---
 
@@ -404,20 +396,23 @@ Features for future consideration after core functionality is stable.
 
 # Implementation Priority Matrix
 
-| Feature | Impact | Effort | Priority |
-|---------|--------|--------|----------|
-| Landing Page | High | Low | P0 |
-| Posts Feed | High | Medium | P0 |
-| Post View | High | Medium | P0 |
-| Intake Form | High | Low | P0 |
-| User Auth (Firebase + Starknet) | High | Medium | P1 |
-| User Profiles | Medium | Medium | P1 |
-| Comments | Medium | Medium | P1 |
-| Reactions | Medium | Low | P1 |
-| Starknet Wallet (Extended) | Medium | Medium | P1 |
-| On-chain Reactions | Low | High | P2 |
-| On-chain Comments | Low | High | P2 |
-| Nostr Integration | Low | High | P2 |
+| Feature | Impact | Effort | Priority | Status |
+|---------|--------|--------|----------|--------|
+| Landing Page | High | Low | P0 | Done |
+| Posts Feed | High | Medium | P0 | Done |
+| Post View | High | Medium | P0 | Done |
+| Intake Form | High | Low | P0 | Done |
+| SEO & Meta | Medium | Low | P0 | Done |
+| Dark/Light Theme | Medium | Low | P1 | Done |
+| Search Functionality | Medium | Medium | P1 | Done |
+| User Auth (Firebase + Starknet) | High | Medium | P1 | |
+| User Profiles | Medium | Medium | P1 | |
+| Comments | Medium | Medium | P1 | |
+| Reactions | Medium | Low | P1 | |
+| Starknet Wallet (Extended) | Medium | Medium | P1 | |
+| On-chain Reactions | Low | High | P2 | |
+| On-chain Comments | Low | High | P2 | |
+| Nostr Integration | Low | High | P2 | |
 
 ---
 

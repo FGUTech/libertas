@@ -278,6 +278,15 @@ body {
   color: var(--fg-primary);
 }
 
+.text-display {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: var(--font-bold);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+  color: var(--fg-primary);
+}
+
 .text-h1 {
   font-family: var(--font-display);
   font-size: var(--text-3xl);
@@ -741,4 +750,16 @@ body {
   background: var(--bg-tertiary);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
+}
+
+/* ========================================
+   Search Highlighting
+   ======================================== */
+
+mark {
+  background: var(--accent-muted);
+  color: var(--accent-primary);
+  padding: 0.125rem 0.25rem;
+  border-radius: var(--radius-sm);
+  font-weight: var(--font-medium);
 }

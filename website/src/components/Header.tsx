@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { SearchInput } from './SearchInput';
 
 type Theme = 'dark' | 'light';
 
@@ -67,6 +68,7 @@ export function Header() {
 
   const navLinks = [
     { href: '/posts', label: 'Posts' },
+    { href: '/search', label: 'Search' },
     { href: '/intake', label: 'Submit' },
     { href: '/feeds', label: 'Feeds' },
   ];
@@ -100,7 +102,7 @@ export function Header() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-6">
-              {navLinks.map((link) => (
+              {navLinks.filter(link => link.href !== '/search').map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
@@ -113,6 +115,9 @@ export function Header() {
                   {link.label}
                 </Link>
               ))}
+
+              {/* Search Input */}
+              <SearchInput compact placeholder="Search..." />
 
               {/* Theme Toggle */}
               <button
