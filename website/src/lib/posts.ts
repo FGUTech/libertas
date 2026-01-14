@@ -234,6 +234,6 @@ export function getAdjacentPosts(slug: string): {
   };
 }
 
-// Re-export search functionality from mock-posts for now
-// TODO: Implement real search when content grows
-export { searchPosts, type SearchOptions, type SearchResult } from "./mock-posts";
+// Note: Search functionality is in mock-posts.ts and should be imported
+// directly by client components. This file uses Node.js fs module and
+// can only be used in server components.
