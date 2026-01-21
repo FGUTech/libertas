@@ -85,7 +85,7 @@
       },
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
-      "position": [1100, 0],
+      "position": [1100, -100],
       "id": "query-insights",
       "name": "Query Published Insights",
       "alwaysOutputData": true,
@@ -98,11 +98,43 @@
     },
     {
       "parameters": {
-        "jsCode": "// Merge insights with period data and check if we have enough\nconst insights = $input.all().map(item => item.json);\nconst periodData = $('Calculate Period').first().json;\nconst thresholds = periodData._thresholds || {};\nconst agents = periodData._agents;\nconst minInsights = thresholds.minInsights || 3;\n\n// Filter out empty results\nconst validInsights = insights.filter(i => i.id);\n\n// Check if we have minimum required insights from config\nif (!validInsights || validInsights.length < minInsights) {\n  console.log(`Only ${validInsights.length} insights found, minimum required: ${minInsights}`);\n  return [{\n    json: {\n      ...periodData,\n      insights: validInsights,\n      insightCount: validInsights.length,\n      hasInsights: false,\n      skipReason: `Insufficient insights (${validInsights.length}/${minInsights} required)`,\n      _agents: agents\n    }\n  }];\n}\n\nreturn [{\n  json: {\n    ...periodData,\n    insights: validInsights,\n    insightCount: validInsights.length,\n    hasInsights: true,\n    _agents: agents\n  }\n}];"
+        "operation": "executeQuery",
+        "query": "SELECT \n  id, derived_from_insight_ids, problem_statement, threat_model,\n  affected_groups, proposed_solution, mvp_scope, misuse_risks,\n  feasibility_score, impact_score, status, github_issue_url,\n  technical_dependencies, suggested_stack, prior_art, open_questions,\n  created_at, updated_at\nFROM project_ideas \nWHERE created_at >= $1::timestamptz \n  AND created_at <= $2::timestamptz\n  AND status IN ('new', 'triaged', 'build_candidate')\nORDER BY impact_score DESC, feasibility_score DESC",
+        "options": {
+          "queryReplacement": "={{ $('Calculate Period').first().json.periodStartSQL }}, {{ $('Calculate Period').first().json.periodEndSQL }}"
+        }
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [1100, 100],
+      "id": "query-project-ideas",
+      "name": "Query Recent Project Ideas",
+      "alwaysOutputData": true,
+      "credentials": {
+        "postgres": {
+          "id": "CREDENTIAL_ID",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "append",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.1,
+      "position": [1320, 0],
+      "id": "merge-insights-ideas",
+      "name": "Wait for Queries"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Merge insights and project ideas with period data\nconst allItems = $input.all().map(item => item.json);\nconst periodData = $('Calculate Period').first().json;\nconst thresholds = periodData._thresholds || {};\nconst agents = periodData._agents;\nconst minInsights = thresholds.minInsights || 3;\n\n// Separate insights from project ideas based on structure\n// Insights have 'title' and 'topics', project ideas have 'problem_statement'\nconst insights = [];\nconst projectIdeas = [];\n\nfor (const item of allItems) {\n  if (!item.id) continue;\n  if (item.problem_statement) {\n    // This is a project idea\n    projectIdeas.push(item);\n  } else if (item.title || item.tldr) {\n    // This is an insight\n    insights.push(item);\n  }\n}\n\nconsole.log(`Found ${insights.length} insights and ${projectIdeas.length} project ideas for period`);\n\n// Check if we have minimum required insights from config\nif (!insights || insights.length < minInsights) {\n  console.log(`Only ${insights.length} insights found, minimum required: ${minInsights}`);\n  return [{\n    json: {\n      ...periodData,\n      insights: insights,\n      projectIdeas: projectIdeas,\n      insightCount: insights.length,\n      projectIdeaCount: projectIdeas.length,\n      hasInsights: false,\n      skipReason: `Insufficient insights (${insights.length}/${minInsights} required)`,\n      _agents: agents\n    }\n  }];\n}\n\nreturn [{\n  json: {\n    ...periodData,\n    insights: insights,\n    projectIdeas: projectIdeas,\n    insightCount: insights.length,\n    projectIdeaCount: projectIdeas.length,\n    hasInsights: true,\n    _agents: agents\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [1320, 0],
+      "position": [1540, 0],
       "id": "merge-insights",
       "name": "Merge Insights with Period"
     },
@@ -131,17 +163,17 @@
       },
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
-      "position": [1540, 0],
+      "position": [1760, 0],
       "id": "check-has-insights",
       "name": "Has Insights?"
     },
     {
       "parameters": {
-        "jsCode": "// Group insights by topic and prepare aggregated data\n// Uses maxPerSection threshold from config\nconst data = $input.first().json;\nconst insights = data.insights || [];\nconst thresholds = data._thresholds || {};\nconst agents = data._agents;\nconst maxPerSection = thresholds.maxPerSection || 10;\n\n// Group insights by primary topic (first topic in array)\nconst byTopic = {};\nconst topicCounts = {};\n\nfor (const insight of insights) {\n  const topics = insight.topics || [];\n  const primaryTopic = topics[0] || 'other';\n  \n  if (!byTopic[primaryTopic]) {\n    byTopic[primaryTopic] = [];\n    topicCounts[primaryTopic] = 0;\n  }\n  byTopic[primaryTopic].push(insight);\n  topicCounts[primaryTopic]++;\n  \n  // Also count all topics for ranking\n  for (const topic of topics) {\n    if (topic !== primaryTopic) {\n      topicCounts[topic] = (topicCounts[topic] || 0) + 1;\n    }\n  }\n}\n\n// Sort topics by count for top_topics\nconst topTopics = Object.entries(topicCounts)\n  .sort((a, b) => b[1] - a[1])\n  .slice(0, 5)\n  .map(([topic]) => topic);\n\n// Collect all citations\nconst allCitations = [];\nfor (const insight of insights) {\n  if (insight.citations) {\n    allCitations.push(...insight.citations);\n  }\n}\nconst uniqueCitations = [...new Set(allCitations)];\n\n// Build sections data for LLM - limit per section using maxPerSection from config\nconst sections = Object.entries(byTopic).map(([topic, topicInsights]) => ({\n  topic,\n  insightCount: topicInsights.length,\n  insights: topicInsights.slice(0, maxPerSection).map(i => ({\n    id: i.id,\n    title: i.title,\n    tldr: i.tldr,\n    score: i.freedom_relevance_score,\n    published_url: i.published_url,\n    citations: i.citations\n  }))\n}));\n\nconsole.log(`Aggregated insights into ${sections.length} sections (max ${maxPerSection} per section)`);\n\n// Pass through runtime config for stub/real toggle\nconst runtime = data._thresholds?.runtime || { use_stubs: true };\n\nreturn [{\n  json: {\n    ...data,\n    byTopic,\n    sections,\n    topTopics,\n    uniqueCitations,\n    topicSummary: Object.entries(topicCounts).map(([t, c]) => `${t}: ${c}`).join(', '),\n    _usedThresholds: {\n      maxPerSection\n    },\n    _runtime: runtime\n  }\n}];"
+        "jsCode": "// Group insights by topic and prepare aggregated data\n// Uses maxPerSection threshold from config\nconst data = $input.first().json;\nconst insights = data.insights || [];\nconst projectIdeas = data.projectIdeas || [];\nconst thresholds = data._thresholds || {};\nconst agents = data._agents;\nconst maxPerSection = thresholds.maxPerSection || 10;\n\n// Group insights by primary topic (first topic in array)\nconst byTopic = {};\nconst topicCounts = {};\n\nfor (const insight of insights) {\n  const topics = insight.topics || [];\n  const primaryTopic = topics[0] || 'other';\n  \n  if (!byTopic[primaryTopic]) {\n    byTopic[primaryTopic] = [];\n    topicCounts[primaryTopic] = 0;\n  }\n  byTopic[primaryTopic].push(insight);\n  topicCounts[primaryTopic]++;\n  \n  // Also count all topics for ranking\n  for (const topic of topics) {\n    if (topic !== primaryTopic) {\n      topicCounts[topic] = (topicCounts[topic] || 0) + 1;\n    }\n  }\n}\n\n// Sort topics by count for top_topics\nconst topTopics = Object.entries(topicCounts)\n  .sort((a, b) => b[1] - a[1])\n  .slice(0, 5)\n  .map(([topic]) => topic);\n\n// Collect all citations\nconst allCitations = [];\nfor (const insight of insights) {\n  if (insight.citations) {\n    allCitations.push(...insight.citations);\n  }\n}\nconst uniqueCitations = [...new Set(allCitations)];\n\n// Build sections data for LLM - limit per section using maxPerSection from config\nconst sections = Object.entries(byTopic).map(([topic, topicInsights]) => ({\n  topic,\n  insightCount: topicInsights.length,\n  insights: topicInsights.slice(0, maxPerSection).map(i => ({\n    id: i.id,\n    title: i.title,\n    tldr: i.tldr,\n    score: i.freedom_relevance_score,\n    published_url: i.published_url,\n    citations: i.citations\n  }))\n}));\n\n// Format project ideas for LLM\nconst formattedProjectIdeas = projectIdeas.map(idea => ({\n  id: idea.id,\n  problem_statement: idea.problem_statement,\n  proposed_solution: idea.proposed_solution,\n  mvp_scope: idea.mvp_scope,\n  feasibility_score: idea.feasibility_score,\n  impact_score: idea.impact_score,\n  status: idea.status,\n  github_issue_url: idea.github_issue_url,\n  affected_groups: idea.affected_groups\n}));\n\nconsole.log(`Aggregated insights into ${sections.length} sections (max ${maxPerSection} per section)`);\nconsole.log(`Including ${formattedProjectIdeas.length} project ideas for digest`);\n\n// Pass through runtime config for stub/real toggle\nconst runtime = data._thresholds?.runtime || { use_stubs: true };\n\nreturn [{\n  json: {\n    ...data,\n    byTopic,\n    sections,\n    topTopics,\n    uniqueCitations,\n    formattedProjectIdeas,\n    topicSummary: Object.entries(topicCounts).map(([t, c]) => `${t}: ${c}`).join(', '),\n    _usedThresholds: {\n      maxPerSection\n    },\n    _runtime: runtime\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [1760, -100],
+      "position": [1980, -100],
       "id": "aggregate-by-topic",
       "name": "Aggregate by Topic"
     },
@@ -170,17 +202,17 @@
       },
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
-      "position": [1980, -100],
+      "position": [2200, -100],
       "id": "use-stubs-digest",
       "name": "Use Stubs for DigestComposer?"
     },
     {
       "parameters": {
-        "jsCode": "// STUB: DigestComposer Agent\n// Simulates Claude API response for digest generation\n// Replace with real HTTP Request to Claude API when ready\n\nconst data = $input.first().json;\nconst insights = data.insights || [];\nconst sections = data.sections || [];\nconst topTopics = data.topTopics || [];\n\n// Topic display names\nconst topicNames = {\n  'bitcoin': 'Bitcoin & Payments',\n  'zk': 'Zero Knowledge',\n  'censorship-resistance': 'Censorship Resistance',\n  'comms': 'Secure Communications',\n  'payments': 'Payments & Finance',\n  'identity': 'Identity & Privacy',\n  'privacy': 'Privacy',\n  'surveillance': 'Surveillance',\n  'activism': 'Activism',\n  'sovereignty': 'Sovereignty'\n};\n\n// Generate executive TL;DR\nconst topInsights = insights.slice(0, 3);\nlet executiveTldr = `This week brought ${data.insightCount} signals across ${topTopics.length} key areas of freedom technology. `;\n\nif (topInsights.length > 0) {\n  executiveTldr += `Top stories include: ${topInsights.map(i => i.title).join('; ')}. `;\n}\n\nif (topTopics.length > 0) {\n  executiveTldr += `Most active topics: ${topTopics.slice(0, 3).map(t => topicNames[t] || t).join(', ')}.`;\n}\n\n// Generate sections markdown\nconst sectionMarkdowns = [];\n\nfor (const section of sections) {\n  const topicTitle = topicNames[section.topic] || section.topic;\n  let md = `### ${topicTitle}\\n\\n`;\n  \n  for (const insight of section.insights) {\n    const url = insight.published_url || '#';\n    md += `- [${insight.title}](${url}) \\u2014 ${insight.tldr}\\n`;\n  }\n  \n  sectionMarkdowns.push({\n    title: topicTitle,\n    content_markdown: md,\n    insight_ids: section.insights.map(i => i.id)\n  });\n}\n\n// Identify emerging patterns (stub - simple keyword analysis)\nconst emergingPatterns = [];\nif (data.insightCount >= 3) {\n  emergingPatterns.push({\n    pattern: `Increased activity in ${topTopics[0] || 'freedom tech'} space`,\n    supporting_signals: insights.slice(0, 2).map(i => i.id)\n  });\n}\nif (insights.some(i => (i.geo || []).length > 0)) {\n  const geos = [...new Set(insights.flatMap(i => i.geo || []))];\n  if (geos.length > 0) {\n    emergingPatterns.push({\n      pattern: `Geographic focus on ${geos.slice(0, 3).join(', ')}`,\n      supporting_signals: insights.filter(i => (i.geo || []).length > 0).slice(0, 2).map(i => i.id)\n    });\n  }\n}\n\n// Looking ahead suggestions\nconst lookingAhead = [\n  'Continue monitoring developments in ' + (topTopics[0] ? (topicNames[topTopics[0]] || topTopics[0]) : 'key freedom tech areas'),\n  'Watch for regulatory responses to emerging tools',\n  'Track adoption metrics for highlighted projects'\n];\n\n// Build full digest content\nconst digestOutput = {\n  executive_tldr: executiveTldr,\n  sections: sectionMarkdowns,\n  emerging_patterns: emergingPatterns,\n  looking_ahead: lookingAhead,\n  insight_count: data.insightCount,\n  top_topics: topTopics\n};\n\n// Format as Claude API response structure\nreturn [{\n  json: {\n    content: [{\n      type: 'text',\n      text: JSON.stringify(digestOutput)\n    }],\n    _periodData: {\n      periodStartDisplay: data.periodStartDisplay,\n      periodEndDisplay: data.periodEndDisplay,\n      digestId: data.digestId\n    },\n    _uniqueCitations: data.uniqueCitations,\n    _agents: data._agents\n  }\n}];"
+        "jsCode": "// STUB: DigestComposer Agent\n// Simulates Claude API response for digest generation\n// Replace with real HTTP Request to Claude API when ready\n\nconst data = $input.first().json;\nconst insights = data.insights || [];\nconst sections = data.sections || [];\nconst topTopics = data.topTopics || [];\nconst projectIdeas = data.formattedProjectIdeas || [];\n\n// Topic display names\nconst topicNames = {\n  'bitcoin': 'Bitcoin & Payments',\n  'zk': 'Zero Knowledge',\n  'censorship-resistance': 'Censorship Resistance',\n  'comms': 'Secure Communications',\n  'payments': 'Payments & Finance',\n  'identity': 'Identity & Privacy',\n  'privacy': 'Privacy',\n  'surveillance': 'Surveillance',\n  'activism': 'Activism',\n  'sovereignty': 'Sovereignty'\n};\n\n// Generate executive TL;DR\nconst topInsights = insights.slice(0, 3);\nlet executiveTldr = `This week brought ${data.insightCount} signals across ${topTopics.length} key areas of freedom technology. `;\n\nif (topInsights.length > 0) {\n  executiveTldr += `Top stories include: ${topInsights.map(i => i.title).join('; ')}. `;\n}\n\nif (projectIdeas.length > 0) {\n  executiveTldr += `${projectIdeas.length} new project idea${projectIdeas.length > 1 ? 's were' : ' was'} generated. `;\n}\n\nif (topTopics.length > 0) {\n  executiveTldr += `Most active topics: ${topTopics.slice(0, 3).map(t => topicNames[t] || t).join(', ')}.`;\n}\n\n// Generate sections markdown\nconst sectionMarkdowns = [];\n\nfor (const section of sections) {\n  const topicTitle = topicNames[section.topic] || section.topic;\n  let md = `### ${topicTitle}\\n\\n`;\n  \n  for (const insight of section.insights) {\n    const url = insight.published_url || '#';\n    md += `- [${insight.title}](${url}) \\u2014 ${insight.tldr}\\n`;\n  }\n  \n  sectionMarkdowns.push({\n    title: topicTitle,\n    content_markdown: md,\n    insight_ids: section.insights.map(i => i.id)\n  });\n}\n\n// Identify emerging patterns (stub - simple keyword analysis)\nconst emergingPatterns = [];\nif (data.insightCount >= 3) {\n  emergingPatterns.push({\n    pattern: `Increased activity in ${topTopics[0] || 'freedom tech'} space`,\n    supporting_signals: insights.slice(0, 2).map(i => i.id)\n  });\n}\nif (insights.some(i => (i.geo || []).length > 0)) {\n  const geos = [...new Set(insights.flatMap(i => i.geo || []))];\n  if (geos.length > 0) {\n    emergingPatterns.push({\n      pattern: `Geographic focus on ${geos.slice(0, 3).join(', ')}`,\n      supporting_signals: insights.filter(i => (i.geo || []).length > 0).slice(0, 2).map(i => i.id)\n    });\n  }\n}\n\n// Format project ideas for output\nconst formattedIdeasOutput = projectIdeas.map(idea => ({\n  id: idea.id,\n  problem_statement: idea.problem_statement,\n  proposed_solution: idea.proposed_solution,\n  impact_score: idea.impact_score,\n  feasibility_score: idea.feasibility_score,\n  github_issue_url: idea.github_issue_url,\n  status: idea.status\n}));\n\n// Looking ahead suggestions\nconst lookingAhead = [\n  'Continue monitoring developments in ' + (topTopics[0] ? (topicNames[topTopics[0]] || topTopics[0]) : 'key freedom tech areas'),\n  'Watch for regulatory responses to emerging tools',\n  'Track adoption metrics for highlighted projects'\n];\n\nif (projectIdeas.length > 0) {\n  lookingAhead.push(`Review and triage ${projectIdeas.length} new project idea${projectIdeas.length > 1 ? 's' : ''} for potential implementation`);\n}\n\n// Build full digest content\nconst digestOutput = {\n  executive_tldr: executiveTldr,\n  sections: sectionMarkdowns,\n  emerging_patterns: emergingPatterns,\n  project_ideas: formattedIdeasOutput,\n  looking_ahead: lookingAhead,\n  insight_count: data.insightCount,\n  project_idea_count: projectIdeas.length,\n  top_topics: topTopics\n};\n\n// Format as Claude API response structure\nreturn [{\n  json: {\n    content: [{\n      type: 'text',\n      text: JSON.stringify(digestOutput)\n    }],\n    _periodData: {\n      periodStartDisplay: data.periodStartDisplay,\n      periodEndDisplay: data.periodEndDisplay,\n      digestId: data.digestId\n    },\n    _uniqueCitations: data.uniqueCitations,\n    _projectIdeas: projectIdeas,\n    _agents: data._agents\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [2200, -200],
+      "position": [2420, -200],
       "id": "digest-composer-stub",
       "name": "DigestComposer Stub (Claude)"
     },
@@ -205,14 +237,14 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 4096,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": {{ JSON.stringify($('Aggregate by Topic').first().json._agents?.digest + \"\\n\\n# Input\\n\\nPeriod: \" + $('Aggregate by Topic').first().json.periodStartDisplay + \" to \" + $('Aggregate by Topic').first().json.periodEndDisplay + \"\\n\\nInsights by topic:\\n\" + JSON.stringify($('Aggregate by Topic').first().json.sections, null, 2) + \"\\n\\nProject Ideas from this week: []\\n\\nTotal insight count: \" + $('Aggregate by Topic').first().json.insightCount) }}\n  }]\n}",
+        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 4096,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": {{ JSON.stringify($('Aggregate by Topic').first().json._agents?.digest + \"\\n\\n# Input\\n\\nPeriod: \" + $('Aggregate by Topic').first().json.periodStartDisplay + \" to \" + $('Aggregate by Topic').first().json.periodEndDisplay + \"\\n\\nInsights by topic:\\n\" + JSON.stringify($('Aggregate by Topic').first().json.sections, null, 2) + \"\\n\\nProject Ideas from this week:\\n\" + JSON.stringify($('Aggregate by Topic').first().json.formattedProjectIdeas || [], null, 2) + \"\\n\\nTotal insight count: \" + $('Aggregate by Topic').first().json.insightCount + \"\\nTotal project idea count: \" + ($('Aggregate by Topic').first().json.formattedProjectIdeas?.length || 0)) }}\n  }]\n}",
         "options": {
           "timeout": 60000
         }
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [2200, 0],
+      "position": [2420, 0],
       "id": "digest-composer-real",
       "name": "DigestComposer with Claude API",
       "credentials": {
@@ -224,21 +256,21 @@
     },
     {
       "parameters": {
-        "jsCode": "// Process real Claude API response and add pass-through data for digest\nconst claudeResponse = $input.first().json;\nconst aggregateData = $('Aggregate by Topic').first().json;\n\n// Return in same format as stub for Parse Digest Output compatibility\nreturn [{\n  json: {\n    content: claudeResponse.content,\n    _periodData: {\n      periodStartDisplay: aggregateData.periodStartDisplay,\n      periodEndDisplay: aggregateData.periodEndDisplay,\n      digestId: aggregateData.digestId\n    },\n    _uniqueCitations: aggregateData.uniqueCitations,\n    _agents: aggregateData._agents\n  }\n}];"
+        "jsCode": "// Process real Claude API response and add pass-through data for digest\nconst claudeResponse = $input.first().json;\nconst aggregateData = $('Aggregate by Topic').first().json;\n\n// Return in same format as stub for Parse Digest Output compatibility\nreturn [{\n  json: {\n    content: claudeResponse.content,\n    _periodData: {\n      periodStartDisplay: aggregateData.periodStartDisplay,\n      periodEndDisplay: aggregateData.periodEndDisplay,\n      digestId: aggregateData.digestId\n    },\n    _uniqueCitations: aggregateData.uniqueCitations,\n    _projectIdeas: aggregateData.formattedProjectIdeas || [],\n    _agents: aggregateData._agents\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [2420, 0],
+      "position": [2640, 0],
       "id": "wrap-digest-response",
       "name": "Wrap Claude Digest Response"
     },
     {
       "parameters": {
-        "jsCode": "// Parse digest output from Claude API format\nconst input = $input.first().json;\nlet digest;\n\ntry {\n  let text = input.content[0].text;\n  \n  // Strip markdown code blocks if present (Claude often wraps JSON in ```json...```)\n  text = text.trim();\n  if (text.startsWith('```')) {\n    // Remove opening fence (```json or ```)\n    text = text.replace(/^```(?:json)?\\s*\\n?/, '');\n    // Remove closing fence\n    text = text.replace(/\\n?```\\s*$/, '');\n  }\n  \n  digest = JSON.parse(text.trim());\n} catch (e) {\n  // Fallback if parsing fails\n  console.log('Parse Digest error:', e.message);\n  console.log('Raw text:', input.content?.[0]?.text?.substring(0, 200));\n  digest = {\n    executive_tldr: 'Failed to generate digest summary: ' + e.message,\n    sections: [],\n    emerging_patterns: [],\n    looking_ahead: ['Review source insights manually'],\n    insight_count: 0,\n    top_topics: []\n  };\n}\n\nconst periodData = input._periodData;\nconst uniqueCitations = input._uniqueCitations || [];\n\n// Build full markdown content for digest\nlet contentMarkdown = `---\\nid: \"${periodData.digestId}\"\\ntype: \"weekly-digest\"\\npublished_at: \"${new Date().toISOString()}\"\\nperiod_start: \"${periodData.periodStartDisplay}\"\\nperiod_end: \"${periodData.periodEndDisplay}\"\\ninsight_count: ${digest.insight_count}\\n---\\n\\n`;\n\ncontentMarkdown += `# Weekly Freedom Tech Digest\\n\\n`;\ncontentMarkdown += `*${periodData.periodStartDisplay} to ${periodData.periodEndDisplay}*\\n\\n`;\n\ncontentMarkdown += `## TL;DR\\n\\n${digest.executive_tldr}\\n\\n`;\n\ncontentMarkdown += `## Top Signals\\n\\n`;\nfor (const section of (digest.sections || [])) {\n  contentMarkdown += section.content_markdown + '\\n';\n}\n\nif (digest.emerging_patterns && digest.emerging_patterns.length > 0) {\n  contentMarkdown += `## Emerging Patterns\\n\\n`;\n  for (const pattern of digest.emerging_patterns) {\n    contentMarkdown += `- **${pattern.pattern}**\\n`;\n  }\n  contentMarkdown += '\\n';\n}\n\nif (digest.looking_ahead && digest.looking_ahead.length > 0) {\n  contentMarkdown += `## Looking Ahead\\n\\n`;\n  for (const item of digest.looking_ahead) {\n    contentMarkdown += `- ${item}\\n`;\n  }\n  contentMarkdown += '\\n';\n}\n\nif (uniqueCitations && uniqueCitations.length > 0) {\n  contentMarkdown += `## Sources This Week\\n\\n`;\n  for (const citation of uniqueCitations.slice(0, 20)) {\n    contentMarkdown += `- ${citation}\\n`;\n  }\n}\n\n// Prepare data for database insert\nreturn [{\n  json: {\n    periodStart: periodData.periodStartDisplay,\n    periodEnd: periodData.periodEndDisplay,\n    insightCount: digest.insight_count,\n    executiveTldr: digest.executive_tldr,\n    contentMarkdown: contentMarkdown,\n    topTopics: digest.top_topics || [],\n    digestId: periodData.digestId\n  }\n}];"
+        "jsCode": "// Parse digest output from Claude API format\nconst input = $input.first().json;\nlet digest;\n\ntry {\n  let text = input.content[0].text;\n  \n  // Strip markdown code blocks if present (Claude often wraps JSON in ```json...```)\n  text = text.trim();\n  if (text.startsWith('```')) {\n    // Remove opening fence (```json or ```)\n    text = text.replace(/^```(?:json)?\\s*\\n?/, '');\n    // Remove closing fence\n    text = text.replace(/\\n?```\\s*$/, '');\n  }\n  \n  digest = JSON.parse(text.trim());\n} catch (e) {\n  // Fallback if parsing fails\n  console.log('Parse Digest error:', e.message);\n  console.log('Raw text:', input.content?.[0]?.text?.substring(0, 200));\n  digest = {\n    executive_tldr: 'Failed to generate digest summary: ' + e.message,\n    sections: [],\n    emerging_patterns: [],\n    project_ideas: [],\n    looking_ahead: ['Review source insights manually'],\n    insight_count: 0,\n    project_idea_count: 0,\n    top_topics: []\n  };\n}\n\nconst periodData = input._periodData;\nconst uniqueCitations = input._uniqueCitations || [];\nconst projectIdeas = input._projectIdeas || digest.project_ideas || [];\nconst projectIdeaCount = projectIdeas.length || digest.project_idea_count || 0;\n\n// Build full markdown content for digest\nlet contentMarkdown = `---\\nid: \"${periodData.digestId}\"\\ntype: \"weekly-digest\"\\npublished_at: \"${new Date().toISOString()}\"\\nperiod_start: \"${periodData.periodStartDisplay}\"\\nperiod_end: \"${periodData.periodEndDisplay}\"\\ninsight_count: ${digest.insight_count}\\nproject_idea_count: ${projectIdeaCount}\\n---\\n\\n`;\n\ncontentMarkdown += `# Weekly Freedom Tech Digest\\n\\n`;\ncontentMarkdown += `*${periodData.periodStartDisplay} to ${periodData.periodEndDisplay}*\\n\\n`;\n\ncontentMarkdown += `## TL;DR\\n\\n${digest.executive_tldr}\\n\\n`;\n\ncontentMarkdown += `## Top Signals\\n\\n`;\nfor (const section of (digest.sections || [])) {\n  contentMarkdown += section.content_markdown + '\\n';\n}\n\nif (digest.emerging_patterns && digest.emerging_patterns.length > 0) {\n  contentMarkdown += `## Emerging Patterns\\n\\n`;\n  for (const pattern of digest.emerging_patterns) {\n    contentMarkdown += `- **${pattern.pattern}**\\n`;\n  }\n  contentMarkdown += '\\n';\n}\n\n// Add Project Ideas Generated This Week section\nif (projectIdeas && projectIdeas.length > 0) {\n  contentMarkdown += `## Project Ideas Generated This Week\\n\\n`;\n  contentMarkdown += `This week's high-signal insights inspired ${projectIdeas.length} new project idea${projectIdeas.length > 1 ? 's' : ''}:\\n\\n`;\n  \n  for (const idea of projectIdeas) {\n    const statusBadge = idea.status === 'build_candidate' ? ' \\u2b50' : '';\n    const issueLink = idea.github_issue_url ? ` ([GitHub Issue](${idea.github_issue_url}))` : '';\n    \n    contentMarkdown += `### ${idea.problem_statement?.substring(0, 100)}...${statusBadge}\\n\\n`;\n    contentMarkdown += `**Proposed Solution**: ${idea.proposed_solution?.substring(0, 200)}...\\n\\n`;\n    contentMarkdown += `**Impact Score**: ${idea.impact_score}/100 | **Feasibility Score**: ${idea.feasibility_score}/100${issueLink}\\n\\n`;\n    \n    if (idea.affected_groups && idea.affected_groups.length > 0) {\n      contentMarkdown += `**Affected Groups**: ${idea.affected_groups.join(', ')}\\n\\n`;\n    }\n  }\n}\n\nif (digest.looking_ahead && digest.looking_ahead.length > 0) {\n  contentMarkdown += `## Looking Ahead\\n\\n`;\n  for (const item of digest.looking_ahead) {\n    contentMarkdown += `- ${item}\\n`;\n  }\n  contentMarkdown += '\\n';\n}\n\nif (uniqueCitations && uniqueCitations.length > 0) {\n  contentMarkdown += `## Sources This Week\\n\\n`;\n  for (const citation of uniqueCitations.slice(0, 20)) {\n    contentMarkdown += `- ${citation}\\n`;\n  }\n}\n\n// Prepare data for database insert\nreturn [{\n  json: {\n    periodStart: periodData.periodStartDisplay,\n    periodEnd: periodData.periodEndDisplay,\n    insightCount: digest.insight_count,\n    projectIdeaCount: projectIdeaCount,\n    executiveTldr: digest.executive_tldr,\n    contentMarkdown: contentMarkdown,\n    topTopics: digest.top_topics || [],\n    digestId: periodData.digestId\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [2640, -100],
+      "position": [2860, -100],
       "id": "parse-digest",
       "name": "Parse Digest Output"
     },
@@ -248,7 +280,7 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [2860, -100],
+      "position": [3080, -100],
       "id": "build-digest-query",
       "name": "Build Digest Query"
     },
@@ -260,7 +292,7 @@
       },
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
-      "position": [3080, -100],
+      "position": [3300, -100],
       "id": "insert-digest",
       "name": "Insert/Update Digest",
       "credentials": {
@@ -276,7 +308,7 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3300, -100],
+      "position": [3520, -100],
       "id": "merge-insert-result",
       "name": "Merge Insert Result"
     },
@@ -305,7 +337,7 @@
       },
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
-      "position": [3520, -100],
+      "position": [3740, -100],
       "id": "use-stubs-github",
       "name": "Use Stubs for GitHub?"
     },
@@ -315,7 +347,7 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3740, -250],
+      "position": [3960, -250],
       "id": "github-commit-stub",
       "name": "GitHub Commit Stub"
     },
@@ -325,7 +357,7 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3740, 50],
+      "position": [3960, 50],
       "id": "prepare-github-commit-digest",
       "name": "Prepare GitHub Commit"
     },
@@ -354,7 +386,7 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [3960, 50],
+      "position": [4180, 50],
       "id": "get-branch-ref-digest",
       "name": "Get Branch Ref",
       "credentials": {
@@ -389,7 +421,7 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [4180, 50],
+      "position": [4400, 50],
       "id": "get-base-tree-digest",
       "name": "Get Base Tree",
       "credentials": {
@@ -405,7 +437,7 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [4400, 50],
+      "position": [4620, 50],
       "id": "build-tree-entries-digest",
       "name": "Build Tree Entries"
     },
@@ -437,7 +469,7 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [4620, 50],
+      "position": [4840, 50],
       "id": "create-tree-digest",
       "name": "Create Tree",
       "credentials": {
@@ -475,7 +507,7 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [4840, 50],
+      "position": [5060, 50],
       "id": "create-commit-digest",
       "name": "Create Commit",
       "credentials": {
@@ -513,7 +545,7 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [5060, 50],
+      "position": [5280, 50],
       "id": "update-branch-ref-digest",
       "name": "Update Branch Ref",
       "credentials": {
@@ -529,7 +561,7 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [5280, 50],
+      "position": [5500, 50],
       "id": "wrap-github-response-digest",
       "name": "Wrap GitHub Response"
     },
@@ -539,7 +571,7 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [5500, -100],
+      "position": [5720, -100],
       "id": "resend-email-stub",
       "name": "Resend Email Stub"
     },
@@ -567,7 +599,7 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [5500, 100],
+      "position": [5720, 100],
       "id": "resend-email-real",
       "name": "Resend Email (Disabled)"
     },
@@ -577,7 +609,7 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [5720, -100],
+      "position": [5940, -100],
       "id": "final-summary",
       "name": "Final Summary"
     },
@@ -587,7 +619,7 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [1760, 100],
+      "position": [1980, 100],
       "id": "skip-no-insights",
       "name": "Skip - No Insights"
     }
@@ -661,11 +693,38 @@
             "node": "Query Published Insights",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "Query Recent Project Ideas",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
     },
     "Query Published Insights": {
+      "main": [
+        [
+          {
+            "node": "Wait for Queries",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Query Recent Project Ideas": {
+      "main": [
+        [
+          {
+            "node": "Wait for Queries",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Wait for Queries": {
       "main": [
         [
           {

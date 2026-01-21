@@ -51,10 +51,22 @@ Return a JSON object with the following structure:
       "supporting_signals": ["Insight IDs supporting this pattern"]
     }
   ],
+  "project_ideas": [
+    {
+      "id": "Project idea UUID",
+      "problem_statement": "Brief problem being addressed",
+      "proposed_solution": "Summary of the proposed solution",
+      "impact_score": 85,
+      "feasibility_score": 70,
+      "github_issue_url": "https://github.com/...",
+      "status": "new|triaged|build_candidate"
+    }
+  ],
   "looking_ahead": [
     "What to monitor next week"
   ],
   "insight_count": 12,
+  "project_idea_count": 2,
   "top_topics": ["Most prominent topics this week"]
 }
 ```
@@ -90,8 +102,13 @@ insight_count: 12
 ## Emerging Patterns
 [Analysis of trends across the week]
 
-## Project Ideas Generated
-[Links to new ProjectIdeas if any]
+## Project Ideas Generated This Week
+[For each project idea generated this week, include:
+- Problem statement (as heading)
+- Proposed solution summary
+- Impact and feasibility scores
+- Link to GitHub issue if available
+- Affected groups]
 
 ## Looking Ahead
 [What to watch next week]
@@ -138,7 +155,7 @@ Input:
 Output:
 ```json
 {
-  "executive_tldr": "This week saw significant developments in censorship-resistant communications, with Uganda's government explicitly acknowledging the effectiveness of mesh networking tools used by activists. Meanwhile, Bitcoin's mining distribution continues to improve, strengthening the network's censorship resistance properties.",
+  "executive_tldr": "This week saw significant developments in censorship-resistant communications, with Uganda's government explicitly acknowledging the effectiveness of mesh networking tools used by activists. Meanwhile, Bitcoin's mining distribution continues to improve, strengthening the network's censorship resistance properties. One new project idea was generated.",
   "sections": [
     {
       "title": "Censorship Resistance",
@@ -157,12 +174,25 @@ Output:
       "supporting_signals": ["insight-001"]
     }
   ],
+  "project_ideas": [
+    {
+      "id": "idea-001",
+      "problem_statement": "Mesh network bootstrapping in regions with frequent internet shutdowns",
+      "proposed_solution": "Pre-configured mesh network nodes with Bitchat integration for rapid deployment",
+      "impact_score": 85,
+      "feasibility_score": 70,
+      "github_issue_url": null,
+      "status": "new"
+    }
+  ],
   "looking_ahead": [
     "Monitor for additional government responses to mesh networking tools",
     "Watch for new mining pool entrants affecting distribution",
-    "Track Bitchat adoption in other shutdown-prone regions"
+    "Track Bitchat adoption in other shutdown-prone regions",
+    "Review and triage 1 new project idea for potential implementation"
   ],
   "insight_count": 2,
+  "project_idea_count": 1,
   "top_topics": ["censorship-resistance", "bitcoin", "comms", "sovereignty"]
 }
 ```

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predev": "rm -rf ./config && cp -r ../config ./config && rm -rf ./agents && cp -r ../agents ./agents",
     "dev": "next dev",
     "prebuild": "rm -rf ./config && cp -r ../config ./config && rm -rf ./agents && cp -r ../agents ./agents",
     "build": "next build",

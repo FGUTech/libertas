@@ -74,7 +74,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Validate input with thresholds from config\n// Now also captures story-specific fields for 1.13a Story Intake Processing\nconst merged = $input.first().json;\nconst rateLimiting = merged._rateLimitConfig || {};\nconst agents = merged._agents;\nconst webhookData = merged._webhookData;\nconst runtimeConfig = merged.runtime || { use_stubs: true };\n\n// For stories, description is the main content; for feedback, it's message\nconst messageContent = webhookData.description || webhookData.message || '';\n\nif (!messageContent || messageContent.trim().length < 10) {\n  throw new Error('Message/description required (min 10 chars)');\n}\n\n// Map submission type to valid database category\n// DB constraint: 'tool-request', 'idea', 'report', 'question', 'collaboration', 'other'\nconst submissionType = webhookData.type || 'feedback';\nlet dbCategory = 'other';\nif (submissionType === 'story') {\n  dbCategory = 'report';  // Stories are reports of events/news\n} else if (submissionType === 'project') {\n  dbCategory = 'idea';    // Project proposals are ideas\n} else if (webhookData.category) {\n  // For feedback, map form categories to valid DB values\n  const validCategories = ['tool-request', 'idea', 'report', 'question', 'collaboration', 'other'];\n  dbCategory = validCategories.includes(webhookData.category) ? webhookData.category : 'other';\n}\n\nreturn [{\n  json: {\n    // Database columns (snake_case to match postgres)\n    message: messageContent.trim(),\n    contact: webhookData.contact || null,\n    category: dbCategory,\n    channel: 'web',\n    submission_type: submissionType,\n    title: webhookData.title || null,\n    source_url: webhookData.sourceUrl || null,\n    region: webhookData.region || null,\n    urgency: webhookData.urgency || 'normal',\n    \n    // Additional fields for workflow logic (not inserted to DB)\n    safetyMode: webhookData.safetyMode || false,\n    type: submissionType,\n    sourceUrl: webhookData.sourceUrl || null,\n    \n    // Pass-through metadata\n    _rateLimitConfig: rateLimiting,\n    _agents: agents,\n    _runtime: runtimeConfig\n  }\n}];"
+        "jsCode": "// Validate input with thresholds from config\n// Now also captures story-specific and project-specific fields\nconst merged = $input.first().json;\nconst rateLimiting = merged._rateLimitConfig || {};\nconst agents = merged._agents;\nconst webhookData = merged._webhookData;\nconst runtimeConfig = merged.runtime || { use_stubs: true };\n\n// For stories/projects, description is the main content; for feedback, it's message\nconst messageContent = webhookData.description || webhookData.message || '';\n\nif (!messageContent || messageContent.trim().length < 10) {\n  throw new Error('Message/description required (min 10 chars)');\n}\n\n// Map submission type to valid database category\n// DB constraint: 'tool-request', 'idea', 'report', 'question', 'collaboration', 'other'\nconst submissionType = webhookData.type || 'feedback';\nlet dbCategory = 'other';\nif (submissionType === 'story') {\n  dbCategory = 'report';  // Stories are reports of events/news\n} else if (submissionType === 'project') {\n  dbCategory = 'idea';    // Project proposals are ideas\n} else if (webhookData.category) {\n  // For feedback, map form categories to valid DB values\n  const validCategories = ['tool-request', 'idea', 'report', 'question', 'collaboration', 'other'];\n  dbCategory = validCategories.includes(webhookData.category) ? webhookData.category : 'other';\n}\n\nreturn [{\n  json: {\n    // Database columns (snake_case to match postgres)\n    message: messageContent.trim(),\n    contact: webhookData.contact || null,\n    category: dbCategory,\n    channel: 'web',\n    submission_type: submissionType,\n    title: webhookData.title || null,\n    source_url: webhookData.sourceUrl || null,\n    region: webhookData.region || null,\n    urgency: webhookData.urgency || 'normal',\n    \n    // Project-specific fields (from form)\n    problemStatement: webhookData.problemStatement || null,\n    \n    // Additional fields for workflow logic (not inserted to DB)\n    safetyMode: webhookData.safetyMode || false,\n    type: submissionType,\n    sourceUrl: webhookData.sourceUrl || null,\n    \n    // Pass-through metadata\n    _rateLimitConfig: rateLimiting,\n    _agents: agents,\n    _runtime: runtimeConfig\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -141,7 +141,7 @@
     },
     {
       "parameters": {
-        "jsCode": "const message = $('Insert Submission').first().json.message;\nconst validateInput = $('Validate Input').first().json;\n\n// Simple keyword-based classification for testing\nconst tags = [];\nif (message.toLowerCase().includes('messaging') || message.toLowerCase().includes('comms')) tags.push('comms');\nif (message.toLowerCase().includes('offline')) tags.push('censorship-resistance');\nif (message.toLowerCase().includes('secure') || message.toLowerCase().includes('privacy')) tags.push('privacy');\nif (message.toLowerCase().includes('bitcoin') || message.toLowerCase().includes('btc')) tags.push('bitcoin');\nif (message.toLowerCase().includes('tool') || message.toLowerCase().includes('build')) tags.push('sovereignty');\nif (tags.length === 0) tags.push('general');\n\n// Determine category from content\nlet category = 'other';\nif (message.toLowerCase().includes('tool') || message.toLowerCase().includes('need')) category = 'tool-request';\nelse if (message.toLowerCase().includes('idea') || message.toLowerCase().includes('what if')) category = 'idea';\nelse if (message.toLowerCase().includes('report') || message.toLowerCase().includes('observed')) category = 'report';\nelse if (message.toLowerCase().includes('question') || message.includes('?')) category = 'question';\nelse if (message.toLowerCase().includes('partner') || message.toLowerCase().includes('collaborate')) category = 'collaboration';\n\n// Determine risk level\nlet risk_level = 'low';\nif (message.toLowerCase().includes('activist') || message.toLowerCase().includes('dissident')) risk_level = 'medium';\nif (message.toLowerCase().includes('location') && risk_level === 'medium') risk_level = 'high';\n\n// Determine priority\nlet priority = 'normal';\nif (message.toLowerCase().includes('urgent') || message.toLowerCase().includes('emergency')) priority = 'urgent';\nif (message.toLowerCase().includes('fyi') || message.toLowerCase().includes('just sharing')) priority = 'low';\n\n// Check for spam patterns\nconst is_spam = message.toLowerCase().includes('crypto airdrop') || \n                message.toLowerCase().includes('click here') ||\n                (message.match(/https?:\\/\\//g) || []).length > 5;\n\n// Determine if response is needed\nconst requires_response = category !== 'other' && !is_spam && \n                          (message.includes('?') || category === 'tool-request' || category === 'collaboration');\n\n// Generate summary\nconst summary = message.substring(0, 180).replace(/\\n/g, ' ').trim() + (message.length > 180 ? '...' : '');\n\n// Suggested assignee\nlet suggested_assignee = 'triage';\nif (category === 'tool-request') suggested_assignee = 'engineering';\nelse if (category === 'collaboration') suggested_assignee = 'partnerships';\nelse if (category === 'report') suggested_assignee = 'research';\n\nconst result = {\n  category,\n  tags,\n  risk_level,\n  priority,\n  summary,\n  is_spam,\n  requires_response,\n  suggested_assignee\n};\n\n// Match Claude API response format\nreturn [{\n  json: {\n    content: [{\n      type: 'text',\n      text: JSON.stringify(result)\n    }],\n    _submissionId: $('Insert Submission').first().json.id,\n    _message: message,\n    _agents: validateInput._agents,\n    _runtime: validateInput._runtime,\n    _storyData: {\n      type: validateInput.type,\n      title: validateInput.title,\n      sourceUrl: validateInput.sourceUrl,\n      region: validateInput.region,\n      urgency: validateInput.urgency\n    }\n  }\n}];"
+        "jsCode": "const message = $('Insert Submission').first().json.message;\nconst validateInput = $('Validate Input').first().json;\n\n// Simple keyword-based classification for testing\nconst tags = [];\nif (message.toLowerCase().includes('messaging') || message.toLowerCase().includes('comms')) tags.push('comms');\nif (message.toLowerCase().includes('offline')) tags.push('censorship-resistance');\nif (message.toLowerCase().includes('secure') || message.toLowerCase().includes('privacy')) tags.push('privacy');\nif (message.toLowerCase().includes('bitcoin') || message.toLowerCase().includes('btc')) tags.push('bitcoin');\nif (message.toLowerCase().includes('tool') || message.toLowerCase().includes('build')) tags.push('sovereignty');\nif (tags.length === 0) tags.push('general');\n\n// Determine category from content\nlet category = 'other';\nif (message.toLowerCase().includes('tool') || message.toLowerCase().includes('need')) category = 'tool-request';\nelse if (message.toLowerCase().includes('idea') || message.toLowerCase().includes('what if')) category = 'idea';\nelse if (message.toLowerCase().includes('report') || message.toLowerCase().includes('observed')) category = 'report';\nelse if (message.toLowerCase().includes('question') || message.includes('?')) category = 'question';\nelse if (message.toLowerCase().includes('partner') || message.toLowerCase().includes('collaborate')) category = 'collaboration';\n\n// Determine risk level\nlet risk_level = 'low';\nif (message.toLowerCase().includes('activist') || message.toLowerCase().includes('dissident')) risk_level = 'medium';\nif (message.toLowerCase().includes('location') && risk_level === 'medium') risk_level = 'high';\n\n// Determine priority\nlet priority = 'normal';\nif (message.toLowerCase().includes('urgent') || message.toLowerCase().includes('emergency')) priority = 'urgent';\nif (message.toLowerCase().includes('fyi') || message.toLowerCase().includes('just sharing')) priority = 'low';\n\n// Check for spam patterns\nconst is_spam = message.toLowerCase().includes('crypto airdrop') || \n                message.toLowerCase().includes('click here') ||\n                (message.match(/https?:\\/\\//g) || []).length > 5;\n\n// Determine if response is needed\nconst requires_response = category !== 'other' && !is_spam && \n                          (message.includes('?') || category === 'tool-request' || category === 'collaboration');\n\n// Generate summary\nconst summary = message.substring(0, 180).replace(/\\n/g, ' ').trim() + (message.length > 180 ? '...' : '');\n\n// Suggested assignee\nlet suggested_assignee = 'triage';\nif (category === 'tool-request') suggested_assignee = 'engineering';\nelse if (category === 'collaboration') suggested_assignee = 'partnerships';\nelse if (category === 'report') suggested_assignee = 'research';\n\nconst result = {\n  category,\n  tags,\n  risk_level,\n  priority,\n  summary,\n  is_spam,\n  requires_response,\n  suggested_assignee\n};\n\n// Match Claude API response format\nreturn [{\n  json: {\n    content: [{\n      type: 'text',\n      text: JSON.stringify(result)\n    }],\n    _submissionId: $('Insert Submission').first().json.id,\n    _message: message,\n    _agents: validateInput._agents,\n    _runtime: validateInput._runtime,\n    _storyData: {\n      type: validateInput.type,\n      title: validateInput.title,\n      sourceUrl: validateInput.sourceUrl,\n      region: validateInput.region,\n      urgency: validateInput.urgency,\n      problemStatement: validateInput.problemStatement\n    }\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -190,7 +190,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Process real Claude API response and add pass-through data\nconst claudeResponse = $input.first().json;\nconst validateInput = $('Validate Input').first().json;\nconst submissionData = $('Insert Submission').first().json;\n\n// Return in same format as stub for Parse LLM Response compatibility\nreturn [{\n  json: {\n    content: claudeResponse.content,\n    _submissionId: submissionData.id,\n    _message: submissionData.message,\n    _agents: validateInput._agents,\n    _runtime: validateInput._runtime,\n    _storyData: {\n      type: validateInput.type,\n      title: validateInput.title,\n      sourceUrl: validateInput.sourceUrl,\n      region: validateInput.region,\n      urgency: validateInput.urgency\n    }\n  }\n}];"
+        "jsCode": "// Process real Claude API response and add pass-through data\nconst claudeResponse = $input.first().json;\nconst validateInput = $('Validate Input').first().json;\nconst submissionData = $('Insert Submission').first().json;\n\n// Return in same format as stub for Parse LLM Response compatibility\nreturn [{\n  json: {\n    content: claudeResponse.content,\n    _submissionId: submissionData.id,\n    _message: submissionData.message,\n    _agents: validateInput._agents,\n    _runtime: validateInput._runtime,\n    _storyData: {\n      type: validateInput.type,\n      title: validateInput.title,\n      sourceUrl: validateInput.sourceUrl,\n      region: validateInput.region,\n      urgency: validateInput.urgency,\n      problemStatement: validateInput.problemStatement\n    }\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -256,6 +256,330 @@
       "position": [2620, 0],
       "id": "is-story-check",
       "name": "Is Story?"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "is-project-check",
+              "leftValue": "={{ $('Parse LLM Response').first().json._storyData?.type }}",
+              "rightValue": "project",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [2840, -200],
+      "id": "is-project-check",
+      "name": "Is Project?"
+    },
+    {
+      "parameters": {
+        "url": "https://libertas.fgu.tech/api/agents/intake-project-evaluate",
+        "options": {
+          "timeout": 5000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [3060, -400],
+      "id": "fetch-project-evaluate-prompt",
+      "name": "Fetch Project Evaluate Prompt"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "use-stubs-project-evaluate",
+              "leftValue": "={{ $('Parse LLM Response').first().json._runtime?.use_stubs ?? true }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [3280, -400],
+      "id": "use-stubs-project-evaluate",
+      "name": "Use Stubs for Project Evaluate?"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Project Evaluate Stub for testing (1.13b)\n// Provides keyword-based project assessment without calling Claude API\n\nconst parsedLLM = $('Parse LLM Response').first().json;\nconst storyData = parsedLLM._storyData;\nconst message = parsedLLM.message;\nconst title = storyData?.title || '';\nconst problemStatement = storyData?.problemStatement || message;\nconst region = storyData?.region;\nconst urgency = storyData?.urgency || 'normal';\n\nconst fullText = (title + ' ' + problemStatement + ' ' + message).toLowerCase();\n\n// Topic detection for tech stack suggestions\nconst topics = [];\nif (fullText.includes('bitcoin') || fullText.includes('btc') || fullText.includes('lightning')) topics.push('bitcoin');\nif (fullText.includes('zk') || fullText.includes('zero knowledge') || fullText.includes('proof')) topics.push('zk');\nif (fullText.includes('mesh') || fullText.includes('p2p') || fullText.includes('peer')) topics.push('comms');\nif (fullText.includes('privacy') || fullText.includes('encrypt') || fullText.includes('anonymous')) topics.push('privacy');\nif (fullText.includes('identity') || fullText.includes('kyc') || fullText.includes('credential')) topics.push('identity');\nif (fullText.includes('censor') || fullText.includes('blocked') || fullText.includes('firewall')) topics.push('censorship-resistance');\nif (topics.length === 0) topics.push('sovereignty');\n\n// Generate threat model based on content\nlet threat_model = 'Generic adversaries including network observers and platform operators.';\nif (fullText.includes('government') || fullText.includes('state')) {\n  threat_model = 'State-level adversaries with network monitoring capabilities, ability to compel platforms, and potential for targeted surveillance.';\n} else if (fullText.includes('activist') || fullText.includes('journalist')) {\n  threat_model = 'Adversaries targeting individuals including state actors, corporate surveillance, and social engineering attacks.';\n}\n\n// Identify affected groups\nconst affected_groups = ['Privacy-conscious users'];\nif (fullText.includes('activist')) affected_groups.push('Activists in authoritarian regimes');\nif (fullText.includes('journalist')) affected_groups.push('Journalists protecting sources');\nif (fullText.includes('human rights')) affected_groups.push('Human rights organizations');\nif (fullText.includes('developer')) affected_groups.push('Freedom tech developers');\nif (affected_groups.length === 1) affected_groups.push('General users seeking privacy');\n\n// Calculate feasibility score\nlet feasibility_score = 60;\nif (fullText.includes('existing') || fullText.includes('integrate')) feasibility_score += 15;\nif (fullText.includes('complex') || fullText.includes('research')) feasibility_score -= 15;\nif (fullText.includes('simple') || fullText.includes('basic')) feasibility_score += 10;\nfeasibility_score = Math.max(30, Math.min(90, feasibility_score));\n\n// Calculate impact score\nlet impact_score = 55;\nif (fullText.includes('life') || fullText.includes('safety') || fullText.includes('threat')) impact_score += 25;\nif (fullText.includes('many') || fullText.includes('widespread') || fullText.includes('global')) impact_score += 15;\nif (fullText.includes('niche') || fullText.includes('specific')) impact_score -= 10;\nimpact_score = Math.max(30, Math.min(95, impact_score));\n\n// Generate misuse risks\nlet misuse_risks = 'Could be used to coordinate harmful activities under cover of privacy. May enable evasion of legitimate law enforcement in non-authoritarian contexts.';\nif (fullText.includes('anonymous')) {\n  misuse_risks = 'Strong anonymity features could enable abuse, harassment, or illegal activities. Consider transparency options and abuse reporting mechanisms.';\n}\n\n// Suggest technical dependencies\nconst technical_dependencies = ['Cryptographic libraries (libsodium or equivalent)'];\nif (topics.includes('bitcoin')) technical_dependencies.push('Bitcoin libraries (rust-bitcoin, bitcoinjs)');\nif (topics.includes('comms')) technical_dependencies.push('Networking stack with P2P support');\nif (topics.includes('zk')) technical_dependencies.push('ZK proving system (STARK, SNARK)');\n\n// Suggest stack\nconst suggested_stack = ['Rust for core components', 'TypeScript for web interfaces'];\nif (topics.includes('bitcoin')) suggested_stack.push('Bitcoin Core RPC or Electrum');\nif (topics.includes('comms')) suggested_stack.push('libp2p for networking');\n\n// Prior art\nconst prior_art = [];\nif (topics.includes('bitcoin')) prior_art.push('Sparrow Wallet', 'Wasabi Wallet');\nif (topics.includes('comms')) prior_art.push('Briar', 'Signal');\nif (topics.includes('privacy')) prior_art.push('Tor Project', 'Tails');\nif (prior_art.length === 0) prior_art.push('Review existing freedom tech projects');\n\n// Open questions\nconst open_questions = [\n  'What is the minimum viable UX for non-technical users?',\n  'How to handle key management without trusted third parties?'\n];\nif (region) open_questions.push(`What are the specific requirements for ${region}?`);\n\n// Check for spam\nconst is_spam = fullText.includes('guaranteed returns') || \n                fullText.includes('airdrop') || \n                fullText.includes('100x');\n\nconst result = {\n  threat_model,\n  affected_groups,\n  feasibility_score: is_spam ? 0 : feasibility_score,\n  impact_score: is_spam ? 0 : impact_score,\n  misuse_risks,\n  technical_dependencies,\n  suggested_stack,\n  prior_art,\n  open_questions,\n  reasoning: `Stub evaluation: feasibility=${feasibility_score}, impact=${impact_score}, topics=${topics.join(', ')}`,\n  priority: urgency,\n  is_spam\n};\n\nreturn [{\n  json: {\n    content: [{ type: 'text', text: JSON.stringify(result) }],\n    _submissionId: parsedLLM.submissionId,\n    _message: message,\n    _projectData: {\n      title,\n      problemStatement,\n      description: message,\n      region,\n      urgency,\n      topics\n    },\n    _runtime: parsedLLM._runtime\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [3500, -500],
+      "id": "project-evaluate-stub",
+      "name": "Project Evaluate Stub"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 2048,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": {{ JSON.stringify($('Fetch Project Evaluate Prompt').first().json.content + \"\\n\\n# Input\\n\\n\" + JSON.stringify({ title: $('Parse LLM Response').first().json._storyData?.title || '', problemStatement: $('Parse LLM Response').first().json._storyData?.problemStatement || $('Parse LLM Response').first().json.message, description: $('Parse LLM Response').first().json.message, urgency: $('Parse LLM Response').first().json._storyData?.urgency || 'normal', region: $('Parse LLM Response').first().json._storyData?.region || null })) }}\n  }]\n}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [3500, -300],
+      "id": "project-evaluate-claude",
+      "name": "Project Evaluate with Claude API",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "ANTHROPIC_CREDENTIAL_ID",
+          "name": "Anthropic API Key"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Wrap Claude API response for project evaluation\nconst claudeResponse = $input.first().json;\nconst parsedLLM = $('Parse LLM Response').first().json;\nconst storyData = parsedLLM._storyData;\n\nreturn [{\n  json: {\n    content: claudeResponse.content,\n    _submissionId: parsedLLM.submissionId,\n    _message: parsedLLM.message,\n    _projectData: {\n      title: storyData?.title || '',\n      problemStatement: storyData?.problemStatement || parsedLLM.message,\n      description: parsedLLM.message,\n      region: storyData?.region,\n      urgency: storyData?.urgency || 'normal'\n    },\n    _runtime: parsedLLM._runtime\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [3720, -300],
+      "id": "wrap-project-evaluate-response",
+      "name": "Wrap Project Evaluate Response"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Handle errors from Project Evaluate Claude API call\nconst error = $input.first().json;\nconst parsedLLM = $('Parse LLM Response').first().json;\nconst storyData = parsedLLM._storyData;\n\nconsole.log('Project Evaluate Claude API error:', JSON.stringify(error));\n\nconst fallbackResult = {\n  threat_model: 'Unable to assess - API error',\n  affected_groups: ['Unknown - manual review required'],\n  feasibility_score: 50,\n  impact_score: 50,\n  misuse_risks: 'Unable to assess - API error',\n  technical_dependencies: [],\n  suggested_stack: [],\n  prior_art: [],\n  open_questions: ['All aspects require manual review due to API error'],\n  reasoning: 'Fallback evaluation due to API error - requires manual review',\n  priority: 'normal',\n  is_spam: false\n};\n\nreturn [{\n  json: {\n    content: [{ type: 'text', text: JSON.stringify(fallbackResult) }],\n    _submissionId: parsedLLM.submissionId,\n    _message: parsedLLM.message,\n    _projectData: {\n      title: storyData?.title || '',\n      problemStatement: storyData?.problemStatement || parsedLLM.message,\n      description: parsedLLM.message,\n      region: storyData?.region,\n      urgency: storyData?.urgency || 'normal'\n    },\n    _runtime: parsedLLM._runtime,\n    _apiError: true\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [3720, -200],
+      "id": "handle-project-evaluate-error",
+      "name": "Handle Project Evaluate Error"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse project evaluation LLM response\nconst input = $input.first().json;\nlet parsed;\n\ntry {\n  let text = input.content[0].text;\n  \n  // Strip markdown code blocks if present\n  text = text.trim();\n  if (text.startsWith('```')) {\n    text = text.replace(/^```(?:json)?\\s*\\n?/, '');\n    text = text.replace(/\\n?```\\s*$/, '');\n  }\n  \n  parsed = JSON.parse(text.trim());\n} catch (e) {\n  console.log('Parse Project LLM Response error:', e.message);\n  parsed = {\n    threat_model: 'Parse error - manual review required',\n    affected_groups: ['Unknown'],\n    feasibility_score: 50,\n    impact_score: 50,\n    misuse_risks: 'Parse error - manual review required',\n    technical_dependencies: [],\n    suggested_stack: [],\n    prior_art: [],\n    open_questions: ['All aspects require manual review'],\n    reasoning: 'Failed to parse: ' + e.message,\n    priority: 'normal',\n    is_spam: false\n  };\n}\n\n// Ensure all required fields with defaults\nconst result = {\n  threat_model: parsed.threat_model || 'Not specified',\n  affected_groups: Array.isArray(parsed.affected_groups) ? parsed.affected_groups : ['General users'],\n  feasibility_score: parseInt(parsed.feasibility_score) || 50,\n  impact_score: parseInt(parsed.impact_score) || 50,\n  misuse_risks: parsed.misuse_risks || 'Not assessed',\n  technical_dependencies: Array.isArray(parsed.technical_dependencies) ? parsed.technical_dependencies : [],\n  suggested_stack: Array.isArray(parsed.suggested_stack) ? parsed.suggested_stack : [],\n  prior_art: Array.isArray(parsed.prior_art) ? parsed.prior_art : [],\n  open_questions: Array.isArray(parsed.open_questions) ? parsed.open_questions : [],\n  reasoning: parsed.reasoning || '',\n  priority: parsed.priority || 'normal',\n  is_spam: Boolean(parsed.is_spam),\n  \n  // Pass through data\n  _submissionId: input._submissionId,\n  _message: input._message,\n  _projectData: input._projectData,\n  _runtime: input._runtime\n};\n\nreturn [{ json: result }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [3940, -400],
+      "id": "parse-project-llm-response",
+      "name": "Parse Project LLM Response"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Build INSERT query for project_ideas table\nconst data = $input.first().json;\nconst projectData = data._projectData;\n\nfunction escapeStr(str) {\n  if (str === null || str === undefined) return 'NULL';\n  return \"'\" + String(str).replace(/'/g, \"''\") + \"'\";\n}\n\nfunction formatPgArray(arr) {\n  if (!arr || arr.length === 0) return \"'{}'\";\n  const escaped = arr.map(s => '\"' + String(s).replace(/\"/g, '\\\\\"').replace(/'/g, \"''\") + '\"');\n  return \"'{\" + escaped.join(',') + \"}'\";\n}\n\n// Use empty array for derived_from_insight_ids (community submission, not derived from insights)\n// Link to submission via metadata instead\nconst query = `INSERT INTO project_ideas (\n  derived_from_insight_ids,\n  problem_statement,\n  threat_model,\n  affected_groups,\n  proposed_solution,\n  mvp_scope,\n  misuse_risks,\n  feasibility_score,\n  impact_score,\n  technical_dependencies,\n  suggested_stack,\n  prior_art,\n  open_questions,\n  status\n) VALUES (\n  '{}',\n  ${escapeStr(projectData.problemStatement)},\n  ${escapeStr(data.threat_model)},\n  ${formatPgArray(data.affected_groups)},\n  ${escapeStr(projectData.description)},\n  ${escapeStr('MVP scope to be defined during triage')},\n  ${escapeStr(data.misuse_risks)},\n  ${data.feasibility_score},\n  ${data.impact_score},\n  ${formatPgArray(data.technical_dependencies)},\n  ${formatPgArray(data.suggested_stack)},\n  ${formatPgArray(data.prior_art)},\n  ${formatPgArray(data.open_questions)},\n  'new'\n) RETURNING id, feasibility_score, impact_score, created_at`;\n\nreturn [{\n  json: {\n    query,\n    _projectIdeaData: {\n      ...data,\n      title: projectData.title,\n      submissionId: data._submissionId\n    }\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [4160, -400],
+      "id": "build-project-idea-query",
+      "name": "Build Project Idea Query"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "={{ $json.query }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [4380, -400],
+      "id": "insert-project-idea",
+      "name": "Insert Project Idea",
+      "credentials": {
+        "postgres": {
+          "id": "qDXwbsZ3b2DpBCrd",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Prepare project idea for GitHub issue creation\nconst insertResult = $input.first().json;\nconst ideaData = $('Build Project Idea Query').first().json._projectIdeaData;\n\n// Build issue title\nlet titleText = ideaData.title || ideaData._projectData?.problemStatement || '';\nif (titleText.length > 60) {\n  titleText = titleText.substring(0, 57).replace(/\\s+\\S*$/, '') + '...';\n}\nconst issueTitle = `[Project Idea] ${titleText}`;\n\n// Build issue body\nconst affectedGroupsList = (ideaData.affected_groups || []).map(g => `- ${g}`).join('\\n') || '_Not specified_';\nconst dependenciesList = (ideaData.technical_dependencies || []).map(d => `- ${d}`).join('\\n') || '_Not specified_';\nconst stackList = (ideaData.suggested_stack || []).map(s => `- ${s}`).join('\\n') || '_Not specified_';\nconst priorArtList = (ideaData.prior_art || []).map(p => `- ${p}`).join('\\n') || '_Not specified_';\nconst questionsList = (ideaData.open_questions || []).map(q => `- ${q}`).join('\\n') || '_Not specified_';\n\nconst issueBody = `## Problem Statement\n\n${ideaData._projectData?.problemStatement || ideaData._message}\n\n## Proposed Solution\n\n${ideaData._projectData?.description || ideaData._message}\n\n## Threat Model\n\n${ideaData.threat_model}\n\n## Affected Groups\n\n${affectedGroupsList}\n\n## Misuse Risks\n\n${ideaData.misuse_risks}\n\n## Scores\n\n- **Feasibility:** ${ideaData.feasibility_score}/100\n- **Impact:** ${ideaData.impact_score}/100\n\n## Technical Dependencies\n\n${dependenciesList}\n\n## Suggested Stack\n\n${stackList}\n\n## Prior Art\n\n${priorArtList}\n\n## Open Questions\n\n${questionsList}\n\n---\n*Community-submitted project idea*\n*Submission ID: \\`${ideaData.submissionId}\\`*\n*Project Idea ID: \\`${insertResult.id}\\`*\n*Auto-generated by Libertas Workflow C*`;\n\nreturn [{\n  json: {\n    issueTitle,\n    issueBody,\n    projectIdeaId: insertResult.id,\n    submissionId: ideaData.submissionId,\n    feasibilityScore: insertResult.feasibility_score,\n    impactScore: insertResult.impact_score,\n    _runtime: ideaData._runtime\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [4600, -400],
+      "id": "prepare-project-for-github",
+      "name": "Prepare Project for GitHub"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "use-stubs-project-github",
+              "leftValue": "={{ $('Parse LLM Response').first().json._runtime?.use_stubs ?? true }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [4820, -400],
+      "id": "use-stubs-project-github",
+      "name": "Use Stubs for Project GitHub?"
+    },
+    {
+      "parameters": {
+        "jsCode": "// STUB: Simulate GitHub issue creation for project ideas\nconst data = $input.first().json;\n\nconst stubIssueNumber = 200 + Math.floor(Math.random() * 800);\nconst stubIssueUrl = `https://github.com/FGUTech/libertas/issues/${stubIssueNumber}`;\n\nconsole.log(`[STUB] Created mock GitHub issue #${stubIssueNumber} for project idea ${data.projectIdeaId}`);\n\nreturn [{\n  json: {\n    html_url: stubIssueUrl,\n    number: stubIssueNumber,\n    title: data.issueTitle,\n    state: 'open',\n    _projectIdeaId: data.projectIdeaId,\n    _submissionId: data.submissionId,\n    _isStub: true\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [5040, -500],
+      "id": "project-github-stub",
+      "name": "Project GitHub Stub"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.github.com/repos/FGUTech/libertas/issues",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/vnd.github.v3+json"
+            },
+            {
+              "name": "X-GitHub-Api-Version",
+              "value": "2022-11-28"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"title\": {{ JSON.stringify($json.issueTitle) }},\n  \"body\": {{ JSON.stringify($json.issueBody) }},\n  \"labels\": [\"project-idea\", \"community-submitted\", \"intake\"]\n}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [5040, -300],
+      "id": "create-project-github-issue",
+      "name": "Create Project GitHub Issue",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "GITHUB_CREDENTIAL_ID",
+          "name": "GitHub API Token"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Wrap real GitHub API response for project issues\nconst githubResponse = $input.first().json;\nconst prepareData = $('Prepare Project for GitHub').first().json;\n\nreturn [{\n  json: {\n    html_url: githubResponse.html_url,\n    number: githubResponse.number,\n    title: githubResponse.title,\n    state: githubResponse.state,\n    _projectIdeaId: prepareData.projectIdeaId,\n    _submissionId: prepareData.submissionId,\n    _isStub: false\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [5260, -300],
+      "id": "wrap-project-github-response",
+      "name": "Wrap Project GitHub Response"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Handle errors from Project GitHub API call\nconst error = $input.first().json;\nconst prepareData = $('Prepare Project for GitHub').first().json;\n\nconsole.log('Project GitHub API error:', JSON.stringify(error));\n\nreturn [{\n  json: {\n    html_url: null,\n    number: null,\n    title: prepareData.issueTitle,\n    state: 'error',\n    _projectIdeaId: prepareData.projectIdeaId,\n    _submissionId: prepareData.submissionId,\n    _isStub: false,\n    _apiError: true,\n    _errorMessage: 'GitHub issue creation failed - will retry later'\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [5260, -200],
+      "id": "handle-project-github-error",
+      "name": "Handle Project GitHub Error"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Build UPDATE queries for both project_ideas and submissions tables\nconst data = $input.first().json;\n\nfunction escapeStr(str) {\n  if (str === null || str === undefined) return 'NULL';\n  return \"'\" + String(str).replace(/'/g, \"''\") + \"'\";\n}\n\nconst issueUrl = data.html_url;\n\n// Update project_ideas with GitHub issue URL\nconst updateIdeaQuery = `UPDATE project_ideas \nSET github_issue_url = ${escapeStr(issueUrl)},\n    updated_at = NOW()\nWHERE id = ${escapeStr(data._projectIdeaId)}::uuid\nRETURNING id, github_issue_url`;\n\n// Update submissions with GitHub issue URL and status\nconst updateSubmissionQuery = `UPDATE submissions\nSET github_issue_url = ${escapeStr(issueUrl)},\n    status = 'triaged'\nWHERE id = ${escapeStr(data._submissionId)}::uuid`;\n\nconst combinedQuery = updateIdeaQuery + '; ' + updateSubmissionQuery;\n\nconsole.log(`Updating project idea ${data._projectIdeaId} and submission ${data._submissionId} with GitHub issue URL: ${issueUrl || 'NULL'}`);\n\nreturn [{\n  json: {\n    query: combinedQuery,\n    _issueData: data\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [5480, -400],
+      "id": "build-project-update-query",
+      "name": "Build Project Update Query"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "={{ $json.query }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [5700, -400],
+      "id": "update-project-idea-url",
+      "name": "Update Project Idea URL",
+      "credentials": {
+        "postgres": {
+          "id": "qDXwbsZ3b2DpBCrd",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Prepare response for project submissions\nconst updateResult = $input.first().json;\nconst issueData = $('Build Project Update Query').first().json._issueData;\n\nreturn [{\n  json: {\n    submissionId: issueData._submissionId,\n    projectIdeaId: issueData._projectIdeaId,\n    githubIssueUrl: issueData.html_url,\n    success: true,\n    type: 'project'\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [5920, -400],
+      "id": "project-success-summary",
+      "name": "Project Success Summary"
     },
     {
       "parameters": {
@@ -556,7 +880,7 @@
           "conditions": [
             {
               "id": "use-stubs-github",
-              "leftValue": "={{ $json._runtime?.use_stubs ?? true }}",
+              "leftValue": "={{ $('Parse LLM Response').first().json._runtime?.use_stubs ?? true }}",
               "rightValue": true,
               "operator": {
                 "type": "boolean",
@@ -576,7 +900,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Get data from either story branch or direct branch\nlet parsed;\ntry {\n  // Try story branch first\n  parsed = $('Prepare Story for GitHub').first().json;\n} catch (e) {\n  // Fall back to direct branch\n  parsed = $('Parse LLM Response').first().json;\n}\n\nreturn [{\n  json: {\n    html_url: `https://github.com/FGUTech/libertas/issues/MOCK-${parsed.submissionId.slice(0, 8)}`,\n    number: Math.floor(Math.random() * 1000),\n    title: `[Intake] ${parsed.summary.substring(0, 60)}`,\n    state: 'open',\n    _parsedData: parsed\n  }\n}];"
+        "jsCode": "// Get data from story branch, project branch, or direct feedback branch\nlet parsed;\ntry {\n  // Try story branch first\n  parsed = $('Prepare Story for GitHub').first().json;\n} catch (e) {\n  // Fall back to direct feedback branch\n  parsed = $('Parse LLM Response').first().json;\n}\n\nreturn [{\n  json: {\n    html_url: `https://github.com/FGUTech/libertas/issues/MOCK-${parsed.submissionId.slice(0, 8)}`,\n    number: Math.floor(Math.random() * 1000),\n    title: `[Intake] ${parsed.summary.substring(0, 60)}`,\n    state: 'open',\n    _parsedData: parsed\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -625,7 +949,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Process real GitHub API response and add pass-through data\nconst githubResponse = $input.first().json;\n\n// Get data from either story branch or direct branch\nlet parsedData;\ntry {\n  parsedData = $('Prepare Story for GitHub').first().json;\n} catch (e) {\n  parsedData = $('Parse LLM Response').first().json;\n}\n\nreturn [{\n  json: {\n    html_url: githubResponse.html_url,\n    number: githubResponse.number,\n    title: githubResponse.title,\n    state: githubResponse.state,\n    _parsedData: parsedData\n  }\n}];"
+        "jsCode": "// Process real GitHub API response and add pass-through data\nconst githubResponse = $input.first().json;\n\n// Get data from story branch or direct feedback branch\nlet parsedData;\ntry {\n  parsedData = $('Prepare Story for GitHub').first().json;\n} catch (e) {\n  parsedData = $('Parse LLM Response').first().json;\n}\n\nreturn [{\n  json: {\n    html_url: githubResponse.html_url,\n    number: githubResponse.number,\n    title: githubResponse.title,\n    state: githubResponse.state,\n    _parsedData: parsedData\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -669,7 +993,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Handle errors from Claude API call\n// This provides graceful degradation when API fails\n\nconst error = $input.first().json;\nconst validateInput = $('Validate Input').first().json;\nconst submissionData = $('Insert Submission').first().json;\n\nconsole.log('Claude API error:', JSON.stringify(error));\n\n// Create fallback classification\nconst fallbackClassification = {\n  category: 'other',\n  tags: ['needs-review'],\n  risk_level: 'medium',  // Conservative default\n  priority: 'normal',\n  summary: 'Auto-classified due to API error - requires manual review',\n  is_spam: false,\n  requires_response: true,\n  suggested_assignee: 'triage'\n};\n\n// Return in same format as successful response\nreturn [{\n  json: {\n    content: [{\n      type: 'text',\n      text: JSON.stringify(fallbackClassification)\n    }],\n    _submissionId: submissionData.id,\n    _message: submissionData.message,\n    _agents: validateInput._agents,\n    _runtime: validateInput._runtime,\n    _storyData: {\n      type: validateInput.type,\n      title: validateInput.title,\n      sourceUrl: validateInput.sourceUrl,\n      region: validateInput.region,\n      urgency: validateInput.urgency\n    },\n    _apiError: true\n  }\n}];"
+        "jsCode": "// Handle errors from Claude API call\n// This provides graceful degradation when API fails\n\nconst error = $input.first().json;\nconst validateInput = $('Validate Input').first().json;\nconst submissionData = $('Insert Submission').first().json;\n\nconsole.log('Claude API error:', JSON.stringify(error));\n\n// Create fallback classification\nconst fallbackClassification = {\n  category: 'other',\n  tags: ['needs-review'],\n  risk_level: 'medium',  // Conservative default\n  priority: 'normal',\n  summary: 'Auto-classified due to API error - requires manual review',\n  is_spam: false,\n  requires_response: true,\n  suggested_assignee: 'triage'\n};\n\n// Return in same format as successful response\nreturn [{\n  json: {\n    content: [{\n      type: 'text',\n      text: JSON.stringify(fallbackClassification)\n    }],\n    _submissionId: submissionData.id,\n    _message: submissionData.message,\n    _agents: validateInput._agents,\n    _runtime: validateInput._runtime,\n    _storyData: {\n      type: validateInput.type,\n      title: validateInput.title,\n      sourceUrl: validateInput.sourceUrl,\n      region: validateInput.region,\n      urgency: validateInput.urgency,\n      problemStatement: validateInput.problemStatement\n    },\n    _apiError: true\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -679,7 +1003,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Handle errors from GitHub API call\n// This provides graceful degradation when API fails\n\nconst error = $input.first().json;\n\n// Get data from either story branch or direct branch\nlet parsedData;\ntry {\n  parsedData = $('Prepare Story for GitHub').first().json;\n} catch (e) {\n  parsedData = $('Parse LLM Response').first().json;\n}\n\nconsole.log('GitHub API error:', JSON.stringify(error));\n\n// Return mock issue URL to allow workflow to continue\nreturn [{\n  json: {\n    html_url: null,  // No issue created\n    number: null,\n    title: `[Intake] ${parsedData.summary.substring(0, 60)}`,\n    state: 'error',\n    _parsedData: parsedData,\n    _apiError: true,\n    _errorMessage: 'GitHub issue creation failed - will retry later'\n  }\n}];"
+        "jsCode": "// Handle errors from GitHub API call\n// This provides graceful degradation when API fails\n\nconst error = $input.first().json;\n\n// Get data from story branch or direct feedback branch\nlet parsedData;\ntry {\n  parsedData = $('Prepare Story for GitHub').first().json;\n} catch (e) {\n  parsedData = $('Parse LLM Response').first().json;\n}\n\nconsole.log('GitHub API error:', JSON.stringify(error));\n\n// Return mock issue URL to allow workflow to continue\nreturn [{\n  json: {\n    html_url: null,  // No issue created\n    number: null,\n    title: `[Intake] ${parsedData.summary.substring(0, 60)}`,\n    state: 'error',\n    _parsedData: parsedData,\n    _apiError: true,\n    _errorMessage: 'GitHub issue creation failed - will retry later'\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -896,7 +1220,251 @@
         ],
         [
           {
+            "node": "Is Project?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Is Project?": {
+      "main": [
+        [
+          {
+            "node": "Fetch Project Evaluate Prompt",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
             "node": "Use Stubs for GitHub?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Project Evaluate Prompt": {
+      "main": [
+        [
+          {
+            "node": "Use Stubs for Project Evaluate?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Use Stubs for Project Evaluate?": {
+      "main": [
+        [
+          {
+            "node": "Project Evaluate Stub",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Project Evaluate with Claude API",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Project Evaluate Stub": {
+      "main": [
+        [
+          {
+            "node": "Parse Project LLM Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Project Evaluate with Claude API": {
+      "main": [
+        [
+          {
+            "node": "Wrap Project Evaluate Response",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Handle Project Evaluate Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wrap Project Evaluate Response": {
+      "main": [
+        [
+          {
+            "node": "Parse Project LLM Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Handle Project Evaluate Error": {
+      "main": [
+        [
+          {
+            "node": "Parse Project LLM Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Project LLM Response": {
+      "main": [
+        [
+          {
+            "node": "Build Project Idea Query",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Project Idea Query": {
+      "main": [
+        [
+          {
+            "node": "Insert Project Idea",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Insert Project Idea": {
+      "main": [
+        [
+          {
+            "node": "Prepare Project for GitHub",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Project for GitHub": {
+      "main": [
+        [
+          {
+            "node": "Use Stubs for Project GitHub?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Use Stubs for Project GitHub?": {
+      "main": [
+        [
+          {
+            "node": "Project GitHub Stub",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Create Project GitHub Issue",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Project GitHub Stub": {
+      "main": [
+        [
+          {
+            "node": "Build Project Update Query",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Project GitHub Issue": {
+      "main": [
+        [
+          {
+            "node": "Wrap Project GitHub Response",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Handle Project GitHub Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wrap Project GitHub Response": {
+      "main": [
+        [
+          {
+            "node": "Build Project Update Query",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Handle Project GitHub Error": {
+      "main": [
+        [
+          {
+            "node": "Build Project Update Query",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Project Update Query": {
+      "main": [
+        [
+          {
+            "node": "Update Project Idea URL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Project Idea URL": {
+      "main": [
+        [
+          {
+            "node": "Project Success Summary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Project Success Summary": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
             "type": "main",
             "index": 0
           }
@@ -1211,7 +1779,7 @@
     "executionOrder": "v1",
     "availableInMCP": false
   },
-  "versionId": "5452bd0b-cf72-466a-80e8-66df9ab9f281",
+  "versionId": "5452bd0b-cf72-466a-80e8-66df9ab9f282",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "3c52e1b61141902bda826728d3cf15d2a867de8395f358b7459edf58ff4157ae"

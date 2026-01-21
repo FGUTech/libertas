@@ -31,7 +31,6 @@ Evaluate content through the "Freedom Tech lens":
 
 ## Hard Rules
 - If you cannot verify a claim, set credibility <= 50
-- If content could endanger activists if amplified, flag safety_concern: true
 - Always extract geographic context when present
 - Never invent information not present in the source
 
@@ -54,7 +53,6 @@ Return a JSON object with the following structure:
   "freedom_relevance_score": 0-100,
   "credibility_score": 0-100,
   "geo": ["countries or regions mentioned"],
-  "safety_concern": false,
   "reasoning": "Brief explanation of scoring rationale",
   "key_entities": ["people, organizations, or projects mentioned"],
   "should_summarize": true
@@ -81,7 +79,6 @@ Output:
   "freedom_relevance_score": 92,
   "credibility_score": 75,
   "geo": ["Uganda"],
-  "safety_concern": false,
   "reasoning": "Direct example of freedom tech (mesh networking + Bitcoin) being used under real-world repression. Government response confirms tool effectiveness. Source is established news outlet. Score reflects high relevance but moderate credibility (single source, government claims not independently verified).",
   "key_entities": ["Bitchat", "Uganda Communications Commission", "UCC"],
   "should_summarize": true

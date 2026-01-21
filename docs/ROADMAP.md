@@ -15,26 +15,6 @@ After completing your implementation of this feature. Please provide a concise b
 
 Core infrastructure and workflow features required for initial launch.
 
-## Runtime Configuration Pattern
-
-All workflows use a config-driven stub toggle via `thresholds.yml`:
-
-```yaml
-# Runtime Settings
-runtime:
-  # Set to true for local dev/testing (uses stubs, no API calls)
-  # Set to false for production (uses real Claude, GitHub, Resend APIs)
-  use_stubs: true
-```
-
-**How it works:**
-- Each workflow has IF nodes that check `runtime.use_stubs`
-- When `true`: Routes to stub nodes (no API costs, safe for testing)
-- When `false`: Routes to real API nodes (Claude, GitHub, Resend)
-- Toggle by committing change to `thresholds.yml`
-
-This pattern is implemented across: 1.11, 1.15
-
 ### 1.0 n8n Migration to Managed Hosting
 
 **Description**: Migrate from Railway-hosted n8n instance to n8n's managed hosting service and connect to GCP Cloud SQL.
@@ -139,67 +119,45 @@ This pattern is implemented across: 1.11, 1.15
 
 ---
 
-### 1.12 Workflow B: Project Ideas in Digest
+### 1.12 Workflow B: Project Ideas in Digest ✅
 
 **Description**: Include generated project ideas in weekly digest.
 
 **Requirements**:
-- [ ] Re-add Query Recent Project Ideas node
-- [ ] Wire project ideas into DigestComposer input
-- [ ] Include "Project Ideas Generated This Week" section in digest output
+- [x] Re-add Query Recent Project Ideas node
+- [x] Wire project ideas into DigestComposer input
+- [x] Include "Project Ideas Generated This Week" section in digest output
 
 **Implementation Notes**:
 - Query `project_ideas` table for items with `created_at` in digest period
-- Only include ideas with status='pending' or 'approved'
+- Only include ideas with status='new', 'triaged', or 'build_candidate'
+- Project ideas are passed to DigestComposer (both stub and real Claude API)
+- Digest agent prompt updated to include `project_ideas` in output schema
+- ParseDigestOutput node renders project ideas section in markdown
 
 ---
 
-### 1.13a Workflow C: Story Intake Processing
-
-**Description**: Process "story" type submissions through the content pipeline to generate insights.
-
-**Requirements**:
-- [x] Add conditional branch in Workflow C to detect `type: 'story'` submissions
-- [x] Route story submissions to classification step (reuse and modify `agents/classify.md` as needed to create `agents/intake-story-classify.md`)
-- [x] Classification uses `runtime.use_stubs` toggle (shares IF node pattern from 1.13)
-- [x] Extract and validate `sourceUrl` if provided; fetch source content for classification
-- [x] Score story for `freedom_relevance_score` and `credibility_score`
-- [x] If scores meet threshold (per `thresholds.yml`), queue for insight generation via Workflow A pipeline
-- [x] Store `region` field in `source_items.metadata.geo` if provided
-- [x] GitHub issue creation uses `runtime.use_stubs` toggle (shares IF node pattern from 1.13)
-- [x] Update submission status to `triaged` after processing
-
-**Implementation Notes**:
-- Stories from the public are treated similar to external sources but with extra verification
-- `sourceUrl` provides provenance; stories without URLs need manual verification
-- Story queue threshold: relevance >= 80 (higher bar for community-sourced content)
-- Stories without sourceUrl: credibility capped at 60
-- Link resulting insight back to original submission via `source_item_ids`
-- Inherits stub/real toggle from parent 1.13 workflow
-
----
-
-### 1.13b Workflow C: Project Idea Intake Processing
+### 1.13b Workflow C: Project Idea Intake Processing ✅
 
 **Description**: Process "project" type submissions as community-sourced project ideas.
 
 **Requirements**:
-- [ ] Add conditional branch in Workflow C to detect `type: 'project'` submissions
-- [ ] Map submission fields to `project_ideas` schema:
+- [x] Add conditional branch in Workflow C to detect `type: 'project'` submissions
+- [x] Map submission fields to `project_ideas` schema:
   - `title` → used in GitHub issue title
   - `problemStatement` → `problem_statement`
   - `description` → `proposed_solution`
-- [ ] Claude API evaluation uses `runtime.use_stubs` toggle (shares IF node pattern from 1.13):
+- [x] Claude API evaluation uses `runtime.use_stubs` toggle (shares IF node pattern from 1.13):
   - Generate `threat_model` from problem statement
   - Identify `affected_groups`
   - Assess `feasibility_score` and `impact_score`
   - Flag `misuse_risks`
   - Suggest `technical_dependencies` and `suggested_stack`
-- [ ] Create or extend `agents/intake-project-evaluate.md` prompt for project idea assessment
-- [ ] Insert into `project_ideas` table with `status: 'new'`
-- [ ] GitHub issue creation uses `runtime.use_stubs` toggle (shares IF node pattern from 1.13)
-- [ ] Update `project_ideas.github_issue_url` with created issue URL
-- [ ] Update submission status to `triaged` after processing
+- [x] Create or extend `agents/intake-project-evaluate.md` prompt for project idea assessment
+- [x] Insert into `project_ideas` table with `status: 'new'`
+- [x] GitHub issue creation uses `runtime.use_stubs` toggle (shares IF node pattern from 1.13)
+- [x] Update `project_ideas.github_issue_url` with created issue URL
+- [x] Update submission status to `triaged` after processing
 
 **Implementation Notes**:
 - Community project ideas follow same schema as auto-generated ideas from Workflow D
@@ -207,6 +165,10 @@ This pattern is implemented across: 1.11, 1.15
 - Consider expedited review path for high-impact submissions (`urgency: 'urgent'`)
 - Link `project_ideas.derived_from_insight_ids` to any related insights if submission references existing content
 - Inherits stub/real toggle from parent 1.13 workflow
+- Agent prompt: `agents/intake-project-evaluate.md`
+- API endpoint: `/api/agents/intake-project-evaluate`
+- GitHub labels: `project-idea`, `community-submitted`, `intake`
+- Documentation: `n8n/workflows/workflow-c.md`
 
 ---
 
@@ -243,27 +205,6 @@ This pattern is implemented across: 1.11, 1.15
 - Spam detection is critical for this intake type (public feedback forms attract abuse)
 - Consider auto-closing duplicate issues if similar feedback already exists
 - Inherits stub/real toggle from parent 1.13 workflow
-
----
-
-### 1.15 Workflow D: GitHub Issue Creation
-
-**Description**: Create GitHub issues for generated project ideas, with config-driven toggle for stub/real mode.
-
-**Requirements**:
-- [x] Add IF node to check `runtime.use_stubs` config value
-- [x] Wire GitHub Issue Stub and real GitHub API node to IF branches
-- [x] Set up n8n credential for GitHub API (if not already)
-- [x] Configure labels (currently hardcoded: `project-idea`, `auto-generated`)
-- [x] Link derived insights in issue body to actual published URLs
-- [x] Update `project_ideas.github_issue_url` with created issue URL
-- [ ] Test in both stub and real modes
-
-**Implementation Notes**:
-- Keep stub for local dev/testing without GitHub API calls
-- Config toggle via `runtime.use_stubs` in `thresholds.yml`
-- Consider adding assignees or project board integration
-- Issue template includes problem statement, threat model, MVP scope, affected groups, scores, and derived insights with links
 
 ---
 
@@ -615,7 +556,7 @@ Features for future consideration after core functionality is stable.
 | JSON Schemas (validation) | 25% | Workflow A has inline validation; other workflows pending |
 | Workflow A Structure | 100% | Complete pipeline with stub/real toggle for classify, summarize, and feed publishing |
 | Workflow B Structure | 100% | Complete pipeline with stub/real toggle for DigestComposer and GitHub publishing via Git Data API |
-| Workflow C Structure | 90% | Active workflow, needs IF toggle for APIs |
+| Workflow C Structure | 95% | Story (1.13a) and Project (1.13b) intake complete with stub/real toggle; Feedback (1.13c) pending |
 | Workflow D Structure | 95% | Complete pipeline with stub/real toggle for IdeaSynthesizer and GitHub issue creation; error handling included |
 | Firebase Auth | 0% | Documented but not implemented |
 | Resend Email | 20% | Template exists, API not wired, need IF toggle |
