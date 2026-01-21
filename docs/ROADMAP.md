@@ -9,6 +9,7 @@ Feature roadmap for Libertas backend infrastructure and n8n workflows, broken in
 ## Prompt Initialization
 
 Hey, I am working to implement features for the libertas website from the roadmap. Let's continue with implementing:
+After completing your implementation of this feature. Please provide a concise but informative step-by-step plan I can follow to test this new feature entirely.
 
 # Phase 1: MVP
 
@@ -32,7 +33,7 @@ runtime:
 - When `false`: Routes to real API nodes (Claude, GitHub, Resend)
 - Toggle by committing change to `thresholds.yml`
 
-This pattern is implemented across: 1.10, 1.11, 1.15
+This pattern is implemented across: 1.11, 1.15
 
 ### 1.0 n8n Migration to Managed Hosting
 
@@ -115,64 +116,6 @@ This pattern is implemented across: 1.10, 1.11, 1.15
 
 ---
 
-### 1.10 Workflow B: GitHub Publishing
-
-**Description**: Commit weekly digests to GitHub repository, with config-driven toggle for stub/real mode.
-
-**Requirements**:
-- [x] Add IF node to check `runtime.use_stubs` config value
-- [x] Wire GitHub Commit Stub and real GitHub API node to IF branches
-- [ ] Set up n8n credential for GitHub API (Bearer token)
-- [x] Use Git Data API for atomic multi-file commits (not Contents API)
-- [x] Commit digest markdown to `website/public/content/digests/weekly-{date}.md`
-- [x] Update feed files alongside digest commit (single atomic commit)
-- [ ] Test in both stub and real modes
-
-**Implementation Notes**:
-- **Use Git Data API** (not Contents API) for atomic commits - avoids multiple commits per run
-- Keep stub for local dev/testing without GitHub commits
-- Config toggle via `runtime.use_stubs` in `thresholds.yml`
-- Files go to `website/public/` for Next.js static serving
-
-**GitHub Integration Details** (from Workflow A implementation):
-
-*Bot Account Setup:*
-- Create dedicated GitHub account (e.g., `libertas-ai-bot`)
-- Add as collaborator to repo with **Write** role (minimum required)
-- Generate Personal Access Token (Classic) with `repo` scope only
-
-*n8n Credential Setup:*
-- Credential type: **Header Auth**
-- Name: `Authorization`
-- Value: `Bearer ghp_xxxxxxxxxxxx` (include "Bearer " prefix)
-
-*Git Data API Flow (for atomic multi-file commit):*
-```
-1. GET  /repos/{owner}/{repo}/git/ref/heads/main        → Get current commit SHA
-2. GET  /repos/{owner}/{repo}/git/commits/{sha}         → Get base tree SHA
-3. POST /repos/{owner}/{repo}/git/trees                 → Create new tree with all files
-4. POST /repos/{owner}/{repo}/git/commits               → Create commit object
-5. PATCH /repos/{owner}/{repo}/git/refs/heads/main      → Update branch reference
-```
-
-*Co-Author Attribution:*
-- Format: `Co-authored-by: Claude <noreply@anthropic.com>` (lowercase `Co-authored-by`)
-- Must be on its own line after a blank line in commit message
-- GitHub will show "BotName and Claude authored this commit"
-
-*Tree Entry Format (for step 3):*
-```json
-{
-  "base_tree": "<base-tree-sha>",
-  "tree": [
-    { "path": "website/public/rss.xml", "mode": "100644", "type": "blob", "content": "<file-content>" },
-    { "path": "website/public/feed.json", "mode": "100644", "type": "blob", "content": "<file-content>" }
-  ]
-}
-```
-
----
-
 ### 1.11 Workflow B: Email Newsletter (Resend)
 
 **Description**: Send weekly digest via email using Resend, with config-driven toggle for stub/real mode.
@@ -216,20 +159,21 @@ This pattern is implemented across: 1.10, 1.11, 1.15
 **Description**: Process "story" type submissions through the content pipeline to generate insights.
 
 **Requirements**:
-- [ ] Add conditional branch in Workflow C to detect `type: 'story'` submissions
-- [ ] Route story submissions to classification step (reuse `agents/classify.md` or create `agents/intake-story-classify.md`)
-- [ ] Classification uses `runtime.use_stubs` toggle (shares IF node pattern from 1.13)
-- [ ] Extract and validate `sourceUrl` if provided; fetch source content for classification
-- [ ] Score story for `freedom_relevance_score` and `credibility_score`
-- [ ] If scores meet threshold (per `thresholds.yml`), queue for insight generation via Workflow A pipeline
-- [ ] Store `region` field in `source_items.metadata.geo` if provided
-- [ ] GitHub issue creation uses `runtime.use_stubs` toggle (shares IF node pattern from 1.13)
-- [ ] Update submission status to `triaged` after processing
+- [x] Add conditional branch in Workflow C to detect `type: 'story'` submissions
+- [x] Route story submissions to classification step (reuse and modify `agents/classify.md` as needed to create `agents/intake-story-classify.md`)
+- [x] Classification uses `runtime.use_stubs` toggle (shares IF node pattern from 1.13)
+- [x] Extract and validate `sourceUrl` if provided; fetch source content for classification
+- [x] Score story for `freedom_relevance_score` and `credibility_score`
+- [x] If scores meet threshold (per `thresholds.yml`), queue for insight generation via Workflow A pipeline
+- [x] Store `region` field in `source_items.metadata.geo` if provided
+- [x] GitHub issue creation uses `runtime.use_stubs` toggle (shares IF node pattern from 1.13)
+- [x] Update submission status to `triaged` after processing
 
 **Implementation Notes**:
 - Stories from the public are treated similar to external sources but with extra verification
 - `sourceUrl` provides provenance; stories without URLs need manual verification
-- Consider lower auto-publish threshold for community-submitted stories (require editorial review)
+- Story queue threshold: relevance >= 80 (higher bar for community-sourced content)
+- Stories without sourceUrl: credibility capped at 60
 - Link resulting insight back to original submission via `source_item_ids`
 - Inherits stub/real toggle from parent 1.13 workflow
 
@@ -307,35 +251,19 @@ This pattern is implemented across: 1.10, 1.11, 1.15
 **Description**: Create GitHub issues for generated project ideas, with config-driven toggle for stub/real mode.
 
 **Requirements**:
-- [ ] Add IF node to check `runtime.use_stubs` config value
-- [ ] Wire GitHub Issue Stub and real GitHub API node to IF branches
-- [ ] Set up n8n credential for GitHub API (if not already)
-- [ ] Configure labels (currently hardcoded: `project-idea`, `auto-generated`)
-- [ ] Link derived insights in issue body to actual published URLs
-- [ ] Update `project_ideas.github_issue_url` with created issue URL
+- [x] Add IF node to check `runtime.use_stubs` config value
+- [x] Wire GitHub Issue Stub and real GitHub API node to IF branches
+- [x] Set up n8n credential for GitHub API (if not already)
+- [x] Configure labels (currently hardcoded: `project-idea`, `auto-generated`)
+- [x] Link derived insights in issue body to actual published URLs
+- [x] Update `project_ideas.github_issue_url` with created issue URL
 - [ ] Test in both stub and real modes
 
 **Implementation Notes**:
 - Keep stub for local dev/testing without GitHub API calls
 - Config toggle via `runtime.use_stubs` in `thresholds.yml`
 - Consider adding assignees or project board integration
-- Issue template should include problem statement, threat model, MVP scope
-
----
-
-### 1.16 Vercel Deployment
-
-**Description**: Configure Vercel project for automatic deployments.
-
-**Requirements**:
-- [ ] Create Vercel project linked to GitHub repo
-- [ ] Configure environment variables in Vercel dashboard
-- [ ] Set up automatic deploys on push to main
-- [ ] Configure preview deployments for PRs
-
-**Implementation Notes**:
-- Website is in `/website` subdirectory; configure root directory in Vercel
-- Required env vars documented in `.env.example`
+- Issue template includes problem statement, threat model, MVP scope, affected groups, scores, and derived insights with links
 
 ---
 
@@ -682,13 +610,13 @@ Features for future consideration after core functionality is stable.
 | Agent Prompts (integration) | 100% | Workflows load prompts from GitHub raw URLs (1.3 complete) |
 | Config Files (files) | 100% | sources.yml and thresholds.yml configured |
 | Config Files (integration) | 100% | Workflows load config from GitHub raw URLs (1.2 complete) |
-| Runtime Stub Toggle | 70% | `runtime.use_stubs` in thresholds.yml; Workflow A (classify, summarize, publish), B (digest composer, GitHub) wired with IF nodes |
+| Runtime Stub Toggle | 80% | `runtime.use_stubs` in thresholds.yml; Workflow A (classify, summarize, publish), B (digest composer, GitHub), D (idea synthesizer, GitHub) wired with IF nodes |
 | JSON Schemas (files) | 100% | All schemas exist in `schemas/` |
 | JSON Schemas (validation) | 25% | Workflow A has inline validation; other workflows pending |
 | Workflow A Structure | 100% | Complete pipeline with stub/real toggle for classify, summarize, and feed publishing |
 | Workflow B Structure | 100% | Complete pipeline with stub/real toggle for DigestComposer and GitHub publishing via Git Data API |
 | Workflow C Structure | 90% | Active workflow, needs IF toggle for APIs |
-| Workflow D Structure | 80% | Complete pipeline, stubs active, need IF toggle |
+| Workflow D Structure | 95% | Complete pipeline with stub/real toggle for IdeaSynthesizer and GitHub issue creation; error handling included |
 | Firebase Auth | 0% | Documented but not implemented |
 | Resend Email | 20% | Template exists, API not wired, need IF toggle |
 | Feed Generation | 100% | RSS 2.0 and JSON Feed 1.1 generation implemented in Workflow A (1.6 complete) |

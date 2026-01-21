@@ -125,31 +125,17 @@
     },
     {
       "parameters": {
-        "url": "={{ $json.url }}",
-        "options": {
-          "timeout": 30000
-        }
-      },
-      "type": "n8n-nodes-base.rssFeedRead",
-      "typeVersion": 1.1,
-      "position": [1320, 150],
-      "id": "fetch-rss",
-      "name": "Fetch RSS Feed",
-      "onError": "continueRegularOutput"
-    },
-    {
-      "parameters": {
-        "jsCode": "// Process RSS items from feed\nconst items = $input.all();\nconst sourceInfo = $('Load Sources').first().json;\n\n// Handle fetch errors\nif (!items || items.length === 0) {\n  console.log(`No items from ${sourceInfo.name}`);\n  return [];\n}\n\n// Limit items per source (rate limiting)\nconst maxItems = 20;\nconst processItems = items.slice(0, maxItems);\n\nreturn processItems.map(item => {\n  const data = item.json;\n  return {\n    json: {\n      // Source metadata\n      sourceName: sourceInfo.name,\n      sourceUrl: sourceInfo.url,\n      sourceTier: sourceInfo.tier,\n      sourceTags: sourceInfo.tags,\n      platform: 'rss',\n      \n      // Thresholds and agents from config\n      _thresholds: sourceInfo._thresholds,\n      _agents: sourceInfo._agents,\n      \n      // Item data\n      itemUrl: data.link || data.guid || '',\n      title: data.title || '',\n      content: data.content || data.description || data['content:encoded'] || '',\n      author: data.creator || data.author || sourceInfo.name,\n      publishedAt: data.pubDate || data.isoDate || new Date().toISOString(),\n      \n      // Will be computed\n      contentHash: null,\n      extractedText: null\n    }\n  };\n}).filter(item => item.json.itemUrl && item.json.content);"
+        "jsCode": "// Fetch RSS and extract items WITH source context preserved\n// Uses n8n's built-in helpers\n\nconst sources = $input.all();\nconsole.log(`Received ${sources.length} sources`);\n\nif (sources.length === 0) {\n  console.log('ERROR: No sources received!');\n  return [{ json: { error: 'No sources', _skip: true } }];\n}\n\n// Log first source for debugging\nconsole.log('First source:', sources[0]?.json?.name, sources[0]?.json?.url);\n\n// Simple XML parsing helper\nfunction parseXML(xml) {\n  const items = [];\n  const itemRegex = /<item[^>]*>([\\s\\S]*?)<\\/item>/gi;\n  let match;\n  \n  while ((match = itemRegex.exec(xml)) !== null) {\n    const itemXml = match[1];\n    const getTag = (tag) => {\n      const cdataRegex = new RegExp(`<${tag}[^>]*><!\\\\[CDATA\\\\[([\\\\s\\\\S]*?)\\\\]\\\\]><\\\\/${tag}>`, 'i');\n      const plainRegex = new RegExp(`<${tag}[^>]*>([\\\\s\\\\S]*?)<\\\\/${tag}>`, 'i');\n      const cdataMatch = itemXml.match(cdataRegex);\n      if (cdataMatch) return cdataMatch[1].trim();\n      const plainMatch = itemXml.match(plainRegex);\n      return plainMatch ? plainMatch[1].trim() : '';\n    };\n    \n    items.push({\n      title: getTag('title'),\n      link: getTag('link'),\n      guid: getTag('guid'),\n      description: getTag('description'),\n      content: getTag('content:encoded') || getTag('content'),\n      pubDate: getTag('pubDate'),\n      creator: getTag('dc:creator') || getTag('author')\n    });\n  }\n  return items;\n}\n\nconst allItems = [];\nconst errors = [];\n\nfor (const sourceItem of sources) {\n  const source = sourceItem.json;\n  if (!source || !source.url) {\n    console.log('Skipping invalid source:', source);\n    continue;\n  }\n  \n  try {\n    console.log(`Fetching: ${source.name} (${source.url})`);\n    \n    const response = await this.helpers.httpRequest({\n      method: 'GET',\n      url: source.url,\n      headers: { 'User-Agent': 'Libertas/1.0 RSS Reader' },\n      timeout: 30000,\n      returnFullResponse: true\n    });\n    \n    const xml = typeof response.body === 'string' ? response.body : JSON.stringify(response.body);\n    console.log(`  Got ${xml.length} bytes from ${source.name}`);\n    \n    const feedItems = parseXML(xml).slice(0, 20);\n    console.log(`  Parsed ${feedItems.length} items from ${source.name}`);\n    \n    for (const item of feedItems) {\n      const itemUrl = item.link || item.guid || '';\n      const content = item.content || item.description || '';\n      \n      if (!itemUrl || !content) continue;\n      \n      allItems.push({\n        json: {\n          sourceName: source.name,\n          sourceUrl: source.url,\n          sourceTier: source.tier,\n          sourceTags: source.tags,\n          platform: 'rss',\n          _thresholds: source._thresholds,\n          _agents: source._agents,\n          itemUrl,\n          title: item.title || '',\n          content,\n          author: item.creator || source.name,\n          publishedAt: item.pubDate || new Date().toISOString(),\n          contentHash: null,\n          extractedText: null\n        }\n      });\n    }\n  } catch (error) {\n    console.log(`  ERROR ${source.name}: ${error.message}`);\n    errors.push({ source: source.name, error: error.message });\n  }\n}\n\nconsole.log(`Total: ${allItems.length} items, ${errors.length} errors`);\n\nif (allItems.length === 0) {\n  // Return error info so workflow doesn't just stop\n  return [{ json: { error: 'No items fetched', errors, sourcesChecked: sources.length, _skip: true } }];\n}\n\nreturn allItems;"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [1100, 0],
-      "id": "extract-items",
-      "name": "Extract Feed Items"
+      "position": [1320, 150],
+      "id": "fetch-and-extract",
+      "name": "Fetch RSS & Extract Items"
     },
     {
       "parameters": {
-        "jsCode": "// Extract clean text from HTML content\nconst item = $input.first().json;\n\n// Strip HTML tags for clean text extraction\nfunction stripHtml(html) {\n  if (!html) return '';\n  return html\n    .replace(/<script[^>]*>[\\s\\S]*?<\\/script>/gi, '')\n    .replace(/<style[^>]*>[\\s\\S]*?<\\/style>/gi, '')\n    .replace(/<[^>]+>/g, ' ')\n    .replace(/&nbsp;/g, ' ')\n    .replace(/&amp;/g, '&')\n    .replace(/&lt;/g, '<')\n    .replace(/&gt;/g, '>')\n    .replace(/&quot;/g, '\"')\n    .replace(/&#39;/g, \"'\")\n    .replace(/\\s+/g, ' ')\n    .trim();\n}\n\nconst extractedText = stripHtml(item.content);\n\n// Pass through _agents for downstream use\nreturn [{\n  json: {\n    ...item,\n    extractedText: extractedText.substring(0, 50000)\n  }\n}];"
+        "jsCode": "// Extract clean text from HTML content - process ALL items\nconst items = $input.all();\n\n// Strip HTML tags for clean text extraction\nfunction stripHtml(html) {\n  if (!html) return '';\n  return html\n    .replace(/<script[^>]*>[\\s\\S]*?<\\/script>/gi, '')\n    .replace(/<style[^>]*>[\\s\\S]*?<\\/style>/gi, '')\n    .replace(/<[^>]+>/g, ' ')\n    .replace(/&nbsp;/g, ' ')\n    .replace(/&amp;/g, '&')\n    .replace(/&lt;/g, '<')\n    .replace(/&gt;/g, '>')\n    .replace(/&quot;/g, '\"')\n    .replace(/&#39;/g, \"'\")\n    .replace(/\\s+/g, ' ')\n    .trim();\n}\n\n// Process each item and return all\nreturn items.map(item => {\n  const json = item.json;\n  const extractedText = stripHtml(json.content);\n  return {\n    json: {\n      ...json,\n      extractedText: extractedText.substring(0, 50000)\n    }\n  };\n});"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -194,7 +180,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Evaluate duplicate check result and merge with original data\nconst duplicateResult = $input.all();\nconst originalData = $('Compute Hash').first().json;\n\n// Postgres returns empty array if no rows found\n// If we got any rows back, it's a duplicate\nconst isDuplicate = duplicateResult.length > 0 && duplicateResult[0].json && duplicateResult[0].json.id;\n\nreturn [{\n  json: {\n    ...originalData,\n    isNew: !isDuplicate,\n    duplicateId: isDuplicate ? duplicateResult[0].json.id : null\n  }\n}];"
+        "jsCode": "// Evaluate duplicate check result and merge with original data\n// Must match each Postgres result with its corresponding original item by index\nconst duplicateResults = $input.all();\nconst originalItems = $('Compute Hash').all();\n\n// Process each item, matching by index\nreturn duplicateResults.map((result, index) => {\n  const originalData = originalItems[index]?.json || {};\n  // Postgres returns object with id if duplicate found, empty/undefined otherwise\n  const isDuplicate = result.json && result.json.id;\n  \n  return {\n    json: {\n      ...originalData,\n      isNew: !isDuplicate,\n      duplicateId: isDuplicate ? result.json.id : null\n    }\n  };\n});"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -243,13 +229,13 @@
         "columns": {
           "mappingMode": "defineBelow",
           "value": {
-            "url": "={{ $('Evaluate Duplicate').first().json.itemUrl }}",
-            "platform": "={{ $('Evaluate Duplicate').first().json.platform }}",
-            "extracted_text": "={{ $('Evaluate Duplicate').first().json.extractedText }}",
-            "content_hash": "={{ $('Evaluate Duplicate').first().json.contentHash }}",
-            "author": "={{ $('Evaluate Duplicate').first().json.author }}",
-            "published_at": "={{ $('Evaluate Duplicate').first().json.publishedAt }}",
-            "metadata": "={{ JSON.stringify({ sourceName: $('Evaluate Duplicate').first().json.sourceName, sourceTier: $('Evaluate Duplicate').first().json.sourceTier, sourceTags: $('Evaluate Duplicate').first().json.sourceTags, title: $('Evaluate Duplicate').first().json.title }) }}"
+            "url": "={{ $json.itemUrl }}",
+            "platform": "={{ $json.platform }}",
+            "extracted_text": "={{ $json.extractedText }}",
+            "content_hash": "={{ $json.contentHash }}",
+            "author": "={{ $json.author }}",
+            "published_at": "={{ $json.publishedAt }}",
+            "metadata": "={{ JSON.stringify({ sourceName: $json.sourceName, sourceTier: $json.sourceTier, sourceTags: $json.sourceTags, title: $json.title }) }}"
           }
         },
         "options": {}
@@ -268,7 +254,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// STUB: Classifier Agent\n// Simulates Claude API response format for classification\n// Replace with real HTTP Request to Claude API when ready\n\nconst sourceItem = $('Insert Source Item').first().json;\nconst metadata = $('Evaluate Duplicate').first().json;\nconst thresholds = metadata._thresholds || {};\nconst text = sourceItem.extracted_text || '';\nconst textLower = text.toLowerCase();\n\n// Get relevance threshold from config\nconst relevanceThreshold = thresholds.ingestion?.relevance_threshold || 50;\n\n// Simple keyword-based classification for testing\nconst topics = [];\n\nif (textLower.includes('bitcoin') || textLower.includes('btc') || textLower.includes('satoshi')) {\n  topics.push('bitcoin');\n}\nif (textLower.includes('privacy') || textLower.includes('encryption') || textLower.includes('encrypted')) {\n  topics.push('privacy');\n}\nif (textLower.includes('censorship') || textLower.includes('blocked') || textLower.includes('banned')) {\n  topics.push('censorship-resistance');\n}\nif (textLower.includes('surveillance') || textLower.includes('tracking') || textLower.includes('monitoring')) {\n  topics.push('surveillance');\n}\nif (textLower.includes('activist') || textLower.includes('protest') || textLower.includes('dissent')) {\n  topics.push('activism');\n}\nif (textLower.includes('identity') || textLower.includes('kyc') || textLower.includes('anonymous')) {\n  topics.push('identity');\n}\nif (textLower.includes('payment') || textLower.includes('transaction') || textLower.includes('transfer')) {\n  topics.push('payments');\n}\nif (textLower.includes('messaging') || textLower.includes('signal') || textLower.includes('communication')) {\n  topics.push('comms');\n}\nif (textLower.includes('zero knowledge') || textLower.includes('zk-') || textLower.includes('zkp')) {\n  topics.push('zk');\n}\nif (textLower.includes('sovereign') || textLower.includes('self-custody') || textLower.includes('freedom')) {\n  topics.push('sovereignty');\n}\n\n// Default topic if none found\nif (topics.length === 0) {\n  topics.push('sovereignty');\n}\n\n// Score based on keyword density and source tier\nconst tier = metadata.sourceTier || 2;\nconst keywordCount = topics.length;\nconst baseRelevance = Math.min(40 + (keywordCount * 15), 95);\nconst tierBonus = tier === 1 ? 10 : 0;\nconst freedomRelevanceScore = Math.min(baseRelevance + tierBonus, 100);\n\n// Credibility based on source tier\nconst credibilityScore = tier === 1 ? 75 : tier === 2 ? 60 : 45;\n\n// Check for safety concerns\nconst safetyConcern = textLower.includes('location') && \n  (textLower.includes('activist') || textLower.includes('dissident'));\n\n// Use threshold from config\nconst shouldSummarize = freedomRelevanceScore >= relevanceThreshold;\n\nconst classification = {\n  topics: topics.slice(0, 5),\n  freedom_relevance_score: freedomRelevanceScore,\n  credibility_score: credibilityScore,\n  geo: [],\n  safety_concern: safetyConcern,\n  reasoning: `Stub classification based on ${keywordCount} topic keywords. Tier ${tier} source.`,\n  key_entities: [],\n  should_summarize: shouldSummarize\n};\n\n// Return in Claude API response format for easy swap later\nreturn [{\n  json: {\n    content: [{\n      type: 'text',\n      text: JSON.stringify(classification)\n    }],\n    // Pass through source item data\n    _sourceItemId: sourceItem.id,\n    _sourceItemUrl: sourceItem.url,\n    _extractedText: sourceItem.extracted_text,\n    _metadata: metadata,\n    _thresholds: thresholds,\n    _agents: metadata._agents\n  }\n}];"
+        "jsCode": "// STUB: Classifier Agent\n// Simulates Claude API response format for classification\n// Replace with real HTTP Request to Claude API when ready\n\n// Get source item from direct input (the DB insert result)\nconst sourceItem = $input.first().json;\n\n// Get workflow-level config from the config merge node (single item, so .first() is correct)\nconst configData = $('Merge Config & Agents').first().json;\nconst thresholds = {\n  runtime: configData._thresholdsConfig?.runtime || { use_stubs: true },\n  ingestion: configData._thresholdsConfig?.ingestion || { relevance_threshold: 50 },\n  publishing: configData._thresholdsConfig?.publishing || { auto_publish_relevance: 70, auto_publish_credibility: 60 },\n  ideas: configData._thresholdsConfig?.ideas || { min_relevance_for_idea: 80 }\n};\nconst agents = configData._agents || {};\n\n// Parse stored metadata from the DB row\nconst storedMetadata = JSON.parse(sourceItem.metadata || '{}');\n\nconst text = sourceItem.extracted_text || '';\nconst textLower = text.toLowerCase();\n\n// Get relevance threshold from config\nconst relevanceThreshold = thresholds.ingestion?.relevance_threshold || 50;\n\n// Simple keyword-based classification for testing\nconst topics = [];\n\nif (textLower.includes('bitcoin') || textLower.includes('btc') || textLower.includes('satoshi')) {\n  topics.push('bitcoin');\n}\nif (textLower.includes('privacy') || textLower.includes('encryption') || textLower.includes('encrypted')) {\n  topics.push('privacy');\n}\nif (textLower.includes('censorship') || textLower.includes('blocked') || textLower.includes('banned')) {\n  topics.push('censorship-resistance');\n}\nif (textLower.includes('surveillance') || textLower.includes('tracking') || textLower.includes('monitoring')) {\n  topics.push('surveillance');\n}\nif (textLower.includes('activist') || textLower.includes('protest') || textLower.includes('dissent')) {\n  topics.push('activism');\n}\nif (textLower.includes('identity') || textLower.includes('kyc') || textLower.includes('anonymous')) {\n  topics.push('identity');\n}\nif (textLower.includes('payment') || textLower.includes('transaction') || textLower.includes('transfer')) {\n  topics.push('payments');\n}\nif (textLower.includes('messaging') || textLower.includes('signal') || textLower.includes('communication')) {\n  topics.push('comms');\n}\nif (textLower.includes('zero knowledge') || textLower.includes('zk-') || textLower.includes('zkp')) {\n  topics.push('zk');\n}\nif (textLower.includes('sovereign') || textLower.includes('self-custody') || textLower.includes('freedom')) {\n  topics.push('sovereignty');\n}\n\n// Default topic if none found\nif (topics.length === 0) {\n  topics.push('sovereignty');\n}\n\n// Score based on keyword density and source tier\nconst tier = storedMetadata.sourceTier || 2;\nconst keywordCount = topics.length;\nconst baseRelevance = Math.min(40 + (keywordCount * 15), 95);\nconst tierBonus = tier === 1 ? 10 : 0;\nconst freedomRelevanceScore = Math.min(baseRelevance + tierBonus, 100);\n\n// Credibility based on source tier\nconst credibilityScore = tier === 1 ? 75 : tier === 2 ? 60 : 45;\n\n// Check for safety concerns\nconst safetyConcern = textLower.includes('location') && \n  (textLower.includes('activist') || textLower.includes('dissident'));\n\n// Use threshold from config\nconst shouldSummarize = freedomRelevanceScore >= relevanceThreshold;\n\nconst classification = {\n  topics: topics.slice(0, 5),\n  freedom_relevance_score: freedomRelevanceScore,\n  credibility_score: credibilityScore,\n  geo: [],\n  safety_concern: safetyConcern,\n  reasoning: `Stub classification based on ${keywordCount} topic keywords. Tier ${tier} source.`,\n  key_entities: [],\n  should_summarize: shouldSummarize\n};\n\n// Return in Claude API response format for easy swap later\nreturn [{\n  json: {\n    content: [{\n      type: 'text',\n      text: JSON.stringify(classification)\n    }],\n    // Pass through source item data\n    _sourceItemId: sourceItem.id,\n    _sourceItemUrl: sourceItem.url,\n    _extractedText: sourceItem.extracted_text,\n    _metadata: storedMetadata,\n    _thresholds: thresholds,\n    _agents: agents\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -278,7 +264,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Process real Claude API response and add pass-through data\nconst claudeResponse = $input.first().json;\nconst sourceItem = $('Insert Source Item').first().json;\nconst metadata = $('Evaluate Duplicate').first().json;\nconst thresholds = metadata._thresholds || {};\n\n// Return in same format as stub for Parse Classification compatibility\nreturn [{\n  json: {\n    content: claudeResponse.content,\n    _sourceItemId: sourceItem.id,\n    _sourceItemUrl: sourceItem.url,\n    _extractedText: sourceItem.extracted_text,\n    _metadata: metadata,\n    _thresholds: thresholds,\n    _agents: metadata._agents\n  }\n}];"
+        "jsCode": "// Process real Claude API responses and match with source items by index\n// HTTP Request processes items sequentially, so indices should match\nconst claudeResponses = $input.all();\nconst sourceItems = $('Insert Source Item').all();\n\n// Get workflow-level config from the config merge node (single item, so .first() is correct)\nconst configData = $('Merge Config & Agents').first().json;\nconst thresholds = {\n  runtime: configData._thresholdsConfig?.runtime || { use_stubs: true },\n  ingestion: configData._thresholdsConfig?.ingestion || { relevance_threshold: 50 },\n  publishing: configData._thresholdsConfig?.publishing || { auto_publish_relevance: 70, auto_publish_credibility: 60 },\n  ideas: configData._thresholdsConfig?.ideas || { min_relevance_for_idea: 80 }\n};\nconst agents = configData._agents || {};\n\n// If we only have one response (common case), match with corresponding source item\n// For multiple responses, use index matching\nreturn claudeResponses.map((response, index) => {\n  const claudeResponse = response.json;\n  // Try to get matching source item - use index if available, fallback to first\n  const sourceItem = sourceItems[index]?.json || sourceItems[0]?.json || {};\n  const storedMetadata = JSON.parse(sourceItem.metadata || '{}');\n  \n  return {\n    json: {\n      content: claudeResponse.content,\n      _sourceItemId: sourceItem.id,\n      _sourceItemUrl: sourceItem.url,\n      _extractedText: sourceItem.extracted_text,\n      _metadata: storedMetadata,\n      _thresholds: thresholds,\n      _agents: agents\n    }\n  };\n});"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -297,7 +283,7 @@
           "conditions": [
             {
               "id": "use-stubs-classify",
-              "leftValue": "={{ $('Evaluate Duplicate').first().json._thresholds?.runtime?.use_stubs ?? true }}",
+              "leftValue": "={{ $('Merge Config & Agents').first().json._thresholdsConfig?.runtime?.use_stubs ?? true }}",
               "rightValue": true,
               "operator": {
                 "type": "boolean",
@@ -336,7 +322,7 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 1024,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": {{ JSON.stringify($('Evaluate Duplicate').first().json._agents?.classify + \"\\n\\n# Input\\n\\n\" + JSON.stringify({ sourceUrl: $('Insert Source Item').first().json.url, extractedText: $('Insert Source Item').first().json.extracted_text.substring(0, 8000), platform: $('Evaluate Duplicate').first().json.platform, author: $('Evaluate Duplicate').first().json.author, publishedAt: $('Evaluate Duplicate').first().json.publishedAt })) }}\n  }]\n}",
+        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 1024,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": {{ JSON.stringify($('Merge Config & Agents').first().json._agents?.classify + \"\\n\\n# Input\\n\\n\" + JSON.stringify({ sourceUrl: $json.url, extractedText: ($json.extracted_text || '').substring(0, 8000), platform: $json.platform, author: $json.author, publishedAt: $json.published_at })) }}\n  }]\n}",
         "options": {
           "timeout": 30000
         }
@@ -355,7 +341,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Parse classification result from Claude API format\nconst input = $input.first().json;\nlet classification;\n\ntry {\n  let text = input.content[0].text;\n  \n  // Strip markdown code blocks if present (Claude often wraps JSON in ```json...```)\n  text = text.trim();\n  if (text.startsWith('```')) {\n    // Remove opening fence (```json or ```)\n    text = text.replace(/^```(?:json)?\\s*\\n?/, '');\n    // Remove closing fence\n    text = text.replace(/\\n?```\\s*$/, '');\n  }\n  \n  classification = JSON.parse(text.trim());\n} catch (e) {\n  // Fallback if parsing fails\n  console.log('Parse Classification error:', e.message);\n  console.log('Raw text:', input.content?.[0]?.text?.substring(0, 200));\n  classification = {\n    topics: ['sovereignty'],\n    freedom_relevance_score: 30,\n    credibility_score: 50,\n    geo: [],\n    safety_concern: false,\n    reasoning: 'Failed to parse LLM response: ' + e.message,\n    key_entities: [],\n    should_summarize: false\n  };\n}\n\n// Merge with source item data\nreturn [{\n  json: {\n    sourceItemId: input._sourceItemId,\n    sourceItemUrl: input._sourceItemUrl,\n    extractedText: input._extractedText,\n    metadata: input._metadata,\n    classification,\n    _thresholds: input._thresholds,\n    _agents: input._agents\n  }\n}];"
+        "jsCode": "// Parse classification result from Claude API format - process ALL items\nconst items = $input.all();\n\nreturn items.map(item => {\n  const input = item.json;\n  let classification;\n\n  try {\n    let text = input.content[0].text;\n    \n    // Strip markdown code blocks if present (Claude often wraps JSON in ```json...```)\n    text = text.trim();\n    if (text.startsWith('```')) {\n      // Remove opening fence (```json or ```)\n      text = text.replace(/^```(?:json)?\\s*\\n?/, '');\n      // Remove closing fence\n      text = text.replace(/\\n?```\\s*$/, '');\n    }\n    \n    classification = JSON.parse(text.trim());\n  } catch (e) {\n    // Fallback if parsing fails\n    console.log('Parse Classification error:', e.message);\n    console.log('Raw text:', input.content?.[0]?.text?.substring(0, 200));\n    classification = {\n      topics: ['sovereignty'],\n      freedom_relevance_score: 30,\n      credibility_score: 50,\n      geo: [],\n      safety_concern: false,\n      reasoning: 'Failed to parse LLM response: ' + e.message,\n      key_entities: [],\n      should_summarize: false\n    };\n  }\n\n  // Merge with source item data\n  return {\n    json: {\n      sourceItemId: input._sourceItemId,\n      sourceItemUrl: input._sourceItemUrl,\n      extractedText: input._extractedText,\n      metadata: input._metadata,\n      classification,\n      _thresholds: input._thresholds,\n      _agents: input._agents\n    }\n  };\n});"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -365,7 +351,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Validate classification output against schema\nconst data = $input.first().json;\nconst classification = data.classification;\nconst errors = [];\n\n// Valid topics enum\nconst validTopics = ['bitcoin', 'zk', 'censorship-resistance', 'comms', 'payments', 'identity', 'privacy', 'surveillance', 'activism', 'sovereignty'];\n\n// Validate topics\nif (!Array.isArray(classification.topics)) {\n  errors.push('topics must be an array');\n} else {\n  if (classification.topics.length < 1) errors.push('topics must have at least 1 item');\n  if (classification.topics.length > 5) errors.push('topics must have at most 5 items');\n  for (const topic of classification.topics) {\n    if (!validTopics.includes(topic)) {\n      errors.push(`Invalid topic: ${topic}. Must be one of: ${validTopics.join(', ')}`);\n    }\n  }\n}\n\n// Validate scores\nif (typeof classification.freedom_relevance_score !== 'number' || classification.freedom_relevance_score < 0 || classification.freedom_relevance_score > 100) {\n  errors.push('freedom_relevance_score must be an integer between 0 and 100');\n}\nif (typeof classification.credibility_score !== 'number' || classification.credibility_score < 0 || classification.credibility_score > 100) {\n  errors.push('credibility_score must be an integer between 0 and 100');\n}\n\n// Validate geo\nif (!Array.isArray(classification.geo)) {\n  errors.push('geo must be an array');\n}\n\n// Validate safety_concern\nif (typeof classification.safety_concern !== 'boolean') {\n  errors.push('safety_concern must be a boolean');\n}\n\n// Validate should_summarize\nif (typeof classification.should_summarize !== 'boolean') {\n  errors.push('should_summarize must be a boolean');\n}\n\n// Log validation result\nif (errors.length > 0) {\n  console.log('Classification validation errors:', errors);\n}\n\nreturn [{\n  json: {\n    ...data,\n    _validationErrors: errors,\n    _validationPassed: errors.length === 0\n  }\n}];"
+        "jsCode": "// Validate classification output against schema - process ALL items\nconst items = $input.all();\nconst validTopics = ['bitcoin', 'zk', 'censorship-resistance', 'comms', 'payments', 'identity', 'privacy', 'surveillance', 'activism', 'sovereignty'];\n\nreturn items.map(item => {\n  const data = item.json;\n  const classification = data.classification;\n  const errors = [];\n\n  // Validate topics\n  if (!Array.isArray(classification.topics)) {\n    errors.push('topics must be an array');\n  } else {\n    if (classification.topics.length < 1) errors.push('topics must have at least 1 item');\n    if (classification.topics.length > 5) errors.push('topics must have at most 5 items');\n    for (const topic of classification.topics) {\n      if (!validTopics.includes(topic)) {\n        errors.push(`Invalid topic: ${topic}. Must be one of: ${validTopics.join(', ')}`);\n      }\n    }\n  }\n\n  // Validate scores\n  if (typeof classification.freedom_relevance_score !== 'number' || classification.freedom_relevance_score < 0 || classification.freedom_relevance_score > 100) {\n    errors.push('freedom_relevance_score must be an integer between 0 and 100');\n  }\n  if (typeof classification.credibility_score !== 'number' || classification.credibility_score < 0 || classification.credibility_score > 100) {\n    errors.push('credibility_score must be an integer between 0 and 100');\n  }\n\n  // Validate geo\n  if (!Array.isArray(classification.geo)) {\n    errors.push('geo must be an array');\n  }\n\n  // Validate safety_concern\n  if (typeof classification.safety_concern !== 'boolean') {\n    errors.push('safety_concern must be a boolean');\n  }\n\n  // Validate should_summarize\n  if (typeof classification.should_summarize !== 'boolean') {\n    errors.push('should_summarize must be a boolean');\n  }\n\n  // Log validation result\n  if (errors.length > 0) {\n    console.log('Classification validation errors:', errors);\n  }\n\n  return {\n    json: {\n      ...data,\n      _validationErrors: errors,\n      _validationPassed: errors.length === 0\n    }\n  };\n});"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -375,7 +361,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Check if content meets relevance threshold from config\nconst data = $input.first().json;\nconst thresholds = data._thresholds || {};\nconst relevanceThreshold = thresholds.ingestion?.relevance_threshold || 50;\n\nconst score = data.classification.freedom_relevance_score;\nconst shouldSummarize = data.classification.should_summarize;\n\n// Content meets threshold if score >= config threshold AND should_summarize is true\nconst meetsThreshold = score >= relevanceThreshold && shouldSummarize;\n\n// Pass through all data including _agents\nreturn [{\n  json: {\n    ...data,\n    meetsThreshold,\n    usedThreshold: relevanceThreshold\n  }\n}];"
+        "jsCode": "// Check if content meets relevance threshold from config - process ALL items\nconst items = $input.all();\n\nreturn items.map(item => {\n  const data = item.json;\n  const thresholds = data._thresholds || {};\n  const relevanceThreshold = thresholds.ingestion?.relevance_threshold || 50;\n\n  const score = data.classification.freedom_relevance_score;\n  const shouldSummarize = data.classification.should_summarize;\n\n  // Content meets threshold if score >= config threshold AND should_summarize is true\n  const meetsThreshold = score >= relevanceThreshold && shouldSummarize;\n\n  // Pass through all data including _agents\n  return {\n    json: {\n      ...data,\n      meetsThreshold,\n      usedThreshold: relevanceThreshold\n    }\n  };\n});"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -414,7 +400,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// STUB: Summarizer Agent\n// Generates insight content from classified source item\n// Replace with real Claude API call when ready\n\nconst data = $input.first().json;\nconst classification = data.classification;\nconst thresholds = data._thresholds || {};\nconst text = data.extractedText || '';\nconst metadata = data.metadata || {};\n\n// Get idea generation threshold from config\nconst ideaThreshold = thresholds.ideas?.min_relevance_for_idea || 80;\n\n// Extract title from metadata or generate from text\nconst title = metadata.title || text.substring(0, 100).split('.')[0] + '...';\n\n// Generate TL;DR\nconst tldr = text.substring(0, 250).trim() + '...';\n\n// Generate summary bullets\nconst sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 20);\nconst summaryBullets = sentences.slice(0, 7).map(s => s.trim());\n\n// Ensure minimum bullets\nwhile (summaryBullets.length < 5) {\n  summaryBullets.push('Additional analysis pending.');\n}\n\nconst summary = {\n  title: title.substring(0, 120),\n  tldr: tldr.substring(0, 280),\n  summary_bullets: summaryBullets.slice(0, 10),\n  deep_dive_markdown: classification.freedom_relevance_score >= 85 \n    ? `## Analysis\\n\\n${text.substring(0, 2000)}...\\n\\n## Implications\\n\\nFurther analysis needed.`\n    : null,\n  citations: [data.sourceItemUrl],\n  recommended_actions: [],\n  related_projects: [],\n  project_idea_trigger: {\n    should_generate: classification.freedom_relevance_score >= ideaThreshold,\n    reason: classification.freedom_relevance_score >= ideaThreshold \n      ? 'High relevance score suggests potential project opportunity'\n      : null\n  }\n};\n\n// Return in Claude API response format\nreturn [{\n  json: {\n    content: [{\n      type: 'text',\n      text: JSON.stringify(summary)\n    }],\n    _sourceItemId: data.sourceItemId,\n    _classification: classification,\n    _sourceItemUrl: data.sourceItemUrl,\n    _thresholds: thresholds,\n    _agents: data._agents\n  }\n}];"
+        "jsCode": "// STUB: Summarizer Agent - process ALL items\n// Generates insight content from classified source items\n// Replace with real Claude API call when ready\n\nconst items = $input.all();\n\nreturn items.map(item => {\n  const data = item.json;\n  const classification = data.classification;\n  const thresholds = data._thresholds || {};\n  const text = data.extractedText || '';\n  const metadata = data.metadata || {};\n\n  // Get idea generation threshold from config\n  const ideaThreshold = thresholds.ideas?.min_relevance_for_idea || 80;\n\n  // Extract title from metadata or generate from text\n  const title = metadata.title || text.substring(0, 100).split('.')[0] + '...';\n\n  // Generate TL;DR\n  const tldr = text.substring(0, 250).trim() + '...';\n\n  // Generate summary bullets\n  const sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 20);\n  const summaryBullets = sentences.slice(0, 7).map(s => s.trim());\n\n  // Ensure minimum bullets\n  while (summaryBullets.length < 5) {\n    summaryBullets.push('Additional analysis pending.');\n  }\n\n  const summary = {\n    title: title.substring(0, 120),\n    tldr: tldr.substring(0, 280),\n    summary_bullets: summaryBullets.slice(0, 10),\n    deep_dive_markdown: classification.freedom_relevance_score >= 85 \n      ? `## Analysis\\n\\n${text.substring(0, 2000)}...\\n\\n## Implications\\n\\nFurther analysis needed.`\n      : null,\n    citations: [data.sourceItemUrl],\n    recommended_actions: [],\n    related_projects: [],\n    project_idea_trigger: {\n      should_generate: classification.freedom_relevance_score >= ideaThreshold,\n      reason: classification.freedom_relevance_score >= ideaThreshold \n        ? 'High relevance score suggests potential project opportunity'\n        : null\n    }\n  };\n\n  // Return in Claude API response format\n  return {\n    json: {\n      content: [{\n        type: 'text',\n        text: JSON.stringify(summary)\n      }],\n      _sourceItemId: data.sourceItemId,\n      _classification: classification,\n      _sourceItemUrl: data.sourceItemUrl,\n      _thresholds: thresholds,\n      _agents: data._agents\n    }\n  };\n});"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -491,7 +477,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Process real Claude API response and add pass-through data for summarization\nconst claudeResponse = $input.first().json;\nconst applyThresholdData = $('Apply Threshold').first().json;\n\n// Return in same format as stub for Parse Summary compatibility\nreturn [{\n  json: {\n    content: claudeResponse.content,\n    _sourceItemId: applyThresholdData.sourceItemId,\n    _classification: applyThresholdData.classification,\n    _sourceItemUrl: applyThresholdData.sourceItemUrl,\n    _thresholds: applyThresholdData._thresholds,\n    _agents: applyThresholdData._agents\n  }\n}];"
+        "jsCode": "// Process real Claude API responses and match with source data by index\nconst claudeResponses = $input.all();\nconst applyThresholdItems = $('Apply Threshold').all();\n\n// Match responses with their source data by index\nreturn claudeResponses.map((response, index) => {\n  const claudeResponse = response.json;\n  // Use index matching - items flow through in order\n  const applyThresholdData = applyThresholdItems[index]?.json || applyThresholdItems[0]?.json || {};\n  \n  return {\n    json: {\n      content: claudeResponse.content,\n      _sourceItemId: applyThresholdData.sourceItemId,\n      _classification: applyThresholdData.classification,\n      _sourceItemUrl: applyThresholdData.sourceItemUrl,\n      _thresholds: applyThresholdData._thresholds,\n      _agents: applyThresholdData._agents\n    }\n  };\n});"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -501,7 +487,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Parse summary and determine publish status using thresholds from config\nconst input = $input.first().json;\nconst thresholds = input._thresholds || {};\nlet summary;\n\ntry {\n  let text = input.content[0].text;\n  \n  // Strip markdown code blocks if present (Claude often wraps JSON in ```json...```)\n  text = text.trim();\n  if (text.startsWith('```')) {\n    // Remove opening fence (```json or ```)\n    text = text.replace(/^```(?:json)?\\s*\\n?/, '');\n    // Remove closing fence\n    text = text.replace(/\\n?```\\s*$/, '');\n  }\n  \n  summary = JSON.parse(text.trim());\n} catch (e) {\n  console.log('Parse Summary error:', e.message);\n  console.log('Raw text:', input.content?.[0]?.text?.substring(0, 200));\n  summary = {\n    title: 'Parse Error',\n    tldr: 'Failed to parse summary: ' + e.message,\n    summary_bullets: ['Error processing content'],\n    citations: [],\n    deep_dive_markdown: null\n  };\n}\n\nconst classification = input._classification;\n\n// Get thresholds from config\nconst autoPublishRelevance = thresholds.publishing?.auto_publish_relevance || 70;\nconst autoPublishCredibility = thresholds.publishing?.auto_publish_credibility || 60;\n\n// Determine publish status based on gates from config\n// Auto-publish: relevance >= config threshold AND credibility >= config threshold AND has citations\nconst canAutoPublish = \n  classification.freedom_relevance_score >= autoPublishRelevance &&\n  classification.credibility_score >= autoPublishCredibility &&\n  summary.citations.length > 0 &&\n  !classification.safety_concern;\n\nconst status = canAutoPublish ? 'published' : 'queued';\nconst publishedAt = canAutoPublish ? new Date().toISOString() : null;\n\n// Generate slug from title for URL\nconst slug = summary.title\n  .toLowerCase()\n  .replace(/[^a-z0-9]+/g, '-')\n  .replace(/^-|-$/g, '')\n  .substring(0, 60);\n\nconst publishedUrl = canAutoPublish \n  ? `https://libertas.fgu.tech/posts/${slug}`\n  : null;\n\nconsole.log(`Publishing gate: relevance ${classification.freedom_relevance_score} >= ${autoPublishRelevance}, credibility ${classification.credibility_score} >= ${autoPublishCredibility} => ${status}`);\n\nreturn [{\n  json: {\n    sourceItemId: input._sourceItemId,\n    sourceItemUrl: input._sourceItemUrl,\n    title: summary.title,\n    tldr: summary.tldr,\n    summaryBullets: summary.summary_bullets,\n    deepDiveMarkdown: summary.deep_dive_markdown,\n    topics: classification.topics,\n    geo: classification.geo,\n    freedomRelevanceScore: classification.freedom_relevance_score,\n    credibilityScore: classification.credibility_score,\n    citations: summary.citations,\n    status,\n    publishedUrl,\n    publishedAt,\n    safetyConcern: classification.safety_concern,\n    _usedThresholds: {\n      autoPublishRelevance,\n      autoPublishCredibility\n    }\n  }\n}];"
+        "jsCode": "// Parse summary and determine publish status using thresholds from config - process ALL items\nconst items = $input.all();\n\nreturn items.map(item => {\n  const input = item.json;\n  const thresholds = input._thresholds || {};\n  let summary;\n\n  try {\n    let text = input.content[0].text;\n    \n    // Strip markdown code blocks if present (Claude often wraps JSON in ```json...```)\n    text = text.trim();\n    if (text.startsWith('```')) {\n      // Remove opening fence (```json or ```)\n      text = text.replace(/^```(?:json)?\\s*\\n?/, '');\n      // Remove closing fence\n      text = text.replace(/\\n?```\\s*$/, '');\n    }\n    \n    summary = JSON.parse(text.trim());\n  } catch (e) {\n    console.log('Parse Summary error:', e.message);\n    console.log('Raw text:', input.content?.[0]?.text?.substring(0, 200));\n    summary = {\n      title: 'Parse Error',\n      tldr: 'Failed to parse summary: ' + e.message,\n      summary_bullets: ['Error processing content'],\n      citations: [],\n      deep_dive_markdown: null\n    };\n  }\n\n  const classification = input._classification;\n\n  // Get thresholds from config\n  const autoPublishRelevance = thresholds.publishing?.auto_publish_relevance || 70;\n  const autoPublishCredibility = thresholds.publishing?.auto_publish_credibility || 60;\n\n  // Determine publish status based on gates from config\n  // Auto-publish: relevance >= config threshold AND credibility >= config threshold AND has citations\n  const canAutoPublish = \n    classification.freedom_relevance_score >= autoPublishRelevance &&\n    classification.credibility_score >= autoPublishCredibility &&\n    summary.citations.length > 0 &&\n    !classification.safety_concern;\n\n  const status = canAutoPublish ? 'published' : 'queued';\n  const publishedAt = canAutoPublish ? new Date().toISOString() : null;\n\n  // Generate slug from title for URL\n  const slug = summary.title\n    .toLowerCase()\n    .replace(/[^a-z0-9]+/g, '-')\n    .replace(/^-|-$/g, '')\n    .substring(0, 60);\n\n  const publishedUrl = canAutoPublish \n    ? `https://libertas.fgu.tech/posts/${slug}`\n    : null;\n\n  console.log(`Publishing gate: relevance ${classification.freedom_relevance_score} >= ${autoPublishRelevance}, credibility ${classification.credibility_score} >= ${autoPublishCredibility} => ${status}`);\n\n  return {\n    json: {\n      sourceItemId: input._sourceItemId,\n      sourceItemUrl: input._sourceItemUrl,\n      title: summary.title,\n      tldr: summary.tldr,\n      summaryBullets: summary.summary_bullets,\n      deepDiveMarkdown: summary.deep_dive_markdown,\n      topics: classification.topics,\n      geo: classification.geo,\n      freedomRelevanceScore: classification.freedom_relevance_score,\n      credibilityScore: classification.credibility_score,\n      citations: summary.citations,\n      status,\n      publishedUrl,\n      publishedAt,\n      safetyConcern: classification.safety_concern,\n      _thresholds: thresholds,\n      _usedThresholds: {\n        autoPublishRelevance,\n        autoPublishCredibility\n      }\n    }\n  };\n});"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -511,7 +497,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Validate summary output against insight schema\nconst data = $input.first().json;\nconst errors = [];\n\n// Validate title\nif (typeof data.title !== 'string') {\n  errors.push('title must be a string');\n} else if (data.title.length > 120) {\n  errors.push('title must be at most 120 characters');\n}\n\n// Validate tldr\nif (typeof data.tldr !== 'string') {\n  errors.push('tldr must be a string');\n} else if (data.tldr.length > 280) {\n  errors.push('tldr must be at most 280 characters');\n}\n\n// Validate summaryBullets\nif (!Array.isArray(data.summaryBullets)) {\n  errors.push('summaryBullets must be an array');\n} else {\n  if (data.summaryBullets.length < 5) errors.push('summaryBullets must have at least 5 items');\n  if (data.summaryBullets.length > 10) errors.push('summaryBullets must have at most 10 items');\n}\n\n// Validate topics\nconst validTopics = ['bitcoin', 'zk', 'censorship-resistance', 'comms', 'payments', 'identity', 'privacy', 'surveillance', 'activism', 'sovereignty'];\nif (!Array.isArray(data.topics)) {\n  errors.push('topics must be an array');\n} else {\n  for (const topic of data.topics) {\n    if (!validTopics.includes(topic)) {\n      errors.push(`Invalid topic: ${topic}`);\n    }\n  }\n}\n\n// Validate scores\nif (typeof data.freedomRelevanceScore !== 'number' || data.freedomRelevanceScore < 0 || data.freedomRelevanceScore > 100) {\n  errors.push('freedomRelevanceScore must be an integer between 0 and 100');\n}\nif (typeof data.credibilityScore !== 'number' || data.credibilityScore < 0 || data.credibilityScore > 100) {\n  errors.push('credibilityScore must be an integer between 0 and 100');\n}\n\n// Validate citations\nif (!Array.isArray(data.citations)) {\n  errors.push('citations must be an array');\n}\n\n// Validate status\nconst validStatuses = ['draft', 'queued', 'published', 'rejected'];\nif (!validStatuses.includes(data.status)) {\n  errors.push(`status must be one of: ${validStatuses.join(', ')}`);\n}\n\n// Log validation result\nif (errors.length > 0) {\n  console.log('Summary validation errors:', errors);\n}\n\nreturn [{\n  json: {\n    ...data,\n    _summaryValidationErrors: errors,\n    _summaryValidationPassed: errors.length === 0\n  }\n}];"
+        "jsCode": "// Validate summary output against insight schema - process ALL items\nconst items = $input.all();\nconst validTopics = ['bitcoin', 'zk', 'censorship-resistance', 'comms', 'payments', 'identity', 'privacy', 'surveillance', 'activism', 'sovereignty'];\nconst validStatuses = ['draft', 'queued', 'published', 'rejected'];\n\nreturn items.map(item => {\n  const data = item.json;\n  const errors = [];\n\n  // Validate title\n  if (typeof data.title !== 'string') {\n    errors.push('title must be a string');\n  } else if (data.title.length > 120) {\n    errors.push('title must be at most 120 characters');\n  }\n\n  // Validate tldr\n  if (typeof data.tldr !== 'string') {\n    errors.push('tldr must be a string');\n  } else if (data.tldr.length > 280) {\n    errors.push('tldr must be at most 280 characters');\n  }\n\n  // Validate summaryBullets\n  if (!Array.isArray(data.summaryBullets)) {\n    errors.push('summaryBullets must be an array');\n  } else {\n    if (data.summaryBullets.length < 5) errors.push('summaryBullets must have at least 5 items');\n    if (data.summaryBullets.length > 10) errors.push('summaryBullets must have at most 10 items');\n  }\n\n  // Validate topics\n  if (!Array.isArray(data.topics)) {\n    errors.push('topics must be an array');\n  } else {\n    for (const topic of data.topics) {\n      if (!validTopics.includes(topic)) {\n        errors.push(`Invalid topic: ${topic}`);\n      }\n    }\n  }\n\n  // Validate scores\n  if (typeof data.freedomRelevanceScore !== 'number' || data.freedomRelevanceScore < 0 || data.freedomRelevanceScore > 100) {\n    errors.push('freedomRelevanceScore must be an integer between 0 and 100');\n  }\n  if (typeof data.credibilityScore !== 'number' || data.credibilityScore < 0 || data.credibilityScore > 100) {\n    errors.push('credibilityScore must be an integer between 0 and 100');\n  }\n\n  // Validate citations\n  if (!Array.isArray(data.citations)) {\n    errors.push('citations must be an array');\n  }\n\n  // Validate status\n  if (!validStatuses.includes(data.status)) {\n    errors.push(`status must be one of: ${validStatuses.join(', ')}`);\n  }\n\n  // Log validation result\n  if (errors.length > 0) {\n    console.log('Summary validation errors:', errors);\n  }\n\n  return {\n    json: {\n      ...data,\n      _summaryValidationErrors: errors,\n      _summaryValidationPassed: errors.length === 0\n    }\n  };\n});"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -521,7 +507,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Build complete INSERT query with proper escaping\nconst data = $input.first().json;\n\nfunction escapeStr(str) {\n  if (str === null || str === undefined) return 'NULL';\n  // Escape single quotes by doubling them\n  return \"'\" + String(str).replace(/'/g, \"''\") + \"'\";\n}\n\nfunction formatPgArray(arr) {\n  if (!arr || arr.length === 0) return \"'{}'\";\n  const escaped = arr.map(s => '\"' + String(s).replace(/\"/g, '\\\\\"').replace(/'/g, \"''\") + '\"');\n  return \"'{\" + escaped.join(',') + \"}'\";\n}\n\nfunction formatUuidArray(arr) {\n  if (!arr || arr.length === 0) return \"'{}'\";\n  return \"'{\" + arr.join(',') + \"}'\";\n}\n\nconst query = `INSERT INTO insights (\n  source_item_ids, title, tldr, summary_bullets, deep_dive_markdown,\n  topics, geo, freedom_relevance_score, credibility_score, citations,\n  status, published_url, published_at\n) VALUES (\n  ${formatUuidArray([data.sourceItemId])},\n  ${escapeStr(data.title || 'Untitled')},\n  ${escapeStr(data.tldr || '')},\n  ${formatPgArray(data.summaryBullets || [])},\n  ${data.deepDiveMarkdown ? escapeStr(data.deepDiveMarkdown) : 'NULL'},\n  ${formatPgArray(data.topics || [])},\n  ${formatPgArray(data.geo || [])},\n  ${data.freedomRelevanceScore},\n  ${data.credibilityScore},\n  ${formatPgArray(data.citations || [])},\n  ${escapeStr(data.status)},\n  ${data.publishedUrl ? escapeStr(data.publishedUrl) : 'NULL'},\n  ${data.publishedAt ? escapeStr(data.publishedAt) : 'NULL'}\n) RETURNING id, title, status, published_url`;\n\nreturn [{ json: { query, sourceData: data } }];"
+        "jsCode": "// Build complete INSERT query with proper escaping - process ALL items\nconst items = $input.all();\n\nfunction escapeStr(str) {\n  if (str === null || str === undefined) return 'NULL';\n  // Escape single quotes by doubling them\n  return \"'\" + String(str).replace(/'/g, \"''\") + \"'\";\n}\n\nfunction formatPgArray(arr) {\n  if (!arr || arr.length === 0) return \"'{}'\";\n  const escaped = arr.map(s => '\"' + String(s).replace(/\"/g, '\\\\\"').replace(/'/g, \"''\") + '\"');\n  return \"'{\" + escaped.join(',') + \"}'\";\n}\n\nfunction formatUuidArray(arr) {\n  if (!arr || arr.length === 0) return \"'{}'\";\n  return \"'{\" + arr.join(',') + \"}'\";\n}\n\nreturn items.map(item => {\n  const data = item.json;\n  \n  const query = `INSERT INTO insights (\n    source_item_ids, title, tldr, summary_bullets, deep_dive_markdown,\n    topics, geo, freedom_relevance_score, credibility_score, citations,\n    status, published_url, published_at\n  ) VALUES (\n    ${formatUuidArray([data.sourceItemId])},\n    ${escapeStr(data.title || 'Untitled')},\n    ${escapeStr(data.tldr || '')},\n    ${formatPgArray(data.summaryBullets || [])},\n    ${data.deepDiveMarkdown ? escapeStr(data.deepDiveMarkdown) : 'NULL'},\n    ${formatPgArray(data.topics || [])},\n    ${formatPgArray(data.geo || [])},\n    ${data.freedomRelevanceScore},\n    ${data.credibilityScore},\n    ${formatPgArray(data.citations || [])},\n    ${escapeStr(data.status)},\n    ${data.publishedUrl ? escapeStr(data.publishedUrl) : 'NULL'},\n    ${data.publishedAt ? escapeStr(data.publishedAt) : 'NULL'}\n  ) RETURNING id, title, status, published_url`;\n\n  return { json: { query, sourceData: data } };\n});"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -549,7 +535,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Log skipped items (below threshold)\nconst data = $input.first().json;\nconsole.log(`Skipped: ${data.sourceItemUrl} - Relevance: ${data.classification.freedom_relevance_score} (threshold: ${data.usedThreshold})`);\n\nreturn [{\n  json: {\n    skipped: true,\n    sourceItemId: data.sourceItemId,\n    reason: 'Below relevance threshold',\n    score: data.classification.freedom_relevance_score,\n    threshold: data.usedThreshold\n  }\n}];"
+        "jsCode": "// Log skipped items (below threshold) - process ALL items\nconst items = $input.all();\n\nreturn items.map(item => {\n  const data = item.json;\n  console.log(`Skipped: ${data.sourceItemUrl} - Relevance: ${data.classification.freedom_relevance_score} (threshold: ${data.usedThreshold})`);\n\n  return {\n    json: {\n      skipped: true,\n      sourceItemId: data.sourceItemId,\n      reason: 'Below relevance threshold',\n      score: data.classification.freedom_relevance_score,\n      threshold: data.usedThreshold\n    }\n  };\n});"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -559,7 +545,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Log duplicate items\nconsole.log('Duplicate item detected, skipping');\n\nreturn [{\n  json: {\n    skipped: true,\n    reason: 'Duplicate content hash'\n  }\n}];"
+        "jsCode": "// Log duplicate items - process ALL items\nconst items = $input.all();\n\nreturn items.map(item => {\n  console.log('Duplicate item detected, skipping:', item.json?.itemUrl || 'unknown');\n\n  return {\n    json: {\n      skipped: true,\n      reason: 'Duplicate content hash'\n    }\n  };\n});"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -569,13 +555,81 @@
     },
     {
       "parameters": {
-        "jsCode": "// Aggregate results from all branches\n// This runs at the end to summarize the workflow execution\n\nconst allItems = $input.all();\n\nlet published = 0;\nlet queued = 0;\nlet skipped = 0;\nlet duplicates = 0;\nlet errors = 0;\nlet feedsPublished = 0;\n\nfor (const item of allItems) {\n  const data = item.json;\n  if (data.feedsCommitted) feedsPublished++;\n  else if (data.status === 'published') published++;\n  else if (data.status === 'queued') queued++;\n  else if (data.skipped && data.reason === 'Duplicate content hash') duplicates++;\n  else if (data.skipped) skipped++;\n  else errors++;\n}\n\nconst summary = {\n  executedAt: new Date().toISOString(),\n  results: {\n    published,\n    queued,\n    skipped,\n    duplicates,\n    errors,\n    feedsPublished,\n    total: allItems.length\n  }\n};\n\nconsole.log('Workflow A Summary:', JSON.stringify(summary, null, 2));\n\nreturn [{ json: summary }];"
+        "jsCode": "// Collect results from current batch and pass through for loop\n// In looping mode, this runs after each source is processed\n// Results are passed through to loop back to SplitInBatches\n\nconst allItems = $input.all();\n\n// Count results for this batch\nlet published = 0, queued = 0, skipped = 0, duplicates = 0, errors = 0, feedsPublished = 0;\n\nfor (const item of allItems) {\n  const data = item.json;\n  if (data.feedsCommitted) feedsPublished++;\n  else if (data.status === 'published') published++;\n  else if (data.status === 'queued') queued++;\n  else if (data.skipped && data.reason === 'Duplicate content hash') duplicates++;\n  else if (data.skipped) skipped++;\n  else errors++;\n}\n\nconst batchSummary = { published, queued, skipped, duplicates, errors, feedsPublished, total: allItems.length };\nconsole.log('Batch results:', JSON.stringify(batchSummary));\n\n// Pass through to continue loop (items will be sent back to SplitInBatches)\nreturn allItems;"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [6200, -200],
       "id": "aggregate-results",
       "name": "Aggregate Results"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Workflow Complete - triggered when all sources have been processed\n// Now triggers batched publishing of all new insights from this run\n\nconsole.log('=== Workflow A Complete ===');\nconsole.log('All sources processed. Starting batched publishing...');\nconsole.log('Timestamp:', new Date().toISOString());\n\n// Get thresholds from input items (passed through from Load Sources)\nconst items = $input.all();\nlet thresholds = { runtime: { use_stubs: true }, publishing: { auto_publish_relevance: 70, auto_publish_credibility: 60 } };\n\n// Try to get thresholds from any item that has them\nfor (const item of items) {\n  if (item.json?._thresholds) {\n    thresholds = item.json._thresholds;\n    break;\n  }\n}\n\nconsole.log('Using thresholds:', JSON.stringify(thresholds.runtime));\n\nreturn [{ json: { \n  workflowComplete: true, \n  completedAt: new Date().toISOString(),\n  _thresholds: thresholds\n}}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1540, 350],
+      "id": "workflow-complete",
+      "name": "Workflow Complete"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT \n  id, title, tldr, summary_bullets, deep_dive_markdown,\n  topics, geo, freedom_relevance_score, credibility_score,\n  citations, status, published_url, published_at, created_at, updated_at\nFROM insights \nWHERE status = 'published' AND published_at >= NOW() - INTERVAL '7 hours'\nORDER BY published_at DESC",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [1760, 350],
+      "id": "query-new-published",
+      "name": "Query New Published Insights",
+      "alwaysOutputData": true,
+      "credentials": {
+        "postgres": {
+          "id": "CREDENTIAL_ID",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "has-new-insights",
+              "leftValue": "={{ $input.all().filter(i => i.json.id).length }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "notEquals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [1980, 350],
+      "id": "has-new-insights",
+      "name": "Has New Insights?"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Log when no new insights to publish\nconsole.log('No new insights to publish in this run.');\nreturn [{ json: { noNewInsights: true, completedAt: new Date().toISOString() }}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2200, 450],
+      "id": "log-no-new-insights",
+      "name": "Log No New Insights"
     },
     {
       "parameters": {
@@ -588,7 +642,7 @@
           "conditions": [
             {
               "id": "is-published",
-              "leftValue": "={{ $('Build Insight Query').first().json.sourceData.status }}",
+              "leftValue": "={{ $json.status }}",
               "rightValue": "published",
               "operator": {
                 "type": "string",
@@ -627,7 +681,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Generate RSS 2.0 feed from all published insights\nconst insights = $input.all().map(item => item.json).filter(i => i.id);\nconst newInsightData = $('Build Insight Query').first().json.sourceData;\n\n// Site metadata\nconst siteUrl = 'https://libertas.fgu.tech';\nconst feedTitle = 'Libertas - Freedom Tech Signals';\nconst feedDescription = 'Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.';\nconst feedLanguage = 'en-us';\nconst buildDate = new Date().toUTCString();\n\n// Helper to escape XML\nfunction escapeXml(str) {\n  if (!str) return '';\n  return String(str)\n    .replace(/&/g, '&amp;')\n    .replace(/</g, '&lt;')\n    .replace(/>/g, '&gt;')\n    .replace(/\"/g, '&quot;')\n    .replace(/'/g, '&apos;');\n}\n\n// Generate RSS items\nconst items = insights.map(insight => {\n  const pubDate = insight.published_at ? new Date(insight.published_at).toUTCString() : buildDate;\n  const topics = Array.isArray(insight.topics) ? insight.topics : [];\n  const categories = topics.map(t => `    <category>${escapeXml(t)}</category>`).join('\\n');\n  \n  // Generate slug from title\n  const slug = insight.title\n    .toLowerCase()\n    .replace(/[^a-z0-9]+/g, '-')\n    .replace(/^-|-$/g, '')\n    .substring(0, 60);\n  \n  const link = `${siteUrl}/posts/${slug}`;\n  \n  return `  <item>\n    <title>${escapeXml(insight.title)}</title>\n    <link>${link}</link>\n    <guid isPermaLink=\"true\">${link}</guid>\n    <pubDate>${pubDate}</pubDate>\n    <description>${escapeXml(insight.tldr)}</description>\n${categories}\n  </item>`;\n}).join('\\n');\n\n// Build complete RSS feed\nconst rssFeed = `<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<rss version=\"2.0\" xmlns:atom=\"http://www.w3.org/2005/Atom\">\n<channel>\n  <title>${escapeXml(feedTitle)}</title>\n  <link>${siteUrl}</link>\n  <description>${escapeXml(feedDescription)}</description>\n  <language>${feedLanguage}</language>\n  <lastBuildDate>${buildDate}</lastBuildDate>\n  <atom:link href=\"${siteUrl}/insights-rss.xml\" rel=\"self\" type=\"application/rss+xml\"/>\n  <generator>Libertas n8n Workflow</generator>\n${items}\n</channel>\n</rss>`;\n\nconsole.log(`Generated RSS feed with ${insights.length} items`);\n\nreturn [{\n  json: {\n    rssFeed,\n    insightCount: insights.length,\n    insights,\n    newInsightData\n  }\n}];"
+        "jsCode": "// Generate RSS 2.0 feed from all published insights (BATCHED MODE)\n// Gets all published insights from input, new insights from Query New Published\nconst insights = $input.all().map(item => item.json).filter(i => i.id);\n\n// Get new insights from this workflow run (for markdown generation later)\nconst newInsights = $('Query New Published Insights').all().map(item => item.json).filter(i => i.id);\n\n// Get thresholds directly from original config (more reliable than passing through pipeline)\nconst configData = $('Merge Config & Agents').first()?.json || {};\nconst thresholds = {\n  runtime: configData._thresholdsConfig?.runtime || { use_stubs: true },\n  publishing: configData._thresholdsConfig?.publishing || {}\n};\nconsole.log('Publishing with use_stubs:', thresholds.runtime.use_stubs);\n\n// Site metadata\nconst siteUrl = 'https://libertas.fgu.tech';\nconst feedTitle = 'Libertas - Freedom Tech Signals';\nconst feedDescription = 'Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.';\nconst feedLanguage = 'en-us';\nconst buildDate = new Date().toUTCString();\n\n// Helper to escape XML\nfunction escapeXml(str) {\n  if (!str) return '';\n  return String(str)\n    .replace(/&/g, '&amp;')\n    .replace(/</g, '&lt;')\n    .replace(/>/g, '&gt;')\n    .replace(/\"/g, '&quot;')\n    .replace(/'/g, '&apos;');\n}\n\n// Generate RSS items from ALL published insights\nconst items = insights.map(insight => {\n  const pubDate = insight.published_at ? new Date(insight.published_at).toUTCString() : buildDate;\n  const topics = Array.isArray(insight.topics) ? insight.topics : [];\n  const categories = topics.map(t => `    <category>${escapeXml(t)}</category>`).join('\\n');\n  \n  const slug = insight.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').substring(0, 60);\n  const link = `${siteUrl}/posts/${slug}`;\n  \n  return `  <item>\\n    <title>${escapeXml(insight.title)}</title>\\n    <link>${link}</link>\\n    <guid isPermaLink=\"true\">${link}</guid>\\n    <pubDate>${pubDate}</pubDate>\\n    <description>${escapeXml(insight.tldr)}</description>\\n${categories}\\n  </item>`;\n}).join('\\n');\n\nconst rssFeed = `<?xml version=\"1.0\" encoding=\"UTF-8\"?>\\n<rss version=\"2.0\" xmlns:atom=\"http://www.w3.org/2005/Atom\">\\n<channel>\\n  <title>${escapeXml(feedTitle)}</title>\\n  <link>${siteUrl}</link>\\n  <description>${escapeXml(feedDescription)}</description>\\n  <language>${feedLanguage}</language>\\n  <lastBuildDate>${buildDate}</lastBuildDate>\\n  <atom:link href=\"${siteUrl}/insights-rss.xml\" rel=\"self\" type=\"application/rss+xml\"/>\\n  <generator>Libertas n8n Workflow</generator>\\n${items}\\n</channel>\\n</rss>`;\n\nconsole.log(`Generated RSS feed with ${insights.length} items, ${newInsights.length} new in this run`);\n\nreturn [{\n  json: {\n    rssFeed,\n    insightCount: insights.length,\n    insights,\n    newInsights,\n    _thresholds: thresholds\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -637,7 +691,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Generate JSON Feed 1.1 from all published insights\nconst data = $input.first().json;\nconst insights = data.insights || [];\nconst rssFeed = data.rssFeed;\nconst newInsightData = data.newInsightData;\n\n// Site metadata\nconst siteUrl = 'https://libertas.fgu.tech';\n\n// Build JSON Feed 1.1 structure\nconst jsonFeed = {\n  version: 'https://jsonfeed.org/version/1.1',\n  title: 'Libertas - Freedom Tech Signals',\n  home_page_url: siteUrl,\n  feed_url: `${siteUrl}/insights-feed.json`,\n  description: 'Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.',\n  language: 'en-US',\n  items: insights.map(insight => {\n    // Generate slug from title\n    const slug = insight.title\n      .toLowerCase()\n      .replace(/[^a-z0-9]+/g, '-')\n      .replace(/^-|-$/g, '')\n      .substring(0, 60);\n    \n    const topics = Array.isArray(insight.topics) ? insight.topics : [];\n    \n    return {\n      id: insight.id,\n      url: `${siteUrl}/posts/${slug}`,\n      title: insight.title,\n      summary: insight.tldr,\n      content_text: Array.isArray(insight.summary_bullets) \n        ? insight.summary_bullets.join('\\n• ') \n        : insight.tldr,\n      date_published: insight.published_at || insight.created_at,\n      date_modified: insight.updated_at || insight.published_at,\n      tags: topics,\n      _libertas: {\n        freedom_relevance_score: insight.freedom_relevance_score,\n        credibility_score: insight.credibility_score,\n        citations: insight.citations || []\n      }\n    };\n  })\n};\n\nconst jsonFeedString = JSON.stringify(jsonFeed, null, 2);\n\nconsole.log(`Generated JSON feed with ${insights.length} items`);\n\nreturn [{\n  json: {\n    rssFeed,\n    jsonFeed: jsonFeedString,\n    insightCount: insights.length,\n    newInsightData\n  }\n}];"
+        "jsCode": "// Generate JSON Feed 1.1 from all published insights (BATCHED MODE)\nconst data = $input.first().json;\nconst insights = data.insights || [];\nconst rssFeed = data.rssFeed;\nconst newInsights = data.newInsights || [];\nconst thresholds = data._thresholds;\n\n// Site metadata\nconst siteUrl = 'https://libertas.fgu.tech';\n\n// Build JSON Feed 1.1 structure\nconst jsonFeed = {\n  version: 'https://jsonfeed.org/version/1.1',\n  title: 'Libertas - Freedom Tech Signals',\n  home_page_url: siteUrl,\n  feed_url: `${siteUrl}/insights-feed.json`,\n  description: 'Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.',\n  language: 'en-US',\n  items: insights.map(insight => {\n    const slug = insight.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').substring(0, 60);\n    const topics = Array.isArray(insight.topics) ? insight.topics : [];\n    \n    return {\n      id: insight.id,\n      url: `${siteUrl}/posts/${slug}`,\n      title: insight.title,\n      summary: insight.tldr,\n      content_text: Array.isArray(insight.summary_bullets) ? insight.summary_bullets.join('\\n• ') : insight.tldr,\n      date_published: insight.published_at || insight.created_at,\n      date_modified: insight.updated_at || insight.published_at,\n      tags: topics,\n      _libertas: {\n        freedom_relevance_score: insight.freedom_relevance_score,\n        credibility_score: insight.credibility_score,\n        citations: insight.citations || []\n      }\n    };\n  })\n};\n\nconst jsonFeedString = JSON.stringify(jsonFeed, null, 2);\n\nconsole.log(`Generated JSON feed with ${insights.length} items`);\n\nreturn [{\n  json: {\n    rssFeed,\n    jsonFeed: jsonFeedString,\n    insightCount: insights.length,\n    newInsights,\n    _thresholds: thresholds\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -647,7 +701,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Generate frontmatter markdown for the newly published insight\nconst data = $input.first().json;\nconst insight = data.newInsightData;\nconst rssFeed = data.rssFeed;\nconst jsonFeed = data.jsonFeed;\n\n// Generate slug from title\nconst slug = insight.title\n  .toLowerCase()\n  .replace(/[^a-z0-9]+/g, '-')\n  .replace(/^-|-$/g, '')\n  .substring(0, 60);\n\n// Get year and month from published date\nconst publishedAt = new Date(insight.publishedAt || new Date());\nconst year = publishedAt.getFullYear();\nconst month = String(publishedAt.getMonth() + 1).padStart(2, '0');\n\n// Build frontmatter\nconst topics = Array.isArray(insight.topics) ? insight.topics : [];\nconst geo = Array.isArray(insight.geo) ? insight.geo : [];\nconst citations = Array.isArray(insight.citations) ? insight.citations : [];\nconst summaryBullets = Array.isArray(insight.summaryBullets) ? insight.summaryBullets : [];\n\nlet markdown = `---\ntitle: \"${insight.title.replace(/\"/g, '\\\\\"')}\"\nslug: \"${slug}\"\npublished_at: \"${insight.publishedAt}\"\nstatus: \"published\"\ntopics:\n${topics.map(t => `  - \"${t}\"`).join('\\n')}\nfreedom_relevance_score: ${insight.freedomRelevanceScore}\ncredibility_score: ${insight.credibilityScore}\n`;\n\nif (geo.length > 0) {\n  markdown += `geo:\n${geo.map(g => `  - \"${g}\"`).join('\\n')}\n`;\n}\n\nmarkdown += `citations:\n${citations.map(c => `  - \"${c}\"`).join('\\n')}\n---\n\n# ${insight.title}\n\n**TL;DR:** ${insight.tldr}\n\n## Key Points\n\n${summaryBullets.map(b => `- ${b}`).join('\\n')}\n`;\n\nif (insight.deepDiveMarkdown) {\n  markdown += `\\n## Deep Dive\\n\\n${insight.deepDiveMarkdown}\\n`;\n}\n\nmarkdown += `\\n## Sources\\n\\n${citations.map(c => `- ${c}`).join('\\n')}\\n`;\n\n// File path for GitHub (in website/public for static serving)\nconst filePath = `website/public/content/insights/${year}/${month}/${slug}.md`;\n\nconsole.log(`Generated markdown for insight: ${filePath}`);\n\nreturn [{\n  json: {\n    rssFeed,\n    jsonFeed,\n    insightMarkdown: markdown,\n    insightFilePath: filePath,\n    slug,\n    year,\n    month,\n    insight\n  }\n}];"
+        "jsCode": "// Generate frontmatter markdown for ALL newly published insights (BATCHED MODE)\nconst data = $input.first().json;\nconst rssFeed = data.rssFeed;\nconst jsonFeed = data.jsonFeed;\nconst newInsights = data.newInsights || [];\nconst thresholds = data._thresholds;\n\n// Helper to generate markdown for a single insight\nfunction generateMarkdown(insight) {\n  const slug = insight.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').substring(0, 60);\n  const publishedAt = new Date(insight.published_at || new Date());\n  const year = publishedAt.getFullYear();\n  const month = String(publishedAt.getMonth() + 1).padStart(2, '0');\n  \n  const topics = Array.isArray(insight.topics) ? insight.topics : [];\n  const geo = Array.isArray(insight.geo) ? insight.geo : [];\n  const citations = Array.isArray(insight.citations) ? insight.citations : [];\n  const summaryBullets = Array.isArray(insight.summary_bullets) ? insight.summary_bullets : [];\n  \n  let md = `---\\ntitle: \"${insight.title.replace(/\"/g, '\\\\\"')}\"\\nslug: \"${slug}\"\\npublished_at: \"${insight.published_at}\"\\nstatus: \"published\"\\ntopics:\\n${topics.map(t => `  - \"${t}\"`).join('\\n')}\\nfreedom_relevance_score: ${insight.freedom_relevance_score}\\ncredibility_score: ${insight.credibility_score}\\n`;\n  \n  if (geo.length > 0) md += `geo:\\n${geo.map(g => `  - \"${g}\"`).join('\\n')}\\n`;\n  md += `citations:\\n${citations.map(c => `  - \"${c}\"`).join('\\n')}\\n---\\n\\n# ${insight.title}\\n\\n**TL;DR:** ${insight.tldr}\\n\\n## Key Points\\n\\n${summaryBullets.map(b => `- ${b}`).join('\\n')}\\n`;\n  if (insight.deep_dive_markdown) md += `\\n## Deep Dive\\n\\n${insight.deep_dive_markdown}\\n`;\n  md += `\\n## Sources\\n\\n${citations.map(c => `- ${c}`).join('\\n')}\\n`;\n  \n  return {\n    path: `website/public/content/insights/${year}/${month}/${slug}.md`,\n    content: md,\n    slug,\n    title: insight.title\n  };\n}\n\n// Generate markdown for ALL new insights\nconst markdownFiles = newInsights.map(generateMarkdown);\n\nconsole.log(`Generated ${markdownFiles.length} markdown files for new insights`);\nmarkdownFiles.forEach(f => console.log(`  - ${f.path}`));\n\nreturn [{\n  json: {\n    rssFeed,\n    jsonFeed,\n    markdownFiles,\n    newInsightCount: newInsights.length,\n    _thresholds: thresholds\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -666,7 +720,7 @@
           "conditions": [
             {
               "id": "use-stubs-publish",
-              "leftValue": "={{ $('Load Sources').first().json._thresholds?.runtime?.use_stubs ?? true }}",
+              "leftValue": "={{ $json._thresholds?.runtime?.use_stubs ?? true }}",
               "rightValue": true,
               "operator": {
                 "type": "boolean",
@@ -686,7 +740,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// STUB: GitHub commit for feed publishing\n// Simulates committing RSS, JSON feeds, and insight markdown to GitHub\n// Uses updated paths: website/public/ for feeds, website/public/content/ for insights\n\nconst data = $input.first().json;\n\n// Updated paths matching real commit flow\nconst insightPath = `website/public/content/insights/${data.year}/${data.month}/${data.slug}.md`;\n\n// Simulate successful GitHub commit response\nconst commitSha = 'stub-sha-' + Date.now();\nconst commitMessage = `Publish insight: ${data.slug} and update feeds\\n\\nCo-authored-by: Claude <noreply@anthropic.com>`;\n\nconsole.log(`[STUB] Would commit to GitHub (single atomic commit):`);\nconsole.log(`  - website/public/insights-rss.xml (${data.rssFeed.length} bytes)`);\nconsole.log(`  - website/public/insights-feed.json (${data.jsonFeed.length} bytes)`);\nconsole.log(`  - ${insightPath} (${data.insightMarkdown.length} bytes)`);\nconsole.log(`  - Co-authored by Claude`);\n\nreturn [{\n  json: {\n    success: true,\n    feedsCommitted: true,\n    stub: true,\n    commit: {\n      sha: commitSha,\n      message: commitMessage\n    },\n    files: [\n      { path: 'website/public/insights-rss.xml', action: 'upsert' },\n      { path: 'website/public/insights-feed.json', action: 'upsert' },\n      { path: insightPath, action: 'upsert' }\n    ],\n    insight: {\n      title: data.insight.title,\n      slug: data.slug,\n      path: insightPath\n    }\n  }\n}];"
+        "jsCode": "// STUB: GitHub commit for BATCHED feed publishing\n// Simulates committing RSS, JSON feeds, and ALL insight markdowns in ONE commit\n\nconst data = $input.first().json;\nconst markdownFiles = data.markdownFiles || [];\n\n// Build commit message with all insight slugs\nconst slugList = markdownFiles.map(f => f.slug).join(', ');\nconst commitMessage = markdownFiles.length > 0\n  ? `Publish ${markdownFiles.length} insight(s): ${slugList} and update feeds\\n\\nCo-authored-by: Claude <noreply@anthropic.com>`\n  : `Update feeds (no new insights)\\n\\nCo-authored-by: Claude <noreply@anthropic.com>`;\n\nconst commitSha = 'stub-sha-' + Date.now();\n\nconsole.log(`[STUB] Would commit to GitHub (single atomic commit):`);\nconsole.log(`  - website/public/insights-rss.xml (${data.rssFeed.length} bytes)`);\nconsole.log(`  - website/public/insights-feed.json (${data.jsonFeed.length} bytes)`);\nmarkdownFiles.forEach(f => console.log(`  - ${f.path} (${f.content.length} bytes)`));\nconsole.log(`  - Total files: ${2 + markdownFiles.length}`);\n\nreturn [{\n  json: {\n    success: true,\n    feedsCommitted: true,\n    stub: true,\n    commit: { sha: commitSha, message: commitMessage },\n    files: [\n      { path: 'website/public/insights-rss.xml', action: 'upsert' },\n      { path: 'website/public/insights-feed.json', action: 'upsert' },\n      ...markdownFiles.map(f => ({ path: f.path, action: 'upsert' }))\n    ],\n    insightsPublished: markdownFiles.map(f => ({ title: f.title, slug: f.slug, path: f.path }))\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -696,7 +750,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Prepare files for atomic GitHub commit via Git Data API\n// Updated paths: feeds go to website/public/, insights to website/public/content/\nconst data = $input.first().json;\n\n// Update insight path to website/public/content/\nconst insightPath = `website/public/content/insights/${data.year}/${data.month}/${data.slug}.md`;\n\nreturn [{\n  json: {\n    ...data,\n    _github: {\n      owner: 'FGUTech',\n      repo: 'libertas',\n      branch: 'main',\n      commitMessage: `Publish insight: ${data.slug} and update feeds\\n\\nCo-authored-by: Claude <noreply@anthropic.com>`,\n      files: [\n        {\n          path: 'website/public/insights-rss.xml',\n          content: data.rssFeed\n        },\n        {\n          path: 'website/public/insights-feed.json',\n          content: data.jsonFeed\n        },\n        {\n          path: insightPath,\n          content: data.insightMarkdown\n        }\n      ]\n    },\n    insightFilePath: insightPath\n  }\n}];"
+        "jsCode": "// Prepare files for BATCHED atomic GitHub commit via Git Data API\n// Includes RSS, JSON feeds, and ALL new insight markdowns in ONE commit\nconst data = $input.first().json;\nconst markdownFiles = data.markdownFiles || [];\n\n// Build commit message with all insight slugs\nconst slugList = markdownFiles.map(f => f.slug).join(', ');\nconst commitMessage = markdownFiles.length > 0\n  ? `Publish ${markdownFiles.length} insight(s): ${slugList} and update feeds\\n\\nCo-authored-by: Claude <noreply@anthropic.com>`\n  : `Update feeds (no new insights)\\n\\nCo-authored-by: Claude <noreply@anthropic.com>`;\n\n// Build files array with feeds + all markdowns\nconst files = [\n  { path: 'website/public/insights-rss.xml', content: data.rssFeed },\n  { path: 'website/public/insights-feed.json', content: data.jsonFeed },\n  ...markdownFiles.map(f => ({ path: f.path, content: f.content }))\n];\n\nconsole.log(`Preparing GitHub commit with ${files.length} files`);\n\nreturn [{\n  json: {\n    ...data,\n    _github: {\n      owner: 'FGUTech',\n      repo: 'libertas',\n      branch: 'main',\n      commitMessage,\n      files\n    }\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -1050,25 +1104,14 @@
       "main": [
         [
           {
-            "node": "Fetch RSS Feed",
+            "node": "Fetch RSS & Extract Items",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Fetch RSS Feed": {
-      "main": [
-        [
-          {
-            "node": "Extract Feed Items",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Extract Feed Items": {
+    "Fetch RSS & Extract Items": {
       "main": [
         [
           {
@@ -1353,7 +1396,7 @@
       "main": [
         [
           {
-            "node": "Query All Published Insights",
+            "node": "Aggregate Results",
             "type": "main",
             "index": 0
           }
@@ -1430,15 +1473,7 @@
       ]
     },
     "GitHub Commit Stub (Feeds)": {
-      "main": [
-        [
-          {
-            "node": "Aggregate Results",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
+      "main": []
     },
     "Prepare GitHub Commit": {
       "main": [
@@ -1518,15 +1553,7 @@
       ]
     },
     "Wrap GitHub Response": {
-      "main": [
-        [
-          {
-            "node": "Aggregate Results",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
+      "main": []
     },
     "Log Skipped": {
       "main": [
@@ -1544,6 +1571,57 @@
         [
           {
             "node": "Aggregate Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate Results": {
+      "main": [
+        [
+          {
+            "node": "Workflow Complete",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Workflow Complete": {
+      "main": [
+        [
+          {
+            "node": "Query New Published Insights",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Query New Published Insights": {
+      "main": [
+        [
+          {
+            "node": "Has New Insights?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Has New Insights?": {
+      "main": [
+        [
+          {
+            "node": "Query All Published Insights",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Log No New Insights",
             "type": "main",
             "index": 0
           }

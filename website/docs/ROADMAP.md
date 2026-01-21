@@ -12,27 +12,6 @@ Hey, I am working to implement features for the libertas website from the roadma
 
 Core features for initial launch. Focus on content display and intake.
 
-### 1.9 Static Content from Repository
-
-**Description**: Serve content statically from Git-committed markdown files.
-
-**Requirements**:
-- [ ] Read posts from `/content/insights/` directory at build time
-- [ ] Read digests from `/content/digests/` directory at build time
-- [ ] Parse frontmatter metadata (title, date, tags, scores, citations)
-- [ ] Generate `feed.json` and `rss.xml` at build time from content files
-- [ ] Symlink or copy content directory into website build
-
-**Implementation Notes**:
-- Content is committed to repo by n8n Workflow A (insights) and Workflow B (digests)
-- Vercel auto-redeploys when content commits are pushed to main branch
-- No runtime fetching or ISR needed — pure static site generation
-- Use `gray-matter` for frontmatter parsing
-- Content structure: `/content/insights/{year}/{month}/{slug}.md`
-- Feeds generated during `next build` and served as static files
-
----
-
 ### 1.10 Digest Viewing in Unified Feed
 
 **Description**: Display weekly digests alongside insights in the posts feed, with distinct styling and a dedicated detail page.
