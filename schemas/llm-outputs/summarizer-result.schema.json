@@ -51,18 +51,6 @@
         "type": "string"
       },
       "description": "Existing projects relevant to this signal"
-    },
-    "project_idea_trigger": {
-      "type": "object",
-      "properties": {
-        "should_generate": {
-          "type": "boolean"
-        },
-        "reason": {
-          "type": "string"
-        }
-      },
-      "description": "Whether this should trigger project idea generation"
     }
   }
 }

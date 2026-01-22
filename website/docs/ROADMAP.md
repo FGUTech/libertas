@@ -18,9 +18,51 @@ Workflow D:
 
 Database Checks:
 
-Agent Promp Checks:
-  - Classify: Verify all inputs are passed in n8n, remove should_summarize
-  - 
+Config/thresholds.yml:
+
+Hey, i am working to improve agent prompts. Currently I am working on:
+Digest Prompt:
+  Agent File: digest.md
+  API Route: /api/agents/digest
+  Used In: Workflow B (digest) - composes weekly digest
+Fix/Check/Do/...:
+  - Find references to "Executive TL;DR" in the prompt, and throughout the codebase, and ensure to change it to juse "TL;DR"
+
+Hey, i am working to improve agent prompts. Currently I am working on:
+Generate Idea Prompt:
+  Agent File: generate-idea.md
+  API Route: /api/agents/generate-idea
+  Used In: Workflow D (ideas) - synthesizes project proposals
+Fix/Check/Do/...:
+
+Hey, i am working to improve agent prompts. Currently I am working on:
+Intake Classify Prompt:
+  Agent File: intake-classify.md
+  API Route: /api/agents/intake-classify
+  Used In: Workflow C (intake) - initial submission routing
+Fix/Check/Do/...:
+  - Ensure we actually need this prompt. Or is having just the 3 sub-intake type prompts enough ( story classify, project evaluate, and feedback assess )
+
+Hey, i am working to improve agent prompts. Currently I am working on:
+Intake Story Classify prompt:
+  Agent File: intake-story-classify.md
+  API Route: /api/agents/intake-story-classify
+  Used In: Workflow C (intake) - story submission scoring
+Fix/Check/Do/...:
+
+Hey, i am working to improve agent prompts. Currently I am working on:
+Intake Project Evaluate Prompt:
+  Agent File: intake-project-evaluate.md
+  API Route: /api/agents/intake-project-evaluate
+  Used In: Workflow C (intake) - project idea assessment
+Fix/Check/Do/...:
+
+Hey, i am working to improve agent prompts. Currently I am working on:
+Intake Feedback assess Prompt:
+  Agent File: intake-feedback-assess.md
+  API Route: /api/agents/intake-feedback-assess
+  Used In: Workflow C (intake) - feedback analysis
+Fix/Check/Do/...:
 
 Open Source
 

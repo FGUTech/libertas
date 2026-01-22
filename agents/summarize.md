@@ -40,7 +40,7 @@ You will receive:
 - sourceUrl: The URL where this content was found
 - extractedText: The main text content
 - classification: The classification result including topics, scores, etc.
-- includeDeepDive: Whether to generate deep dive (true if relevance >= 85)
+- includeDeepDive: Whether to generate deep dive (true if relevance >= threshold)
 
 ## Output
 
@@ -60,11 +60,7 @@ Return a JSON object with the following structure:
   "deep_dive_markdown": "2-4 paragraph analysis (optional, only if includeDeepDive is true)",
   "citations": ["https://source-url.com"],
   "recommended_actions": ["What builders/activists should consider"],
-  "related_projects": ["Existing projects relevant to this signal"],
-  "project_idea_trigger": {
-    "should_generate": true,
-    "reason": "Why this signal suggests a buildable project"
-  }
+  "related_projects": ["Existing projects relevant to this signal"]
 }
 ```
 
@@ -107,10 +103,6 @@ Output:
     "Consider how this pattern could be replicated elsewhere",
     "Watch for technical countermeasures from authorities"
   ],
-  "related_projects": ["Briar", "Meshtastic", "Bitcoin Lightning", "Reticulum"],
-  "project_idea_trigger": {
-    "should_generate": true,
-    "reason": "Success of mesh+Bitcoin combo under real repression suggests opportunity for improved tooling in this space"
-  }
+  "related_projects": ["Briar", "Meshtastic", "Bitcoin Lightning", "Reticulum"]
 }
 ```
