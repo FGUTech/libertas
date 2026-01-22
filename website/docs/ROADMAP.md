@@ -8,9 +8,24 @@ Feature roadmap for the Libertas website, broken into MVP, Nice-to-have, and Fut
 
 Hey, I am working to implement features for the libertas website from the roadmap. Let's continue with implementing:
 
+Search Page :
+  - Replace mock data with real items from weekly digests & ingests
+
 # Phase 2: Nice-to-have
 
 Features that enhance the experience but aren't critical for launch.
+
+### 2.0 Static Content Pages
+
+**Description**: Add static informational pages to the website.
+
+**Requirements**:
+- [ ] About page explaining Libertas mission and team
+- [ ] FAQ section answering common questions
+
+**Implementation Notes**:
+- Use MDX or static React components
+- Ensure consistent styling with rest of site
 
 ### 2.1 User Authentication (Firebase + Starknet)
 
@@ -328,16 +343,16 @@ Features for future consideration after core functionality is stable.
 
 | Feature | Impact | Effort | Priority | Status |
 |---------|--------|--------|----------|--------|
-| Landing Page | High | Low | P0 | Done |
-| Posts Feed | High | Medium | P0 | Done |
-| Post View | High | Medium | P0 | Done |
-| Intake Form | High | Low | P0 | Done |
-| SEO & Meta | Medium | Low | P0 | Done |
-| Dark/Light Theme | Medium | Low | P1 | Done |
-| Search Functionality | Medium | Medium | P1 | Done |
-| Reading Progress | Low | Low | P1 | Done |
-| Static Content (1.9) | High | Medium | P0 | |
-| Digest Viewing (1.10) | High | Medium | P0 | |
+| Landing Page | High | Low | - | Done |
+| Posts Feed | High | Medium | - | Done |
+| Post View | High | Medium | - | Done |
+| Intake Form | High | Low | - | Done |
+| SEO & Meta | Medium | Low | - | Done |
+| Dark/Light Theme | Medium | Low | - | Done |
+| Search Functionality | Medium | Medium | - | Done |
+| Reading Progress | Low | Low | - | Done |
+| Static Content | High | Medium | P1 | |
+| Digest Viewing | High | Medium | P1 | |
 | User Auth (Firebase + Starknet) | High | Medium | P1 | |
 | User Profiles | Medium | Medium | P1 | |
 | Comments | Medium | Medium | P1 | |
@@ -353,7 +368,6 @@ Features for future consideration after core functionality is stable.
 
 | Milestone | Features | Description |
 |-----------|----------|-------------|
-| **Alpha** | Phase 0 + MVP (1.1-1.10) | Core content display (insights + digests) and intake |
-| **Beta** | Auth + User Features (2.1-2.5) | Firebase/Starknet auth, profiles, comments, reactions, wallet integration |
-| **v1.0** | Polish (2.6-2.10) | Theme, search, reading UX, newsletter |
-| **v2.0** | On-chain (3.1-3.5) | Starknet contracts, Nostr, decentralized features |
+| **Alpha** | Core Features (Done) | Core content display (insights + digests) and intake |
+| **Beta** | Nice-to-have (2.1-2.10) | Static content, digests, auth, profiles, comments, reactions, wallet integration, newsletter |
+| **v1.0** | On-chain (3.1-3.5) | Starknet contracts, Nostr, decentralized features |

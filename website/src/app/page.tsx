@@ -13,7 +13,7 @@ export default function Home() {
       <WebsiteJsonLd />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden pb-16 pt-20 md:pb-24 md:pt-32">
+      <section className="relative overflow-hidden pb-16 pt-16 md:pb-20 md:pt-24">
         <div className="container container-narrow">
           <div className="mb-6 flex items-center gap-2">
             <span className="text-mono text-[var(--accent-primary)]">
@@ -28,10 +28,13 @@ export default function Home() {
             <span className="hero-accent">Research Engine</span>
           </h1>
 
+          <p className="text-body mb-2 max-w-xl text-[var(--fg-secondary)]">
+            AI-Powered research and publishing platform for
+            sovereignty, censorship resistance, and civil liberties.
+          </p>
           <p className="text-body mb-8 max-w-xl text-[var(--fg-secondary)]">
-            Automated, privacy-preserving research and publishing for
-            sovereignty, censorship resistance, and civil liberties. No
-            tracking. No gatekeepers. Open source.
+            Agents track and compile freedom-tech sources autonomously.
+            No gatekeepers. No censoring. Fully open.
           </p>
 
           <div className="flex flex-wrap gap-4">
@@ -44,9 +47,9 @@ export default function Home() {
           </div>
 
           {/* Decorative terminal lines */}
-          <div className="mt-12 space-y-1 text-mono text-sm text-[var(--fg-tertiary)]">
+          <div className="mt-12 space-y-1 text-mono text-lg text-[var(--fg-tertiary)]">
             <p className="terminal-line">monitoring global signals...</p>
-            <p className="terminal-line">classifying freedom relevance...</p>
+            <p className="terminal-line">analyzing freedom tech...</p>
             <p className="terminal-line">
               publishing insights{" "}
               <span className="text-[var(--accent-primary)]">[OK]</span>
@@ -55,11 +58,11 @@ export default function Home() {
         </div>
 
         {/* Subtle gradient overlay */}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[var(--bg-primary)]" />
+        <div className="hero-gradient pointer-events-none absolute inset-0" />
       </section>
 
       {/* Recent Posts Section */}
-      <section className="py-16 md:py-24">
+      <section className="py-14 md:py-16">
         <div className="container">
           <div className="mb-8 flex items-center justify-between">
             <h2 className="text-h2">Recent Signals</h2>
@@ -77,6 +80,7 @@ export default function Home() {
               <Link
                 key={item.id}
                 href={isPost(item) ? `/posts/${item.slug}` : `/digests/${item.slug}`}
+                className="block h-full"
               >
                 <ContentCard item={item} />
               </Link>
@@ -86,13 +90,13 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24">
+      <section className="py-12 md:py-16">
         <div className="container container-narrow">
           <div className="card card-glow text-center">
             <h2 className="text-h2 mb-4">Have a Signal to Share?</h2>
             <p className="text-body mb-6 text-[var(--fg-secondary)]">
-              Submit stories, project ideas, or feedback about freedom tech. We
-              review every submission and publish relevant insights.
+              Submit stories, project ideas, or feedback about freedom tech and libertas.
+              All submissions are reviewed and relevant insights are published.
             </p>
             <Link href="/intake" className="btn btn-primary">
               Submit Now
@@ -102,7 +106,7 @@ export default function Home() {
       </section>
 
       {/* Feeds Section */}
-      <section className="border-t border-[var(--border-subtle)] py-16 md:py-24">
+      <section className="border-t border-[var(--border-subtle)] py-12 md:py-16">
         <div className="container container-narrow">
           <div className="text-center">
             <h2 className="text-h2 mb-4">Subscribe to Feeds</h2>
@@ -132,7 +136,7 @@ export default function Home() {
             </div>
 
             <p className="mt-6 text-small text-[var(--fg-tertiary)]">
-              Works with any feed reader. No tracking, no analytics.
+              Works with any feed reader. No tracking of users.
               <br />
               <Link
                 href="/feeds"

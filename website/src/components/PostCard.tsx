@@ -47,7 +47,7 @@ function PostCardInner({ post }: { post: Post }) {
   const primaryTopic = post.topics[0];
 
   return (
-    <article className="card group cursor-pointer transition-all duration-200 hover:border-[var(--border-default)]">
+    <article className="card group flex h-full cursor-pointer flex-col overflow-hidden transition-all duration-200 hover:border-[var(--border-default)]">
       <div className="mb-3 flex flex-wrap items-center gap-2">
         {primaryTopic && (
           <span className={`tag ${topicColors[primaryTopic] || ""}`}>
@@ -58,10 +58,10 @@ function PostCardInner({ post }: { post: Post }) {
           {formatDate(post.publishedAt)}
         </span>
       </div>
-      <h3 className="text-h3 mb-2 transition-colors group-hover:text-[var(--accent-primary)]">
+      <h3 className="text-h3 mb-2 line-clamp-3 transition-colors group-hover:text-[var(--accent-primary)]">
         {post.title}
       </h3>
-      <p className="text-body line-clamp-2 text-[var(--fg-secondary)]">
+      <p className="text-body mb-auto line-clamp-2 text-[var(--fg-secondary)]">
         {post.summary}
       </p>
       <div className="mt-4 flex items-center gap-4 text-small text-[var(--fg-tertiary)]">
@@ -87,7 +87,7 @@ function DigestCard({ digest }: { digest: Digest }) {
   const topicsToShow = digest.topTopics.slice(0, 3);
 
   return (
-    <article className="card group cursor-pointer transition-all duration-200 border-[var(--accent-amber)] hover:border-[var(--accent-amber-hover)] bg-[var(--bg-digest)]">
+    <article className="card group flex h-full cursor-pointer flex-col overflow-hidden border-[var(--accent-amber)] bg-[var(--bg-digest)] transition-all duration-200 hover:border-[var(--accent-amber-hover)]">
       <div className="mb-3 flex flex-wrap items-center gap-2">
         <span className="tag tag-digest">
           <DigestIcon />
@@ -97,10 +97,10 @@ function DigestCard({ digest }: { digest: Digest }) {
           {formatDateRange(digest.periodStart, digest.periodEnd)}
         </span>
       </div>
-      <h3 className="text-h3 mb-2 transition-colors group-hover:text-[var(--accent-amber)]">
+      <h3 className="text-h3 mb-2 line-clamp-3 transition-colors group-hover:text-[var(--accent-amber)]">
         {digest.title}
       </h3>
-      <p className="text-body line-clamp-2 text-[var(--fg-secondary)]">
+      <p className="text-body mb-auto line-clamp-2 text-[var(--fg-secondary)]">
         {digest.executiveTldr}
       </p>
       <div className="mt-4 flex flex-wrap items-center gap-4 text-small text-[var(--fg-tertiary)]">

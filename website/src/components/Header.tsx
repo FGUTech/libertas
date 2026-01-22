@@ -7,17 +7,21 @@ import { SearchInput } from './SearchInput';
 
 type Theme = 'dark' | 'light';
 
-function getInitialTheme(): Theme {
-  if (typeof window === 'undefined') return 'dark';
-  const savedTheme = document.documentElement.getAttribute('data-theme') as Theme | null;
-  return savedTheme || 'dark';
-}
-
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [theme, setTheme] = useState<Theme>(getInitialTheme);
+  const [theme, setTheme] = useState<Theme>('dark');
+  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
+
+  // Sync theme state with DOM after hydration
+  useEffect(() => {
+    const currentTheme = document.documentElement.getAttribute('data-theme') as Theme | null;
+    if (currentTheme) {
+      setTheme(currentTheme);
+    }
+    setMounted(true);
+  }, []);
 
   // Handle scroll for sticky header effect
   useEffect(() => {
@@ -125,7 +129,7 @@ export function Header() {
                 className="p-2 rounded-md text-[var(--fg-secondary)] hover:text-[var(--fg-primary)] hover:bg-[var(--bg-tertiary)] transition-colors"
                 aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
               >
-                {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
+                {!mounted ? <ThemePlaceholderIcon /> : theme === 'dark' ? <SunIcon /> : <MoonIcon />}
               </button>
             </div>
 
@@ -183,8 +187,8 @@ export function Header() {
               onClick={toggleTheme}
               className="w-full flex items-center gap-3 py-3 px-4 rounded-md text-base font-medium text-[var(--fg-secondary)] hover:text-[var(--fg-primary)] hover:bg-[var(--bg-tertiary)] transition-colors"
             >
-              {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
-              <span>{theme === 'dark' ? 'Light Mode' : 'Dark Mode'}</span>
+              {!mounted ? <ThemePlaceholderIcon /> : theme === 'dark' ? <SunIcon /> : <MoonIcon />}
+              <span>{!mounted ? 'Theme' : theme === 'dark' ? 'Light Mode' : 'Dark Mode'}</span>
             </button>
           </div>
         </nav>
@@ -197,6 +201,22 @@ export function Header() {
 }
 
 // Icons
+function ThemePlaceholderIcon() {
+  return (
+    <svg
+      className="w-5 h-5"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="12" cy="12" r="5" />
+    </svg>
+  );
+}
+
 function SunIcon() {
   return (
     <svg

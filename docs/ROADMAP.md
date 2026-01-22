@@ -11,11 +11,11 @@ Feature roadmap for Libertas backend infrastructure and n8n workflows, broken in
 Hey, I am working to implement features for the libertas website from the roadmap. Let's continue with implementing:
 After completing your implementation of this feature. Please provide a concise but informative step-by-step plan I can follow to test this new feature entirely.
 
-# Phase 1: MVP
+# Phase 2: Nice-to-have
 
-Core infrastructure and workflow features required for initial launch.
+Features that enhance the system but aren't critical for launch.
 
-### 1.0 n8n Migration to Managed Hosting
+### 2.0 n8n Migration to Managed Hosting
 
 **Description**: Migrate from Railway-hosted n8n instance to n8n's managed hosting service and connect to GCP Cloud SQL.
 
@@ -42,7 +42,7 @@ Core infrastructure and workflow features required for initial launch.
 
 ---
 
-### 1.1 Firebase Authentication Setup
+### 2.0a Firebase Authentication Setup
 
 **Description**: Configure Firebase Auth for the platform.
 
@@ -58,7 +58,7 @@ Core infrastructure and workflow features required for initial launch.
 
 ---
 
-### 1.4 Integrate JSON Schemas for Validation
+### 2.0b Integrate JSON Schemas for Validation
 
 **Description**: Wire `schemas/*.json` for runtime validation of LLM outputs and data.
 
@@ -80,7 +80,7 @@ Core infrastructure and workflow features required for initial launch.
 
 ---
 
-### 1.8 Workflow A: Source Health & Error Handling
+### 2.0c Workflow A: Source Health & Error Handling
 
 **Description**: Robust error handling with circuit breaker pattern.
 
@@ -96,7 +96,7 @@ Core infrastructure and workflow features required for initial launch.
 
 ---
 
-### 1.11 Workflow B: Email Newsletter (Resend)
+### 2.0d Workflow B: Email Newsletter (Resend)
 
 **Description**: Send weekly digest via email using Resend, with config-driven toggle for stub/real mode.
 
@@ -118,10 +118,6 @@ Core infrastructure and workflow features required for initial launch.
 - Consider double opt-in for subscribers
 
 ---
-
-# Phase 2: Nice-to-have
-
-Features that enhance the system but aren't critical for launch.
 
 ### 2.1 Semantic Deduplication
 
@@ -429,19 +425,11 @@ Features for future consideration after core functionality is stable.
 
 | Feature | Impact | Effort | Priority |
 |---------|--------|--------|----------|
-| n8n Migration to Managed Hosting | Critical | Medium | P0 |
-| Firebase Auth Setup | High | Low | P0 |
-| Config Files Integration | High | Medium | P0 |
-| Agent Prompts Integration | High | Medium | P0 |
-| JSON Schema Validation | High | Medium | P0 |
-| Workflow A Claude Integration | High | Medium | P0 |
-| Workflow A Feed Publishing | High | Medium | P0 |
-| Workflow B Email Newsletter | High | Low | P0 |
-| Workflow C Story Intake (1.13a) | Medium | Medium | P0 |
-| Workflow C Project Intake (1.13b) | Medium | Medium | P0 |
-| Workflow C Feedback Intake (1.13c) | Medium | Low | P0 |
-| Workflow D GitHub Issues | Medium | Low | P0 |
-| Vercel Deployment | High | Low | P0 |
+| n8n Migration to Managed Hosting | High | Medium | P1 |
+| Firebase Auth Setup | Medium | Low | P1 |
+| JSON Schema Validation | Medium | Medium | P1 |
+| Workflow A Source Health & Error Handling | Medium | Medium | P1 |
+| Workflow B Email Newsletter | Medium | Low | P1 |
 | Semantic Deduplication | Medium | High | P1 |
 | Config Management UI | Low | Medium | P1 |
 | Additional Source Types | Medium | High | P1 |
