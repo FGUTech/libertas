@@ -19,7 +19,7 @@ Workflow D:
 Database Checks:
 
 Agent Promp Checks:
-  - Classify: Verify all inputs are passed, remove should_summarize
+  - Classify: Verify all inputs are passed in n8n, remove should_summarize
   - 
 
 Open Source

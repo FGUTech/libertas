@@ -49,10 +49,6 @@
         "type": "string"
       },
       "description": "People, organizations, or projects mentioned"
-    },
-    "should_summarize": {
-      "type": "boolean",
-      "description": "True if content warrants full summary generation"
     }
   }
 }

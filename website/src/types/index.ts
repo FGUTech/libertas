@@ -220,7 +220,6 @@ export const ClassificationResultSchema = z.object({
   safety_concern: z.boolean(),
   reasoning: z.string(),
   key_entities: z.array(z.string()).optional(),
-  should_summarize: z.boolean().optional(),
 });
 
 // =============================================================================
