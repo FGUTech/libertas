@@ -5,8 +5,16 @@
   <link>https://libertas.fgu.tech</link>
   <description>Weekly summaries of freedom technology developments</description>
   <language>en-us</language>
-  <lastBuildDate>Tue, 14 Jan 2026 00:00:00 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 22 Jan 2026 00:45:55 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/digests-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
+  <item>
+    <title>Weekly Digest: 2026-01-15 to 2026-01-21</title>
+    <link>https://libertas.fgu.tech/digests/weekly-2026-01-21</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/digests/weekly-2026-01-21</guid>
+    <pubDate>Thu, 22 Jan 2026 00:45:55 GMT</pubDate>
+    <description>Iran&apos;s complete internet blackout during deadly protests demonstrates the urgent need for censorship-resistant communication tools, while copyright law&apos;s structural incentives continue driving platform over-censorship. Meanwhile, nation-state blockchain adoption expands with Bhutan&apos;s validator operations.</description>
+    <category>weekly-digest</category>
+  </item>
 </channel>
 </rss>

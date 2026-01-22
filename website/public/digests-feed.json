@@ -5,5 +5,22 @@
   "feed_url": "https://libertas.fgu.tech/digests-feed.json",
   "description": "Weekly summaries of freedom technology developments",
   "language": "en-US",
-  "items": []
+  "items": [
+    {
+      "id": "6048573e-c799-45c9-95da-e313292e6ebf",
+      "url": "https://libertas.fgu.tech/digests/weekly-2026-01-21",
+      "title": "Weekly Digest: 2026-01-15 to 2026-01-21",
+      "summary": "Iran's complete internet blackout during deadly protests demonstrates the urgent need for censorship-resistant communication tools, while copyright law's structural incentives continue driving platform over-censorship. Meanwhile, nation-state blockchain adoption expands with Bhutan's validator operations.",
+      "content_text": "Iran's complete internet blackout during deadly protests demonstrates the urgent need for censorship-resistant communication tools, while copyright law's structural incentives continue driving platform over-censorship. Meanwhile, nation-state blockchain adoption expands with Bhutan's validator operations.",
+      "date_published": "2026-01-22T00:45:55.297Z",
+      "tags": [
+        "weekly-digest"
+      ],
+      "_libertas": {
+        "insight_count": 3,
+        "period_start": "2026-01-15",
+        "period_end": "2026-01-21"
+      }
+    }
+  ]
 }
