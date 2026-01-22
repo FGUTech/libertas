@@ -65,7 +65,18 @@ function PostCardInner({ post }: { post: Post }) {
         {post.summary}
       </p>
       <div className="mt-4 flex items-center gap-4 text-small text-[var(--fg-tertiary)]">
-        <span className="flex items-center gap-1">
+        <span
+          className={`flex items-center gap-1 ${
+            post.freedomRelevanceScore >= 90
+              ? "text-[var(--accent-primary)]"
+              : ""
+          }`}
+          style={
+            post.freedomRelevanceScore >= 90
+              ? { textShadow: "0 0 6px rgba(0, 255, 65, 0.4)" }
+              : undefined
+          }
+        >
           <ScoreIcon />
           <span>{post.freedomRelevanceScore}% relevance</span>
         </span>

@@ -9,7 +9,7 @@ import { SortSelect } from "./SortSelect";
 import { Pagination } from "./Pagination";
 import { EmptyState } from "./EmptyState";
 import type { Post, Topic, ContentItem } from "@/types";
-import { TOPICS, isPost } from "@/types";
+import { TOPICS, isPost, isDigest } from "@/types";
 
 const POSTS_PER_PAGE = 12;
 
@@ -43,6 +43,7 @@ export function ContentFeed({ items: allItems }: ContentFeedProps) {
 
   const sortBy = (searchParams.get("sort") as SortOption) || "newest";
   const currentPage = parseInt(searchParams.get("page") || "1", 10);
+  const digestsOnly = searchParams.get("type") === "digests";
 
   // Update URL params
   const updateParams = useCallback(
@@ -81,8 +82,12 @@ export function ContentFeed({ items: allItems }: ContentFeedProps) {
   );
 
   const handleClearFilters = useCallback(() => {
-    updateParams({ topics: null, sort: null, page: null });
+    updateParams({ topics: null, sort: null, page: null, type: null });
   }, [updateParams]);
+
+  const handleDigestsOnlyToggle = useCallback(() => {
+    updateParams({ type: digestsOnly ? null : "digests" });
+  }, [digestsOnly, updateParams]);
 
   const handleSortChange = useCallback(
     (sort: SortOption) => {
@@ -127,6 +132,11 @@ export function ContentFeed({ items: allItems }: ContentFeedProps) {
   const filteredItems = useMemo(() => {
     let items = [...allItems];
 
+    // Filter by content type (digests only)
+    if (digestsOnly) {
+      items = items.filter((item) => isDigest(item));
+    }
+
     // Filter by topics
     if (selectedTopics.length > 0) {
       items = items.filter((item) => {
@@ -152,7 +162,7 @@ export function ContentFeed({ items: allItems }: ContentFeedProps) {
     }
 
     return items;
-  }, [allItems, selectedTopics, sortBy]);
+  }, [allItems, selectedTopics, sortBy, digestsOnly]);
 
   // Pagination
   const totalPages = Math.ceil(filteredItems.length / POSTS_PER_PAGE);
@@ -161,7 +171,7 @@ export function ContentFeed({ items: allItems }: ContentFeedProps) {
     currentPage * POSTS_PER_PAGE
   );
 
-  const hasActiveFilters = selectedTopics.length > 0;
+  const hasActiveFilters = selectedTopics.length > 0 || digestsOnly;
 
   return (
     <div className={isPending ? "opacity-70 transition-opacity" : ""}>
@@ -172,6 +182,8 @@ export function ContentFeed({ items: allItems }: ContentFeedProps) {
           onTopicToggle={handleTopicToggle}
           onClearAll={handleClearFilters}
           hasActiveFilters={hasActiveFilters}
+          digestsOnly={digestsOnly}
+          onDigestsOnlyToggle={handleDigestsOnlyToggle}
         />
         <SortSelect value={sortBy} onChange={handleSortChange} />
       </div>

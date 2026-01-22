@@ -9,6 +9,8 @@ interface TopicFilterProps {
   onTopicToggle: (topic: Topic) => void;
   onClearAll: () => void;
   hasActiveFilters: boolean;
+  digestsOnly?: boolean;
+  onDigestsOnlyToggle?: () => void;
 }
 
 const topicLabels: Record<Topic, string> = {
@@ -29,6 +31,8 @@ export function TopicFilter({
   onTopicToggle,
   onClearAll,
   hasActiveFilters,
+  digestsOnly,
+  onDigestsOnlyToggle,
 }: TopicFilterProps) {
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -39,6 +43,20 @@ export function TopicFilter({
   return (
     <div className="flex flex-wrap items-center gap-2">
       <span className="text-small text-[var(--fg-tertiary)] mr-1">Filter:</span>
+
+      {/* Weekly Digest filter */}
+      {onDigestsOnlyToggle && (
+        <button
+          onClick={onDigestsOnlyToggle}
+          className={`tag cursor-pointer transition-all ${
+            digestsOnly
+              ? "tag-digest"
+              : "hover:border-[var(--border-default)] hover:text-[var(--fg-primary)]"
+          }`}
+        >
+          Weekly Digest
+        </button>
+      )}
 
       {visibleTopics.map((topic) => {
         const isSelected = selectedTopics.includes(topic);
