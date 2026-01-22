@@ -178,7 +178,6 @@ export const SubmissionSchema = z.object({
   category: z.enum(SUBMISSION_CATEGORIES).optional(),
   priority: z.enum(PRIORITY_LEVELS).optional(),
   isSpam: z.boolean().optional(),
-  requiresResponse: z.boolean().optional(),
   createdAt: z.string().datetime(),
   updatedAt: z.string().datetime(),
 });

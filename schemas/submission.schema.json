@@ -66,10 +66,6 @@
       "type": "boolean",
       "description": "Whether submission was flagged as spam"
     },
-    "requiresResponse": {
-      "type": "boolean",
-      "description": "Whether submitter expects a response"
-    },
     "createdAt": {
       "type": "string",
       "format": "date-time",

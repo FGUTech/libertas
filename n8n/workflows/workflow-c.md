@@ -16,87 +16,51 @@ This document describes the control flow of the Libertas intake processing workf
                                         └──────────┬──────────┘
                                                    │
 ┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│  PHASE 1: INITIALIZATION (rate limit + config fetch)                                                              │
+│  PHASE 1: INITIALIZATION                                                                                          │
 └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
                                                    │
                                         ┌──────────▼──────────┐
                                         │   Rate Limit Check   │
                                         └──────────┬──────────┘
-                        ┌──────────────────────────┼──────────────────────────┐
-                        │                          │                          │
-              ┌─────────▼─────────┐     ┌─────────▼─────────┐
-              │ Fetch Thresholds  │     │ Fetch Intake      │
-              │ Config            │     │ Classify Prompt   │
-              └─────────┬─────────┘     └─────────┬─────────┘
-                        │                          │
-                        └──────────┬───────────────┘
-                                   │
-                        ┌──────────▼──────────┐
-                        │ Merge Config & Agents│
-                        └──────────┬──────────┘
-                                   │
-                        ┌──────────▼──────────┐
-                        │   Validate Input     │
-                        └──────────┬──────────┘
-                                   │
-                        ┌──────────▼──────────┐
-                        │ Insert Submission    │
-                        │ (Postgres)           │
-                        └──────────┬──────────┘
+                                                   │
+                                        ┌──────────▼──────────┐
+                                        │ Fetch Thresholds    │
+                                        │ Config              │
+                                        └──────────┬──────────┘
+                                                   │
+                                        ┌──────────▼──────────┐
+                                        │   Validate Input     │
+                                        └──────────┬──────────┘
+                                                   │
+                                        ┌──────────▼──────────┐
+                                        │ Insert Submission    │
+                                        │ (status='new')       │
+                                        └──────────┬──────────┘
 
 ┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│  PHASE 2: CLASSIFICATION (stub/real toggle)                                                                       │
+│  PHASE 2: TYPE-BASED ROUTING (direct from form type)                                                              │
 └──────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
                                                    │
-                                  ┌────────────────▼────────────────┐
-                                  │   Use Stubs for Classify?       │
-                                  └───────┬────────────────┬────────┘
-                         use_stubs=true ──┘                └── use_stubs=false
-                                          │                        │
-                    ┌─────────────────────▼───────┐    ┌───────────▼──────────────┐
-                    │     Classify Stub           │    │  Classify with Claude    │
-                    └─────────────────────┬───────┘    └───────────┬──────────────┘
-                                          │                        │
-                                          └───────────┬────────────┘
+                                        ┌──────────▼──────────┐
+                                        │     Route by Type    │
+                                        │  (from form field)   │
+                                        └───────┬─────┬────┬───┘
+                           type='story' ────────┘     │    └──── type='feedback'
+                                        │             │                │
+                  ┌─────────────────────▼─────┐       │    ┌───────────▼───────────┐
+                  │  STORY PROCESSING BRANCH  │       │    │   FEEDBACK BRANCH     │
+                  │  (See Story Flow below)   │       │    │   (See Feedback Flow) │
+                  └───────────────────────────┘       │    └───────────────────────┘
+                                               type='project'
                                                       │
-                                        ┌─────────────▼─────────────┐
-                                        │   Parse LLM Response      │
-                                        └─────────────┬─────────────┘
-                                                      │
-                                        ┌─────────────▼─────────────┐
-                                        │   Update Submission       │
-                                        └─────────────┬─────────────┘
-
-┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│  PHASE 3: TYPE-SPECIFIC PROCESSING                                                                                │
-└──────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-                                                      │
-                                        ┌─────────────▼─────────────┐
-                                        │        Is Story?          │
-                                        └───────┬───────────┬───────┘
-                               type='story' ────┘           └──── type!='story'
-                                               │                   │
-                        ┌──────────────────────▼──────┐   ┌────────▼────────┐
-                        │   STORY PROCESSING BRANCH   │   │   Is Project?   │
-                        │   (See Story Flow below)    │   └───────┬────┬────┘
-                        └─────────────────────────────┘           │    │
-                                                    type='project'┘    └── type='feedback'
-                                                                  │              │
-                                          ┌───────────────────────▼───┐   ┌──────▼──────┐
-                                          │  PROJECT PROCESSING BRANCH │   │  FEEDBACK   │
-                                          │  (See Project Flow below)  │   │   BRANCH    │
-                                          └────────────────────────────┘   └──────┬──────┘
-                                                                                  │
-                                                                   ┌──────────────▼────────────────┐
-                                                                   │   GitHub Issue Creation       │
-                                                                   │   (standard intake issue)     │
-                                                                   └──────────────┬────────────────┘
-                                                                                  │
-                                                                   ┌──────────────▼────────────────┐
-                                                                   │   Respond to Webhook          │
-                                                                   │   (201 Created)               │
-                                                                   └───────────────────────────────┘
+                                    ┌─────────────────▼─────────────────┐
+                                    │    PROJECT PROCESSING BRANCH      │
+                                    │    (See Project Flow below)       │
+                                    └───────────────────────────────────┘
 ```
+
+> **Note**: The form provides `type` directly (project/story/feedback), so no initial AI classification is needed.
+> Each type-specific branch handles its own classification, scoring, and submission update.
 
 ## Story Processing Flow (1.13a)
 
@@ -343,14 +307,15 @@ This document describes the control flow of the Libertas intake processing workf
 
 | Phase | Description | Key Decision Points |
 |-------|-------------|---------------------|
-| **1. Init** | Rate limit check, parallel fetch of config + intake-classify prompt | - |
-| **2. Classify** | Classify submission (stub or real Claude) | `use_stubs` toggle |
-| **3. Route** | Route to type-specific processing | `Is Story?` → `Is Project?` → Feedback |
-| **3a. Story** | Fetch source, classify story, queue for insight if high-signal | `Has Source URL?` → `Queue for Insight?` |
-| **3b. Project** | Evaluate project idea, insert to project_ideas table | `use_stubs` for evaluate and GitHub |
-| **3c. Feedback** | Standard intake processing | Direct to GitHub issue |
-| **4. GitHub** | Create GitHub issue for triage | `use_stubs` for GitHub |
-| **5. Response** | Update DB with issue URL, respond to webhook | - |
+| **1. Init** | Rate limit check, fetch thresholds config | - |
+| **2. Route** | Route directly to type-specific processing based on form's `type` field | `type` from form |
+| **2a. Story** | Fetch source, classify story, queue for insight if high-signal, update submission | `Has Source URL?` → `Queue for Insight?` |
+| **2b. Project** | Evaluate project idea, insert to project_ideas table, update submission | `use_stubs` for evaluate and GitHub |
+| **2c. Feedback** | Assess feedback, update submission | `use_stubs` for assess and GitHub |
+| **3. GitHub** | Create GitHub issue for triage | `use_stubs` for GitHub |
+| **4. Response** | Update DB with issue URL, respond to webhook | - |
+
+> **Removed**: Initial `intake-classify` step. The form already provides `type`, and each type-specific prompt handles classification.
 
 ## Submission Types
 

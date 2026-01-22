@@ -29,17 +29,6 @@ Database Checks:
 Config/thresholds.yml:
 
 Hey, i am working to improve agent prompts. Currently I am working on:
-Intake Classify Prompt:
-  Agent File: intake-classify.md
-  API Route: /api/agents/intake-classify
-  Used In: Workflow C (intake) - initial submission routing
-Fix/Check/Do/...:
-  - Ensure we actually need this prompt. Or is having just the 3 sub-intake type prompts enough ( story classify, project evaluate, and feedback assess )
-  - Check when/how this runs in existing workflow, and report back a concise flow descritption and what value it provides that other prompts dont
-  - Verify all inputs mentioned in the prompt are passed into context in n8n workflow
-  - Check if website is passing type from intake form for "switching" prompts
-
-Hey, i am working to improve agent prompts. Currently I am working on:
 Intake Story Classify prompt:
   Agent File: intake-story-classify.md
   API Route: /api/agents/intake-story-classify
@@ -64,6 +53,8 @@ Fix/Check/Do/...:
   - Verify all inputs mentioned in the prompt are passed into context in n8n workflow
 
 Open Source
+
+Clean Duplicates in feeds
 
 
 # Phase 2: Nice-to-have
