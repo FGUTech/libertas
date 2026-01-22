@@ -210,7 +210,12 @@ export function searchContent(items: ContentItem[], options: SearchOptions): Sea
     // Apply date range filter
     const itemDate = new Date(item.publishedAt);
     if (dateFrom && itemDate < new Date(dateFrom)) continue;
-    if (dateTo && itemDate > new Date(dateTo)) continue;
+    if (dateTo) {
+      // Make dateTo inclusive of the entire day by comparing against end of day
+      const dateToEnd = new Date(dateTo);
+      dateToEnd.setHours(23, 59, 59, 999);
+      if (itemDate > dateToEnd) continue;
+    }
 
     // Calculate search score
     const { score, matchedFields } = calculateScore(item, query);

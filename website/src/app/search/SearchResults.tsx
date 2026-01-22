@@ -207,7 +207,7 @@ export function SearchResults({ content }: SearchResultsProps) {
           )}
         </>
       ) : (
-        query && <EmptyState query={query} onClear={() => handleSearch('')} />
+        query && <EmptyState query={query} onClear={handleClearAll} />
       )}
     </div>
   );
@@ -336,14 +336,14 @@ function SearchResultCard({ result }: SearchResultCardProps) {
           )}
 
           {/* Topics */}
-          <div className="flex gap-1.5 ml-auto">
+          <div className="flex items-center gap-1.5 ml-auto">
             {topics.slice(0, 3).map((topic) => (
               <span key={topic} className="tag text-xs py-0.5 px-1.5">
                 {topicLabels[topic]}
               </span>
             ))}
             {topics.length > 3 && (
-              <span className="text-[var(--fg-tertiary)]">+{topics.length - 3}</span>
+              <span className="text-xs text-[var(--fg-tertiary)]">+{topics.length - 3}</span>
             )}
           </div>
         </div>
