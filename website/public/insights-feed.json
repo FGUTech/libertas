@@ -7,6 +7,1215 @@
   "language": "en-US",
   "items": [
     {
+      "id": "4baca279-8983-4f01-8e09-c59500502286",
+      "url": "https://libertas.fgu.tech/posts/tails-7-4-adds-persistent-language-settings-updates-core-pri",
+      "title": "Tails 7.4 Adds Persistent Language Settings, Updates Core Privacy Tools",
+      "summary": "Tails 7.4 introduces persistent language/keyboard settings for easier access while updating Tor Browser to 15.0.4 and dropping BitTorrent downloads due to security concerns.",
+      "content_text": "New persistent language and keyboard layout feature saves settings unencrypted on USB for easier passphrase entry\n• Tor Browser updated to version 15.0.4 with latest security improvements\n• Thunderbird email client updated to 140.6.0 for secure communications\n• Linux kernel upgraded to 6.12.63 for improved hardware support and security\n• BitTorrent download support dropped due to security concerns with v1 format transition\n• Fixed GPG file handling in Kleopatra and VeraCrypt desktop crashes\n• Automatic upgrades available from Tails 7.0+ to maintain persistent storage",
+      "date_published": "2026-01-22T11:03:28.464Z",
+      "date_modified": "2026-01-22T11:03:28.663Z",
+      "tags": [
+        "privacy",
+        "censorship-resistance",
+        "surveillance",
+        "comms"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://tails.net/news/version_7.4/"
+        ]
+      }
+    },
+    {
+      "id": "8427a853-ffee-4c37-aae6-dce607b914f3",
+      "url": "https://libertas.fgu.tech/posts/22-rights-groups-urge-uk-pm-to-confront-china-on-transnation",
+      "title": "22 Rights Groups Urge UK PM to Confront China on Transnational Digital Repression",
+      "summary": "Freedom House and 21 other rights organizations called on UK PM to address China's transnational repression tactics including surveillance, harassment by proxy, and digital intimidation of UK-based activists and diaspora communities.",
+      "content_text": "22 human rights organizations led by Freedom House and Amnesty International UK sent joint letter to UK Prime Minister\n• Letter urges confrontation of China's transnational repression targeting activists and students in the UK\n• China using 'hybrid tactics' including arrest warrants, bounties, surveillance, and 'harassment by proxy' targeting families\n• Organizations document systematic digital intimidation to silence overseas dissent and diaspora communities\n• Letter highlights cases of imprisoned activists including British National Jimmy Lai, sentenced for journalism\n• Groups call for human rights impact assessments on all UK-China trade and investment deals\n• Timing coincides with planned UK state visit to China, creating diplomatic pressure point",
+      "date_published": "2026-01-22T11:02:40.249Z",
+      "date_modified": "2026-01-22T11:02:40.440Z",
+      "tags": [
+        "surveillance",
+        "censorship-resistance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://freedomhouse.org/article/joint-letter-uk-prime-minister-ahead-visit-china"
+        ]
+      }
+    },
+    {
+      "id": "ccef45ac-850d-407d-9bf0-8de2fff3c37e",
+      "url": "https://libertas.fgu.tech/posts/filipino-journalist-sentenced-12-18-years-on-terrorism-charg",
+      "title": "Filipino Journalist Sentenced 12-18 Years on Terrorism Charges Amid Evidence Planting Claims",
+      "summary": "Frenchie Mae Cumpio, 26-year-old Filipino journalist reporting on police/military abuses, sentenced to 12-18 years for terrorism financing after 5 years detention, with allegations authorities planted weapons during arrest.",
+      "content_text": "Filipino journalist Frenchie Mae Cumpio sentenced to 12-18 years in prison for terrorism financing charges\n• Cumpio has been detained since February 2020, arrested alongside four human rights defenders\n• Serious allegations that authorities planted weapons during raid to justify her arrest\n• Previously executive director of Eastern Vista news website, reported on police/military abuses in Eastern Visayas\n• International coalition of press freedom orgs (CPJ, RSF, NUJP) condemns verdict as 'grave miscarriage of justice'\n• UN Special Rapporteur on freedom of expression called for justice, visited her in prison in 2024\n• Case included in 2025 'Most Urgent' list by One Free Press Coalition\n• Multiple embassy representatives attended trial, showing international concern over press freedom erosion",
+      "date_published": "2026-01-22T11:02:23.415Z",
+      "date_modified": "2026-01-22T11:02:23.607Z",
+      "tags": [
+        "censorship-resistance",
+        "activism",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://cpj.org/2026/01/freefrenchiemaecumpio-ngos-condemn-journalists-conviction-as-blow-to-press-freedom-in-the-philippines/"
+        ]
+      }
+    },
+    {
+      "id": "4f988c95-772f-4329-9012-5a87334207fc",
+      "url": "https://libertas.fgu.tech/posts/gabon-implements-nationwide-internet-blackout-during-2023-pr",
+      "title": "Gabon Implements Nationwide Internet Blackout During 2023 Presidential Elections",
+      "summary": "Gabon cut internet access nationwide during August 2023 elections, with service restored after military coup. Government cited preventing violence and misinformation as justification.",
+      "content_text": "NetBlocks confirmed nation-scale internet blackout across Gabon on August 26, 2023 election day\n• Government justified shutdown as preventing 'calls for violence' and 'false information' spread\n• Blackout lasted from election day through August 30, when military officers seized power\n• Internet connectivity restored after President Ali Bongo was placed under house arrest\n• Communications Minister imposed territory-wide curfew alongside internet restrictions\n• Pattern continues trend of election-period internet shutdowns across 12+ African nations\n• Shutdown targeted multiple ISPs simultaneously, indicating coordinated government action",
+      "date_published": "2026-01-22T11:01:51.588Z",
+      "date_modified": "2026-01-22T11:01:51.793Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://netblocks.org/reports/internet-cut-in-gabon-on-election-day-Q8oxM3An"
+        ]
+      }
+    },
+    {
+      "id": "d52c10c9-0dee-4a92-85d5-02abcad0e525",
+      "url": "https://libertas.fgu.tech/posts/ooni-documents-decade-long-censorship-of-women-s-rights-site",
+      "title": "OONI Documents Decade-Long Censorship of Women's Rights Sites in Iran",
+      "summary": "OONI measurements show Iran has systematically blocked women's rights websites since at least 2014, with repression intensifying despite 2022 Women, Life, Freedom protests.",
+      "content_text": "OONI data confirms women's rights websites blocked in Iran since at least 2014\n• Censorship persists despite massive 2022 Women, Life, Freedom protests following Mahsa Jina Amini's death\n• UN reports intensified repression of women despite mass demonstrations\n• Iran maintains severe restrictions on both women's rights and information access\n• Pattern shows systematic targeting of human rights content, not just political sites\n• Long-term censorship data provides baseline for measuring circumvention needs\n• Demonstrates sustained government commitment to information control around gender issues",
+      "date_published": "2026-01-22T11:01:15.491Z",
+      "date_modified": "2026-01-22T11:01:15.700Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://ooni.org/post/2025-iran-censorship-womens-rights/"
+        ]
+      }
+    },
+    {
+      "id": "e30e6b3a-b2f8-4765-ba4d-9d18d7f46aae",
+      "url": "https://libertas.fgu.tech/posts/federal-judge-halts-fbi-search-of-washington-post-reporter-s",
+      "title": "Federal Judge Halts FBI Search of Washington Post Reporter's Seized Devices",
+      "summary": "Judge orders temporary stop to FBI search of devices seized from WaPo reporter Hannah Natanson's home in Pentagon leak investigation, citing First Amendment concerns.",
+      "content_text": "Federal judge ordered halt to FBI search of devices seized from Washington Post reporter Hannah Natanson\n• FBI executed search warrant at reporter's home last week as part of Pentagon contractor leak investigation\n• Natanson is not subject of investigation but devices seized in connection to alleged source leaks\n• Washington Post filed motions to return property and prevent device review pending court ruling\n• Post argues 'almost none of seized data' responsive to warrant seeking records from single contractor\n• Legal challenge cites First Amendment protections and attorney-client privilege concerns\n• Case highlights ongoing tension between national security investigations and press freedom\n• Temporary reprieve pending further court proceedings on whether search can resume",
+      "date_published": "2026-01-22T11:00:47.914Z",
+      "date_modified": "2026-01-22T11:00:48.025Z",
+      "tags": [
+        "surveillance",
+        "censorship-resistance",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 90,
+        "citations": [
+          "https://arstechnica.com/tech-policy/2026/01/judge-orders-stop-to-fbi-search-of-devices-seized-from-washington-post-reporter/"
+        ]
+      }
+    },
+    {
+      "id": "1d252679-b4f4-4448-ac9f-bfdd44147310",
+      "url": "https://libertas.fgu.tech/posts/iran-s-complete-internet-blackout-conceals-mass-violence-aga",
+      "title": "Iran's Complete Internet Blackout Conceals Mass Violence Against 2,403+ Killed Protesters",
+      "summary": "Iran imposed total internet shutdown Jan 8, 2026 during nationwide protests, killing 2,403+ protesters and arresting 18,000+ while blocking all communications including satellite internet to conceal human rights abuses.",
+      "content_text": "Complete nationwide internet blackout began Jan 8, 2026 at 18:45 UTC confirmed by Cloudflare data showing near-zero traffic\n• Preceded by 35% throttling and circumvention tool blocking starting Dec 29, 2025 following currency collapse protests\n• At least 2,403 protesters killed and over 18,000 arrested as of Jan 13, 2026 according to Human Rights Activists News Agency\n• Satellite internet services also disrupted through signal jamming and equipment confiscation, eliminating backup connectivity\n• Access Now and #KeepItOn coalition document pattern where internet shutdowns consistently precede mass violence in Iran\n• Tech activists and internet freedom community achieved limited connectivity restoration during shutdown\n• International judicial bodies now recognize internet shutdowns as concealment mechanism for investigating international crimes\n• Coalition of 40+ organizations demands immediate restoration of connectivity and independent investigation",
+      "date_published": "2026-01-21T06:47:26.800Z",
+      "date_modified": "2026-01-21T06:47:26.990Z",
+      "tags": [
+        "censorship-resistance",
+        "comms",
+        "surveillance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 95,
+        "credibility_score": 88,
+        "citations": [
+          "https://www.accessnow.org/press-release/keepiton-iran-digital-darkness-human-rights-abuses/"
+        ]
+      }
+    },
+    {
+      "id": "3258e802-12a0-447d-a9a8-16a39a48cf67",
+      "url": "https://libertas.fgu.tech/posts/bhutan-expands-state-blockchain-portfolio-with-sei-validator",
+      "title": "Bhutan Expands State Blockchain Portfolio with Sei Validator Node",
+      "summary": "Bhutan becomes validator on Sei blockchain, adding to existing Bitcoin mining operations and Ethereum-powered self-sovereign ID system in comprehensive state-level blockchain adoption.",
+      "content_text": "Bhutan officially becomes validator node on Sei blockchain network\n• Adds to existing portfolio including active Bitcoin mining operations\n• Previously launched self-sovereign identity system built on Ethereum\n• Represents rare case of comprehensive state-level blockchain adoption\n• Covers three key freedom tech areas: mining, identity sovereignty, and validation\n• Small nation demonstrating practical blockchain integration across government services\n• Pattern suggests strategic national blockchain diversification approach",
+      "date_published": "2026-01-21T06:46:52.121Z",
+      "date_modified": "2026-01-21T06:46:52.239Z",
+      "tags": [
+        "bitcoin",
+        "identity",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 72,
+        "credibility_score": 78,
+        "citations": [
+          "https://cointelegraph.com/news/bhutan-sei-blockchain-validator-digital-transformation",
+          "https://cointelegraph.com/news/bhutan-sei-blockchain-validator-digital-transformation?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+        ]
+      }
+    },
+    {
+      "id": "b0f7e524-bd71-492e-be01-7bcd56e34a5b",
+      "url": "https://libertas.fgu.tech/posts/eff-broken-copyright-damages-fuel-platform-censorship",
+      "title": "EFF: Broken Copyright Damages Fuel Platform Censorship",
+      "summary": "EFF highlights how U.S. copyright's statutory damages ($200-$150k per work) create financial incentives for platforms to over-censor, stifling online expression and fair use.",
+      "content_text": "U.S. copyright allows statutory damages of $200-$150,000 per work without proving actual harm\n• Unpredictable damages create financial Russian roulette for platforms and users\n• Platforms respond by implementing aggressive automated takedown systems like YouTube's Content ID\n• Massive damages awards (e.g. $222,000 for 24 music tracks) discourage fair use experimentation\n• System biases enforcement decisions toward major rightsholders over users\n• Users self-censor to avoid potentially ruinous penalties for creative re-use\n• Reform proposals include capping damages to multiples of actual harm or excluding good-faith fair use cases",
+      "date_published": "2026-01-21T06:46:12.891Z",
+      "date_modified": "2026-01-21T06:46:12.999Z",
+      "tags": [
+        "censorship-resistance",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/01/statutory-damages-fuel-copyright-based-censorship"
+        ]
+      }
+    },
+    {
+      "id": "71005a65-6894-458f-a99e-5f893f156bb7",
+      "url": "https://libertas.fgu.tech/posts/eff-guide-to-navigating-age-verification-gates-while-protect",
+      "title": "EFF Guide to Navigating Age Verification Gates While Protecting Privacy",
+      "summary": "EFF releases practical guide for users forced to comply with age verification mandates, offering privacy-preserving strategies when faced with age gates on major platforms.",
+      "content_text": "EFF provides harm reduction guidance for mandatory age verification despite opposing all age verification mandates\n• Recommends submitting absolute minimum data possible to reduce breach exposure\n• Facial age estimation works poorly for people of color, trans/nonbinary people, and people with disabilities\n• Meta uses Yoti for face scans, which uploads photos to third-party servers with tracker concerns\n• Document verification creates identity exposure beyond age - Discord breach leaked 70,000 ID photos\n• Some services like Incode (used by TikTok) retain ID images indefinitely by default\n• Credit card and email database verification offer less sensitive alternatives but still undermine anonymity\n• Guide covers evaluation framework: data required, access, retention, audits, and visibility",
+      "date_published": "2026-01-14T22:58:54.644Z",
+      "date_modified": "2026-01-14T22:58:54.844Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "identity",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/01/so-youve-hit-age-gate-what-now"
+        ]
+      }
+    },
+    {
+      "id": "4baca279-8983-4f01-8e09-c59500502286",
+      "url": "https://libertas.fgu.tech/posts/tails-7-4-adds-persistent-language-settings-updates-core-pri",
+      "title": "Tails 7.4 Adds Persistent Language Settings, Updates Core Privacy Tools",
+      "summary": "Tails 7.4 introduces persistent language/keyboard settings for easier access while updating Tor Browser to 15.0.4 and dropping BitTorrent downloads due to security concerns.",
+      "content_text": "New persistent language and keyboard layout feature saves settings unencrypted on USB for easier passphrase entry\n• Tor Browser updated to version 15.0.4 with latest security improvements\n• Thunderbird email client updated to 140.6.0 for secure communications\n• Linux kernel upgraded to 6.12.63 for improved hardware support and security\n• BitTorrent download support dropped due to security concerns with v1 format transition\n• Fixed GPG file handling in Kleopatra and VeraCrypt desktop crashes\n• Automatic upgrades available from Tails 7.0+ to maintain persistent storage",
+      "date_published": "2026-01-22T11:03:28.464Z",
+      "date_modified": "2026-01-22T11:03:28.663Z",
+      "tags": [
+        "privacy",
+        "censorship-resistance",
+        "surveillance",
+        "comms"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://tails.net/news/version_7.4/"
+        ]
+      }
+    },
+    {
+      "id": "8427a853-ffee-4c37-aae6-dce607b914f3",
+      "url": "https://libertas.fgu.tech/posts/22-rights-groups-urge-uk-pm-to-confront-china-on-transnation",
+      "title": "22 Rights Groups Urge UK PM to Confront China on Transnational Digital Repression",
+      "summary": "Freedom House and 21 other rights organizations called on UK PM to address China's transnational repression tactics including surveillance, harassment by proxy, and digital intimidation of UK-based activists and diaspora communities.",
+      "content_text": "22 human rights organizations led by Freedom House and Amnesty International UK sent joint letter to UK Prime Minister\n• Letter urges confrontation of China's transnational repression targeting activists and students in the UK\n• China using 'hybrid tactics' including arrest warrants, bounties, surveillance, and 'harassment by proxy' targeting families\n• Organizations document systematic digital intimidation to silence overseas dissent and diaspora communities\n• Letter highlights cases of imprisoned activists including British National Jimmy Lai, sentenced for journalism\n• Groups call for human rights impact assessments on all UK-China trade and investment deals\n• Timing coincides with planned UK state visit to China, creating diplomatic pressure point",
+      "date_published": "2026-01-22T11:02:40.249Z",
+      "date_modified": "2026-01-22T11:02:40.440Z",
+      "tags": [
+        "surveillance",
+        "censorship-resistance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://freedomhouse.org/article/joint-letter-uk-prime-minister-ahead-visit-china"
+        ]
+      }
+    },
+    {
+      "id": "ccef45ac-850d-407d-9bf0-8de2fff3c37e",
+      "url": "https://libertas.fgu.tech/posts/filipino-journalist-sentenced-12-18-years-on-terrorism-charg",
+      "title": "Filipino Journalist Sentenced 12-18 Years on Terrorism Charges Amid Evidence Planting Claims",
+      "summary": "Frenchie Mae Cumpio, 26-year-old Filipino journalist reporting on police/military abuses, sentenced to 12-18 years for terrorism financing after 5 years detention, with allegations authorities planted weapons during arrest.",
+      "content_text": "Filipino journalist Frenchie Mae Cumpio sentenced to 12-18 years in prison for terrorism financing charges\n• Cumpio has been detained since February 2020, arrested alongside four human rights defenders\n• Serious allegations that authorities planted weapons during raid to justify her arrest\n• Previously executive director of Eastern Vista news website, reported on police/military abuses in Eastern Visayas\n• International coalition of press freedom orgs (CPJ, RSF, NUJP) condemns verdict as 'grave miscarriage of justice'\n• UN Special Rapporteur on freedom of expression called for justice, visited her in prison in 2024\n• Case included in 2025 'Most Urgent' list by One Free Press Coalition\n• Multiple embassy representatives attended trial, showing international concern over press freedom erosion",
+      "date_published": "2026-01-22T11:02:23.415Z",
+      "date_modified": "2026-01-22T11:02:23.607Z",
+      "tags": [
+        "censorship-resistance",
+        "activism",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://cpj.org/2026/01/freefrenchiemaecumpio-ngos-condemn-journalists-conviction-as-blow-to-press-freedom-in-the-philippines/"
+        ]
+      }
+    },
+    {
+      "id": "4f988c95-772f-4329-9012-5a87334207fc",
+      "url": "https://libertas.fgu.tech/posts/gabon-implements-nationwide-internet-blackout-during-2023-pr",
+      "title": "Gabon Implements Nationwide Internet Blackout During 2023 Presidential Elections",
+      "summary": "Gabon cut internet access nationwide during August 2023 elections, with service restored after military coup. Government cited preventing violence and misinformation as justification.",
+      "content_text": "NetBlocks confirmed nation-scale internet blackout across Gabon on August 26, 2023 election day\n• Government justified shutdown as preventing 'calls for violence' and 'false information' spread\n• Blackout lasted from election day through August 30, when military officers seized power\n• Internet connectivity restored after President Ali Bongo was placed under house arrest\n• Communications Minister imposed territory-wide curfew alongside internet restrictions\n• Pattern continues trend of election-period internet shutdowns across 12+ African nations\n• Shutdown targeted multiple ISPs simultaneously, indicating coordinated government action",
+      "date_published": "2026-01-22T11:01:51.588Z",
+      "date_modified": "2026-01-22T11:01:51.793Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://netblocks.org/reports/internet-cut-in-gabon-on-election-day-Q8oxM3An"
+        ]
+      }
+    },
+    {
+      "id": "d52c10c9-0dee-4a92-85d5-02abcad0e525",
+      "url": "https://libertas.fgu.tech/posts/ooni-documents-decade-long-censorship-of-women-s-rights-site",
+      "title": "OONI Documents Decade-Long Censorship of Women's Rights Sites in Iran",
+      "summary": "OONI measurements show Iran has systematically blocked women's rights websites since at least 2014, with repression intensifying despite 2022 Women, Life, Freedom protests.",
+      "content_text": "OONI data confirms women's rights websites blocked in Iran since at least 2014\n• Censorship persists despite massive 2022 Women, Life, Freedom protests following Mahsa Jina Amini's death\n• UN reports intensified repression of women despite mass demonstrations\n• Iran maintains severe restrictions on both women's rights and information access\n• Pattern shows systematic targeting of human rights content, not just political sites\n• Long-term censorship data provides baseline for measuring circumvention needs\n• Demonstrates sustained government commitment to information control around gender issues",
+      "date_published": "2026-01-22T11:01:15.491Z",
+      "date_modified": "2026-01-22T11:01:15.700Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://ooni.org/post/2025-iran-censorship-womens-rights/"
+        ]
+      }
+    },
+    {
+      "id": "e30e6b3a-b2f8-4765-ba4d-9d18d7f46aae",
+      "url": "https://libertas.fgu.tech/posts/federal-judge-halts-fbi-search-of-washington-post-reporter-s",
+      "title": "Federal Judge Halts FBI Search of Washington Post Reporter's Seized Devices",
+      "summary": "Judge orders temporary stop to FBI search of devices seized from WaPo reporter Hannah Natanson's home in Pentagon leak investigation, citing First Amendment concerns.",
+      "content_text": "Federal judge ordered halt to FBI search of devices seized from Washington Post reporter Hannah Natanson\n• FBI executed search warrant at reporter's home last week as part of Pentagon contractor leak investigation\n• Natanson is not subject of investigation but devices seized in connection to alleged source leaks\n• Washington Post filed motions to return property and prevent device review pending court ruling\n• Post argues 'almost none of seized data' responsive to warrant seeking records from single contractor\n• Legal challenge cites First Amendment protections and attorney-client privilege concerns\n• Case highlights ongoing tension between national security investigations and press freedom\n• Temporary reprieve pending further court proceedings on whether search can resume",
+      "date_published": "2026-01-22T11:00:47.914Z",
+      "date_modified": "2026-01-22T11:00:48.025Z",
+      "tags": [
+        "surveillance",
+        "censorship-resistance",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 90,
+        "citations": [
+          "https://arstechnica.com/tech-policy/2026/01/judge-orders-stop-to-fbi-search-of-devices-seized-from-washington-post-reporter/"
+        ]
+      }
+    },
+    {
+      "id": "1d252679-b4f4-4448-ac9f-bfdd44147310",
+      "url": "https://libertas.fgu.tech/posts/iran-s-complete-internet-blackout-conceals-mass-violence-aga",
+      "title": "Iran's Complete Internet Blackout Conceals Mass Violence Against 2,403+ Killed Protesters",
+      "summary": "Iran imposed total internet shutdown Jan 8, 2026 during nationwide protests, killing 2,403+ protesters and arresting 18,000+ while blocking all communications including satellite internet to conceal human rights abuses.",
+      "content_text": "Complete nationwide internet blackout began Jan 8, 2026 at 18:45 UTC confirmed by Cloudflare data showing near-zero traffic\n• Preceded by 35% throttling and circumvention tool blocking starting Dec 29, 2025 following currency collapse protests\n• At least 2,403 protesters killed and over 18,000 arrested as of Jan 13, 2026 according to Human Rights Activists News Agency\n• Satellite internet services also disrupted through signal jamming and equipment confiscation, eliminating backup connectivity\n• Access Now and #KeepItOn coalition document pattern where internet shutdowns consistently precede mass violence in Iran\n• Tech activists and internet freedom community achieved limited connectivity restoration during shutdown\n• International judicial bodies now recognize internet shutdowns as concealment mechanism for investigating international crimes\n• Coalition of 40+ organizations demands immediate restoration of connectivity and independent investigation",
+      "date_published": "2026-01-21T06:47:26.800Z",
+      "date_modified": "2026-01-21T06:47:26.990Z",
+      "tags": [
+        "censorship-resistance",
+        "comms",
+        "surveillance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 95,
+        "credibility_score": 88,
+        "citations": [
+          "https://www.accessnow.org/press-release/keepiton-iran-digital-darkness-human-rights-abuses/"
+        ]
+      }
+    },
+    {
+      "id": "3258e802-12a0-447d-a9a8-16a39a48cf67",
+      "url": "https://libertas.fgu.tech/posts/bhutan-expands-state-blockchain-portfolio-with-sei-validator",
+      "title": "Bhutan Expands State Blockchain Portfolio with Sei Validator Node",
+      "summary": "Bhutan becomes validator on Sei blockchain, adding to existing Bitcoin mining operations and Ethereum-powered self-sovereign ID system in comprehensive state-level blockchain adoption.",
+      "content_text": "Bhutan officially becomes validator node on Sei blockchain network\n• Adds to existing portfolio including active Bitcoin mining operations\n• Previously launched self-sovereign identity system built on Ethereum\n• Represents rare case of comprehensive state-level blockchain adoption\n• Covers three key freedom tech areas: mining, identity sovereignty, and validation\n• Small nation demonstrating practical blockchain integration across government services\n• Pattern suggests strategic national blockchain diversification approach",
+      "date_published": "2026-01-21T06:46:52.121Z",
+      "date_modified": "2026-01-21T06:46:52.239Z",
+      "tags": [
+        "bitcoin",
+        "identity",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 72,
+        "credibility_score": 78,
+        "citations": [
+          "https://cointelegraph.com/news/bhutan-sei-blockchain-validator-digital-transformation",
+          "https://cointelegraph.com/news/bhutan-sei-blockchain-validator-digital-transformation?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+        ]
+      }
+    },
+    {
+      "id": "b0f7e524-bd71-492e-be01-7bcd56e34a5b",
+      "url": "https://libertas.fgu.tech/posts/eff-broken-copyright-damages-fuel-platform-censorship",
+      "title": "EFF: Broken Copyright Damages Fuel Platform Censorship",
+      "summary": "EFF highlights how U.S. copyright's statutory damages ($200-$150k per work) create financial incentives for platforms to over-censor, stifling online expression and fair use.",
+      "content_text": "U.S. copyright allows statutory damages of $200-$150,000 per work without proving actual harm\n• Unpredictable damages create financial Russian roulette for platforms and users\n• Platforms respond by implementing aggressive automated takedown systems like YouTube's Content ID\n• Massive damages awards (e.g. $222,000 for 24 music tracks) discourage fair use experimentation\n• System biases enforcement decisions toward major rightsholders over users\n• Users self-censor to avoid potentially ruinous penalties for creative re-use\n• Reform proposals include capping damages to multiples of actual harm or excluding good-faith fair use cases",
+      "date_published": "2026-01-21T06:46:12.891Z",
+      "date_modified": "2026-01-21T06:46:12.999Z",
+      "tags": [
+        "censorship-resistance",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/01/statutory-damages-fuel-copyright-based-censorship"
+        ]
+      }
+    },
+    {
+      "id": "71005a65-6894-458f-a99e-5f893f156bb7",
+      "url": "https://libertas.fgu.tech/posts/eff-guide-to-navigating-age-verification-gates-while-protect",
+      "title": "EFF Guide to Navigating Age Verification Gates While Protecting Privacy",
+      "summary": "EFF releases practical guide for users forced to comply with age verification mandates, offering privacy-preserving strategies when faced with age gates on major platforms.",
+      "content_text": "EFF provides harm reduction guidance for mandatory age verification despite opposing all age verification mandates\n• Recommends submitting absolute minimum data possible to reduce breach exposure\n• Facial age estimation works poorly for people of color, trans/nonbinary people, and people with disabilities\n• Meta uses Yoti for face scans, which uploads photos to third-party servers with tracker concerns\n• Document verification creates identity exposure beyond age - Discord breach leaked 70,000 ID photos\n• Some services like Incode (used by TikTok) retain ID images indefinitely by default\n• Credit card and email database verification offer less sensitive alternatives but still undermine anonymity\n• Guide covers evaluation framework: data required, access, retention, audits, and visibility",
+      "date_published": "2026-01-14T22:58:54.644Z",
+      "date_modified": "2026-01-14T22:58:54.844Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "identity",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/01/so-youve-hit-age-gate-what-now"
+        ]
+      }
+    },
+    {
+      "id": "4baca279-8983-4f01-8e09-c59500502286",
+      "url": "https://libertas.fgu.tech/posts/tails-7-4-adds-persistent-language-settings-updates-core-pri",
+      "title": "Tails 7.4 Adds Persistent Language Settings, Updates Core Privacy Tools",
+      "summary": "Tails 7.4 introduces persistent language/keyboard settings for easier access while updating Tor Browser to 15.0.4 and dropping BitTorrent downloads due to security concerns.",
+      "content_text": "New persistent language and keyboard layout feature saves settings unencrypted on USB for easier passphrase entry\n• Tor Browser updated to version 15.0.4 with latest security improvements\n• Thunderbird email client updated to 140.6.0 for secure communications\n• Linux kernel upgraded to 6.12.63 for improved hardware support and security\n• BitTorrent download support dropped due to security concerns with v1 format transition\n• Fixed GPG file handling in Kleopatra and VeraCrypt desktop crashes\n• Automatic upgrades available from Tails 7.0+ to maintain persistent storage",
+      "date_published": "2026-01-22T11:03:28.464Z",
+      "date_modified": "2026-01-22T11:03:28.663Z",
+      "tags": [
+        "privacy",
+        "censorship-resistance",
+        "surveillance",
+        "comms"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://tails.net/news/version_7.4/"
+        ]
+      }
+    },
+    {
+      "id": "8427a853-ffee-4c37-aae6-dce607b914f3",
+      "url": "https://libertas.fgu.tech/posts/22-rights-groups-urge-uk-pm-to-confront-china-on-transnation",
+      "title": "22 Rights Groups Urge UK PM to Confront China on Transnational Digital Repression",
+      "summary": "Freedom House and 21 other rights organizations called on UK PM to address China's transnational repression tactics including surveillance, harassment by proxy, and digital intimidation of UK-based activists and diaspora communities.",
+      "content_text": "22 human rights organizations led by Freedom House and Amnesty International UK sent joint letter to UK Prime Minister\n• Letter urges confrontation of China's transnational repression targeting activists and students in the UK\n• China using 'hybrid tactics' including arrest warrants, bounties, surveillance, and 'harassment by proxy' targeting families\n• Organizations document systematic digital intimidation to silence overseas dissent and diaspora communities\n• Letter highlights cases of imprisoned activists including British National Jimmy Lai, sentenced for journalism\n• Groups call for human rights impact assessments on all UK-China trade and investment deals\n• Timing coincides with planned UK state visit to China, creating diplomatic pressure point",
+      "date_published": "2026-01-22T11:02:40.249Z",
+      "date_modified": "2026-01-22T11:02:40.440Z",
+      "tags": [
+        "surveillance",
+        "censorship-resistance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://freedomhouse.org/article/joint-letter-uk-prime-minister-ahead-visit-china"
+        ]
+      }
+    },
+    {
+      "id": "ccef45ac-850d-407d-9bf0-8de2fff3c37e",
+      "url": "https://libertas.fgu.tech/posts/filipino-journalist-sentenced-12-18-years-on-terrorism-charg",
+      "title": "Filipino Journalist Sentenced 12-18 Years on Terrorism Charges Amid Evidence Planting Claims",
+      "summary": "Frenchie Mae Cumpio, 26-year-old Filipino journalist reporting on police/military abuses, sentenced to 12-18 years for terrorism financing after 5 years detention, with allegations authorities planted weapons during arrest.",
+      "content_text": "Filipino journalist Frenchie Mae Cumpio sentenced to 12-18 years in prison for terrorism financing charges\n• Cumpio has been detained since February 2020, arrested alongside four human rights defenders\n• Serious allegations that authorities planted weapons during raid to justify her arrest\n• Previously executive director of Eastern Vista news website, reported on police/military abuses in Eastern Visayas\n• International coalition of press freedom orgs (CPJ, RSF, NUJP) condemns verdict as 'grave miscarriage of justice'\n• UN Special Rapporteur on freedom of expression called for justice, visited her in prison in 2024\n• Case included in 2025 'Most Urgent' list by One Free Press Coalition\n• Multiple embassy representatives attended trial, showing international concern over press freedom erosion",
+      "date_published": "2026-01-22T11:02:23.415Z",
+      "date_modified": "2026-01-22T11:02:23.607Z",
+      "tags": [
+        "censorship-resistance",
+        "activism",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://cpj.org/2026/01/freefrenchiemaecumpio-ngos-condemn-journalists-conviction-as-blow-to-press-freedom-in-the-philippines/"
+        ]
+      }
+    },
+    {
+      "id": "4f988c95-772f-4329-9012-5a87334207fc",
+      "url": "https://libertas.fgu.tech/posts/gabon-implements-nationwide-internet-blackout-during-2023-pr",
+      "title": "Gabon Implements Nationwide Internet Blackout During 2023 Presidential Elections",
+      "summary": "Gabon cut internet access nationwide during August 2023 elections, with service restored after military coup. Government cited preventing violence and misinformation as justification.",
+      "content_text": "NetBlocks confirmed nation-scale internet blackout across Gabon on August 26, 2023 election day\n• Government justified shutdown as preventing 'calls for violence' and 'false information' spread\n• Blackout lasted from election day through August 30, when military officers seized power\n• Internet connectivity restored after President Ali Bongo was placed under house arrest\n• Communications Minister imposed territory-wide curfew alongside internet restrictions\n• Pattern continues trend of election-period internet shutdowns across 12+ African nations\n• Shutdown targeted multiple ISPs simultaneously, indicating coordinated government action",
+      "date_published": "2026-01-22T11:01:51.588Z",
+      "date_modified": "2026-01-22T11:01:51.793Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://netblocks.org/reports/internet-cut-in-gabon-on-election-day-Q8oxM3An"
+        ]
+      }
+    },
+    {
+      "id": "d52c10c9-0dee-4a92-85d5-02abcad0e525",
+      "url": "https://libertas.fgu.tech/posts/ooni-documents-decade-long-censorship-of-women-s-rights-site",
+      "title": "OONI Documents Decade-Long Censorship of Women's Rights Sites in Iran",
+      "summary": "OONI measurements show Iran has systematically blocked women's rights websites since at least 2014, with repression intensifying despite 2022 Women, Life, Freedom protests.",
+      "content_text": "OONI data confirms women's rights websites blocked in Iran since at least 2014\n• Censorship persists despite massive 2022 Women, Life, Freedom protests following Mahsa Jina Amini's death\n• UN reports intensified repression of women despite mass demonstrations\n• Iran maintains severe restrictions on both women's rights and information access\n• Pattern shows systematic targeting of human rights content, not just political sites\n• Long-term censorship data provides baseline for measuring circumvention needs\n• Demonstrates sustained government commitment to information control around gender issues",
+      "date_published": "2026-01-22T11:01:15.491Z",
+      "date_modified": "2026-01-22T11:01:15.700Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://ooni.org/post/2025-iran-censorship-womens-rights/"
+        ]
+      }
+    },
+    {
+      "id": "e30e6b3a-b2f8-4765-ba4d-9d18d7f46aae",
+      "url": "https://libertas.fgu.tech/posts/federal-judge-halts-fbi-search-of-washington-post-reporter-s",
+      "title": "Federal Judge Halts FBI Search of Washington Post Reporter's Seized Devices",
+      "summary": "Judge orders temporary stop to FBI search of devices seized from WaPo reporter Hannah Natanson's home in Pentagon leak investigation, citing First Amendment concerns.",
+      "content_text": "Federal judge ordered halt to FBI search of devices seized from Washington Post reporter Hannah Natanson\n• FBI executed search warrant at reporter's home last week as part of Pentagon contractor leak investigation\n• Natanson is not subject of investigation but devices seized in connection to alleged source leaks\n• Washington Post filed motions to return property and prevent device review pending court ruling\n• Post argues 'almost none of seized data' responsive to warrant seeking records from single contractor\n• Legal challenge cites First Amendment protections and attorney-client privilege concerns\n• Case highlights ongoing tension between national security investigations and press freedom\n• Temporary reprieve pending further court proceedings on whether search can resume",
+      "date_published": "2026-01-22T11:00:47.914Z",
+      "date_modified": "2026-01-22T11:00:48.025Z",
+      "tags": [
+        "surveillance",
+        "censorship-resistance",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 90,
+        "citations": [
+          "https://arstechnica.com/tech-policy/2026/01/judge-orders-stop-to-fbi-search-of-devices-seized-from-washington-post-reporter/"
+        ]
+      }
+    },
+    {
+      "id": "1d252679-b4f4-4448-ac9f-bfdd44147310",
+      "url": "https://libertas.fgu.tech/posts/iran-s-complete-internet-blackout-conceals-mass-violence-aga",
+      "title": "Iran's Complete Internet Blackout Conceals Mass Violence Against 2,403+ Killed Protesters",
+      "summary": "Iran imposed total internet shutdown Jan 8, 2026 during nationwide protests, killing 2,403+ protesters and arresting 18,000+ while blocking all communications including satellite internet to conceal human rights abuses.",
+      "content_text": "Complete nationwide internet blackout began Jan 8, 2026 at 18:45 UTC confirmed by Cloudflare data showing near-zero traffic\n• Preceded by 35% throttling and circumvention tool blocking starting Dec 29, 2025 following currency collapse protests\n• At least 2,403 protesters killed and over 18,000 arrested as of Jan 13, 2026 according to Human Rights Activists News Agency\n• Satellite internet services also disrupted through signal jamming and equipment confiscation, eliminating backup connectivity\n• Access Now and #KeepItOn coalition document pattern where internet shutdowns consistently precede mass violence in Iran\n• Tech activists and internet freedom community achieved limited connectivity restoration during shutdown\n• International judicial bodies now recognize internet shutdowns as concealment mechanism for investigating international crimes\n• Coalition of 40+ organizations demands immediate restoration of connectivity and independent investigation",
+      "date_published": "2026-01-21T06:47:26.800Z",
+      "date_modified": "2026-01-21T06:47:26.990Z",
+      "tags": [
+        "censorship-resistance",
+        "comms",
+        "surveillance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 95,
+        "credibility_score": 88,
+        "citations": [
+          "https://www.accessnow.org/press-release/keepiton-iran-digital-darkness-human-rights-abuses/"
+        ]
+      }
+    },
+    {
+      "id": "3258e802-12a0-447d-a9a8-16a39a48cf67",
+      "url": "https://libertas.fgu.tech/posts/bhutan-expands-state-blockchain-portfolio-with-sei-validator",
+      "title": "Bhutan Expands State Blockchain Portfolio with Sei Validator Node",
+      "summary": "Bhutan becomes validator on Sei blockchain, adding to existing Bitcoin mining operations and Ethereum-powered self-sovereign ID system in comprehensive state-level blockchain adoption.",
+      "content_text": "Bhutan officially becomes validator node on Sei blockchain network\n• Adds to existing portfolio including active Bitcoin mining operations\n• Previously launched self-sovereign identity system built on Ethereum\n• Represents rare case of comprehensive state-level blockchain adoption\n• Covers three key freedom tech areas: mining, identity sovereignty, and validation\n• Small nation demonstrating practical blockchain integration across government services\n• Pattern suggests strategic national blockchain diversification approach",
+      "date_published": "2026-01-21T06:46:52.121Z",
+      "date_modified": "2026-01-21T06:46:52.239Z",
+      "tags": [
+        "bitcoin",
+        "identity",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 72,
+        "credibility_score": 78,
+        "citations": [
+          "https://cointelegraph.com/news/bhutan-sei-blockchain-validator-digital-transformation",
+          "https://cointelegraph.com/news/bhutan-sei-blockchain-validator-digital-transformation?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+        ]
+      }
+    },
+    {
+      "id": "b0f7e524-bd71-492e-be01-7bcd56e34a5b",
+      "url": "https://libertas.fgu.tech/posts/eff-broken-copyright-damages-fuel-platform-censorship",
+      "title": "EFF: Broken Copyright Damages Fuel Platform Censorship",
+      "summary": "EFF highlights how U.S. copyright's statutory damages ($200-$150k per work) create financial incentives for platforms to over-censor, stifling online expression and fair use.",
+      "content_text": "U.S. copyright allows statutory damages of $200-$150,000 per work without proving actual harm\n• Unpredictable damages create financial Russian roulette for platforms and users\n• Platforms respond by implementing aggressive automated takedown systems like YouTube's Content ID\n• Massive damages awards (e.g. $222,000 for 24 music tracks) discourage fair use experimentation\n• System biases enforcement decisions toward major rightsholders over users\n• Users self-censor to avoid potentially ruinous penalties for creative re-use\n• Reform proposals include capping damages to multiples of actual harm or excluding good-faith fair use cases",
+      "date_published": "2026-01-21T06:46:12.891Z",
+      "date_modified": "2026-01-21T06:46:12.999Z",
+      "tags": [
+        "censorship-resistance",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/01/statutory-damages-fuel-copyright-based-censorship"
+        ]
+      }
+    },
+    {
+      "id": "71005a65-6894-458f-a99e-5f893f156bb7",
+      "url": "https://libertas.fgu.tech/posts/eff-guide-to-navigating-age-verification-gates-while-protect",
+      "title": "EFF Guide to Navigating Age Verification Gates While Protecting Privacy",
+      "summary": "EFF releases practical guide for users forced to comply with age verification mandates, offering privacy-preserving strategies when faced with age gates on major platforms.",
+      "content_text": "EFF provides harm reduction guidance for mandatory age verification despite opposing all age verification mandates\n• Recommends submitting absolute minimum data possible to reduce breach exposure\n• Facial age estimation works poorly for people of color, trans/nonbinary people, and people with disabilities\n• Meta uses Yoti for face scans, which uploads photos to third-party servers with tracker concerns\n• Document verification creates identity exposure beyond age - Discord breach leaked 70,000 ID photos\n• Some services like Incode (used by TikTok) retain ID images indefinitely by default\n• Credit card and email database verification offer less sensitive alternatives but still undermine anonymity\n• Guide covers evaluation framework: data required, access, retention, audits, and visibility",
+      "date_published": "2026-01-14T22:58:54.644Z",
+      "date_modified": "2026-01-14T22:58:54.844Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "identity",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/01/so-youve-hit-age-gate-what-now"
+        ]
+      }
+    },
+    {
+      "id": "4baca279-8983-4f01-8e09-c59500502286",
+      "url": "https://libertas.fgu.tech/posts/tails-7-4-adds-persistent-language-settings-updates-core-pri",
+      "title": "Tails 7.4 Adds Persistent Language Settings, Updates Core Privacy Tools",
+      "summary": "Tails 7.4 introduces persistent language/keyboard settings for easier access while updating Tor Browser to 15.0.4 and dropping BitTorrent downloads due to security concerns.",
+      "content_text": "New persistent language and keyboard layout feature saves settings unencrypted on USB for easier passphrase entry\n• Tor Browser updated to version 15.0.4 with latest security improvements\n• Thunderbird email client updated to 140.6.0 for secure communications\n• Linux kernel upgraded to 6.12.63 for improved hardware support and security\n• BitTorrent download support dropped due to security concerns with v1 format transition\n• Fixed GPG file handling in Kleopatra and VeraCrypt desktop crashes\n• Automatic upgrades available from Tails 7.0+ to maintain persistent storage",
+      "date_published": "2026-01-22T11:03:28.464Z",
+      "date_modified": "2026-01-22T11:03:28.663Z",
+      "tags": [
+        "privacy",
+        "censorship-resistance",
+        "surveillance",
+        "comms"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://tails.net/news/version_7.4/"
+        ]
+      }
+    },
+    {
+      "id": "8427a853-ffee-4c37-aae6-dce607b914f3",
+      "url": "https://libertas.fgu.tech/posts/22-rights-groups-urge-uk-pm-to-confront-china-on-transnation",
+      "title": "22 Rights Groups Urge UK PM to Confront China on Transnational Digital Repression",
+      "summary": "Freedom House and 21 other rights organizations called on UK PM to address China's transnational repression tactics including surveillance, harassment by proxy, and digital intimidation of UK-based activists and diaspora communities.",
+      "content_text": "22 human rights organizations led by Freedom House and Amnesty International UK sent joint letter to UK Prime Minister\n• Letter urges confrontation of China's transnational repression targeting activists and students in the UK\n• China using 'hybrid tactics' including arrest warrants, bounties, surveillance, and 'harassment by proxy' targeting families\n• Organizations document systematic digital intimidation to silence overseas dissent and diaspora communities\n• Letter highlights cases of imprisoned activists including British National Jimmy Lai, sentenced for journalism\n• Groups call for human rights impact assessments on all UK-China trade and investment deals\n• Timing coincides with planned UK state visit to China, creating diplomatic pressure point",
+      "date_published": "2026-01-22T11:02:40.249Z",
+      "date_modified": "2026-01-22T11:02:40.440Z",
+      "tags": [
+        "surveillance",
+        "censorship-resistance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://freedomhouse.org/article/joint-letter-uk-prime-minister-ahead-visit-china"
+        ]
+      }
+    },
+    {
+      "id": "ccef45ac-850d-407d-9bf0-8de2fff3c37e",
+      "url": "https://libertas.fgu.tech/posts/filipino-journalist-sentenced-12-18-years-on-terrorism-charg",
+      "title": "Filipino Journalist Sentenced 12-18 Years on Terrorism Charges Amid Evidence Planting Claims",
+      "summary": "Frenchie Mae Cumpio, 26-year-old Filipino journalist reporting on police/military abuses, sentenced to 12-18 years for terrorism financing after 5 years detention, with allegations authorities planted weapons during arrest.",
+      "content_text": "Filipino journalist Frenchie Mae Cumpio sentenced to 12-18 years in prison for terrorism financing charges\n• Cumpio has been detained since February 2020, arrested alongside four human rights defenders\n• Serious allegations that authorities planted weapons during raid to justify her arrest\n• Previously executive director of Eastern Vista news website, reported on police/military abuses in Eastern Visayas\n• International coalition of press freedom orgs (CPJ, RSF, NUJP) condemns verdict as 'grave miscarriage of justice'\n• UN Special Rapporteur on freedom of expression called for justice, visited her in prison in 2024\n• Case included in 2025 'Most Urgent' list by One Free Press Coalition\n• Multiple embassy representatives attended trial, showing international concern over press freedom erosion",
+      "date_published": "2026-01-22T11:02:23.415Z",
+      "date_modified": "2026-01-22T11:02:23.607Z",
+      "tags": [
+        "censorship-resistance",
+        "activism",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://cpj.org/2026/01/freefrenchiemaecumpio-ngos-condemn-journalists-conviction-as-blow-to-press-freedom-in-the-philippines/"
+        ]
+      }
+    },
+    {
+      "id": "4f988c95-772f-4329-9012-5a87334207fc",
+      "url": "https://libertas.fgu.tech/posts/gabon-implements-nationwide-internet-blackout-during-2023-pr",
+      "title": "Gabon Implements Nationwide Internet Blackout During 2023 Presidential Elections",
+      "summary": "Gabon cut internet access nationwide during August 2023 elections, with service restored after military coup. Government cited preventing violence and misinformation as justification.",
+      "content_text": "NetBlocks confirmed nation-scale internet blackout across Gabon on August 26, 2023 election day\n• Government justified shutdown as preventing 'calls for violence' and 'false information' spread\n• Blackout lasted from election day through August 30, when military officers seized power\n• Internet connectivity restored after President Ali Bongo was placed under house arrest\n• Communications Minister imposed territory-wide curfew alongside internet restrictions\n• Pattern continues trend of election-period internet shutdowns across 12+ African nations\n• Shutdown targeted multiple ISPs simultaneously, indicating coordinated government action",
+      "date_published": "2026-01-22T11:01:51.588Z",
+      "date_modified": "2026-01-22T11:01:51.793Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://netblocks.org/reports/internet-cut-in-gabon-on-election-day-Q8oxM3An"
+        ]
+      }
+    },
+    {
+      "id": "d52c10c9-0dee-4a92-85d5-02abcad0e525",
+      "url": "https://libertas.fgu.tech/posts/ooni-documents-decade-long-censorship-of-women-s-rights-site",
+      "title": "OONI Documents Decade-Long Censorship of Women's Rights Sites in Iran",
+      "summary": "OONI measurements show Iran has systematically blocked women's rights websites since at least 2014, with repression intensifying despite 2022 Women, Life, Freedom protests.",
+      "content_text": "OONI data confirms women's rights websites blocked in Iran since at least 2014\n• Censorship persists despite massive 2022 Women, Life, Freedom protests following Mahsa Jina Amini's death\n• UN reports intensified repression of women despite mass demonstrations\n• Iran maintains severe restrictions on both women's rights and information access\n• Pattern shows systematic targeting of human rights content, not just political sites\n• Long-term censorship data provides baseline for measuring circumvention needs\n• Demonstrates sustained government commitment to information control around gender issues",
+      "date_published": "2026-01-22T11:01:15.491Z",
+      "date_modified": "2026-01-22T11:01:15.700Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://ooni.org/post/2025-iran-censorship-womens-rights/"
+        ]
+      }
+    },
+    {
+      "id": "e30e6b3a-b2f8-4765-ba4d-9d18d7f46aae",
+      "url": "https://libertas.fgu.tech/posts/federal-judge-halts-fbi-search-of-washington-post-reporter-s",
+      "title": "Federal Judge Halts FBI Search of Washington Post Reporter's Seized Devices",
+      "summary": "Judge orders temporary stop to FBI search of devices seized from WaPo reporter Hannah Natanson's home in Pentagon leak investigation, citing First Amendment concerns.",
+      "content_text": "Federal judge ordered halt to FBI search of devices seized from Washington Post reporter Hannah Natanson\n• FBI executed search warrant at reporter's home last week as part of Pentagon contractor leak investigation\n• Natanson is not subject of investigation but devices seized in connection to alleged source leaks\n• Washington Post filed motions to return property and prevent device review pending court ruling\n• Post argues 'almost none of seized data' responsive to warrant seeking records from single contractor\n• Legal challenge cites First Amendment protections and attorney-client privilege concerns\n• Case highlights ongoing tension between national security investigations and press freedom\n• Temporary reprieve pending further court proceedings on whether search can resume",
+      "date_published": "2026-01-22T11:00:47.914Z",
+      "date_modified": "2026-01-22T11:00:48.025Z",
+      "tags": [
+        "surveillance",
+        "censorship-resistance",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 90,
+        "citations": [
+          "https://arstechnica.com/tech-policy/2026/01/judge-orders-stop-to-fbi-search-of-devices-seized-from-washington-post-reporter/"
+        ]
+      }
+    },
+    {
+      "id": "1d252679-b4f4-4448-ac9f-bfdd44147310",
+      "url": "https://libertas.fgu.tech/posts/iran-s-complete-internet-blackout-conceals-mass-violence-aga",
+      "title": "Iran's Complete Internet Blackout Conceals Mass Violence Against 2,403+ Killed Protesters",
+      "summary": "Iran imposed total internet shutdown Jan 8, 2026 during nationwide protests, killing 2,403+ protesters and arresting 18,000+ while blocking all communications including satellite internet to conceal human rights abuses.",
+      "content_text": "Complete nationwide internet blackout began Jan 8, 2026 at 18:45 UTC confirmed by Cloudflare data showing near-zero traffic\n• Preceded by 35% throttling and circumvention tool blocking starting Dec 29, 2025 following currency collapse protests\n• At least 2,403 protesters killed and over 18,000 arrested as of Jan 13, 2026 according to Human Rights Activists News Agency\n• Satellite internet services also disrupted through signal jamming and equipment confiscation, eliminating backup connectivity\n• Access Now and #KeepItOn coalition document pattern where internet shutdowns consistently precede mass violence in Iran\n• Tech activists and internet freedom community achieved limited connectivity restoration during shutdown\n• International judicial bodies now recognize internet shutdowns as concealment mechanism for investigating international crimes\n• Coalition of 40+ organizations demands immediate restoration of connectivity and independent investigation",
+      "date_published": "2026-01-21T06:47:26.800Z",
+      "date_modified": "2026-01-21T06:47:26.990Z",
+      "tags": [
+        "censorship-resistance",
+        "comms",
+        "surveillance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 95,
+        "credibility_score": 88,
+        "citations": [
+          "https://www.accessnow.org/press-release/keepiton-iran-digital-darkness-human-rights-abuses/"
+        ]
+      }
+    },
+    {
+      "id": "3258e802-12a0-447d-a9a8-16a39a48cf67",
+      "url": "https://libertas.fgu.tech/posts/bhutan-expands-state-blockchain-portfolio-with-sei-validator",
+      "title": "Bhutan Expands State Blockchain Portfolio with Sei Validator Node",
+      "summary": "Bhutan becomes validator on Sei blockchain, adding to existing Bitcoin mining operations and Ethereum-powered self-sovereign ID system in comprehensive state-level blockchain adoption.",
+      "content_text": "Bhutan officially becomes validator node on Sei blockchain network\n• Adds to existing portfolio including active Bitcoin mining operations\n• Previously launched self-sovereign identity system built on Ethereum\n• Represents rare case of comprehensive state-level blockchain adoption\n• Covers three key freedom tech areas: mining, identity sovereignty, and validation\n• Small nation demonstrating practical blockchain integration across government services\n• Pattern suggests strategic national blockchain diversification approach",
+      "date_published": "2026-01-21T06:46:52.121Z",
+      "date_modified": "2026-01-21T06:46:52.239Z",
+      "tags": [
+        "bitcoin",
+        "identity",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 72,
+        "credibility_score": 78,
+        "citations": [
+          "https://cointelegraph.com/news/bhutan-sei-blockchain-validator-digital-transformation",
+          "https://cointelegraph.com/news/bhutan-sei-blockchain-validator-digital-transformation?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+        ]
+      }
+    },
+    {
+      "id": "b0f7e524-bd71-492e-be01-7bcd56e34a5b",
+      "url": "https://libertas.fgu.tech/posts/eff-broken-copyright-damages-fuel-platform-censorship",
+      "title": "EFF: Broken Copyright Damages Fuel Platform Censorship",
+      "summary": "EFF highlights how U.S. copyright's statutory damages ($200-$150k per work) create financial incentives for platforms to over-censor, stifling online expression and fair use.",
+      "content_text": "U.S. copyright allows statutory damages of $200-$150,000 per work without proving actual harm\n• Unpredictable damages create financial Russian roulette for platforms and users\n• Platforms respond by implementing aggressive automated takedown systems like YouTube's Content ID\n• Massive damages awards (e.g. $222,000 for 24 music tracks) discourage fair use experimentation\n• System biases enforcement decisions toward major rightsholders over users\n• Users self-censor to avoid potentially ruinous penalties for creative re-use\n• Reform proposals include capping damages to multiples of actual harm or excluding good-faith fair use cases",
+      "date_published": "2026-01-21T06:46:12.891Z",
+      "date_modified": "2026-01-21T06:46:12.999Z",
+      "tags": [
+        "censorship-resistance",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/01/statutory-damages-fuel-copyright-based-censorship"
+        ]
+      }
+    },
+    {
+      "id": "71005a65-6894-458f-a99e-5f893f156bb7",
+      "url": "https://libertas.fgu.tech/posts/eff-guide-to-navigating-age-verification-gates-while-protect",
+      "title": "EFF Guide to Navigating Age Verification Gates While Protecting Privacy",
+      "summary": "EFF releases practical guide for users forced to comply with age verification mandates, offering privacy-preserving strategies when faced with age gates on major platforms.",
+      "content_text": "EFF provides harm reduction guidance for mandatory age verification despite opposing all age verification mandates\n• Recommends submitting absolute minimum data possible to reduce breach exposure\n• Facial age estimation works poorly for people of color, trans/nonbinary people, and people with disabilities\n• Meta uses Yoti for face scans, which uploads photos to third-party servers with tracker concerns\n• Document verification creates identity exposure beyond age - Discord breach leaked 70,000 ID photos\n• Some services like Incode (used by TikTok) retain ID images indefinitely by default\n• Credit card and email database verification offer less sensitive alternatives but still undermine anonymity\n• Guide covers evaluation framework: data required, access, retention, audits, and visibility",
+      "date_published": "2026-01-14T22:58:54.644Z",
+      "date_modified": "2026-01-14T22:58:54.844Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "identity",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/01/so-youve-hit-age-gate-what-now"
+        ]
+      }
+    },
+    {
+      "id": "4baca279-8983-4f01-8e09-c59500502286",
+      "url": "https://libertas.fgu.tech/posts/tails-7-4-adds-persistent-language-settings-updates-core-pri",
+      "title": "Tails 7.4 Adds Persistent Language Settings, Updates Core Privacy Tools",
+      "summary": "Tails 7.4 introduces persistent language/keyboard settings for easier access while updating Tor Browser to 15.0.4 and dropping BitTorrent downloads due to security concerns.",
+      "content_text": "New persistent language and keyboard layout feature saves settings unencrypted on USB for easier passphrase entry\n• Tor Browser updated to version 15.0.4 with latest security improvements\n• Thunderbird email client updated to 140.6.0 for secure communications\n• Linux kernel upgraded to 6.12.63 for improved hardware support and security\n• BitTorrent download support dropped due to security concerns with v1 format transition\n• Fixed GPG file handling in Kleopatra and VeraCrypt desktop crashes\n• Automatic upgrades available from Tails 7.0+ to maintain persistent storage",
+      "date_published": "2026-01-22T11:03:28.464Z",
+      "date_modified": "2026-01-22T11:03:28.663Z",
+      "tags": [
+        "privacy",
+        "censorship-resistance",
+        "surveillance",
+        "comms"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://tails.net/news/version_7.4/"
+        ]
+      }
+    },
+    {
+      "id": "8427a853-ffee-4c37-aae6-dce607b914f3",
+      "url": "https://libertas.fgu.tech/posts/22-rights-groups-urge-uk-pm-to-confront-china-on-transnation",
+      "title": "22 Rights Groups Urge UK PM to Confront China on Transnational Digital Repression",
+      "summary": "Freedom House and 21 other rights organizations called on UK PM to address China's transnational repression tactics including surveillance, harassment by proxy, and digital intimidation of UK-based activists and diaspora communities.",
+      "content_text": "22 human rights organizations led by Freedom House and Amnesty International UK sent joint letter to UK Prime Minister\n• Letter urges confrontation of China's transnational repression targeting activists and students in the UK\n• China using 'hybrid tactics' including arrest warrants, bounties, surveillance, and 'harassment by proxy' targeting families\n• Organizations document systematic digital intimidation to silence overseas dissent and diaspora communities\n• Letter highlights cases of imprisoned activists including British National Jimmy Lai, sentenced for journalism\n• Groups call for human rights impact assessments on all UK-China trade and investment deals\n• Timing coincides with planned UK state visit to China, creating diplomatic pressure point",
+      "date_published": "2026-01-22T11:02:40.249Z",
+      "date_modified": "2026-01-22T11:02:40.440Z",
+      "tags": [
+        "surveillance",
+        "censorship-resistance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://freedomhouse.org/article/joint-letter-uk-prime-minister-ahead-visit-china"
+        ]
+      }
+    },
+    {
+      "id": "ccef45ac-850d-407d-9bf0-8de2fff3c37e",
+      "url": "https://libertas.fgu.tech/posts/filipino-journalist-sentenced-12-18-years-on-terrorism-charg",
+      "title": "Filipino Journalist Sentenced 12-18 Years on Terrorism Charges Amid Evidence Planting Claims",
+      "summary": "Frenchie Mae Cumpio, 26-year-old Filipino journalist reporting on police/military abuses, sentenced to 12-18 years for terrorism financing after 5 years detention, with allegations authorities planted weapons during arrest.",
+      "content_text": "Filipino journalist Frenchie Mae Cumpio sentenced to 12-18 years in prison for terrorism financing charges\n• Cumpio has been detained since February 2020, arrested alongside four human rights defenders\n• Serious allegations that authorities planted weapons during raid to justify her arrest\n• Previously executive director of Eastern Vista news website, reported on police/military abuses in Eastern Visayas\n• International coalition of press freedom orgs (CPJ, RSF, NUJP) condemns verdict as 'grave miscarriage of justice'\n• UN Special Rapporteur on freedom of expression called for justice, visited her in prison in 2024\n• Case included in 2025 'Most Urgent' list by One Free Press Coalition\n• Multiple embassy representatives attended trial, showing international concern over press freedom erosion",
+      "date_published": "2026-01-22T11:02:23.415Z",
+      "date_modified": "2026-01-22T11:02:23.607Z",
+      "tags": [
+        "censorship-resistance",
+        "activism",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://cpj.org/2026/01/freefrenchiemaecumpio-ngos-condemn-journalists-conviction-as-blow-to-press-freedom-in-the-philippines/"
+        ]
+      }
+    },
+    {
+      "id": "4f988c95-772f-4329-9012-5a87334207fc",
+      "url": "https://libertas.fgu.tech/posts/gabon-implements-nationwide-internet-blackout-during-2023-pr",
+      "title": "Gabon Implements Nationwide Internet Blackout During 2023 Presidential Elections",
+      "summary": "Gabon cut internet access nationwide during August 2023 elections, with service restored after military coup. Government cited preventing violence and misinformation as justification.",
+      "content_text": "NetBlocks confirmed nation-scale internet blackout across Gabon on August 26, 2023 election day\n• Government justified shutdown as preventing 'calls for violence' and 'false information' spread\n• Blackout lasted from election day through August 30, when military officers seized power\n• Internet connectivity restored after President Ali Bongo was placed under house arrest\n• Communications Minister imposed territory-wide curfew alongside internet restrictions\n• Pattern continues trend of election-period internet shutdowns across 12+ African nations\n• Shutdown targeted multiple ISPs simultaneously, indicating coordinated government action",
+      "date_published": "2026-01-22T11:01:51.588Z",
+      "date_modified": "2026-01-22T11:01:51.793Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://netblocks.org/reports/internet-cut-in-gabon-on-election-day-Q8oxM3An"
+        ]
+      }
+    },
+    {
+      "id": "d52c10c9-0dee-4a92-85d5-02abcad0e525",
+      "url": "https://libertas.fgu.tech/posts/ooni-documents-decade-long-censorship-of-women-s-rights-site",
+      "title": "OONI Documents Decade-Long Censorship of Women's Rights Sites in Iran",
+      "summary": "OONI measurements show Iran has systematically blocked women's rights websites since at least 2014, with repression intensifying despite 2022 Women, Life, Freedom protests.",
+      "content_text": "OONI data confirms women's rights websites blocked in Iran since at least 2014\n• Censorship persists despite massive 2022 Women, Life, Freedom protests following Mahsa Jina Amini's death\n• UN reports intensified repression of women despite mass demonstrations\n• Iran maintains severe restrictions on both women's rights and information access\n• Pattern shows systematic targeting of human rights content, not just political sites\n• Long-term censorship data provides baseline for measuring circumvention needs\n• Demonstrates sustained government commitment to information control around gender issues",
+      "date_published": "2026-01-22T11:01:15.491Z",
+      "date_modified": "2026-01-22T11:01:15.700Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://ooni.org/post/2025-iran-censorship-womens-rights/"
+        ]
+      }
+    },
+    {
+      "id": "e30e6b3a-b2f8-4765-ba4d-9d18d7f46aae",
+      "url": "https://libertas.fgu.tech/posts/federal-judge-halts-fbi-search-of-washington-post-reporter-s",
+      "title": "Federal Judge Halts FBI Search of Washington Post Reporter's Seized Devices",
+      "summary": "Judge orders temporary stop to FBI search of devices seized from WaPo reporter Hannah Natanson's home in Pentagon leak investigation, citing First Amendment concerns.",
+      "content_text": "Federal judge ordered halt to FBI search of devices seized from Washington Post reporter Hannah Natanson\n• FBI executed search warrant at reporter's home last week as part of Pentagon contractor leak investigation\n• Natanson is not subject of investigation but devices seized in connection to alleged source leaks\n• Washington Post filed motions to return property and prevent device review pending court ruling\n• Post argues 'almost none of seized data' responsive to warrant seeking records from single contractor\n• Legal challenge cites First Amendment protections and attorney-client privilege concerns\n• Case highlights ongoing tension between national security investigations and press freedom\n• Temporary reprieve pending further court proceedings on whether search can resume",
+      "date_published": "2026-01-22T11:00:47.914Z",
+      "date_modified": "2026-01-22T11:00:48.025Z",
+      "tags": [
+        "surveillance",
+        "censorship-resistance",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 90,
+        "citations": [
+          "https://arstechnica.com/tech-policy/2026/01/judge-orders-stop-to-fbi-search-of-devices-seized-from-washington-post-reporter/"
+        ]
+      }
+    },
+    {
+      "id": "1d252679-b4f4-4448-ac9f-bfdd44147310",
+      "url": "https://libertas.fgu.tech/posts/iran-s-complete-internet-blackout-conceals-mass-violence-aga",
+      "title": "Iran's Complete Internet Blackout Conceals Mass Violence Against 2,403+ Killed Protesters",
+      "summary": "Iran imposed total internet shutdown Jan 8, 2026 during nationwide protests, killing 2,403+ protesters and arresting 18,000+ while blocking all communications including satellite internet to conceal human rights abuses.",
+      "content_text": "Complete nationwide internet blackout began Jan 8, 2026 at 18:45 UTC confirmed by Cloudflare data showing near-zero traffic\n• Preceded by 35% throttling and circumvention tool blocking starting Dec 29, 2025 following currency collapse protests\n• At least 2,403 protesters killed and over 18,000 arrested as of Jan 13, 2026 according to Human Rights Activists News Agency\n• Satellite internet services also disrupted through signal jamming and equipment confiscation, eliminating backup connectivity\n• Access Now and #KeepItOn coalition document pattern where internet shutdowns consistently precede mass violence in Iran\n• Tech activists and internet freedom community achieved limited connectivity restoration during shutdown\n• International judicial bodies now recognize internet shutdowns as concealment mechanism for investigating international crimes\n• Coalition of 40+ organizations demands immediate restoration of connectivity and independent investigation",
+      "date_published": "2026-01-21T06:47:26.800Z",
+      "date_modified": "2026-01-21T06:47:26.990Z",
+      "tags": [
+        "censorship-resistance",
+        "comms",
+        "surveillance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 95,
+        "credibility_score": 88,
+        "citations": [
+          "https://www.accessnow.org/press-release/keepiton-iran-digital-darkness-human-rights-abuses/"
+        ]
+      }
+    },
+    {
+      "id": "3258e802-12a0-447d-a9a8-16a39a48cf67",
+      "url": "https://libertas.fgu.tech/posts/bhutan-expands-state-blockchain-portfolio-with-sei-validator",
+      "title": "Bhutan Expands State Blockchain Portfolio with Sei Validator Node",
+      "summary": "Bhutan becomes validator on Sei blockchain, adding to existing Bitcoin mining operations and Ethereum-powered self-sovereign ID system in comprehensive state-level blockchain adoption.",
+      "content_text": "Bhutan officially becomes validator node on Sei blockchain network\n• Adds to existing portfolio including active Bitcoin mining operations\n• Previously launched self-sovereign identity system built on Ethereum\n• Represents rare case of comprehensive state-level blockchain adoption\n• Covers three key freedom tech areas: mining, identity sovereignty, and validation\n• Small nation demonstrating practical blockchain integration across government services\n• Pattern suggests strategic national blockchain diversification approach",
+      "date_published": "2026-01-21T06:46:52.121Z",
+      "date_modified": "2026-01-21T06:46:52.239Z",
+      "tags": [
+        "bitcoin",
+        "identity",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 72,
+        "credibility_score": 78,
+        "citations": [
+          "https://cointelegraph.com/news/bhutan-sei-blockchain-validator-digital-transformation",
+          "https://cointelegraph.com/news/bhutan-sei-blockchain-validator-digital-transformation?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+        ]
+      }
+    },
+    {
+      "id": "b0f7e524-bd71-492e-be01-7bcd56e34a5b",
+      "url": "https://libertas.fgu.tech/posts/eff-broken-copyright-damages-fuel-platform-censorship",
+      "title": "EFF: Broken Copyright Damages Fuel Platform Censorship",
+      "summary": "EFF highlights how U.S. copyright's statutory damages ($200-$150k per work) create financial incentives for platforms to over-censor, stifling online expression and fair use.",
+      "content_text": "U.S. copyright allows statutory damages of $200-$150,000 per work without proving actual harm\n• Unpredictable damages create financial Russian roulette for platforms and users\n• Platforms respond by implementing aggressive automated takedown systems like YouTube's Content ID\n• Massive damages awards (e.g. $222,000 for 24 music tracks) discourage fair use experimentation\n• System biases enforcement decisions toward major rightsholders over users\n• Users self-censor to avoid potentially ruinous penalties for creative re-use\n• Reform proposals include capping damages to multiples of actual harm or excluding good-faith fair use cases",
+      "date_published": "2026-01-21T06:46:12.891Z",
+      "date_modified": "2026-01-21T06:46:12.999Z",
+      "tags": [
+        "censorship-resistance",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/01/statutory-damages-fuel-copyright-based-censorship"
+        ]
+      }
+    },
+    {
+      "id": "71005a65-6894-458f-a99e-5f893f156bb7",
+      "url": "https://libertas.fgu.tech/posts/eff-guide-to-navigating-age-verification-gates-while-protect",
+      "title": "EFF Guide to Navigating Age Verification Gates While Protecting Privacy",
+      "summary": "EFF releases practical guide for users forced to comply with age verification mandates, offering privacy-preserving strategies when faced with age gates on major platforms.",
+      "content_text": "EFF provides harm reduction guidance for mandatory age verification despite opposing all age verification mandates\n• Recommends submitting absolute minimum data possible to reduce breach exposure\n• Facial age estimation works poorly for people of color, trans/nonbinary people, and people with disabilities\n• Meta uses Yoti for face scans, which uploads photos to third-party servers with tracker concerns\n• Document verification creates identity exposure beyond age - Discord breach leaked 70,000 ID photos\n• Some services like Incode (used by TikTok) retain ID images indefinitely by default\n• Credit card and email database verification offer less sensitive alternatives but still undermine anonymity\n• Guide covers evaluation framework: data required, access, retention, audits, and visibility",
+      "date_published": "2026-01-14T22:58:54.644Z",
+      "date_modified": "2026-01-14T22:58:54.844Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "identity",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/01/so-youve-hit-age-gate-what-now"
+        ]
+      }
+    },
+    {
+      "id": "4baca279-8983-4f01-8e09-c59500502286",
+      "url": "https://libertas.fgu.tech/posts/tails-7-4-adds-persistent-language-settings-updates-core-pri",
+      "title": "Tails 7.4 Adds Persistent Language Settings, Updates Core Privacy Tools",
+      "summary": "Tails 7.4 introduces persistent language/keyboard settings for easier access while updating Tor Browser to 15.0.4 and dropping BitTorrent downloads due to security concerns.",
+      "content_text": "New persistent language and keyboard layout feature saves settings unencrypted on USB for easier passphrase entry\n• Tor Browser updated to version 15.0.4 with latest security improvements\n• Thunderbird email client updated to 140.6.0 for secure communications\n• Linux kernel upgraded to 6.12.63 for improved hardware support and security\n• BitTorrent download support dropped due to security concerns with v1 format transition\n• Fixed GPG file handling in Kleopatra and VeraCrypt desktop crashes\n• Automatic upgrades available from Tails 7.0+ to maintain persistent storage",
+      "date_published": "2026-01-22T11:03:28.464Z",
+      "date_modified": "2026-01-22T11:03:28.663Z",
+      "tags": [
+        "privacy",
+        "censorship-resistance",
+        "surveillance",
+        "comms"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://tails.net/news/version_7.4/"
+        ]
+      }
+    },
+    {
+      "id": "8427a853-ffee-4c37-aae6-dce607b914f3",
+      "url": "https://libertas.fgu.tech/posts/22-rights-groups-urge-uk-pm-to-confront-china-on-transnation",
+      "title": "22 Rights Groups Urge UK PM to Confront China on Transnational Digital Repression",
+      "summary": "Freedom House and 21 other rights organizations called on UK PM to address China's transnational repression tactics including surveillance, harassment by proxy, and digital intimidation of UK-based activists and diaspora communities.",
+      "content_text": "22 human rights organizations led by Freedom House and Amnesty International UK sent joint letter to UK Prime Minister\n• Letter urges confrontation of China's transnational repression targeting activists and students in the UK\n• China using 'hybrid tactics' including arrest warrants, bounties, surveillance, and 'harassment by proxy' targeting families\n• Organizations document systematic digital intimidation to silence overseas dissent and diaspora communities\n• Letter highlights cases of imprisoned activists including British National Jimmy Lai, sentenced for journalism\n• Groups call for human rights impact assessments on all UK-China trade and investment deals\n• Timing coincides with planned UK state visit to China, creating diplomatic pressure point",
+      "date_published": "2026-01-22T11:02:40.249Z",
+      "date_modified": "2026-01-22T11:02:40.440Z",
+      "tags": [
+        "surveillance",
+        "censorship-resistance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://freedomhouse.org/article/joint-letter-uk-prime-minister-ahead-visit-china"
+        ]
+      }
+    },
+    {
+      "id": "ccef45ac-850d-407d-9bf0-8de2fff3c37e",
+      "url": "https://libertas.fgu.tech/posts/filipino-journalist-sentenced-12-18-years-on-terrorism-charg",
+      "title": "Filipino Journalist Sentenced 12-18 Years on Terrorism Charges Amid Evidence Planting Claims",
+      "summary": "Frenchie Mae Cumpio, 26-year-old Filipino journalist reporting on police/military abuses, sentenced to 12-18 years for terrorism financing after 5 years detention, with allegations authorities planted weapons during arrest.",
+      "content_text": "Filipino journalist Frenchie Mae Cumpio sentenced to 12-18 years in prison for terrorism financing charges\n• Cumpio has been detained since February 2020, arrested alongside four human rights defenders\n• Serious allegations that authorities planted weapons during raid to justify her arrest\n• Previously executive director of Eastern Vista news website, reported on police/military abuses in Eastern Visayas\n• International coalition of press freedom orgs (CPJ, RSF, NUJP) condemns verdict as 'grave miscarriage of justice'\n• UN Special Rapporteur on freedom of expression called for justice, visited her in prison in 2024\n• Case included in 2025 'Most Urgent' list by One Free Press Coalition\n• Multiple embassy representatives attended trial, showing international concern over press freedom erosion",
+      "date_published": "2026-01-22T11:02:23.415Z",
+      "date_modified": "2026-01-22T11:02:23.607Z",
+      "tags": [
+        "censorship-resistance",
+        "activism",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://cpj.org/2026/01/freefrenchiemaecumpio-ngos-condemn-journalists-conviction-as-blow-to-press-freedom-in-the-philippines/"
+        ]
+      }
+    },
+    {
+      "id": "4f988c95-772f-4329-9012-5a87334207fc",
+      "url": "https://libertas.fgu.tech/posts/gabon-implements-nationwide-internet-blackout-during-2023-pr",
+      "title": "Gabon Implements Nationwide Internet Blackout During 2023 Presidential Elections",
+      "summary": "Gabon cut internet access nationwide during August 2023 elections, with service restored after military coup. Government cited preventing violence and misinformation as justification.",
+      "content_text": "NetBlocks confirmed nation-scale internet blackout across Gabon on August 26, 2023 election day\n• Government justified shutdown as preventing 'calls for violence' and 'false information' spread\n• Blackout lasted from election day through August 30, when military officers seized power\n• Internet connectivity restored after President Ali Bongo was placed under house arrest\n• Communications Minister imposed territory-wide curfew alongside internet restrictions\n• Pattern continues trend of election-period internet shutdowns across 12+ African nations\n• Shutdown targeted multiple ISPs simultaneously, indicating coordinated government action",
+      "date_published": "2026-01-22T11:01:51.588Z",
+      "date_modified": "2026-01-22T11:01:51.793Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://netblocks.org/reports/internet-cut-in-gabon-on-election-day-Q8oxM3An"
+        ]
+      }
+    },
+    {
+      "id": "d52c10c9-0dee-4a92-85d5-02abcad0e525",
+      "url": "https://libertas.fgu.tech/posts/ooni-documents-decade-long-censorship-of-women-s-rights-site",
+      "title": "OONI Documents Decade-Long Censorship of Women's Rights Sites in Iran",
+      "summary": "OONI measurements show Iran has systematically blocked women's rights websites since at least 2014, with repression intensifying despite 2022 Women, Life, Freedom protests.",
+      "content_text": "OONI data confirms women's rights websites blocked in Iran since at least 2014\n• Censorship persists despite massive 2022 Women, Life, Freedom protests following Mahsa Jina Amini's death\n• UN reports intensified repression of women despite mass demonstrations\n• Iran maintains severe restrictions on both women's rights and information access\n• Pattern shows systematic targeting of human rights content, not just political sites\n• Long-term censorship data provides baseline for measuring circumvention needs\n• Demonstrates sustained government commitment to information control around gender issues",
+      "date_published": "2026-01-22T11:01:15.491Z",
+      "date_modified": "2026-01-22T11:01:15.700Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://ooni.org/post/2025-iran-censorship-womens-rights/"
+        ]
+      }
+    },
+    {
+      "id": "e30e6b3a-b2f8-4765-ba4d-9d18d7f46aae",
+      "url": "https://libertas.fgu.tech/posts/federal-judge-halts-fbi-search-of-washington-post-reporter-s",
+      "title": "Federal Judge Halts FBI Search of Washington Post Reporter's Seized Devices",
+      "summary": "Judge orders temporary stop to FBI search of devices seized from WaPo reporter Hannah Natanson's home in Pentagon leak investigation, citing First Amendment concerns.",
+      "content_text": "Federal judge ordered halt to FBI search of devices seized from Washington Post reporter Hannah Natanson\n• FBI executed search warrant at reporter's home last week as part of Pentagon contractor leak investigation\n• Natanson is not subject of investigation but devices seized in connection to alleged source leaks\n• Washington Post filed motions to return property and prevent device review pending court ruling\n• Post argues 'almost none of seized data' responsive to warrant seeking records from single contractor\n• Legal challenge cites First Amendment protections and attorney-client privilege concerns\n• Case highlights ongoing tension between national security investigations and press freedom\n• Temporary reprieve pending further court proceedings on whether search can resume",
+      "date_published": "2026-01-22T11:00:47.914Z",
+      "date_modified": "2026-01-22T11:00:48.025Z",
+      "tags": [
+        "surveillance",
+        "censorship-resistance",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 90,
+        "citations": [
+          "https://arstechnica.com/tech-policy/2026/01/judge-orders-stop-to-fbi-search-of-devices-seized-from-washington-post-reporter/"
+        ]
+      }
+    },
+    {
       "id": "1d252679-b4f4-4448-ac9f-bfdd44147310",
       "url": "https://libertas.fgu.tech/posts/iran-s-complete-internet-blackout-conceals-mass-violence-aga",
       "title": "Iran's Complete Internet Blackout Conceals Mass Violence Against 2,403+ Killed Protesters",
