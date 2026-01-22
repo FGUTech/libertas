@@ -293,8 +293,8 @@ function parseDigestBody(body: string): {
   const emergingPatterns: EmergingPattern[] = [];
   const lookingAhead: string[] = [];
 
-  // Extract executive TL;DR
-  const tldrMatch = body.match(/## Executive TL;DR\s*\n\n([\s\S]*?)(?=\n## |$)/);
+  // Extract TL;DR
+  const tldrMatch = body.match(/## TL;DR\s*\n\n([\s\S]*?)(?=\n## |$)/);
   if (tldrMatch) {
     executiveTldr = tldrMatch[1].trim();
   }
@@ -302,7 +302,7 @@ function parseDigestBody(body: string): {
   // Extract topic sections (## Section Title that aren't special sections)
   const sectionRegex = /## ([^\n]+)\s*\n\n([\s\S]*?)(?=\n## |$)/g;
   let sectionMatch;
-  const specialSections = ['Executive TL;DR', 'Emerging Patterns', 'Looking Ahead'];
+  const specialSections = ['TL;DR', 'Emerging Patterns', 'Looking Ahead'];
 
   while ((sectionMatch = sectionRegex.exec(body)) !== null) {
     const title = sectionMatch[1].trim();

@@ -119,52 +119,6 @@ Core infrastructure and workflow features required for initial launch.
 
 ---
 
-### 1.13c Workflow C: Feedback Intake Processing
-
-**Description**: Process "feedback" type submissions to create GitHub issues for platform improvements.
-
-**Requirements**:
-- [x] Add conditional branch in Workflow C to detect `type: 'feedback'` submissions
-- [x] Map `category` field to GitHub issue labels:
-  - `bug` → labels: `bug`, `feedback`
-  - `feature` → labels: `enhancement`, `feedback`
-  - `content` → labels: `content`, `feedback`
-  - `other` → labels: `feedback`, `triage-needed`
-- [x] Claude API assessment uses `runtime.use_stubs` toggle (shares IF node pattern from 1.13):
-  - Detect spam/abuse and set `is_spam` flag
-  - Assess priority based on content severity
-  - Extract actionable items from message
-  - Suggest appropriate assignees or project areas
-- [x] GitHub issue creation uses `runtime.use_stubs` toggle (shares IF node pattern from 1.13):
-  - `bug`/`feature` → main Libertas repo
-  - `content` → potentially separate content issues or same repo with label
-- [x] Format issue body with:
-  - Original feedback message
-  - Submission ID for reference
-  - Contact email (if provided and user consented to follow-up)
-  - Category and priority assessment
-- [x] Update submission status to `triaged` after issue creation
-- [x] If `requires_response: true`, add to response queue
-
-**Implementation Notes**:
-- Feedback submissions do NOT generate insights or project ideas
-- Use simpler processing path than story/project types
-- Spam detection is critical for this intake type (public feedback forms attract abuse)
-- Consider auto-closing duplicate issues if similar feedback already exists
-- Inherits stub/real toggle from parent 1.13 workflow
-
-**Implementation Summary** (completed):
-- Created `agents/intake-feedback-assess.md` - Feedback assessment agent prompt
-- Created `/api/agents/intake-feedback-assess` - API route to serve agent prompt
-- Added "Is Feedback?" branch to Workflow C after "Is Project?"
-- Implemented feedback assessment (stub + Claude API) with spam detection
-- Implemented category → label mapping in "Map Feedback to Labels" node
-- Created feedback-specific GitHub issue creation with category-based labels
-- Submission status updated to 'triaged' after issue creation
-- Full stub/real toggle support for both assessment and GitHub creation
-
----
-
 # Phase 2: Nice-to-have
 
 Features that enhance the system but aren't critical for launch.

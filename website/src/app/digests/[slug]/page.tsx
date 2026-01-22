@@ -115,7 +115,7 @@ export default async function DigestPage({ params }: DigestPageProps) {
 
             {/* Executive TL;DR */}
             <div className="mb-8 p-6 bg-[var(--bg-digest)] border border-[var(--accent-amber)] rounded-lg">
-              <h2 className="text-h3 text-[var(--accent-amber)] mb-3">Executive TL;DR</h2>
+              <h2 className="text-h3 text-[var(--accent-amber)] mb-3">TL;DR</h2>
               <p className="text-body text-[var(--fg-secondary)] leading-relaxed">
                 {digest.executiveTldr}
               </p>

@@ -8,44 +8,6 @@ Feature roadmap for the Libertas website, broken into MVP, Nice-to-have, and Fut
 
 Hey, I am working to implement features for the libertas website from the roadmap. Let's continue with implementing:
 
-# Phase 1: MVP
-
-Core features for initial launch. Focus on content display and intake.
-
-### 1.10 Digest Viewing in Unified Feed
-
-**Description**: Display weekly digests alongside insights in the posts feed, with distinct styling and a dedicated detail page.
-
-**Requirements**:
-- [ ] Create `Digest` TypeScript type in `types/index.ts`
-- [ ] Create unified `ContentItem` discriminated union type (`Post | Digest`)
-- [ ] Extend content loader (`lib/posts.ts`) to read from `/content/digests/` directory
-- [ ] Merge and sort insights + digests by date in unified feed
-- [ ] Update `PostCard` component to detect content type and render differently for digests:
-  - Different border color (amber/gold vs green for insights)
-  - "Weekly Digest" badge/label
-  - Date range display (e.g., "Jan 7 - Jan 13, 2026")
-  - Insight count instead of relevance score
-  - Top topics preview
-- [ ] Create `/digests/[slug]` route for digest detail pages
-- [ ] Create `DigestDetail` component showing:
-  - Executive TL;DR
-  - Sections grouped by topic with linked insights
-  - Emerging patterns
-  - Looking ahead section
-  - Sources list
-- [ ] Update topic filtering to include digests when `top_topics` matches active filter
-- [ ] Ensure digests appear in feed when no filter is active
-
-**Implementation Notes**:
-- Digests use slug format `weekly-{YYYY-MM-DD}` (end date of the period)
-- Digest frontmatter fields: `type`, `period_start`, `period_end`, `insight_count`, `top_topics`, `published_at`
-- Reuse existing card grid layout — digests are just a different card variant
-- Detail page is separate route (`/digests/[slug]`) since content structure differs significantly from insights
-- No changes to navigation needed — digests discovered through the unified posts feed
-
----
-
 # Phase 2: Nice-to-have
 
 Features that enhance the experience but aren't critical for launch.

@@ -77,17 +77,22 @@ The digest will be rendered as a markdown file with the following structure:
 
 ```markdown
 ---
-id: "digest-2026-01-05"
-type: "weekly-digest"
-published_at: "2026-01-05T00:00:00Z"
+type: digest
+title: "Freedom Tech Weekly: December 29 - January 4, 2026"
+slug: weekly-2026-01-04
 period_start: "2025-12-29"
 period_end: "2026-01-04"
 insight_count: 12
+top_topics:
+  - censorship-resistance
+  - bitcoin
+  - privacy
+published_at: "2026-01-05T00:00:00Z"
+status: published
 ---
 
-# Weekly Freedom Tech Digest
-
 ## TL;DR
+
 [2-3 sentence executive summary]
 
 ## Top Signals
