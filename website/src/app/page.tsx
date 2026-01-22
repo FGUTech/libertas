@@ -5,7 +5,7 @@ import { getAllContent, isPost } from "@/lib/posts";
 
 export default function Home() {
   // Load all content (posts + digests) server-side (uses filesystem, falls back to mock if no content)
-  const content = getAllContent().slice(0, 5);
+  const content = getAllContent().slice(0, 6);
 
   return (
     <div className="matrix-bg min-h-screen">

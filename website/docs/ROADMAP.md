@@ -18,9 +18,9 @@ Workflow D:
 
 Database Checks:
 
-Configuration checks:
-
 Agent Promp Checks:
+  - Classify: Verify all inputs are passed, remove should_summarize
+  - 
 
 Open Source
 

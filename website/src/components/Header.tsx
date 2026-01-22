@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { SearchInput } from './SearchInput';
 
@@ -99,9 +100,16 @@ export function Header() {
             <Link
               href="/"
               onClick={closeMobileMenu}
-              className="text-mono text-[var(--accent-primary)] hover:glow-text transition-all group"
+              className="flex items-center gap-1 text-mono text-[var(--accent-primary)] hover:glow-text transition-all group !text-[20px]"
             >
-              <span className="group-hover:animate-pulse">{'>'}</span> libertas
+              <Image
+                src="/libertas-mark.svg"
+                alt="Libertas logo"
+                width={24}
+                height={24}
+                className="group-hover:drop-shadow-[0_0_8px_var(--accent-primary)] transition-all"
+              />
+              <span>libertas</span>
             </Link>
 
             {/* Desktop Navigation */}
