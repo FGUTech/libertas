@@ -8,11 +8,11 @@ import * as yaml from 'js-yaml';
 // =============================================================================
 
 interface ThresholdsConfig {
+  runtime: {
+    use_stubs: boolean;
+  };
   ingestion: {
     relevance_threshold: number;
-    max_items_per_run: number;
-    retry_attempts: number;
-    retry_delay_seconds: number;
   };
   publishing: {
     auto_publish_relevance: number;
@@ -46,6 +46,11 @@ interface ThresholdsConfig {
   digest: {
     min_insights: number;
     max_per_section: number;
+  };
+  intake: {
+    story_queue_relevance_threshold: number;
+    story_queue_credibility_threshold: number;
+    max_stories_per_run: number;
   };
   rate_limiting: {
     requests_per_minute: number;

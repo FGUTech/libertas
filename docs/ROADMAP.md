@@ -90,6 +90,10 @@ Features that enhance the system but aren't critical for launch.
 - [ ] Add node to skip degraded sources (check `source_health` table)
 - [ ] Configure circuit breaker: 5 failures → 24hr cooldown (per `thresholds.yml`)
 
+**Threshold Integration** (`config/thresholds.yml`):
+- `circuit_breaker.failure_threshold` (default: 5) — consecutive failures before marking source as degraded
+- `circuit_breaker.cooldown_hours` (default: 24) — hours to wait before retrying degraded source
+
 **Implementation Notes**:
 - `source_health` table and triggers already exist in schema
 - Circuit breaker logic exists but node is disabled
@@ -126,9 +130,15 @@ Features that enhance the system but aren't critical for launch.
 **Requirements**:
 - [ ] Enable pgvector extension in Cloud SQL (already in schema)
 - [ ] Generate embeddings for content via Claude API
-- [ ] Implement similarity threshold checking (0.85 per `thresholds.yml`)
+- [ ] Implement similarity threshold checking per `thresholds.yml`
 - [ ] Add near-duplicate detection before insight generation
 - [ ] Wire up `deduper.ts` interface (currently returns no-op)
+- [ ] Add workflow IF node to check `deduplication.semantic_enabled` before running similarity checks
+
+**Threshold Integration** (`config/thresholds.yml`):
+- `deduplication.semantic_enabled` (default: false) — toggle semantic dedup on/off
+- `deduplication.semantic_threshold` (default: 0.85) — similarity score above which items are considered duplicates (0.0-1.0)
+- `deduplication.exact_match` (default: true) — always enabled, uses content hash
 
 **Implementation Notes**:
 - Interface exists in codebase but returns no-op
@@ -264,6 +274,30 @@ Features that enhance the system but aren't critical for launch.
 
 ---
 
+### 2.9a Review Queue & Publishing Gates
+
+**Description**: Config-driven review queue triggers and publishing gate enforcement.
+
+**Requirements**:
+- [ ] Wire `review.*` thresholds into Workflow A to queue content for human review
+- [ ] Make `require_citations` config-driven (currently hardcoded `hasCitations` check)
+- [ ] Add safety check integration with `require_safety_check` threshold
+- [ ] Add review queue UI integration (depends on 2.9 Admin Dashboard)
+
+**Threshold Integration** (`config/thresholds.yml`):
+- `review.relevance_below` (default: 70) — queue for review if relevance score below this
+- `review.credibility_below` (default: 60) — queue for review if credibility score below this
+- `review.safety_concern_always_review` (default: true) — always queue if safety flagged
+- `publishing.require_citations` (default: true) — require at least one citation for auto-publish
+- `publishing.require_safety_check` (default: true) — require safety check pass for auto-publish
+
+**Implementation Notes**:
+- `hasCitations` check exists in Parse Summary & Gates but doesn't read from config
+- Review thresholds are inverse of auto-publish thresholds
+- Safety check integration may require new classifier output field
+
+---
+
 ### 2.10 JSON Schema Runtime Validation
 
 **Description**: Wire JSON schemas for runtime validation throughout system.
@@ -308,13 +342,21 @@ Features for future consideration after core functionality is stable.
 **Description**: Automated code scaffolding from approved project ideas.
 
 **Requirements**:
-- Gate validation logic (human approval required)
-- Category allowlist enforcement
-- Branch creation automation
-- ScaffoldGenerator agent integration
-- File generation and commit
-- Draft PR creation with reviewer assignment
-- Audit logging and rollback capability
+- [ ] Gate validation logic (human approval required)
+- [ ] Category allowlist/blocklist enforcement per `thresholds.yml`
+- [ ] Minimum score gates for feasibility and impact
+- [ ] Branch creation automation
+- [ ] ScaffoldGenerator agent integration
+- [ ] File generation and commit
+- [ ] Draft PR creation with reviewer assignment
+- [ ] Audit logging and rollback capability
+
+**Threshold Integration** (`config/thresholds.yml`):
+- `vibe_coding.requires_human_approval` (default: true) — hard gate, cannot be disabled in v1
+- `vibe_coding.allowed_categories` — categories eligible for auto-scaffolding (internal-tooling, documentation, data-processing)
+- `vibe_coding.blocked_categories` — categories never auto-scaffolded (security-critical, user-facing-auth, financial)
+- `vibe_coding.min_feasibility` (default: 70) — minimum feasibility score to proceed
+- `vibe_coding.min_impact` (default: 60) — minimum impact score to proceed
 
 **Notes**: Human approval is a hard requirement; never auto-merge.
 
@@ -412,12 +454,35 @@ Features for future consideration after core functionality is stable.
 **Description**: Production monitoring infrastructure.
 
 **Requirements**:
-- Workflow failure alerts
-- Database performance monitoring
-- API rate limit warnings
-- Source degradation notifications
+- [ ] Workflow failure alerts
+- [ ] Database performance monitoring
+- [ ] API rate limit warnings
+- [ ] Source degradation notifications
 
 **Notes**: Consider Grafana or similar for dashboards.
+
+---
+
+### 3.9 Performance SLO Tracking
+
+**Description**: Track workflow performance against defined SLO targets.
+
+**Requirements**:
+- [ ] Instrument workflows to measure latency at each stage
+- [ ] Compare measured latency against `performance.*` targets
+- [ ] Alert when targets are exceeded
+- [ ] Dashboard visualization of performance trends
+
+**Threshold Integration** (`config/thresholds.yml`):
+- `performance.ingestion_latency_target` (default: 30s) — max seconds for single source ingestion
+- `performance.classification_latency_target` (default: 10s) — max seconds for LLM classification
+- `performance.end_to_end_target` (default: 300s) — max seconds from fetch to publish
+- `performance.webhook_response_target` (default: 0.5s) — max seconds for webhook response
+
+**Implementation Notes**:
+- These are monitoring targets, not hard enforcement gates
+- Use for SLO dashboards and alerting thresholds
+- Pairs with 3.8 Monitoring and Alerting infrastructure
 
 ---
 
@@ -434,9 +499,11 @@ Features for future consideration after core functionality is stable.
 | Config Management UI | Low | Medium | P1 |
 | Additional Source Types | Medium | High | P1 |
 | Admin Dashboard | Medium | High | P1 |
+| Review Queue & Publishing Gates | Medium | Low | P1 |
 | Vibe Coding Pipeline | Low | High | P2 |
 | Social Media Bots | Low | High | P2 |
 | Self-hosted LLM | Low | High | P2 |
+| Performance SLO Tracking | Low | Medium | P2 |
 
 ---
 

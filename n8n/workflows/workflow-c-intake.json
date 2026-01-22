@@ -64,7 +64,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Merge thresholds config and intake-classify agent prompt from fetched data\nconst allItems = $input.all();\nconst webhookData = $('Rate Limit Check').first().json;\n\nlet thresholdsConfig = {};\nlet intakeClassifyPrompt = null;\n\nfor (const item of allItems) {\n  const data = item.json;\n  // Thresholds config has runtime/ingestion/publishing sections\n  if (data.runtime || data.ingestion || data.publishing || data.rate_limiting) {\n    thresholdsConfig = data;\n  }\n  // Intake classify prompt has content field\n  else if (data.content && (data.name === 'intake-classify' || data.content.includes('intake classifier'))) {\n    intakeClassifyPrompt = data;\n  } else if (data.content) {\n    // Fallback: any content is likely the prompt\n    intakeClassifyPrompt = data;\n  }\n}\n\n// Get rate limiting config\nconst rateLimiting = thresholdsConfig.rate_limiting || {};\nconst configInfo = {\n  requestsPerMinute: rateLimiting.requests_per_minute || 10,\n  requestsPerHour: rateLimiting.requests_per_hour || 100,\n  globalPerMinute: rateLimiting.global_per_minute || 100\n};\n\nconsole.log(`Loaded thresholds config: runtime.use_stubs=${thresholdsConfig.runtime?.use_stubs}`);\nconsole.log(`Loaded intake-classify prompt: ${intakeClassifyPrompt?.content?.length || 0} chars`);\nconsole.log(`Rate limiting config loaded: ${JSON.stringify(configInfo)}`);\n\nreturn [{\n  json: {\n    ...thresholdsConfig,\n    _agents: {\n      intakeClassify: intakeClassifyPrompt?.content || ''\n    },\n    _webhookData: webhookData,\n    _rateLimitConfig: configInfo\n  }\n}];"
+        "jsCode": "// Merge thresholds config and intake-classify agent prompt from fetched data\nconst allItems = $input.all();\nconst webhookData = $('Rate Limit Check').first().json;\n\nlet thresholdsConfig = {};\nlet intakeClassifyPrompt = null;\n\nfor (const item of allItems) {\n  const data = item.json;\n  // Thresholds config has runtime/ingestion/publishing/intake sections\n  if (data.runtime || data.ingestion || data.publishing || data.rate_limiting || data.intake) {\n    thresholdsConfig = data;\n  }\n  // Intake classify prompt has content field\n  else if (data.content && (data.name === 'intake-classify' || data.content.includes('intake classifier'))) {\n    intakeClassifyPrompt = data;\n  } else if (data.content) {\n    // Fallback: any content is likely the prompt\n    intakeClassifyPrompt = data;\n  }\n}\n\n// Get rate limiting config\nconst rateLimiting = thresholdsConfig.rate_limiting || {};\nconst configInfo = {\n  requestsPerMinute: rateLimiting.requests_per_minute || 10,\n  requestsPerHour: rateLimiting.requests_per_hour || 100,\n  globalPerMinute: rateLimiting.global_per_minute || 100\n};\n\n// Get intake thresholds for story queue decision\nconst intakeConfig = thresholdsConfig.intake || {};\n\nconsole.log(`Loaded thresholds config: runtime.use_stubs=${thresholdsConfig.runtime?.use_stubs}`);\nconsole.log(`Loaded intake thresholds: relevance=${intakeConfig.story_queue_relevance_threshold}, credibility=${intakeConfig.story_queue_credibility_threshold}`);\nconsole.log(`Loaded intake-classify prompt: ${intakeClassifyPrompt?.content?.length || 0} chars`);\nconsole.log(`Rate limiting config loaded: ${JSON.stringify(configInfo)}`);\n\nreturn [{\n  json: {\n    ...thresholdsConfig,\n    _agents: {\n      intakeClassify: intakeClassifyPrompt?.content || ''\n    },\n    _webhookData: webhookData,\n    _rateLimitConfig: configInfo\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -703,7 +703,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Story classification stub for testing (1.13a)\n// Provides keyword-based scoring without calling Claude API\n// Now includes source content if fetched\n\n// Get data - try to get from source fetch nodes first, fall back to Parse LLM Response\nlet inputData;\ntry {\n  inputData = $('Extract Text from HTML').first().json;\n} catch (e1) {\n  try {\n    inputData = $('Handle Fetch Error').first().json;\n  } catch (e2) {\n    try {\n      inputData = $('No Source URL').first().json;\n    } catch (e3) {\n      inputData = $('Parse LLM Response').first().json;\n    }\n  }\n}\n\nconst storyData = inputData._storyData;\nconst message = inputData.message;\nconst title = storyData?.title || '';\nconst sourceUrl = storyData?.sourceUrl;\nconst region = storyData?.region;\nconst sourceContent = inputData._sourceContent?.extracted || '';\n\n// Combine title, message, and source content for analysis\nconst fullText = (title + ' ' + message + ' ' + sourceContent).toLowerCase();\n\n// Topic detection\nconst topics = [];\nif (fullText.includes('bitcoin') || fullText.includes('btc') || fullText.includes('lightning')) topics.push('bitcoin');\nif (fullText.includes('signal') || fullText.includes('mesh') || fullText.includes('briar') || fullText.includes('messaging')) topics.push('comms');\nif (fullText.includes('vpn') || fullText.includes('tor') || fullText.includes('privacy') || fullText.includes('encrypt')) topics.push('privacy');\nif (fullText.includes('censor') || fullText.includes('shutdown') || fullText.includes('blocked') || fullText.includes('ban')) topics.push('censorship-resistance');\nif (fullText.includes('activist') || fullText.includes('protest') || fullText.includes('dissident') || fullText.includes('journalist')) topics.push('activism');\nif (fullText.includes('surveillance') || fullText.includes('spy') || fullText.includes('monitor')) topics.push('surveillance');\nif (fullText.includes('identity') || fullText.includes('passport') || fullText.includes('kyc')) topics.push('identity');\nif (fullText.includes('payment') || fullText.includes('money') || fullText.includes('remittance')) topics.push('payments');\nif (topics.length === 0) topics.push('sovereignty');\n\n// Freedom relevance scoring\nlet freedom_relevance_score = 30;\nif (topics.includes('censorship-resistance')) freedom_relevance_score += 25;\nif (topics.includes('activism')) freedom_relevance_score += 20;\nif (topics.includes('bitcoin') || topics.includes('comms')) freedom_relevance_score += 15;\nif (fullText.includes('shutdown') || fullText.includes('repression')) freedom_relevance_score += 15;\nif (fullText.includes('use') || fullText.includes('deployed') || fullText.includes('helped')) freedom_relevance_score += 10;\nfreedom_relevance_score = Math.min(freedom_relevance_score, 100);\n\n// Credibility scoring\nlet credibility_score = 40;\nif (sourceUrl && inputData._sourceContent?.fetchSuccess) {\n  credibility_score = 60;\n  if (sourceUrl.includes('reuters') || sourceUrl.includes('bbc') || sourceUrl.includes('aljazeera')) {\n    credibility_score = 75;\n  }\n} else if (sourceUrl) {\n  credibility_score = 55;\n} else {\n  credibility_score = Math.min(credibility_score + 15, 60);\n}\n\n// Extract geo\nconst geo = [];\nif (region) geo.push(region);\nconst countries = ['Iran', 'China', 'Russia', 'Venezuela', 'Myanmar', 'Sudan', 'Nigeria', 'Uganda', 'Brazil', 'India'];\nfor (const country of countries) {\n  if (fullText.includes(country.toLowerCase()) && !geo.includes(country)) {\n    geo.push(country);\n  }\n}\n\n// Safety concern detection\nconst safety_concern = (fullText.includes('name') && fullText.includes('activist')) ||\n                       (fullText.includes('location') && fullText.includes('dissident')) ||\n                       fullText.includes('address') ||\n                       fullText.includes('phone number');\n\nlet risk_level = 'low';\nif (fullText.includes('activist') || fullText.includes('dissident') || fullText.includes('journalist')) risk_level = 'medium';\nif (safety_concern) risk_level = 'high';\n\nlet priority = storyData?.urgency || 'normal';\nif (fullText.includes('emergency') || fullText.includes('ongoing')) priority = 'urgent';\n\nconst summary = (title || message.substring(0, 100)).substring(0, 200).replace(/\\n/g, ' ').trim() + \n                (message.length > 100 && !title ? '...' : '');\n\nconst should_queue_for_insight = freedom_relevance_score >= 80 && credibility_score >= 40 && !safety_concern;\n\nconst result = {\n  topics,\n  freedom_relevance_score,\n  credibility_score,\n  geo,\n  safety_concern,\n  reasoning: `Stub: ${topics.length} topics, relevance=${freedom_relevance_score}, cred=${credibility_score}${sourceContent ? ' (source fetched)' : sourceUrl ? ' (source provided)' : ' (no source)'}`,\n  risk_level,\n  priority,\n  summary,\n  should_queue_for_insight,\n  key_entities: []\n};\n\nreturn [{\n  json: {\n    content: [{ type: 'text', text: JSON.stringify(result) }],\n    _submissionId: inputData.submissionId,\n    _message: message,\n    _storyData: storyData,\n    _sourceContent: inputData._sourceContent,\n    _runtime: inputData._runtime\n  }\n}];"
+        "jsCode": "// Story classification stub for testing (1.13a)\n// Provides keyword-based scoring without calling Claude API\n// Now includes source content if fetched\n\n// Get data - try to get from source fetch nodes first, fall back to Parse LLM Response\nlet inputData;\ntry {\n  inputData = $('Extract Text from HTML').first().json;\n} catch (e1) {\n  try {\n    inputData = $('Handle Fetch Error').first().json;\n  } catch (e2) {\n    try {\n      inputData = $('No Source URL').first().json;\n    } catch (e3) {\n      inputData = $('Parse LLM Response').first().json;\n    }\n  }\n}\n\nconst storyData = inputData._storyData;\nconst message = inputData.message;\nconst title = storyData?.title || '';\nconst sourceUrl = storyData?.sourceUrl;\nconst region = storyData?.region;\nconst sourceContent = inputData._sourceContent?.extracted || '';\n\n// Combine title, message, and source content for analysis\nconst fullText = (title + ' ' + message + ' ' + sourceContent).toLowerCase();\n\n// Topic detection\nconst topics = [];\nif (fullText.includes('bitcoin') || fullText.includes('btc') || fullText.includes('lightning')) topics.push('bitcoin');\nif (fullText.includes('signal') || fullText.includes('mesh') || fullText.includes('briar') || fullText.includes('messaging')) topics.push('comms');\nif (fullText.includes('vpn') || fullText.includes('tor') || fullText.includes('privacy') || fullText.includes('encrypt')) topics.push('privacy');\nif (fullText.includes('censor') || fullText.includes('shutdown') || fullText.includes('blocked') || fullText.includes('ban')) topics.push('censorship-resistance');\nif (fullText.includes('activist') || fullText.includes('protest') || fullText.includes('dissident') || fullText.includes('journalist')) topics.push('activism');\nif (fullText.includes('surveillance') || fullText.includes('spy') || fullText.includes('monitor')) topics.push('surveillance');\nif (fullText.includes('identity') || fullText.includes('passport') || fullText.includes('kyc')) topics.push('identity');\nif (fullText.includes('payment') || fullText.includes('money') || fullText.includes('remittance')) topics.push('payments');\nif (topics.length === 0) topics.push('sovereignty');\n\n// Freedom relevance scoring\nlet freedom_relevance_score = 30;\nif (topics.includes('censorship-resistance')) freedom_relevance_score += 25;\nif (topics.includes('activism')) freedom_relevance_score += 20;\nif (topics.includes('bitcoin') || topics.includes('comms')) freedom_relevance_score += 15;\nif (fullText.includes('shutdown') || fullText.includes('repression')) freedom_relevance_score += 15;\nif (fullText.includes('use') || fullText.includes('deployed') || fullText.includes('helped')) freedom_relevance_score += 10;\nfreedom_relevance_score = Math.min(freedom_relevance_score, 100);\n\n// Credibility scoring\nlet credibility_score = 40;\nif (sourceUrl && inputData._sourceContent?.fetchSuccess) {\n  credibility_score = 60;\n  if (sourceUrl.includes('reuters') || sourceUrl.includes('bbc') || sourceUrl.includes('aljazeera')) {\n    credibility_score = 75;\n  }\n} else if (sourceUrl) {\n  credibility_score = 55;\n} else {\n  credibility_score = Math.min(credibility_score + 15, 60);\n}\n\n// Extract geo\nconst geo = [];\nif (region) geo.push(region);\nconst countries = ['Iran', 'China', 'Russia', 'Venezuela', 'Myanmar', 'Sudan', 'Nigeria', 'Uganda', 'Brazil', 'India'];\nfor (const country of countries) {\n  if (fullText.includes(country.toLowerCase()) && !geo.includes(country)) {\n    geo.push(country);\n  }\n}\n\n// Safety concern detection\nconst safety_concern = (fullText.includes('name') && fullText.includes('activist')) ||\n                       (fullText.includes('location') && fullText.includes('dissident')) ||\n                       fullText.includes('address') ||\n                       fullText.includes('phone number');\n\nlet risk_level = 'low';\nif (fullText.includes('activist') || fullText.includes('dissident') || fullText.includes('journalist')) risk_level = 'medium';\nif (safety_concern) risk_level = 'high';\n\nlet priority = storyData?.urgency || 'normal';\nif (fullText.includes('emergency') || fullText.includes('ongoing')) priority = 'urgent';\n\nconst summary = (title || message.substring(0, 100)).substring(0, 200).replace(/\\n/g, ' ').trim() + \n                (message.length > 100 && !title ? '...' : '');\n\n// Note: should_queue_for_insight removed - queue decision now made in workflow based on thresholds\n\nconst result = {\n  topics,\n  freedom_relevance_score,\n  credibility_score,\n  geo,\n  safety_concern,\n  reasoning: `Stub: ${topics.length} topics, relevance=${freedom_relevance_score}, cred=${credibility_score}${sourceContent ? ' (source fetched)' : sourceUrl ? ' (source provided)' : ' (no source)'}`,\n  risk_level,\n  priority,\n  summary,\n  key_entities: []\n};\n\nreturn [{\n  json: {\n    content: [{ type: 'text', text: JSON.stringify(result) }],\n    _submissionId: inputData.submissionId,\n    _message: message,\n    _storyData: storyData,\n    _sourceContent: inputData._sourceContent,\n    _runtime: inputData._runtime\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -772,7 +772,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Parse story classification LLM response\nconst input = $input.first().json;\nlet parsed;\n\ntry {\n  let text = input.content[0].text;\n  \n  // Strip markdown code blocks if present\n  text = text.trim();\n  if (text.startsWith('```')) {\n    text = text.replace(/^```(?:json)?\\s*\\n?/, '');\n    text = text.replace(/\\n?```\\s*$/, '');\n  }\n  \n  parsed = JSON.parse(text.trim());\n} catch (e) {\n  console.log('Parse Story LLM Response error:', e.message);\n  // Fallback\n  parsed = {\n    topics: ['needs-review'],\n    freedom_relevance_score: 50,\n    credibility_score: 30,\n    geo: [],\n    safety_concern: false,\n    reasoning: 'Failed to parse: ' + e.message,\n    risk_level: 'medium',\n    priority: 'normal',\n    summary: 'Parse error - manual review',\n    should_queue_for_insight: false,\n    key_entities: []\n  };\n}\n\n// Ensure all required fields with defaults\nconst result = {\n  topics: Array.isArray(parsed.topics) ? parsed.topics : ['general'],\n  freedom_relevance_score: parseInt(parsed.freedom_relevance_score) || 50,\n  credibility_score: parseInt(parsed.credibility_score) || 30,\n  geo: Array.isArray(parsed.geo) ? parsed.geo : [],\n  safety_concern: Boolean(parsed.safety_concern),\n  reasoning: parsed.reasoning || '',\n  risk_level: parsed.risk_level || 'medium',\n  priority: parsed.priority || 'normal',\n  summary: (parsed.summary || '').substring(0, 200),\n  should_queue_for_insight: Boolean(parsed.should_queue_for_insight),\n  key_entities: Array.isArray(parsed.key_entities) ? parsed.key_entities : [],\n  \n  // Pass through data\n  _submissionId: input._submissionId,\n  _message: input._message,\n  _storyData: input._storyData,\n  _runtime: input._runtime\n};\n\nreturn [{ json: result }];"
+        "jsCode": "// Parse story classification LLM response\n// Note: Queue decision is now made in workflow based on thresholds, not by LLM\nconst input = $input.first().json;\nlet parsed;\n\ntry {\n  let text = input.content[0].text;\n  \n  // Strip markdown code blocks if present\n  text = text.trim();\n  if (text.startsWith('```')) {\n    text = text.replace(/^```(?:json)?\\s*\\n?/, '');\n    text = text.replace(/\\n?```\\s*$/, '');\n  }\n  \n  parsed = JSON.parse(text.trim());\n} catch (e) {\n  console.log('Parse Story LLM Response error:', e.message);\n  // Fallback\n  parsed = {\n    topics: ['needs-review'],\n    freedom_relevance_score: 50,\n    credibility_score: 30,\n    geo: [],\n    safety_concern: false,\n    reasoning: 'Failed to parse: ' + e.message,\n    risk_level: 'medium',\n    priority: 'normal',\n    summary: 'Parse error - manual review',\n    key_entities: []\n  };\n}\n\n// Ensure all required fields with defaults\nconst result = {\n  topics: Array.isArray(parsed.topics) ? parsed.topics : ['general'],\n  freedom_relevance_score: parseInt(parsed.freedom_relevance_score) || 50,\n  credibility_score: parseInt(parsed.credibility_score) || 30,\n  geo: Array.isArray(parsed.geo) ? parsed.geo : [],\n  safety_concern: Boolean(parsed.safety_concern),\n  reasoning: parsed.reasoning || '',\n  risk_level: parsed.risk_level || 'medium',\n  priority: parsed.priority || 'normal',\n  summary: (parsed.summary || '').substring(0, 200),\n  key_entities: Array.isArray(parsed.key_entities) ? parsed.key_entities : [],\n  \n  // Pass through data\n  _submissionId: input._submissionId,\n  _message: input._message,\n  _storyData: input._storyData,\n  _sourceContent: input._sourceContent,\n  _runtime: input._runtime\n};\n\nreturn [{ json: result }];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -783,9 +783,9 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "UPDATE submissions\n  SET freedom_relevance_score = $1,\n      credibility_score = $2,\n      safety_concern = $3,\n      queued_for_insight = $4,\n      tags = ARRAY(SELECT json_array_elements_text($5::json))\n  WHERE id = $6::uuid",
+        "query": "UPDATE submissions\n  SET freedom_relevance_score = $1,\n      credibility_score = $2,\n      safety_concern = $3,\n      tags = ARRAY(SELECT json_array_elements_text($4::json)),\n      geo = ARRAY(SELECT json_array_elements_text($5::json)),\n      reasoning = $6,\n      risk_level = $7,\n      priority = $8,\n      summary_text = $9,\n      key_entities = ARRAY(SELECT json_array_elements_text($10::json))\n  WHERE id = $11::uuid\n  RETURNING id, freedom_relevance_score, credibility_score, safety_concern",
         "options": {
-          "queryReplacement": "={{ $json.freedom_relevance_score }}, {{ $json.credibility_score }}, {{ $json.safety_concern }}, {{ $json.should_queue_for_insight }}, {{ JSON.stringify($json.topics) }}, {{ $json._submissionId }}"
+          "queryReplacement": "={{ $json.freedom_relevance_score }}, {{ $json.credibility_score }}, {{ $json.safety_concern }}, {{ JSON.stringify($json.topics) }}, {{ JSON.stringify($json.geo) }}, {{ $json.reasoning }}, {{ $json.risk_level }}, {{ $json.priority }}, {{ $json.summary }}, {{ JSON.stringify($json.key_entities) }}, {{ $json._submissionId }}"
         }
       },
       "type": "n8n-nodes-base.postgres",
@@ -802,6 +802,16 @@
     },
     {
       "parameters": {
+        "jsCode": "// Restore story data after Postgres update and check queue threshold using config\n// Queue decision is now based on thresholds from config, not LLM output\n\nconst postgresResult = $input.first().json;\nconst storyData = $('Parse Story LLM Response').first().json;\n\n// Get thresholds from config (fetched at workflow start)\nlet intakeThresholds;\ntry {\n  const configData = $('Merge Config & Agents').first().json;\n  intakeThresholds = configData.intake || {};\n} catch (e) {\n  console.log('Could not get thresholds from config, using defaults');\n  intakeThresholds = {};\n}\n\n// Get threshold values (with defaults matching old prompt logic)\nconst relevanceThreshold = intakeThresholds.story_queue_relevance_threshold || 80;\nconst credibilityThreshold = intakeThresholds.story_queue_credibility_threshold || 40;\n\n// Check if story meets queue threshold\n// Conditions: relevance >= threshold AND credibility >= threshold AND NOT safety_concern\nconst meetsRelevance = storyData.freedom_relevance_score >= relevanceThreshold;\nconst meetsCredibility = storyData.credibility_score >= credibilityThreshold;\nconst noSafetyConcern = !storyData.safety_concern;\nconst meetsQueueThreshold = meetsRelevance && meetsCredibility && noSafetyConcern;\n\nconsole.log(`Queue threshold check: relevance=${storyData.freedom_relevance_score}>=${relevanceThreshold}:${meetsRelevance}, credibility=${storyData.credibility_score}>=${credibilityThreshold}:${meetsCredibility}, safety_concern=${storyData.safety_concern}:${noSafetyConcern}, result=${meetsQueueThreshold}`);\n\n// Restore all story data with queue decision added\nreturn [{\n  json: {\n    ...storyData,\n    meetsQueueThreshold,\n    _queueDecision: {\n      relevanceThreshold,\n      credibilityThreshold,\n      meetsRelevance,\n      meetsCredibility,\n      noSafetyConcern,\n      result: meetsQueueThreshold\n    }\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [4600, 300],
+      "id": "restore-and-check-threshold",
+      "name": "Restore Data & Check Threshold"
+    },
+    {
+      "parameters": {
         "conditions": {
           "options": {
             "caseSensitive": true,
@@ -811,7 +821,7 @@
           "conditions": [
             {
               "id": "check-queue-threshold",
-              "leftValue": "={{ $json.should_queue_for_insight }}",
+              "leftValue": "={{ $json.meetsQueueThreshold }}",
               "rightValue": true,
               "operator": {
                 "type": "boolean",
@@ -825,33 +835,33 @@
       },
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
-      "position": [4600, 300],
+      "position": [4820, 300],
       "id": "check-queue-threshold",
       "name": "Queue for Insight?"
     },
     {
       "parameters": {
-        "jsCode": "// Prepare data for source_items insert\n// Escapes values to avoid comma-parsing issues in queryReplacement\nconst input = $input.first().json;\n\nconst url = input._storyData?.sourceUrl || 'intake://submission/' + input._submissionId;\nconst extractedText = input._message || '';\nconst metadata = {\n  submission_id: input._submissionId,\n  geo: input.geo,\n  story_title: input._storyData?.title,\n  freedom_relevance_score: input.freedom_relevance_score,\n  credibility_score: input.credibility_score,\n  source: 'intake-story'\n};\n\n// Use base64 encoding to safely pass text with commas\nconst textBase64 = Buffer.from(extractedText, 'utf8').toString('base64');\n\nreturn [{\n  json: {\n    ...input,\n    _sourceItemData: {\n      url,\n      extractedText,\n      textBase64,\n      metadata: JSON.stringify(metadata)\n    }\n  }\n}];"
+        "jsCode": "// Prepare data for user_story_items insert\n// This table stores classified stories ready for Workflow A processing\nconst input = $input.first().json;\n\nconst url = input._storyData?.sourceUrl || 'intake://submission/' + input._submissionId;\nconst extractedText = input._message || '';\nconst sourceContent = input._sourceContent?.extracted || '';\nconst title = input._storyData?.title || input.summary || 'Untitled Story';\nconst region = input._storyData?.region || null;\nconst urgency = input._storyData?.urgency || 'normal';\n\n// Compute content hash for deduplication\nconst crypto = require('crypto');\nconst contentHash = crypto.createHash('sha256').update(extractedText).digest('hex');\n\n// Build metadata\nconst metadata = {\n  submission_id: input._submissionId,\n  source_content_length: sourceContent.length,\n  classified_at: new Date().toISOString()\n};\n\nreturn [{\n  json: {\n    ...input,\n    _userStoryData: {\n      submissionId: input._submissionId,\n      url,\n      extractedText,\n      contentHash,\n      title,\n      region,\n      urgency,\n      sourceContent,\n      metadata: JSON.stringify(metadata),\n      topics: JSON.stringify(input.topics),\n      geo: JSON.stringify(input.geo),\n      keyEntities: JSON.stringify(input.key_entities)\n    }\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [4820, 200],
-      "id": "prepare-source-item",
-      "name": "Prepare Source Item Data"
+      "position": [5040, 200],
+      "id": "prepare-user-story-item",
+      "name": "Prepare User Story Item"
     },
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "INSERT INTO source_items (\n  url,\n  platform,\n  extracted_text,\n  content_hash,\n  author,\n  published_at,\n  metadata\n) VALUES (\n  $1,\n  'web',\n  convert_from(decode($2, 'base64'), 'UTF8'),\n  encode(sha256(convert_from(decode($2, 'base64'), 'UTF8')::bytea), 'hex'),\n  'community',\n  NOW(),\n  $3::jsonb\n)\nON CONFLICT (content_hash) DO NOTHING\nRETURNING id",
+        "query": "WITH url_check AS (\n  SELECT id FROM user_story_items\n  WHERE url = $2 AND url NOT LIKE 'intake://%'\n  LIMIT 1\n)\nINSERT INTO user_story_items (\n  submission_id,\n  url,\n  extracted_text,\n  content_hash,\n  title,\n  region,\n  urgency,\n  source_content,\n  metadata,\n  topics,\n  freedom_relevance_score,\n  credibility_score,\n  geo,\n  safety_concern,\n  reasoning,\n  risk_level,\n  priority,\n  summary_text,\n  key_entities,\n  tier\n)\nSELECT\n  $1::uuid,\n  $2,\n  $3,\n  $4,\n  $5,\n  $6,\n  $7,\n  $8,\n  $9::jsonb,\n  ARRAY(SELECT json_array_elements_text($10::json)),\n  $11,\n  $12,\n  ARRAY(SELECT json_array_elements_text($13::json)),\n  $14,\n  $15,\n  $16,\n  $17,\n  $18,\n  ARRAY(SELECT json_array_elements_text($19::json)),\n  2\nWHERE NOT EXISTS (SELECT 1 FROM url_check)\nON CONFLICT (content_hash) DO NOTHING\nRETURNING id",
         "options": {
-          "queryReplacement": "={{ $json._sourceItemData.url }}, {{ $json._sourceItemData.textBase64 }}, {{ $json._sourceItemData.metadata }}"
+          "queryReplacement": "={{ $json._userStoryData.submissionId }}, {{ $json._userStoryData.url }}, {{ $json._userStoryData.extractedText }}, {{ $json._userStoryData.contentHash }}, {{ $json._userStoryData.title }}, {{ $json._userStoryData.region }}, {{ $json._userStoryData.urgency }}, {{ $json._userStoryData.sourceContent }}, {{ $json._userStoryData.metadata }}, {{ $json._userStoryData.topics }}, {{ $json.freedom_relevance_score }}, {{ $json.credibility_score }}, {{ $json._userStoryData.geo }}, {{ $json.safety_concern }}, {{ $json.reasoning }}, {{ $json.risk_level }}, {{ $json.priority }}, {{ $json.summary }}, {{ $json._userStoryData.keyEntities }}"
         }
       },
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
-      "position": [5040, 100],
-      "id": "insert-source-item",
-      "name": "Insert Source Item",
+      "position": [5260, 200],
+      "id": "insert-user-story-item",
+      "name": "Insert User Story Item",
       "credentials": {
         "postgres": {
           "id": "qDXwbsZ3b2DpBCrd",
@@ -861,7 +871,37 @@
     },
     {
       "parameters": {
-        "jsCode": "// Prepare data for GitHub issue creation after story processing\n// This normalizes the data structure whether or not source_item was created\n\nconst storyResult = $('Parse Story LLM Response').first().json;\nconst parsedLLM = $('Parse LLM Response').first().json;\n\n// Build a summary that includes story classification info\nconst enrichedSummary = storyResult.summary + \n  (storyResult.should_queue_for_insight ? ' [QUEUED FOR INSIGHT]' : '');\n\nreturn [{\n  json: {\n    // Standard fields expected by GitHub issue creation\n    category: parsedLLM.category,\n    tags: storyResult.topics,\n    risk_level: storyResult.risk_level,\n    priority: storyResult.priority,\n    summary: enrichedSummary,\n    is_spam: false,\n    requires_response: true,\n    suggested_assignee: 'research',\n    submissionId: storyResult._submissionId,\n    message: storyResult._message,\n    _runtime: storyResult._runtime,\n    \n    // Story-specific data for the issue body\n    _storyClassification: {\n      freedom_relevance_score: storyResult.freedom_relevance_score,\n      credibility_score: storyResult.credibility_score,\n      geo: storyResult.geo,\n      safety_concern: storyResult.safety_concern,\n      queued_for_insight: storyResult.should_queue_for_insight,\n      reasoning: storyResult.reasoning\n    }\n  }\n}];"
+        "operation": "executeQuery",
+        "query": "UPDATE submissions SET queued_for_insight = TRUE WHERE id = $1::uuid",
+        "options": {
+          "queryReplacement": "={{ $('Prepare User Story Item').first().json._submissionId }}"
+        }
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [5480, 200],
+      "id": "update-submission-queued",
+      "name": "Mark Submission Queued",
+      "credentials": {
+        "postgres": {
+          "id": "qDXwbsZ3b2DpBCrd",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Restore story data after updates\nconst prepareData = $('Prepare User Story Item').first().json;\nreturn [{ json: prepareData }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [5700, 200],
+      "id": "restore-after-user-story-insert",
+      "name": "Restore After Insert"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Prepare data for GitHub issue creation after story processing\n// Normalizes data structure for both queued and non-queued stories\n\n// Try to get data from the restore node (if story was queued), otherwise from threshold check\nlet storyResult;\ntry {\n  storyResult = $('Restore After Insert').first().json;\n} catch (e) {\n  try {\n    storyResult = $('Restore Data & Check Threshold').first().json;\n  } catch (e2) {\n    storyResult = $('Parse Story LLM Response').first().json;\n  }\n}\n\nconst parsedLLM = $('Parse LLM Response').first().json;\nconst queuedForInsight = storyResult.meetsQueueThreshold || false;\n\n// Build a summary that includes queue status\nconst enrichedSummary = storyResult.summary + \n  (queuedForInsight ? ' [QUEUED FOR INSIGHT]' : '');\n\nreturn [{\n  json: {\n    // Standard fields expected by GitHub issue creation\n    category: parsedLLM.category,\n    tags: storyResult.topics,\n    risk_level: storyResult.risk_level,\n    priority: storyResult.priority,\n    summary: enrichedSummary,\n    is_spam: false,\n    requires_response: true,\n    suggested_assignee: 'research',\n    submissionId: storyResult._submissionId,\n    message: storyResult._message,\n    _runtime: storyResult._runtime,\n    \n    // Story-specific data for the issue body\n    _storyClassification: {\n      freedom_relevance_score: storyResult.freedom_relevance_score,\n      credibility_score: storyResult.credibility_score,\n      geo: storyResult.geo,\n      safety_concern: storyResult.safety_concern,\n      queued_for_insight: queuedForInsight,\n      reasoning: storyResult.reasoning\n    }\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -1923,6 +1963,17 @@
       "main": [
         [
           {
+            "node": "Restore Data & Check Threshold",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Restore Data & Check Threshold": {
+      "main": [
+        [
+          {
             "node": "Queue for Insight?",
             "type": "main",
             "index": 0
@@ -1934,7 +1985,7 @@
       "main": [
         [
           {
-            "node": "Prepare Source Item Data",
+            "node": "Prepare User Story Item",
             "type": "main",
             "index": 0
           }
@@ -1948,18 +1999,40 @@
         ]
       ]
     },
-    "Prepare Source Item Data": {
+    "Prepare User Story Item": {
       "main": [
         [
           {
-            "node": "Insert Source Item",
+            "node": "Insert User Story Item",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Insert Source Item": {
+    "Insert User Story Item": {
+      "main": [
+        [
+          {
+            "node": "Mark Submission Queued",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mark Submission Queued": {
+      "main": [
+        [
+          {
+            "node": "Restore After Insert",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Restore After Insert": {
       "main": [
         [
           {

@@ -13,13 +13,6 @@ ingestion:
   # Minimum freedom relevance score to generate an insight
   relevance_threshold: 50
 
-  # Maximum items to process per workflow run (rate limiting)
-  max_items_per_run: 100
-
-  # Retry configuration for failed fetches
-  retry_attempts: 3
-  retry_delay_seconds: 60
-
 # Auto-Publishing Gates
 # Content is auto-published only when ALL conditions are met
 publishing:
@@ -101,6 +94,24 @@ digest:
 
   # Maximum insights to include per section
   max_per_section: 10
+
+# Intake Story Processing (Workflow C)
+# Thresholds for queueing user-submitted stories for insight generation
+intake:
+  # Minimum freedom relevance score to queue for insight generation
+  # Higher bar than regular ingestion since community content needs more vetting
+  story_queue_relevance_threshold: 80
+
+  # Minimum credibility score to queue for insight generation
+  story_queue_credibility_threshold: 40
+
+  # Stories with safety concerns are never queued regardless of scores
+  # (This is enforced in workflow, not configurable)
+
+  # Maximum user stories to process per Workflow A run
+  # Stories are prioritized by score (relevance weighted 2x over credibility)
+  # Remaining stories stay queued for the next run
+  max_stories_per_run: 5
 
 # Rate Limiting (Intake Webhook)
 rate_limiting:

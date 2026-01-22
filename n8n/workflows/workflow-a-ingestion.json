@@ -1031,6 +1031,270 @@
         }
       },
       "disabled": true
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get max_stories_per_run from config for user story processing limit\nlet maxStoriesPerRun = 5; // default\n\ntry {\n  const configData = $('Merge Config & Agents').first().json;\n  const intakeConfig = configData._thresholdsConfig?.intake || configData.intake || {};\n  maxStoriesPerRun = intakeConfig.max_stories_per_run || 5;\n} catch (e) {\n  console.log('Could not get max_stories_per_run from config, using default:', maxStoriesPerRun);\n}\n\nconsole.log(`Will process up to ${maxStoriesPerRun} user stories, prioritized by weighted score`);\n\n// Build query with dynamic limit and weighted score ordering\n// Weight: relevance * 2 + credibility (gives 2x weight to relevance)\nconst query = `SELECT \n  id, submission_id, url, extracted_text, content_hash, title, region, urgency,\n  source_content, metadata, topics, freedom_relevance_score, credibility_score,\n  geo, safety_concern, reasoning, risk_level, priority, summary_text, key_entities, tier,\n  (freedom_relevance_score * 2 + credibility_score) AS weighted_score\nFROM user_story_items \nWHERE insight_generated = FALSE\nORDER BY weighted_score DESC, created_at ASC\nLIMIT ${maxStoriesPerRun}`;\n\nreturn [{ json: { query, maxStoriesPerRun } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1760, 550],
+      "id": "prepare-user-story-query",
+      "name": "Prepare User Story Query"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "={{ $json.query }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [1980, 550],
+      "id": "query-pending-user-stories",
+      "name": "Query Pending User Stories",
+      "alwaysOutputData": true,
+      "credentials": {
+        "postgres": {
+          "id": "CREDENTIAL_ID",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "has-pending-stories",
+              "leftValue": "={{ $input.all().filter(i => i.json.id).length }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "notEquals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [1980, 550],
+      "id": "has-pending-user-stories",
+      "name": "Has Pending User Stories?"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Transform user_story_items to match the format expected by summarization\n// User stories are already classified, so we skip classification and go straight to summarization\n\nconst items = $input.all().filter(i => i.json.id);\n\n// Get config from earlier in workflow\nlet thresholds = { runtime: { use_stubs: true }, publishing: { auto_publish_relevance: 70, auto_publish_credibility: 60 } };\nlet agents = {};\ntry {\n  const configData = $('Merge Config & Agents').first().json;\n  thresholds = {\n    runtime: configData._thresholdsConfig?.runtime || thresholds.runtime,\n    ingestion: configData._thresholdsConfig?.ingestion || { relevance_threshold: 50 },\n    publishing: configData._thresholdsConfig?.publishing || thresholds.publishing\n  };\n  agents = configData._agents || {};\n} catch (e) {\n  console.log('Could not get config, using defaults');\n}\n\nconsole.log(`Processing ${items.length} user stories for summarization`);\n\n// Transform each user story to match the format expected after Apply Threshold\nreturn items.map(item => {\n  const story = item.json;\n  \n  // Parse arrays that come as strings from Postgres\n  const topics = Array.isArray(story.topics) ? story.topics : [];\n  const geo = Array.isArray(story.geo) ? story.geo : [];\n  const keyEntities = Array.isArray(story.key_entities) ? story.key_entities : [];\n  const metadata = typeof story.metadata === 'string' ? JSON.parse(story.metadata) : (story.metadata || {});\n  \n  // Build classification object to match RSS item format\n  const classification = {\n    topics,\n    freedom_relevance_score: story.freedom_relevance_score,\n    credibility_score: story.credibility_score,\n    geo,\n    reasoning: story.reasoning || '',\n    key_entities: keyEntities\n  };\n  \n  return {\n    json: {\n      // Fields expected by summarization\n      sourceItemId: story.id,  // Use user_story_items.id as sourceItemId\n      sourceItemUrl: story.url,\n      extractedText: story.extracted_text,\n      metadata: {\n        ...metadata,\n        sourceName: 'Community Submission',\n        sourceTier: story.tier || 2,\n        sourceTags: topics,\n        title: story.title,\n        isUserStory: true,\n        submissionId: story.submission_id\n      },\n      classification,\n      meetsThreshold: true,  // Already passed threshold in Workflow C\n      usedThreshold: 80,     // Story queue threshold\n      _thresholds: thresholds,\n      _agents: agents,\n      _isUserStory: true,\n      _userStoryId: story.id\n    }\n  };\n});"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2200, 450],
+      "id": "transform-user-stories",
+      "name": "Transform User Stories for Summarization"
+    },
+    {
+      "parameters": {
+        "batchSize": 1,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [2420, 450],
+      "id": "loop-user-stories",
+      "name": "Loop Over User Stories"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "use-stubs-user-story-summarize",
+              "leftValue": "={{ $json._thresholds?.runtime?.use_stubs ?? true }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [2640, 450],
+      "id": "use-stubs-user-story-summarize",
+      "name": "Use Stubs for User Story Summarize?"
+    },
+    {
+      "parameters": {
+        "jsCode": "// STUB: Summarizer for user stories\nconst data = $input.first().json;\nconst classification = data.classification;\nconst text = data.extractedText || '';\nconst metadata = data.metadata || {};\nconst title = metadata.title || text.substring(0, 100).split('.')[0] + '...';\nconst tldr = text.substring(0, 250).trim() + '...';\n\nconst sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 20);\nconst summaryBullets = sentences.slice(0, 7).map(s => s.trim());\nwhile (summaryBullets.length < 5) summaryBullets.push('Additional analysis pending.');\n\nconst summary = {\n  title: title.substring(0, 120),\n  tldr: tldr.substring(0, 280),\n  summary_bullets: summaryBullets.slice(0, 10),\n  deep_dive_markdown: classification.freedom_relevance_score >= 85\n    ? `## Analysis\\n\\n${text.substring(0, 2000)}...\\n\\n## Implications\\n\\nThis community-submitted story highlights important developments in freedom technology.`\n    : null,\n  citations: [data.sourceItemUrl],\n  recommended_actions: [],\n  related_projects: []\n};\n\nreturn [{\n  json: {\n    content: [{ type: 'text', text: JSON.stringify(summary) }],\n    _sourceItemId: data.sourceItemId,\n    _classification: classification,\n    _sourceItemUrl: data.sourceItemUrl,\n    _thresholds: data._thresholds,\n    _agents: data._agents,\n    _isUserStory: true,\n    _userStoryId: data._userStoryId\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2860, 350],
+      "id": "user-story-summarize-stub",
+      "name": "User Story Summarize Stub"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 2048,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": {{ JSON.stringify($json._agents?.summarize + \"\\n\\n# Input\\n\\n\" + JSON.stringify({ sourceUrl: $json.sourceItemUrl, extractedText: $json.extractedText.substring(0, 8000), classification: $json.classification, includeDeepDive: $json.classification.freedom_relevance_score >= 85, isUserStory: true })) }}\n  }]\n}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [2860, 550],
+      "id": "user-story-summarize-real",
+      "name": "User Story Summarize with Claude",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "ANTHROPIC_CREDENTIAL_ID",
+          "name": "Anthropic API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Wrap Claude response for user story summarization\nconst claudeResponse = $input.first().json;\nconst originalData = $('Loop Over User Stories').first().json;\n\nreturn [{\n  json: {\n    content: claudeResponse.content,\n    _sourceItemId: originalData.sourceItemId,\n    _classification: originalData.classification,\n    _sourceItemUrl: originalData.sourceItemUrl,\n    _thresholds: originalData._thresholds,\n    _agents: originalData._agents,\n    _isUserStory: true,\n    _userStoryId: originalData._userStoryId\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [3080, 550],
+      "id": "wrap-user-story-summarize",
+      "name": "Wrap User Story Summarize Response"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse user story summary and determine publish status\nconst input = $input.first().json;\nconst thresholds = input._thresholds || {};\nconst classification = input._classification;\nlet summary;\n\ntry {\n  let text = input.content[0].text;\n  text = text.trim();\n  if (text.startsWith('```')) {\n    text = text.replace(/^```(?:json)?\\s*\\n?/, '');\n    text = text.replace(/\\n?```\\s*$/, '');\n  }\n  summary = JSON.parse(text.trim());\n  if (!summary.citations || !Array.isArray(summary.citations)) summary.citations = [];\n  if (input._sourceItemUrl && !summary.citations.includes(input._sourceItemUrl)) {\n    summary.citations.push(input._sourceItemUrl);\n  }\n} catch (e) {\n  summary = {\n    title: `[Parse Error] Community Story`,\n    tldr: `Failed to parse AI summary. Error: ${e.message}`,\n    summary_bullets: ['AI summary parsing failed', 'Manual review required'],\n    citations: input._sourceItemUrl ? [input._sourceItemUrl] : [],\n    deep_dive_markdown: null\n  };\n}\n\nconst autoPublishRelevance = thresholds.publishing?.auto_publish_relevance || 70;\nconst autoPublishCredibility = thresholds.publishing?.auto_publish_credibility || 60;\nconst hasCitations = summary.citations && summary.citations.length > 0;\nconst meetsRelevance = classification.freedom_relevance_score >= autoPublishRelevance;\nconst meetsCredibility = classification.credibility_score >= autoPublishCredibility;\nconst canAutoPublish = meetsRelevance && meetsCredibility && hasCitations;\nconst status = canAutoPublish ? 'published' : 'queued';\nconst publishedAt = canAutoPublish ? new Date().toISOString() : null;\n\nconst slug = summary.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').substring(0, 60);\nconst publishedUrl = canAutoPublish ? `https://libertas.fgu.tech/posts/${slug}` : null;\n\nreturn [{\n  json: {\n    sourceItemId: input._sourceItemId,\n    sourceItemUrl: input._sourceItemUrl,\n    title: summary.title,\n    tldr: summary.tldr,\n    summaryBullets: summary.summary_bullets,\n    deepDiveMarkdown: summary.deep_dive_markdown,\n    topics: classification.topics,\n    geo: classification.geo,\n    freedomRelevanceScore: classification.freedom_relevance_score,\n    credibilityScore: classification.credibility_score,\n    citations: summary.citations,\n    status,\n    publishedUrl,\n    publishedAt,\n    _thresholds: thresholds,\n    _isUserStory: true,\n    _userStoryId: input._userStoryId\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [3300, 450],
+      "id": "parse-user-story-summary",
+      "name": "Parse User Story Summary"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Build INSERT query for user story insight\nconst data = $input.first().json;\n\nfunction escapeStr(str) {\n  if (str === null || str === undefined) return 'NULL';\n  return \"'\" + String(str).replace(/'/g, \"''\") + \"'\";\n}\n\nfunction formatPgArray(arr) {\n  if (!arr || arr.length === 0) return \"'{}'\";\n  const escaped = arr.map(s => '\"' + String(s).replace(/\"/g, '\\\\\\\"').replace(/'/g, \"''\") + '\"');\n  return \"'{\" + escaped.join(',') + \"}'\";\n}\n\n// Use sourceItemId (which is user_story_items.id) but note it's not a source_items reference\n// We store it for traceability but the FK constraint only applies to source_items\n// For user stories, we'll store the user_story_items.id in metadata instead\nconst query = `INSERT INTO insights (\n  source_item_ids, title, tldr, summary_bullets, deep_dive_markdown,\n  topics, geo, freedom_relevance_score, credibility_score, citations,\n  status, published_url, published_at\n) VALUES (\n  '{}',\n  ${escapeStr(data.title || 'Untitled')},\n  ${escapeStr(data.tldr || '')},\n  ${formatPgArray(data.summaryBullets || [])},\n  ${data.deepDiveMarkdown ? escapeStr(data.deepDiveMarkdown) : 'NULL'},\n  ${formatPgArray(data.topics || [])},\n  ${formatPgArray(data.geo || [])},\n  ${data.freedomRelevanceScore},\n  ${data.credibilityScore},\n  ${formatPgArray(data.citations || [])},\n  ${escapeStr(data.status)},\n  ${data.publishedUrl ? escapeStr(data.publishedUrl) : 'NULL'},\n  ${data.publishedAt ? escapeStr(data.publishedAt) : 'NULL'}\n) RETURNING id, title, status`;\n\nreturn [{ json: { query, sourceData: data } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [3520, 450],
+      "id": "build-user-story-insight-query",
+      "name": "Build User Story Insight Query"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "={{ $json.query }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [3740, 450],
+      "id": "insert-user-story-insight",
+      "name": "Insert User Story Insight",
+      "credentials": {
+        "postgres": {
+          "id": "CREDENTIAL_ID",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get the insight ID from the insert result and prepare to update user_story_items\nconst insertResult = $input.first().json;\nconst sourceData = $('Build User Story Insight Query').first().json.sourceData;\n\nreturn [{\n  json: {\n    insightId: insertResult.id,\n    userStoryId: sourceData._userStoryId,\n    title: insertResult.title,\n    status: insertResult.status,\n    _thresholds: sourceData._thresholds\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [3960, 450],
+      "id": "prepare-user-story-update",
+      "name": "Prepare User Story Update"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "UPDATE user_story_items\n  SET insight_generated = TRUE,\n      insight_id = $1::uuid,\n      processed_at = NOW()\n  WHERE id = $2::uuid",
+        "options": {
+          "queryReplacement": "={{ $json.insightId }}, {{ $json.userStoryId }}"
+        }
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [4180, 450],
+      "id": "mark-user-story-processed",
+      "name": "Mark User Story Processed",
+      "credentials": {
+        "postgres": {
+          "id": "CREDENTIAL_ID",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Collect user story processing results and continue to loop\nconst result = $('Prepare User Story Update').first().json;\nconsole.log(`User story ${result.userStoryId} generated insight ${result.insightId} with status ${result.status}`);\nreturn [{ json: { processed: true, ...result } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [4400, 450],
+      "id": "user-story-loop-result",
+      "name": "User Story Loop Result"
+    },
+    {
+      "parameters": {
+        "jsCode": "// User story processing complete, continue to feed publishing\nconsole.log('=== User Story Processing Complete ===');\nconst items = $input.all();\nconsole.log(`Processed ${items.length} user stories`);\nreturn [{ json: { userStoriesProcessed: items.length } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [4620, 550],
+      "id": "user-story-complete",
+      "name": "User Story Processing Complete"
+    },
+    {
+      "parameters": {
+        "jsCode": "// No pending user stories to process\nconsole.log('No pending user stories to process');\nreturn [{ json: { userStoriesProcessed: 0 } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [2200, 650],
+      "id": "no-pending-user-stories",
+      "name": "No Pending User Stories"
     }
   ],
   "pinData": {},
@@ -1689,6 +1953,214 @@
       ]
     },
     "Workflow Complete": {
+      "main": [
+        [
+          {
+            "node": "Prepare User Story Query",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare User Story Query": {
+      "main": [
+        [
+          {
+            "node": "Query Pending User Stories",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Query Pending User Stories": {
+      "main": [
+        [
+          {
+            "node": "Has Pending User Stories?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Has Pending User Stories?": {
+      "main": [
+        [
+          {
+            "node": "Transform User Stories for Summarization",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "No Pending User Stories",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Transform User Stories for Summarization": {
+      "main": [
+        [
+          {
+            "node": "Loop Over User Stories",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over User Stories": {
+      "main": [
+        [
+          {
+            "node": "User Story Processing Complete",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Use Stubs for User Story Summarize?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Use Stubs for User Story Summarize?": {
+      "main": [
+        [
+          {
+            "node": "User Story Summarize Stub",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "User Story Summarize with Claude",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "User Story Summarize Stub": {
+      "main": [
+        [
+          {
+            "node": "Parse User Story Summary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "User Story Summarize with Claude": {
+      "main": [
+        [
+          {
+            "node": "Wrap User Story Summarize Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wrap User Story Summarize Response": {
+      "main": [
+        [
+          {
+            "node": "Parse User Story Summary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse User Story Summary": {
+      "main": [
+        [
+          {
+            "node": "Build User Story Insight Query",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build User Story Insight Query": {
+      "main": [
+        [
+          {
+            "node": "Insert User Story Insight",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Insert User Story Insight": {
+      "main": [
+        [
+          {
+            "node": "Prepare User Story Update",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare User Story Update": {
+      "main": [
+        [
+          {
+            "node": "Mark User Story Processed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mark User Story Processed": {
+      "main": [
+        [
+          {
+            "node": "User Story Loop Result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "User Story Loop Result": {
+      "main": [
+        [
+          {
+            "node": "Loop Over User Stories",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "User Story Processing Complete": {
+      "main": [
+        [
+          {
+            "node": "Query New Published Insights",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "No Pending User Stories": {
       "main": [
         [
           {

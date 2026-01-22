@@ -364,14 +364,13 @@ CREATE INDEX idx_submissions_submitted_at ON submissions(submitted_at);
 **Key Configuration:**
 
 ```yaml
-# config/thresholds.yml
+# config/thresholds.yml (excerpt)
 ingestion:
   relevance_threshold: 50      # Minimum to generate insight
+
+publishing:
   auto_publish_relevance: 70   # Auto-publish if >= this
   auto_publish_credibility: 60 # AND >= this
-  max_items_per_run: 100       # Rate limit
-  retry_attempts: 3
-  retry_delay_seconds: 60
 ```
 
 **Idempotency:** Content hash prevents duplicate ingestion. Same URL can update if content changes.

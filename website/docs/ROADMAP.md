@@ -25,16 +25,12 @@ Workflow D:
   - Cleanup workflow spacing/reorg
 
 Database Checks:
+  - View each table and understand how/if its used
+  - View each field and understand how/if/if it will be used
+  - Ensure all fields properly populating data from workflows ( ie not hardcoded/stale/bad values )
 
-Config/thresholds.yml:
-
-Hey, i am working to improve agent prompts. Currently I am working on:
-Intake Story Classify prompt:
-  Agent File: intake-story-classify.md
-  API Route: /api/agents/intake-story-classify
-  Used In: Workflow C (intake) - story submission scoring
-Fix/Check/Do/...:
-  - Verify all inputs mentioned in the prompt are passed into context in n8n workflow
+Media kit change:
+  - Please look at the new media kit at ~/Downloads/Libertas_Media_Kit_Assets/ and change 
 
 Hey, i am working to improve agent prompts. Currently I am working on:
 Intake Project Evaluate Prompt:
@@ -43,6 +39,8 @@ Intake Project Evaluate Prompt:
   Used In: Workflow C (intake) - project idea assessment
 Fix/Check/Do/...:
   - Verify all inputs mentioned in the prompt are passed into context in n8n workflow
+  - Verify all user data passed from FE/website form for this is properly passed into context ( on n8n side, fe side, and prompt side )
+  - Verify all outputs mentioned in the prompt are used in the workflow/posted to postgres ( ie used in some capacity )
 
 Hey, i am working to improve agent prompts. Currently I am working on:
 Intake Feedback assess Prompt:
@@ -51,6 +49,8 @@ Intake Feedback assess Prompt:
   Used In: Workflow C (intake) - feedback analysis
 Fix/Check/Do/...:
   - Verify all inputs mentioned in the prompt are passed into context in n8n workflow
+  - Verify all user data passed from FE/website form for this is properly passed into context ( on n8n side, fe side, and prompt side )
+  - Verify all outputs mentioned in the prompt are used in the workflow/posted to postgres ( ie used in some capacity )
 
 Open Source
 
