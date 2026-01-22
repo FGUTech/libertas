@@ -42,7 +42,7 @@ sources:
   # Tier 2: Secondary sources, mixed content
   - name: "Ars Technica - Security"
     type: "rss"
-    url: "https://feeds.arstechnica.com/arstechnica/security"
+    url: "https://feeds.arstechnica.com/arstechnica/index"
     tier: 2
     tags: ["privacy", "security", "surveillance"]
     enabled: true
@@ -70,9 +70,113 @@ sources:
 
   - name: "OONI Reports"
     type: "rss"
-    url: "https://ooni.org/rss.xml"
+    url: "https://ooni.org/post/index.xml"
     tier: 1
     tags: ["censorship-resistance", "surveillance", "measurement"]
+    enabled: true
+
+  # Tier 1: Security & Privacy Research
+  - name: "Schneier on Security"
+    type: "rss"
+    url: "https://www.schneier.com/feed/"
+    tier: 1
+    tags: ["privacy", "security", "cryptography"]
+    enabled: true
+
+  - name: "Citizen Lab"
+    type: "rss"
+    url: "https://citizenlab.ca/feed/"
+    tier: 1
+    tags: ["surveillance", "spyware", "digital-rights"]
+    enabled: true
+
+  # Tier 1: Censorship & Internet Freedom
+  - name: "NetBlocks"
+    type: "rss"
+    url: "https://netblocks.org/feed"
+    tier: 1
+    tags: ["censorship-resistance", "internet-shutdowns", "measurement"]
+    enabled: true
+
+  - name: "Tor Project Blog"
+    type: "rss"
+    url: "https://blog.torproject.org/rss.xml"
+    tier: 1
+    tags: ["privacy", "anonymity", "censorship-resistance"]
+    enabled: true
+
+  - name: "Signal Blog"
+    type: "rss"
+    url: "https://signal.org/blog/rss.xml"
+    tier: 1
+    tags: ["privacy", "comms", "encryption"]
+    enabled: true
+
+  # Tier 1: Press Freedom & Human Rights
+  - name: "Committee to Protect Journalists"
+    type: "rss"
+    url: "https://cpj.org/feed/"
+    tier: 1
+    tags: ["press-freedom", "activism", "surveillance"]
+    enabled: true
+
+  - name: "Freedom House"
+    type: "rss"
+    url: "https://freedomhouse.org/rss.xml"
+    tier: 1
+    tags: ["freedom", "democracy", "human-rights"]
+    enabled: true
+
+  - name: "Human Rights Watch"
+    type: "rss"
+    url: "https://www.hrw.org/rss.xml"
+    tier: 1
+    tags: ["human-rights", "activism", "surveillance"]
+    enabled: true
+
+  # Tier 2: Privacy Tech & Tools
+  - name: "Proton Blog"
+    type: "rss"
+    url: "https://proton.me/blog/feed"
+    tier: 2
+    tags: ["privacy", "encryption", "comms"]
+    enabled: true
+
+  - name: "Tails OS News"
+    type: "rss"
+    url: "https://tails.net/news/index.en.rss"
+    tier: 2
+    tags: ["privacy", "anonymity", "security"]
+    enabled: true
+
+  # Tier 2: Cryptography & ZK
+  - name: "Cryptography Engineering"
+    type: "rss"
+    url: "https://blog.cryptographyengineering.com/feed/"
+    tier: 2
+    tags: ["cryptography", "privacy", "zk"]
+    enabled: true
+
+  - name: "Vitalik Buterin"
+    type: "rss"
+    url: "https://vitalik.eth.limo/feed.xml"
+    tier: 2
+    tags: ["zk", "ethereum", "cryptography"]
+    enabled: true
+
+  # Tier 2: Investigative Journalism
+  - name: "The Intercept"
+    type: "rss"
+    url: "https://theintercept.com/feed/?rss"
+    tier: 2
+    tags: ["surveillance", "activism", "privacy"]
+    enabled: true
+
+  - name: "Global Voices"
+    type: "rss"
+    url: "https://globalvoices.org/feed/"
+    tier: 2
+    tags: ["global", "activism", "censorship-resistance"]
     enabled: true
 
 # Source type definitions:
