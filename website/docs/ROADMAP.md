@@ -9,24 +9,24 @@ Feature roadmap for the Libertas website, broken into MVP, Nice-to-have, and Fut
 Hey, I am working to implement features for the libertas website from the roadmap. Let's continue with implementing:
 
 Workflow A:
+  - Test all paths/follow mentally
+  - Cleanup workflow spacing/reorg
 
 Workflow B:
+  - Test all paths/follow mentally
+  - Cleanup workflow spacing/reorg
 
 Workflow C:
+  - Test all paths/follow mentally
+  - Cleanup workflow spacing/reorg
 
 Workflow D:
+  - Test all paths/follow mentally
+  - Cleanup workflow spacing/reorg
 
 Database Checks:
 
 Config/thresholds.yml:
-
-Hey, i am working to improve agent prompts. Currently I am working on:
-Generate Idea Prompt:
-  Agent File: generate-idea.md
-  API Route: /api/agents/generate-idea
-  Used In: Workflow D (ideas) - synthesizes project proposals
-Fix/Check/Do/...:
-  - Verify all inputs mentioned in the prompt are passed into context in n8n workflow
 
 Hey, i am working to improve agent prompts. Currently I am working on:
 Intake Classify Prompt:
@@ -35,7 +35,9 @@ Intake Classify Prompt:
   Used In: Workflow C (intake) - initial submission routing
 Fix/Check/Do/...:
   - Ensure we actually need this prompt. Or is having just the 3 sub-intake type prompts enough ( story classify, project evaluate, and feedback assess )
+  - Check when/how this runs in existing workflow, and report back a concise flow descritption and what value it provides that other prompts dont
   - Verify all inputs mentioned in the prompt are passed into context in n8n workflow
+  - Check if website is passing type from intake form for "switching" prompts
 
 Hey, i am working to improve agent prompts. Currently I am working on:
 Intake Story Classify prompt:
