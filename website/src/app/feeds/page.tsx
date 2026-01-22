@@ -1,21 +1,23 @@
 import type { Metadata } from "next";
-import { CopyButton } from './CopyButton';
+import { FeedStatus } from './FeedStatus';
+import { CodeExamples } from './CodeExamples';
+import { CopyableUrls } from './CopyableUrls';
 
 export const metadata: Metadata = {
   title: "RSS & JSON Feeds",
   description:
-    "Access Libertas content programmatically via RSS and JSON feeds. No accounts, no API keys, no tracking. Subscribe with any feed reader.",
+    "Access Libertas content programmatically via RSS and JSON feeds. No accounts, no API keys, no tracking users. Subscribe with any feed reader.",
   openGraph: {
     title: "RSS & JSON Feeds | Libertas",
     description:
-      "Access Libertas content programmatically. No accounts, no API keys, no tracking.",
+      "Access Libertas content programmatically. No accounts, no API keys, no tracking users.",
     type: "website",
   },
   twitter: {
     card: "summary",
     title: "RSS & JSON Feeds | Libertas",
     description:
-      "Access Libertas content programmatically. No accounts, no API keys, no tracking.",
+      "Access Libertas content programmatically. No accounts, no API keys, no tracking users.",
   },
 };
 
@@ -45,7 +47,7 @@ export default function FeedsPage() {
           <h1 className="text-h1 mb-4">RSS &amp; JSON Feeds</h1>
 
           <p className="text-body text-[var(--fg-secondary)]">
-            Access Libertas content programmatically. No accounts, no API keys, no tracking.
+            Access Libertas content programmatically. No accounts, no API keys, no tracking users.
             Subscribe with any feed reader or integrate directly into your applications.
           </p>
         </div>
@@ -55,7 +57,7 @@ export default function FeedsPage() {
 
         {/* Insights Feeds */}
         <section className="mb-12">
-          <h2 className="text-h2 mb-6">Insights Feeds</h2>
+          <h2 className="text-h2 mb-6">Insight Feeds</h2>
           <p className="text-body text-[var(--fg-secondary)] mb-4">
             Individual insights published as they are processed. Updated multiple times per day.
           </p>
@@ -71,7 +73,7 @@ export default function FeedsPage() {
 
             <FeedCard
               title="Insights JSON"
-              description="JSON Feed of insights for programmatic access. Includes freedom scores and citations."
+              description="JSON Feed of all published insights. Includes freedom scores and citations."
               url={FEED_URLS.insights.json}
               icon={<JsonIcon />}
               format="JSON"
@@ -108,68 +110,7 @@ export default function FeedsPage() {
         {/* Code Examples */}
         <section className="mb-12">
           <h2 className="text-h2 mb-6">Usage Examples</h2>
-
-          <div className="space-y-6">
-            <CodeExample
-              title="cURL"
-              description="Fetch feeds from the command line"
-              code={`# Insights RSS Feed
-curl -s ${FEED_URLS.insights.rss}
-
-# Insights JSON Feed
-curl -s ${FEED_URLS.insights.json} | jq .
-
-# Weekly Digests
-curl -s ${FEED_URLS.digests.rss}`}
-              language="bash"
-            />
-
-            <CodeExample
-              title="JavaScript / TypeScript"
-              description="Fetch and parse the JSON feed in your application"
-              code={`// Fetch the insights feed
-const response = await fetch('${FEED_URLS.insights.json}');
-const feed = await response.json();
-
-// Access posts
-feed.items.forEach(item => {
-  console.log(item.title);
-  console.log(item.url);
-  console.log(item._libertas.freedom_relevance_score);
-});`}
-              language="javascript"
-            />
-
-            <CodeExample
-              title="Python"
-              description="Parse the RSS feed with feedparser"
-              code={`import feedparser
-
-# Parse the insights RSS feed
-feed = feedparser.parse('${FEED_URLS.insights.rss}')
-
-# Access posts
-for entry in feed.entries:
-    print(entry.title)
-    print(entry.link)
-    print(entry.summary)`}
-              language="python"
-            />
-
-            <CodeExample
-              title="n8n Workflow"
-              description="Ingest Libertas posts into your n8n automation"
-              code={`// HTTP Request Node configuration
-{
-  "url": "${FEED_URLS.insights.json}",
-  "method": "GET",
-  "responseFormat": "json"
-}
-
-// Then use Item Lists node to iterate over feed.items`}
-              language="json"
-            />
-          </div>
+          <CodeExamples />
         </section>
 
         {/* Feed Readers */}
@@ -181,16 +122,7 @@ for entry in feed.entries:
               Copy the RSS feed URLs and add them to your preferred reader:
             </p>
 
-            <div className="space-y-3 mb-6">
-              <div>
-                <p className="text-xs text-[var(--fg-tertiary)] mb-1">Insights (daily updates)</p>
-                <CopyableUrl url={FEED_URLS.insights.rss} />
-              </div>
-              <div>
-                <p className="text-xs text-[var(--fg-tertiary)] mb-1">Weekly Digests</p>
-                <CopyableUrl url={FEED_URLS.digests.rss} />
-              </div>
-            </div>
+            <CopyableUrls />
 
             <div className="grid gap-3 sm:grid-cols-2">
               <ReaderLink name="Feedly" url="https://feedly.com" />
@@ -227,19 +159,22 @@ for entry in feed.entries:
   "title": "Libertas - Freedom Tech Signals",
   "home_page_url": "https://libertas.fgu.tech",
   "feed_url": "https://libertas.fgu.tech/insights-feed.json",
+  "description": "Curated insights on freedom technology...",
+  "language": "en-US",
   "items": [
     {
       "id": "unique-post-id",
       "url": "https://libertas.fgu.tech/posts/example-post",
       "title": "Post Title",
       "summary": "TL;DR of the insight...",
-      "content_text": "Key points...",
+      "content_text": "Key points as bullet list...",
       "date_published": "2026-01-07T12:00:00Z",
+      "date_modified": "2026-01-07T12:00:00Z",
       "tags": ["bitcoin", "privacy"],
       "_libertas": {
         "freedom_relevance_score": 85,
         "credibility_score": 90,
-        "citations": [...]
+        "citations": ["https://source.example/article"]
       }
     }
   ]
@@ -284,38 +219,6 @@ for entry in feed.entries:
 // Components
 // =============================================================================
 
-function FeedStatus() {
-  // In production, this would check actual feed availability
-  const status = {
-    rss: { available: true, lastUpdated: new Date().toISOString() },
-    json: { available: true, lastUpdated: new Date().toISOString() },
-  };
-
-  return (
-    <div className="mb-8 rounded-md border border-[var(--border-subtle)] bg-[var(--bg-secondary)] p-4">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--success)]/20">
-            <StatusDot status="online" />
-          </div>
-          <div>
-            <p className="text-sm font-medium text-[var(--fg-primary)]">Feeds Online</p>
-            <p className="text-xs text-[var(--fg-tertiary)]">
-              All feeds are operational
-            </p>
-          </div>
-        </div>
-        <div className="text-right">
-          <p className="text-mono text-xs text-[var(--fg-tertiary)]">Last updated</p>
-          <p className="text-mono text-xs text-[var(--fg-secondary)]">
-            {new Date(status.rss.lastUpdated).toLocaleTimeString()}
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 interface FeedCardProps {
   title: string;
   description: string;
@@ -350,44 +253,6 @@ function FeedCard({ title, description, url, icon, format }: FeedCardProps) {
   );
 }
 
-interface CodeExampleProps {
-  title: string;
-  description: string;
-  code: string;
-  language: string;
-}
-
-function CodeExample({ title, description, code, language }: CodeExampleProps) {
-  return (
-    <div className="card">
-      <div className="mb-3 flex items-center justify-between">
-        <div>
-          <h3 className="text-h3">{title}</h3>
-          <p className="text-sm text-[var(--fg-tertiary)]">{description}</p>
-        </div>
-        <span className="tag tag-accent">{language}</span>
-      </div>
-      <div className="code-block">
-        <pre className="text-sm">{code}</pre>
-      </div>
-    </div>
-  );
-}
-
-function CopyableUrl({ url }: { url: string }) {
-  const fullUrl = `https://libertas.fgu.tech${url}`;
-
-  return (
-    <div className="flex items-center gap-2">
-      <code className="flex-1 rounded-md bg-[var(--bg-secondary)] px-3 py-2 text-mono text-sm text-[var(--accent-primary)]">
-        {fullUrl}
-      </code>
-      <CopyButton text={fullUrl} />
-    </div>
-  );
-}
-
-
 interface ReaderLinkProps {
   name: string;
   url: string;
@@ -404,18 +269,6 @@ function ReaderLink({ name, url }: ReaderLinkProps) {
       {name}
       <ExternalLinkIcon />
     </a>
-  );
-}
-
-function StatusDot({ status }: { status: 'online' | 'offline' | 'degraded' }) {
-  const colors = {
-    online: 'bg-[var(--success)]',
-    offline: 'bg-[var(--error)]',
-    degraded: 'bg-[var(--warning)]',
-  };
-
-  return (
-    <span className={`inline-block h-3 w-3 rounded-full ${colors[status]}`} />
   );
 }
 

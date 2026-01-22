@@ -8,12 +8,12 @@ Feature roadmap for the Libertas website, broken into MVP, Nice-to-have, and Fut
 
 Hey, I am working to implement features for the libertas website from the roadmap. Let's continue with implementing:
 
-Intake Page:
-
 Feeds Page :
 
 Search Page :
-  - Replace mock data with real items from weekly digests & ingests
+  - Ensure date filtering includes weekly digests in response
+  - Ensure clear search button removes topic selections and date too
+  - the +X part on the topics tags isnt vertically aligned with the topic tag badges in the item cards
 
 Feed Endpoints:
 
@@ -27,6 +27,14 @@ Workflow B:
 Workflow C:
 
 Workflow D:
+
+Database Checks:
+
+Configuration checks:
+
+Agent Promp Checks:
+
+Open Source
 
 
 # Phase 2: Nice-to-have

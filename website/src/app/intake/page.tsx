@@ -270,7 +270,7 @@ export default function IntakePage() {
 
           <p className="text-body text-[var(--fg-secondary)]">
             Share project ideas, stories about freedom tech, or feedback on our platform.
-            Every submission is reviewed by our research pipeline.
+            Every submission is reviewed by the Libertas AI agent research pipeline.
           </p>
         </div>
 
@@ -353,7 +353,7 @@ export default function IntakePage() {
             onChange={(v) => handleInputChange('contact', v)}
             error={errors.contact}
             placeholder="email@example.com"
-            hint="Only if you'd like us to follow up. We'll never share or sell your email."
+            hint="Only if you're interested in potential follow ups. We'll never share or sell your email."
           />
 
           {/* Urgency (project and story only) */}
@@ -391,7 +391,6 @@ export default function IntakePage() {
               <li>We do not store IP addresses or browser fingerprints.</li>
               <li>Your email (if provided) is only used for follow-up and never shared.</li>
               <li>Published content is anonymized unless you explicitly request attribution.</li>
-              <li>You can request deletion by emailing privacy@libertas.fgu.tech</li>
             </ul>
           </div>
 
@@ -553,7 +552,7 @@ function StoryFields({ formData, errors, onChange }: FieldsProps) {
         onChange={(v) => onChange('description', v)}
         error={errors.description}
         placeholder="Describe what happened, who was involved, and why it matters for freedom tech."
-        hint="Include as much detail as you can. We verify all submissions before publishing."
+        hint="Include as much detail as you can. This helps improve publications."
         required
         rows={6}
       />
@@ -566,7 +565,7 @@ function StoryFields({ formData, errors, onChange }: FieldsProps) {
         onChange={(v) => onChange('sourceUrl', v)}
         error={errors.sourceUrl}
         placeholder="https://example.com/article"
-        hint="Link to a news article, social media post, or other source."
+        hint="Link to a news article, social media post, or other source about the story."
       />
 
       <FormField
@@ -575,7 +574,7 @@ function StoryFields({ formData, errors, onChange }: FieldsProps) {
         value={formData.region || ''}
         onChange={(v) => onChange('region', v)}
         error={errors.region}
-        placeholder="e.g., Southeast Asia, Global, Online"
+        placeholder="e.g., Southeast Asia, Venezuela, Global, Online"
       />
     </>
   );
