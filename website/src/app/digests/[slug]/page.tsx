@@ -162,9 +162,10 @@ export default async function DigestPage({ params }: DigestPageProps) {
                   {digest.emergingPatterns.map((pattern, index) => (
                     <li key={index} className="flex gap-3">
                       <span className="text-[var(--accent-amber)] mt-1">{">"}</span>
-                      <span className="text-body text-[var(--fg-secondary)]">
-                        {pattern.pattern}
-                      </span>
+                      <span
+                        className="text-body text-[var(--fg-secondary)]"
+                        dangerouslySetInnerHTML={{ __html: parseInlineBold(pattern.pattern) }}
+                      />
                     </li>
                   ))}
                 </ul>
@@ -207,26 +208,6 @@ export default async function DigestPage({ params }: DigestPageProps) {
           </article>
         </div>
       </main>
-
-      {/* Footer */}
-      <footer className="border-t border-[var(--border-subtle)] py-8">
-        <div className="container">
-          <div className="flex items-center justify-between text-small text-[var(--fg-tertiary)]">
-            <span>
-              <span className="text-[var(--accent-amber)]">{">"}</span> built by{" "}
-              <a
-                href="https://github.com/FGUTech"
-                className="text-[var(--fg-secondary)] hover:text-[var(--accent-amber)]"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Freedom Go Up
-              </a>
-            </span>
-            <span className="tag">No tracking</span>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
@@ -343,4 +324,13 @@ function LookingAheadIcon() {
       <polyline points="12 6 12 12 16 14" />
     </svg>
   );
+}
+
+// Helper to parse **bold** markdown syntax inline
+function parseInlineBold(text: string): string {
+  return text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/\*\*(.+?)\*\*/g, '<strong class="font-semibold text-[var(--fg-primary)]">$1</strong>');
 }

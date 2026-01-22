@@ -165,14 +165,7 @@ function parseInlineMarkdown(content: string): string {
   // Tables
   html = parseMarkdownTables(html);
 
-  // Lists (unordered)
-  html = html.replace(/^- (.+)$/gm, '<li class="ml-4 mb-1">$1</li>');
-  html = html.replace(/(<li[^>]*>.*<\/li>\n?)+/g, (match) => `<ul class="list-disc list-inside my-4 space-y-1">${match}</ul>`);
-
-  // Lists (ordered)
-  html = html.replace(/^\d+\. (.+)$/gm, '<li class="ml-4 mb-1">$1</li>');
-
-  // Bold
+  // Bold (before lists so bold text in list items works)
   html = html.replace(/\*\*(.+?)\*\*/g, '<strong class="font-semibold text-[var(--fg-primary)]">$1</strong>');
 
   // Italic
@@ -181,13 +174,13 @@ function parseInlineMarkdown(content: string): string {
   // Inline code
   html = html.replace(/`([^`]+)`/g, '<code class="code-inline">$1</code>');
 
-  // Links (markdown syntax)
+  // Links (markdown syntax) - before auto-link so explicit links aren't double-processed
   html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="citation" target="_blank" rel="noopener noreferrer">$1</a>');
 
   // Auto-link bare URLs (https://, http://, www.)
-  // This regex matches URLs not already inside href="" or inside an <a> tag
+  // Must happen BEFORE list conversion so URLs aren't inside <li> tags yet
   html = html.replace(
-    /(?<!href="|">)(https?:\/\/[^\s<>\[\]"']+|www\.[^\s<>\[\]"']+)/gi,
+    /(?<!href=")(https?:\/\/[^\s<>\[\]"']+|www\.[^\s<>\[\]"']+)/gi,
     (url) => {
       const href = url.startsWith('www.') ? `https://${url}` : url;
       // Remove trailing punctuation that's likely not part of URL
@@ -196,6 +189,13 @@ function parseInlineMarkdown(content: string): string {
       return `<a href="${cleanUrl}" class="citation" target="_blank" rel="noopener noreferrer">${displayUrl}</a>`;
     }
   );
+
+  // Lists (unordered) - after links so URLs inside list items are already converted
+  html = html.replace(/^- (.+)$/gm, '<li class="ml-4 mb-1">$1</li>');
+  html = html.replace(/(<li[^>]*>.*<\/li>\n?)+/g, (match) => `<ul class="list-disc list-inside my-4 space-y-1">${match}</ul>`);
+
+  // Lists (ordered)
+  html = html.replace(/^\d+\. (.+)$/gm, '<li class="ml-4 mb-1">$1</li>');
 
   // Paragraphs (double newlines)
   html = html.replace(/\n\n/g, '</p><p class="text-body text-[var(--fg-secondary)] mb-4 leading-relaxed">');
