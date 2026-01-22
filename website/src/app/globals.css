@@ -30,6 +30,12 @@
   --error: #ff3c3c;
   --info: #00b4ff;
 
+  /* Digest Accent - Amber/Gold */
+  --accent-amber: #ffb800;
+  --accent-amber-hover: #ffcc33;
+  --accent-amber-muted: #ffb80020;
+  --bg-digest: #1a1500;
+
   /* Borders */
   --border-subtle: #222222;
   --border-default: #333333;
@@ -124,6 +130,12 @@
   --border-subtle: #e0e0e0;
   --border-default: #cccccc;
   --border-strong: #999999;
+
+  /* Digest Accent - Amber/Gold (light theme) */
+  --accent-amber: #d49b00;
+  --accent-amber-hover: #c28e00;
+  --accent-amber-muted: #d49b0020;
+  --bg-digest: #fffbf0;
 
   color-scheme: light;
 }
@@ -552,6 +564,12 @@ body {
   background: var(--accent-muted);
   border-color: var(--accent-primary);
   color: var(--accent-primary);
+}
+
+.tag-digest {
+  background: var(--accent-amber-muted);
+  border-color: var(--accent-amber);
+  color: var(--accent-amber);
 }
 
 .citation {

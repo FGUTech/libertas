@@ -1,30 +1,30 @@
 import { Suspense } from "react";
-import { PostsFeed } from "./PostsFeed";
+import { ContentFeed } from "./PostsFeed";
 import { PostsFeedSkeleton } from "./PostsFeedSkeleton";
-import { getAllPosts } from "@/lib/posts";
+import { getAllContent } from "@/lib/posts";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "All Signals",
   description:
-    "Browse all published freedom tech research and insights. Filter by topic, sort by relevance or date.",
+    "Browse all published freedom tech research, insights, and weekly digests. Filter by topic, sort by relevance or date.",
   openGraph: {
     title: "All Signals | Libertas",
     description:
-      "Browse published research and insights on freedom tech, privacy, and censorship resistance.",
+      "Browse published research, insights, and digests on freedom tech, privacy, and censorship resistance.",
     type: "website",
   },
   twitter: {
     card: "summary",
     title: "All Signals | Libertas",
     description:
-      "Browse published research and insights on freedom tech, privacy, and censorship resistance.",
+      "Browse published research, insights, and digests on freedom tech, privacy, and censorship resistance.",
   },
 };
 
 export default function PostsPage() {
-  // Load posts server-side (uses filesystem at build time)
-  const posts = getAllPosts();
+  // Load all content (posts + digests) server-side (uses filesystem at build time)
+  const content = getAllContent();
 
   return (
     <div className="matrix-bg min-h-screen">
@@ -34,12 +34,12 @@ export default function PostsPage() {
           <div className="mb-8">
             <h1 className="text-h1 mb-2">All Signals</h1>
             <p className="text-body text-[var(--fg-secondary)]">
-              Browse published research and insights on freedom tech.
+              Browse published research, insights, and weekly digests on freedom tech.
             </p>
           </div>
 
           <Suspense fallback={<PostsFeedSkeleton />}>
-            <PostsFeed posts={posts} />
+            <ContentFeed items={content} />
           </Suspense>
         </div>
       </main>

@@ -1010,6 +1010,294 @@
       "position": [5700, 200],
       "id": "handle-github-error",
       "name": "Handle GitHub Error"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "is-feedback-check",
+              "leftValue": "={{ $('Parse LLM Response').first().json._storyData?.type }}",
+              "rightValue": "feedback",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [3060, -200],
+      "id": "is-feedback-check",
+      "name": "Is Feedback?"
+    },
+    {
+      "parameters": {
+        "url": "https://libertas.fgu.tech/api/agents/intake-feedback-assess",
+        "options": {
+          "timeout": 5000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [3280, -700],
+      "id": "fetch-feedback-assess-prompt",
+      "name": "Fetch Feedback Assess Prompt"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "use-stubs-feedback-assess",
+              "leftValue": "={{ $('Parse LLM Response').first().json._runtime?.use_stubs ?? true }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [3500, -700],
+      "id": "use-stubs-feedback-assess",
+      "name": "Use Stubs for Feedback Assess?"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Feedback Assess Stub for testing (1.13c)\n// Provides keyword-based feedback assessment without calling Claude API\n\nconst parsedLLM = $('Parse LLM Response').first().json;\nconst message = parsedLLM.message || '';\nconst category = parsedLLM.category || 'other';\nconst fullText = message.toLowerCase();\n\n// Spam detection\nconst is_spam = fullText.includes('crypto airdrop') ||\n                fullText.includes('click here') ||\n                fullText.includes('guaranteed returns') ||\n                fullText.includes('100x') ||\n                (message.match(/https?:\\/\\//g) || []).length > 3;\n\n// Priority assessment\nlet priority = 'normal';\nif (fullText.includes('security') || fullText.includes('vulnerability') || fullText.includes('data loss')) {\n  priority = 'urgent';\n} else if (fullText.includes('urgent') || fullText.includes('emergency') || fullText.includes('broken')) {\n  priority = 'urgent';\n} else if (fullText.includes('minor') || fullText.includes('cosmetic') || fullText.includes('nice to have')) {\n  priority = 'low';\n}\n\n// Extract actionable items\nconst actionable_items = [];\nif (fullText.includes('bug') || fullText.includes('broken') || fullText.includes('not working')) {\n  actionable_items.push('Investigate reported issue');\n}\nif (fullText.includes('feature') || fullText.includes('would be great') || fullText.includes('should')) {\n  actionable_items.push('Evaluate feature request');\n}\nif (fullText.includes('content') || fullText.includes('article') || fullText.includes('cover')) {\n  actionable_items.push('Review content suggestion');\n}\nif (actionable_items.length === 0) {\n  actionable_items.push('Review feedback and determine next steps');\n}\n\n// Suggested assignee based on category\nlet suggested_assignee = 'triage';\nif (category === 'bug') suggested_assignee = 'engineering';\nelse if (category === 'feature') suggested_assignee = 'engineering';\nelse if (category === 'content') suggested_assignee = 'content';\n\n// Generate summary\nconst summary = message.substring(0, 180).replace(/\\n/g, ' ').trim() + (message.length > 180 ? '...' : '');\n\n// Sentiment detection\nlet sentiment = 'neutral';\nif (fullText.includes('love') || fullText.includes('great') || fullText.includes('awesome')) sentiment = 'positive';\nelse if (fullText.includes('hate') || fullText.includes('terrible') || fullText.includes('awful')) sentiment = 'negative';\nelse if (fullText.includes('suggest') || fullText.includes('could') || fullText.includes('should')) sentiment = 'constructive';\n\nconst result = {\n  is_spam,\n  priority: is_spam ? 'low' : priority,\n  actionable_items: is_spam ? [] : actionable_items,\n  suggested_assignee: is_spam ? 'triage' : suggested_assignee,\n  summary,\n  sentiment,\n  requires_clarification: message.length < 50 && !is_spam,\n  clarification_needed: message.length < 50 && !is_spam ? 'More details would help us address your feedback' : ''\n};\n\nreturn [{\n  json: {\n    content: [{ type: 'text', text: JSON.stringify(result) }],\n    _submissionId: parsedLLM.submissionId,\n    _message: message,\n    _feedbackData: {\n      category: category,\n      contact: parsedLLM.contact || null,\n      requires_response: parsedLLM.requires_response || false\n    },\n    _runtime: parsedLLM._runtime\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [3720, -800],
+      "id": "feedback-assess-stub",
+      "name": "Feedback Assess Stub"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 1024,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": {{ JSON.stringify($('Fetch Feedback Assess Prompt').first().json.content + \"\\n\\n# Input\\n\\n\" + JSON.stringify({ message: $('Parse LLM Response').first().json.message, category: $('Parse LLM Response').first().json.category || 'other', contact: $('Parse LLM Response').first().json.contact ? true : false, requires_response: $('Parse LLM Response').first().json.requires_response || false })) }}\n  }]\n}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [3720, -600],
+      "id": "feedback-assess-claude",
+      "name": "Feedback Assess with Claude API",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "ANTHROPIC_CREDENTIAL_ID",
+          "name": "Anthropic API Key"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Wrap Claude API response for feedback assessment\nconst claudeResponse = $input.first().json;\nconst parsedLLM = $('Parse LLM Response').first().json;\n\nreturn [{\n  json: {\n    content: claudeResponse.content,\n    _submissionId: parsedLLM.submissionId,\n    _message: parsedLLM.message,\n    _feedbackData: {\n      category: parsedLLM.category || 'other',\n      contact: parsedLLM.contact || null,\n      requires_response: parsedLLM.requires_response || false\n    },\n    _runtime: parsedLLM._runtime\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [3940, -600],
+      "id": "wrap-feedback-assess-response",
+      "name": "Wrap Feedback Assess Response"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Handle errors from Feedback Assess Claude API call\nconst error = $input.first().json;\nconst parsedLLM = $('Parse LLM Response').first().json;\n\nconsole.log('Feedback Assess Claude API error:', JSON.stringify(error));\n\nconst fallbackResult = {\n  is_spam: false,\n  priority: 'normal',\n  actionable_items: ['Manual review required due to API error'],\n  suggested_assignee: 'triage',\n  summary: 'API error - manual review required',\n  sentiment: 'neutral',\n  requires_clarification: false,\n  clarification_needed: ''\n};\n\nreturn [{\n  json: {\n    content: [{ type: 'text', text: JSON.stringify(fallbackResult) }],\n    _submissionId: parsedLLM.submissionId,\n    _message: parsedLLM.message,\n    _feedbackData: {\n      category: parsedLLM.category || 'other',\n      contact: parsedLLM.contact || null,\n      requires_response: parsedLLM.requires_response || false\n    },\n    _runtime: parsedLLM._runtime,\n    _apiError: true\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [3940, -500],
+      "id": "handle-feedback-assess-error",
+      "name": "Handle Feedback Assess Error"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse feedback assessment LLM response\nconst input = $input.first().json;\nlet parsed;\n\ntry {\n  let text = input.content[0].text;\n  \n  // Strip markdown code blocks if present\n  text = text.trim();\n  if (text.startsWith('```')) {\n    text = text.replace(/^```(?:json)?\\s*\\n?/, '');\n    text = text.replace(/\\n?```\\s*$/, '');\n  }\n  \n  parsed = JSON.parse(text.trim());\n} catch (e) {\n  console.log('Parse Feedback LLM Response error:', e.message);\n  parsed = {\n    is_spam: false,\n    priority: 'normal',\n    actionable_items: ['Parse error - manual review required'],\n    suggested_assignee: 'triage',\n    summary: 'Failed to parse: ' + e.message,\n    sentiment: 'neutral',\n    requires_clarification: false,\n    clarification_needed: ''\n  };\n}\n\n// Ensure all required fields with defaults\nconst result = {\n  is_spam: Boolean(parsed.is_spam),\n  priority: parsed.priority || 'normal',\n  actionable_items: Array.isArray(parsed.actionable_items) ? parsed.actionable_items : [],\n  suggested_assignee: parsed.suggested_assignee || 'triage',\n  summary: (parsed.summary || '').substring(0, 200),\n  sentiment: parsed.sentiment || 'neutral',\n  requires_clarification: Boolean(parsed.requires_clarification),\n  clarification_needed: parsed.clarification_needed || '',\n  \n  // Pass through data\n  _submissionId: input._submissionId,\n  _message: input._message,\n  _feedbackData: input._feedbackData,\n  _runtime: input._runtime\n};\n\nreturn [{ json: result }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [4160, -700],
+      "id": "parse-feedback-llm-response",
+      "name": "Parse Feedback LLM Response"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Map feedback category to GitHub labels\n// Category mapping per roadmap 1.13c:\n// bug → [bug, feedback]\n// feature → [enhancement, feedback]\n// content → [content, feedback]\n// other → [feedback, triage-needed]\n\nconst data = $input.first().json;\nconst feedbackData = data._feedbackData;\nconst category = feedbackData?.category || 'other';\n\nlet labels = ['feedback'];\nlet targetRepo = 'FGUTech/libertas'; // All feedback goes to main repo\n\nswitch (category) {\n  case 'bug':\n    labels = ['bug', 'feedback'];\n    break;\n  case 'feature':\n    labels = ['enhancement', 'feedback'];\n    break;\n  case 'content':\n    labels = ['content', 'feedback'];\n    break;\n  default:\n    labels = ['feedback', 'triage-needed'];\n}\n\n// Add priority label if urgent\nif (data.priority === 'urgent') {\n  labels.push('priority-urgent');\n}\n\n// Build issue title\nlet titlePrefix = '[Feedback]';\nif (category === 'bug') titlePrefix = '[Bug Report]';\nelse if (category === 'feature') titlePrefix = '[Feature Request]';\nelse if (category === 'content') titlePrefix = '[Content Suggestion]';\n\nconst titleText = data.summary.length > 50 \n  ? data.summary.substring(0, 47).replace(/\\s+\\S*$/, '') + '...'\n  : data.summary;\n\nconst issueTitle = `${titlePrefix} ${titleText}`;\n\n// Build issue body\nconst actionableList = data.actionable_items.length > 0\n  ? data.actionable_items.map(item => `- ${item}`).join('\\n')\n  : '_No specific actions identified_';\n\nconst contactSection = feedbackData.contact && feedbackData.requires_response\n  ? '\\n\\n**Contact:** Provided (check submission record for details)\\n**Response Requested:** Yes'\n  : '';\n\nconst issueBody = `## Feedback\n\n${data._message}\n\n## Assessment\n\n**Category:** ${category}\n**Priority:** ${data.priority}\n**Sentiment:** ${data.sentiment}\n**Suggested Assignee:** ${data.suggested_assignee}\n\n## Actionable Items\n\n${actionableList}\n\n${data.requires_clarification ? '### Clarification Needed\\n\\n' + data.clarification_needed + '\\n\\n' : ''}---\n**Submission ID:** \\`${data._submissionId}\\`${contactSection}\n\n---\n*Auto-generated by Libertas Workflow C (Feedback Intake)*`;\n\nreturn [{\n  json: {\n    issueTitle,\n    issueBody,\n    labels,\n    targetRepo,\n    ...data\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [4380, -700],
+      "id": "map-feedback-to-labels",
+      "name": "Map Feedback to Labels"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "use-stubs-feedback-github",
+              "leftValue": "={{ $('Parse LLM Response').first().json._runtime?.use_stubs ?? true }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [4600, -700],
+      "id": "use-stubs-feedback-github",
+      "name": "Use Stubs for Feedback GitHub?"
+    },
+    {
+      "parameters": {
+        "jsCode": "// STUB: Simulate GitHub issue creation for feedback\nconst data = $input.first().json;\n\nconst stubIssueNumber = 300 + Math.floor(Math.random() * 700);\nconst stubIssueUrl = `https://github.com/${data.targetRepo}/issues/${stubIssueNumber}`;\n\nconsole.log(`[STUB] Created mock GitHub feedback issue #${stubIssueNumber}`);\nconsole.log(`[STUB] Labels: ${data.labels.join(', ')}`);\n\nreturn [{\n  json: {\n    html_url: stubIssueUrl,\n    number: stubIssueNumber,\n    title: data.issueTitle,\n    state: 'open',\n    _submissionId: data._submissionId,\n    _feedbackData: data._feedbackData,\n    _isStub: true\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [4820, -800],
+      "id": "feedback-github-stub",
+      "name": "Feedback GitHub Stub"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.github.com/repos/{{ $json.targetRepo }}/issues",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/vnd.github.v3+json"
+            },
+            {
+              "name": "X-GitHub-Api-Version",
+              "value": "2022-11-28"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"title\": {{ JSON.stringify($json.issueTitle) }},\n  \"body\": {{ JSON.stringify($json.issueBody) }},\n  \"labels\": {{ JSON.stringify($json.labels) }}\n}",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [4820, -600],
+      "id": "create-feedback-github-issue",
+      "name": "Create Feedback GitHub Issue",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "GITHUB_CREDENTIAL_ID",
+          "name": "GitHub API Token"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Wrap real GitHub API response for feedback issues\nconst githubResponse = $input.first().json;\nconst prepareData = $('Map Feedback to Labels').first().json;\n\nreturn [{\n  json: {\n    html_url: githubResponse.html_url,\n    number: githubResponse.number,\n    title: githubResponse.title,\n    state: githubResponse.state,\n    _submissionId: prepareData._submissionId,\n    _feedbackData: prepareData._feedbackData,\n    _isStub: false\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [5040, -600],
+      "id": "wrap-feedback-github-response",
+      "name": "Wrap Feedback GitHub Response"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Handle errors from Feedback GitHub API call\nconst error = $input.first().json;\nconst prepareData = $('Map Feedback to Labels').first().json;\n\nconsole.log('Feedback GitHub API error:', JSON.stringify(error));\n\nreturn [{\n  json: {\n    html_url: null,\n    number: null,\n    title: prepareData.issueTitle,\n    state: 'error',\n    _submissionId: prepareData._submissionId,\n    _feedbackData: prepareData._feedbackData,\n    _isStub: false,\n    _apiError: true,\n    _errorMessage: 'Feedback GitHub issue creation failed - will retry later'\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [5040, -500],
+      "id": "handle-feedback-github-error",
+      "name": "Handle Feedback GitHub Error"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "UPDATE submissions\n  SET github_issue_url = $1,\n      status = 'triaged'\n  WHERE id = $2::uuid",
+        "options": {
+          "queryReplacement": "={{ $json.html_url }}, {{ $json._submissionId }}"
+        }
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [5260, -700],
+      "id": "update-feedback-submission",
+      "name": "Update Feedback Submission",
+      "credentials": {
+        "postgres": {
+          "id": "qDXwbsZ3b2DpBCrd",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Prepare response for feedback submissions\nconst data = $input.first().json;\nconst feedbackData = $('Map Feedback to Labels').first().json._feedbackData;\n\nreturn [{\n  json: {\n    submissionId: data._submissionId,\n    githubIssueUrl: data.html_url,\n    success: !data._apiError,\n    type: 'feedback',\n    category: feedbackData?.category || 'other',\n    requiresResponse: feedbackData?.requires_response || false\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [5480, -700],
+      "id": "feedback-success-summary",
+      "name": "Feedback Success Summary"
     }
   ],
   "pinData": {},
@@ -1238,7 +1526,7 @@
         ],
         [
           {
-            "node": "Use Stubs for GitHub?",
+            "node": "Is Feedback?",
             "type": "main",
             "index": 0
           }
@@ -1763,6 +2051,217 @@
       ]
     },
     "Save Issue URL": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Is Feedback?": {
+      "main": [
+        [
+          {
+            "node": "Fetch Feedback Assess Prompt",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Use Stubs for GitHub?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Feedback Assess Prompt": {
+      "main": [
+        [
+          {
+            "node": "Use Stubs for Feedback Assess?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Use Stubs for Feedback Assess?": {
+      "main": [
+        [
+          {
+            "node": "Feedback Assess Stub",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Feedback Assess with Claude API",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Feedback Assess Stub": {
+      "main": [
+        [
+          {
+            "node": "Parse Feedback LLM Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Feedback Assess with Claude API": {
+      "main": [
+        [
+          {
+            "node": "Wrap Feedback Assess Response",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Handle Feedback Assess Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wrap Feedback Assess Response": {
+      "main": [
+        [
+          {
+            "node": "Parse Feedback LLM Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Handle Feedback Assess Error": {
+      "main": [
+        [
+          {
+            "node": "Parse Feedback LLM Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Feedback LLM Response": {
+      "main": [
+        [
+          {
+            "node": "Map Feedback to Labels",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Map Feedback to Labels": {
+      "main": [
+        [
+          {
+            "node": "Use Stubs for Feedback GitHub?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Use Stubs for Feedback GitHub?": {
+      "main": [
+        [
+          {
+            "node": "Feedback GitHub Stub",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Create Feedback GitHub Issue",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Feedback GitHub Stub": {
+      "main": [
+        [
+          {
+            "node": "Update Feedback Submission",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Feedback GitHub Issue": {
+      "main": [
+        [
+          {
+            "node": "Wrap Feedback GitHub Response",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Handle Feedback GitHub Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wrap Feedback GitHub Response": {
+      "main": [
+        [
+          {
+            "node": "Update Feedback Submission",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Handle Feedback GitHub Error": {
+      "main": [
+        [
+          {
+            "node": "Update Feedback Submission",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Feedback Submission": {
+      "main": [
+        [
+          {
+            "node": "Feedback Success Summary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Feedback Success Summary": {
       "main": [
         [
           {

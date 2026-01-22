@@ -1,115 +1,12 @@
 import Link from "next/link";
-import { PostCard } from "@/components/PostCard";
+import { ContentCard } from "@/components/PostCard";
 import { WebsiteJsonLd } from "@/components/JsonLd";
-import type { Post } from "@/types";
-
-// Mock data for recent posts - will be replaced with real data fetching
-const mockPosts: Post[] = [
-  {
-    id: "1",
-    slug: "bitcoin-mesh-networks-expand-to-rural-communities",
-    title: "Bitcoin Mesh Networks Expand to Rural Communities",
-    summary:
-      "New offline-first Bitcoin transaction protocols are enabling financial sovereignty in areas with limited internet connectivity, using mesh networking and satellite links.",
-    content: "",
-    publishedAt: "2026-01-05T14:30:00Z",
-    tags: ["bitcoin", "mesh-networks", "rural-access"],
-    topics: ["bitcoin", "payments", "sovereignty"],
-    citations: [
-      {
-        url: "https://example.com/source1",
-        title: "Mesh Network Deployment Report",
-        source: "Bitcoin Magazine",
-        accessedAt: "2026-01-05T10:00:00Z",
-      },
-      {
-        url: "https://example.com/source2",
-        title: "Rural Financial Inclusion Study",
-        source: "World Bank",
-        accessedAt: "2026-01-05T10:00:00Z",
-      },
-    ],
-    freedomRelevanceScore: 92,
-    credibilityScore: 88,
-  },
-  {
-    id: "2",
-    slug: "zero-knowledge-proofs-for-private-voting",
-    title: "Zero-Knowledge Proofs Enable Private Digital Voting",
-    summary:
-      "A new ZK-SNARK implementation allows verifiable voting without revealing individual choices, addressing both transparency and privacy concerns in democratic processes.",
-    content: "",
-    publishedAt: "2026-01-04T09:15:00Z",
-    tags: ["zk-proofs", "voting", "democracy"],
-    topics: ["zk", "privacy", "identity"],
-    citations: [
-      {
-        url: "https://example.com/source3",
-        title: "ZK Voting Protocol Paper",
-        source: "ETH Zurich",
-        accessedAt: "2026-01-04T08:00:00Z",
-      },
-    ],
-    freedomRelevanceScore: 95,
-    credibilityScore: 91,
-  },
-  {
-    id: "3",
-    slug: "encrypted-messenger-adoption-surge",
-    title: "Encrypted Messenger Adoption Surges in Southeast Asia",
-    summary:
-      "Signal and Session see record adoption rates following new surveillance legislation, with activists developing localized guides for secure communication practices.",
-    content: "",
-    publishedAt: "2026-01-03T16:45:00Z",
-    tags: ["encryption", "messaging", "activism"],
-    topics: ["comms", "privacy", "activism"],
-    citations: [
-      {
-        url: "https://example.com/source4",
-        title: "Digital Rights Report 2026",
-        source: "EFF",
-        accessedAt: "2026-01-03T12:00:00Z",
-      },
-      {
-        url: "https://example.com/source5",
-        title: "Messenger Adoption Statistics",
-        source: "Signal Foundation",
-        accessedAt: "2026-01-03T12:00:00Z",
-      },
-      {
-        url: "https://example.com/source6",
-        title: "Regional Security Analysis",
-        source: "Access Now",
-        accessedAt: "2026-01-03T12:00:00Z",
-      },
-    ],
-    freedomRelevanceScore: 89,
-    credibilityScore: 85,
-  },
-  {
-    id: "4",
-    slug: "decentralized-identity-standards-finalized",
-    title: "W3C Finalizes Decentralized Identity Standards",
-    summary:
-      "New web standards for self-sovereign identity give users control over their digital credentials without relying on centralized authorities or platforms.",
-    content: "",
-    publishedAt: "2026-01-02T11:00:00Z",
-    tags: ["identity", "w3c", "standards"],
-    topics: ["identity", "sovereignty"],
-    citations: [
-      {
-        url: "https://example.com/source7",
-        title: "W3C DID Specification",
-        source: "W3C",
-        accessedAt: "2026-01-02T09:00:00Z",
-      },
-    ],
-    freedomRelevanceScore: 87,
-    credibilityScore: 94,
-  },
-];
+import { getAllContent, isPost } from "@/lib/posts";
 
 export default function Home() {
+  // Load all content (posts + digests) server-side (uses filesystem, falls back to mock if no content)
+  const content = getAllContent().slice(0, 5);
+
   return (
     <div className="matrix-bg min-h-screen">
       {/* JSON-LD Structured Data */}
@@ -176,9 +73,12 @@ export default function Home() {
           </div>
 
           <div className="grid-posts">
-            {mockPosts.map((post) => (
-              <Link key={post.id} href={`/posts/${post.slug}`}>
-                <PostCard post={post} />
+            {content.map((item) => (
+              <Link
+                key={item.id}
+                href={isPost(item) ? `/posts/${item.slug}` : `/digests/${item.slug}`}
+              >
+                <ContentCard item={item} />
               </Link>
             ))}
           </div>

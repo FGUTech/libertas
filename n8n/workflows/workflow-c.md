@@ -256,6 +256,89 @@ This document describes the control flow of the Libertas intake processing workf
                                         └─────────────────────────────┘
 ```
 
+## Feedback Processing Flow (1.13c) - NEW
+
+```
+┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│  FEEDBACK BRANCH: Assess platform feedback, create GitHub issues with category-based labels                       │
+└──────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+                                        ┌─────────────────────────────┐
+                                        │   Is Feedback?              │
+                                        │   type='feedback'           │
+                                        └─────────────┬───────────────┘
+                                                      │
+                                        ┌─────────────▼───────────────┐
+                                        │   Fetch Feedback Assess     │
+                                        │   Prompt                    │
+                                        │   /api/agents/intake-       │
+                                        │   feedback-assess           │
+                                        └─────────────┬───────────────┘
+                                                      │
+                                        ┌─────────────▼───────────────┐
+                                        │   Use Stubs for Feedback    │
+                                        │   Assess?                   │
+                                        └───────┬─────────────┬───────┘
+                                                │             │
+                        ┌───────────────────────▼───────┐  ┌──▼──────────────────────┐
+                        │   Feedback Assess Stub        │  │  Feedback Assess with   │
+                        │   (keyword-based spam,        │  │  Claude API             │
+                        │    priority, actionable       │  │  (full AI assessment)   │
+                        │    items detection)           │  │                         │
+                        └───────────────────────┬───────┘  └──┬───────────────────────┘
+                                                │             │
+                                                └──────┬──────┘
+                                                       │
+                                        ┌──────────────▼──────────────┐
+                                        │   Parse Feedback LLM        │
+                                        │   Response                  │
+                                        │   (is_spam, priority,       │
+                                        │    actionable_items,        │
+                                        │    suggested_assignee,      │
+                                        │    sentiment)               │
+                                        └──────────────┬──────────────┘
+                                                       │
+                                        ┌──────────────▼──────────────┐
+                                        │   Map Feedback to Labels    │
+                                        │   bug → [bug, feedback]     │
+                                        │   feature → [enhancement,   │
+                                        │             feedback]       │
+                                        │   content → [content,       │
+                                        │             feedback]       │
+                                        │   other → [feedback,        │
+                                        │           triage-needed]    │
+                                        └──────────────┬──────────────┘
+                                                       │
+                                        ┌──────────────▼──────────────┐
+                                        │   Use Stubs for Feedback    │
+                                        │   GitHub?                   │
+                                        └───────┬─────────────┬───────┘
+                                                │             │
+                        ┌───────────────────────▼───────┐  ┌──▼──────────────────────┐
+                        │   Feedback GitHub Stub        │  │  Create Feedback GitHub │
+                        │   (mock issue URL)            │  │  Issue                  │
+                        └───────────────────────┬───────┘  │  Labels: category-based │
+                                                │          └──┬───────────────────────┘
+                                                │             │
+                                                └──────┬──────┘
+                                                       │
+                                        ┌──────────────▼──────────────┐
+                                        │   Update Feedback           │
+                                        │   Submission                │
+                                        │   (set status='triaged',    │
+                                        │    github_issue_url)        │
+                                        └──────────────┬──────────────┘
+                                                       │
+                                        ┌──────────────▼──────────────┐
+                                        │   Feedback Success Summary  │
+                                        └──────────────┬──────────────┘
+                                                       │
+                                        ┌──────────────▼──────────────┐
+                                        │   Respond to Webhook        │
+                                        │   (201 Created)             │
+                                        └─────────────────────────────┘
+```
+
 ## Phase Summary
 
 | Phase | Description | Key Decision Points |
@@ -275,7 +358,18 @@ This document describes the control flow of the Libertas intake processing workf
 |------|-------------|------------|---------------|
 | **story** | title, description, sourceUrl, region, urgency | Story classify → source_items queue → GitHub issue | `intake`, `story`, `{priority}` |
 | **project** | title, problemStatement, description, urgency | Project evaluate → project_ideas insert → GitHub issue | `project-idea`, `community-submitted`, `intake` |
-| **feedback** | message, category, contact | Basic classify → GitHub issue | `intake`, `{priority}` |
+| **feedback** | message, category, contact | Feedback assess → category-label GitHub issue | Category-based (see below) |
+
+### Feedback Category → Label Mapping (1.13c)
+
+| Category | GitHub Labels | Issue Title Prefix |
+|----------|---------------|-------------------|
+| `bug` | `bug`, `feedback` | `[Bug Report]` |
+| `feature` | `enhancement`, `feedback` | `[Feature Request]` |
+| `content` | `content`, `feedback` | `[Content Suggestion]` |
+| `other` | `feedback`, `triage-needed` | `[Feedback]` |
+
+Note: If priority is `urgent`, the label `priority-urgent` is also added.
 
 ## Project Idea Assessment
 
@@ -323,7 +417,8 @@ Stubs are controlled independently for:
 1. Initial classification (`Use Stubs for Classify?`)
 2. Story classification (`Use Stubs for Story Classify?`)
 3. Project evaluation (`Use Stubs for Project Evaluate?`)
-4. GitHub issue creation (`Use Stubs for GitHub?`, `Use Stubs for Project GitHub?`)
+4. Feedback assessment (`Use Stubs for Feedback Assess?`)
+5. GitHub issue creation (`Use Stubs for GitHub?`, `Use Stubs for Project GitHub?`, `Use Stubs for Feedback GitHub?`)
 
 ## Node Reference
 
@@ -350,6 +445,50 @@ Stubs are controlled independently for:
 | `build-project-update-query` | Build Project Update Query | code | UPDATE project_ideas + submissions |
 | `update-project-idea-url` | Update Project Idea URL | postgres | Execute update query |
 | `project-success-summary` | Project Success Summary | code | Prepare webhook response |
+
+### Feedback Processing Nodes (1.13c)
+
+| Node ID | Name | Type | Purpose |
+|---------|------|------|---------|
+| `is-feedback-check` | Is Feedback? | if | Branch on submission type |
+| `fetch-feedback-assess-prompt` | Fetch Feedback Assess Prompt | httpRequest | GET /api/agents/intake-feedback-assess |
+| `use-stubs-feedback-assess` | Use Stubs for Feedback Assess? | if | Branch on use_stubs flag |
+| `feedback-assess-stub` | Feedback Assess Stub | code | Keyword-based feedback assessment |
+| `feedback-assess-claude` | Feedback Assess with Claude API | httpRequest | POST to Claude API |
+| `wrap-feedback-assess-response` | Wrap Feedback Assess Response | code | Normalize API response |
+| `handle-feedback-assess-error` | Handle Feedback Assess Error | code | Graceful error handling |
+| `parse-feedback-llm-response` | Parse Feedback LLM Response | code | Extract JSON from response |
+| `map-feedback-to-labels` | Map Feedback to Labels | code | Category → GitHub labels mapping |
+| `use-stubs-feedback-github` | Use Stubs for Feedback GitHub? | if | Branch on use_stubs flag |
+| `feedback-github-stub` | Feedback GitHub Stub | code | Mock issue creation |
+| `create-feedback-github-issue` | Create Feedback GitHub Issue | httpRequest | POST to GitHub API |
+| `wrap-feedback-github-response` | Wrap Feedback GitHub Response | code | Normalize API response |
+| `handle-feedback-github-error` | Handle Feedback GitHub Error | code | Graceful error handling |
+| `update-feedback-submission` | Update Feedback Submission | postgres | Update status to 'triaged' |
+| `feedback-success-summary` | Feedback Success Summary | code | Prepare webhook response |
+
+## Feedback Assessment Agent
+
+The feedback assessment agent (`intake-feedback-assess.md`) analyzes platform feedback submissions:
+
+### Assessment Outputs
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `is_spam` | boolean | Whether submission appears to be spam/abuse |
+| `priority` | string | `urgent`, `normal`, or `low` |
+| `actionable_items` | string[] | Specific actions to address feedback |
+| `suggested_assignee` | string | Team best suited (engineering, design, content, community, triage) |
+| `summary` | string | Brief summary of the feedback (max 200 chars) |
+| `sentiment` | string | `positive`, `negative`, `neutral`, or `constructive` |
+| `requires_clarification` | boolean | Whether more detail is needed |
+| `clarification_needed` | string | What clarification would help |
+
+### Priority Guidelines
+
+- **urgent**: Security issues, data loss bugs, accessibility blockers, or issues affecting many users
+- **normal**: Standard feature requests, non-critical bugs, content suggestions
+- **low**: Minor cosmetic issues, nice-to-haves, general comments
 
 ## Data Models
 

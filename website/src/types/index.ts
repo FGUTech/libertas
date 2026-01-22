@@ -243,6 +243,7 @@ export type ClassificationResult = z.infer<typeof ClassificationResultSchema>;
  * Simplified version of Insight for display
  */
 export interface Post {
+  type: 'post';
   id: string;
   slug: string;
   title: string;
@@ -257,6 +258,64 @@ export interface Post {
   freedomRelevanceScore: number;
   credibilityScore: number;
   geo?: string[];
+}
+
+/**
+ * Digest section - grouped content within a digest
+ */
+export interface DigestSection {
+  title: string;
+  contentMarkdown: string;
+  insightSlugs?: string[];
+}
+
+/**
+ * Emerging pattern identified across insights
+ */
+export interface EmergingPattern {
+  pattern: string;
+  supportingSignals: string[];
+}
+
+/**
+ * Digest - weekly summary of insights
+ * Displayed in the unified feed alongside posts
+ */
+export interface Digest {
+  type: 'digest';
+  id: string;
+  slug: string;
+  title: string;
+  periodStart: string;
+  periodEnd: string;
+  executiveTldr: string;
+  sections: DigestSection[];
+  emergingPatterns?: EmergingPattern[];
+  lookingAhead?: string[];
+  insightCount: number;
+  topTopics: Topic[];
+  publishedAt: string;
+  content: string; // Full markdown content for the detail page
+}
+
+/**
+ * ContentItem - discriminated union for unified feed
+ * Posts and Digests can both appear in the feed
+ */
+export type ContentItem = Post | Digest;
+
+/**
+ * Type guard to check if content item is a Post
+ */
+export function isPost(item: ContentItem): item is Post {
+  return item.type === 'post';
+}
+
+/**
+ * Type guard to check if content item is a Digest
+ */
+export function isDigest(item: ContentItem): item is Digest {
+  return item.type === 'digest';
 }
 
 /**

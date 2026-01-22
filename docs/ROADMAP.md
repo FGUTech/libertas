@@ -119,85 +119,32 @@ Core infrastructure and workflow features required for initial launch.
 
 ---
 
-### 1.12 Workflow B: Project Ideas in Digest ✅
-
-**Description**: Include generated project ideas in weekly digest.
-
-**Requirements**:
-- [x] Re-add Query Recent Project Ideas node
-- [x] Wire project ideas into DigestComposer input
-- [x] Include "Project Ideas Generated This Week" section in digest output
-
-**Implementation Notes**:
-- Query `project_ideas` table for items with `created_at` in digest period
-- Only include ideas with status='new', 'triaged', or 'build_candidate'
-- Project ideas are passed to DigestComposer (both stub and real Claude API)
-- Digest agent prompt updated to include `project_ideas` in output schema
-- ParseDigestOutput node renders project ideas section in markdown
-
----
-
-### 1.13b Workflow C: Project Idea Intake Processing ✅
-
-**Description**: Process "project" type submissions as community-sourced project ideas.
-
-**Requirements**:
-- [x] Add conditional branch in Workflow C to detect `type: 'project'` submissions
-- [x] Map submission fields to `project_ideas` schema:
-  - `title` → used in GitHub issue title
-  - `problemStatement` → `problem_statement`
-  - `description` → `proposed_solution`
-- [x] Claude API evaluation uses `runtime.use_stubs` toggle (shares IF node pattern from 1.13):
-  - Generate `threat_model` from problem statement
-  - Identify `affected_groups`
-  - Assess `feasibility_score` and `impact_score`
-  - Flag `misuse_risks`
-  - Suggest `technical_dependencies` and `suggested_stack`
-- [x] Create or extend `agents/intake-project-evaluate.md` prompt for project idea assessment
-- [x] Insert into `project_ideas` table with `status: 'new'`
-- [x] GitHub issue creation uses `runtime.use_stubs` toggle (shares IF node pattern from 1.13)
-- [x] Update `project_ideas.github_issue_url` with created issue URL
-- [x] Update submission status to `triaged` after processing
-
-**Implementation Notes**:
-- Community project ideas follow same schema as auto-generated ideas from Workflow D
-- Add `community-submitted` label to distinguish from auto-generated ideas
-- Consider expedited review path for high-impact submissions (`urgency: 'urgent'`)
-- Link `project_ideas.derived_from_insight_ids` to any related insights if submission references existing content
-- Inherits stub/real toggle from parent 1.13 workflow
-- Agent prompt: `agents/intake-project-evaluate.md`
-- API endpoint: `/api/agents/intake-project-evaluate`
-- GitHub labels: `project-idea`, `community-submitted`, `intake`
-- Documentation: `n8n/workflows/workflow-c.md`
-
----
-
 ### 1.13c Workflow C: Feedback Intake Processing
 
 **Description**: Process "feedback" type submissions to create GitHub issues for platform improvements.
 
 **Requirements**:
-- [ ] Add conditional branch in Workflow C to detect `type: 'feedback'` submissions
-- [ ] Map `category` field to GitHub issue labels:
+- [x] Add conditional branch in Workflow C to detect `type: 'feedback'` submissions
+- [x] Map `category` field to GitHub issue labels:
   - `bug` → labels: `bug`, `feedback`
   - `feature` → labels: `enhancement`, `feedback`
   - `content` → labels: `content`, `feedback`
   - `other` → labels: `feedback`, `triage-needed`
-- [ ] Claude API assessment uses `runtime.use_stubs` toggle (shares IF node pattern from 1.13):
+- [x] Claude API assessment uses `runtime.use_stubs` toggle (shares IF node pattern from 1.13):
   - Detect spam/abuse and set `is_spam` flag
   - Assess priority based on content severity
   - Extract actionable items from message
   - Suggest appropriate assignees or project areas
-- [ ] GitHub issue creation uses `runtime.use_stubs` toggle (shares IF node pattern from 1.13):
+- [x] GitHub issue creation uses `runtime.use_stubs` toggle (shares IF node pattern from 1.13):
   - `bug`/`feature` → main Libertas repo
   - `content` → potentially separate content issues or same repo with label
-- [ ] Format issue body with:
+- [x] Format issue body with:
   - Original feedback message
   - Submission ID for reference
   - Contact email (if provided and user consented to follow-up)
   - Category and priority assessment
-- [ ] Update submission status to `triaged` after issue creation
-- [ ] If `requires_response: true`, add to response queue
+- [x] Update submission status to `triaged` after issue creation
+- [x] If `requires_response: true`, add to response queue
 
 **Implementation Notes**:
 - Feedback submissions do NOT generate insights or project ideas
@@ -205,6 +152,16 @@ Core infrastructure and workflow features required for initial launch.
 - Spam detection is critical for this intake type (public feedback forms attract abuse)
 - Consider auto-closing duplicate issues if similar feedback already exists
 - Inherits stub/real toggle from parent 1.13 workflow
+
+**Implementation Summary** (completed):
+- Created `agents/intake-feedback-assess.md` - Feedback assessment agent prompt
+- Created `/api/agents/intake-feedback-assess` - API route to serve agent prompt
+- Added "Is Feedback?" branch to Workflow C after "Is Project?"
+- Implemented feedback assessment (stub + Claude API) with spam detection
+- Implemented category → label mapping in "Map Feedback to Labels" node
+- Created feedback-specific GitHub issue creation with category-based labels
+- Submission status updated to 'triaged' after issue creation
+- Full stub/real toggle support for both assessment and GitHub creation
 
 ---
 

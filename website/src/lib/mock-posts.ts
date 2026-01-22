@@ -6,6 +6,7 @@ import type { Post, Topic } from "@/types";
  */
 export const mockPosts: Post[] = [
   {
+    type: 'post' as const,
     id: "1",
     slug: "bitcoin-mesh-networks-expand-to-rural-communities",
     title: "Bitcoin Mesh Networks Expand to Rural Communities",
@@ -103,6 +104,7 @@ Bitcoin mesh networks demonstrate that financial freedom doesn't require permiss
     credibilityScore: 88,
   },
   {
+    type: 'post' as const,
     id: "2",
     slug: "zero-knowledge-proofs-for-private-voting",
     title: "Zero-Knowledge Proofs Enable Private Digital Voting",
@@ -205,6 +207,7 @@ Zero-knowledge proofs represent a breakthrough in reconciling the competing dema
     credibilityScore: 91,
   },
   {
+    type: 'post' as const,
     id: "3",
     slug: "encrypted-messenger-adoption-surge",
     title: "Encrypted Messenger Adoption Surges in Southeast Asia",
@@ -331,6 +334,7 @@ The rapid adoption of encrypted messaging in Southeast Asia shows both the deman
     credibilityScore: 85,
   },
   {
+    type: 'post' as const,
     id: "4",
     slug: "decentralized-identity-standards-finalized",
     title: "W3C Finalizes Decentralized Identity Standards",
@@ -446,6 +450,7 @@ The finalization of DID and VC standards marks the beginning of a new chapter in
     credibilityScore: 94,
   },
   {
+    type: 'post' as const,
     id: "5",
     slug: "tor-network-performance-improvements",
     title: "Tor Network Sees Major Performance Improvements",
@@ -551,6 +556,7 @@ These performance improvements remove a significant barrier to Tor adoption, mak
     credibilityScore: 92,
   },
   {
+    type: 'post' as const,
     id: "6",
     slug: "bitcoin-lightning-privacy-upgrade",
     title: "Lightning Network Privacy Upgrade Deployed",
@@ -657,6 +663,7 @@ These privacy upgrades represent a major step forward for Lightning Network priv
     credibilityScore: 89,
   },
   {
+    type: 'post' as const,
     id: "7",
     slug: "starknet-proving-cost-reduction",
     title: "Starknet Achieves 10x Proving Cost Reduction",
@@ -783,6 +790,7 @@ The 10x reduction in proving costs makes STARK technology viable for a much broa
     credibilityScore: 95,
   },
   {
+    type: 'post' as const,
     id: "8",
     slug: "surveillance-legislation-tracker-launch",
     title: "Global Surveillance Legislation Tracker Launches",

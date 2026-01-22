@@ -8,15 +8,19 @@
 import fs from "fs";
 import path from "path";
 import yaml from "js-yaml";
-import type { Post, Topic, PostCitation } from "@/types";
-import { TOPICS } from "@/types";
+import type { Post, Topic, PostCitation, Digest, ContentItem, DigestSection, EmergingPattern } from "@/types";
+import { TOPICS, isPost, isDigest } from "@/types";
 import { mockPosts, getAdjacentPosts as getMockAdjacentPosts } from "./mock-posts";
 
-// Content directory relative to website root
-const CONTENT_DIR = path.join(process.cwd(), "public", "content", "insights");
+// Content directories relative to website root
+const INSIGHTS_DIR = path.join(process.cwd(), "public", "content", "insights");
+const DIGESTS_DIR = path.join(process.cwd(), "public", "content", "digests");
+
+// Legacy alias for backwards compatibility
+const CONTENT_DIR = INSIGHTS_DIR;
 
 /**
- * Frontmatter structure from markdown files
+ * Frontmatter structure from insight markdown files
  */
 interface InsightFrontmatter {
   title: string;
@@ -31,6 +35,21 @@ interface InsightFrontmatter {
   citations: string[];
   author?: string;
   tags?: string[];
+}
+
+/**
+ * Frontmatter structure from digest markdown files
+ */
+interface DigestFrontmatter {
+  type: 'digest';
+  title: string;
+  slug: string;
+  period_start: string;
+  period_end: string;
+  insight_count: number;
+  top_topics: string[];
+  published_at: string;
+  status: string;
 }
 
 /**
@@ -97,6 +116,7 @@ function frontmatterToPost(
   content = content.replace(/\*\*TL;DR:\*\*\s*.+\n+/, "");
 
   return {
+    type: 'post' as const,
     id,
     slug: frontmatter.slug,
     title: frontmatter.title,
@@ -233,6 +253,218 @@ export function getAdjacentPosts(slug: string): {
     next: currentIndex > 0 ? posts[currentIndex - 1] : null,
   };
 }
+
+// =============================================================================
+// DIGEST LOADING
+// =============================================================================
+
+/**
+ * Parse digest markdown frontmatter
+ */
+function parseDigestMarkdown(content: string): { frontmatter: DigestFrontmatter; body: string } | null {
+  const frontmatterRegex = /^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/;
+  const match = content.match(frontmatterRegex);
+
+  if (!match) {
+    return null;
+  }
+
+  try {
+    const frontmatter = yaml.load(match[1]) as DigestFrontmatter;
+    const body = match[2].trim();
+    return { frontmatter, body };
+  } catch {
+    console.error("Failed to parse digest frontmatter");
+    return null;
+  }
+}
+
+/**
+ * Extract digest sections and metadata from markdown body
+ */
+function parseDigestBody(body: string): {
+  executiveTldr: string;
+  sections: DigestSection[];
+  emergingPatterns: EmergingPattern[];
+  lookingAhead: string[];
+} {
+  let executiveTldr = "";
+  const sections: DigestSection[] = [];
+  const emergingPatterns: EmergingPattern[] = [];
+  const lookingAhead: string[] = [];
+
+  // Extract executive TL;DR
+  const tldrMatch = body.match(/## Executive TL;DR\s*\n\n([\s\S]*?)(?=\n## |$)/);
+  if (tldrMatch) {
+    executiveTldr = tldrMatch[1].trim();
+  }
+
+  // Extract topic sections (## Section Title that aren't special sections)
+  const sectionRegex = /## ([^\n]+)\s*\n\n([\s\S]*?)(?=\n## |$)/g;
+  let sectionMatch;
+  const specialSections = ['Executive TL;DR', 'Emerging Patterns', 'Looking Ahead'];
+
+  while ((sectionMatch = sectionRegex.exec(body)) !== null) {
+    const title = sectionMatch[1].trim();
+    if (!specialSections.includes(title)) {
+      sections.push({
+        title,
+        contentMarkdown: sectionMatch[2].trim(),
+      });
+    }
+  }
+
+  // Extract emerging patterns
+  const patternsMatch = body.match(/## Emerging Patterns\s*\n\n([\s\S]*?)(?=\n## |$)/);
+  if (patternsMatch) {
+    const patternLines = patternsMatch[1].trim().split('\n').filter(line => line.startsWith('- '));
+    for (const line of patternLines) {
+      emergingPatterns.push({
+        pattern: line.replace(/^- /, '').trim(),
+        supportingSignals: [],
+      });
+    }
+  }
+
+  // Extract looking ahead
+  const lookingAheadMatch = body.match(/## Looking Ahead\s*\n\n([\s\S]*?)(?=\n## |$)/);
+  if (lookingAheadMatch) {
+    const items = lookingAheadMatch[1].trim().split('\n').filter(line => line.startsWith('- '));
+    for (const item of items) {
+      lookingAhead.push(item.replace(/^- /, '').trim());
+    }
+  }
+
+  return { executiveTldr, sections, emergingPatterns, lookingAhead };
+}
+
+/**
+ * Convert digest frontmatter and body to Digest type
+ */
+function frontmatterToDigest(
+  frontmatter: DigestFrontmatter,
+  body: string,
+  filePath: string
+): Digest {
+  const validTopics = frontmatter.top_topics.filter((t): t is Topic =>
+    TOPICS.includes(t as Topic)
+  );
+
+  const { executiveTldr, sections, emergingPatterns, lookingAhead } = parseDigestBody(body);
+
+  const id = path.basename(filePath, ".md");
+
+  return {
+    type: 'digest' as const,
+    id,
+    slug: frontmatter.slug,
+    title: frontmatter.title,
+    periodStart: frontmatter.period_start,
+    periodEnd: frontmatter.period_end,
+    executiveTldr,
+    sections,
+    emergingPatterns: emergingPatterns.length > 0 ? emergingPatterns : undefined,
+    lookingAhead: lookingAhead.length > 0 ? lookingAhead : undefined,
+    insightCount: frontmatter.insight_count,
+    topTopics: validTopics,
+    publishedAt: frontmatter.published_at,
+    content: body,
+  };
+}
+
+/**
+ * Load all digests from the filesystem
+ */
+function loadDigestsFromFilesystem(): Digest[] {
+  const markdownFiles = findMarkdownFiles(DIGESTS_DIR);
+
+  if (markdownFiles.length === 0) {
+    console.log("No digest files found");
+    return [];
+  }
+
+  const digests: Digest[] = [];
+
+  for (const filePath of markdownFiles) {
+    try {
+      const fileContent = fs.readFileSync(filePath, "utf-8");
+      const parsed = parseDigestMarkdown(fileContent);
+
+      if (!parsed) {
+        console.warn(`Failed to parse digest markdown: ${filePath}`);
+        continue;
+      }
+
+      // Only include published digests
+      if (parsed.frontmatter.status !== "published") {
+        continue;
+      }
+
+      const digest = frontmatterToDigest(parsed.frontmatter, parsed.body, filePath);
+      digests.push(digest);
+    } catch (error) {
+      console.error(`Error reading digest file ${filePath}:`, error);
+    }
+  }
+
+  console.log(`Loaded ${digests.length} digests from filesystem`);
+  return digests;
+}
+
+// Cache digests at module level (refreshed on each build)
+let cachedDigests: Digest[] | null = null;
+
+/**
+ * Get all digests, sorted by date (newest first)
+ */
+export function getAllDigests(): Digest[] {
+  if (!cachedDigests) {
+    cachedDigests = loadDigestsFromFilesystem();
+  }
+
+  return [...cachedDigests].sort(
+    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+  );
+}
+
+/**
+ * Get a single digest by slug
+ */
+export function getDigestBySlug(slug: string): Digest | undefined {
+  const digests = getAllDigests();
+  return digests.find((digest) => digest.slug === slug);
+}
+
+// =============================================================================
+// UNIFIED CONTENT (POSTS + DIGESTS)
+// =============================================================================
+
+/**
+ * Get all content items (posts + digests) sorted by date (newest first)
+ */
+export function getAllContent(): ContentItem[] {
+  const posts = getAllPosts();
+  const digests = getAllDigests();
+
+  const allContent: ContentItem[] = [...posts, ...digests];
+
+  return allContent.sort(
+    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+  );
+}
+
+/**
+ * Get content item by slug (checks both posts and digests)
+ */
+export function getContentBySlug(slug: string): ContentItem | undefined {
+  const post = getPostBySlug(slug);
+  if (post) return post;
+
+  return getDigestBySlug(slug);
+}
+
+// Re-export type guards for convenience
+export { isPost, isDigest };
 
 // Note: Search functionality is in mock-posts.ts and should be imported
 // directly by client components. This file uses Node.js fs module and
