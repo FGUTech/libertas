@@ -30,7 +30,7 @@ Database Checks:
   - Ensure all fields properly populating data from workflows ( ie not hardcoded/stale/bad values )
 
 Media kit change:
-  - Please look at the new media kit at ~/Downloads/Libertas_Media_Kit_Assets/ and change 
+  - Please look at the new media kit at ~/Downloads/Libertas_Media_Kit_Assets/ and change files in website/public and corresponding usage/logos throughout the website to this new media kit. Do not worry about anything outside logos/social cards/... ( ie dont touch anything in sourcecode / css files like keep old color schemes and things ) 
 
 Hey, i am working to improve agent prompts. Currently I am working on:
 Intake Project Evaluate Prompt:
@@ -41,6 +41,7 @@ Fix/Check/Do/...:
   - Verify all inputs mentioned in the prompt are passed into context in n8n workflow
   - Verify all user data passed from FE/website form for this is properly passed into context ( on n8n side, fe side, and prompt side )
   - Verify all outputs mentioned in the prompt are used in the workflow/posted to postgres ( ie used in some capacity )
+  - Ensure project ideas submissions follow same patterns/give same results as project idea n8n workflow. Ie make sure we get similar outputs and results from both ( maybe with slightly different github issue tags ) so all workflows/future features are integrated fully with user prompted project ideas
 
 Hey, i am working to improve agent prompts. Currently I am working on:
 Intake Feedback assess Prompt:

@@ -100,16 +100,15 @@ export function Header() {
             <Link
               href="/"
               onClick={closeMobileMenu}
-              className="flex items-center gap-1 text-mono text-[var(--accent-primary)] hover:glow-text transition-all group !text-[20px]"
+              className="flex items-center group"
             >
               <Image
-                src="/libertas-mark.svg"
-                alt="Libertas logo"
-                width={24}
-                height={24}
+                src="/libertas-logo-full.png"
+                alt="Libertas"
+                width={140}
+                height={22}
                 className="group-hover:drop-shadow-[0_0_8px_var(--accent-primary)] transition-all"
               />
-              <span>libertas</span>
             </Link>
 
             {/* Desktop Navigation */}
