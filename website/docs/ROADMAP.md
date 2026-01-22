@@ -21,19 +21,12 @@ Database Checks:
 Config/thresholds.yml:
 
 Hey, i am working to improve agent prompts. Currently I am working on:
-Digest Prompt:
-  Agent File: digest.md
-  API Route: /api/agents/digest
-  Used In: Workflow B (digest) - composes weekly digest
-Fix/Check/Do/...:
-  - Find references to "Executive TL;DR" in the prompt, and throughout the codebase, and ensure to change it to juse "TL;DR"
-
-Hey, i am working to improve agent prompts. Currently I am working on:
 Generate Idea Prompt:
   Agent File: generate-idea.md
   API Route: /api/agents/generate-idea
   Used In: Workflow D (ideas) - synthesizes project proposals
 Fix/Check/Do/...:
+  - Verify all inputs mentioned in the prompt are passed into context in n8n workflow
 
 Hey, i am working to improve agent prompts. Currently I am working on:
 Intake Classify Prompt:
@@ -42,6 +35,7 @@ Intake Classify Prompt:
   Used In: Workflow C (intake) - initial submission routing
 Fix/Check/Do/...:
   - Ensure we actually need this prompt. Or is having just the 3 sub-intake type prompts enough ( story classify, project evaluate, and feedback assess )
+  - Verify all inputs mentioned in the prompt are passed into context in n8n workflow
 
 Hey, i am working to improve agent prompts. Currently I am working on:
 Intake Story Classify prompt:
@@ -49,6 +43,7 @@ Intake Story Classify prompt:
   API Route: /api/agents/intake-story-classify
   Used In: Workflow C (intake) - story submission scoring
 Fix/Check/Do/...:
+  - Verify all inputs mentioned in the prompt are passed into context in n8n workflow
 
 Hey, i am working to improve agent prompts. Currently I am working on:
 Intake Project Evaluate Prompt:
@@ -56,6 +51,7 @@ Intake Project Evaluate Prompt:
   API Route: /api/agents/intake-project-evaluate
   Used In: Workflow C (intake) - project idea assessment
 Fix/Check/Do/...:
+  - Verify all inputs mentioned in the prompt are passed into context in n8n workflow
 
 Hey, i am working to improve agent prompts. Currently I am working on:
 Intake Feedback assess Prompt:
@@ -63,6 +59,7 @@ Intake Feedback assess Prompt:
   API Route: /api/agents/intake-feedback-assess
   Used In: Workflow C (intake) - feedback analysis
 Fix/Check/Do/...:
+  - Verify all inputs mentioned in the prompt are passed into context in n8n workflow
 
 Open Source
 

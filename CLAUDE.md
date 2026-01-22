@@ -74,7 +74,7 @@ npm run test:agents -- --agent=classifier --update-golden
 | **Insight** | Generated analysis | `title`, `tldr`, `topics[]`, `freedom_relevance_score`, `credibility_score`, `status` |
 | **ProjectIdea** | Project proposals | `problem_statement`, `proposed_solution`, `feasibility_score`, `impact_score`, `status` |
 | **Submission** | Public intake | `message`, `channel`, `risk_level`, `status` |
-| **Digest** | Weekly rollups | `period_start`, `period_end`, `executive_tldr`, `content_markdown` |
+| **Digest** | Weekly rollups | `period_start`, `period_end`, `tldr`, `content_markdown` |
 
 ## Key Configuration
 

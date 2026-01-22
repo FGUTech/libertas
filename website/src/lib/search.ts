@@ -81,7 +81,7 @@ function getSummary(item: ContentItem): string {
   if (isPost(item)) {
     return item.summary;
   } else if (isDigest(item)) {
-    return item.executiveTldr;
+    return item.tldr;
   }
   return '';
 }

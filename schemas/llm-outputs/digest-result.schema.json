@@ -4,12 +4,12 @@
   "title": "DigestResult",
   "description": "LLM output schema for weekly digest composition",
   "type": "object",
-  "required": ["executive_tldr", "sections", "insight_count"],
+  "required": ["tldr", "sections", "insight_count"],
   "properties": {
-    "executive_tldr": {
+    "tldr": {
       "type": "string",
       "maxLength": 500,
-      "description": "2-3 sentence executive summary of the week"
+      "description": "2-3 sentence summary of the week"
     },
     "sections": {
       "type": "array",

@@ -276,7 +276,7 @@ function SearchResultCard({ result }: SearchResultCardProps) {
 
   // Determine the link path and get appropriate data based on content type
   const linkPath = isPost(item) ? `/posts/${item.slug}` : `/digests/${item.slug}`;
-  const summary = isPost(item) ? item.summary : item.executiveTldr;
+  const summary = isPost(item) ? item.summary : item.tldr;
   const topics = isPost(item) ? item.topics : item.topTopics;
   const contentTypeLabel = isDigest(item) ? 'Digest' : null;
 

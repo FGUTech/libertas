@@ -283,26 +283,28 @@ function parseDigestMarkdown(content: string): { frontmatter: DigestFrontmatter;
  * Extract digest sections and metadata from markdown body
  */
 function parseDigestBody(body: string): {
-  executiveTldr: string;
+  tldr: string;
   sections: DigestSection[];
   emergingPatterns: EmergingPattern[];
   lookingAhead: string[];
+  sourcesThisWeek: string[];
 } {
-  let executiveTldr = "";
+  let tldr = "";
   const sections: DigestSection[] = [];
   const emergingPatterns: EmergingPattern[] = [];
   const lookingAhead: string[] = [];
+  const sourcesThisWeek: string[] = [];
 
   // Extract TL;DR
   const tldrMatch = body.match(/## TL;DR\s*\n\n([\s\S]*?)(?=\n## |$)/);
   if (tldrMatch) {
-    executiveTldr = tldrMatch[1].trim();
+    tldr = tldrMatch[1].trim();
   }
 
   // Extract topic sections (## Section Title that aren't special sections)
   const sectionRegex = /## ([^\n]+)\s*\n\n([\s\S]*?)(?=\n## |$)/g;
   let sectionMatch;
-  const specialSections = ['TL;DR', 'Emerging Patterns', 'Looking Ahead'];
+  const specialSections = ['TL;DR', 'Emerging Patterns', 'Looking Ahead', 'Sources This Week'];
 
   while ((sectionMatch = sectionRegex.exec(body)) !== null) {
     const title = sectionMatch[1].trim();
@@ -335,7 +337,16 @@ function parseDigestBody(body: string): {
     }
   }
 
-  return { executiveTldr, sections, emergingPatterns, lookingAhead };
+  // Extract sources this week
+  const sourcesMatch = body.match(/## Sources This Week\s*\n\n([\s\S]*?)(?=\n## |$)/);
+  if (sourcesMatch) {
+    const items = sourcesMatch[1].trim().split('\n').filter(line => line.startsWith('- '));
+    for (const item of items) {
+      sourcesThisWeek.push(item.replace(/^- /, '').trim());
+    }
+  }
+
+  return { tldr, sections, emergingPatterns, lookingAhead, sourcesThisWeek };
 }
 
 /**
@@ -350,7 +361,7 @@ function frontmatterToDigest(
     TOPICS.includes(t as Topic)
   );
 
-  const { executiveTldr, sections, emergingPatterns, lookingAhead } = parseDigestBody(body);
+  const { tldr, sections, emergingPatterns, lookingAhead, sourcesThisWeek } = parseDigestBody(body);
 
   const id = path.basename(filePath, ".md");
 
@@ -361,10 +372,11 @@ function frontmatterToDigest(
     title: frontmatter.title,
     periodStart: frontmatter.period_start,
     periodEnd: frontmatter.period_end,
-    executiveTldr,
+    tldr,
     sections,
     emergingPatterns: emergingPatterns.length > 0 ? emergingPatterns : undefined,
     lookingAhead: lookingAhead.length > 0 ? lookingAhead : undefined,
+    sourcesThisWeek: sourcesThisWeek.length > 0 ? sourcesThisWeek : undefined,
     insightCount: frontmatter.insight_count,
     topTopics: validTopics,
     publishedAt: frontmatter.published_at,

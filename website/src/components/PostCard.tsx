@@ -115,7 +115,7 @@ function DigestCard({ digest }: { digest: Digest }) {
         {digest.title}
       </h3>
       <p className="text-body mb-auto line-clamp-2 text-[var(--fg-secondary)]">
-        {digest.executiveTldr}
+        {digest.tldr}
       </p>
       <div className="mt-4 flex flex-wrap items-center gap-4 text-small text-[var(--fg-tertiary)]">
         <span className="flex items-center gap-1">

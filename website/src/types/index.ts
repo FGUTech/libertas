@@ -287,10 +287,11 @@ export interface Digest {
   title: string;
   periodStart: string;
   periodEnd: string;
-  executiveTldr: string;
+  tldr: string;
   sections: DigestSection[];
   emergingPatterns?: EmergingPattern[];
   lookingAhead?: string[];
+  sourcesThisWeek?: string[];
   insightCount: number;
   topTopics: Topic[];
   publishedAt: string;

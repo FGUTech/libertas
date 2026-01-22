@@ -29,14 +29,14 @@ export async function generateMetadata({
 
   return {
     title: `${digest.title} | Libertas Weekly Digest`,
-    description: digest.executiveTldr,
+    description: digest.tldr,
     keywords: [...digest.topTopics, "weekly digest", "freedom tech"],
     alternates: {
       canonical: digestUrl,
     },
     openGraph: {
       title: digest.title,
-      description: digest.executiveTldr,
+      description: digest.tldr,
       type: "article",
       url: digestUrl,
       publishedTime: digest.publishedAt,
@@ -45,7 +45,7 @@ export async function generateMetadata({
     twitter: {
       card: "summary_large_image",
       title: digest.title,
-      description: digest.executiveTldr,
+      description: digest.tldr,
     },
   };
 }
@@ -113,11 +113,11 @@ export default async function DigestPage({ params }: DigestPageProps) {
               {formatDateRange(digest.periodStart, digest.periodEnd)}
             </p>
 
-            {/* Executive TL;DR */}
+            {/* TL;DR */}
             <div className="mb-8 p-6 bg-[var(--bg-digest)] border border-[var(--accent-amber)] rounded-lg">
               <h2 className="text-h3 text-[var(--accent-amber)] mb-3">TL;DR</h2>
               <p className="text-body text-[var(--fg-secondary)] leading-relaxed">
-                {digest.executiveTldr}
+                {digest.tldr}
               </p>
             </div>
 
@@ -139,21 +139,9 @@ export default async function DigestPage({ params }: DigestPageProps) {
               <ShareButtons title={digest.title} url={digestUrl} />
             </div>
 
-            {/* Main Content Sections */}
-            <div className="prose-container">
-              {digest.sections.map((section, index) => (
-                <section key={index} className="mb-12">
-                  <h2 className="text-h2 text-[var(--fg-primary)] mb-4">{section.title}</h2>
-                  <div className="prose-libertas">
-                    <MarkdownRenderer content={section.contentMarkdown} />
-                  </div>
-                </section>
-              ))}
-            </div>
-
-            {/* Emerging Patterns */}
+            {/* Emerging Patterns - placed at top above main content */}
             {digest.emergingPatterns && digest.emergingPatterns.length > 0 && (
-              <section className="mt-12 mb-12 p-6 bg-[var(--bg-tertiary)] border border-[var(--border-subtle)] rounded-lg">
+              <section className="mb-12 p-6 bg-[var(--bg-tertiary)] border border-[var(--border-subtle)] rounded-lg">
                 <h2 className="text-h2 text-[var(--accent-amber)] mb-6 flex items-center gap-2">
                   <PatternIcon />
                   Emerging Patterns
@@ -172,6 +160,18 @@ export default async function DigestPage({ params }: DigestPageProps) {
               </section>
             )}
 
+            {/* Main Content Sections */}
+            <div className="prose-container">
+              {digest.sections.map((section, index) => (
+                <section key={index} className="mb-12">
+                  <h2 className="text-h2 text-[var(--fg-primary)] mb-4">{section.title}</h2>
+                  <div className="prose-libertas">
+                    <MarkdownRenderer content={section.contentMarkdown} />
+                  </div>
+                </section>
+              ))}
+            </div>
+
             {/* Looking Ahead */}
             {digest.lookingAhead && digest.lookingAhead.length > 0 && (
               <section className="mt-12 mb-12 p-6 bg-[var(--bg-tertiary)] border border-[var(--border-subtle)] rounded-lg">
@@ -184,6 +184,31 @@ export default async function DigestPage({ params }: DigestPageProps) {
                     <li key={index} className="flex gap-3">
                       <span className="text-[var(--accent-amber)]">{">"}</span>
                       <span className="text-body text-[var(--fg-secondary)]">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
+
+            {/* Sources This Week - at the end with shortened URLs */}
+            {digest.sourcesThisWeek && digest.sourcesThisWeek.length > 0 && (
+              <section className="mt-12 mb-12 p-4 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-lg">
+                <h3 className="text-small font-medium text-[var(--fg-tertiary)] mb-3 flex items-center gap-2">
+                  <SourcesIcon />
+                  Sources This Week
+                </h3>
+                <ul className="space-y-1">
+                  {digest.sourcesThisWeek.map((url, index) => (
+                    <li key={index}>
+                      <a
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs text-[var(--fg-tertiary)] hover:text-[var(--accent-amber)] transition-colors truncate block"
+                        title={url}
+                      >
+                        {shortenUrl(url)}
+                      </a>
                     </li>
                   ))}
                 </ul>
@@ -333,4 +358,39 @@ function parseInlineBold(text: string): string {
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/\*\*(.+?)\*\*/g, '<strong class="font-semibold text-[var(--fg-primary)]">$1</strong>');
+}
+
+// Helper to shorten URLs for display while keeping them clickable
+function shortenUrl(url: string): string {
+  try {
+    const parsed = new URL(url);
+    // Get just the domain without www
+    const domain = parsed.hostname.replace(/^www\./, '');
+    // Get the path, truncate if too long
+    let path = parsed.pathname;
+    if (path.length > 40) {
+      path = path.slice(0, 37) + '...';
+    }
+    return `${domain}${path}`;
+  } catch {
+    // If URL parsing fails, just truncate
+    return url.length > 50 ? url.slice(0, 47) + '...' : url;
+  }
+}
+
+function SourcesIcon() {
+  return (
+    <svg
+      className="icon icon-sm"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+      <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+    </svg>
+  );
 }
