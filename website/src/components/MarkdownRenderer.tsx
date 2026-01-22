@@ -41,11 +41,23 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
 }
 
 /**
+ * Remove the Sources section from markdown content
+ * (Sources are displayed separately via CitationList component)
+ */
+function removeSourcesSection(content: string): string {
+  // Remove "## Sources" or "## References" section and everything after it
+  return content.replace(/\n## (?:Sources|References)\s*\n[\s\S]*$/i, '');
+}
+
+/**
  * Render markdown to HTML with syntax highlighting
  */
 async function renderMarkdown(content: string): Promise<string> {
+  // Remove Sources section (displayed separately)
+  const cleanedContent = removeSourcesSection(content);
+
   // Split content into segments (code blocks vs regular markdown)
-  const segments = splitByCodeBlocks(content);
+  const segments = splitByCodeBlocks(cleanedContent);
   let result = "";
 
   for (const segment of segments) {
@@ -169,8 +181,21 @@ function parseInlineMarkdown(content: string): string {
   // Inline code
   html = html.replace(/`([^`]+)`/g, '<code class="code-inline">$1</code>');
 
-  // Links
+  // Links (markdown syntax)
   html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="citation" target="_blank" rel="noopener noreferrer">$1</a>');
+
+  // Auto-link bare URLs (https://, http://, www.)
+  // This regex matches URLs not already inside href="" or inside an <a> tag
+  html = html.replace(
+    /(?<!href="|">)(https?:\/\/[^\s<>\[\]"']+|www\.[^\s<>\[\]"']+)/gi,
+    (url) => {
+      const href = url.startsWith('www.') ? `https://${url}` : url;
+      // Remove trailing punctuation that's likely not part of URL
+      const cleanUrl = href.replace(/[.,;:!?)]+$/, '');
+      const displayUrl = url.replace(/[.,;:!?)]+$/, '');
+      return `<a href="${cleanUrl}" class="citation" target="_blank" rel="noopener noreferrer">${displayUrl}</a>`;
+    }
+  );
 
   // Paragraphs (double newlines)
   html = html.replace(/\n\n/g, '</p><p class="text-body text-[var(--fg-secondary)] mb-4 leading-relaxed">');

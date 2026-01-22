@@ -2,15 +2,13 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getPostBySlug, getAdjacentPosts, getAllPosts } from "@/lib/posts";
-import { extractToc } from "@/lib/markdown";
 import { MarkdownRenderer } from "@/components/MarkdownRenderer";
 import { PostMetadata } from "@/components/PostMetadata";
-import { TableOfContents } from "@/components/TableOfContents";
 import { ShareButtons } from "@/components/ShareButtons";
 import { CitationList } from "@/components/CitationList";
 import { PostNavigation } from "@/components/PostNavigation";
 import { PostJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
-import { ReadingProgress, ReadingTime } from "@/components/ReadingProgress";
+import { ReadingProgress } from "@/components/ReadingProgress";
 import { calculateReadingTime } from "@/lib/reading-time";
 
 interface PostPageProps {
@@ -74,8 +72,6 @@ export default async function PostPage({ params }: PostPageProps) {
   }
 
   const { previous, next } = getAdjacentPosts(slug);
-  const tocItems = extractToc(post.content);
-  const showToc = tocItems.length >= 3;
   const readingTime = calculateReadingTime(post.content);
 
   // Build the full URL for sharing
@@ -101,87 +97,54 @@ export default async function PostPage({ params }: PostPageProps) {
       {/* Main Content */}
       <main className="py-8 md:py-12">
         <div className="container">
-          <div className="flex gap-8">
-            {/* Article */}
-            <article className={`flex-1 ${showToc ? "max-w-3xl" : "max-w-4xl mx-auto"}`}>
-              {/* Back link */}
-              <Link
-                href="/posts"
-                className="inline-flex items-center gap-2 text-small text-[var(--fg-tertiary)] hover:text-[var(--fg-secondary)] mb-8 transition-colors"
-              >
-                <ChevronLeftIcon />
-                Back to all signals
-              </Link>
+          <article className="max-w-4xl mx-auto">
+            {/* Back link */}
+            <Link
+              href="/posts"
+              className="inline-flex items-center gap-2 text-small text-[var(--fg-tertiary)] hover:text-[var(--fg-secondary)] mb-8 transition-colors"
+            >
+              <ChevronLeftIcon />
+              Back to all signals
+            </Link>
 
-              {/* Title */}
-              <h1 className="text-hero mb-6">{post.title}</h1>
+            {/* Title */}
+            <h1 className="text-hero mb-6">{post.title}</h1>
 
-              {/* Summary */}
-              <p className="text-body text-lg text-[var(--fg-secondary)] mb-8 leading-relaxed border-l-2 border-[var(--accent-primary)] pl-4">
-                {post.summary}
-              </p>
+            {/* Summary */}
+            <p className="text-body text-lg text-[var(--fg-secondary)] mb-8 leading-relaxed border-l-2 border-[var(--accent-primary)] pl-4">
+              {post.summary}
+            </p>
 
-              {/* Metadata */}
-              <div className="mb-8 flex flex-wrap items-center gap-4">
-                <PostMetadata post={post} />
-                <ReadingTime minutes={readingTime} />
-              </div>
+            {/* Metadata */}
+            <div className="mb-8">
+              <PostMetadata post={post} readingTime={readingTime} />
+            </div>
 
-              {/* Share buttons */}
-              <div className="mb-12 pb-8 border-b border-[var(--border-subtle)]">
-                <ShareButtons title={post.title} url={postUrl} />
-              </div>
+            {/* Share buttons */}
+            <div className="mb-12 pb-8 border-b border-[var(--border-subtle)]">
+              <ShareButtons title={post.title} url={postUrl} />
+            </div>
 
-              {/* Content */}
-              <div className="prose-container">
-                <MarkdownRenderer content={post.content} />
-              </div>
+            {/* Content */}
+            <div className="prose-container">
+              <MarkdownRenderer content={post.content} />
+            </div>
 
-              {/* Citations */}
-              <CitationList citations={post.citations} />
+            {/* Citations */}
+            <CitationList citations={post.citations} />
 
-              {/* Share again at bottom */}
-              <div className="mt-12 pt-8 border-t border-[var(--border-subtle)]">
-                <ShareButtons title={post.title} url={postUrl} />
-              </div>
+            {/* Share again at bottom */}
+            <div className="mt-12 pt-8 border-t border-[var(--border-subtle)]">
+              <ShareButtons title={post.title} url={postUrl} />
+            </div>
 
-              {/* Navigation */}
-              <div className="mt-12">
-                <PostNavigation previous={previous} next={next} />
-              </div>
-            </article>
-
-            {/* Table of Contents Sidebar */}
-            {showToc && (
-              <aside className="hidden lg:block w-64 flex-shrink-0">
-                <div className="sticky top-24">
-                  <TableOfContents items={tocItems} />
-                </div>
-              </aside>
-            )}
-          </div>
+            {/* Navigation */}
+            <div className="mt-12">
+              <PostNavigation previous={previous} next={next} />
+            </div>
+          </article>
         </div>
       </main>
-
-      {/* Footer */}
-      <footer className="border-t border-[var(--border-subtle)] py-8">
-        <div className="container">
-          <div className="flex items-center justify-between text-small text-[var(--fg-tertiary)]">
-            <span>
-              <span className="text-[var(--accent-primary)]">{">"}</span> built by{" "}
-              <a
-                href="https://github.com/FGUTech"
-                className="text-[var(--fg-secondary)] hover:text-[var(--accent-primary)]"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Freedom Go Up
-              </a>
-            </span>
-            <span className="tag">No tracking</span>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

@@ -8,8 +8,12 @@ Feature roadmap for the Libertas website, broken into MVP, Nice-to-have, and Fut
 
 Hey, I am working to implement features for the libertas website from the roadmap. Let's continue with implementing:
 
+Individual digest page: /digests/[slug]
+  - look at http://localhost:3000/digests/weekly-2026-01-21 . In particular I see there are a couple parts that are cut off with "..." in the Project ideas generated this week" section. Please check where/how this issue is occuring and if we can fix it
+
 Search Page :
   - Replace mock data with real items from weekly digests & ingests
+
 
 # Phase 2: Nice-to-have
 

@@ -1,5 +1,6 @@
 import type { ContentItem, Topic, Post, Digest } from "@/types";
 import { isDigest } from "@/types";
+import { CountryFlags } from "@/components/CountryFlag";
 
 interface ContentCardProps {
   item: ContentItem;
@@ -45,6 +46,7 @@ export function PostCard({ post }: PostCardProps) {
  */
 function PostCardInner({ post }: { post: Post }) {
   const primaryTopic = post.topics[0];
+  const hasGeo = post.geo && post.geo.length > 0;
 
   return (
     <article className="card group flex h-full cursor-pointer flex-col overflow-hidden transition-all duration-200 hover:border-[var(--border-default)]">
@@ -54,7 +56,8 @@ function PostCardInner({ post }: { post: Post }) {
             {primaryTopic}
           </span>
         )}
-        <span className="text-small text-[var(--fg-tertiary)]">
+        <span className="text-sm text-[var(--fg-tertiary)] flex items-center gap-2">
+          {hasGeo && <CountryFlags locations={post.geo!} size="md" max={2} />}
           {formatDate(post.publishedAt)}
         </span>
       </div>
@@ -77,8 +80,8 @@ function PostCardInner({ post }: { post: Post }) {
               : undefined
           }
         >
-          <ScoreIcon />
-          <span>{post.freedomRelevanceScore}% relevance</span>
+          <SignalIcon />
+          <span>{post.freedomRelevanceScore}% freedom signal</span>
         </span>
         {post.citations.length > 0 && (
           <span className="flex items-center gap-1">
@@ -157,7 +160,7 @@ function formatDateRange(startDate: string, endDate: string): string {
   return `${startMonth} ${startDay} - ${endMonth} ${endDay}, ${year}`;
 }
 
-function ScoreIcon() {
+function SignalIcon() {
   return (
     <svg
       className="icon icon-sm"
@@ -168,7 +171,11 @@ function ScoreIcon() {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+      <path d="M2 20h.01" />
+      <path d="M7 20v-4" />
+      <path d="M12 20v-8" />
+      <path d="M17 20V8" />
+      <path d="M22 20V4" />
     </svg>
   );
 }

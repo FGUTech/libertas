@@ -1,7 +1,9 @@
 import type { Post, Topic } from "@/types";
+import { CountryFlag } from "@/components/CountryFlag";
 
 interface PostMetadataProps {
   post: Post;
+  readingTime?: number;
 }
 
 const topicColors: Record<Topic, string> = {
@@ -17,7 +19,7 @@ const topicColors: Record<Topic, string> = {
   sovereignty: "tag-accent",
 };
 
-export function PostMetadata({ post }: PostMetadataProps) {
+export function PostMetadata({ post, readingTime }: PostMetadataProps) {
   const formattedDate = new Date(post.publishedAt).toLocaleDateString("en-US", {
     weekday: "long",
     month: "long",
@@ -59,18 +61,24 @@ export function PostMetadata({ post }: PostMetadataProps) {
         </span>
       </div>
 
-      {/* Scores */}
+      {/* Scores and Reading Time */}
       <div className="flex flex-wrap items-center gap-4 text-small">
         <ScoreBadge
-          label="Freedom Relevance"
+          label="Freedom Signal"
           score={post.freedomRelevanceScore}
-          icon={<RelevanceIcon />}
+          icon={<SignalIcon />}
         />
         <ScoreBadge
           label="Credibility"
           score={post.credibilityScore}
           icon={<CredibilityIcon />}
         />
+        {readingTime !== undefined && (
+          <div className="flex items-center gap-2 bg-[var(--bg-tertiary)] px-3 py-1.5 rounded-md">
+            <span className="text-[var(--fg-tertiary)]"><ClockIcon /></span>
+            <span className="text-[var(--fg-secondary)]">{readingTime} min read</span>
+          </div>
+        )}
       </div>
 
       {/* Geo tags if present */}
@@ -78,7 +86,8 @@ export function PostMetadata({ post }: PostMetadataProps) {
         <div className="flex flex-wrap items-center gap-2">
           <GeoIcon />
           {post.geo.map((location) => (
-            <span key={location} className="tag">
+            <span key={location} className="tag !text-[14px] inline-flex items-center gap-2 py-1.5 px-3">
+              <CountryFlag location={location} size="lg" />
               {location}
             </span>
           ))}
@@ -102,9 +111,15 @@ function ScoreBadge({ label, score, icon }: ScoreBadgeProps) {
     return "text-[var(--error)]";
   };
 
+  const isHighScore = score >= 90;
+
   return (
-    <div className="flex items-center gap-2 bg-[var(--bg-tertiary)] px-3 py-1.5 rounded-md">
-      <span className="text-[var(--fg-tertiary)]">{icon}</span>
+    <div
+      className={`flex items-center gap-2 bg-[var(--bg-tertiary)] px-3 py-1.5 rounded-md transition-shadow ${
+        isHighScore ? "shadow-[0_0_12px_rgba(0,255,65,0.3)] border border-[var(--accent-primary)]/30" : ""
+      }`}
+    >
+      <span className={isHighScore ? "text-[var(--accent-primary)]" : "text-[var(--fg-tertiary)]"}>{icon}</span>
       <span className="text-[var(--fg-secondary)]">{label}:</span>
       <span className={`font-semibold ${getScoreColor(score)}`}>{score}%</span>
     </div>
@@ -164,7 +179,7 @@ function CitationIcon() {
   );
 }
 
-function RelevanceIcon() {
+function SignalIcon() {
   return (
     <svg
       className="icon icon-sm"
@@ -175,7 +190,11 @@ function RelevanceIcon() {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+      <path d="M2 20h.01" />
+      <path d="M7 20v-4" />
+      <path d="M12 20v-8" />
+      <path d="M17 20V8" />
+      <path d="M22 20V4" />
     </svg>
   );
 }
@@ -210,6 +229,23 @@ function GeoIcon() {
     >
       <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
       <circle cx="12" cy="10" r="3" />
+    </svg>
+  );
+}
+
+function ClockIcon() {
+  return (
+    <svg
+      className="icon icon-sm"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="12" cy="12" r="10" />
+      <polyline points="12 6 12 12 16 14" />
     </svg>
   );
 }

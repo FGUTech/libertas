@@ -5,9 +5,9 @@ import { useMemo, useCallback, useTransition } from 'react';
 import Link from 'next/link';
 import { SearchInput } from '@/components/SearchInput';
 import { DateRangeFilter } from './DateRangeFilter';
-import { searchPosts, type SearchResult } from '@/lib/mock-posts';
-import type { Topic } from '@/types';
-import { TOPICS } from '@/types';
+import { searchContent, type SearchResult } from '@/lib/search';
+import type { Topic, ContentItem } from '@/types';
+import { TOPICS, isPost, isDigest } from '@/types';
 
 const RESULTS_PER_PAGE = 12;
 
@@ -26,7 +26,11 @@ const topicLabels: Record<Topic, string> = {
   sovereignty: 'Sovereignty',
 };
 
-export function SearchResults() {
+interface SearchResultsProps {
+  content: ContentItem[];
+}
+
+export function SearchResults({ content }: SearchResultsProps) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -113,14 +117,14 @@ export function SearchResults() {
 
   // Perform search
   const results = useMemo(() => {
-    return searchPosts({
+    return searchContent(content, {
       query,
       topics: selectedTopics,
       dateFrom: dateFrom || undefined,
       dateTo: dateTo || undefined,
       sortBy,
     });
-  }, [query, selectedTopics, dateFrom, dateTo, sortBy]);
+  }, [content, query, selectedTopics, dateFrom, dateTo, sortBy]);
 
   // Pagination
   const totalPages = Math.ceil(results.length / RESULTS_PER_PAGE);
@@ -189,7 +193,7 @@ export function SearchResults() {
         <>
           <div className="space-y-4 mb-8">
             {paginatedResults.map((result) => (
-              <SearchResultCard key={result.post.id} result={result} query={query} />
+              <SearchResultCard key={result.item.id} result={result} />
             ))}
           </div>
 
@@ -265,38 +269,58 @@ function SortSelect({ value, onChange }: SortSelectProps) {
 // Search Result Card Component
 interface SearchResultCardProps {
   result: SearchResult;
-  query: string;
 }
 
-function SearchResultCard({ result, query }: SearchResultCardProps) {
-  const { post, matchedFields, highlights } = result;
+function SearchResultCard({ result }: SearchResultCardProps) {
+  const { item, matchedFields, highlights } = result;
+
+  // Determine the link path and get appropriate data based on content type
+  const linkPath = isPost(item) ? `/posts/${item.slug}` : `/digests/${item.slug}`;
+  const summary = isPost(item) ? item.summary : item.executiveTldr;
+  const topics = isPost(item) ? item.topics : item.topTopics;
+  const contentTypeLabel = isDigest(item) ? 'Digest' : null;
 
   return (
-    <Link href={`/posts/${post.slug}`} className="block group">
-      <article className="p-4 rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-secondary)] hover:border-[var(--border-default)] hover:bg-[var(--bg-tertiary)] transition-all">
-        {/* Title */}
-        <h2 className="text-lg font-medium text-[var(--fg-primary)] group-hover:text-[var(--accent-primary)] transition-colors mb-2">
-          {highlights.title ? (
-            <span dangerouslySetInnerHTML={{ __html: highlights.title }} />
-          ) : (
-            post.title
+    <Link href={linkPath} className="block group">
+      <article className={`p-4 rounded-lg border border-[var(--border-subtle)] hover:border-[var(--border-default)] transition-all ${
+        isDigest(item)
+          ? 'bg-[var(--bg-digest)] hover:bg-[var(--bg-tertiary)]'
+          : 'bg-[var(--bg-secondary)] hover:bg-[var(--bg-tertiary)]'
+      }`}>
+        {/* Content Type Badge and Title */}
+        <div className="flex items-start gap-2 mb-2">
+          {contentTypeLabel && (
+            <span className="tag text-xs py-0.5 px-1.5 bg-[var(--accent-amber-muted)] text-[var(--accent-amber)] border-[var(--accent-amber)]">
+              {contentTypeLabel}
+            </span>
           )}
-        </h2>
+          <h2 className={`text-lg font-medium text-[var(--fg-primary)] transition-colors ${
+            isDigest(item)
+              ? 'group-hover:text-[var(--accent-amber)]'
+              : 'group-hover:text-[var(--accent-primary)]'
+          }`}>
+            {highlights.title ? (
+              <span dangerouslySetInnerHTML={{ __html: highlights.title }} />
+            ) : (
+              item.title
+            )}
+          </h2>
+        </div>
 
         {/* Summary with highlights */}
         <p className="text-[var(--fg-secondary)] text-sm mb-3 line-clamp-2">
           {highlights.summary ? (
             <span dangerouslySetInnerHTML={{ __html: highlights.summary }} />
           ) : (
-            post.summary
+            summary
           )}
         </p>
 
         {/* Metadata Row */}
         <div className="flex flex-wrap items-center gap-3 text-xs text-[var(--fg-tertiary)]">
           {/* Date */}
-          <time dateTime={post.publishedAt}>
-            {new Date(post.publishedAt).toLocaleDateString('en-US', {
+          <time dateTime={item.publishedAt}>
+            {new Date(item.publishedAt).toLocaleDateString('en-US', {
               month: 'short',
               day: 'numeric',
               year: 'numeric',
@@ -313,13 +337,13 @@ function SearchResultCard({ result, query }: SearchResultCardProps) {
 
           {/* Topics */}
           <div className="flex gap-1.5 ml-auto">
-            {post.topics.slice(0, 3).map((topic) => (
+            {topics.slice(0, 3).map((topic) => (
               <span key={topic} className="tag text-xs py-0.5 px-1.5">
                 {topicLabels[topic]}
               </span>
             ))}
-            {post.topics.length > 3 && (
-              <span className="text-[var(--fg-tertiary)]">+{post.topics.length - 3}</span>
+            {topics.length > 3 && (
+              <span className="text-[var(--fg-tertiary)]">+{topics.length - 3}</span>
             )}
           </div>
         </div>

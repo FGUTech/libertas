@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
 import { SearchResults } from './SearchResults';
+import { getAllContent } from '@/lib/posts';
 
 export const metadata: Metadata = {
   title: 'Search | Libertas',
-  description: 'Search across all Libertas posts for freedom tech topics, Bitcoin, privacy, and more.',
+  description: 'Search across all Libertas posts and digests for freedom tech topics, Bitcoin, privacy, and more.',
 };
 
 function SearchResultsSkeleton() {
@@ -47,19 +48,22 @@ function SearchResultsSkeleton() {
 }
 
 export default function SearchPage() {
+  // Load all content (posts + digests) at build/request time
+  const content = getAllContent();
+
   return (
     <main className="container py-12">
       {/* Page Header */}
       <div className="mb-8">
         <h1 className="text-display mb-2">Search</h1>
         <p className="text-[var(--fg-secondary)]">
-          Find posts by keyword, topic, or date range
+          Find posts and digests by keyword, topic, or date range
         </p>
       </div>
 
       {/* Search Results Client Component wrapped in Suspense */}
       <Suspense fallback={<SearchResultsSkeleton />}>
-        <SearchResults />
+        <SearchResults content={content} />
       </Suspense>
     </main>
   );
