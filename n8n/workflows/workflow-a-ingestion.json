@@ -14,8 +14,11 @@
       },
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
-      "position": [0, 0],
-      "id": "cron-trigger",
+      "position": [
+        3632,
+        41808
+      ],
+      "id": "fb79bd8d-4cc8-400b-81fb-99a4d4d11c23",
       "name": "Every 6 Hours"
     },
     {
@@ -27,8 +30,11 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [220, -100],
-      "id": "fetch-sources-config",
+      "position": [
+        3920,
+        41520
+      ],
+      "id": "fcdda546-239e-4e9e-83ab-e8eb43b8526a",
       "name": "Fetch Sources Config"
     },
     {
@@ -40,8 +46,11 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [220, 100],
-      "id": "fetch-thresholds-config",
+      "position": [
+        3920,
+        41728
+      ],
+      "id": "77325aec-913c-4611-88b6-34c45522317b",
       "name": "Fetch Thresholds Config"
     },
     {
@@ -53,8 +62,11 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [220, 300],
-      "id": "fetch-classify-prompt",
+      "position": [
+        3920,
+        41920
+      ],
+      "id": "075315fd-5377-4d07-8710-4210d5c956ee",
       "name": "Fetch Classify Prompt"
     },
     {
@@ -66,41 +78,44 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [220, 500],
-      "id": "fetch-summarize-prompt",
+      "position": [
+        3920,
+        42128
+      ],
+      "id": "8639b340-1e98-4461-a8e5-271a0d4e1596",
       "name": "Fetch Summarize Prompt"
     },
     {
-      "parameters": {
-        "mode": "append",
-        "options": {}
-      },
+      "parameters": {},
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3.1,
-      "position": [440, 0],
-      "id": "merge-configs",
+      "position": [
+        4128,
+        41616
+      ],
+      "id": "57025e78-d2b3-4d51-8da9-d8f957fd5b72",
       "name": "Merge Configs"
     },
     {
-      "parameters": {
-        "mode": "append",
-        "options": {}
-      },
+      "parameters": {},
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3.1,
-      "position": [440, 300],
-      "id": "merge-prompts",
+      "position": [
+        4128,
+        41920
+      ],
+      "id": "12cb3434-c3b3-4b48-a95d-6989d184f103",
       "name": "Merge Prompts"
     },
     {
-      "parameters": {
-        "mode": "append",
-        "options": {}
-      },
+      "parameters": {},
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3.1,
-      "position": [660, 150],
-      "id": "merge-all",
+      "position": [
+        4352,
+        41776
+      ],
+      "id": "1a64ec97-f08f-4c27-aac8-04e31392924e",
       "name": "Merge All"
     },
     {
@@ -109,8 +124,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [880, 150],
-      "id": "merge-config",
+      "position": [
+        4528,
+        41776
+      ],
+      "id": "e5ddcb89-f533-4732-95c1-61b79f8d199b",
       "name": "Merge Config & Agents"
     },
     {
@@ -119,19 +137,24 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [1100, 150],
-      "id": "load-sources",
+      "position": [
+        4912,
+        41776
+      ],
+      "id": "be321ca0-3e26-4a86-ba14-b9daf1749bf7",
       "name": "Load Sources"
     },
     {
       "parameters": {
-        "batchSize": 1,
         "options": {}
       },
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
-      "position": [1320, 150],
-      "id": "loop-over-sources",
+      "position": [
+        5120,
+        41776
+      ],
+      "id": "d00525e2-df1f-463e-b75a-f36d28e22d91",
       "name": "Loop Over Sources"
     },
     {
@@ -140,8 +163,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [1540, 150],
-      "id": "fetch-and-extract",
+      "position": [
+        5360,
+        41888
+      ],
+      "id": "4d1c8375-cda7-477e-b9df-1f1893de61b5",
       "name": "Fetch RSS & Extract Items"
     },
     {
@@ -150,54 +176,27 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [1320, 0],
-      "id": "extract-text",
+      "position": [
+        5536,
+        41888
+      ],
+      "id": "0fde92c8-1e4f-40ab-8aaa-49bad22ecd98",
       "name": "Extract Text"
     },
     {
       "parameters": {
-        "action": "hash",
         "type": "SHA256",
         "value": "={{ $json.extractedText }}",
-        "dataPropertyName": "contentHash",
-        "encoding": "hex"
+        "dataPropertyName": "contentHash"
       },
       "type": "n8n-nodes-base.crypto",
       "typeVersion": 1,
-      "position": [1430, 0],
-      "id": "compute-hash",
+      "position": [
+        5360,
+        42128
+      ],
+      "id": "8b10abd4-0661-4a54-9159-18f99e0442fb",
       "name": "Compute Hash"
-    },
-    {
-      "parameters": {
-        "operation": "executeQuery",
-        "query": "SELECT id FROM source_items WHERE content_hash = $1 LIMIT 1",
-        "options": {
-          "queryReplacement": "={{ $json.contentHash }}"
-        }
-      },
-      "type": "n8n-nodes-base.postgres",
-      "typeVersion": 2.6,
-      "position": [1540, 0],
-      "id": "check-duplicate",
-      "name": "Check Duplicate",
-      "alwaysOutputData": true,
-      "credentials": {
-        "postgres": {
-          "id": "CREDENTIAL_ID",
-          "name": "Postgres account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "jsCode": "// Evaluate duplicate check result and merge with original data\n// Must match each Postgres result with its corresponding original item by index\n// Route _skip items to the duplicate path (isNew=false) to bypass processing\nconst duplicateResults = $input.all();\nconst originalItems = $('Compute Hash').all();\n\n// Process each item, matching by index\nreturn duplicateResults.map((result, index) => {\n  const originalData = originalItems[index]?.json || {};\n  \n  // Route _skip items to duplicate path (bypasses classification/summarization)\n  if (originalData._skip) {\n    return {\n      json: {\n        ...originalData,\n        isNew: false,\n        skippedReason: originalData.error || originalData.noItems ? 'source_error' : 'skip_flag'\n      }\n    };\n  }\n  \n  // Postgres returns object with id if duplicate found, empty/undefined otherwise\n  const isDuplicate = result.json && result.json.id;\n  \n  return {\n    json: {\n      ...originalData,\n      isNew: !isDuplicate,\n      duplicateId: isDuplicate ? result.json.id : null\n    }\n  };\n});"
-      },
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [1650, 0],
-      "id": "evaluate-duplicate",
-      "name": "Evaluate Duplicate"
     },
     {
       "parameters": {
@@ -224,13 +223,20 @@
       },
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
-      "position": [1760, 0],
-      "id": "is-new-item",
+      "position": [
+        5872,
+        42128
+      ],
+      "id": "9802d4d8-d0f7-4c30-95df-820579eb5289",
       "name": "Is New Item?"
     },
     {
       "parameters": {
-        "operation": "insert",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
         "table": {
           "__rl": true,
           "value": "source_items",
@@ -253,12 +259,15 @@
       },
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
-      "position": [1980, -100],
-      "id": "insert-source-item",
+      "position": [
+        6048,
+        42064
+      ],
+      "id": "dce023be-568b-4d94-9f25-836ae579d270",
       "name": "Insert Source Item",
       "credentials": {
         "postgres": {
-          "id": "CREDENTIAL_ID",
+          "id": "qDXwbsZ3b2DpBCrd",
           "name": "Postgres account"
         }
       }
@@ -269,8 +278,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [2310, -200],
-      "id": "classify-stub",
+      "position": [
+        5520,
+        42416
+      ],
+      "id": "df2d4a6a-c281-460c-94c1-0cd35f39e76f",
       "name": "Classify Stub (Claude)"
     },
     {
@@ -279,8 +291,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [2600, 100],
-      "id": "wrap-classify-response",
+      "position": [
+        5712,
+        42576
+      ],
+      "id": "e249ea59-52c0-4308-abd3-232092321046",
       "name": "Wrap Claude Classify Response"
     },
     {
@@ -308,8 +323,11 @@
       },
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
-      "position": [2090, -100],
-      "id": "use-stubs-classify",
+      "position": [
+        5360,
+        42432
+      ],
+      "id": "853c4bba-919c-47d2-8b7a-cc35d23f7d99",
       "name": "Use Stubs for Classify?"
     },
     {
@@ -340,13 +358,16 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [2310, 100],
-      "id": "classify-real",
+      "position": [
+        5520,
+        42576
+      ],
+      "id": "fb831e88-f4f1-4963-a327-b4e6e3b6b508",
       "name": "Classify with Claude API",
       "credentials": {
         "httpHeaderAuth": {
-          "id": "ANTHROPIC_CREDENTIAL_ID",
-          "name": "Anthropic API Key"
+          "id": "2ueFHzVgKw4S5KuR",
+          "name": "Claude API Token"
         }
       }
     },
@@ -356,8 +377,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [2420, -200],
-      "id": "parse-classification",
+      "position": [
+        5856,
+        42416
+      ],
+      "id": "9687ce39-f952-44f3-a673-c00217942207",
       "name": "Parse Classification"
     },
     {
@@ -366,8 +390,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [2650, -200],
-      "id": "validate-classification",
+      "position": [
+        6032,
+        42416
+      ],
+      "id": "fe82baf5-161e-4b8d-b6bf-2dfe266a0ae5",
       "name": "Validate Classification"
     },
     {
@@ -376,8 +403,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [2880, -200],
-      "id": "apply-threshold",
+      "position": [
+        6208,
+        42416
+      ],
+      "id": "01fffd68-ae41-4a16-ac38-3aa62c7f122c",
       "name": "Apply Threshold"
     },
     {
@@ -386,8 +416,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [2990, -200],
-      "id": "build-classification-update",
+      "position": [
+        6368,
+        42416
+      ],
+      "id": "de4538f5-d8e0-4d3a-aa2d-3d40fdb68ebb",
       "name": "Build Classification Update"
     },
     {
@@ -398,12 +431,15 @@
       },
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
-      "position": [3050, -200],
-      "id": "update-source-classification",
+      "position": [
+        6528,
+        42416
+      ],
+      "id": "1a9e667f-803b-40a3-9ae3-5c455ce4aeaf",
       "name": "Update Source Classification",
       "credentials": {
         "postgres": {
-          "id": "CREDENTIAL_ID",
+          "id": "qDXwbsZ3b2DpBCrd",
           "name": "Postgres account"
         }
       }
@@ -414,8 +450,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3120, -200],
-      "id": "restore-classification-data",
+      "position": [
+        6688,
+        42416
+      ],
+      "id": "0def64e8-3704-4fb4-9686-855c47471cf2",
       "name": "Restore Classification Data"
     },
     {
@@ -443,8 +482,11 @@
       },
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
-      "position": [3250, -200],
-      "id": "check-threshold",
+      "position": [
+        5360,
+        42864
+      ],
+      "id": "1d519418-5126-4677-b462-f47d70d4cbcd",
       "name": "Meets Threshold?"
     },
     {
@@ -453,8 +495,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3590, -350],
-      "id": "summarize-stub",
+      "position": [
+        5712,
+        42816
+      ],
+      "id": "5f2ad24b-d3f8-4094-b2d4-c295706a4e3f",
       "name": "Summarize Stub (Claude)"
     },
     {
@@ -482,8 +527,11 @@
       },
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
-      "position": [3340, -200],
-      "id": "use-stubs-summarize",
+      "position": [
+        5520,
+        42832
+      ],
+      "id": "25f52c96-e34c-4312-820f-d1705a32a975",
       "name": "Use Stubs for Summarize?"
     },
     {
@@ -514,13 +562,16 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [3590, -50],
-      "id": "summarize-real",
+      "position": [
+        5712,
+        42976
+      ],
+      "id": "1ba417a0-eb97-43ae-b0cd-3d01b003f882",
       "name": "Summarize with Claude API",
       "credentials": {
         "httpHeaderAuth": {
-          "id": "ANTHROPIC_CREDENTIAL_ID",
-          "name": "Anthropic API Key"
+          "id": "2ueFHzVgKw4S5KuR",
+          "name": "Claude API Token"
         }
       }
     },
@@ -530,8 +581,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3840, -50],
-      "id": "wrap-summarize-response",
+      "position": [
+        5872,
+        42976
+      ],
+      "id": "fd40d9e6-4cb4-4c06-ae65-91ca0e223c1b",
       "name": "Wrap Claude Summarize Response"
     },
     {
@@ -540,8 +594,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [4090, -200],
-      "id": "parse-summary",
+      "position": [
+        6048,
+        42816
+      ],
+      "id": "01b4d6a6-0bc1-44c5-b834-08b7860e14ff",
       "name": "Parse Summary & Gates"
     },
     {
@@ -550,8 +607,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [4340, -200],
-      "id": "validate-summary",
+      "position": [
+        6224,
+        42816
+      ],
+      "id": "198df241-c8b3-42a4-bd85-5bf0dd5ea772",
       "name": "Validate Summary"
     },
     {
@@ -560,8 +620,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [4590, -200],
-      "id": "prepare-insight",
+      "position": [
+        6384,
+        42816
+      ],
+      "id": "f2c2c13e-c7bd-4e9f-b1c5-4ea1952bcfab",
       "name": "Build Insight Query"
     },
     {
@@ -572,12 +635,15 @@
       },
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
-      "position": [4840, -200],
-      "id": "insert-insight",
+      "position": [
+        6528,
+        42816
+      ],
+      "id": "0587dc5b-2bea-4285-9c29-6a091644157a",
       "name": "Insert Insight",
       "credentials": {
         "postgres": {
-          "id": "CREDENTIAL_ID",
+          "id": "qDXwbsZ3b2DpBCrd",
           "name": "Postgres account"
         }
       }
@@ -588,8 +654,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3340, 100],
-      "id": "log-skipped",
+      "position": [
+        5520,
+        43104
+      ],
+      "id": "e721f5e0-c783-4f9a-a42b-bfdb4b64807e",
       "name": "Log Skipped"
     },
     {
@@ -598,8 +667,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [1980, 100],
-      "id": "log-duplicate",
+      "position": [
+        6048,
+        42208
+      ],
+      "id": "b2321d46-e74b-4d32-b54c-94da6b072fdb",
       "name": "Log Duplicate"
     },
     {
@@ -608,8 +680,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [6200, -200],
-      "id": "aggregate-results",
+      "position": [
+        6944,
+        43104
+      ],
+      "id": "b86b985f-b296-45ac-8d14-828747dc280c",
       "name": "Aggregate Results"
     },
     {
@@ -618,8 +693,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [1540, 350],
-      "id": "workflow-complete",
+      "position": [
+        6912,
+        41760
+      ],
+      "id": "cae21f49-ab88-4c19-a67f-620174821f9f",
       "name": "Workflow Complete"
     },
     {
@@ -630,13 +708,16 @@
       },
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
-      "position": [1760, 350],
-      "id": "query-new-published",
+      "position": [
+        10224,
+        42176
+      ],
+      "id": "be16da0c-b822-4ce1-a227-4325558867c1",
       "name": "Query New Published Insights",
       "alwaysOutputData": true,
       "credentials": {
         "postgres": {
-          "id": "CREDENTIAL_ID",
+          "id": "qDXwbsZ3b2DpBCrd",
           "name": "Postgres account"
         }
       }
@@ -666,8 +747,11 @@
       },
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
-      "position": [1980, 350],
-      "id": "has-new-insights",
+      "position": [
+        10400,
+        42176
+      ],
+      "id": "8484ea18-df55-44d5-98df-cb6474eb8847",
       "name": "Has New Insights?"
     },
     {
@@ -676,8 +760,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [2200, 450],
-      "id": "log-no-new-insights",
+      "position": [
+        10576,
+        42272
+      ],
+      "id": "c049f654-cbfa-4c66-845b-3e5763e38a90",
       "name": "Log No New Insights"
     },
     {
@@ -705,8 +792,11 @@
       },
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
-      "position": [5060, -200],
-      "id": "is-published",
+      "position": [
+        6688,
+        42816
+      ],
+      "id": "13e577db-d9b3-4cd9-89f5-91dbc04ef6f4",
       "name": "Is Published?"
     },
     {
@@ -717,13 +807,16 @@
       },
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
-      "position": [5280, -300],
-      "id": "query-all-published",
+      "position": [
+        10576,
+        42080
+      ],
+      "id": "49349a8c-4170-439e-92ae-ebe150071827",
       "name": "Query All Published Insights",
       "alwaysOutputData": true,
       "credentials": {
         "postgres": {
-          "id": "CREDENTIAL_ID",
+          "id": "qDXwbsZ3b2DpBCrd",
           "name": "Postgres account"
         }
       }
@@ -734,8 +827,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [5500, -300],
-      "id": "generate-rss-feed",
+      "position": [
+        10752,
+        42080
+      ],
+      "id": "37349b52-2b44-44fe-982a-13fdc27223a2",
       "name": "Generate RSS Feed"
     },
     {
@@ -744,8 +840,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [5720, -300],
-      "id": "generate-json-feed",
+      "position": [
+        10928,
+        42080
+      ],
+      "id": "720f24d7-c3bb-4479-8cc2-006fc8b071ec",
       "name": "Generate JSON Feed"
     },
     {
@@ -754,8 +853,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [5940, -300],
-      "id": "generate-insight-markdown",
+      "position": [
+        11088,
+        42080
+      ],
+      "id": "5f6b35e3-704b-475a-9e11-97e7a91bc74c",
       "name": "Generate Insight Markdown"
     },
     {
@@ -783,8 +885,11 @@
       },
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
-      "position": [5940, -100],
-      "id": "use-stubs-publish",
+      "position": [
+        11488,
+        42080
+      ],
+      "id": "546a2437-5407-4059-a788-b7eb612ade68",
       "name": "Use Stubs for Publishing?"
     },
     {
@@ -793,8 +898,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [6200, -400],
-      "id": "github-commit-stub-publish",
+      "position": [
+        11664,
+        42000
+      ],
+      "id": "9bd74d7f-642b-4d93-8612-fbc75dc29376",
       "name": "GitHub Commit Stub (Feeds)"
     },
     {
@@ -803,13 +911,15 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [6200, 0],
-      "id": "prepare-github-commit",
+      "position": [
+        11664,
+        42192
+      ],
+      "id": "23028bd5-cf17-44a8-8285-89a95e5df1c6",
       "name": "Prepare GitHub Commit"
     },
     {
       "parameters": {
-        "method": "GET",
         "url": "=https://api.github.com/repos/{{ $json._github.owner }}/{{ $json._github.repo }}/git/ref/heads/{{ $json._github.branch }}",
         "authentication": "genericCredentialType",
         "genericAuthType": "httpHeaderAuth",
@@ -832,19 +942,21 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [6420, 0],
-      "id": "get-branch-ref",
+      "position": [
+        11840,
+        42192
+      ],
+      "id": "055598af-b890-4cbd-8dac-91bd41fd5346",
       "name": "Get Branch Ref",
       "credentials": {
         "httpHeaderAuth": {
-          "id": "GITHUB_CREDENTIAL_ID",
-          "name": "GitHub API Token"
+          "id": "DwAcCvPHNHvQfrGT",
+          "name": "Github API Token"
         }
       }
     },
     {
       "parameters": {
-        "method": "GET",
         "url": "=https://api.github.com/repos/{{ $('Prepare GitHub Commit').first().json._github.owner }}/{{ $('Prepare GitHub Commit').first().json._github.repo }}/git/commits/{{ $json.object.sha }}",
         "authentication": "genericCredentialType",
         "genericAuthType": "httpHeaderAuth",
@@ -867,13 +979,16 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [6640, 0],
-      "id": "get-base-tree",
+      "position": [
+        12000,
+        42192
+      ],
+      "id": "c41266fb-0f26-4f0b-8f22-952c8522ac64",
       "name": "Get Base Tree",
       "credentials": {
         "httpHeaderAuth": {
-          "id": "GITHUB_CREDENTIAL_ID",
-          "name": "GitHub API Token"
+          "id": "DwAcCvPHNHvQfrGT",
+          "name": "Github API Token"
         }
       }
     },
@@ -883,8 +998,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [6860, 0],
-      "id": "build-tree-entries",
+      "position": [
+        12160,
+        42192
+      ],
+      "id": "91cdf081-2766-4889-b898-3283a6141cd5",
       "name": "Build Tree Entries"
     },
     {
@@ -915,13 +1033,16 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [7080, 0],
-      "id": "create-tree",
+      "position": [
+        12320,
+        42192
+      ],
+      "id": "f1fec42a-12e2-4458-b6a6-70dcd7a10fdb",
       "name": "Create Tree",
       "credentials": {
         "httpHeaderAuth": {
-          "id": "GITHUB_CREDENTIAL_ID",
-          "name": "GitHub API Token"
+          "id": "DwAcCvPHNHvQfrGT",
+          "name": "Github API Token"
         }
       }
     },
@@ -953,13 +1074,16 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [7300, 0],
-      "id": "create-commit",
+      "position": [
+        12480,
+        42192
+      ],
+      "id": "476ecf86-84de-4d1a-b5a0-c7baf85ae62b",
       "name": "Create Commit",
       "credentials": {
         "httpHeaderAuth": {
-          "id": "GITHUB_CREDENTIAL_ID",
-          "name": "GitHub API Token"
+          "id": "DwAcCvPHNHvQfrGT",
+          "name": "Github API Token"
         }
       }
     },
@@ -991,13 +1115,16 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [7520, 0],
-      "id": "update-branch-ref",
+      "position": [
+        12640,
+        42192
+      ],
+      "id": "f823c544-7d2c-4217-964c-50624b3fb35f",
       "name": "Update Branch Ref",
       "credentials": {
         "httpHeaderAuth": {
-          "id": "GITHUB_CREDENTIAL_ID",
-          "name": "GitHub API Token"
+          "id": "DwAcCvPHNHvQfrGT",
+          "name": "Github API Token"
         }
       }
     },
@@ -1007,30 +1134,12 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [7740, 0],
-      "id": "wrap-github-response",
+      "position": [
+        12816,
+        42192
+      ],
+      "id": "dbbf4dc8-8d02-4785-b12f-64ccd854172c",
       "name": "Wrap GitHub Response"
-    },
-    {
-      "parameters": {
-        "operation": "executeQuery",
-        "query": "UPDATE source_health\nSET \n  last_success_at = NOW(),\n  consecutive_failures = 0,\n  status = 'healthy',\n  updated_at = NOW()\nWHERE source_url = $1",
-        "options": {
-          "queryReplacement": "={{ $('Load Sources').first().json.url }}"
-        }
-      },
-      "type": "n8n-nodes-base.postgres",
-      "typeVersion": 2.6,
-      "position": [1320, 350],
-      "id": "update-source-health-success",
-      "name": "Update Source Health (Success)",
-      "credentials": {
-        "postgres": {
-          "id": "CREDENTIAL_ID",
-          "name": "Postgres account"
-        }
-      },
-      "disabled": true
     },
     {
       "parameters": {
@@ -1038,8 +1147,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [1760, 550],
-      "id": "prepare-user-story-query",
+      "position": [
+        7296,
+        41760
+      ],
+      "id": "6d1dedcb-3fcc-455b-9bc4-a66876fc31b1",
       "name": "Prepare User Story Query"
     },
     {
@@ -1050,13 +1162,16 @@
       },
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
-      "position": [1980, 550],
-      "id": "query-pending-user-stories",
+      "position": [
+        7472,
+        41760
+      ],
+      "id": "1b0b9c8d-a79e-4eeb-8d1b-019a828c3b44",
       "name": "Query Pending User Stories",
       "alwaysOutputData": true,
       "credentials": {
         "postgres": {
-          "id": "CREDENTIAL_ID",
+          "id": "qDXwbsZ3b2DpBCrd",
           "name": "Postgres account"
         }
       }
@@ -1086,8 +1201,11 @@
       },
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
-      "position": [1980, 550],
-      "id": "has-pending-user-stories",
+      "position": [
+        7648,
+        41760
+      ],
+      "id": "98f83512-c660-4d3d-88cd-ef9a650e67b7",
       "name": "Has Pending User Stories?"
     },
     {
@@ -1096,19 +1214,24 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [2200, 450],
-      "id": "transform-user-stories",
+      "position": [
+        7856,
+        41712
+      ],
+      "id": "ece98f3d-862d-4b30-9468-a4eab33e8d3d",
       "name": "Transform User Stories for Summarization"
     },
     {
       "parameters": {
-        "batchSize": 1,
         "options": {}
       },
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
-      "position": [2420, 450],
-      "id": "loop-user-stories",
+      "position": [
+        8080,
+        41712
+      ],
+      "id": "5ea09792-2f98-42a1-a2b1-2728b7dd55a4",
       "name": "Loop Over User Stories"
     },
     {
@@ -1136,8 +1259,11 @@
       },
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
-      "position": [2640, 450],
-      "id": "use-stubs-user-story-summarize",
+      "position": [
+        8288,
+        41888
+      ],
+      "id": "8c5c5e20-50bc-4631-b321-d2ead27917a1",
       "name": "Use Stubs for User Story Summarize?"
     },
     {
@@ -1146,8 +1272,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [2860, 350],
-      "id": "user-story-summarize-stub",
+      "position": [
+        8480,
+        41840
+      ],
+      "id": "3800dae5-7531-4634-a0ec-1f168b2aaa2b",
       "name": "User Story Summarize Stub"
     },
     {
@@ -1178,13 +1307,16 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [2860, 550],
-      "id": "user-story-summarize-real",
+      "position": [
+        8480,
+        42016
+      ],
+      "id": "b2ace37f-4df5-4d80-b9fc-686fe212215f",
       "name": "User Story Summarize with Claude",
       "credentials": {
         "httpHeaderAuth": {
-          "id": "ANTHROPIC_CREDENTIAL_ID",
-          "name": "Anthropic API Key"
+          "id": "2ueFHzVgKw4S5KuR",
+          "name": "Claude API Token"
         }
       }
     },
@@ -1194,8 +1326,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3080, 550],
-      "id": "wrap-user-story-summarize",
+      "position": [
+        8656,
+        42016
+      ],
+      "id": "a3995aba-0583-4a01-ad54-17a6f2b123da",
       "name": "Wrap User Story Summarize Response"
     },
     {
@@ -1204,8 +1339,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3300, 450],
-      "id": "parse-user-story-summary",
+      "position": [
+        8816,
+        41840
+      ],
+      "id": "1090e7cb-7bff-4a42-bae0-763cda0e2ecc",
       "name": "Parse User Story Summary"
     },
     {
@@ -1214,8 +1352,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3520, 450],
-      "id": "build-user-story-insight-query",
+      "position": [
+        9008,
+        41840
+      ],
+      "id": "91049077-710d-47da-813a-e27b0c9d866b",
       "name": "Build User Story Insight Query"
     },
     {
@@ -1226,12 +1367,15 @@
       },
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
-      "position": [3740, 450],
-      "id": "insert-user-story-insight",
+      "position": [
+        9200,
+        41840
+      ],
+      "id": "74e7e890-ff24-4d52-b396-961283e8ca31",
       "name": "Insert User Story Insight",
       "credentials": {
         "postgres": {
-          "id": "CREDENTIAL_ID",
+          "id": "qDXwbsZ3b2DpBCrd",
           "name": "Postgres account"
         }
       }
@@ -1242,8 +1386,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3960, 450],
-      "id": "prepare-user-story-update",
+      "position": [
+        9376,
+        41840
+      ],
+      "id": "f5f75beb-0da0-429e-b528-0756172115bb",
       "name": "Prepare User Story Update"
     },
     {
@@ -1256,12 +1403,15 @@
       },
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
-      "position": [4180, 450],
-      "id": "mark-user-story-processed",
+      "position": [
+        9552,
+        41840
+      ],
+      "id": "e038efd3-77f4-4608-90e6-37bb8faccdb7",
       "name": "Mark User Story Processed",
       "credentials": {
         "postgres": {
-          "id": "CREDENTIAL_ID",
+          "id": "qDXwbsZ3b2DpBCrd",
           "name": "Postgres account"
         }
       }
@@ -1272,8 +1422,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [4400, 450],
-      "id": "user-story-loop-result",
+      "position": [
+        9744,
+        42016
+      ],
+      "id": "4c7aa8e8-64e2-403c-b3d6-c75da821d89d",
       "name": "User Story Loop Result"
     },
     {
@@ -1282,8 +1435,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [4620, 550],
-      "id": "user-story-complete",
+      "position": [
+        9744,
+        41696
+      ],
+      "id": "e4dc13cb-003c-4160-885b-e95cd8285f9f",
       "name": "User Story Processing Complete"
     },
     {
@@ -1292,9 +1448,191 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [2200, 650],
-      "id": "no-pending-user-stories",
+      "position": [
+        7856,
+        42176
+      ],
+      "id": "564b6e6a-c92c-4b68-b66f-caa20abf1997",
       "name": "No Pending User Stories"
+    },
+    {
+      "parameters": {
+        "content": "# Fetch Configs & Prompts from Libertas API",
+        "height": 848,
+        "width": 864,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        3824,
+        41456
+      ],
+      "typeVersion": 1,
+      "id": "bbab6012-9c64-4e1c-9b7c-f6ab56e74cf2",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "# Fetch Source Data",
+        "height": 208,
+        "width": 400,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        5312,
+        41824
+      ],
+      "typeVersion": 1,
+      "id": "21e7bfa4-fe93-4e50-8e66-c1dae1f7776a",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "# De-Duplication",
+        "height": 288,
+        "width": 960,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        5312,
+        42048
+      ],
+      "typeVersion": 1,
+      "id": "c4078e88-14ef-4af5-aaf9-6be878e2be45",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT id FROM source_items WHERE content_hash = $1 LIMIT 1",
+        "options": {
+          "queryReplacement": "={{ $json.contentHash }}"
+        }
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        5536,
+        42128
+      ],
+      "id": "a2f8ac0b-1687-4711-8096-95579c4c1fa5",
+      "name": "Check Duplicate",
+      "alwaysOutputData": true,
+      "credentials": {
+        "postgres": {
+          "id": "qDXwbsZ3b2DpBCrd",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Evaluate duplicate check result and merge with original data\n// Must match each Postgres result with its corresponding original item by index\n// Route _skip items to the duplicate path (isNew=false) to bypass processing\nconst duplicateResults = $input.all();\nconst originalItems = $('Compute Hash').all();\n\n// Process each item, matching by index\nreturn duplicateResults.map((result, index) => {\n  const originalData = originalItems[index]?.json || {};\n  \n  // Route _skip items to duplicate path (bypasses classification/summarization)\n  if (originalData._skip) {\n    return {\n      json: {\n        ...originalData,\n        isNew: false,\n        skippedReason: originalData.error || originalData.noItems ? 'source_error' : 'skip_flag'\n      }\n    };\n  }\n  \n  // Postgres returns object with id if duplicate found, empty/undefined otherwise\n  const isDuplicate = result.json && result.json.id;\n  \n  return {\n    json: {\n      ...originalData,\n      isNew: !isDuplicate,\n      duplicateId: isDuplicate ? result.json.id : null\n    }\n  };\n});"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        5712,
+        42128
+      ],
+      "id": "ebe5f82e-03c7-48f2-8457-742cbfa9d2c3",
+      "name": "Evaluate Duplicate"
+    },
+    {
+      "parameters": {
+        "content": "# Classify Source Content",
+        "height": 368,
+        "width": 1568,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        5312,
+        42352
+      ],
+      "typeVersion": 1,
+      "id": "ebb31368-ae13-4388-bf1f-6d7b9ea085f0",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "# Summarize Source Content",
+        "height": 480,
+        "width": 1568,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        5312,
+        42752
+      ],
+      "typeVersion": 1,
+      "id": "31a8185b-f07d-44a4-b261-43b0a2a3087d",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "content": "# Loop through all sources & Use Claude API to Classify + Summarize Insights",
+        "height": 1616,
+        "width": 2208
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        4896,
+        41696
+      ],
+      "typeVersion": 1,
+      "id": "5d8f5d15-e740-4ce6-93d3-08b27a45037a",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {
+        "content": "# Loop through all relevant User Stories & Use Claude API to Summarize Insights",
+        "height": 720,
+        "width": 2720
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        7264,
+        41632
+      ],
+      "typeVersion": 1,
+      "id": "76b1bff8-8f79-4ea6-8d9a-09a7b8cd9e17",
+      "name": "Sticky Note6"
+    },
+    {
+      "parameters": {
+        "content": "# Generate new static files, if any ( Feeds & Insight Markdowns )",
+        "height": 448,
+        "width": 1104,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        10192,
+        41984
+      ],
+      "typeVersion": 1,
+      "id": "d72596bc-cb4f-4e27-9320-637e7ebb616a",
+      "name": "Sticky Note7"
+    },
+    {
+      "parameters": {
+        "content": "# Commit files to the Github Repo",
+        "height": 448,
+        "width": 1616,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        11424,
+        41936
+      ],
+      "typeVersion": 1,
+      "id": "fee79870-32fd-44a7-90c1-1ab771f7809a",
+      "name": "Sticky Note8"
     }
   ],
   "pinData": {},
@@ -1469,28 +1807,6 @@
         [
           {
             "node": "Check Duplicate",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Check Duplicate": {
-      "main": [
-        [
-          {
-            "node": "Evaluate Duplicate",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Evaluate Duplicate": {
-      "main": [
-        [
-          {
-            "node": "Is New Item?",
             "type": "main",
             "index": 0
           }
@@ -1836,9 +2152,6 @@
         ]
       ]
     },
-    "GitHub Commit Stub (Feeds)": {
-      "main": []
-    },
     "Prepare GitHub Commit": {
       "main": [
         [
@@ -1915,9 +2228,6 @@
           }
         ]
       ]
-    },
-    "Wrap GitHub Response": {
-      "main": []
     },
     "Log Skipped": {
       "main": [
@@ -2199,17 +2509,40 @@
           }
         ]
       ]
+    },
+    "Check Duplicate": {
+      "main": [
+        [
+          {
+            "node": "Evaluate Duplicate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Evaluate Duplicate": {
+      "main": [
+        [
+          {
+            "node": "Is New Item?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
-  "active": false,
+  "active": true,
   "settings": {
-    "executionOrder": "v1"
+    "executionOrder": "v1",
+    "availableInMCP": false
   },
-  "versionId": "",
+  "versionId": "c8e3a4f1-c297-44a8-bf52-2e72daee6770",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "instanceId": ""
+    "templateCredsSetupCompleted": true,
+    "instanceId": "3c52e1b61141902bda826728d3cf15d2a867de8395f358b7459edf58ff4157ae"
   },
-  "id": "",
+  "id": "BM8nmz7OgdZsvrdAqq1jK",
   "tags": []
 }

@@ -9,15 +9,17 @@ Feature roadmap for the Libertas website, broken into MVP, Nice-to-have, and Fut
 Hey, I am working to implement features for the libertas website from the roadmap. Let's continue with implementing:
 
 Workflow A:
-  - Reimport latest
   - Test all paths/follow mentally
-  - Cleanup workflow spacing/reorg
 
+Hey, I am working on n8n workflows. Currently interested in investigating/fixing/... these:
 Workflow B:
   - Reimport latest
   - Test all paths/follow mentally
   - Cleanup workflow spacing/reorg
 
+  - I cleaned up and organized the workflow. Can you please pull the backup into this repo and replace the existing workflow backup?
+
+Hey, I am working on n8n workflows. Currently interested in investigating/fixing/... these:
 Workflow C:
   - Reimport latest
   - Test all paths/follow mentally
@@ -27,11 +29,17 @@ Workflow C:
     - story: relevance score(s) and if queued for publishing ( warning about why not queued if not )
     - project idea: relevance score(s) and github issue link if created ( warning about why not created issue if not )
     - feedback: github issue link if created ( warning about why not created issue if not )
+  - Remove .md file
 
+  - I cleaned up and organized the workflow. Can you please pull the backup into this repo and replace the existing workflow backup?
+
+Hey, I am working on n8n workflows. Currently interested in investigating/fixing/... these:
 Workflow D:
   - Reimport latest
   - Test all paths/follow mentally
   - Cleanup workflow spacing/reorg
+
+  - I cleaned up and organized the workflow. Can you please pull the backup into this repo and replace the existing workflow backup?
 
 Database Checks:
   - Cleanup all data not linked to existing insights/sources parsings
