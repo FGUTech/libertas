@@ -14,8 +14,11 @@
       },
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
-      "position": [0, 0],
-      "id": "cron-trigger",
+      "position": [
+        304,
+        7568
+      ],
+      "id": "49cc7c01-7e50-4239-a521-298c29c56793",
       "name": "Weekly Sunday 9am UTC"
     },
     {
@@ -27,8 +30,11 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [220, -100],
-      "id": "fetch-thresholds-config",
+      "position": [
+        624,
+        7472
+      ],
+      "id": "bf1cd6e3-9e8a-45af-b13c-e3c2b18e6580",
       "name": "Fetch Thresholds Config"
     },
     {
@@ -40,19 +46,22 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [220, 100],
-      "id": "fetch-digest-prompt",
+      "position": [
+        624,
+        7664
+      ],
+      "id": "27d75f7d-81ef-4b7b-8725-16f99524dc4b",
       "name": "Fetch Digest Prompt"
     },
     {
-      "parameters": {
-        "mode": "append",
-        "options": {}
-      },
+      "parameters": {},
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3.1,
-      "position": [440, 0],
-      "id": "merge-fetches",
+      "position": [
+        864,
+        7568
+      ],
+      "id": "2be99138-3d24-45c8-a4a2-f67e218bcb54",
       "name": "Wait for Fetches"
     },
     {
@@ -61,8 +70,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [660, 0],
-      "id": "merge-config-agents",
+      "position": [
+        1056,
+        7568
+      ],
+      "id": "246f3833-9454-4476-9d80-dff04d24d937",
       "name": "Merge Config & Agents"
     },
     {
@@ -71,8 +83,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [880, 0],
-      "id": "calculate-period",
+      "position": [
+        1392,
+        7568
+      ],
+      "id": "857ba4fd-186f-4fde-9a36-044c809e8ee4",
       "name": "Calculate Period"
     },
     {
@@ -85,13 +100,16 @@
       },
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
-      "position": [1100, -100],
-      "id": "query-insights",
+      "position": [
+        1584,
+        7472
+      ],
+      "id": "124fdb3c-1377-4a20-b582-0cc009e1022e",
       "name": "Query Published Insights",
       "alwaysOutputData": true,
       "credentials": {
         "postgres": {
-          "id": "CREDENTIAL_ID",
+          "id": "qDXwbsZ3b2DpBCrd",
           "name": "Postgres account"
         }
       }
@@ -106,26 +124,29 @@
       },
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
-      "position": [1100, 100],
-      "id": "query-project-ideas",
+      "position": [
+        1584,
+        7664
+      ],
+      "id": "16083b14-64a3-44b2-b2b5-c21d2ee8d86a",
       "name": "Query Recent Project Ideas",
       "alwaysOutputData": true,
       "credentials": {
         "postgres": {
-          "id": "CREDENTIAL_ID",
+          "id": "qDXwbsZ3b2DpBCrd",
           "name": "Postgres account"
         }
       }
     },
     {
-      "parameters": {
-        "mode": "append",
-        "options": {}
-      },
+      "parameters": {},
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3.1,
-      "position": [1320, 0],
-      "id": "merge-insights-ideas",
+      "position": [
+        1776,
+        7568
+      ],
+      "id": "d719dbed-f798-4a50-bead-16f0d5511703",
       "name": "Wait for Queries"
     },
     {
@@ -134,8 +155,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [1540, 0],
-      "id": "merge-insights",
+      "position": [
+        1968,
+        7568
+      ],
+      "id": "9995f0be-47bd-4256-8cb6-601238f5a7f5",
       "name": "Merge Insights with Period"
     },
     {
@@ -163,8 +187,11 @@
       },
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
-      "position": [1760, 0],
-      "id": "check-has-insights",
+      "position": [
+        2144,
+        7568
+      ],
+      "id": "a091fa68-4eb4-44ba-837d-d2cfc3bde8b0",
       "name": "Has Insights?"
     },
     {
@@ -173,8 +200,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [1980, -100],
-      "id": "aggregate-by-topic",
+      "position": [
+        2336,
+        7504
+      ],
+      "id": "3d5c49ae-38b9-471d-9dec-9e1f93552ee6",
       "name": "Aggregate by Topic"
     },
     {
@@ -202,8 +232,11 @@
       },
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
-      "position": [2200, -100],
-      "id": "use-stubs-digest",
+      "position": [
+        2736,
+        7504
+      ],
+      "id": "0e64cadd-fb1f-434c-8e14-328f92b0d694",
       "name": "Use Stubs for DigestComposer?"
     },
     {
@@ -212,8 +245,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [2420, -200],
-      "id": "digest-composer-stub",
+      "position": [
+        2928,
+        7440
+      ],
+      "id": "2228b305-290d-42ac-8f10-c9b02c1b5e95",
       "name": "DigestComposer Stub (Claude)"
     },
     {
@@ -244,13 +280,16 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [2420, 0],
-      "id": "digest-composer-real",
+      "position": [
+        2928,
+        7600
+      ],
+      "id": "21522db3-a28c-4be7-bbbf-51fa2e723a89",
       "name": "DigestComposer with Claude API",
       "credentials": {
         "httpHeaderAuth": {
-          "id": "ANTHROPIC_CREDENTIAL_ID",
-          "name": "Anthropic API Key"
+          "id": "2ueFHzVgKw4S5KuR",
+          "name": "Claude API Token"
         }
       }
     },
@@ -260,8 +299,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [2640, 0],
-      "id": "wrap-digest-response",
+      "position": [
+        3120,
+        7600
+      ],
+      "id": "4f44dff8-2a95-460c-a33a-4485ce1cf401",
       "name": "Wrap Claude Digest Response"
     },
     {
@@ -270,8 +312,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [2860, -100],
-      "id": "parse-digest",
+      "position": [
+        3280,
+        7440
+      ],
+      "id": "711f1f6b-c3bc-4995-a487-67dab420c182",
       "name": "Parse Digest Output"
     },
     {
@@ -280,8 +325,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3080, -100],
-      "id": "build-digest-query",
+      "position": [
+        3456,
+        7440
+      ],
+      "id": "4885c5d3-a4f4-4dc2-b1fa-6edbafedc6aa",
       "name": "Build Digest Query"
     },
     {
@@ -292,12 +340,15 @@
       },
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
-      "position": [3300, -100],
-      "id": "insert-digest",
+      "position": [
+        3616,
+        7440
+      ],
+      "id": "eb853895-da2e-4864-88f6-0486dbdea745",
       "name": "Insert/Update Digest",
       "credentials": {
         "postgres": {
-          "id": "CREDENTIAL_ID",
+          "id": "qDXwbsZ3b2DpBCrd",
           "name": "Postgres account"
         }
       }
@@ -310,13 +361,16 @@
       },
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
-      "position": [3410, -100],
-      "id": "query-recent-digests",
+      "position": [
+        3936,
+        7440
+      ],
+      "id": "5fab27c0-681c-4e83-9b2b-08bfa2cb09ff",
       "name": "Query Recent Digests",
       "alwaysOutputData": true,
       "credentials": {
         "postgres": {
-          "id": "CREDENTIAL_ID",
+          "id": "qDXwbsZ3b2DpBCrd",
           "name": "Postgres account"
         }
       }
@@ -327,8 +381,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3520, -100],
-      "id": "merge-insert-result",
+      "position": [
+        4112,
+        7440
+      ],
+      "id": "d7f612a8-5185-45d5-933c-9f315d142942",
       "name": "Merge Insert Result"
     },
     {
@@ -356,8 +413,11 @@
       },
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
-      "position": [3740, -100],
-      "id": "use-stubs-github",
+      "position": [
+        4384,
+        7440
+      ],
+      "id": "9a9cefbd-6252-422c-8695-f659b84e342e",
       "name": "Use Stubs for GitHub?"
     },
     {
@@ -366,8 +426,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3960, -250],
-      "id": "github-commit-stub",
+      "position": [
+        4592,
+        7376
+      ],
+      "id": "3fd810a8-73d9-4cd2-95d3-1b0235e4cd54",
       "name": "GitHub Commit Stub"
     },
     {
@@ -376,13 +439,15 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3960, 50],
-      "id": "prepare-github-commit-digest",
+      "position": [
+        4592,
+        7504
+      ],
+      "id": "3f07670e-891d-4965-b359-8d7adc03ec8d",
       "name": "Prepare GitHub Commit"
     },
     {
       "parameters": {
-        "method": "GET",
         "url": "=https://api.github.com/repos/{{ $json._github.owner }}/{{ $json._github.repo }}/git/ref/heads/{{ $json._github.branch }}",
         "authentication": "genericCredentialType",
         "genericAuthType": "httpHeaderAuth",
@@ -405,19 +470,21 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [4180, 50],
-      "id": "get-branch-ref-digest",
+      "position": [
+        4752,
+        7504
+      ],
+      "id": "eeb5fd46-c736-4548-8796-280bd1e95f7b",
       "name": "Get Branch Ref",
       "credentials": {
         "httpHeaderAuth": {
-          "id": "GITHUB_CREDENTIAL_ID",
-          "name": "GitHub API Token"
+          "id": "DwAcCvPHNHvQfrGT",
+          "name": "Github API Token"
         }
       }
     },
     {
       "parameters": {
-        "method": "GET",
         "url": "=https://api.github.com/repos/{{ $('Prepare GitHub Commit').first().json._github.owner }}/{{ $('Prepare GitHub Commit').first().json._github.repo }}/git/commits/{{ $json.object.sha }}",
         "authentication": "genericCredentialType",
         "genericAuthType": "httpHeaderAuth",
@@ -440,13 +507,16 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [4400, 50],
-      "id": "get-base-tree-digest",
+      "position": [
+        4896,
+        7504
+      ],
+      "id": "dea83ff4-b679-4c2f-a6cb-a1490fdd6a41",
       "name": "Get Base Tree",
       "credentials": {
         "httpHeaderAuth": {
-          "id": "GITHUB_CREDENTIAL_ID",
-          "name": "GitHub API Token"
+          "id": "DwAcCvPHNHvQfrGT",
+          "name": "Github API Token"
         }
       }
     },
@@ -456,8 +526,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [4620, 50],
-      "id": "build-tree-entries-digest",
+      "position": [
+        5056,
+        7504
+      ],
+      "id": "5c90c33b-6e1e-48ba-a948-b6d151faf3af",
       "name": "Build Tree Entries"
     },
     {
@@ -488,13 +561,16 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [4840, 50],
-      "id": "create-tree-digest",
+      "position": [
+        5216,
+        7504
+      ],
+      "id": "15eeee5d-f9e2-4f92-9366-dd577a87ddfb",
       "name": "Create Tree",
       "credentials": {
         "httpHeaderAuth": {
-          "id": "GITHUB_CREDENTIAL_ID",
-          "name": "GitHub API Token"
+          "id": "DwAcCvPHNHvQfrGT",
+          "name": "Github API Token"
         }
       }
     },
@@ -526,13 +602,16 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [5060, 50],
-      "id": "create-commit-digest",
+      "position": [
+        5376,
+        7504
+      ],
+      "id": "007284b7-e7f4-4b09-9953-8eb9b418a3f0",
       "name": "Create Commit",
       "credentials": {
         "httpHeaderAuth": {
-          "id": "GITHUB_CREDENTIAL_ID",
-          "name": "GitHub API Token"
+          "id": "DwAcCvPHNHvQfrGT",
+          "name": "Github API Token"
         }
       }
     },
@@ -564,13 +643,16 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [5280, 50],
-      "id": "update-branch-ref-digest",
+      "position": [
+        5536,
+        7504
+      ],
+      "id": "cb36c969-ed12-4c14-aab4-7d63da99cde9",
       "name": "Update Branch Ref",
       "credentials": {
         "httpHeaderAuth": {
-          "id": "GITHUB_CREDENTIAL_ID",
-          "name": "GitHub API Token"
+          "id": "DwAcCvPHNHvQfrGT",
+          "name": "Github API Token"
         }
       }
     },
@@ -580,8 +662,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [5500, 50],
-      "id": "wrap-github-response-digest",
+      "position": [
+        5712,
+        7504
+      ],
+      "id": "4e233d81-4bf1-4852-b414-6892cc23dcb4",
       "name": "Wrap GitHub Response"
     },
     {
@@ -590,37 +675,12 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [5720, -100],
-      "id": "resend-email-stub",
+      "position": [
+        6048,
+        7376
+      ],
+      "id": "e6e0b482-220a-449a-b8ca-088ec11bb682",
       "name": "Resend Email Stub"
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "https://api.resend.com/emails",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "Authorization",
-              "value": "=Bearer {{ $env.RESEND_API_KEY }}"
-            },
-            {
-              "name": "Content-Type",
-              "value": "application/json"
-            }
-          ]
-        },
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={{ JSON.stringify($('Resend Email Stub').first().json._resendPayload) }}",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.3,
-      "position": [5720, 100],
-      "id": "resend-email-real",
-      "name": "Resend Email (Disabled)"
     },
     {
       "parameters": {
@@ -628,8 +688,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [5940, -100],
-      "id": "final-summary",
+      "position": [
+        6240,
+        7376
+      ],
+      "id": "bafc18ed-001c-4b05-9306-8c2ce73ae5ae",
       "name": "Final Summary"
     },
     {
@@ -638,9 +701,91 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [1980, 100],
-      "id": "skip-no-insights",
+      "position": [
+        2336,
+        7648
+      ],
+      "id": "86f6955b-cda1-4f26-b4f0-a1dfc6ed904f",
       "name": "Skip - No Insights"
+    },
+    {
+      "parameters": {
+        "content": "# Fetch Configs & Prompts from Libertas API",
+        "height": 448,
+        "width": 768,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        512,
+        7392
+      ],
+      "typeVersion": 1,
+      "id": "179623f2-6130-4261-a960-ca78b7e4a064",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "# Fetch Recent Insights ( Past 7 days )",
+        "height": 448,
+        "width": 1168,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1360,
+        7392
+      ],
+      "typeVersion": 1,
+      "id": "945caeb7-c146-4f37-8d9a-f14de439c1e6",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "# Commit files to the Github Repo",
+        "height": 368,
+        "width": 1536,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        4352,
+        7312
+      ],
+      "typeVersion": 1,
+      "id": "83676d2a-7bb5-4005-bb79-00fa4e35c3c3",
+      "name": "Sticky Note8"
+    },
+    {
+      "parameters": {
+        "content": "# Generate Static Files",
+        "height": 272,
+        "width": 384,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        3888,
+        7360
+      ],
+      "typeVersion": 1,
+      "id": "2ba5c53e-acfe-4f32-b884-29a2f642f813",
+      "name": "Sticky Note9"
+    },
+    {
+      "parameters": {
+        "content": "# Use Claude API to generate Weekly Digest",
+        "height": 448,
+        "width": 1120
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2656,
+        7360
+      ],
+      "typeVersion": 1,
+      "id": "0974921f-aefc-442b-8ee6-b61b50ab848b",
+      "name": "Sticky Note2"
     }
   ],
   "pinData": {},
@@ -1029,15 +1174,16 @@
       ]
     }
   },
-  "active": false,
+  "active": true,
   "settings": {
-    "executionOrder": "v1"
+    "executionOrder": "v1",
+    "availableInMCP": false
   },
-  "versionId": "",
+  "versionId": "07f9d7e0-0f45-4bdd-82a9-cfe9561db6de",
   "meta": {
-    "templateCredsSetupCompleted": false,
-    "instanceId": ""
+    "templateCredsSetupCompleted": true,
+    "instanceId": "3c52e1b61141902bda826728d3cf15d2a867de8395f358b7459edf58ff4157ae"
   },
-  "id": "",
+  "id": "amBNidAZZgmHCB0IbUfKo",
   "tags": []
 }

@@ -11,13 +11,8 @@ Hey, I am working to implement features for the libertas website from the roadma
 Workflow A:
   - Test all paths/follow mentally
 
-Hey, I am working on n8n workflows. Currently interested in investigating/fixing/... these:
 Workflow B:
-  - Reimport latest
   - Test all paths/follow mentally
-  - Cleanup workflow spacing/reorg
-
-  - I cleaned up and organized the workflow. Can you please pull the backup into this repo and replace the existing workflow backup?
 
 Hey, I am working on n8n workflows. Currently interested in investigating/fixing/... these:
 Workflow C:
