@@ -17,13 +17,8 @@ Workflow B:
 Workflow C:
   - Test all paths/follow mentally
 
-Hey, I am working on n8n workflows. Currently interested in investigating/fixing/... these:
 Workflow D:
-  - Reimport latest
   - Test all paths/follow mentally
-  - Cleanup workflow spacing/reorg
-
-  - I cleaned up and organized the workflow. Can you please pull the backup into this repo and replace the existing workflow backup?
 
 Database Checks:
   - Cleanup all data not linked to existing insights/sources parsings
@@ -31,9 +26,6 @@ Database Checks:
   - View each field and understand how/if/if it will be used
   - Ensure all fields properly populating data from workflows ( ie not hardcoded/stale/bad values )
   - Think each table and how/if we should display information from it on the FE:
-
-Clean Duplicates in feeds
-  - Can you please make sure to remove any duplicate entries in all our feeds in website/public/ ( rss & json feeds )
 
 Open Source
 
