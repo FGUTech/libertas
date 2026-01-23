@@ -10,8 +10,11 @@
       },
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2.1,
-      "position": [0, 0],
-      "id": "5a24f684-7105-4b33-ab24-d15b16d32e71",
+      "position": [
+        16304,
+        18400
+      ],
+      "id": "f2cce112-d2c5-4e7c-b41c-093dafd4fdb6",
       "name": "Webhook",
       "webhookId": "0a2430f5-cb3e-42ff-b05f-5d502240cc04"
     },
@@ -21,8 +24,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [200, 0],
-      "id": "rate-limit-check",
+      "position": [
+        16464,
+        18400
+      ],
+      "id": "72323a33-faff-4aa5-9ea4-150ecdb7c8a2",
       "name": "Rate Limit Check"
     },
     {
@@ -34,52 +40,37 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [420, -100],
-      "id": "fetch-thresholds-config",
+      "position": [
+        16704,
+        18400
+      ],
+      "id": "27f3884d-c091-4807-a976-f9d4bdb1c859",
       "name": "Fetch Thresholds Config"
     },
     {
       "parameters": {
-        "url": "https://libertas.fgu.tech/api/agents/intake-classify",
-        "options": {
-          "timeout": 5000
-        }
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.3,
-      "position": [420, 100],
-      "id": "fetch-intake-classify-prompt",
-      "name": "Fetch Intake Classify Prompt"
-    },
-    {
-      "parameters": {
-        "mode": "append",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.merge",
-      "typeVersion": 3.1,
-      "position": [640, 0],
-      "id": "wait-for-fetches",
-      "name": "Wait for Fetches"
-    },
-    {
-      "parameters": {
-        "jsCode": "// Merge thresholds config and intake-classify agent prompt from fetched data\nconst allItems = $input.all();\nconst webhookData = $('Rate Limit Check').first().json;\n\nlet thresholdsConfig = {};\nlet intakeClassifyPrompt = null;\n\nfor (const item of allItems) {\n  const data = item.json;\n  // Thresholds config has runtime/ingestion/publishing/intake sections\n  if (data.runtime || data.ingestion || data.publishing || data.rate_limiting || data.intake) {\n    thresholdsConfig = data;\n  }\n  // Intake classify prompt has content field\n  else if (data.content && (data.name === 'intake-classify' || data.content.includes('intake classifier'))) {\n    intakeClassifyPrompt = data;\n  } else if (data.content) {\n    // Fallback: any content is likely the prompt\n    intakeClassifyPrompt = data;\n  }\n}\n\n// Get rate limiting config\nconst rateLimiting = thresholdsConfig.rate_limiting || {};\nconst configInfo = {\n  requestsPerMinute: rateLimiting.requests_per_minute || 10,\n  requestsPerHour: rateLimiting.requests_per_hour || 100,\n  globalPerMinute: rateLimiting.global_per_minute || 100\n};\n\n// Get intake thresholds for story queue decision\nconst intakeConfig = thresholdsConfig.intake || {};\n\nconsole.log(`Loaded thresholds config: runtime.use_stubs=${thresholdsConfig.runtime?.use_stubs}`);\nconsole.log(`Loaded intake thresholds: relevance=${intakeConfig.story_queue_relevance_threshold}, credibility=${intakeConfig.story_queue_credibility_threshold}`);\nconsole.log(`Loaded intake-classify prompt: ${intakeClassifyPrompt?.content?.length || 0} chars`);\nconsole.log(`Rate limiting config loaded: ${JSON.stringify(configInfo)}`);\n\nreturn [{\n  json: {\n    ...thresholdsConfig,\n    _agents: {\n      intakeClassify: intakeClassifyPrompt?.content || ''\n    },\n    _webhookData: webhookData,\n    _rateLimitConfig: configInfo\n  }\n}];"
+        "jsCode": "// Process thresholds config from fetched data\nconst thresholdsConfig = $input.first().json;\nconst webhookData = $('Rate Limit Check').first().json;\n\n// Get rate limiting config\nconst rateLimiting = thresholdsConfig.rate_limiting || {};\nconst configInfo = {\n  requestsPerMinute: rateLimiting.requests_per_minute || 10,\n  requestsPerHour: rateLimiting.requests_per_hour || 100,\n  globalPerMinute: rateLimiting.global_per_minute || 100\n};\n\n// Get intake thresholds for story queue decision\nconst intakeConfig = thresholdsConfig.intake || {};\n\nconsole.log(`Loaded thresholds config: runtime.use_stubs=${thresholdsConfig.runtime?.use_stubs}`);\nconsole.log(`Loaded intake thresholds: relevance=${intakeConfig.story_queue_relevance_threshold}, credibility=${intakeConfig.story_queue_credibility_threshold}`);\nconsole.log(`Rate limiting config loaded: ${JSON.stringify(configInfo)}`);\n\nreturn [{\n  json: {\n    ...thresholdsConfig,\n    _webhookData: webhookData,\n    _rateLimitConfig: configInfo\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [860, 0],
-      "id": "merge-config-agents",
-      "name": "Merge Config & Agents"
+      "position": [
+        16896,
+        18400
+      ],
+      "id": "902116e0-9cd3-4c35-833a-e1cf26ebfabe",
+      "name": "Process Config"
     },
     {
       "parameters": {
-        "jsCode": "// Validate input with thresholds from config\n// Now also captures story-specific and project-specific fields\nconst merged = $input.first().json;\nconst rateLimiting = merged._rateLimitConfig || {};\nconst agents = merged._agents;\nconst webhookData = merged._webhookData;\nconst runtimeConfig = merged.runtime || { use_stubs: true };\n\n// For stories/projects, description is the main content; for feedback, it's message\nconst messageContent = webhookData.description || webhookData.message || '';\n\nif (!messageContent || messageContent.trim().length < 10) {\n  throw new Error('Message/description required (min 10 chars)');\n}\n\n// Map submission type to valid database category\n// DB constraint: 'tool-request', 'idea', 'report', 'question', 'collaboration', 'other'\nconst submissionType = webhookData.type || 'feedback';\nlet dbCategory = 'other';\nif (submissionType === 'story') {\n  dbCategory = 'report';  // Stories are reports of events/news\n} else if (submissionType === 'project') {\n  dbCategory = 'idea';    // Project proposals are ideas\n} else if (webhookData.category) {\n  // For feedback, map form categories to valid DB values\n  const validCategories = ['tool-request', 'idea', 'report', 'question', 'collaboration', 'other'];\n  dbCategory = validCategories.includes(webhookData.category) ? webhookData.category : 'other';\n}\n\nreturn [{\n  json: {\n    // Database columns (snake_case to match postgres)\n    message: messageContent.trim(),\n    contact: webhookData.contact || null,\n    category: dbCategory,\n    channel: 'web',\n    submission_type: submissionType,\n    title: webhookData.title || null,\n    source_url: webhookData.sourceUrl || null,\n    region: webhookData.region || null,\n    urgency: webhookData.urgency || 'normal',\n    \n    // Project-specific fields (from form)\n    problemStatement: webhookData.problemStatement || null,\n    \n    // Additional fields for workflow logic (not inserted to DB)\n    safetyMode: webhookData.safetyMode || false,\n    type: submissionType,\n    sourceUrl: webhookData.sourceUrl || null,\n    \n    // Pass-through metadata\n    _rateLimitConfig: rateLimiting,\n    _agents: agents,\n    _runtime: runtimeConfig\n  }\n}];"
+        "jsCode": "// Validate input with thresholds from config\n// Now also captures story-specific and project-specific fields\nconst merged = $input.first().json;\nconst rateLimiting = merged._rateLimitConfig || {};\nconst webhookData = merged._webhookData;\nconst runtimeConfig = merged.runtime || { use_stubs: true };\n\n// For stories/projects, description is the main content; for feedback, it's message\nconst messageContent = webhookData.description || webhookData.message || '';\n\nif (!messageContent || messageContent.trim().length < 10) {\n  throw new Error('Message/description required (min 10 chars)');\n}\n\n// Map submission type to valid database category\n// DB constraint: 'tool-request', 'idea', 'report', 'question', 'collaboration', 'other'\nconst submissionType = webhookData.type || 'feedback';\nlet dbCategory = 'other';\nif (submissionType === 'story') {\n  dbCategory = 'report';  // Stories are reports of events/news\n} else if (submissionType === 'project') {\n  dbCategory = 'idea';    // Project proposals are ideas\n} else if (webhookData.category) {\n  // For feedback, map form categories to valid DB values\n  const validCategories = ['tool-request', 'idea', 'report', 'question', 'collaboration', 'other'];\n  dbCategory = validCategories.includes(webhookData.category) ? webhookData.category : 'other';\n}\n\nreturn [{\n  json: {\n    // Database columns (snake_case to match postgres)\n    message: messageContent.trim(),\n    contact: webhookData.contact || null,\n    category: dbCategory,\n    channel: 'web',\n    submission_type: submissionType,\n    title: webhookData.title || null,\n    source_url: webhookData.sourceUrl || null,\n    region: webhookData.region || null,\n    urgency: webhookData.urgency || 'normal',\n    \n    // Project-specific fields (from form)\n    problemStatement: webhookData.problemStatement || null,\n    \n    // Additional fields for workflow logic (not inserted to DB)\n    safetyMode: webhookData.safetyMode || false,\n    type: submissionType,\n    sourceUrl: webhookData.sourceUrl || null,\n    \n    // Pass-through metadata\n    _rateLimitConfig: rateLimiting,\n    _runtime: runtimeConfig\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [1080, 0],
-      "id": "f2395950-791e-40aa-89f6-00c41f28866e",
+      "position": [
+        17168,
+        18400
+      ],
+      "id": "b0867779-b92c-480f-a68e-1ed2ef2303b7",
       "name": "Validate Input"
     },
     {
@@ -88,8 +79,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [1300, 0],
-      "id": "prepare-submission-insert",
+      "position": [
+        17328,
+        18400
+      ],
+      "id": "5ecbce1d-1fb3-41df-979d-1f2203b87efc",
       "name": "Prepare Submission Insert"
     },
     {
@@ -100,8 +94,11 @@
       },
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
-      "position": [1520, 0],
-      "id": "f4b0a9a8-7bd0-4306-bd9f-181e85015176",
+      "position": [
+        17488,
+        18400
+      ],
+      "id": "f6818ed2-bee2-4a80-98cd-1198b165c353",
       "name": "Insert Submission",
       "credentials": {
         "postgres": {
@@ -112,121 +109,16 @@
     },
     {
       "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict"
-          },
-          "conditions": [
-            {
-              "id": "use-stubs-classify",
-              "leftValue": "={{ $('Validate Input').first().json._runtime?.use_stubs ?? true }}",
-              "rightValue": true,
-              "operator": {
-                "type": "boolean",
-                "operation": "equals"
-              }
-            }
-          ],
-          "combinator": "and"
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2.2,
-      "position": [1740, 0],
-      "id": "use-stubs-classify",
-      "name": "Use Stubs for Classify?"
-    },
-    {
-      "parameters": {
-        "jsCode": "const message = $('Insert Submission').first().json.message;\nconst validateInput = $('Validate Input').first().json;\n\n// Simple keyword-based classification for testing\nconst tags = [];\nif (message.toLowerCase().includes('messaging') || message.toLowerCase().includes('comms')) tags.push('comms');\nif (message.toLowerCase().includes('offline')) tags.push('censorship-resistance');\nif (message.toLowerCase().includes('secure') || message.toLowerCase().includes('privacy')) tags.push('privacy');\nif (message.toLowerCase().includes('bitcoin') || message.toLowerCase().includes('btc')) tags.push('bitcoin');\nif (message.toLowerCase().includes('tool') || message.toLowerCase().includes('build')) tags.push('sovereignty');\nif (tags.length === 0) tags.push('general');\n\n// Determine category from content\nlet category = 'other';\nif (message.toLowerCase().includes('tool') || message.toLowerCase().includes('need')) category = 'tool-request';\nelse if (message.toLowerCase().includes('idea') || message.toLowerCase().includes('what if')) category = 'idea';\nelse if (message.toLowerCase().includes('report') || message.toLowerCase().includes('observed')) category = 'report';\nelse if (message.toLowerCase().includes('question') || message.includes('?')) category = 'question';\nelse if (message.toLowerCase().includes('partner') || message.toLowerCase().includes('collaborate')) category = 'collaboration';\n\n// Determine risk level\nlet risk_level = 'low';\nif (message.toLowerCase().includes('activist') || message.toLowerCase().includes('dissident')) risk_level = 'medium';\nif (message.toLowerCase().includes('location') && risk_level === 'medium') risk_level = 'high';\n\n// Determine priority\nlet priority = 'normal';\nif (message.toLowerCase().includes('urgent') || message.toLowerCase().includes('emergency')) priority = 'urgent';\nif (message.toLowerCase().includes('fyi') || message.toLowerCase().includes('just sharing')) priority = 'low';\n\n// Check for spam patterns\nconst is_spam = message.toLowerCase().includes('crypto airdrop') || \n                message.toLowerCase().includes('click here') ||\n                (message.match(/https?:\\/\\//g) || []).length > 5;\n\n// Determine if response is needed\nconst requires_response = category !== 'other' && !is_spam && \n                          (message.includes('?') || category === 'tool-request' || category === 'collaboration');\n\n// Generate summary\nconst summary = message.substring(0, 180).replace(/\\n/g, ' ').trim() + (message.length > 180 ? '...' : '');\n\n// Suggested assignee\nlet suggested_assignee = 'triage';\nif (category === 'tool-request') suggested_assignee = 'engineering';\nelse if (category === 'collaboration') suggested_assignee = 'partnerships';\nelse if (category === 'report') suggested_assignee = 'research';\n\nconst result = {\n  category,\n  tags,\n  risk_level,\n  priority,\n  summary,\n  is_spam,\n  requires_response,\n  suggested_assignee\n};\n\n// Match Claude API response format\nreturn [{\n  json: {\n    content: [{\n      type: 'text',\n      text: JSON.stringify(result)\n    }],\n    _submissionId: $('Insert Submission').first().json.id,\n    _message: message,\n    _agents: validateInput._agents,\n    _runtime: validateInput._runtime,\n    _storyData: {\n      type: validateInput.type,\n      title: validateInput.title,\n      sourceUrl: validateInput.sourceUrl,\n      region: validateInput.region,\n      urgency: validateInput.urgency,\n      problemStatement: validateInput.problemStatement\n    }\n  }\n}];"
+        "jsCode": "// Prepare routing data for type-specific classification\n// Removed redundant initial classification - type-specific classifiers handle this\nconst validateInput = $('Validate Input').first().json;\nconst submissionData = $('Insert Submission').first().json;\n\nreturn [{\n  json: {\n    submissionId: submissionData.id,\n    message: submissionData.message,\n    category: validateInput.category,\n    contact: validateInput.contact,\n    _runtime: validateInput._runtime,\n    _storyData: {\n      type: validateInput.type,\n      title: validateInput.title,\n      sourceUrl: validateInput.sourceUrl,\n      region: validateInput.region,\n      urgency: validateInput.urgency,\n      problemStatement: validateInput.problemStatement\n    }\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [1740, -100],
-      "id": "b0d80e32-5e56-4553-8037-9011a2c680f1",
-      "name": "Classify Stub"
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "https://api.anthropic.com/v1/messages",
-        "authentication": "genericCredentialType",
-        "genericAuthType": "httpHeaderAuth",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "anthropic-version",
-              "value": "2023-06-01"
-            },
-            {
-              "name": "content-type",
-              "value": "application/json"
-            }
-          ]
-        },
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 512,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": {{ JSON.stringify($('Validate Input').first().json._agents?.intakeClassify + \"\\n\\n# Input\\n\\n\" + JSON.stringify({ message: $('Insert Submission').first().json.message, contact: $('Validate Input').first().json.contact ? '[provided]' : null, category: $('Validate Input').first().json.category, safetyMode: $('Validate Input').first().json.safetyMode })) }}\n  }]\n}",
-        "options": {
-          "timeout": 30000
-        }
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.3,
-      "position": [1740, 100],
-      "id": "8d4a91f3-2fb2-4be9-9d5f-0bc2ebc6a3be",
-      "name": "Classify with Claude API",
-      "credentials": {
-        "httpHeaderAuth": {
-          "id": "ANTHROPIC_CREDENTIAL_ID",
-          "name": "Anthropic API Key"
-        }
-      },
-      "onError": "continueErrorOutput"
-    },
-    {
-      "parameters": {
-        "jsCode": "// Process real Claude API response and add pass-through data\nconst claudeResponse = $input.first().json;\nconst validateInput = $('Validate Input').first().json;\nconst submissionData = $('Insert Submission').first().json;\n\n// Return in same format as stub for Parse LLM Response compatibility\nreturn [{\n  json: {\n    content: claudeResponse.content,\n    _submissionId: submissionData.id,\n    _message: submissionData.message,\n    _agents: validateInput._agents,\n    _runtime: validateInput._runtime,\n    _storyData: {\n      type: validateInput.type,\n      title: validateInput.title,\n      sourceUrl: validateInput.sourceUrl,\n      region: validateInput.region,\n      urgency: validateInput.urgency,\n      problemStatement: validateInput.problemStatement\n    }\n  }\n}];"
-      },
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [1960, 100],
-      "id": "wrap-classify-response",
-      "name": "Wrap Claude Classify Response"
-    },
-    {
-      "parameters": {
-        "jsCode": "// Parse LLM response (handles both stub and real Claude responses)\n// Strips markdown code blocks that Claude often wraps JSON in\nconst input = $input.first().json;\nlet parsed;\n\ntry {\n  let text = input.content[0].text;\n  \n  // Strip markdown code blocks if present (Claude often wraps JSON in ```json...```)\n  text = text.trim();\n  if (text.startsWith('```')) {\n    // Remove opening fence (```json or ```)\n    text = text.replace(/^```(?:json)?\\s*\\n?/, '');\n    // Remove closing fence\n    text = text.replace(/\\n?```\\s*$/, '');\n  }\n  \n  parsed = JSON.parse(text.trim());\n} catch (e) {\n  console.log('Parse LLM Response error:', e.message);\n  console.log('Raw text:', input.content?.[0]?.text?.substring(0, 200));\n  // Fallback classification if parsing fails\n  parsed = {\n    category: 'other',\n    tags: ['general'],\n    risk_level: 'low',\n    priority: 'normal',\n    summary: 'Failed to parse classification: ' + e.message,\n    is_spam: false,\n    requires_response: false,\n    suggested_assignee: 'triage'\n  };\n}\n\n// Ensure all required fields are present\nconst result = {\n  category: parsed.category || 'other',\n  tags: Array.isArray(parsed.tags) ? parsed.tags : ['general'],\n  risk_level: parsed.risk_level || 'low',\n  priority: parsed.priority || 'normal',\n  summary: (parsed.summary || '').substring(0, 200),\n  is_spam: Boolean(parsed.is_spam),\n  requires_response: Boolean(parsed.requires_response),\n  suggested_assignee: parsed.suggested_assignee || 'triage',\n  submissionId: input._submissionId,\n  message: input._message,\n  _runtime: input._runtime,\n  _storyData: input._storyData\n};\n\nreturn [{ json: result }];"
-      },
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [2180, 0],
-      "id": "2c3ce832-b8bc-4645-a849-4d340ec89943",
-      "name": "Parse LLM Response"
-    },
-    {
-      "parameters": {
-        "operation": "executeQuery",
-        "query": "UPDATE submissions\n  SET tags = ARRAY(SELECT json_array_elements_text($1::json)),\n      risk_level = $2,\n      priority = $3,\n      is_spam = $4,\n      requires_response = $5,\n      status = 'triaged'\n  WHERE id = $6::uuid",
-        "options": {
-          "queryReplacement": "={{ JSON.stringify($json.tags) }}, {{ $json.risk_level }}, {{ $json.priority }}, {{ $json.is_spam }}, {{ $json.requires_response }}, {{ $json.submissionId }}"
-        }
-      },
-      "type": "n8n-nodes-base.postgres",
-      "typeVersion": 2.6,
-      "position": [2400, 0],
-      "id": "584cdc58-21d3-4526-accc-14cfdc4c4f3d",
-      "name": "Update Submission",
-      "credentials": {
-        "postgres": {
-          "id": "qDXwbsZ3b2DpBCrd",
-          "name": "Postgres account"
-        }
-      }
+      "position": [
+        17664,
+        18400
+      ],
+      "id": "f636fd38-f1c5-45e0-a85c-d12536f55b52",
+      "name": "Prepare Routing Data"
     },
     {
       "parameters": {
@@ -239,7 +131,7 @@
           "conditions": [
             {
               "id": "is-story-check",
-              "leftValue": "={{ $('Parse LLM Response').first().json._storyData?.type }}",
+              "leftValue": "={{ $('Prepare Routing Data').first().json._storyData?.type }}",
               "rightValue": "story",
               "operator": {
                 "type": "string",
@@ -253,8 +145,11 @@
       },
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
-      "position": [2620, 0],
-      "id": "is-story-check",
+      "position": [
+        18080,
+        18400
+      ],
+      "id": "7d4ac0cc-d3af-4bce-a21f-929aebe3d5b8",
       "name": "Is Story?"
     },
     {
@@ -268,7 +163,7 @@
           "conditions": [
             {
               "id": "is-project-check",
-              "leftValue": "={{ $('Parse LLM Response').first().json._storyData?.type }}",
+              "leftValue": "={{ $('Prepare Routing Data').first().json._storyData?.type }}",
               "rightValue": "project",
               "operator": {
                 "type": "string",
@@ -282,8 +177,11 @@
       },
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
-      "position": [2840, -200],
-      "id": "is-project-check",
+      "position": [
+        18080,
+        19072
+      ],
+      "id": "252398c0-e732-439c-b9ec-7908cae847c5",
       "name": "Is Project?"
     },
     {
@@ -295,8 +193,11 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [3060, -400],
-      "id": "fetch-project-evaluate-prompt",
+      "position": [
+        18368,
+        19056
+      ],
+      "id": "fd839321-3d3d-4083-a798-620a65dd6792",
       "name": "Fetch Project Evaluate Prompt"
     },
     {
@@ -310,7 +211,7 @@
           "conditions": [
             {
               "id": "use-stubs-project-evaluate",
-              "leftValue": "={{ $('Parse LLM Response').first().json._runtime?.use_stubs ?? true }}",
+              "leftValue": "={{ $('Prepare Routing Data').first().json._runtime?.use_stubs ?? true }}",
               "rightValue": true,
               "operator": {
                 "type": "boolean",
@@ -324,18 +225,24 @@
       },
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
-      "position": [3280, -400],
-      "id": "use-stubs-project-evaluate",
+      "position": [
+        18544,
+        19056
+      ],
+      "id": "00407634-082c-4b3a-9d8f-7559780ecca6",
       "name": "Use Stubs for Project Evaluate?"
     },
     {
       "parameters": {
-        "jsCode": "// Project Evaluate Stub for testing (1.13b)\n// Provides keyword-based project assessment without calling Claude API\n\nconst parsedLLM = $('Parse LLM Response').first().json;\nconst storyData = parsedLLM._storyData;\nconst message = parsedLLM.message;\nconst title = storyData?.title || '';\nconst problemStatement = storyData?.problemStatement || message;\nconst region = storyData?.region;\nconst urgency = storyData?.urgency || 'normal';\n\nconst fullText = (title + ' ' + problemStatement + ' ' + message).toLowerCase();\n\n// Topic detection for tech stack suggestions\nconst topics = [];\nif (fullText.includes('bitcoin') || fullText.includes('btc') || fullText.includes('lightning')) topics.push('bitcoin');\nif (fullText.includes('zk') || fullText.includes('zero knowledge') || fullText.includes('proof')) topics.push('zk');\nif (fullText.includes('mesh') || fullText.includes('p2p') || fullText.includes('peer')) topics.push('comms');\nif (fullText.includes('privacy') || fullText.includes('encrypt') || fullText.includes('anonymous')) topics.push('privacy');\nif (fullText.includes('identity') || fullText.includes('kyc') || fullText.includes('credential')) topics.push('identity');\nif (fullText.includes('censor') || fullText.includes('blocked') || fullText.includes('firewall')) topics.push('censorship-resistance');\nif (topics.length === 0) topics.push('sovereignty');\n\n// Generate threat model based on content\nlet threat_model = 'Generic adversaries including network observers and platform operators.';\nif (fullText.includes('government') || fullText.includes('state')) {\n  threat_model = 'State-level adversaries with network monitoring capabilities, ability to compel platforms, and potential for targeted surveillance.';\n} else if (fullText.includes('activist') || fullText.includes('journalist')) {\n  threat_model = 'Adversaries targeting individuals including state actors, corporate surveillance, and social engineering attacks.';\n}\n\n// Identify affected groups\nconst affected_groups = ['Privacy-conscious users'];\nif (fullText.includes('activist')) affected_groups.push('Activists in authoritarian regimes');\nif (fullText.includes('journalist')) affected_groups.push('Journalists protecting sources');\nif (fullText.includes('human rights')) affected_groups.push('Human rights organizations');\nif (fullText.includes('developer')) affected_groups.push('Freedom tech developers');\nif (affected_groups.length === 1) affected_groups.push('General users seeking privacy');\n\n// Calculate feasibility score\nlet feasibility_score = 60;\nif (fullText.includes('existing') || fullText.includes('integrate')) feasibility_score += 15;\nif (fullText.includes('complex') || fullText.includes('research')) feasibility_score -= 15;\nif (fullText.includes('simple') || fullText.includes('basic')) feasibility_score += 10;\nfeasibility_score = Math.max(30, Math.min(90, feasibility_score));\n\n// Calculate impact score\nlet impact_score = 55;\nif (fullText.includes('life') || fullText.includes('safety') || fullText.includes('threat')) impact_score += 25;\nif (fullText.includes('many') || fullText.includes('widespread') || fullText.includes('global')) impact_score += 15;\nif (fullText.includes('niche') || fullText.includes('specific')) impact_score -= 10;\nimpact_score = Math.max(30, Math.min(95, impact_score));\n\n// Generate misuse risks\nlet misuse_risks = 'Could be used to coordinate harmful activities under cover of privacy. May enable evasion of legitimate law enforcement in non-authoritarian contexts.';\nif (fullText.includes('anonymous')) {\n  misuse_risks = 'Strong anonymity features could enable abuse, harassment, or illegal activities. Consider transparency options and abuse reporting mechanisms.';\n}\n\n// Suggest technical dependencies\nconst technical_dependencies = ['Cryptographic libraries (libsodium or equivalent)'];\nif (topics.includes('bitcoin')) technical_dependencies.push('Bitcoin libraries (rust-bitcoin, bitcoinjs)');\nif (topics.includes('comms')) technical_dependencies.push('Networking stack with P2P support');\nif (topics.includes('zk')) technical_dependencies.push('ZK proving system (STARK, SNARK)');\n\n// Suggest stack\nconst suggested_stack = ['Rust for core components', 'TypeScript for web interfaces'];\nif (topics.includes('bitcoin')) suggested_stack.push('Bitcoin Core RPC or Electrum');\nif (topics.includes('comms')) suggested_stack.push('libp2p for networking');\n\n// Prior art\nconst prior_art = [];\nif (topics.includes('bitcoin')) prior_art.push('Sparrow Wallet', 'Wasabi Wallet');\nif (topics.includes('comms')) prior_art.push('Briar', 'Signal');\nif (topics.includes('privacy')) prior_art.push('Tor Project', 'Tails');\nif (prior_art.length === 0) prior_art.push('Review existing freedom tech projects');\n\n// Open questions\nconst open_questions = [\n  'What is the minimum viable UX for non-technical users?',\n  'How to handle key management without trusted third parties?'\n];\nif (region) open_questions.push(`What are the specific requirements for ${region}?`);\n\n// Check for spam\nconst is_spam = fullText.includes('guaranteed returns') || \n                fullText.includes('airdrop') || \n                fullText.includes('100x');\n\n// Generate detected pattern\nlet detected_pattern = `Addresses ${topics.join('/')} needs for ${affected_groups[0].toLowerCase()}.`;\nif (is_spam) detected_pattern = 'N/A - This is spam';\n\n// Generate MVP scope\nlet mvp_scope = `CLI tool with core ${topics[0] || 'privacy'} functionality. Single-page documentation. Target: technical early adopters.`;\nif (is_spam) mvp_scope = 'N/A - This is spam';\n\nconst result = {\n  detected_pattern,\n  threat_model: is_spam ? 'N/A - This is spam' : threat_model,\n  affected_groups: is_spam ? [] : affected_groups,\n  mvp_scope,\n  misuse_risks: is_spam ? 'Submission flagged as spam.' : misuse_risks,\n  feasibility_score: is_spam ? 0 : feasibility_score,\n  impact_score: is_spam ? 0 : impact_score,\n  technical_dependencies: is_spam ? [] : technical_dependencies,\n  suggested_stack: is_spam ? [] : suggested_stack,\n  prior_art: is_spam ? [] : prior_art,\n  open_questions: is_spam ? [] : open_questions,\n  reasoning: is_spam ? 'Spam patterns detected.' : `Stub evaluation: feasibility=${feasibility_score}, impact=${impact_score}, topics=${topics.join(', ')}`,\n  priority: urgency,\n  is_spam\n};\n\nreturn [{\n  json: {\n    content: [{ type: 'text', text: JSON.stringify(result) }],\n    _submissionId: parsedLLM.submissionId,\n    _message: message,\n    _projectData: {\n      title,\n      problemStatement,\n      description: message,\n      region,\n      urgency,\n      topics\n    },\n    _runtime: parsedLLM._runtime\n  }\n}];"
+        "jsCode": "// Project Evaluate Stub for testing (1.13b)\n// Provides keyword-based project assessment without calling Claude API\n\nconst parsedLLM = $('Prepare Routing Data').first().json;\nconst storyData = parsedLLM._storyData;\nconst message = parsedLLM.message;\nconst title = storyData?.title || '';\nconst problemStatement = storyData?.problemStatement || message;\nconst region = storyData?.region;\nconst urgency = storyData?.urgency || 'normal';\n\nconst fullText = (title + ' ' + problemStatement + ' ' + message).toLowerCase();\n\n// Topic detection for tech stack suggestions\nconst topics = [];\nif (fullText.includes('bitcoin') || fullText.includes('btc') || fullText.includes('lightning')) topics.push('bitcoin');\nif (fullText.includes('zk') || fullText.includes('zero knowledge') || fullText.includes('proof')) topics.push('zk');\nif (fullText.includes('mesh') || fullText.includes('p2p') || fullText.includes('peer')) topics.push('comms');\nif (fullText.includes('privacy') || fullText.includes('encrypt') || fullText.includes('anonymous')) topics.push('privacy');\nif (fullText.includes('identity') || fullText.includes('kyc') || fullText.includes('credential')) topics.push('identity');\nif (fullText.includes('censor') || fullText.includes('blocked') || fullText.includes('firewall')) topics.push('censorship-resistance');\nif (topics.length === 0) topics.push('sovereignty');\n\n// Generate threat model based on content\nlet threat_model = 'Generic adversaries including network observers and platform operators.';\nif (fullText.includes('government') || fullText.includes('state')) {\n  threat_model = 'State-level adversaries with network monitoring capabilities, ability to compel platforms, and potential for targeted surveillance.';\n} else if (fullText.includes('activist') || fullText.includes('journalist')) {\n  threat_model = 'Adversaries targeting individuals including state actors, corporate surveillance, and social engineering attacks.';\n}\n\n// Identify affected groups\nconst affected_groups = ['Privacy-conscious users'];\nif (fullText.includes('activist')) affected_groups.push('Activists in authoritarian regimes');\nif (fullText.includes('journalist')) affected_groups.push('Journalists protecting sources');\nif (fullText.includes('human rights')) affected_groups.push('Human rights organizations');\nif (fullText.includes('developer')) affected_groups.push('Freedom tech developers');\nif (affected_groups.length === 1) affected_groups.push('General users seeking privacy');\n\n// Calculate feasibility score\nlet feasibility_score = 60;\nif (fullText.includes('existing') || fullText.includes('integrate')) feasibility_score += 15;\nif (fullText.includes('complex') || fullText.includes('research')) feasibility_score -= 15;\nif (fullText.includes('simple') || fullText.includes('basic')) feasibility_score += 10;\nfeasibility_score = Math.max(30, Math.min(90, feasibility_score));\n\n// Calculate impact score\nlet impact_score = 55;\nif (fullText.includes('life') || fullText.includes('safety') || fullText.includes('threat')) impact_score += 25;\nif (fullText.includes('many') || fullText.includes('widespread') || fullText.includes('global')) impact_score += 15;\nif (fullText.includes('niche') || fullText.includes('specific')) impact_score -= 10;\nimpact_score = Math.max(30, Math.min(95, impact_score));\n\n// Generate misuse risks\nlet misuse_risks = 'Could be used to coordinate harmful activities under cover of privacy. May enable evasion of legitimate law enforcement in non-authoritarian contexts.';\nif (fullText.includes('anonymous')) {\n  misuse_risks = 'Strong anonymity features could enable abuse, harassment, or illegal activities. Consider transparency options and abuse reporting mechanisms.';\n}\n\n// Suggest technical dependencies\nconst technical_dependencies = ['Cryptographic libraries (libsodium or equivalent)'];\nif (topics.includes('bitcoin')) technical_dependencies.push('Bitcoin libraries (rust-bitcoin, bitcoinjs)');\nif (topics.includes('comms')) technical_dependencies.push('Networking stack with P2P support');\nif (topics.includes('zk')) technical_dependencies.push('ZK proving system (STARK, SNARK)');\n\n// Suggest stack\nconst suggested_stack = ['Rust for core components', 'TypeScript for web interfaces'];\nif (topics.includes('bitcoin')) suggested_stack.push('Bitcoin Core RPC or Electrum');\nif (topics.includes('comms')) suggested_stack.push('libp2p for networking');\n\n// Prior art\nconst prior_art = [];\nif (topics.includes('bitcoin')) prior_art.push('Sparrow Wallet', 'Wasabi Wallet');\nif (topics.includes('comms')) prior_art.push('Briar', 'Signal');\nif (topics.includes('privacy')) prior_art.push('Tor Project', 'Tails');\nif (prior_art.length === 0) prior_art.push('Review existing freedom tech projects');\n\n// Open questions\nconst open_questions = [\n  'What is the minimum viable UX for non-technical users?',\n  'How to handle key management without trusted third parties?'\n];\nif (region) open_questions.push(`What are the specific requirements for ${region}?`);\n\n// Check for spam\nconst is_spam = fullText.includes('guaranteed returns') || \n                fullText.includes('airdrop') || \n                fullText.includes('100x');\n\n// Generate detected pattern\nlet detected_pattern = `Addresses ${topics.join('/')} needs for ${affected_groups[0].toLowerCase()}.`;\nif (is_spam) detected_pattern = 'N/A - This is spam';\n\n// Generate MVP scope\nlet mvp_scope = `CLI tool with core ${topics[0] || 'privacy'} functionality. Single-page documentation. Target: technical early adopters.`;\nif (is_spam) mvp_scope = 'N/A - This is spam';\n\nconst result = {\n  detected_pattern,\n  threat_model: is_spam ? 'N/A - This is spam' : threat_model,\n  affected_groups: is_spam ? [] : affected_groups,\n  mvp_scope,\n  misuse_risks: is_spam ? 'Submission flagged as spam.' : misuse_risks,\n  feasibility_score: is_spam ? 0 : feasibility_score,\n  impact_score: is_spam ? 0 : impact_score,\n  technical_dependencies: is_spam ? [] : technical_dependencies,\n  suggested_stack: is_spam ? [] : suggested_stack,\n  prior_art: is_spam ? [] : prior_art,\n  open_questions: is_spam ? [] : open_questions,\n  reasoning: is_spam ? 'Spam patterns detected.' : `Stub evaluation: feasibility=${feasibility_score}, impact=${impact_score}, topics=${topics.join(', ')}`,\n  priority: urgency,\n  is_spam\n};\n\nreturn [{\n  json: {\n    content: [{ type: 'text', text: JSON.stringify(result) }],\n    _submissionId: parsedLLM.submissionId,\n    _message: message,\n    _projectData: {\n      title,\n      problemStatement,\n      description: message,\n      region,\n      urgency,\n      topics\n    },\n    _runtime: parsedLLM._runtime\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3500, -500],
-      "id": "project-evaluate-stub",
+      "position": [
+        18720,
+        18992
+      ],
+      "id": "783d6bea-6314-4ec2-aad8-aedd82bc718f",
       "name": "Project Evaluate Stub"
     },
     {
@@ -359,42 +266,51 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 2048,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": {{ JSON.stringify($('Fetch Project Evaluate Prompt').first().json.content + \"\\n\\n# Input\\n\\n\" + JSON.stringify({ title: $('Parse LLM Response').first().json._storyData?.title || '', problemStatement: $('Parse LLM Response').first().json._storyData?.problemStatement || $('Parse LLM Response').first().json.message, description: $('Parse LLM Response').first().json.message, urgency: $('Parse LLM Response').first().json._storyData?.urgency || 'normal', region: $('Parse LLM Response').first().json._storyData?.region || null })) }}\n  }]\n}",
+        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 2048,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": {{ JSON.stringify($('Fetch Project Evaluate Prompt').first().json.content + \"\\n\\n# Input\\n\\n\" + JSON.stringify({ title: $('Prepare Routing Data').first().json._storyData?.title || '', problemStatement: $('Prepare Routing Data').first().json._storyData?.problemStatement || $('Prepare Routing Data').first().json.message, description: $('Prepare Routing Data').first().json.message, urgency: $('Prepare Routing Data').first().json._storyData?.urgency || 'normal', region: $('Prepare Routing Data').first().json._storyData?.region || null })) }}\n  }]\n}",
         "options": {
           "timeout": 60000
         }
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [3500, -300],
-      "id": "project-evaluate-claude",
+      "position": [
+        18720,
+        19136
+      ],
+      "id": "6dfddb59-955b-4044-bd08-7d766ce25ca3",
       "name": "Project Evaluate with Claude API",
       "credentials": {
         "httpHeaderAuth": {
-          "id": "ANTHROPIC_CREDENTIAL_ID",
-          "name": "Anthropic API Key"
+          "id": "2ueFHzVgKw4S5KuR",
+          "name": "Claude API Token"
         }
       },
       "onError": "continueErrorOutput"
     },
     {
       "parameters": {
-        "jsCode": "// Wrap Claude API response for project evaluation\nconst claudeResponse = $input.first().json;\nconst parsedLLM = $('Parse LLM Response').first().json;\nconst storyData = parsedLLM._storyData;\n\nreturn [{\n  json: {\n    content: claudeResponse.content,\n    _submissionId: parsedLLM.submissionId,\n    _message: parsedLLM.message,\n    _projectData: {\n      title: storyData?.title || '',\n      problemStatement: storyData?.problemStatement || parsedLLM.message,\n      description: parsedLLM.message,\n      region: storyData?.region,\n      urgency: storyData?.urgency || 'normal'\n    },\n    _runtime: parsedLLM._runtime\n  }\n}];"
+        "jsCode": "// Wrap Claude API response for project evaluation\nconst claudeResponse = $input.first().json;\nconst parsedLLM = $('Prepare Routing Data').first().json;\nconst storyData = parsedLLM._storyData;\n\nreturn [{\n  json: {\n    content: claudeResponse.content,\n    _submissionId: parsedLLM.submissionId,\n    _message: parsedLLM.message,\n    _projectData: {\n      title: storyData?.title || '',\n      problemStatement: storyData?.problemStatement || parsedLLM.message,\n      description: parsedLLM.message,\n      region: storyData?.region,\n      urgency: storyData?.urgency || 'normal'\n    },\n    _runtime: parsedLLM._runtime\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3720, -300],
-      "id": "wrap-project-evaluate-response",
+      "position": [
+        18896,
+        19072
+      ],
+      "id": "0748ba56-8083-4f45-8a85-cf559aaadc7f",
       "name": "Wrap Project Evaluate Response"
     },
     {
       "parameters": {
-        "jsCode": "// Handle errors from Project Evaluate Claude API call\nconst error = $input.first().json;\nconst parsedLLM = $('Parse LLM Response').first().json;\nconst storyData = parsedLLM._storyData;\n\nconsole.log('Project Evaluate Claude API error:', JSON.stringify(error));\n\nconst fallbackResult = {\n  threat_model: 'Unable to assess - API error',\n  affected_groups: ['Unknown - manual review required'],\n  feasibility_score: 50,\n  impact_score: 50,\n  misuse_risks: 'Unable to assess - API error',\n  technical_dependencies: [],\n  suggested_stack: [],\n  prior_art: [],\n  open_questions: ['All aspects require manual review due to API error'],\n  reasoning: 'Fallback evaluation due to API error - requires manual review',\n  priority: 'normal',\n  is_spam: false\n};\n\nreturn [{\n  json: {\n    content: [{ type: 'text', text: JSON.stringify(fallbackResult) }],\n    _submissionId: parsedLLM.submissionId,\n    _message: parsedLLM.message,\n    _projectData: {\n      title: storyData?.title || '',\n      problemStatement: storyData?.problemStatement || parsedLLM.message,\n      description: parsedLLM.message,\n      region: storyData?.region,\n      urgency: storyData?.urgency || 'normal'\n    },\n    _runtime: parsedLLM._runtime,\n    _apiError: true\n  }\n}];"
+        "jsCode": "// Handle errors from Project Evaluate Claude API call\nconst error = $input.first().json;\nconst parsedLLM = $('Prepare Routing Data').first().json;\nconst storyData = parsedLLM._storyData;\n\nconsole.log('Project Evaluate Claude API error:', JSON.stringify(error));\n\nconst fallbackResult = {\n  threat_model: 'Unable to assess - API error',\n  affected_groups: ['Unknown - manual review required'],\n  feasibility_score: 50,\n  impact_score: 50,\n  misuse_risks: 'Unable to assess - API error',\n  technical_dependencies: [],\n  suggested_stack: [],\n  prior_art: [],\n  open_questions: ['All aspects require manual review due to API error'],\n  reasoning: 'Fallback evaluation due to API error - requires manual review',\n  priority: 'normal',\n  is_spam: false\n};\n\nreturn [{\n  json: {\n    content: [{ type: 'text', text: JSON.stringify(fallbackResult) }],\n    _submissionId: parsedLLM.submissionId,\n    _message: parsedLLM.message,\n    _projectData: {\n      title: storyData?.title || '',\n      problemStatement: storyData?.problemStatement || parsedLLM.message,\n      description: parsedLLM.message,\n      region: storyData?.region,\n      urgency: storyData?.urgency || 'normal'\n    },\n    _runtime: parsedLLM._runtime,\n    _apiError: true\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3720, -200],
-      "id": "handle-project-evaluate-error",
+      "position": [
+        18896,
+        19216
+      ],
+      "id": "4d099f9d-11f6-46b9-be04-0e15b8e691c7",
       "name": "Handle Project Evaluate Error"
     },
     {
@@ -403,8 +319,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3940, -400],
-      "id": "parse-project-llm-response",
+      "position": [
+        19088,
+        18992
+      ],
+      "id": "6fc134f9-0331-4f23-b9df-1d007aab922f",
       "name": "Parse Project LLM Response"
     },
     {
@@ -432,8 +351,11 @@
       },
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
-      "position": [4050, -400],
-      "id": "is-not-spam-project",
+      "position": [
+        19376,
+        18992
+      ],
+      "id": "9244b2b2-2b4d-486d-86bf-f6c1ea68b34c",
       "name": "Is Not Spam?"
     },
     {
@@ -442,8 +364,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [4160, -300],
-      "id": "handle-project-spam",
+      "position": [
+        19536,
+        19056
+      ],
+      "id": "b5a36862-4dde-4d00-8761-c5edabf38d8d",
       "name": "Handle Project Spam"
     },
     {
@@ -452,8 +377,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [4160, -400],
-      "id": "build-project-idea-query",
+      "position": [
+        19536,
+        18928
+      ],
+      "id": "ea22d4ca-aee7-44d8-8d16-34c447041444",
       "name": "Build Project Idea Query"
     },
     {
@@ -464,8 +392,11 @@
       },
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
-      "position": [4380, -400],
-      "id": "insert-project-idea",
+      "position": [
+        19712,
+        18928
+      ],
+      "id": "8e1c88e0-1dac-4e36-a080-9ff79203e0ec",
       "name": "Insert Project Idea",
       "credentials": {
         "postgres": {
@@ -480,8 +411,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [4600, -400],
-      "id": "prepare-project-for-github",
+      "position": [
+        20000,
+        18928
+      ],
+      "id": "ebe30693-dccb-48a4-ae25-472d603fd842",
       "name": "Prepare Project for GitHub"
     },
     {
@@ -495,7 +429,7 @@
           "conditions": [
             {
               "id": "use-stubs-project-github",
-              "leftValue": "={{ $('Parse LLM Response').first().json._runtime?.use_stubs ?? true }}",
+              "leftValue": "={{ $('Prepare Routing Data').first().json._runtime?.use_stubs ?? true }}",
               "rightValue": true,
               "operator": {
                 "type": "boolean",
@@ -509,8 +443,11 @@
       },
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
-      "position": [4820, -400],
-      "id": "use-stubs-project-github",
+      "position": [
+        20160,
+        18928
+      ],
+      "id": "3a976dae-b269-4ab2-b19a-6a786f6aa330",
       "name": "Use Stubs for Project GitHub?"
     },
     {
@@ -519,8 +456,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [5040, -500],
-      "id": "project-github-stub",
+      "position": [
+        20320,
+        18880
+      ],
+      "id": "02a2b30a-0234-4d14-a453-097d469fdb65",
       "name": "Project GitHub Stub"
     },
     {
@@ -551,13 +491,16 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [5040, -300],
-      "id": "create-project-github-issue",
+      "position": [
+        20320,
+        19040
+      ],
+      "id": "fda7fec9-17f7-4e53-80d1-a41106651a28",
       "name": "Create Project GitHub Issue",
       "credentials": {
         "httpHeaderAuth": {
-          "id": "GITHUB_CREDENTIAL_ID",
-          "name": "GitHub API Token"
+          "id": "DwAcCvPHNHvQfrGT",
+          "name": "Github API Token"
         }
       },
       "onError": "continueErrorOutput"
@@ -568,8 +511,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [5260, -300],
-      "id": "wrap-project-github-response",
+      "position": [
+        20496,
+        18992
+      ],
+      "id": "b28ee341-2ab7-41a9-b977-b2d0901c79fe",
       "name": "Wrap Project GitHub Response"
     },
     {
@@ -578,8 +524,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [5260, -200],
-      "id": "handle-project-github-error",
+      "position": [
+        20496,
+        19152
+      ],
+      "id": "cec07257-f708-4ebc-bece-9cc02fe00724",
       "name": "Handle Project GitHub Error"
     },
     {
@@ -588,8 +537,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [5480, -400],
-      "id": "build-project-update-query",
+      "position": [
+        20688,
+        18880
+      ],
+      "id": "6f7ac278-2026-4278-bd54-dd30f3b0b6a4",
       "name": "Build Project Update Query"
     },
     {
@@ -600,8 +552,11 @@
       },
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
-      "position": [5700, -400],
-      "id": "update-project-idea-url",
+      "position": [
+        20880,
+        18880
+      ],
+      "id": "656172f6-1cc2-4504-8f9b-224a260a39d2",
       "name": "Update Project Idea URL",
       "credentials": {
         "postgres": {
@@ -616,8 +571,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [5920, -400],
-      "id": "project-success-summary",
+      "position": [
+        21056,
+        18880
+      ],
+      "id": "0b110c4c-5b59-4cf9-b791-345a97122f67",
       "name": "Project Success Summary"
     },
     {
@@ -631,7 +589,7 @@
           "conditions": [
             {
               "id": "has-source-url",
-              "leftValue": "={{ $('Parse LLM Response').first().json._storyData?.sourceUrl }}",
+              "leftValue": "={{ $('Prepare Routing Data').first().json._storyData?.sourceUrl }}",
               "rightValue": "",
               "operator": {
                 "type": "string",
@@ -645,57 +603,70 @@
       },
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
-      "position": [2840, 300],
-      "id": "has-source-url",
+      "position": [
+        18304,
+        18384
+      ],
+      "id": "a9ac371c-0cba-4531-bfee-67e026ccb71d",
       "name": "Has Source URL?"
     },
     {
       "parameters": {
-        "url": "={{ $('Parse LLM Response').first().json._storyData?.sourceUrl }}",
+        "url": "={{ $('Prepare Routing Data').first().json._storyData?.sourceUrl }}",
         "options": {
-          "timeout": 10000,
           "response": {
-            "response": {
-              "fullResponse": false
-            }
-          }
+            "response": {}
+          },
+          "timeout": 10000
         }
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [3060, 200],
-      "id": "fetch-source-content",
+      "position": [
+        18480,
+        18320
+      ],
+      "id": "1ec0e56d-e107-4f6b-857f-4d2ec10e05d8",
       "name": "Fetch Source Content",
       "onError": "continueErrorOutput"
     },
     {
       "parameters": {
-        "jsCode": "// Extract text content from fetched HTML\n// Provides source content for Claude to analyze alongside user's description\n\nconst parsedData = $('Parse LLM Response').first().json;\nconst fetchResult = $input.first().json;\n\nlet extractedContent = '';\nlet fetchSuccess = true;\n\ntry {\n  // Get the HTML content (could be string or in data field)\n  const html = typeof fetchResult === 'string' ? fetchResult : \n               (fetchResult.data || fetchResult.body || JSON.stringify(fetchResult));\n  \n  if (typeof html === 'string' && html.length > 0) {\n    // Basic HTML text extraction\n    // Remove script and style tags and their content\n    let text = html\n      .replace(/<script[^>]*>[\\s\\S]*?<\\/script>/gi, '')\n      .replace(/<style[^>]*>[\\s\\S]*?<\\/style>/gi, '')\n      .replace(/<nav[^>]*>[\\s\\S]*?<\\/nav>/gi, '')\n      .replace(/<footer[^>]*>[\\s\\S]*?<\\/footer>/gi, '')\n      .replace(/<header[^>]*>[\\s\\S]*?<\\/header>/gi, '');\n    \n    // Remove HTML tags but keep content\n    text = text.replace(/<[^>]+>/g, ' ');\n    \n    // Decode HTML entities\n    text = text\n      .replace(/&nbsp;/g, ' ')\n      .replace(/&amp;/g, '&')\n      .replace(/&lt;/g, '<')\n      .replace(/&gt;/g, '>')\n      .replace(/&quot;/g, '\"')\n      .replace(/&#39;/g, \"'\");\n    \n    // Clean up whitespace\n    text = text.replace(/\\s+/g, ' ').trim();\n    \n    // Truncate to reasonable size for LLM context\n    extractedContent = text.substring(0, 8000);\n    if (text.length > 8000) {\n      extractedContent += '... [truncated]';\n    }\n  }\n} catch (e) {\n  console.log('Text extraction error:', e.message);\n  fetchSuccess = false;\n}\n\n// Pass through all data with extracted content added\nreturn [{\n  json: {\n    ...parsedData,\n    _sourceContent: {\n      extracted: extractedContent,\n      fetchSuccess: fetchSuccess,\n      url: parsedData._storyData?.sourceUrl\n    }\n  }\n}];"
+        "jsCode": "// Extract text content from fetched HTML\n// Provides source content for Claude to analyze alongside user's description\n\nconst parsedData = $('Prepare Routing Data').first().json;\nconst fetchResult = $input.first().json;\n\nlet extractedContent = '';\nlet fetchSuccess = true;\n\ntry {\n  // Get the HTML content (could be string or in data field)\n  const html = typeof fetchResult === 'string' ? fetchResult : \n               (fetchResult.data || fetchResult.body || JSON.stringify(fetchResult));\n  \n  if (typeof html === 'string' && html.length > 0) {\n    // Basic HTML text extraction\n    // Remove script and style tags and their content\n    let text = html\n      .replace(/<script[^>]*>[\\s\\S]*?<\\/script>/gi, '')\n      .replace(/<style[^>]*>[\\s\\S]*?<\\/style>/gi, '')\n      .replace(/<nav[^>]*>[\\s\\S]*?<\\/nav>/gi, '')\n      .replace(/<footer[^>]*>[\\s\\S]*?<\\/footer>/gi, '')\n      .replace(/<header[^>]*>[\\s\\S]*?<\\/header>/gi, '');\n    \n    // Remove HTML tags but keep content\n    text = text.replace(/<[^>]+>/g, ' ');\n    \n    // Decode HTML entities\n    text = text\n      .replace(/&nbsp;/g, ' ')\n      .replace(/&amp;/g, '&')\n      .replace(/&lt;/g, '<')\n      .replace(/&gt;/g, '>')\n      .replace(/&quot;/g, '\"')\n      .replace(/&#39;/g, \"'\");\n    \n    // Clean up whitespace\n    text = text.replace(/\\s+/g, ' ').trim();\n    \n    // Truncate to reasonable size for LLM context\n    extractedContent = text.substring(0, 8000);\n    if (text.length > 8000) {\n      extractedContent += '... [truncated]';\n    }\n  }\n} catch (e) {\n  console.log('Text extraction error:', e.message);\n  fetchSuccess = false;\n}\n\n// Pass through all data with extracted content added\nreturn [{\n  json: {\n    ...parsedData,\n    _sourceContent: {\n      extracted: extractedContent,\n      fetchSuccess: fetchSuccess,\n      url: parsedData._storyData?.sourceUrl\n    }\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3280, 200],
-      "id": "extract-source-text",
+      "position": [
+        18688,
+        18240
+      ],
+      "id": "73391cdf-b162-4a99-bb47-0c06525e8189",
       "name": "Extract Text from HTML"
     },
     {
       "parameters": {
-        "jsCode": "// Handle fetch errors - continue without source content\nconst parsedData = $('Parse LLM Response').first().json;\nconst error = $input.first().json;\n\nconsole.log('Source URL fetch error:', JSON.stringify(error));\n\nreturn [{\n  json: {\n    ...parsedData,\n    _sourceContent: {\n      extracted: '',\n      fetchSuccess: false,\n      error: 'Failed to fetch source URL',\n      url: parsedData._storyData?.sourceUrl\n    }\n  }\n}];"
+        "jsCode": "// Handle fetch errors - continue without source content\nconst parsedData = $('Prepare Routing Data').first().json;\nconst error = $input.first().json;\n\nconsole.log('Source URL fetch error:', JSON.stringify(error));\n\nreturn [{\n  json: {\n    ...parsedData,\n    _sourceContent: {\n      extracted: '',\n      fetchSuccess: false,\n      error: 'Failed to fetch source URL',\n      url: parsedData._storyData?.sourceUrl\n    }\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3280, 300],
-      "id": "handle-fetch-error",
+      "position": [
+        18688,
+        18368
+      ],
+      "id": "a65997a5-dc31-442b-9b66-60b7b0aeae4f",
       "name": "Handle Fetch Error"
     },
     {
       "parameters": {
-        "jsCode": "// No source URL provided - continue with description only\nconst parsedData = $('Parse LLM Response').first().json;\n\nreturn [{\n  json: {\n    ...parsedData,\n    _sourceContent: {\n      extracted: '',\n      fetchSuccess: false,\n      noUrl: true\n    }\n  }\n}];"
+        "jsCode": "// No source URL provided - continue with description only\nconst parsedData = $('Prepare Routing Data').first().json;\n\nreturn [{\n  json: {\n    ...parsedData,\n    _sourceContent: {\n      extracted: '',\n      fetchSuccess: false,\n      noUrl: true\n    }\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3060, 400],
-      "id": "no-source-url",
+      "position": [
+        18480,
+        18464
+      ],
+      "id": "8f07a371-b5c0-4e40-8ae5-b952263e3b15",
       "name": "No Source URL"
     },
     {
@@ -707,8 +678,11 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [3500, 300],
-      "id": "fetch-story-classify-prompt",
+      "position": [
+        18976,
+        18464
+      ],
+      "id": "73a49c3f-d307-43bd-94d1-c1053a658925",
       "name": "Fetch Story Classify Prompt"
     },
     {
@@ -722,7 +696,7 @@
           "conditions": [
             {
               "id": "use-stubs-story-classify",
-              "leftValue": "={{ $('Parse LLM Response').first().json._runtime?.use_stubs ?? true }}",
+              "leftValue": "={{ $('Prepare Routing Data').first().json._runtime?.use_stubs ?? true }}",
               "rightValue": true,
               "operator": {
                 "type": "boolean",
@@ -736,18 +710,24 @@
       },
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
-      "position": [3720, 300],
-      "id": "use-stubs-story-classify",
+      "position": [
+        19136,
+        18464
+      ],
+      "id": "62582ecb-cd23-4a2f-a732-6b1dbd68ab2f",
       "name": "Use Stubs for Story Classify?"
     },
     {
       "parameters": {
-        "jsCode": "// Story classification stub for testing (1.13a)\n// Provides keyword-based scoring without calling Claude API\n// Now includes source content if fetched\n\n// Get data - try to get from source fetch nodes first, fall back to Parse LLM Response\nlet inputData;\ntry {\n  inputData = $('Extract Text from HTML').first().json;\n} catch (e1) {\n  try {\n    inputData = $('Handle Fetch Error').first().json;\n  } catch (e2) {\n    try {\n      inputData = $('No Source URL').first().json;\n    } catch (e3) {\n      inputData = $('Parse LLM Response').first().json;\n    }\n  }\n}\n\nconst storyData = inputData._storyData;\nconst message = inputData.message;\nconst title = storyData?.title || '';\nconst sourceUrl = storyData?.sourceUrl;\nconst region = storyData?.region;\nconst sourceContent = inputData._sourceContent?.extracted || '';\n\n// Combine title, message, and source content for analysis\nconst fullText = (title + ' ' + message + ' ' + sourceContent).toLowerCase();\n\n// Topic detection\nconst topics = [];\nif (fullText.includes('bitcoin') || fullText.includes('btc') || fullText.includes('lightning')) topics.push('bitcoin');\nif (fullText.includes('signal') || fullText.includes('mesh') || fullText.includes('briar') || fullText.includes('messaging')) topics.push('comms');\nif (fullText.includes('vpn') || fullText.includes('tor') || fullText.includes('privacy') || fullText.includes('encrypt')) topics.push('privacy');\nif (fullText.includes('censor') || fullText.includes('shutdown') || fullText.includes('blocked') || fullText.includes('ban')) topics.push('censorship-resistance');\nif (fullText.includes('activist') || fullText.includes('protest') || fullText.includes('dissident') || fullText.includes('journalist')) topics.push('activism');\nif (fullText.includes('surveillance') || fullText.includes('spy') || fullText.includes('monitor')) topics.push('surveillance');\nif (fullText.includes('identity') || fullText.includes('passport') || fullText.includes('kyc')) topics.push('identity');\nif (fullText.includes('payment') || fullText.includes('money') || fullText.includes('remittance')) topics.push('payments');\nif (topics.length === 0) topics.push('sovereignty');\n\n// Freedom relevance scoring\nlet freedom_relevance_score = 30;\nif (topics.includes('censorship-resistance')) freedom_relevance_score += 25;\nif (topics.includes('activism')) freedom_relevance_score += 20;\nif (topics.includes('bitcoin') || topics.includes('comms')) freedom_relevance_score += 15;\nif (fullText.includes('shutdown') || fullText.includes('repression')) freedom_relevance_score += 15;\nif (fullText.includes('use') || fullText.includes('deployed') || fullText.includes('helped')) freedom_relevance_score += 10;\nfreedom_relevance_score = Math.min(freedom_relevance_score, 100);\n\n// Credibility scoring\nlet credibility_score = 40;\nif (sourceUrl && inputData._sourceContent?.fetchSuccess) {\n  credibility_score = 60;\n  if (sourceUrl.includes('reuters') || sourceUrl.includes('bbc') || sourceUrl.includes('aljazeera')) {\n    credibility_score = 75;\n  }\n} else if (sourceUrl) {\n  credibility_score = 55;\n} else {\n  credibility_score = Math.min(credibility_score + 15, 60);\n}\n\n// Extract geo\nconst geo = [];\nif (region) geo.push(region);\nconst countries = ['Iran', 'China', 'Russia', 'Venezuela', 'Myanmar', 'Sudan', 'Nigeria', 'Uganda', 'Brazil', 'India'];\nfor (const country of countries) {\n  if (fullText.includes(country.toLowerCase()) && !geo.includes(country)) {\n    geo.push(country);\n  }\n}\n\n// Safety concern detection\nconst safety_concern = (fullText.includes('name') && fullText.includes('activist')) ||\n                       (fullText.includes('location') && fullText.includes('dissident')) ||\n                       fullText.includes('address') ||\n                       fullText.includes('phone number');\n\nlet risk_level = 'low';\nif (fullText.includes('activist') || fullText.includes('dissident') || fullText.includes('journalist')) risk_level = 'medium';\nif (safety_concern) risk_level = 'high';\n\nlet priority = storyData?.urgency || 'normal';\nif (fullText.includes('emergency') || fullText.includes('ongoing')) priority = 'urgent';\n\nconst summary = (title || message.substring(0, 100)).substring(0, 200).replace(/\\n/g, ' ').trim() + \n                (message.length > 100 && !title ? '...' : '');\n\n// Spam detection\nconst is_spam = fullText.includes('guaranteed returns') || \n                fullText.includes('airdrop') || \n                fullText.includes('100x') ||\n                fullText.includes('limited spots') ||\n                fullText.includes('exclusive group');\n\n// Note: should_queue_for_insight removed - queue decision now made in workflow based on thresholds\n\nconst result = {\n  topics: is_spam ? [] : topics,\n  freedom_relevance_score: is_spam ? 0 : freedom_relevance_score,\n  credibility_score: is_spam ? 0 : credibility_score,\n  geo: is_spam ? [] : geo,\n  safety_concern,\n  reasoning: is_spam ? 'Spam patterns detected.' : `Stub: ${topics.length} topics, relevance=${freedom_relevance_score}, cred=${credibility_score}${sourceContent ? ' (source fetched)' : sourceUrl ? ' (source provided)' : ' (no source)'}`,\n  risk_level: is_spam ? 'low' : risk_level,\n  priority: is_spam ? 'low' : priority,\n  summary: is_spam ? 'Spam - flagged for review' : summary,\n  key_entities: [],\n  is_spam\n};\n\nreturn [{\n  json: {\n    content: [{ type: 'text', text: JSON.stringify(result) }],\n    _submissionId: inputData.submissionId,\n    _message: message,\n    _storyData: storyData,\n    _sourceContent: inputData._sourceContent,\n    _runtime: inputData._runtime\n  }\n}];"
+        "jsCode": "// Story classification stub for testing (1.13a)\n// Provides keyword-based scoring without calling Claude API\n// Now includes source content if fetched\n\n// Get data - try to get from source fetch nodes first, fall back to Parse LLM Response\nlet inputData;\ntry {\n  inputData = $('Extract Text from HTML').first().json;\n} catch (e1) {\n  try {\n    inputData = $('Handle Fetch Error').first().json;\n  } catch (e2) {\n    try {\n      inputData = $('No Source URL').first().json;\n    } catch (e3) {\n      inputData = $('Prepare Routing Data').first().json;\n    }\n  }\n}\n\nconst storyData = inputData._storyData;\nconst message = inputData.message;\nconst title = storyData?.title || '';\nconst sourceUrl = storyData?.sourceUrl;\nconst region = storyData?.region;\nconst sourceContent = inputData._sourceContent?.extracted || '';\n\n// Combine title, message, and source content for analysis\nconst fullText = (title + ' ' + message + ' ' + sourceContent).toLowerCase();\n\n// Topic detection\nconst topics = [];\nif (fullText.includes('bitcoin') || fullText.includes('btc') || fullText.includes('lightning')) topics.push('bitcoin');\nif (fullText.includes('signal') || fullText.includes('mesh') || fullText.includes('briar') || fullText.includes('messaging')) topics.push('comms');\nif (fullText.includes('vpn') || fullText.includes('tor') || fullText.includes('privacy') || fullText.includes('encrypt')) topics.push('privacy');\nif (fullText.includes('censor') || fullText.includes('shutdown') || fullText.includes('blocked') || fullText.includes('ban')) topics.push('censorship-resistance');\nif (fullText.includes('activist') || fullText.includes('protest') || fullText.includes('dissident') || fullText.includes('journalist')) topics.push('activism');\nif (fullText.includes('surveillance') || fullText.includes('spy') || fullText.includes('monitor')) topics.push('surveillance');\nif (fullText.includes('identity') || fullText.includes('passport') || fullText.includes('kyc')) topics.push('identity');\nif (fullText.includes('payment') || fullText.includes('money') || fullText.includes('remittance')) topics.push('payments');\nif (topics.length === 0) topics.push('sovereignty');\n\n// Freedom relevance scoring\nlet freedom_relevance_score = 30;\nif (topics.includes('censorship-resistance')) freedom_relevance_score += 25;\nif (topics.includes('activism')) freedom_relevance_score += 20;\nif (topics.includes('bitcoin') || topics.includes('comms')) freedom_relevance_score += 15;\nif (fullText.includes('shutdown') || fullText.includes('repression')) freedom_relevance_score += 15;\nif (fullText.includes('use') || fullText.includes('deployed') || fullText.includes('helped')) freedom_relevance_score += 10;\nfreedom_relevance_score = Math.min(freedom_relevance_score, 100);\n\n// Credibility scoring\nlet credibility_score = 40;\nif (sourceUrl && inputData._sourceContent?.fetchSuccess) {\n  credibility_score = 60;\n  if (sourceUrl.includes('reuters') || sourceUrl.includes('bbc') || sourceUrl.includes('aljazeera')) {\n    credibility_score = 75;\n  }\n} else if (sourceUrl) {\n  credibility_score = 55;\n} else {\n  credibility_score = Math.min(credibility_score + 15, 60);\n}\n\n// Extract geo\nconst geo = [];\nif (region) geo.push(region);\nconst countries = ['Iran', 'China', 'Russia', 'Venezuela', 'Myanmar', 'Sudan', 'Nigeria', 'Uganda', 'Brazil', 'India'];\nfor (const country of countries) {\n  if (fullText.includes(country.toLowerCase()) && !geo.includes(country)) {\n    geo.push(country);\n  }\n}\n\n// Safety concern detection\nconst safety_concern = (fullText.includes('name') && fullText.includes('activist')) ||\n                       (fullText.includes('location') && fullText.includes('dissident')) ||\n                       fullText.includes('address') ||\n                       fullText.includes('phone number');\n\nlet risk_level = 'low';\nif (fullText.includes('activist') || fullText.includes('dissident') || fullText.includes('journalist')) risk_level = 'medium';\nif (safety_concern) risk_level = 'high';\n\nlet priority = storyData?.urgency || 'normal';\nif (fullText.includes('emergency') || fullText.includes('ongoing')) priority = 'urgent';\n\nconst summary = (title || message.substring(0, 100)).substring(0, 200).replace(/\\n/g, ' ').trim() + \n                (message.length > 100 && !title ? '...' : '');\n\n// Spam detection\nconst is_spam = fullText.includes('guaranteed returns') || \n                fullText.includes('airdrop') || \n                fullText.includes('100x') ||\n                fullText.includes('limited spots') ||\n                fullText.includes('exclusive group');\n\n// Note: should_queue_for_insight removed - queue decision now made in workflow based on thresholds\n\nconst result = {\n  topics: is_spam ? [] : topics,\n  freedom_relevance_score: is_spam ? 0 : freedom_relevance_score,\n  credibility_score: is_spam ? 0 : credibility_score,\n  geo: is_spam ? [] : geo,\n  safety_concern,\n  reasoning: is_spam ? 'Spam patterns detected.' : `Stub: ${topics.length} topics, relevance=${freedom_relevance_score}, cred=${credibility_score}${sourceContent ? ' (source fetched)' : sourceUrl ? ' (source provided)' : ' (no source)'}`,\n  risk_level: is_spam ? 'low' : risk_level,\n  priority: is_spam ? 'low' : priority,\n  summary: is_spam ? 'Spam - flagged for review' : summary,\n  key_entities: [],\n  is_spam\n};\n\nreturn [{\n  json: {\n    content: [{ type: 'text', text: JSON.stringify(result) }],\n    _submissionId: inputData.submissionId,\n    _message: message,\n    _storyData: storyData,\n    _sourceContent: inputData._sourceContent,\n    _runtime: inputData._runtime\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3940, 200],
-      "id": "story-classify-stub",
+      "position": [
+        19312,
+        18400
+      ],
+      "id": "b56b58b0-5338-47a6-ab67-d46371ed0820",
       "name": "Story Classify Stub"
     },
     {
@@ -771,42 +751,51 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 1024,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": {{ JSON.stringify($('Fetch Story Classify Prompt').first().json.content + \"\\n\\n# Input\\n\\n\" + JSON.stringify({ type: 'story', title: (() => { try { return $('Extract Text from HTML').first().json._storyData?.title; } catch(e) { try { return $('No Source URL').first().json._storyData?.title; } catch(e2) { return $('Parse LLM Response').first().json._storyData?.title; } } })(), description: (() => { try { return $('Extract Text from HTML').first().json.message; } catch(e) { try { return $('No Source URL').first().json.message; } catch(e2) { return $('Parse LLM Response').first().json.message; } } })(), sourceUrl: (() => { try { return $('Extract Text from HTML').first().json._storyData?.sourceUrl; } catch(e) { try { return $('No Source URL').first().json._storyData?.sourceUrl; } catch(e2) { return $('Parse LLM Response').first().json._storyData?.sourceUrl; } } })() || null, sourceContent: (() => { try { return $('Extract Text from HTML').first().json._sourceContent?.extracted; } catch(e) { return ''; } })() || null, region: (() => { try { return $('Extract Text from HTML').first().json._storyData?.region; } catch(e) { try { return $('No Source URL').first().json._storyData?.region; } catch(e2) { return $('Parse LLM Response').first().json._storyData?.region; } } })() || null, contact: $('Validate Input').first().json.contact ? true : false, urgency: (() => { try { return $('Extract Text from HTML').first().json._storyData?.urgency; } catch(e) { try { return $('No Source URL').first().json._storyData?.urgency; } catch(e2) { return $('Parse LLM Response').first().json._storyData?.urgency; } } })() || 'normal' })) }}\n  }]\n}",
+        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 1024,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": {{ JSON.stringify($('Fetch Story Classify Prompt').first().json.content + \"\\n\\n# Input\\n\\n\" + JSON.stringify({ type: 'story', title: (() => { try { return $('Extract Text from HTML').first().json._storyData?.title; } catch(e) { try { return $('No Source URL').first().json._storyData?.title; } catch(e2) { return $('Prepare Routing Data').first().json._storyData?.title; } } })(), description: (() => { try { return $('Extract Text from HTML').first().json.message; } catch(e) { try { return $('No Source URL').first().json.message; } catch(e2) { return $('Prepare Routing Data').first().json.message; } } })(), sourceUrl: (() => { try { return $('Extract Text from HTML').first().json._storyData?.sourceUrl; } catch(e) { try { return $('No Source URL').first().json._storyData?.sourceUrl; } catch(e2) { return $('Prepare Routing Data').first().json._storyData?.sourceUrl; } } })() || null, sourceContent: (() => { try { return $('Extract Text from HTML').first().json._sourceContent?.extracted; } catch(e) { return ''; } })() || null, region: (() => { try { return $('Extract Text from HTML').first().json._storyData?.region; } catch(e) { try { return $('No Source URL').first().json._storyData?.region; } catch(e2) { return $('Prepare Routing Data').first().json._storyData?.region; } } })() || null, contact: $('Validate Input').first().json.contact ? true : false, urgency: (() => { try { return $('Extract Text from HTML').first().json._storyData?.urgency; } catch(e) { try { return $('No Source URL').first().json._storyData?.urgency; } catch(e2) { return $('Prepare Routing Data').first().json._storyData?.urgency; } } })() || 'normal' })) }}\n  }]\n}",
         "options": {
           "timeout": 30000
         }
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [3940, 400],
-      "id": "story-classify-claude",
+      "position": [
+        19312,
+        18528
+      ],
+      "id": "87af865e-bdba-4e19-a4cf-05e0542f7392",
       "name": "Story Classify with Claude API",
       "credentials": {
         "httpHeaderAuth": {
-          "id": "ANTHROPIC_CREDENTIAL_ID",
-          "name": "Anthropic API Key"
+          "id": "2ueFHzVgKw4S5KuR",
+          "name": "Claude API Token"
         }
       },
       "onError": "continueErrorOutput"
     },
     {
       "parameters": {
-        "jsCode": "// Wrap Claude API response for story classification\nconst claudeResponse = $input.first().json;\n\n// Get data from source fetch nodes\nlet inputData;\ntry {\n  inputData = $('Extract Text from HTML').first().json;\n} catch (e1) {\n  try {\n    inputData = $('Handle Fetch Error').first().json;\n  } catch (e2) {\n    try {\n      inputData = $('No Source URL').first().json;\n    } catch (e3) {\n      inputData = $('Parse LLM Response').first().json;\n    }\n  }\n}\n\nreturn [{\n  json: {\n    content: claudeResponse.content,\n    _submissionId: inputData.submissionId,\n    _message: inputData.message,\n    _storyData: inputData._storyData,\n    _sourceContent: inputData._sourceContent,\n    _runtime: inputData._runtime\n  }\n}];"
+        "jsCode": "// Wrap Claude API response for story classification\nconst claudeResponse = $input.first().json;\n\n// Get data from source fetch nodes\nlet inputData;\ntry {\n  inputData = $('Extract Text from HTML').first().json;\n} catch (e1) {\n  try {\n    inputData = $('Handle Fetch Error').first().json;\n  } catch (e2) {\n    try {\n      inputData = $('No Source URL').first().json;\n    } catch (e3) {\n      inputData = $('Prepare Routing Data').first().json;\n    }\n  }\n}\n\nreturn [{\n  json: {\n    content: claudeResponse.content,\n    _submissionId: inputData.submissionId,\n    _message: inputData.message,\n    _storyData: inputData._storyData,\n    _sourceContent: inputData._sourceContent,\n    _runtime: inputData._runtime\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [4160, 400],
-      "id": "wrap-story-classify-response",
+      "position": [
+        19488,
+        18464
+      ],
+      "id": "56dcc0b2-9136-4856-8842-8f71dc62e31d",
       "name": "Wrap Story Classify Response"
     },
     {
       "parameters": {
-        "jsCode": "// Handle errors from Story Claude API call\nconst error = $input.first().json;\n\n// Get data from source fetch nodes\nlet inputData;\ntry {\n  inputData = $('Extract Text from HTML').first().json;\n} catch (e1) {\n  try {\n    inputData = $('Handle Fetch Error').first().json;\n  } catch (e2) {\n    try {\n      inputData = $('No Source URL').first().json;\n    } catch (e3) {\n      inputData = $('Parse LLM Response').first().json;\n    }\n  }\n}\n\nconsole.log('Story Claude API error:', JSON.stringify(error));\n\nconst fallbackResult = {\n  topics: ['needs-review'],\n  freedom_relevance_score: 50,\n  credibility_score: 30,\n  geo: inputData._storyData?.region ? [inputData._storyData.region] : [],\n  safety_concern: false,\n  reasoning: 'Fallback classification due to API error - requires manual review',\n  risk_level: 'medium',\n  priority: 'normal',\n  summary: 'API error - manual review required',\n  should_queue_for_insight: false,\n  key_entities: []\n};\n\nreturn [{\n  json: {\n    content: [{ type: 'text', text: JSON.stringify(fallbackResult) }],\n    _submissionId: inputData.submissionId,\n    _message: inputData.message,\n    _storyData: inputData._storyData,\n    _sourceContent: inputData._sourceContent,\n    _runtime: inputData._runtime,\n    _apiError: true\n  }\n}];"
+        "jsCode": "// Handle errors from Story Claude API call\nconst error = $input.first().json;\n\n// Get data from source fetch nodes\nlet inputData;\ntry {\n  inputData = $('Extract Text from HTML').first().json;\n} catch (e1) {\n  try {\n    inputData = $('Handle Fetch Error').first().json;\n  } catch (e2) {\n    try {\n      inputData = $('No Source URL').first().json;\n    } catch (e3) {\n      inputData = $('Prepare Routing Data').first().json;\n    }\n  }\n}\n\nconsole.log('Story Claude API error:', JSON.stringify(error));\n\nconst fallbackResult = {\n  topics: ['needs-review'],\n  freedom_relevance_score: 50,\n  credibility_score: 30,\n  geo: inputData._storyData?.region ? [inputData._storyData.region] : [],\n  safety_concern: false,\n  reasoning: 'Fallback classification due to API error - requires manual review',\n  risk_level: 'medium',\n  priority: 'normal',\n  summary: 'API error - manual review required',\n  should_queue_for_insight: false,\n  key_entities: []\n};\n\nreturn [{\n  json: {\n    content: [{ type: 'text', text: JSON.stringify(fallbackResult) }],\n    _submissionId: inputData.submissionId,\n    _message: inputData.message,\n    _storyData: inputData._storyData,\n    _sourceContent: inputData._sourceContent,\n    _runtime: inputData._runtime,\n    _apiError: true\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [4160, 500],
-      "id": "handle-story-classify-error",
+      "position": [
+        19488,
+        18608
+      ],
+      "id": "b25c8686-085d-4ef2-9ffc-c982dae5ddca",
       "name": "Handle Story Classify Error"
     },
     {
@@ -815,8 +804,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [4380, 300],
-      "id": "parse-story-llm-response",
+      "position": [
+        19680,
+        18400
+      ],
+      "id": "9a27644b-5807-4491-9cd1-27f90ae94bf4",
       "name": "Parse Story LLM Response"
     },
     {
@@ -829,8 +821,11 @@
       },
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
-      "position": [4490, 300],
-      "id": "update-story-submission",
+      "position": [
+        19824,
+        18400
+      ],
+      "id": "c4defffe-dbd1-4d15-bcf7-5eaa4d2ff4ba",
       "name": "Update Story Submission",
       "credentials": {
         "postgres": {
@@ -845,8 +840,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [4600, 300],
-      "id": "restore-and-check-threshold",
+      "position": [
+        19968,
+        18400
+      ],
+      "id": "a799157f-a034-4845-adee-590820e3d027",
       "name": "Restore Data & Check Threshold"
     },
     {
@@ -856,6 +854,52 @@
             "caseSensitive": true,
             "leftValue": "",
             "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "not-spam-story-check",
+              "leftValue": "={{ $json.is_spam }}",
+              "rightValue": false,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        20208,
+        18400
+      ],
+      "id": "b0468ff7-4a3a-46e5-b355-7978bb0f896f",
+      "name": "Is Not Spam (Story)?"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Handle spam story submission - skip processing\nconst data = $input.first().json;\n\nconsole.log(`[SPAM] Story submission ${data._submissionId} flagged as spam. Skipping insight queue.`);\n\nreturn [{\n  json: {\n    submissionId: data._submissionId,\n    is_spam: true,\n    success: true,\n    type: 'story',\n    message: 'Submission flagged as spam - not queued for insight'\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        20384,
+        18464
+      ],
+      "id": "d23bbf72-5f09-4e7b-a113-974f9bf3c437",
+      "name": "Handle Story Spam"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
           },
           "conditions": [
             {
@@ -874,8 +918,11 @@
       },
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
-      "position": [4820, 300],
-      "id": "check-queue-threshold",
+      "position": [
+        20384,
+        18336
+      ],
+      "id": "c2e27f43-3382-4f42-bce1-6657926dab7a",
       "name": "Queue for Insight?"
     },
     {
@@ -884,8 +931,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [5040, 200],
-      "id": "prepare-user-story-item",
+      "position": [
+        20576,
+        18256
+      ],
+      "id": "ff3bf9b6-222d-4078-897f-0235c671b57e",
       "name": "Prepare User Story Item"
     },
     {
@@ -898,8 +948,11 @@
       },
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
-      "position": [5260, 200],
-      "id": "insert-user-story-item",
+      "position": [
+        20768,
+        18256
+      ],
+      "id": "08b96776-7c1f-4c1f-96f1-a50c0f8059ec",
       "name": "Insert User Story Item",
       "credentials": {
         "postgres": {
@@ -918,8 +971,11 @@
       },
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
-      "position": [5480, 200],
-      "id": "update-submission-queued",
+      "position": [
+        20928,
+        18256
+      ],
+      "id": "2570e291-ca47-49fe-b9aa-0432913f2fbc",
       "name": "Mark Submission Queued",
       "credentials": {
         "postgres": {
@@ -934,161 +990,29 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [5700, 200],
-      "id": "restore-after-user-story-insert",
+      "position": [
+        21088,
+        18256
+      ],
+      "id": "95b3e90d-bd0b-4b53-a32d-8aa6cd12db21",
       "name": "Restore After Insert"
     },
     {
       "parameters": {
-        "jsCode": "// Prepare data for GitHub issue creation after story processing\n// Normalizes data structure for both queued and non-queued stories\n\n// Try to get data from the restore node (if story was queued), otherwise from threshold check\nlet storyResult;\ntry {\n  storyResult = $('Restore After Insert').first().json;\n} catch (e) {\n  try {\n    storyResult = $('Restore Data & Check Threshold').first().json;\n  } catch (e2) {\n    storyResult = $('Parse Story LLM Response').first().json;\n  }\n}\n\nconst parsedLLM = $('Parse LLM Response').first().json;\nconst queuedForInsight = storyResult.meetsQueueThreshold || false;\n\n// Build a summary that includes queue status\nconst enrichedSummary = storyResult.summary + \n  (queuedForInsight ? ' [QUEUED FOR INSIGHT]' : '');\n\nreturn [{\n  json: {\n    // Standard fields expected by GitHub issue creation\n    category: parsedLLM.category,\n    tags: storyResult.topics,\n    risk_level: storyResult.risk_level,\n    priority: storyResult.priority,\n    summary: enrichedSummary,\n    is_spam: false,\n    requires_response: true,\n    suggested_assignee: 'research',\n    submissionId: storyResult._submissionId,\n    message: storyResult._message,\n    _runtime: storyResult._runtime,\n    \n    // Story-specific data for the issue body\n    _storyClassification: {\n      freedom_relevance_score: storyResult.freedom_relevance_score,\n      credibility_score: storyResult.credibility_score,\n      geo: storyResult.geo,\n      safety_concern: storyResult.safety_concern,\n      queued_for_insight: queuedForInsight,\n      reasoning: storyResult.reasoning\n    }\n  }\n}];"
-      },
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [5040, 300],
-      "id": "prepare-story-for-github",
-      "name": "Prepare Story for GitHub"
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict"
-          },
-          "conditions": [
-            {
-              "id": "use-stubs-github",
-              "leftValue": "={{ $('Parse LLM Response').first().json._runtime?.use_stubs ?? true }}",
-              "rightValue": true,
-              "operator": {
-                "type": "boolean",
-                "operation": "equals"
-              }
-            }
-          ],
-          "combinator": "and"
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 2.2,
-      "position": [5260, 0],
-      "id": "use-stubs-github",
-      "name": "Use Stubs for GitHub?"
-    },
-    {
-      "parameters": {
-        "jsCode": "// Get data from story branch, project branch, or direct feedback branch\nlet parsed;\ntry {\n  // Try story branch first\n  parsed = $('Prepare Story for GitHub').first().json;\n} catch (e) {\n  // Fall back to direct feedback branch\n  parsed = $('Parse LLM Response').first().json;\n}\n\nreturn [{\n  json: {\n    html_url: `https://github.com/FGUTech/libertas/issues/MOCK-${parsed.submissionId.slice(0, 8)}`,\n    number: Math.floor(Math.random() * 1000),\n    title: `[Intake] ${parsed.summary.substring(0, 60)}`,\n    state: 'open',\n    _parsedData: parsed\n  }\n}];"
-      },
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [5480, -100],
-      "id": "5325ad90-f9e6-4d20-98d7-2a5a66df3daf",
-      "name": "GitHub Stub"
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "https://api.github.com/repos/FGUTech/libertas/issues",
-        "authentication": "genericCredentialType",
-        "genericAuthType": "httpHeaderAuth",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "Accept",
-              "value": "application/vnd.github.v3+json"
-            },
-            {
-              "name": "X-GitHub-Api-Version",
-              "value": "2022-11-28"
-            }
-          ]
-        },
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={\n  \"title\": \"[Intake] {{ $json.summary.substring(0, 60) }}\",\n  \"body\": \"## Submission\\n\\n{{ $json.message.replace(/\"/g, '\\\\\"').replace(/\\n/g, '\\\\n') }}\\n\\n---\\n\\n**ID:** `{{ $json.submissionId }}`\\n**Category:** {{ $json.category }}\\n**Risk Level:** {{ $json.risk_level }}\\n**Priority:** {{ $json.priority }}\\n**Tags:** {{ $json.tags.join(', ') }}\\n**Requires Response:** {{ $json.requires_response }}\\n**Suggested Assignee:** {{ $json.suggested_assignee }}{{ $json._storyClassification ? '\\n\\n### Story Classification\\n**Freedom Relevance:** ' + $json._storyClassification.freedom_relevance_score + '/100\\n**Credibility:** ' + $json._storyClassification.credibility_score + '/100\\n**Geo:** ' + ($json._storyClassification.geo?.join(', ') || 'N/A') + '\\n**Safety Concern:** ' + $json._storyClassification.safety_concern + '\\n**Queued for Insight:** ' + $json._storyClassification.queued_for_insight : '' }}\\n\\n---\\n*Auto-generated by Libertas*\",\n  \"labels\": [\"intake\", \"{{ $json.priority }}\"{{ $json._storyClassification ? ', \"story\"' : '' }}]\n}",
-        "options": {
-          "timeout": 30000
-        }
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.3,
-      "position": [5480, 100],
-      "id": "2fb51810-cc40-4e23-876f-0c497c77d25e",
-      "name": "Create GitHub Issue",
-      "credentials": {
-        "httpHeaderAuth": {
-          "id": "GITHUB_CREDENTIAL_ID",
-          "name": "GitHub API Token"
-        }
-      },
-      "onError": "continueErrorOutput"
-    },
-    {
-      "parameters": {
-        "jsCode": "// Process real GitHub API response and add pass-through data\nconst githubResponse = $input.first().json;\n\n// Get data from story branch or direct feedback branch\nlet parsedData;\ntry {\n  parsedData = $('Prepare Story for GitHub').first().json;\n} catch (e) {\n  parsedData = $('Parse LLM Response').first().json;\n}\n\nreturn [{\n  json: {\n    html_url: githubResponse.html_url,\n    number: githubResponse.number,\n    title: githubResponse.title,\n    state: githubResponse.state,\n    _parsedData: parsedData\n  }\n}];"
-      },
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [5700, 100],
-      "id": "wrap-github-response",
-      "name": "Wrap GitHub Response"
-    },
-    {
-      "parameters": {
-        "operation": "executeQuery",
-        "query": "UPDATE submissions\n  SET github_issue_url = $1\n  WHERE id = $2::uuid",
-        "options": {
-          "queryReplacement": "={{ $json.html_url }}, {{ $json._parsedData.submissionId }}"
-        }
-      },
-      "type": "n8n-nodes-base.postgres",
-      "typeVersion": 2.6,
-      "position": [5920, 0],
-      "id": "41b4f10a-baf9-4fbe-a482-5737b1d56e01",
-      "name": "Save Issue URL",
-      "credentials": {
-        "postgres": {
-          "id": "qDXwbsZ3b2DpBCrd",
-          "name": "Postgres account"
-        }
-      }
-    },
-    {
-      "parameters": {
         "respondWith": "json",
-        "responseBody": "={\n  \"id\": \"{{ $('Parse LLM Response').first().json.submissionId }}\",\n  \"status\": \"received\",\n  \"message\": \"Thank you for your submission.\"\n}",
+        "responseBody": "={\n  \"id\": \"{{ $('Prepare Routing Data').first().json.submissionId }}\",\n  \"status\": \"received\",\n  \"message\": \"Thank you for your submission.\"\n}",
         "options": {
           "responseCode": 201
         }
       },
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1.5,
-      "position": [6140, 0],
-      "id": "144e0a40-14fc-4208-9e48-d8ee2b5a343d",
+      "position": [
+        21760,
+        19040
+      ],
+      "id": "7d45b47c-dc66-4174-b0e1-dcffc90e81af",
       "name": "Respond to Webhook"
-    },
-    {
-      "parameters": {
-        "jsCode": "// Handle errors from Claude API call\n// This provides graceful degradation when API fails\n\nconst error = $input.first().json;\nconst validateInput = $('Validate Input').first().json;\nconst submissionData = $('Insert Submission').first().json;\n\nconsole.log('Claude API error:', JSON.stringify(error));\n\n// Create fallback classification\nconst fallbackClassification = {\n  category: 'other',\n  tags: ['needs-review'],\n  risk_level: 'medium',  // Conservative default\n  priority: 'normal',\n  summary: 'Auto-classified due to API error - requires manual review',\n  is_spam: false,\n  requires_response: true,\n  suggested_assignee: 'triage'\n};\n\n// Return in same format as successful response\nreturn [{\n  json: {\n    content: [{\n      type: 'text',\n      text: JSON.stringify(fallbackClassification)\n    }],\n    _submissionId: submissionData.id,\n    _message: submissionData.message,\n    _agents: validateInput._agents,\n    _runtime: validateInput._runtime,\n    _storyData: {\n      type: validateInput.type,\n      title: validateInput.title,\n      sourceUrl: validateInput.sourceUrl,\n      region: validateInput.region,\n      urgency: validateInput.urgency,\n      problemStatement: validateInput.problemStatement\n    },\n    _apiError: true\n  }\n}];"
-      },
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [1960, 200],
-      "id": "handle-claude-error",
-      "name": "Handle Claude Error"
-    },
-    {
-      "parameters": {
-        "jsCode": "// Handle errors from GitHub API call\n// This provides graceful degradation when API fails\n\nconst error = $input.first().json;\n\n// Get data from story branch or direct feedback branch\nlet parsedData;\ntry {\n  parsedData = $('Prepare Story for GitHub').first().json;\n} catch (e) {\n  parsedData = $('Parse LLM Response').first().json;\n}\n\nconsole.log('GitHub API error:', JSON.stringify(error));\n\n// Return mock issue URL to allow workflow to continue\nreturn [{\n  json: {\n    html_url: null,  // No issue created\n    number: null,\n    title: `[Intake] ${parsedData.summary.substring(0, 60)}`,\n    state: 'error',\n    _parsedData: parsedData,\n    _apiError: true,\n    _errorMessage: 'GitHub issue creation failed - will retry later'\n  }\n}];"
-      },
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [5700, 200],
-      "id": "handle-github-error",
-      "name": "Handle GitHub Error"
     },
     {
       "parameters": {
@@ -1101,7 +1025,7 @@
           "conditions": [
             {
               "id": "is-feedback-check",
-              "leftValue": "={{ $('Parse LLM Response').first().json._storyData?.type }}",
+              "leftValue": "={{ $('Prepare Routing Data').first().json._storyData?.type }}",
               "rightValue": "feedback",
               "operator": {
                 "type": "string",
@@ -1115,8 +1039,11 @@
       },
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
-      "position": [3060, -200],
-      "id": "is-feedback-check",
+      "position": [
+        18080,
+        19808
+      ],
+      "id": "47332131-4e95-47f2-968c-8e6b75124093",
       "name": "Is Feedback?"
     },
     {
@@ -1128,8 +1055,11 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [3280, -700],
-      "id": "fetch-feedback-assess-prompt",
+      "position": [
+        18352,
+        19792
+      ],
+      "id": "63d1b64a-9ec1-4986-a572-76cd597efc25",
       "name": "Fetch Feedback Assess Prompt"
     },
     {
@@ -1143,7 +1073,7 @@
           "conditions": [
             {
               "id": "use-stubs-feedback-assess",
-              "leftValue": "={{ $('Parse LLM Response').first().json._runtime?.use_stubs ?? true }}",
+              "leftValue": "={{ $('Prepare Routing Data').first().json._runtime?.use_stubs ?? true }}",
               "rightValue": true,
               "operator": {
                 "type": "boolean",
@@ -1157,18 +1087,24 @@
       },
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
-      "position": [3500, -700],
-      "id": "use-stubs-feedback-assess",
+      "position": [
+        18544,
+        19792
+      ],
+      "id": "7b96e204-29f0-49c3-8cfb-cfec28ac2fd1",
       "name": "Use Stubs for Feedback Assess?"
     },
     {
       "parameters": {
-        "jsCode": "// Feedback Assess Stub for testing (1.13c)\n// Provides keyword-based feedback assessment without calling Claude API\n\nconst parsedLLM = $('Parse LLM Response').first().json;\nconst message = parsedLLM.message || '';\nconst category = parsedLLM.category || 'other';\nconst fullText = message.toLowerCase();\n\n// Spam detection\nconst is_spam = fullText.includes('crypto airdrop') ||\n                fullText.includes('click here') ||\n                fullText.includes('guaranteed returns') ||\n                fullText.includes('100x') ||\n                (message.match(/https?:\\/\\//g) || []).length > 3;\n\n// Priority assessment\nlet priority = 'normal';\nif (fullText.includes('security') || fullText.includes('vulnerability') || fullText.includes('data loss')) {\n  priority = 'urgent';\n} else if (fullText.includes('urgent') || fullText.includes('emergency') || fullText.includes('broken')) {\n  priority = 'urgent';\n} else if (fullText.includes('minor') || fullText.includes('cosmetic') || fullText.includes('nice to have')) {\n  priority = 'low';\n}\n\n// Extract actionable items\nconst actionable_items = [];\nif (fullText.includes('bug') || fullText.includes('broken') || fullText.includes('not working')) {\n  actionable_items.push('Investigate reported issue');\n}\nif (fullText.includes('feature') || fullText.includes('would be great') || fullText.includes('should')) {\n  actionable_items.push('Evaluate feature request');\n}\nif (fullText.includes('content') || fullText.includes('article') || fullText.includes('cover')) {\n  actionable_items.push('Review content suggestion');\n}\nif (actionable_items.length === 0) {\n  actionable_items.push('Review feedback and determine next steps');\n}\n\n// Suggested assignee based on category\nlet suggested_assignee = 'triage';\nif (category === 'bug') suggested_assignee = 'engineering';\nelse if (category === 'feature') suggested_assignee = 'engineering';\nelse if (category === 'content') suggested_assignee = 'content';\n\n// Generate summary\nconst summary = message.substring(0, 180).replace(/\\n/g, ' ').trim() + (message.length > 180 ? '...' : '');\n\n// Sentiment detection\nlet sentiment = 'neutral';\nif (fullText.includes('love') || fullText.includes('great') || fullText.includes('awesome')) sentiment = 'positive';\nelse if (fullText.includes('hate') || fullText.includes('terrible') || fullText.includes('awful')) sentiment = 'negative';\nelse if (fullText.includes('suggest') || fullText.includes('could') || fullText.includes('should')) sentiment = 'constructive';\n\nconst result = {\n  is_spam,\n  priority: is_spam ? 'low' : priority,\n  actionable_items: is_spam ? [] : actionable_items,\n  suggested_assignee: is_spam ? 'triage' : suggested_assignee,\n  summary,\n  sentiment,\n  requires_clarification: message.length < 50 && !is_spam,\n  clarification_needed: message.length < 50 && !is_spam ? 'More details would help us address your feedback' : ''\n};\n\nreturn [{\n  json: {\n    content: [{ type: 'text', text: JSON.stringify(result) }],\n    _submissionId: parsedLLM.submissionId,\n    _message: message,\n    _feedbackData: {\n      category: category,\n      contact: parsedLLM.contact || null,\n      requires_response: parsedLLM.requires_response || false\n    },\n    _runtime: parsedLLM._runtime\n  }\n}];"
+        "jsCode": "// Feedback Assess Stub for testing (1.13c)\n// Provides keyword-based feedback assessment without calling Claude API\n\nconst parsedLLM = $('Prepare Routing Data').first().json;\nconst message = parsedLLM.message || '';\nconst category = parsedLLM.category || 'other';\nconst fullText = message.toLowerCase();\n\n// Spam detection\nconst is_spam = fullText.includes('crypto airdrop') ||\n                fullText.includes('click here') ||\n                fullText.includes('guaranteed returns') ||\n                fullText.includes('100x') ||\n                (message.match(/https?:\\/\\//g) || []).length > 3;\n\n// Priority assessment\nlet priority = 'normal';\nif (fullText.includes('security') || fullText.includes('vulnerability') || fullText.includes('data loss')) {\n  priority = 'urgent';\n} else if (fullText.includes('urgent') || fullText.includes('emergency') || fullText.includes('broken')) {\n  priority = 'urgent';\n} else if (fullText.includes('minor') || fullText.includes('cosmetic') || fullText.includes('nice to have')) {\n  priority = 'low';\n}\n\n// Extract actionable items\nconst actionable_items = [];\nif (fullText.includes('bug') || fullText.includes('broken') || fullText.includes('not working')) {\n  actionable_items.push('Investigate reported issue');\n}\nif (fullText.includes('feature') || fullText.includes('would be great') || fullText.includes('should')) {\n  actionable_items.push('Evaluate feature request');\n}\nif (fullText.includes('content') || fullText.includes('article') || fullText.includes('cover')) {\n  actionable_items.push('Review content suggestion');\n}\nif (actionable_items.length === 0) {\n  actionable_items.push('Review feedback and determine next steps');\n}\n\n// Suggested assignee based on category\nlet suggested_assignee = 'triage';\nif (category === 'bug') suggested_assignee = 'engineering';\nelse if (category === 'feature') suggested_assignee = 'engineering';\nelse if (category === 'content') suggested_assignee = 'content';\n\n// Generate summary\nconst summary = message.substring(0, 180).replace(/\\n/g, ' ').trim() + (message.length > 180 ? '...' : '');\n\n// Sentiment detection\nlet sentiment = 'neutral';\nif (fullText.includes('love') || fullText.includes('great') || fullText.includes('awesome')) sentiment = 'positive';\nelse if (fullText.includes('hate') || fullText.includes('terrible') || fullText.includes('awful')) sentiment = 'negative';\nelse if (fullText.includes('suggest') || fullText.includes('could') || fullText.includes('should')) sentiment = 'constructive';\n\nconst result = {\n  is_spam,\n  priority: is_spam ? 'low' : priority,\n  actionable_items: is_spam ? [] : actionable_items,\n  suggested_assignee: is_spam ? 'triage' : suggested_assignee,\n  summary,\n  sentiment,\n  requires_clarification: message.length < 50 && !is_spam,\n  clarification_needed: message.length < 50 && !is_spam ? 'More details would help us address your feedback' : ''\n};\n\nreturn [{\n  json: {\n    content: [{ type: 'text', text: JSON.stringify(result) }],\n    _submissionId: parsedLLM.submissionId,\n    _message: message,\n    _feedbackData: {\n      category: category,\n      contact: parsedLLM.contact || null,\n      requires_response: parsedLLM.requires_response || false\n    },\n    _runtime: parsedLLM._runtime\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3720, -800],
-      "id": "feedback-assess-stub",
+      "position": [
+        18736,
+        19728
+      ],
+      "id": "ea9ee749-26bb-411e-bcfb-e8e5150da245",
       "name": "Feedback Assess Stub"
     },
     {
@@ -1192,42 +1128,51 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 1024,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": {{ JSON.stringify($('Fetch Feedback Assess Prompt').first().json.content + \"\\n\\n# Input\\n\\n\" + JSON.stringify({ message: $('Parse LLM Response').first().json.message, category: $('Parse LLM Response').first().json.category || 'other', contact: $('Parse LLM Response').first().json.contact ? true : false })) }}\n  }]\n}",
+        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 1024,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": {{ JSON.stringify($('Fetch Feedback Assess Prompt').first().json.content + \"\\n\\n# Input\\n\\n\" + JSON.stringify({ message: $('Prepare Routing Data').first().json.message, category: $('Prepare Routing Data').first().json.category || 'other', contact: $('Prepare Routing Data').first().json.contact ? true : false })) }}\n  }]\n}",
         "options": {
           "timeout": 30000
         }
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [3720, -600],
-      "id": "feedback-assess-claude",
+      "position": [
+        18736,
+        19856
+      ],
+      "id": "b6dcf1d0-9ec8-420e-a139-9e837809bb74",
       "name": "Feedback Assess with Claude API",
       "credentials": {
         "httpHeaderAuth": {
-          "id": "ANTHROPIC_CREDENTIAL_ID",
-          "name": "Anthropic API Key"
+          "id": "2ueFHzVgKw4S5KuR",
+          "name": "Claude API Token"
         }
       },
       "onError": "continueErrorOutput"
     },
     {
       "parameters": {
-        "jsCode": "// Wrap Claude API response for feedback assessment\nconst claudeResponse = $input.first().json;\nconst parsedLLM = $('Parse LLM Response').first().json;\n\nreturn [{\n  json: {\n    content: claudeResponse.content,\n    _submissionId: parsedLLM.submissionId,\n    _message: parsedLLM.message,\n    _feedbackData: {\n      category: parsedLLM.category || 'other',\n      contact: parsedLLM.contact || null,\n      requires_response: parsedLLM.requires_response || false\n    },\n    _runtime: parsedLLM._runtime\n  }\n}];"
+        "jsCode": "// Wrap Claude API response for feedback assessment\nconst claudeResponse = $input.first().json;\nconst parsedLLM = $('Prepare Routing Data').first().json;\n\nreturn [{\n  json: {\n    content: claudeResponse.content,\n    _submissionId: parsedLLM.submissionId,\n    _message: parsedLLM.message,\n    _feedbackData: {\n      category: parsedLLM.category || 'other',\n      contact: parsedLLM.contact || null,\n      requires_response: parsedLLM.requires_response || false\n    },\n    _runtime: parsedLLM._runtime\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3940, -600],
-      "id": "wrap-feedback-assess-response",
+      "position": [
+        18928,
+        19808
+      ],
+      "id": "40a7b363-1400-4a11-9233-fc4cd6152f7d",
       "name": "Wrap Feedback Assess Response"
     },
     {
       "parameters": {
-        "jsCode": "// Handle errors from Feedback Assess Claude API call\nconst error = $input.first().json;\nconst parsedLLM = $('Parse LLM Response').first().json;\n\nconsole.log('Feedback Assess Claude API error:', JSON.stringify(error));\n\nconst fallbackResult = {\n  is_spam: false,\n  priority: 'normal',\n  actionable_items: ['Manual review required due to API error'],\n  suggested_assignee: 'triage',\n  summary: 'API error - manual review required',\n  sentiment: 'neutral',\n  requires_clarification: false,\n  clarification_needed: ''\n};\n\nreturn [{\n  json: {\n    content: [{ type: 'text', text: JSON.stringify(fallbackResult) }],\n    _submissionId: parsedLLM.submissionId,\n    _message: parsedLLM.message,\n    _feedbackData: {\n      category: parsedLLM.category || 'other',\n      contact: parsedLLM.contact || null,\n      requires_response: parsedLLM.requires_response || false\n    },\n    _runtime: parsedLLM._runtime,\n    _apiError: true\n  }\n}];"
+        "jsCode": "// Handle errors from Feedback Assess Claude API call\nconst error = $input.first().json;\nconst parsedLLM = $('Prepare Routing Data').first().json;\n\nconsole.log('Feedback Assess Claude API error:', JSON.stringify(error));\n\nconst fallbackResult = {\n  is_spam: false,\n  priority: 'normal',\n  actionable_items: ['Manual review required due to API error'],\n  suggested_assignee: 'triage',\n  summary: 'API error - manual review required',\n  sentiment: 'neutral',\n  requires_clarification: false,\n  clarification_needed: ''\n};\n\nreturn [{\n  json: {\n    content: [{ type: 'text', text: JSON.stringify(fallbackResult) }],\n    _submissionId: parsedLLM.submissionId,\n    _message: parsedLLM.message,\n    _feedbackData: {\n      category: parsedLLM.category || 'other',\n      contact: parsedLLM.contact || null,\n      requires_response: parsedLLM.requires_response || false\n    },\n    _runtime: parsedLLM._runtime,\n    _apiError: true\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [3940, -500],
-      "id": "handle-feedback-assess-error",
+      "position": [
+        18928,
+        19952
+      ],
+      "id": "dec6b643-ed1a-4869-877d-2c9e054f4bf0",
       "name": "Handle Feedback Assess Error"
     },
     {
@@ -1236,8 +1181,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [4160, -700],
-      "id": "parse-feedback-llm-response",
+      "position": [
+        19120,
+        19728
+      ],
+      "id": "fa6296b1-c984-4128-9788-eaead1c6beb9",
       "name": "Parse Feedback LLM Response"
     },
     {
@@ -1265,8 +1213,11 @@
       },
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
-      "position": [4270, -700],
-      "id": "is-not-spam-feedback",
+      "position": [
+        19392,
+        19728
+      ],
+      "id": "5ecaccc8-78b3-4d99-ac59-6440c121651a",
       "name": "Is Not Spam (Feedback)?"
     },
     {
@@ -1275,8 +1226,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [4380, -600],
-      "id": "handle-feedback-spam",
+      "position": [
+        19552,
+        19792
+      ],
+      "id": "ca7f1b95-2e5a-45bf-9ced-7f5e90f9f7cc",
       "name": "Handle Feedback Spam"
     },
     {
@@ -1285,8 +1239,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [4380, -700],
-      "id": "map-feedback-to-labels",
+      "position": [
+        19552,
+        19664
+      ],
+      "id": "2170eb52-28fd-4a07-baa7-693d820dae5c",
       "name": "Map Feedback to Labels"
     },
     {
@@ -1300,7 +1257,7 @@
           "conditions": [
             {
               "id": "use-stubs-feedback-github",
-              "leftValue": "={{ $('Parse LLM Response').first().json._runtime?.use_stubs ?? true }}",
+              "leftValue": "={{ $('Prepare Routing Data').first().json._runtime?.use_stubs ?? true }}",
               "rightValue": true,
               "operator": {
                 "type": "boolean",
@@ -1314,8 +1271,11 @@
       },
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
-      "position": [4600, -700],
-      "id": "use-stubs-feedback-github",
+      "position": [
+        19744,
+        19664
+      ],
+      "id": "ad06b021-c017-4561-819f-e424269eb50d",
       "name": "Use Stubs for Feedback GitHub?"
     },
     {
@@ -1324,8 +1284,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [4820, -800],
-      "id": "feedback-github-stub",
+      "position": [
+        19920,
+        19568
+      ],
+      "id": "df8c6f56-7da0-4e4a-b56d-ef0ab217a3b4",
       "name": "Feedback GitHub Stub"
     },
     {
@@ -1356,13 +1319,16 @@
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.3,
-      "position": [4820, -600],
-      "id": "create-feedback-github-issue",
+      "position": [
+        19920,
+        19712
+      ],
+      "id": "f4656d11-84fd-4912-b66a-e1593fc49219",
       "name": "Create Feedback GitHub Issue",
       "credentials": {
         "httpHeaderAuth": {
-          "id": "GITHUB_CREDENTIAL_ID",
-          "name": "GitHub API Token"
+          "id": "DwAcCvPHNHvQfrGT",
+          "name": "Github API Token"
         }
       },
       "onError": "continueErrorOutput"
@@ -1373,8 +1339,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [5040, -600],
-      "id": "wrap-feedback-github-response",
+      "position": [
+        20112,
+        19696
+      ],
+      "id": "2ce29fdc-17ba-49a6-89a1-b3b9a732732f",
       "name": "Wrap Feedback GitHub Response"
     },
     {
@@ -1383,8 +1352,11 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [5040, -500],
-      "id": "handle-feedback-github-error",
+      "position": [
+        20112,
+        19840
+      ],
+      "id": "0389c36d-26af-4670-96df-5b67423beb73",
       "name": "Handle Feedback GitHub Error"
     },
     {
@@ -1397,8 +1369,11 @@
       },
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
-      "position": [5260, -700],
-      "id": "update-feedback-submission",
+      "position": [
+        20288,
+        19568
+      ],
+      "id": "a90aa6ad-c429-45bc-b2eb-cdd69c797da7",
       "name": "Update Feedback Submission",
       "credentials": {
         "postgres": {
@@ -1413,9 +1388,217 @@
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
-      "position": [5480, -700],
-      "id": "feedback-success-summary",
+      "position": [
+        20448,
+        19568
+      ],
+      "id": "0d1be9d7-5a42-4946-bf68-2c1e927bb68f",
       "name": "Feedback Success Summary"
+    },
+    {
+      "parameters": {
+        "content": "# Fetch Configs & Prompts from Libertas API",
+        "height": 336,
+        "width": 448,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        16624,
+        18272
+      ],
+      "typeVersion": 1,
+      "id": "61956c4e-935e-4494-9632-6b3fbe43f772",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "# Prepare Submission",
+        "height": 256,
+        "width": 656,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        17152,
+        18320
+      ],
+      "typeVersion": 1,
+      "id": "1bb0b456-c5fe-429e-9ce5-b197ebdcd57c",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "# Fetch Source Content",
+        "height": 400,
+        "width": 544,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        18288,
+        18208
+      ],
+      "typeVersion": 1,
+      "id": "99038097-0921-42a4-a540-737036d699b7",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "# Use Claude API to Classify Story",
+        "height": 448,
+        "width": 1168
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        18928,
+        18320
+      ],
+      "typeVersion": 1,
+      "id": "1b620115-841c-41dc-bb6f-ac6211cd44dc",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "# Create and Queue up User Story",
+        "height": 432,
+        "width": 1072,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        20176,
+        18192
+      ],
+      "typeVersion": 1,
+      "id": "5ae87ce1-e17d-4bd2-81f8-37cd558bc80b",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "content": "# Use Claude API to Evaluate Project",
+        "height": 432,
+        "width": 912
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        18304,
+        18928
+      ],
+      "typeVersion": 1,
+      "id": "4f7b51ce-17a9-4ea9-a4b3-d5f820b36ac6",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {
+        "content": "# Create Issue for the Project in the Github Repo",
+        "height": 480,
+        "width": 1184,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        19984,
+        18816
+      ],
+      "typeVersion": 1,
+      "id": "bf522e86-513a-4bb2-b01c-8b540dce3aa2",
+      "name": "Sticky Note8"
+    },
+    {
+      "parameters": {
+        "content": "# Create the Project Idea",
+        "height": 352,
+        "width": 528,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        19312,
+        18848
+      ],
+      "typeVersion": 1,
+      "id": "03e6a5af-0b9d-4a18-8c11-47e20126b552",
+      "name": "Sticky Note6"
+    },
+    {
+      "parameters": {
+        "content": "# Use Claude API to Assess Feedback",
+        "height": 464,
+        "width": 944
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        18304,
+        19648
+      ],
+      "typeVersion": 1,
+      "id": "d5728800-bfe6-4873-bca1-981acabc1347",
+      "name": "Sticky Note7"
+    },
+    {
+      "parameters": {
+        "content": "# Create Issue for the Feedback in the Github Repo",
+        "height": 496,
+        "width": 1248,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        19328,
+        19504
+      ],
+      "typeVersion": 1,
+      "id": "d734985c-25b0-4c04-9d30-665d34785095",
+      "name": "Sticky Note9"
+    },
+    {
+      "parameters": {
+        "content": "# Process Story Intakes",
+        "height": 656,
+        "width": 3200,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        18064,
+        18128
+      ],
+      "typeVersion": 1,
+      "id": "b352c40b-6180-4ab3-af1d-e6ccc2f046c3",
+      "name": "Sticky Note10"
+    },
+    {
+      "parameters": {
+        "content": "# Process Project Idea Intakes",
+        "height": 656,
+        "width": 3200,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        18064,
+        18800
+      ],
+      "typeVersion": 1,
+      "id": "c8b575f7-f82f-41c6-b5e5-8717c61d57ef",
+      "name": "Sticky Note11"
+    },
+    {
+      "parameters": {
+        "content": "# Process Feedback Intakes",
+        "height": 656,
+        "width": 3200,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        18064,
+        19472
+      ],
+      "typeVersion": 1,
+      "id": "c4cb6901-c6d1-4ec1-820c-72eaccc20b45",
+      "name": "Sticky Note12"
     }
   ],
   "pinData": {},
@@ -1438,11 +1621,6 @@
             "node": "Fetch Thresholds Config",
             "type": "main",
             "index": 0
-          },
-          {
-            "node": "Fetch Intake Classify Prompt",
-            "type": "main",
-            "index": 0
           }
         ]
       ]
@@ -1451,36 +1629,14 @@
       "main": [
         [
           {
-            "node": "Wait for Fetches",
+            "node": "Process Config",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Fetch Intake Classify Prompt": {
-      "main": [
-        [
-          {
-            "node": "Wait for Fetches",
-            "type": "main",
-            "index": 1
-          }
-        ]
-      ]
-    },
-    "Wait for Fetches": {
-      "main": [
-        [
-          {
-            "node": "Merge Config & Agents",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Merge Config & Agents": {
+    "Process Config": {
       "main": [
         [
           {
@@ -1517,94 +1673,14 @@
       "main": [
         [
           {
-            "node": "Use Stubs for Classify?",
+            "node": "Prepare Routing Data",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Use Stubs for Classify?": {
-      "main": [
-        [
-          {
-            "node": "Classify Stub",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Classify with Claude API",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Classify Stub": {
-      "main": [
-        [
-          {
-            "node": "Parse LLM Response",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Classify with Claude API": {
-      "main": [
-        [
-          {
-            "node": "Wrap Claude Classify Response",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Handle Claude Error",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Wrap Claude Classify Response": {
-      "main": [
-        [
-          {
-            "node": "Parse LLM Response",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Handle Claude Error": {
-      "main": [
-        [
-          {
-            "node": "Parse LLM Response",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Parse LLM Response": {
-      "main": [
-        [
-          {
-            "node": "Update Submission",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Update Submission": {
+    "Prepare Routing Data": {
       "main": [
         [
           {
@@ -2081,7 +2157,36 @@
       "main": [
         [
           {
+            "node": "Is Not Spam (Story)?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Is Not Spam (Story)?": {
+      "main": [
+        [
+          {
             "node": "Queue for Insight?",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Handle Story Spam",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Handle Story Spam": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
             "type": "main",
             "index": 0
           }
@@ -2099,7 +2204,7 @@
         ],
         [
           {
-            "node": "Prepare Story for GitHub",
+            "node": "Respond to Webhook",
             "type": "main",
             "index": 0
           }
@@ -2143,97 +2248,6 @@
       "main": [
         [
           {
-            "node": "Prepare Story for GitHub",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Prepare Story for GitHub": {
-      "main": [
-        [
-          {
-            "node": "Use Stubs for GitHub?",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Use Stubs for GitHub?": {
-      "main": [
-        [
-          {
-            "node": "GitHub Stub",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Create GitHub Issue",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "GitHub Stub": {
-      "main": [
-        [
-          {
-            "node": "Save Issue URL",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Create GitHub Issue": {
-      "main": [
-        [
-          {
-            "node": "Wrap GitHub Response",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Handle GitHub Error",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Wrap GitHub Response": {
-      "main": [
-        [
-          {
-            "node": "Save Issue URL",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Handle GitHub Error": {
-      "main": [
-        [
-          {
-            "node": "Save Issue URL",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Save Issue URL": {
-      "main": [
-        [
-          {
             "node": "Respond to Webhook",
             "type": "main",
             "index": 0
@@ -2246,13 +2260,6 @@
         [
           {
             "node": "Fetch Feedback Assess Prompt",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Use Stubs for GitHub?",
             "type": "main",
             "index": 0
           }
@@ -2487,7 +2494,7 @@
     "executionOrder": "v1",
     "availableInMCP": false
   },
-  "versionId": "5452bd0b-cf72-466a-80e8-66df9ab9f282",
+  "versionId": "9089f999-6c4f-4525-9a08-6f426f3ac975",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "3c52e1b61141902bda826728d3cf15d2a867de8395f358b7459edf58ff4157ae"

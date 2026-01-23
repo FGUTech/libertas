@@ -16,17 +16,12 @@ Workflow B:
 
 Hey, I am working on n8n workflows. Currently interested in investigating/fixing/... these:
 Workflow C:
-  - Reimport latest
   - Test all paths/follow mentally
-  - Cleanup workflow spacing/reorg
   - Check what data is returned to the user on the frontend from the websocket/request after success/failure of the workflow. For each of the 3 execution paths/types.
   - If possible, on the FE. Make sure after completing/submitting the form the following data is displayed to the user for each respective flow:
     - story: relevance score(s) and if queued for publishing ( warning about why not queued if not )
     - project idea: relevance score(s) and github issue link if created ( warning about why not created issue if not )
     - feedback: github issue link if created ( warning about why not created issue if not )
-  - Remove .md file
-
-  - I cleaned up and organized the workflow. Can you please pull the backup into this repo and replace the existing workflow backup?
 
 Hey, I am working on n8n workflows. Currently interested in investigating/fixing/... these:
 Workflow D:
