@@ -8,30 +8,21 @@ Process user feedback about the Libertas platform to help improve it. This inclu
 
 ## Assessment Tasks
 
-### 1. Spam/Abuse Detection
-
-Flag submissions that are:
-- Promotional/commercial without platform relevance
-- Obvious spam patterns (excessive links, crypto scams, etc.)
-- Off-topic and appears automated
-- Hate speech or harassment
-- Duplicate submissions (exact or near-exact copies)
-
-### 2. Priority Assessment
+### 1. Priority Assessment
 
 Determine urgency based on content:
 - **urgent**: Security issues, data loss bugs, accessibility blockers, or issues affecting many users
 - **normal**: Standard feature requests, non-critical bugs, content suggestions
 - **low**: Minor cosmetic issues, nice-to-haves, general comments
 
-### 3. Actionable Items Extraction
+### 2. Actionable Items Extraction
 
 Identify specific, actionable feedback:
 - What exactly is the problem or suggestion?
 - What would success look like?
 - Are there specific steps to reproduce (for bugs)?
 
-### 4. Assignee/Area Suggestion
+### 3. Assignee/Area Suggestion
 
 Recommend the appropriate team or area:
 - **engineering**: Bugs, technical issues, performance problems
@@ -53,8 +44,7 @@ Recommend the appropriate team or area:
 You will receive:
 - message: The feedback content
 - category: User-selected category (bug, feature, content, other)
-- contact: Optional contact information (boolean indicating if provided)
-- requires_response: Whether user requested a response
+- contact: Whether contact information was provided (boolean)
 
 ## Output
 
@@ -85,8 +75,7 @@ Input:
 {
   "message": "The RSS feed isn't updating. I've been subscribed for a week but the last entry is from January 15th even though I can see newer posts on the website. Using Feedly as my reader.",
   "category": "bug",
-  "contact": true,
-  "requires_response": true
+  "contact": true
 }
 ```
 
@@ -115,8 +104,7 @@ Input:
 {
   "message": "Would be great to have email notifications when new insights are published in topics I'm interested in. Maybe a weekly digest option too?",
   "category": "feature",
-  "contact": false,
-  "requires_response": false
+  "contact": false
 }
 ```
 
@@ -145,8 +133,7 @@ Input:
 {
   "message": "The site is hard to use",
   "category": "other",
-  "contact": false,
-  "requires_response": false
+  "contact": false
 }
 ```
 
@@ -174,8 +161,7 @@ Input:
 {
   "message": "You should cover the new mesh networking tools being used in Sudan. There's been a lot of innovation there but I haven't seen any coverage.",
   "category": "content",
-  "contact": true,
-  "requires_response": true
+  "contact": true
 }
 ```
 
@@ -204,8 +190,7 @@ Input:
 {
   "message": "AMAZING CRYPTO OPPORTUNITY!!! Join our exclusive group for 100x returns. Click here: bit.ly/scam123",
   "category": "other",
-  "contact": false,
-  "requires_response": false
+  "contact": false
 }
 ```
 

@@ -1192,7 +1192,7 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 1024,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": {{ JSON.stringify($('Fetch Feedback Assess Prompt').first().json.content + \"\\n\\n# Input\\n\\n\" + JSON.stringify({ message: $('Parse LLM Response').first().json.message, category: $('Parse LLM Response').first().json.category || 'other', contact: $('Parse LLM Response').first().json.contact ? true : false, requires_response: $('Parse LLM Response').first().json.requires_response || false })) }}\n  }]\n}",
+        "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 1024,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": {{ JSON.stringify($('Fetch Feedback Assess Prompt').first().json.content + \"\\n\\n# Input\\n\\n\" + JSON.stringify({ message: $('Parse LLM Response').first().json.message, category: $('Parse LLM Response').first().json.category || 'other', contact: $('Parse LLM Response').first().json.contact ? true : false })) }}\n  }]\n}",
         "options": {
           "timeout": 30000
         }

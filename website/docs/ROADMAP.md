@@ -40,36 +40,10 @@ Database Checks:
   - Ensure all fields properly populating data from workflows ( ie not hardcoded/stale/bad values )
   - Think each table and how/if we should display information from it on the FE:
 
-Hey, i am working to improve agent prompts. Currently I am working on:
-Intake Project Evaluate Prompt:
-  Agent File: intake-project-evaluate.md
-  API Route: /api/agents/intake-project-evaluate
-  Used In: Workflow C (intake) - project idea assessment
-Fix/Check/Do/...:
-  - Verify all inputs mentioned in the prompt are passed into context in n8n workflow
-  - Verify all user data passed from FE/website form for this is properly passed into context ( on n8n side, fe side, and prompt side )
-  - Verify all outputs mentioned in the prompt are used in the workflow/posted to postgres ( ie used in some capacity )
-  - Ensure project ideas submissions follow same patterns/give same results as project idea n8n workflow. Ie make sure we get similar outputs and results from both ( maybe with slightly different github issue tags ) so all workflows/future features are integrated fully with user prompted project ideas
-  - Compare this prompt with the project idea generator prompt ( from workflow d ) and see if there are any things missing here that should be transfered over from the project idea generator prompt
-  - Verify what we are doing if is_spam is true
-
-Hey, i am working to improve agent prompts. Currently I am working on:
-Intake Feedback assess Prompt:
-  Agent File: intake-feedback-assess.md
-  API Route: /api/agents/intake-feedback-assess
-  Used In: Workflow C (intake) - feedback analysis
-Fix/Check/Do/...:
-  - Verify all inputs mentioned in the prompt are passed into context in n8n workflow
-  - Verify all user data passed from FE/website form for this is properly passed into context ( on n8n side, fe side, and prompt side )
-  - Verify all outputs mentioned in the prompt are used in the workflow/posted to postgres ( ie used in some capacity )
-  - Ensure appropriate tags are added to github issues created indicating it is a feedback issue in the workflow ( special feedback tag & special tag per feedback category )
-  - Verify what we are doing if is_spam is true
-  - is requires_response input passed or used at all throughout the app? I think this can be removed. Also check the same thing for the output requires_clarification field & clarification_needed.
-  - I see the prompt has a redundant spam/abuse detection section can you remove the assessment tasks spam detection and ensure the section about spam at the end covers everything needed?
+Clean Duplicates in feeds
+  - Can you please make sure to remove any duplicate entries in all our feeds in website/public/ ( rss & json feeds )
 
 Open Source
-
-Clean Duplicates in feeds
 
 
 # Phase 2: Nice-to-have
