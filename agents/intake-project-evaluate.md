@@ -89,16 +89,18 @@ Return a JSON object with the following structure:
 
 ```json
 {
+  "detected_pattern": "Brief description of the problem/gap this addresses (50-300 chars)",
   "threat_model": "Who is the adversary and their capabilities (50-500 chars)",
   "affected_groups": ["Array of groups who would benefit"],
+  "mvp_scope": "Minimum viable version buildable in weeks, not months (50-500 chars)",
+  "misuse_risks": "How could this be misused and by whom (50-500 chars)",
   "feasibility_score": 0-100,
   "impact_score": 0-100,
-  "misuse_risks": "How could this be misused and by whom (50-500 chars)",
   "technical_dependencies": ["Required technical components"],
   "suggested_stack": ["Recommended technology stack"],
   "prior_art": ["Existing projects to learn from"],
   "open_questions": ["Unresolved questions requiring research"],
-  "reasoning": "Brief explanation of scoring rationale",
+  "reasoning": "Brief explanation of scoring rationale (50-300 chars)",
   "priority": "urgent | normal | low",
   "is_spam": false
 }
@@ -122,6 +124,7 @@ Input:
 Output:
 ```json
 {
+  "detected_pattern": "Activists in unreliable-internet regions need offline Bitcoin signing. Current solutions require constant connectivity or complex hardware setup.",
   "threat_model": "State-level adversaries with network monitoring capabilities who can detect and block Bitcoin transactions. Also considers malicious actors who might compromise connected devices, making air-gapped signing essential for high-value transactions.",
   "affected_groups": [
     "Activists in authoritarian regimes using Bitcoin for donations",
@@ -129,9 +132,10 @@ Output:
     "Human rights organizations in sanctioned regions",
     "Privacy-conscious Bitcoin users worldwide"
   ],
+  "mvp_scope": "Rust library + CLI that generates and signs PSBT transactions offline. QR code output for broadcasting. Single-page setup guide. Target: technical early adopters comfortable with command line.",
+  "misuse_risks": "Could facilitate money laundering or sanctions evasion in non-repressive contexts. Air-gapped devices might provide false sense of security if improperly configured. QR codes could be intercepted if physical security is compromised.",
   "feasibility_score": 82,
   "impact_score": 78,
-  "misuse_risks": "Could facilitate money laundering or sanctions evasion in non-repressive contexts. Air-gapped devices might provide false sense of security if improperly configured. QR codes could be intercepted if physical security is compromised.",
   "technical_dependencies": [
     "Bitcoin transaction serialization (BIP-174 PSBT)",
     "ECDSA signing library (secp256k1)",
@@ -155,7 +159,7 @@ Output:
     "How to handle UTXO selection without network access?",
     "Should multi-sig be in MVP scope?"
   ],
-  "reasoning": "Well-defined problem with clear technical path using proven Bitcoin standards (PSBT). High feasibility due to existing reference implementations. Strong impact for at-risk users who need financial sovereignty. Main challenges are UX for non-technical users and ensuring proper air-gap setup.",
+  "reasoning": "Well-defined problem with clear technical path using proven Bitcoin standards (PSBT). High feasibility due to existing implementations. Strong impact for at-risk users needing financial sovereignty.",
   "priority": "normal",
   "is_spam": false
 }
@@ -177,14 +181,16 @@ Input:
 Output:
 ```json
 {
+  "detected_pattern": "Unclear. Proposal is too vague to identify a specific gap in the freedom tech ecosystem.",
   "threat_model": "Generic adversaries including platform operators, network observers, and hackers. Specific threat model unclear due to vague problem statement.",
   "affected_groups": [
     "General privacy-conscious users",
     "People seeking alternatives to mainstream messengers"
   ],
+  "mvp_scope": "Cannot define meaningful MVP without clearer requirements. Suggest resubmitting with specific differentiators from existing solutions.",
+  "misuse_risks": "Without specific design, hard to assess. Generic encrypted messaging can be used for any communication, including coordination of harmful activities. Main risk is creating yet another fragmented messaging solution.",
   "feasibility_score": 45,
   "impact_score": 25,
-  "misuse_risks": "Without specific design, hard to assess. Generic encrypted messaging can be used for any communication, including coordination of harmful activities. Main risk is creating yet another fragmented messaging solution.",
   "technical_dependencies": [
     "End-to-end encryption protocol",
     "Key exchange mechanism",
@@ -208,7 +214,7 @@ Output:
     "Why build new instead of contributing to existing projects?",
     "What's the unique value proposition?"
   ],
-  "reasoning": "Proposal is too vague to assess properly. The problem space is already well-served by Signal, Briar, and Session. Without specific differentiators or underserved use cases, this would likely fragment the ecosystem further. Recommend refining the proposal to identify specific gaps in existing solutions.",
+  "reasoning": "Proposal too vague. Problem space well-served by Signal/Briar/Session. Without differentiators, this fragments the ecosystem. Recommend refining proposal.",
   "priority": "low",
   "is_spam": false
 }
@@ -230,16 +236,18 @@ Input:
 Output:
 ```json
 {
+  "detected_pattern": "N/A - This is spam",
   "threat_model": "N/A - This is spam",
   "affected_groups": [],
+  "mvp_scope": "N/A - This is spam",
+  "misuse_risks": "This submission appears to be promotional spam unrelated to freedom technology. It resembles cryptocurrency scam patterns.",
   "feasibility_score": 0,
   "impact_score": 0,
-  "misuse_risks": "This submission appears to be promotional spam unrelated to freedom technology. It resembles cryptocurrency scam patterns.",
   "technical_dependencies": [],
   "suggested_stack": [],
   "prior_art": [],
   "open_questions": [],
-  "reasoning": "Submission contains spam patterns: promotional language, promises of returns, urgency pressure tactics. Not a legitimate freedom tech project proposal.",
+  "reasoning": "Spam patterns detected: promotional language, promises of returns, urgency pressure tactics. Not a legitimate freedom tech proposal.",
   "priority": "low",
   "is_spam": true
 }

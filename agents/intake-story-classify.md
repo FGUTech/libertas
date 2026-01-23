@@ -80,7 +80,8 @@ Return a JSON object with the following structure:
   "risk_level": "low | medium | high",
   "priority": "urgent | normal | low",
   "summary": "Brief, non-sensitive summary for triage (max 200 chars)",
-  "key_entities": ["people, organizations, or projects mentioned"]
+  "key_entities": ["people, organizations, or projects mentioned"],
+  "is_spam": false
 }
 ```
 
@@ -113,7 +114,8 @@ Output:
   "risk_level": "medium",
   "priority": "urgent",
   "summary": "Activists in Sudan using Briar mesh messaging and BTC Lightning over Bluetooth during internet shutdown",
-  "key_entities": ["Briar", "Bitcoin Lightning", "Sudan"]
+  "key_entities": ["Briar", "Bitcoin Lightning", "Sudan"],
+  "is_spam": false
 }
 ```
 
@@ -144,7 +146,8 @@ Output:
   "risk_level": "low",
   "priority": "normal",
   "summary": "Privacy education meetup in São Paulo growing, teaching Signal/VPNs to journalists concerned about surveillance bills",
-  "key_entities": ["Signal", "São Paulo cryptoparty"]
+  "key_entities": ["Signal", "São Paulo cryptoparty"],
+  "is_spam": false
 }
 ```
 
@@ -175,16 +178,49 @@ Output:
   "risk_level": "high",
   "priority": "urgent",
   "summary": "Report of journalist using Tor/Bitcoin in Iran - SAFETY CONCERN flagged",
-  "key_entities": ["Tor", "Bitcoin"]
+  "key_entities": ["Tor", "Bitcoin"],
+  "is_spam": false
 }
 ```
 
 ## Spam Detection
 
-Flag as spam (set low scores) if:
+Flag as spam (`is_spam: true`) if:
 - Message is promotional/commercial without freedom tech relevance
 - Message contains obvious spam patterns (excessive links, crypto scams, etc.)
 - Message is off-topic and appears automated
 - Message contains hate speech or harassment
 
-When flagging spam, still provide classification but set `freedom_relevance_score: 0` and `credibility_score: 0`.
+When flagging spam, set `is_spam: true`, `freedom_relevance_score: 0`, `credibility_score: 0`, and `priority: low`.
+
+### Example 4: Spam Detection
+
+Input:
+```json
+{
+  "type": "story",
+  "title": "AMAZING CRYPTO OPPORTUNITY!!!",
+  "description": "Join our exclusive group for 100x returns on new tokens. Limited spots available! Click here: bit.ly/scam123",
+  "sourceUrl": null,
+  "region": null,
+  "contact": false,
+  "urgency": "urgent"
+}
+```
+
+Output:
+```json
+{
+  "topics": [],
+  "freedom_relevance_score": 0,
+  "credibility_score": 0,
+  "geo": [],
+  "safety_concern": false,
+  "reasoning": "Obvious crypto scam spam - promotional language, promises of returns, urgency pressure tactics.",
+  "risk_level": "low",
+  "priority": "low",
+  "summary": "Spam - crypto scam promotion",
+  "key_entities": [],
+  "is_spam": true
+}
+```

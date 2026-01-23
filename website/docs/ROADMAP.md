@@ -9,28 +9,36 @@ Feature roadmap for the Libertas website, broken into MVP, Nice-to-have, and Fut
 Hey, I am working to implement features for the libertas website from the roadmap. Let's continue with implementing:
 
 Workflow A:
+  - Reimport latest
   - Test all paths/follow mentally
   - Cleanup workflow spacing/reorg
 
 Workflow B:
+  - Reimport latest
   - Test all paths/follow mentally
   - Cleanup workflow spacing/reorg
 
 Workflow C:
+  - Reimport latest
   - Test all paths/follow mentally
   - Cleanup workflow spacing/reorg
+  - Check what data is returned to the user on the frontend from the websocket/request after success/failure of the workflow. For each of the 3 execution paths/types.
+  - If possible, on the FE. Make sure after completing/submitting the form the following data is displayed to the user for each respective flow:
+    - story: relevance score(s) and if queued for publishing ( warning about why not queued if not )
+    - project idea: relevance score(s) and github issue link if created ( warning about why not created issue if not )
+    - feedback: github issue link if created ( warning about why not created issue if not )
 
 Workflow D:
+  - Reimport latest
   - Test all paths/follow mentally
   - Cleanup workflow spacing/reorg
 
 Database Checks:
+  - Cleanup all data not linked to existing insights/sources parsings
   - View each table and understand how/if its used
   - View each field and understand how/if/if it will be used
   - Ensure all fields properly populating data from workflows ( ie not hardcoded/stale/bad values )
-
-Media kit change:
-  - Please look at the new media kit at ~/Downloads/Libertas_Media_Kit_Assets/ and change files in website/public and corresponding usage/logos throughout the website to this new media kit. Do not worry about anything outside logos/social cards/... ( ie dont touch anything in sourcecode / css files like keep old color schemes and things ) 
+  - Think each table and how/if we should display information from it on the FE:
 
 Hey, i am working to improve agent prompts. Currently I am working on:
 Intake Project Evaluate Prompt:
@@ -42,6 +50,8 @@ Fix/Check/Do/...:
   - Verify all user data passed from FE/website form for this is properly passed into context ( on n8n side, fe side, and prompt side )
   - Verify all outputs mentioned in the prompt are used in the workflow/posted to postgres ( ie used in some capacity )
   - Ensure project ideas submissions follow same patterns/give same results as project idea n8n workflow. Ie make sure we get similar outputs and results from both ( maybe with slightly different github issue tags ) so all workflows/future features are integrated fully with user prompted project ideas
+  - Compare this prompt with the project idea generator prompt ( from workflow d ) and see if there are any things missing here that should be transfered over from the project idea generator prompt
+  - Verify what we are doing if is_spam is true
 
 Hey, i am working to improve agent prompts. Currently I am working on:
 Intake Feedback assess Prompt:
@@ -52,6 +62,10 @@ Fix/Check/Do/...:
   - Verify all inputs mentioned in the prompt are passed into context in n8n workflow
   - Verify all user data passed from FE/website form for this is properly passed into context ( on n8n side, fe side, and prompt side )
   - Verify all outputs mentioned in the prompt are used in the workflow/posted to postgres ( ie used in some capacity )
+  - Ensure appropriate tags are added to github issues created indicating it is a feedback issue in the workflow ( special feedback tag & special tag per feedback category )
+  - Verify what we are doing if is_spam is true
+  - is requires_response input passed or used at all throughout the app? I think this can be removed. Also check the same thing for the output requires_clarification field & clarification_needed.
+  - I see the prompt has a redundant spam/abuse detection section can you remove the assessment tasks spam detection and ensure the section about spam at the end covers everything needed?
 
 Open Source
 
