@@ -47,12 +47,53 @@ type StoryFormData = z.infer<typeof storySchema>;
 type FeedbackFormData = z.infer<typeof feedbackSchema>;
 type FormData = ProjectFormData | StoryFormData | FeedbackFormData;
 
-interface IntakeResponse {
+// Response types for different submission types
+interface StoryResponse {
   success: boolean;
-  id?: string;
-  message?: string;
-  error?: string;
+  type: 'story';
+  submissionId: string;
+  queuedForPublishing: boolean;
+  scores: {
+    freedomRelevance: number;
+    credibility: number;
+  };
+  thresholds?: {
+    relevanceRequired: number;
+    credibilityRequired: number;
+  };
+  notQueuedReasons?: string[];
+  isSpam?: boolean;
+  message: string;
 }
+
+interface ProjectResponse {
+  success: boolean;
+  type: 'project';
+  submissionId: string;
+  projectIdeaId: string | null;
+  githubIssueUrl: string | null;
+  githubIssueCreated: boolean;
+  scores?: {
+    feasibility: number;
+    impact: number;
+  };
+  priority?: string;
+  isSpam?: boolean;
+  message: string;
+}
+
+interface FeedbackResponse {
+  success: boolean;
+  type: 'feedback';
+  submissionId: string;
+  githubIssueUrl: string | null;
+  githubIssueCreated: boolean;
+  category?: string;
+  isSpam?: boolean;
+  message: string;
+}
+
+type IntakeResponse = StoryResponse | ProjectResponse | FeedbackResponse | { success: boolean; id?: string; message?: string; error?: string };
 
 // =============================================================================
 // Honeypot Spam Prevention
@@ -186,7 +227,14 @@ export default function IntakePage() {
       });
 
       if (response.ok) {
-        setSubmitResult({ success: true, id: submissionId });
+        // Parse the response JSON from n8n workflow
+        const responseData = await response.json().catch(() => null);
+        if (responseData && responseData.success !== undefined) {
+          setSubmitResult(responseData as IntakeResponse);
+        } else {
+          // Fallback if response doesn't match expected format
+          setSubmitResult({ success: true, id: submissionId });
+        }
       } else {
         // n8n may return error details
         const errorText = await response.text().catch(() => '');
@@ -215,6 +263,9 @@ export default function IntakePage() {
 
   // Success state
   if (submitResult?.success) {
+    const submissionId = 'submissionId' in submitResult ? submitResult.submissionId : ('id' in submitResult ? submitResult.id : undefined);
+    const submissionType = 'type' in submitResult ? submitResult.type : undefined;
+
     return (
       <div className="matrix-bg min-h-screen">
         <div className="container container-narrow py-20">
@@ -226,15 +277,154 @@ export default function IntakePage() {
             <h1 className="text-h1 mb-4">Submission Received</h1>
 
             <p className="text-body mb-6 text-[var(--fg-secondary)]">
-              Thank you for your contribution to freedom tech research. We review every submission and publish relevant insights.
+              {'message' in submitResult && submitResult.message
+                ? submitResult.message
+                : 'Thank you for your contribution to freedom tech research.'}
             </p>
 
-            {submitResult.id && (
+            {submissionId && (
               <div className="mb-6 rounded-md bg-[var(--bg-secondary)] p-4">
                 <p className="text-mono text-sm text-[var(--fg-tertiary)]">Submission ID</p>
-                <p className="text-mono text-[var(--accent-primary)]">{submitResult.id}</p>
+                <p className="text-mono text-[var(--accent-primary)]">{submissionId}</p>
               </div>
             )}
+
+            {/* Story-specific results */}
+            {submissionType === 'story' && 'scores' in submitResult && (() => {
+              const storyResult = submitResult as StoryResponse;
+
+              // Don't show detailed results for spam
+              if (storyResult.isSpam) {
+                return null;
+              }
+
+              return (
+                <div className="mb-6 space-y-4">
+                  <div className="rounded-md border border-[var(--border-subtle)] bg-[var(--bg-secondary)] p-4 text-left">
+                    <h3 className="text-sm font-medium text-[var(--fg-primary)] mb-3">Analysis Results</h3>
+                    <div className="grid grid-cols-2 gap-4 text-sm">
+                      <div>
+                        <p className="text-[var(--fg-tertiary)]">Relevance Score</p>
+                        <p className="text-mono text-[var(--fg-primary)]">{storyResult.scores.freedomRelevance}/100</p>
+                      </div>
+                      <div>
+                        <p className="text-[var(--fg-tertiary)]">Credibility Score</p>
+                        <p className="text-mono text-[var(--fg-primary)]">{storyResult.scores.credibility}/100</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className={`rounded-md p-4 ${storyResult.queuedForPublishing ? 'bg-[var(--accent-muted)]' : 'bg-[var(--bg-tertiary)]'}`}>
+                    {storyResult.queuedForPublishing ? (
+                      <p className="text-sm text-[var(--accent-primary)]">
+                        Your story has been queued for publishing review.
+                      </p>
+                    ) : (
+                      <div>
+                        <p className="text-sm text-[var(--fg-secondary)] mb-2">
+                          Story did not meet auto-publishing thresholds.
+                        </p>
+                        {storyResult.notQueuedReasons && storyResult.notQueuedReasons.length > 0 && (
+                          <ul className="text-xs text-[var(--fg-tertiary)] list-disc list-inside">
+                            {storyResult.notQueuedReasons.map((reason, i) => (
+                              <li key={i}>{reason}</li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              );
+            })()}
+
+            {/* Project-specific results */}
+            {submissionType === 'project' && 'githubIssueCreated' in submitResult && (() => {
+              const projectResult = submitResult as ProjectResponse;
+
+              // Don't show detailed results for spam
+              if (projectResult.isSpam) {
+                return null;
+              }
+
+              return (
+                <div className="mb-6 space-y-4">
+                  {projectResult.scores && (
+                    <div className="rounded-md border border-[var(--border-subtle)] bg-[var(--bg-secondary)] p-4 text-left">
+                      <h3 className="text-sm font-medium text-[var(--fg-primary)] mb-3">Analysis Results</h3>
+                      <div className="grid grid-cols-2 gap-4 text-sm">
+                        <div>
+                          <p className="text-[var(--fg-tertiary)]">Feasibility Score</p>
+                          <p className="text-mono text-[var(--fg-primary)]">{projectResult.scores.feasibility}/100</p>
+                        </div>
+                        <div>
+                          <p className="text-[var(--fg-tertiary)]">Impact Score</p>
+                          <p className="text-mono text-[var(--fg-primary)]">{projectResult.scores.impact}/100</p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {projectResult.githubIssueCreated && projectResult.githubIssueUrl ? (
+                    <div className="rounded-md bg-[var(--accent-muted)] p-4">
+                      <p className="text-sm text-[var(--fg-secondary)] mb-2">
+                        A GitHub issue has been created to track your project idea.
+                      </p>
+                      <a
+                        href={projectResult.githubIssueUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-mono text-sm text-[var(--accent-primary)] hover:underline break-all"
+                      >
+                        {projectResult.githubIssueUrl}
+                      </a>
+                    </div>
+                  ) : (
+                    <div className="rounded-md bg-[var(--bg-tertiary)] p-4">
+                      <p className="text-sm text-[var(--fg-secondary)]">
+                        GitHub issue creation is pending. Your project idea has been recorded.
+                      </p>
+                    </div>
+                  )}
+                </div>
+              );
+            })()}
+
+            {/* Feedback-specific results */}
+            {submissionType === 'feedback' && 'githubIssueCreated' in submitResult && (() => {
+              const feedbackResult = submitResult as FeedbackResponse;
+
+              // Don't show detailed results for spam
+              if (feedbackResult.isSpam) {
+                return null;
+              }
+
+              return (
+                <div className="mb-6">
+                  {feedbackResult.githubIssueCreated && feedbackResult.githubIssueUrl ? (
+                    <div className="rounded-md bg-[var(--accent-muted)] p-4">
+                      <p className="text-sm text-[var(--fg-secondary)] mb-2">
+                        A tracking issue has been created for your feedback.
+                      </p>
+                      <a
+                        href={feedbackResult.githubIssueUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-mono text-sm text-[var(--accent-primary)] hover:underline break-all"
+                      >
+                        {feedbackResult.githubIssueUrl}
+                      </a>
+                    </div>
+                  ) : (
+                    <div className="rounded-md bg-[var(--bg-tertiary)] p-4">
+                      <p className="text-sm text-[var(--fg-secondary)]">
+                        Your feedback has been recorded. A tracking issue will be created.
+                      </p>
+                    </div>
+                  )}
+                </div>
+              );
+            })()}
 
             <div className="flex flex-wrap justify-center gap-4">
               <button

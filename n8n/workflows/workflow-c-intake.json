@@ -360,7 +360,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Handle spam project submission - mark as spam and skip processing\nconst data = $input.first().json;\n\nconsole.log(`[SPAM] Project submission ${data._submissionId} flagged as spam. Skipping project idea creation.`);\n\nreturn [{\n  json: {\n    submissionId: data._submissionId,\n    is_spam: true,\n    success: true,\n    type: 'project',\n    message: 'Submission flagged as spam - no project idea created'\n  }\n}];"
+        "jsCode": "// Handle spam project submission - mark as spam and skip processing\nconst data = $input.first().json;\n\nconsole.log(`[SPAM] Project submission ${data._submissionId} flagged as spam. Skipping project idea creation.`);\n\nreturn [{\n  json: {\n    success: true,\n    type: 'project',\n    submissionId: data._submissionId,\n    projectIdeaId: null,\n    githubIssueUrl: null,\n    githubIssueCreated: false,\n    isSpam: true,\n    scores: {\n      feasibility: data.feasibility_score || 0,\n      impact: data.impact_score || 0\n    },\n    message: 'Submission flagged for review.'\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -567,7 +567,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Prepare response for project submissions\nconst updateResult = $input.first().json;\nconst issueData = $('Build Project Update Query').first().json._issueData;\n\nreturn [{\n  json: {\n    submissionId: issueData._submissionId,\n    projectIdeaId: issueData._projectIdeaId,\n    githubIssueUrl: issueData.html_url,\n    success: true,\n    type: 'project'\n  }\n}];"
+        "jsCode": "// Prepare response for project submissions\nconst updateResult = $input.first().json;\nconst issueData = $('Build Project Update Query').first().json._issueData;\nconst prepareData = $('Prepare Project for GitHub').first().json;\n\nreturn [{\n  json: {\n    success: true,\n    type: 'project',\n    submissionId: issueData._submissionId,\n    projectIdeaId: issueData._projectIdeaId,\n    githubIssueUrl: issueData.html_url || null,\n    githubIssueCreated: !!issueData.html_url,\n    scores: {\n      feasibility: prepareData.feasibilityScore,\n      impact: prepareData.impactScore\n    },\n    priority: prepareData.priority,\n    message: issueData.html_url \n      ? 'Your project idea has been recorded and a GitHub issue has been created for tracking.'\n      : 'Your project idea has been recorded. GitHub issue creation failed - will be retried.'\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -881,7 +881,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Handle spam story submission - skip processing\nconst data = $input.first().json;\n\nconsole.log(`[SPAM] Story submission ${data._submissionId} flagged as spam. Skipping insight queue.`);\n\nreturn [{\n  json: {\n    submissionId: data._submissionId,\n    is_spam: true,\n    success: true,\n    type: 'story',\n    message: 'Submission flagged as spam - not queued for insight'\n  }\n}];"
+        "jsCode": "// Handle spam story submission - skip processing\nconst data = $input.first().json;\n\nconsole.log(`[SPAM] Story submission ${data._submissionId} flagged as spam. Skipping insight queue.`);\n\nreturn [{\n  json: {\n    success: true,\n    type: 'story',\n    submissionId: data._submissionId,\n    queuedForPublishing: false,\n    isSpam: true,\n    scores: {\n      freedomRelevance: data.freedom_relevance_score || 0,\n      credibility: data.credibility_score || 0\n    },\n    message: 'Submission flagged for review.'\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -986,7 +986,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Restore story data after updates\nconst prepareData = $('Prepare User Story Item').first().json;\nreturn [{ json: prepareData }];"
+        "jsCode": "// Build webhook response for queued story submissions\nconst prepareData = $('Prepare User Story Item').first().json;\nconst queueDecision = prepareData._queueDecision || {};\n\nreturn [{\n  json: {\n    success: true,\n    type: 'story',\n    submissionId: prepareData._submissionId,\n    queuedForPublishing: true,\n    scores: {\n      freedomRelevance: prepareData.freedom_relevance_score,\n      credibility: prepareData.credibility_score\n    },\n    thresholds: {\n      relevanceRequired: queueDecision.relevanceThreshold,\n      credibilityRequired: queueDecision.credibilityThreshold\n    },\n    message: 'Your story has been queued for publishing review.'\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -995,12 +995,25 @@
         18256
       ],
       "id": "95b3e90d-bd0b-4b53-a32d-8aa6cd12db21",
-      "name": "Restore After Insert"
+      "name": "Story Queued Response"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Build webhook response for stories that don't meet queue threshold\nconst data = $input.first().json;\nconst queueDecision = data._queueDecision || {};\n\n// Determine why it wasn't queued\nconst reasons = [];\nif (!queueDecision.meetsRelevance) {\n  reasons.push(`Relevance score (${data.freedom_relevance_score}) below threshold (${queueDecision.relevanceThreshold})`);\n}\nif (!queueDecision.meetsCredibility) {\n  reasons.push(`Credibility score (${data.credibility_score}) below threshold (${queueDecision.credibilityThreshold})`);\n}\nif (data.safety_concern) {\n  reasons.push('Safety concern flagged - requires manual review');\n}\n\nreturn [{\n  json: {\n    success: true,\n    type: 'story',\n    submissionId: data._submissionId,\n    queuedForPublishing: false,\n    scores: {\n      freedomRelevance: data.freedom_relevance_score,\n      credibility: data.credibility_score\n    },\n    thresholds: {\n      relevanceRequired: queueDecision.relevanceThreshold,\n      credibilityRequired: queueDecision.credibilityThreshold\n    },\n    notQueuedReasons: reasons,\n    message: 'Your story has been received but did not meet auto-publishing thresholds. It may still be reviewed manually.'\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        20576,
+        18400
+      ],
+      "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      "name": "Story Not Queued Response"
     },
     {
       "parameters": {
         "respondWith": "json",
-        "responseBody": "={\n  \"id\": \"{{ $('Prepare Routing Data').first().json.submissionId }}\",\n  \"status\": \"received\",\n  \"message\": \"Thank you for your submission.\"\n}",
+        "responseBody": "={{ JSON.stringify($input.first().json) }}",
         "options": {
           "responseCode": 201
         }
@@ -1222,7 +1235,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Handle spam feedback submission - skip GitHub issue creation\nconst data = $input.first().json;\n\nconsole.log(`[SPAM] Feedback submission ${data._submissionId} flagged as spam. Skipping GitHub issue creation.`);\n\nreturn [{\n  json: {\n    submissionId: data._submissionId,\n    is_spam: true,\n    success: true,\n    type: 'feedback',\n    message: 'Submission flagged as spam - no GitHub issue created'\n  }\n}];"
+        "jsCode": "// Handle spam feedback submission - skip GitHub issue creation\nconst data = $input.first().json;\n\nconsole.log(`[SPAM] Feedback submission ${data._submissionId} flagged as spam. Skipping GitHub issue creation.`);\n\nreturn [{\n  json: {\n    success: true,\n    type: 'feedback',\n    submissionId: data._submissionId,\n    githubIssueUrl: null,\n    githubIssueCreated: false,\n    isSpam: true,\n    message: 'Submission flagged for review.'\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -1384,7 +1397,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Prepare response for feedback submissions\nconst data = $input.first().json;\nconst feedbackData = $('Map Feedback to Labels').first().json._feedbackData;\n\nreturn [{\n  json: {\n    submissionId: data._submissionId,\n    githubIssueUrl: data.html_url,\n    success: !data._apiError,\n    type: 'feedback',\n    category: feedbackData?.category || 'other',\n    requiresResponse: feedbackData?.requires_response || false\n  }\n}];"
+        "jsCode": "// Prepare response for feedback submissions\nconst data = $input.first().json;\nconst feedbackData = $('Map Feedback to Labels').first().json._feedbackData;\n\nreturn [{\n  json: {\n    success: true,\n    type: 'feedback',\n    submissionId: data._submissionId,\n    githubIssueUrl: data.html_url || null,\n    githubIssueCreated: !!data.html_url,\n    category: feedbackData?.category || 'other',\n    message: data.html_url \n      ? 'Thank you for your feedback! A tracking issue has been created.'\n      : 'Thank you for your feedback! Issue creation failed - will be retried.'\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -2204,6 +2217,17 @@
         ],
         [
           {
+            "node": "Story Not Queued Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Story Not Queued Response": {
+      "main": [
+        [
+          {
             "node": "Respond to Webhook",
             "type": "main",
             "index": 0
@@ -2237,14 +2261,14 @@
       "main": [
         [
           {
-            "node": "Restore After Insert",
+            "node": "Story Queued Response",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Restore After Insert": {
+    "Story Queued Response": {
       "main": [
         [
           {
