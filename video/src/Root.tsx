@@ -2,7 +2,7 @@ import "./index.css";
 import { Composition } from "remotion";
 import { z } from "zod";
 import { MyComposition } from "./Composition";
-import { HookScene, ProblemScene, SolutionScene, WorkflowScene, ProofScene } from "./compositions/LibertasExplainer/scenes";
+import { HookScene, ProblemScene, SolutionScene, WorkflowScene, ProofScene, CTAScene, EndCardScene } from "./compositions/LibertasExplainer/scenes";
 
 // Props schema for LibertasExplainer composition
 export const libertasExplainerSchema = z.object({
@@ -37,6 +37,16 @@ export const workflowSceneSchema = z.object({
 
 // Props schema for Proof scene (for development preview)
 export const proofSceneSchema = z.object({
+  debug: z.boolean().default(false),
+});
+
+// Props schema for CTA scene (for development preview)
+export const ctaSceneSchema = z.object({
+  debug: z.boolean().default(false),
+});
+
+// Props schema for EndCard scene (for development preview)
+export const endCardSceneSchema = z.object({
   debug: z.boolean().default(false),
 });
 
@@ -124,6 +134,34 @@ export const RemotionRoot: React.FC = () => {
         width={1920}
         height={1080}
         schema={proofSceneSchema}
+        defaultProps={{
+          debug: false,
+        }}
+      />
+
+      {/* CTA scene preview - Section 6 (15 seconds) */}
+      <Composition
+        id="CTA"
+        component={CTAScene}
+        durationInFrames={450}
+        fps={30}
+        width={1920}
+        height={1080}
+        schema={ctaSceneSchema}
+        defaultProps={{
+          debug: false,
+        }}
+      />
+
+      {/* EndCard scene preview - Section 7 (5 seconds) */}
+      <Composition
+        id="EndCard"
+        component={EndCardScene}
+        durationInFrames={150}
+        fps={30}
+        width={1920}
+        height={1080}
+        schema={endCardSceneSchema}
         defaultProps={{
           debug: false,
         }}

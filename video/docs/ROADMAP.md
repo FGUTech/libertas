@@ -11,102 +11,6 @@
 
 Hey, I am working on the Libertas Explainer Video. We are cooking thru the roadmap, lets continue with:
 
-## Phase 3: Scene Development
-
-Build each section of the video.
-
-### 3.4 Engine/Workflow Scene (0:50 - 1:20) ✓
-
-**Description:** Animated workflow pipeline demonstration.
-
-**Requirements:**
-- [x] Create `src/compositions/LibertasExplainer/scenes/Workflow.tsx`
-- [x] Build flow diagram incrementally:
-  - Sources node (with RSS, web, submission icons)
-  - Classify node (with sample output)
-  - Summarize node
-  - Publish node
-  - Digest node (amber accent)
-  - Ideas node (with GitHub icon)
-- [x] Data packets flowing through system
-- [x] Full pipeline view with continuous animation
-- [x] Logo morph transition
-- [x] Music builds during this section
-- [x] Use cooresponding section of audio from LibertasExplainer within scene
-
-**Duration:** 900 frames (30s)
-
-**Reference:** `docs/STORYBOARD.md` - Section 4
-
----
-
-### 3.5 Proof Scene (1:20 - 1:40) ✓
-
-**Description:** Real content examples from Libertas.
-
-**Requirements:**
-- [x] Create `src/compositions/LibertasExplainer/scenes/Proof.tsx`
-- [x] "AGENTS ARE LIVE NOW!" title
-- [x] Four content cards (terminal style):
-  - Iran internet blackout
-  - Uganda mesh network warning
-  - Bhutan blockchain
-  - EFF copyright censorship
-- [x] Cards slide/replace each other
-- [x] Final 2x2 grid view
-- [x] "FREEDOM TECH SIGNALS" overlay text
-- [x] Sync voiceover
-- [x] Use cooresponding section of audio from LibertasExplainer within scene
-
-**Duration:** 600 frames (20s)
-
-**Reference:** `docs/STORYBOARD.md` - Section 5
-
----
-
-### 3.6 CTA Scene (1:40 - 1:55)
-
-**Description:** Call to action with URL and prompts.
-
-**Requirements:**
-- [ ] Create `src/compositions/LibertasExplainer/scenes/CTA.tsx`
-- [ ] URL assembles from particles: `libertas.fgu.tech`
-- [ ] Strong green glow effect
-- [ ] Terminal prompts type in:
-  - `> explore the signals`
-  - `> subscribe to feeds`
-  - `> submit intel`
-- [ ] FGU branding: "Built by Freedom Go Up"
-- [ ] Sync voiceover
-- [ ] Use cooresponding section of audio from LibertasExplainer within scene
-
-**Duration:** 450 frames (15s)
-
-**Reference:** `docs/STORYBOARD.md` - Section 6
-
----
-
-### 3.7 End Card Scene (1:55 - 2:00)
-
-**Description:** Clean logo ending.
-
-**Requirements:**
-- [ ] Create `src/compositions/LibertasExplainer/scenes/EndCard.tsx`
-- [ ] Libertas logo centered
-- [ ] URL below logo
-- [ ] Subtle glow pulse
-- [ ] Matrix rain fades out
-- [ ] Terminal cursor blink at bottom
-- [ ] Music resolves
-- [ ] Fade to black
-- [ ] Use cooresponding section of audio from LibertasExplainer within scene
-
-**Duration:** 150 frames (5s)
-
-**Reference:** `docs/STORYBOARD.md` - Section 7
-
----
-
 ## Phase 4: Assembly
 
 Combine scenes and polish.
@@ -119,12 +23,12 @@ Combine scenes and polish.
 - [ ] Create `src/compositions/LibertasExplainer/index.tsx`
 - [ ] Use `<TransitionSeries>` for scene sequencing
 - [ ] Implement transitions:
-  - Hook → Problem: Glitch cut (3 frames)
-  - Problem → Solution: CRT shutdown (15 frames)
-  - Solution → Engine: Fade through green (15 frames)
-  - Engine → Proof: Logo morph (30 frames)
-  - Proof → CTA: Particle convergence (30 frames)
-  - CTA → End: Gentle fade (30 frames)
+  - Hook → Problem: Glitch cut
+  - Problem → Solution: CRT shutdown 
+  - Solution → Engine: Fade through green 
+  - Engine → Proof: Logo morph 
+  - Proof → CTA: Particle convergence 
+  - CTA → End: Gentle fade 
 - [ ] Calculate total duration accounting for overlaps
 - [ ] Layer audio track
 
@@ -240,7 +144,7 @@ npx remotion render LibertasExplainer out/libertas-explainer-final.mp4 \
 | Phase 0: Setup | 100% | 0.1 ✓, 0.2 ✓, 0.3 ✓, 0.4 ✓, 0.5 ✓ |
 | Phase 1: Components | 100% | 1.1 ✓ TypewriterText, 1.2 ✓ MatrixRain, 1.3 ✓ Scanlines, 1.4 ✓ GlitchEffect, 1.5 ✓ TerminalCard, 1.6 ✓ ScoreBadge, 1.7 ✓ FlowDiagram |
 | Phase 2: Audio | 75% | 2.1 ✓ Background Music, 2.2 ✓ SFX Library, 2.3 ✓ Voiceover |
-| Phase 3: Scenes | 71% | 3.1 ✓ Hook, 3.2 ✓ Problem, 3.3 ✓ Solution, 3.4 ✓ Workflow, 3.5 ✓ Proof |
+| Phase 3: Scenes | 100% | 3.1 ✓ Hook, 3.2 ✓ Problem, 3.3 ✓ Solution, 3.4 ✓ Workflow, 3.5 ✓ Proof, 3.6 ✓ CTA, 3.7 ✓ EndCard |
 | Phase 4: Assembly | 0% | Depends on Phase 3 |
 | Phase 5: Review | 0% | Depends on Phase 4 |
 

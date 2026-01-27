@@ -19,3 +19,9 @@ export type { WorkflowSceneProps } from './Workflow';
 
 export { ProofScene, PROOF_TIMING } from './Proof';
 export type { ProofSceneProps } from './Proof';
+
+export { CTAScene, CTA_TIMING } from './CTA';
+export type { CTASceneProps } from './CTA';
+
+export { EndCardScene, ENDCARD_TIMING } from './EndCard';
+export type { EndCardSceneProps } from './EndCard';
