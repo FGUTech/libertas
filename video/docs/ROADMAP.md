@@ -15,32 +15,19 @@ Hey, I am working on the Libertas Explainer Video. We are cooking thru the roadm
 
 Reusable visual components used across multiple scenes.
 
-### 1.6 Score Badge Component ✓
-
-**Description:** Display relevance/credibility scores with visual indicator.
-
-**Requirements:**
-- [x] Create `src/compositions/LibertasExplainer/components/ScoreBadge.tsx`
-- [x] Format: `[LABEL: XX]`
-- [x] Color coding: green (70+), amber (50-69), red (<50)
-- [x] Optional count-up animation
-- [x] JetBrains Mono font
-
----
-
-### 1.7 Flow Diagram Components
+### 1.7 Flow Diagram Components ✓
 
 **Description:** Animated node-and-arrow diagram for workflow visualization.
 
 **Requirements:**
-- [ ] Create `src/compositions/LibertasExplainer/components/FlowNode.tsx`
-- [ ] Create `src/compositions/LibertasExplainer/components/FlowArrow.tsx`
-- [ ] Create `src/compositions/LibertasExplainer/components/FlowDiagram.tsx`
-- [ ] Nodes: rounded rectangle with label and icon
-- [ ] Arrows: path drawing animation with arrow head
-- [ ] Data packet: small square traveling along arrow path
-- [ ] Support split/merge paths
-- [ ] Spring animations for node appearance
+- [x] Create `src/compositions/LibertasExplainer/components/FlowNode.tsx`
+- [x] Create `src/compositions/LibertasExplainer/components/FlowArrow.tsx`
+- [x] Create `src/compositions/LibertasExplainer/components/FlowDiagram.tsx`
+- [x] Nodes: rounded rectangle with label and icon
+- [x] Arrows: path drawing animation with arrow head
+- [x] Data packet: small square traveling along arrow path
+- [x] Support split/merge paths (rightAngle, bezier, dashed optional flows)
+- [x] Spring animations for node appearance
 
 ---
 
@@ -398,7 +385,7 @@ npx remotion render LibertasExplainer out/libertas-explainer-final.mp4 \
 | Phase | Status | Notes |
 |-------|--------|-------|
 | Phase 0: Setup | 100% | 0.1 ✓, 0.2 ✓, 0.3 ✓, 0.4 ✓, 0.5 ✓ |
-| Phase 1: Components | 86% | 1.1 ✓ TypewriterText, 1.2 ✓ MatrixRain, 1.3 ✓ Scanlines, 1.4 ✓ GlitchEffect, 1.5 ✓ TerminalCard, 1.6 ✓ ScoreBadge |
+| Phase 1: Components | 100% | 1.1 ✓ TypewriterText, 1.2 ✓ MatrixRain, 1.3 ✓ Scanlines, 1.4 ✓ GlitchEffect, 1.5 ✓ TerminalCard, 1.6 ✓ ScoreBadge, 1.7 ✓ FlowDiagram |
 | Phase 2: Audio | 0% | Can parallel with Phase 1 |
 | Phase 3: Scenes | 0% | Depends on Phase 1 |
 | Phase 4: Assembly | 0% | Depends on Phase 3 |
