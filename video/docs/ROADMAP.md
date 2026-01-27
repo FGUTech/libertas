@@ -15,32 +15,17 @@ Hey, I am working on the Libertas Explainer Video. We are cooking thru the roadm
 
 Foundational setup before creative work begins.
 
-### 0.2 Configure Composition Settings
-
-**Description:** Update Root.tsx with correct composition configuration.
-
-**Requirements:**
-- [ ] Set composition ID: "LibertasExplainer"
-- [ ] Set resolution: 1920x1080
-- [ ] Set FPS: 30
-- [ ] Set duration: 3600 frames (120s)
-- [ ] Configure default props schema with Zod
-
-**File:** `src/Root.tsx`
-
----
-
-### 0.3 Set Up Project Structure
+### 0.3 Set Up Project Structure ✓
 
 **Description:** Create folder structure for organized component development.
 
 **Requirements:**
-- [ ] Create `src/compositions/LibertasExplainer/` directory
-- [ ] Create `src/compositions/LibertasExplainer/scenes/` for section components
-- [ ] Create `src/compositions/LibertasExplainer/components/` for reusable elements
-- [ ] Create `src/hooks/` for shared hooks
-- [ ] Create `src/utils/` for constants and helpers
-- [ ] Create `src/assets/fonts/`, `src/assets/audio/`, `src/assets/images/`
+- [x] Create `src/compositions/LibertasExplainer/` directory
+- [x] Create `src/compositions/LibertasExplainer/scenes/` for section components
+- [x] Create `src/compositions/LibertasExplainer/components/` for reusable elements
+- [x] Create `src/hooks/` for shared hooks
+- [x] Create `src/utils/` for constants and helpers
+- [x] Create `src/assets/fonts/`, `src/assets/audio/`, `src/assets/images/`
 
 ---
 
@@ -551,7 +536,7 @@ npx remotion render LibertasExplainer out/libertas-explainer-final.mp4 \
 
 | Phase | Status | Notes |
 |-------|--------|-------|
-| Phase 0: Setup | 20% | 0.1 complete ✓ |
+| Phase 0: Setup | 60% | 0.1 ✓, 0.2 ✓, 0.3 ✓ |
 | Phase 1: Components | 0% | Depends on 0.x |
 | Phase 2: Audio | 0% | Can parallel with Phase 1 |
 | Phase 3: Scenes | 0% | Depends on Phase 1 |
