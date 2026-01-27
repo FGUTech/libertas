@@ -25,6 +25,8 @@ export interface MatrixRainProps {
   charset?: string;
   /** Seed for deterministic randomness (default: 'matrix-rain') */
   seed?: string;
+  /** Vertical offset in pixels - positive moves columns up (default: 0) */
+  verticalOffset?: number;
 }
 
 interface RainColumn {
@@ -73,6 +75,7 @@ export const MatrixRain: React.FC<MatrixRainProps> = ({
   speedRange = [2, 8],
   charset = DEFAULT_CHARSET,
   seed = 'matrix-rain',
+  verticalOffset = 0,
 }) => {
   const frame = useCurrentFrame();
   const { width, height } = useVideoConfig();
@@ -135,6 +138,7 @@ export const MatrixRain: React.FC<MatrixRainProps> = ({
           height={height}
           charset={charset}
           seed={seed}
+          verticalOffset={verticalOffset}
         />
       ))}
     </div>
@@ -153,6 +157,7 @@ interface RainColumnRendererProps {
   height: number;
   charset: string;
   seed: string;
+  verticalOffset: number;
 }
 
 const RainColumnRenderer: React.FC<RainColumnRendererProps> = ({
@@ -163,6 +168,7 @@ const RainColumnRenderer: React.FC<RainColumnRendererProps> = ({
   height,
   charset,
   seed,
+  verticalOffset,
 }) => {
   const { x, speed, startOffset, chars, brightness, fontSize } = column;
 
@@ -173,7 +179,7 @@ const RainColumnRenderer: React.FC<RainColumnRendererProps> = ({
   // Column loops when it goes off screen
   const totalTravel = height + fontSize * CHARS_PER_COLUMN;
   const rawY = (frame * speed + startOffset) % totalTravel;
-  const headY = rawY - fontSize * CHARS_PER_COLUMN + height;
+  const headY = rawY - fontSize * CHARS_PER_COLUMN + height - verticalOffset;
 
   // Generate the characters to display
   // Periodically mutate some characters for the "code changing" effect

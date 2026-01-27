@@ -11,40 +11,21 @@
 
 Hey, I am working on the Libertas Explainer Video. We are cooking thru the roadmap, lets continue with:
 
-## Phase 2: Audio Setup
-
-Music and sound effects preparation.
-
-### 2.4 Audio Integration
-
-**Description:** Set up audio components in Remotion.
-
-**Requirements:**
-- [ ] Create `src/compositions/LibertasExplainer/AudioTrack.tsx`
-- [ ] Import and layer: music + VO + SFX
-- [ ] Implement VO ducking (music lowers under voice)
-- [ ] Sync SFX to visual events
-- [ ] Test audio timing with visuals
-
-**Reference:** Remotion skill `rules/audio.md`
-
----
-
 ## Phase 3: Scene Development
 
 Build each section of the video.
 
-### 3.1 Hook Scene (0:00 - 0:05)
+### 3.1 Hook Scene (0:00 - 0:05) ✓
 
 **Description:** Terminal boot sequence opening.
 
 **Requirements:**
-- [ ] Create `src/compositions/LibertasExplainer/scenes/Hook.tsx`
-- [ ] Black screen with cursor fade-in
-- [ ] Typewriter: `> initializing libertas...`
-- [ ] Matrix rain starts at frame 90
-- [ ] Keyboard sound effects on typing
-- [ ] Music bed begins
+- [x] Create `src/compositions/LibertasExplainer/scenes/Hook.tsx`
+- [x] Black screen with cursor fade-in
+- [x] Typewriter: `> initializing libertas...`
+- [x] Matrix rain starts at frame 90
+- [x] Keyboard sound effects on typing (via AudioTrack SFX)
+- [x] Music bed begins (via AudioTrack MusicTrack)
 
 **Duration:** 150 frames (5s)
 
@@ -311,7 +292,7 @@ npx remotion render LibertasExplainer out/libertas-explainer-final.mp4 \
 | Phase 0: Setup | 100% | 0.1 ✓, 0.2 ✓, 0.3 ✓, 0.4 ✓, 0.5 ✓ |
 | Phase 1: Components | 100% | 1.1 ✓ TypewriterText, 1.2 ✓ MatrixRain, 1.3 ✓ Scanlines, 1.4 ✓ GlitchEffect, 1.5 ✓ TerminalCard, 1.6 ✓ ScoreBadge, 1.7 ✓ FlowDiagram |
 | Phase 2: Audio | 75% | 2.1 ✓ Background Music, 2.2 ✓ SFX Library, 2.3 ✓ Voiceover |
-| Phase 3: Scenes | 0% | Depends on Phase 1 |
+| Phase 3: Scenes | 14% | 3.1 ✓ Hook |
 | Phase 4: Assembly | 0% | Depends on Phase 3 |
 | Phase 5: Review | 0% | Depends on Phase 4 |
 
