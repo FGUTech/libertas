@@ -152,8 +152,8 @@ Semantic:
 
 VOICEOVER:
 "Every day, information is censored. Communications are severed.
-In [YEAR], over 300 internet shutdowns hit 43 countries.
-[Iran example flashes - '2,403+ killed during total blackout']
+In 2025, over 200 internet shutdowns hit 28 countries.
+[Iran example flashes]
 When regimes cut the signal, the world goes dark."
 
 [VISUAL: Quick cuts - surveillance cameras, shutdown notices, blocked screens]
@@ -168,8 +168,7 @@ When regimes cut the signal, the world goes dark."
 
 VOICEOVER:
 "Libertas is an automated research engine for freedom technology.
-It tracks global signals autonomously. Classifies. Analyzes. Publishes.
-No gatekeepers. No censorship. Fully open."
+It tracks global signals autonomously."
 
 [VISUAL: Homepage elements animate in - matrix background, terminal prompts]
 ```
@@ -183,11 +182,11 @@ VOICEOVER:
 
 [Nodes light up: RSS feeds, web sources, user submissions]
 
-"AI agents classify relevance, assess credibility, extract insights..."
+"AI agents classify them, assess credibility, extract insights."
 
 [Classify node processes, scores appear: 92 relevance, 75 credibility]
 
-"High-signal content is summarized and published automatically..."
+"High-signal content is published automatically."
 
 [Summarize -> Publish flow animates]
 
@@ -195,7 +194,7 @@ VOICEOVER:
 
 [Digest node pulses amber]
 
-"And patterns become project ideas for builders to act on."
+"Agents analyze patterns to create project ideas for freedom builders to act on."
 
 [Idea generation node with GitHub issue icon]
 ```
@@ -205,20 +204,15 @@ VOICEOVER:
 [VISUAL: Content cards animate in, terminal style]
 
 VOICEOVER:
-"It's already working."
+"New Signals."
 
 [Iran insight card appears]
-"Iran's digital darkness. 2,403 killed while the world watched nothing."
+"Iran's digital darkness. Over two thousand killed without being able to reach the outside world."
 
 [Uganda card slides in]
-"Uganda's government warning against mesh networks - proof the tools work."
+"Uganda's government warning against mesh networks. Proof the tools work."
 
-[Bhutan card]
-"Bhutan building sovereign blockchain infrastructure."
-
-[EFF card]
-"Copyright law weaponized for censorship."
-
+[Grid of all cards]
 "Freedom tech signals. Compiled. Published. Open to all."
 ```
 
@@ -227,17 +221,18 @@ VOICEOVER:
 [VISUAL: Website URL animates with glow]
 
 VOICEOVER:
-"The signal is out there. Find it."
+"The agents are live now. Find them by their signals.
+Libertas dot F-G-U dot tech.
+Built by Cypherpunks."
 
 libertas.fgu.tech
 
 [VISUAL: Terminal typing effect]
+> explore the signals
 > subscribe to feeds
-> submit a signal
-> explore the posts
+> submit intel
 
-[FGU logo fades in]
-"Built by Freedom Go Up."
+[FGU branding fades in]
 ```
 
 **Section 7: End Card (115-120s)**

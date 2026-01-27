@@ -15,25 +15,6 @@ Hey, I am working on the Libertas Explainer Video. We are cooking thru the roadm
 
 Combine scenes and polish.
 
-### 4.1 Main Composition Assembly
-
-**Description:** Combine all scenes with transitions.
-
-**Requirements:**
-- [ ] Create `src/compositions/LibertasExplainer/index.tsx`
-- [ ] Use `<TransitionSeries>` for scene sequencing
-- [ ] Implement transitions:
-  - Hook → Problem: Glitch cut
-  - Problem → Solution: CRT shutdown 
-  - Solution → Engine: Fade through green 
-  - Engine → Proof: Logo morph 
-  - Proof → CTA: Particle convergence 
-  - CTA → End: Gentle fade 
-- [ ] Calculate total duration accounting for overlaps
-- [ ] Layer audio track
-
----
-
 ### 4.2 Caption Implementation
 
 **Description:** Add baked-in captions for X/Twitter autoplay.

@@ -1,17 +1,17 @@
 /**
  * LibertasExplainer - Main Composition
  *
- * 90-120 second cinematic explainer video for the Libertas Freedom Tech
+ * ~94.7 second cinematic explainer video for the Libertas Freedom Tech
  * Research Platform. Combines all 7 scenes with transitions and audio.
  *
- * Scene Timeline:
- * - Hook:     0:00 - 0:05  (frames 0-150)
- * - Problem:  0:05 - 0:25  (frames 150-750)
- * - Solution: 0:25 - 0:50  (frames 750-1500)
- * - Workflow: 0:50 - 1:20  (frames 1500-2400)
- * - Proof:    1:20 - 1:40  (frames 2400-3000)
- * - CTA:      1:40 - 1:55  (frames 3000-3450)
- * - EndCard:  1:55 - 2:00  (frames 3450-3600)
+ * Scene Timeline (approximate):
+ * - Hook:     0:00 - 0:05  (150 frames)
+ * - Problem:  0:05 - 0:22  (528 frames)
+ * - Solution: 0:22 - 0:34  (360 frames)
+ * - Workflow: 0:34 - 0:57  (695 frames)
+ * - Proof:    0:57 - 1:17  (600 frames)
+ * - CTA:      1:17 - 1:32  (450 frames)
+ * - EndCard:  1:32 - 1:37  (150 frames)
  */
 
 import React from 'react';
@@ -57,7 +57,7 @@ import { BG_PRIMARY } from '../../utils/colors';
 const SCENE_DURATIONS = {
   hook: 150,      // 5 seconds
   problem: 528,   // 17.6 seconds (cut 2.4s of black from end)
-  solution: 500,  // 16.67 seconds (removed value props section)
+  solution: 370,  // 12.33 seconds (removed action words section)
   workflow: 695,  // 23.17 seconds (cut 1s from end, logo morph removed)
   proof: 600,     // 20 seconds
   cta: 450,       // 15 seconds
@@ -81,16 +81,16 @@ const TRANSITION_DURATIONS = {
  * With TransitionSeries, each transition overlaps adjacent scenes.
  * Total = sum(sceneDurations) - sum(transitionDurations)
  *
- * Base scene total: 150 + 528 + 500 + 695 + 600 + 450 + 150 = 3073
+ * Base scene total: 150 + 528 + 360 + 695 + 600 + 450 + 150 = 2933
  * Transition overlap: 12 + 18 + 15 + 15 + 18 + 15 = 93
- * Final duration: 3073 - 93 = 2980 frames (~99.3 seconds)
+ * Final duration: 2933 - 93 = 2840 frames (~94.7 seconds)
  *
  * Adjusted durations add overlap compensation per scene.
  */
 const ADJUSTED_SCENE_DURATIONS = {
   hook: 150 + 12,           // 162 frames - accounts for exit transition
   problem: 528 + 15,        // 543 frames - cut 2.4s black + transitions
-  solution: 500 + 17,       // 517 frames - removed value props
+  solution: 370 + 17,       // 387 frames - removed action words section
   workflow: 695 + 15,       // 710 frames - cut 1s, logo morph removed
   proof: 600 + 17,          // 617 frames
   cta: 450 + 17,            // 467 frames
@@ -98,7 +98,7 @@ const ADJUSTED_SCENE_DURATIONS = {
 } as const;
 
 /** Total composition duration in frames */
-const TOTAL_FRAMES = 3073;
+const TOTAL_FRAMES = 2943;
 
 // =============================================================================
 // TYPES
@@ -234,10 +234,10 @@ const DebugOverlay: React.FC = () => {
   let currentScene = 'Hook';
   if (frame >= 150) currentScene = 'Problem';
   if (frame >= 663) currentScene = 'Solution';
-  if (frame >= 1148) currentScene = 'Workflow';
-  if (frame >= 1828) currentScene = 'Proof';
-  if (frame >= 2413) currentScene = 'CTA';
-  if (frame >= 2848) currentScene = 'EndCard';
+  if (frame >= 1008) currentScene = 'Workflow';
+  if (frame >= 1688) currentScene = 'Proof';
+  if (frame >= 2273) currentScene = 'CTA';
+  if (frame >= 2708) currentScene = 'EndCard';
 
   return (
     <AbsoluteFill
@@ -259,8 +259,8 @@ const DebugOverlay: React.FC = () => {
           border: '1px solid #00ff41',
         }}
       >
-        <div>Frame: {frame} / 3600</div>
-        <div>Time: {seconds}s / 120.00s</div>
+        <div>Frame: {frame} / {TOTAL_FRAMES}</div>
+        <div>Time: {seconds}s / {(TOTAL_FRAMES / 30).toFixed(1)}s</div>
         <div>Scene: {currentScene}</div>
       </div>
     </AbsoluteFill>
@@ -277,5 +277,5 @@ export default LibertasExplainer;
 export const TIMING = {
   scenes: SCENE_DURATIONS,
   transitions: TRANSITION_DURATIONS,
-  total: TOTAL_FRAMES, // ~3085 frames (~102.8 seconds)
+  total: TOTAL_FRAMES, // ~2933 frames (~94.7 seconds)
 } as const;

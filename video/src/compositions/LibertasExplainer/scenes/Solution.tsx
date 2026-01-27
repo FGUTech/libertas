@@ -2,13 +2,13 @@
  * Solution Scene - Section 3
  *
  * Reveals Libertas as the answer. Establishes what it is.
- * Duration: 500 frames (16.67s).
+ * Duration: 360 frames (12s).
  *
  * Frame breakdown (scene-relative):
  * - 0-90: Boot sequence (connecting, loading URL)
  * - 90-120: URL reveal with glow: `libertas.fgu.tech`
  * - 120-250: Website hero recreation (scanline reveal)
- * - 250-500: Homepage pull-back reveal
+ * - 250-360: Homepage pull-back reveal with signal cards
  */
 
 import React from 'react';
@@ -129,8 +129,8 @@ const SolutionAudio: React.FC = () => {
       />
 
       {/* Voiceover - starts at frame 90 (after boot sequence) */}
-      {/* Cut 2 seconds from end (was 17.8s, now 15.8s = 474 frames) to remove gatekeepers discussion */}
-      <Sequence from={90 as number} durationInFrames={474} name="VO: Solution">
+      {/* Scene shortened - removed classifies/analyzes/publishes section */}
+      <Sequence from={90 as number} durationInFrames={270} name="VO: Solution">
         <Audio
           src={staticFile(AUDIO_FILES.voSolution)}
           volume={1.0}
@@ -458,8 +458,6 @@ const WebsiteHero: React.FC<{ frame: number; fps: number }> = ({ frame, fps }) =
   );
 };
 
-/** Action words that appear at bottom of homepage */
-const ACTION_WORDS = ['Classifies', 'Analyzes', 'Publishes'];
 
 /**
  * Homepage pull-back reveal (250-500)
@@ -484,8 +482,13 @@ const HomepagePullback: React.FC<{ frame: number }> = ({ frame }) => {
     { extrapolateRight: 'clamp' }
   );
 
-  // No fade out - this section now stays until scene end
-  const fadeOut = 1;
+  // Fade out near end of scene for smooth transition to Workflow
+  const fadeOut = interpolate(
+    frame,
+    [350, 370],
+    [1, 0],
+    { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }
+  );
 
   // Terminal prompt blink
   const cursorVisible = Math.floor(frame / 15) % 2 === 0;
@@ -493,8 +496,6 @@ const HomepagePullback: React.FC<{ frame: number }> = ({ frame }) => {
   // Content cards stagger
   const showCards = relativeFrame > 45;
 
-  // Action words appear after all signal cards (6 cards * 8 frame stagger = 48 frames after showCards)
-  const actionWordsStart = 120; // Show after signals have appeared
 
   return (
     <AbsoluteFill
@@ -668,49 +669,6 @@ const HomepagePullback: React.FC<{ frame: number }> = ({ frame }) => {
             )}
           </div>
 
-          {/* Action words: Classifies, Analyzes, Publishes */}
-          {relativeFrame > actionWordsStart && (
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'center',
-                gap: 60,
-                paddingTop: 8,
-              }}
-            >
-              {ACTION_WORDS.map((word, index) => {
-                const wordDelay = index * 27; // ~0.9s stagger between words
-                const wordOpacity = relativeFrame > actionWordsStart + wordDelay
-                  ? interpolate(
-                      relativeFrame - actionWordsStart - wordDelay,
-                      [0, 20],
-                      [0, 1],
-                      { extrapolateRight: 'clamp' }
-                    )
-                  : 0;
-
-                const glowIntensity = wordOpacity * 20;
-
-                return (
-                  <div
-                    key={word}
-                    style={{
-                      ...terminalStyle(38),
-                      color: colors.accent.primary,
-                      opacity: wordOpacity,
-                      textShadow: `
-                        0 0 ${glowIntensity}px ${colors.accent.primary},
-                        0 0 ${glowIntensity * 2}px ${colors.accent.primary}60
-                      `,
-                      letterSpacing: '0.08em',
-                    }}
-                  >
-                    {word}
-                  </div>
-                );
-              })}
-            </div>
-          )}
         </div>
       </div>
     </AbsoluteFill>
@@ -1045,8 +1003,8 @@ export { _ValuePropsSection as ValuePropsSection };
 
 /** Timing constants for use in parent composition */
 export const SOLUTION_TIMING = {
-  /** Total duration of Solution scene in frames (cut value props section) */
-  duration: 500,
+  /** Total duration of Solution scene in frames (removed action words section) */
+  duration: 370,
   /** Frame when boot sequence starts */
   bootStart: BOOT_START,
   /** Frame when URL reveal starts */

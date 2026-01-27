@@ -8,7 +8,7 @@
  * Frame breakdown (scene-relative):
  * - 0-150: URL types in with strong green glow
  * - 150-300: Terminal prompts type in below URL
- * - 300-450: FGU branding "Built by Freedom Go Up @ StarkWare"
+ * - 300-450: FGU branding "Built by Cypherpunks"
  */
 
 import React from 'react';
@@ -365,26 +365,17 @@ const FGUBranding: React.FC<FGUBrandingProps> = ({ progress }) => {
         gap: 8,
       }}
     >
-      {/* "Built by" label */}
+      {/* Built by Cypherpunks @ StarkWare */}
       <div
         style={{
-          ...terminalStyle(24),
-          color: FG_TERTIARY,
-          letterSpacing: '0.05em',
-        }}
-      >
-        Built by
-      </div>
-
-      {/* FGU name with StarkWare */}
-      <div
-        style={{
-          ...displayStyle(42),
+          ...displayStyle(36),
           color: FG_PRIMARY,
-          letterSpacing: '0.08em',
+          letterSpacing: '0.06em',
         }}
       >
-        Freedom Go Up @ StarkWare
+        Built by Cypherpunks{' '}
+        <span style={{ color: FG_TERTIARY }}>@</span>{' '}
+        <span style={{ color: ACCENT_PRIMARY }}>StarkWare</span>
       </div>
     </div>
   );

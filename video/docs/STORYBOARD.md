@@ -121,7 +121,7 @@ Frame 88-90: Cursor blinks at end
 - Year indicator: [2024]
 
 **VOICEOVER:**
-"In twenty twenty-four, over three hundred internet shutdowns hit forty-three countries."
+"In 2025, over 200 internet shutdowns hit 28 countries."
 
 **ANIMATION:**
 - Number counter: interpolate 0 to 300+ over 2s
@@ -164,7 +164,7 @@ Frame 88-90: Cursor blinks at end
 - Red accent border pulsing
 
 **VOICEOVER:**
-"When regimes cut the signal... the world goes dark."
+"When regimes cut the signal, the world goes dark."
 
 **AUDIO:**
 - Deep bass drop on "dark"
@@ -253,7 +253,7 @@ Frame 88-90: Cursor blinks at end
   - Green accent on "Research Engine"
 
 **VOICEOVER:**
-"It tracks global signals autonomously. Classifies. Analyzes. Publishes."
+"It tracks global signals autonomously."
 
 **ANIMATION:**
 - Scanline reveal: lines draw down revealing content
@@ -272,23 +272,13 @@ Frame 88-90: Cursor blinks at end
   2. `[NO CENSORSHIP]` - crossed-out eye
   3. `[FULLY OPEN]` - open book/code icon
 
-**VOICEOVER:**
-"No gatekeepers. No censorship. Fully open."
-
-**ANIMATION:**
-- Cards spring in from left, staggered 0.3s
-- Each card has green border glow on appear
-- Icons animate (lock opens, eye crosses out, book opens)
-
-### Frame 1350-1500 (45s - 50s)
-
 **VISUAL:**
 - Pull back to show full homepage
 - "Recent Signals" section visible
 - Content cards populate with placeholder data
 
 **VOICEOVER:**
-"A machine that never sleeps, watching for freedom tech signals across the world."
+(silence - visual demonstration)
 
 **AUDIO:**
 - Data processing ambient
@@ -344,7 +334,7 @@ Frame 88-90: Cursor blinks at end
   ```
 
 **VOICEOVER:**
-"AI agents classify relevance, assess credibility, extract insights..."
+"AI agents classify them, assess credibility, extract insights."
 
 **ANIMATION:**
 - Arrow draws with spring timing
@@ -364,7 +354,7 @@ Frame 88-90: Cursor blinks at end
   ```
 
 **VOICEOVER:**
-"High-signal content is summarized and published automatically..."
+"High-signal content is published automatically."
 
 **ANIMATION:**
 - Same flow pattern
@@ -400,7 +390,7 @@ Frame 88-90: Cursor blinks at end
   ```
 
 **VOICEOVER:**
-"And patterns become project ideas for builders to act on."
+"Agents analyze patterns to create project ideas for freedom builders to act on."
 
 **ANIMATION:**
 - Dashed line (optional flow) draws to IDEAS node
@@ -459,12 +449,12 @@ Frame 88-90: Cursor blinks at end
 ### Frame 2400-2490 (80s - 83s)
 
 **VISUAL:**
-- Bold text appears: "IT'S ALREADY WORKING."
+- Bold text appears: "NEW SIGNALS"
 - Terminal style, centered
 - Green glow
 
 **VOICEOVER:**
-"It's already working."
+"New Signals."
 
 **AUDIO:**
 - Confident synth hit
@@ -494,7 +484,7 @@ Frame 88-90: Cursor blinks at end
 ```
 
 **VOICEOVER:**
-"Iran's digital darkness. Two thousand four hundred killed while the world watched nothing."
+"Iran's digital darkness. Over two thousand killed without being able to reach the outside world."
 
 **ANIMATION:**
 - Card slides in from left with spring
@@ -519,49 +509,13 @@ Frame 88-90: Cursor blinks at end
 ```
 
 **VOICEOVER:**
-"Uganda's government warning against mesh networks—proof the tools work."
+"Uganda's government warning against mesh networks. Proof the tools work."
 
 **ANIMATION:**
 - Card slides over/replaces Iran card
 - Slight glitch transition
 
-### Frame 2760-2850 (92s - 95s)
-
-**VISUAL:**
-**Card 3: Bhutan (1s)**
-```
-┌─────────────────────────────────────────┐
-│ SIGNAL: BHUTAN BLOCKCHAIN SOVEREIGNTY   │
-│                                         │
-│ > Nation-state validator operations     │
-│ > Bitcoin mining + digital ID           │
-│                                         │
-│ topics: sovereignty, bitcoin            │
-└─────────────────────────────────────────┘
-```
-
-**VOICEOVER:**
-"Bhutan building sovereign blockchain infrastructure."
-
-### Frame 2850-2940 (95s - 98s)
-
-**VISUAL:**
-**Card 4: EFF (1s)**
-```
-┌─────────────────────────────────────────┐
-│ SIGNAL: COPYRIGHT AS CENSORSHIP         │
-│                                         │
-│ > Statutory damages fuel over-censoring │
-│ > Legal frameworks weaponized           │
-│                                         │
-│ topics: censorship-resistance           │
-└─────────────────────────────────────────┘
-```
-
-**VOICEOVER:**
-"Copyright law weaponized for censorship."
-
-### Frame 2940-3000 (98s - 100s)
+### Frame 2760-3000 (92s - 100s)
 
 **VISUAL:**
 - All four cards visible in grid (smaller)
@@ -595,7 +549,7 @@ Frame 88-90: Cursor blinks at end
 - Matrix rain continues behind
 
 **VOICEOVER:**
-"The signal is out there. Find it."
+"The agents are live now. Find them by their signals."
 
 **AUDIO:**
 - Music reaches hopeful peak
@@ -627,13 +581,13 @@ Frame 88-90: Cursor blinks at end
 ### Frame 3300-3450 (110s - 115s)
 
 **VISUAL:**
-- FGU branding appears:
+- Branding appears:
   - "Built by"
-  - FGU logo (or text: "Freedom Go Up")
+  - "Cypherpunks"
   - Subtle, bottom portion of screen
 
 **VOICEOVER:**
-"Built by Freedom Go Up."
+"Libertas dot F-G-U dot tech. Built by Cypherpunks."
 
 **ANIMATION:**
 - Fade in with 1s duration

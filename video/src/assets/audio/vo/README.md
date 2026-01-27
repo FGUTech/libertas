@@ -41,22 +41,21 @@ When regimes cut the signal, the world goes dark.
 ### vo-solution.mp3
 ```
 Libertas is an automated research engine for freedom technology.
-It tracks global signals autonomously. Classifies. Analyzes. Publishes.
-No gatekeepers. No censorship. Fully open.
+It tracks global signals autonomously.
 ```
 
 ### vo-engine.mp3
 ```
 Sources flow in from across the world.
-AI agents classify relevance, assess credibility, extract insights.
-High-signal content is summarized and published automatically.
+AI agents classify them, assess credibility, extract insights.
+High-signal content is published automatically.
 Weekly digests compile the most important signals.
 Agents analyze patterns to create project ideas for freedom builders to act on.
 ```
 
 ### vo-proof.mp3
 ```
-It's already working.
+New Signals.
 Iran's digital darkness. Over two thousand killed without being able to reach the outside world.
 Uganda's government warning against mesh networks. Proof the tools work.
 Freedom tech signals. Compiled. Published. Open to all.
@@ -64,7 +63,7 @@ Freedom tech signals. Compiled. Published. Open to all.
 
 ### vo-cta.mp3
 ```
-The signal is out there. Find it.
+The agents are live now. Find them by their signals.
 Libertas dot F-G-U dot tech.
 Built by Cypherpunks.
 ```

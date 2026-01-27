@@ -7,7 +7,7 @@
  * Duration: 600 frames (20s).
  *
  * Frame breakdown (scene-relative):
- * - 0-90: "AGENTS ARE LIVE NOW!" title with green glow
+ * - 0-90: "NEW SIGNALS" title with green glow
  * - 90-210: Iran internet blackout card
  * - 210-300: Uganda mesh network warning card (replaces Iran)
  * - 300-390: Bhutan blockchain sovereignty card (replaces Uganda)
@@ -43,7 +43,7 @@ import { GlitchTransition } from '../components/GlitchEffect';
 // TIMING CONSTANTS (scene-relative frames)
 // =============================================================================
 
-/** Title "AGENTS ARE LIVE NOW!" appears */
+/** Title "NEW SIGNALS" appears */
 const TITLE_START = 0;
 const TITLE_DURATION = 90;
 
@@ -96,6 +96,8 @@ interface SignalCard {
   relevance?: number;
   credibility?: number;
   topics: string[];
+  flag: string; // Emoji flag
+  country: string;
 }
 
 // =============================================================================
@@ -113,6 +115,8 @@ const SIGNAL_CARDS: SignalCard[] = [
     relevance: 95,
     credibility: 88,
     topics: ['censorship-resistance', 'comms'],
+    flag: '🇮🇷',
+    country: 'Iran',
   },
   {
     header: 'SIGNAL: UGANDA MESH NETWORK WARNING',
@@ -124,6 +128,8 @@ const SIGNAL_CARDS: SignalCard[] = [
     relevance: 92,
     credibility: 75,
     topics: ['comms', 'bitcoin'],
+    flag: '🇺🇬',
+    country: 'Uganda',
   },
   {
     header: 'SIGNAL: BHUTAN BLOCKCHAIN SOVEREIGNTY',
@@ -132,6 +138,8 @@ const SIGNAL_CARDS: SignalCard[] = [
       '> Bitcoin mining + digital ID',
     ],
     topics: ['sovereignty', 'bitcoin'],
+    flag: '🇧🇹',
+    country: 'Bhutan',
   },
   {
     header: 'SIGNAL: COPYRIGHT AS CENSORSHIP',
@@ -140,6 +148,8 @@ const SIGNAL_CARDS: SignalCard[] = [
       '> Legal frameworks weaponized',
     ],
     topics: ['censorship-resistance'],
+    flag: '🇺🇸',
+    country: 'USA',
   },
 ];
 
@@ -231,7 +241,7 @@ const LiveTitle: React.FC<TitleProps> = ({ progress }) => {
           textAlign: 'center',
         }}
       >
-        AGENTS ARE LIVE NOW!
+        NEW SIGNALS
       </div>
     </AbsoluteFill>
   );
@@ -309,16 +319,27 @@ const SignalCardDisplay: React.FC<SignalCardDisplayProps> = ({
           boxShadow: `0 0 ${glowIntensity}px ${ACCENT_PRIMARY}40`,
         }}
       >
-        {/* Header */}
+        {/* Header with flag */}
         <div
           style={{
-            ...terminalStyle(fontSize + 4),
-            color: FG_PRIMARY,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: compact ? 8 : 12,
             marginBottom: compact ? 8 : 16,
-            letterSpacing: '0.02em',
           }}
         >
-          {card.header}
+          <div
+            style={{
+              ...terminalStyle(fontSize + 4),
+              color: FG_PRIMARY,
+              letterSpacing: '0.02em',
+              flex: 1,
+            }}
+          >
+            {card.header}
+          </div>
+          <span style={{ fontSize: compact ? 36 : 56 }}>{card.flag}</span>
         </div>
 
         {/* Body lines */}
@@ -571,7 +592,7 @@ export const ProofScene: React.FC<ProofSceneProps> = ({ debug = false }) => {
         verticalOffset={height / 3}
       />
 
-      {/* Title: "AGENTS ARE LIVE NOW!" */}
+      {/* Title: "NEW SIGNALS" */}
       <LiveTitle progress={titleProgress} />
 
       {/* Sequential card display with glitch transitions */}
