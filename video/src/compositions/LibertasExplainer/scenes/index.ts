@@ -10,3 +10,6 @@ export type { HookSceneProps } from './Hook';
 
 export { ProblemScene, PROBLEM_TIMING } from './Problem';
 export type { ProblemSceneProps } from './Problem';
+
+export { SolutionScene, SOLUTION_TIMING } from './Solution';
+export type { SolutionSceneProps } from './Solution';
