@@ -15,23 +15,6 @@ Hey, I am working on the Libertas Explainer Video. We are cooking thru the roadm
 
 Foundational setup before creative work begins.
 
-### 0.1 Install Required Dependencies
-
-**Description:** Add Remotion packages needed for transitions, audio, and captions.
-
-**Requirements:**
-- [x] Install `@remotion/transitions` for scene transitions
-- [x] Install `@remotion/captions` for caption support (if needed)
-- [x] Verify Tailwind CSS v4 is working with Remotion
-- [x] Run `npm run dev` to confirm Remotion Studio launches
-
-**Commands:**
-```bash
-npx remotion add @remotion/transitions
-```
-
----
-
 ### 0.2 Configure Composition Settings
 
 **Description:** Update Root.tsx with correct composition configuration.
