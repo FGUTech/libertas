@@ -8,6 +8,7 @@
   "dependencies": {
     "@remotion/captions": "^4.0.410",
     "@remotion/cli": "4.0.410",
+    "@remotion/google-fonts": "4.0.410",
     "@remotion/tailwind-v4": "4.0.410",
     "@remotion/transitions": "^4.0.410",
     "react": "19.2.3",

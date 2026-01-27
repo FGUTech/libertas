@@ -2,20 +2,23 @@
  * Libertas Design System - Typography
  *
  * Font configurations for terminal/hacker aesthetic.
+ * Fonts are loaded via @remotion/google-fonts in utils/fonts.ts
  */
 
+import { fontFamilies } from "./fonts";
+
 // =============================================================================
-// FONT FAMILIES
+// FONT FAMILIES (loaded from Google Fonts)
 // =============================================================================
 
 /** Display headlines, hero text, section titles */
-export const FONT_DISPLAY = 'Space Grotesk';
+export const FONT_DISPLAY = fontFamilies.display;
 
 /** Readable body copy */
-export const FONT_BODY = 'Inter';
+export const FONT_BODY = fontFamilies.body;
 
 /** Terminal sequences, commands, code */
-export const FONT_MONO = 'JetBrains Mono';
+export const FONT_MONO = fontFamilies.mono;
 
 // =============================================================================
 // FONT WEIGHTS
@@ -30,37 +33,34 @@ export const WEIGHT_BOLD = 700;
 // =============================================================================
 
 export interface FontConfig {
+  /** Font family string (includes fallbacks from @remotion/google-fonts) */
   family: string;
+  /** Font weight */
   weight: number;
-  fallback: string;
 }
 
 /** Display headlines - Space Grotesk Bold */
 export const displayFont: FontConfig = {
   family: FONT_DISPLAY,
   weight: WEIGHT_BOLD,
-  fallback: 'sans-serif',
 };
 
 /** Body text - Inter Regular */
 export const bodyFont: FontConfig = {
   family: FONT_BODY,
   weight: WEIGHT_REGULAR,
-  fallback: 'sans-serif',
 };
 
 /** Terminal/code - JetBrains Mono Regular */
 export const terminalFont: FontConfig = {
   family: FONT_MONO,
   weight: WEIGHT_REGULAR,
-  fallback: 'monospace',
 };
 
 /** Data labels - JetBrains Mono Medium */
 export const dataFont: FontConfig = {
   family: FONT_MONO,
   weight: WEIGHT_MEDIUM,
-  fallback: 'monospace',
 };
 
 // =============================================================================
@@ -108,10 +108,11 @@ export const captionStyle = {
 // =============================================================================
 
 /**
- * Generate CSS font-family string with fallback
+ * Get font-family string from config
+ * (already includes fallbacks from @remotion/google-fonts)
  */
 export function fontFamily(config: FontConfig): string {
-  return `"${config.family}", ${config.fallback}`;
+  return config.family;
 }
 
 /**
@@ -119,7 +120,7 @@ export function fontFamily(config: FontConfig): string {
  */
 export function fontStyle(config: FontConfig, size: number = SIZE_BODY) {
   return {
-    fontFamily: fontFamily(config),
+    fontFamily: config.family,
     fontWeight: config.weight,
     fontSize: size,
   };

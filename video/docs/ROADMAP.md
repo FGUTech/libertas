@@ -15,29 +15,15 @@ Hey, I am working on the Libertas Explainer Video. We are cooking thru the roadm
 
 Foundational setup before creative work begins.
 
-### 0.4 Import Design System
-
-**Description:** Create utility file with Libertas color palette and typography.
-
-**Requirements:**
-- [ ] Create `src/utils/colors.ts` with all CSS variables as constants
-- [ ] Create `src/utils/typography.ts` with font configurations
-- [ ] Create `src/utils/timing.ts` with common animation helpers
-- [ ] Document spring configs: smooth, snappy, bouncy
-
-**Reference:** `docs/SPEC.md` - Visual Identity section
-
----
-
-### 0.5 Load Custom Fonts
+### 0.5 Load Custom Fonts ✓
 
 **Description:** Configure Inter, JetBrains Mono, and Space Grotesk fonts.
 
 **Requirements:**
-- [ ] Download font files (or use Google Fonts static)
-- [ ] Configure font loading in Remotion
-- [ ] Test font rendering in preview
-- [ ] Create font family constants
+- [x] Download font files (or use Google Fonts static) - Using @remotion/google-fonts
+- [x] Configure font loading in Remotion - `src/utils/fonts.ts`
+- [x] Test font rendering in preview - Composition shows all fonts
+- [x] Create font family constants - `fontFamilies` export with display/body/mono
 
 **Reference:** Remotion skill `rules/fonts.md`
 
@@ -522,8 +508,8 @@ npx remotion render LibertasExplainer out/libertas-explainer-final.mp4 \
 
 | Phase | Status | Notes |
 |-------|--------|-------|
-| Phase 0: Setup | 60% | 0.1 ✓, 0.2 ✓, 0.3 ✓ |
-| Phase 1: Components | 0% | Depends on 0.x |
+| Phase 0: Setup | 100% | 0.1 ✓, 0.2 ✓, 0.3 ✓, 0.4 ✓, 0.5 ✓ |
+| Phase 1: Components | 0% | Ready to start |
 | Phase 2: Audio | 0% | Can parallel with Phase 1 |
 | Phase 3: Scenes | 0% | Depends on Phase 1 |
 | Phase 4: Assembly | 0% | Depends on Phase 3 |
