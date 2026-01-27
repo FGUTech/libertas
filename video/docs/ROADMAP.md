@@ -15,38 +15,18 @@ Hey, I am working on the Libertas Explainer Video. We are cooking thru the roadm
 
 Reusable visual components used across multiple scenes.
 
-### 1.4 Glitch Effect Component ✓
-
-**Description:** RGB separation and slice displacement for transitions.
-
-**Requirements:**
-- [x] Create `src/compositions/LibertasExplainer/components/GlitchEffect.tsx`
-- [x] Implement RGB channel separation (red/cyan offset)
-- [x] Implement horizontal slice displacement
-- [x] Support intensity parameter
-- [x] Duration: typically 3-6 frames (0.1-0.2s)
-- [x] Can wrap children or apply to composition
-
-**Delivered:**
-- `GlitchEffect` - Main wrapper component with RGB split and slice displacement
-- `GlitchTransition` - Auto-activates based on frame range with eased intensity
-- `useGlitchTiming` - Hook for coordinating multiple glitch triggers
-- `glitchPresets` - Presets: subtle, transition, heavy, vhs, rgbOnly, slicesOnly
-
----
-
 ### 1.5 Terminal Card Component
 
 **Description:** Box-drawing character card for displaying content.
 
 **Requirements:**
-- [ ] Create `src/compositions/LibertasExplainer/components/TerminalCard.tsx`
-- [ ] Use Unicode box drawing: ┌ ─ ┐ │ └ ┘
-- [ ] Support header text
-- [ ] Support body content (array of lines)
-- [ ] Support footer badges (relevance, credibility scores)
-- [ ] Support accent border color (default green, optional red/amber)
-- [ ] Entry animation: slide + fade
+- [x] Create `src/compositions/LibertasExplainer/components/TerminalCard.tsx`
+- [x] Use Unicode box drawing: ┌ ─ ┐ │ └ ┘
+- [x] Support header text
+- [x] Support body content (array of lines)
+- [x] Support footer badges (relevance, credibility scores)
+- [x] Support accent border color (default green, optional red/amber)
+- [x] Entry animation: slide + fade
 
 ---
 
@@ -433,7 +413,7 @@ npx remotion render LibertasExplainer out/libertas-explainer-final.mp4 \
 | Phase | Status | Notes |
 |-------|--------|-------|
 | Phase 0: Setup | 100% | 0.1 ✓, 0.2 ✓, 0.3 ✓, 0.4 ✓, 0.5 ✓ |
-| Phase 1: Components | 57% | 1.1 ✓ TypewriterText, 1.2 ✓ MatrixRain, 1.3 ✓ Scanlines, 1.4 ✓ GlitchEffect |
+| Phase 1: Components | 71% | 1.1 ✓ TypewriterText, 1.2 ✓ MatrixRain, 1.3 ✓ Scanlines, 1.4 ✓ GlitchEffect, 1.5 ✓ TerminalCard |
 | Phase 2: Audio | 0% | Can parallel with Phase 1 |
 | Phase 3: Scenes | 0% | Depends on Phase 1 |
 | Phase 4: Assembly | 0% | Depends on Phase 3 |
