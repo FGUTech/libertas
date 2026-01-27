@@ -16,3 +16,6 @@ export type { SolutionSceneProps } from './Solution';
 
 export { WorkflowScene, WORKFLOW_TIMING } from './Workflow';
 export type { WorkflowSceneProps } from './Workflow';
+
+export { ProofScene, PROOF_TIMING } from './Proof';
+export type { ProofSceneProps } from './Proof';

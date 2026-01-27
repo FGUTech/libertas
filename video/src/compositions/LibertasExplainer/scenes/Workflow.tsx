@@ -3,20 +3,24 @@
  *
  * Animated workflow pipeline demonstration showing how Libertas processes data.
  * Shows the full agentic pipeline from sources to publish/digest/ideas.
- * Duration: 900 frames (30s).
+ * Duration: 725 frames (24.17s).
  *
  * Frame breakdown (scene-relative):
  * - 0-120: SOURCES node with X-pattern input icons (RSS, Web, Submit, Users)
- * - 120-200: CLASSIFY node with classification output panel
+ *          Dotted orange lines connect icons to SOURCES node center (behind node)
+ * - 120-200: CLASSIFY node with YAML-formatted classification output panel
  * - 200-280: SUMMARIZE node with insight card preview
- * - 280-360: PUBLISH node
- * - 360-480: DIGEST node (amber accent)
- * - 480-650: IDEAS node with GitHub icon
- * - 650-810: Full pipeline with continuous data flow animation
- * - 810-900: Logo morph transition (uses actual logo image)
+ * - 280-360: PUBLISH node - continuous data flow starts after this
+ * - 360-480: DIGEST node (amber accent) - below PUBLISH
+ *          Continuous doc flow animation (📄 icons) instead of arrow
+ *          Shows "RSS Feeds", "JSON Feeds", "Markdowns" labels
+ * - 480-650: IDEAS node with gold glow effect - above PUBLISH
+ *          Animation: golden glow backdrop grows like lightbulb moment
+ *          Icons around SOURCES start spinning
+ * - 650-725: Logo morph on TOP of pipeline (no fade) with "LIBERTAS" text stagger
  */
 
-import React, { useMemo } from 'react';
+import React from 'react';
 import {
   useCurrentFrame,
   useVideoConfig,
@@ -56,14 +60,11 @@ const DIGEST_START = 360;
 /** IDEAS node */
 const IDEAS_START = 480;
 
-/** Full pipeline continuous animation */
-const FULL_PIPELINE_START = 650;
+/** Logo morph transition (2.5s = 75 frames) - no separate full pipeline section */
+const LOGO_MORPH_START = 650;
 
-/** Logo morph transition */
-const LOGO_MORPH_START = 810;
-
-/** Total scene duration */
-const SCENE_DURATION = 900;
+/** Total scene duration (shorter without separate full pipeline section) */
+const SCENE_DURATION = 725;
 
 // =============================================================================
 // AUDIO PATHS
@@ -91,16 +92,16 @@ const CENTER_Y = CANVAS_HEIGHT / 2 - 40;
 /** Node spacing for horizontal layout - 4 nodes in a row */
 const HORIZONTAL_SPACING = 420;
 
-/** Node positions - 4 main nodes in horizontal line, 2 secondary below */
+/** Node positions - 4 main nodes in horizontal line, IDEAS above PUBLISH, DIGEST below PUBLISH */
 const POSITIONS = {
   // Main row: Sources → Classify → Summarize → Publish
-  sources: { x: CENTER_X - HORIZONTAL_SPACING * 1.5, y: CENTER_Y - 80 },
-  classify: { x: CENTER_X - HORIZONTAL_SPACING * 0.5, y: CENTER_Y - 80 },
-  summarize: { x: CENTER_X + HORIZONTAL_SPACING * 0.5, y: CENTER_Y - 80 },
-  publish: { x: CENTER_X + HORIZONTAL_SPACING * 1.5, y: CENTER_Y - 80 },
-  // Secondary row: Digest and Ideas
-  digest: { x: CENTER_X - HORIZONTAL_SPACING * 0.5, y: CENTER_Y + 200 },
-  ideas: { x: CENTER_X + HORIZONTAL_SPACING * 0.5, y: CENTER_Y + 200 },
+  sources: { x: CENTER_X - HORIZONTAL_SPACING * 1.5, y: CENTER_Y },
+  classify: { x: CENTER_X - HORIZONTAL_SPACING * 0.5, y: CENTER_Y },
+  summarize: { x: CENTER_X + HORIZONTAL_SPACING * 0.5, y: CENTER_Y },
+  publish: { x: CENTER_X + HORIZONTAL_SPACING * 1.5, y: CENTER_Y },
+  // IDEAS above PUBLISH, DIGEST below PUBLISH
+  ideas: { x: CENTER_X + HORIZONTAL_SPACING * 1.5, y: CENTER_Y - 200 },
+  digest: { x: CENTER_X + HORIZONTAL_SPACING * 1.5, y: CENTER_Y + 200 },
 } as const;
 
 /** Node dimensions - 1.8x scale (10% smaller than 2x) */
@@ -312,72 +313,6 @@ const FlowArrow: React.FC<ArrowProps> = ({
 };
 
 // =============================================================================
-// BRANCHING ARROW (for vertical connections)
-// =============================================================================
-
-interface BranchArrowProps {
-  from: { x: number; y: number };
-  to: { x: number; y: number };
-  progress: number;
-  color?: string;
-  direction?: 'down' | 'up';
-}
-
-const BranchArrow: React.FC<BranchArrowProps> = ({
-  from,
-  to,
-  progress,
-  color = ACCENT_PRIMARY,
-  direction = 'down',
-}) => {
-  const pathLength = Math.abs(to.y - from.y) + Math.abs(to.x - from.x);
-  const dashOffset = pathLength * (1 - progress);
-
-  // Create an L-shaped path
-  const midY = from.y + (to.y - from.y) * 0.5;
-  const path = `M ${from.x} ${from.y} L ${from.x} ${midY} L ${to.x} ${midY} L ${to.x} ${to.y}`;
-
-  return (
-    <svg
-      style={{
-        position: 'absolute',
-        left: 0,
-        top: 0,
-        width: '100%',
-        height: '100%',
-        pointerEvents: 'none',
-      }}
-      viewBox={`0 0 ${CANVAS_WIDTH} ${CANVAS_HEIGHT}`}
-      preserveAspectRatio="xMidYMid slice"
-    >
-      <path
-        d={path}
-        fill="none"
-        stroke={color}
-        strokeWidth={5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeDasharray={pathLength}
-        strokeDashoffset={dashOffset}
-      />
-
-      {/* Arrowhead pointing down */}
-      {progress > 0.8 && (
-        <g
-          transform={`translate(${to.x}, ${to.y}) rotate(${direction === 'down' ? 90 : -90})`}
-          opacity={interpolate(progress, [0.8, 1], [0, 1])}
-        >
-          <polygon
-            points="0,0 -20,-10 -20,10"
-            fill={color}
-          />
-        </g>
-      )}
-    </svg>
-  );
-};
-
-// =============================================================================
 // DATA PACKET COMPONENT - 1.8X SCALED
 // =============================================================================
 
@@ -422,7 +357,7 @@ const DataPacket: React.FC<DataPacketProps> = ({
 };
 
 // =============================================================================
-// X-PATTERN ICONS (for SOURCES node) - 2 on top, 2 on bottom
+// X-PATTERN ICONS (for SOURCES node) - 2 on top, 2 on bottom with dotted lines
 // =============================================================================
 
 interface XPatternIconsProps {
@@ -432,43 +367,103 @@ interface XPatternIconsProps {
   continuous?: boolean;
 }
 
+/** Dotted lines connecting icons to SOURCES node center (rendered behind node) */
+const SourceConnectorLines: React.FC<{
+  centerX: number;
+  centerY: number;
+  iconPositions: Array<{ x: number; y: number }>;
+  progress: number;
+}> = ({ centerX, centerY, iconPositions, progress }) => {
+  if (progress <= 0) return null;
+
+  const lineOpacity = interpolate(progress, [0, 0.5, 1], [0, 0.3, 0.6]);
+
+  return (
+    <svg
+      style={{
+        position: 'absolute',
+        left: 0,
+        top: 0,
+        width: '100%',
+        height: '100%',
+        pointerEvents: 'none',
+        zIndex: 0, // Behind node
+      }}
+      viewBox={`0 0 ${CANVAS_WIDTH} ${CANVAS_HEIGHT}`}
+      preserveAspectRatio="xMidYMid slice"
+    >
+      {iconPositions.map((pos, index) => (
+        <line
+          key={`connector-${index}`}
+          x1={pos.x}
+          y1={pos.y}
+          x2={centerX}
+          y2={centerY}
+          stroke={ACCENT_AMBER}
+          strokeWidth={2}
+          strokeDasharray="8 6"
+          opacity={lineOpacity}
+        />
+      ))}
+    </svg>
+  );
+};
+
+/** Helper to calculate icon positions for both components */
+const useIconPositions = (centerX: number, centerY: number, continuous: boolean, progress: number) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+
+  const icons = [
+    { icon: '📡', label: 'RSS', baseAngle: -135 }, // top-left
+    { icon: '🌐', label: 'Web', baseAngle: -45 },  // top-right
+    { icon: '📥', label: 'Submit', baseAngle: 135 }, // bottom-left
+    { icon: '👤', label: 'Users', baseAngle: 45 },   // bottom-right
+  ];
+
+  const radius = 140;
+  // Spin animation once icons are fully visible (full rotation over 4 seconds for smoother motion)
+  const spinAngle = continuous && progress >= 1 ? (frame / fps) * (360 / 4) : 0;
+
+  const getPosition = (baseAngle: number) => {
+    const angleRad = ((baseAngle + spinAngle) * Math.PI) / 180;
+    return {
+      x: centerX + Math.cos(angleRad) * radius,
+      y: centerY + Math.sin(angleRad) * radius,
+    };
+  };
+
+  return { icons, getPosition };
+};
+
+/** Just the connector lines - rendered BEFORE SOURCES node */
+const SourceConnectorLinesWrapper: React.FC<XPatternIconsProps> = ({
+  centerX,
+  centerY,
+  progress,
+  continuous = false,
+}) => {
+  const { icons, getPosition } = useIconPositions(centerX, centerY, continuous, progress);
+  const iconPositions = icons.map((item) => getPosition(item.baseAngle));
+
+  return (
+    <SourceConnectorLines
+      centerX={centerX}
+      centerY={centerY}
+      iconPositions={iconPositions}
+      progress={progress}
+    />
+  );
+};
+
+/** Just the icons - rendered AFTER SOURCES node */
 const XPatternIcons: React.FC<XPatternIconsProps> = ({
   centerX,
   centerY,
   progress,
   continuous = false,
 }) => {
-  const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
-
-  // 4 icons in X/square pattern: 2 on top, 2 on bottom
-  const icons = [
-    { icon: '📡', label: 'RSS', position: 'top-left' },
-    { icon: '🌐', label: 'Web', position: 'top-right' },
-    { icon: '📥', label: 'Submit', position: 'bottom-left' },
-    { icon: '👤', label: 'Users', position: 'bottom-right' },
-  ];
-
-  const offsetX = 100; // Horizontal offset from center
-  const offsetY = 75;  // Vertical offset from center
-
-  // Subtle floating animation when continuous
-  const floatOffset = continuous ? Math.sin((frame / fps) * Math.PI * 0.8) * 4 : 0;
-
-  const getPosition = (position: string) => {
-    switch (position) {
-      case 'top-left':
-        return { x: centerX - offsetX, y: centerY - offsetY - NODE_HEIGHT / 2 - 30 + floatOffset };
-      case 'top-right':
-        return { x: centerX + offsetX, y: centerY - offsetY - NODE_HEIGHT / 2 - 30 - floatOffset };
-      case 'bottom-left':
-        return { x: centerX - offsetX, y: centerY + offsetY + NODE_HEIGHT / 2 + 30 - floatOffset };
-      case 'bottom-right':
-        return { x: centerX + offsetX, y: centerY + offsetY + NODE_HEIGHT / 2 + 30 + floatOffset };
-      default:
-        return { x: centerX, y: centerY };
-    }
-  };
+  const { icons, getPosition } = useIconPositions(centerX, centerY, continuous, progress);
 
   return (
     <>
@@ -477,7 +472,7 @@ const XPatternIcons: React.FC<XPatternIconsProps> = ({
 
         if (entryProgress <= 0) return null;
 
-        const pos = getPosition(item.position);
+        const pos = getPosition(item.baseAngle);
         const opacity = interpolate(entryProgress, [0, 0.5, 1], [0, 0.5, 1]);
         const scale = interpolate(entryProgress, [0, 1], [0.5, 1]);
 
@@ -556,11 +551,15 @@ const ClassifyOutput: React.FC<ClassifyOutputProps> = ({ progress }) => {
         <div style={{ ...terminalStyle(18), color: FG_TERTIARY, marginBottom: 10 }}>
           classification_output:
         </div>
-        <div style={{ ...terminalStyle(20), color: FG_SECONDARY, lineHeight: 1.7 }}>
-          <div>topics: [<span style={{ color: ACCENT_PRIMARY }}>comms</span>, <span style={{ color: ACCENT_PRIMARY }}>censorship</span>]</div>
+        <div style={{ ...terminalStyle(20), color: FG_SECONDARY, lineHeight: 1.8 }}>
+          {/* YAML format - no brackets */}
+          <div>topics:</div>
+          <div style={{ paddingLeft: 16 }}>- <span style={{ color: ACCENT_PRIMARY }}>comms</span></div>
+          <div style={{ paddingLeft: 16 }}>- <span style={{ color: ACCENT_PRIMARY }}>censorship</span></div>
           <div>relevance: <span style={{ color: ACCENT_PRIMARY }}>{relevanceScore}</span></div>
           <div>credibility: <span style={{ color: ACCENT_PRIMARY }}>{credibilityScore}</span></div>
-          <div>geo: [<span style={{ color: ACCENT_PRIMARY }}>Uganda</span>]</div>
+          <div>geo:</div>
+          <div style={{ paddingLeft: 16 }}>- <span style={{ color: ACCENT_PRIMARY }}>Uganda</span></div>
         </div>
       </div>
     </div>
@@ -634,7 +633,57 @@ const SummarizeOutput: React.FC<SummarizeOutputProps> = ({ progress }) => {
 };
 
 // =============================================================================
-// IDEAS OUTPUT PANEL - 1.8X SCALED
+// DIGEST OUTPUT PANEL - Shows feed types below DIGEST node
+// =============================================================================
+
+interface DigestOutputProps {
+  progress: number;
+}
+
+const DigestOutput: React.FC<DigestOutputProps> = ({ progress }) => {
+  if (progress <= 0) return null;
+
+  const feedTypes = ['RSS Feeds', 'JSON Feeds', 'Markdowns'];
+
+  return (
+    <div
+      style={{
+        position: 'absolute',
+        left: POSITIONS.digest.x - 160,
+        top: POSITIONS.digest.y + NODE_HEIGHT / 2 + 20,
+        width: 320,
+        display: 'flex',
+        justifyContent: 'center',
+        gap: 24,
+      }}
+    >
+      {feedTypes.map((feed, index) => {
+        const itemProgress = interpolate(
+          progress,
+          [index * 0.2, index * 0.2 + 0.4],
+          [0, 1],
+          { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }
+        );
+        return (
+          <div
+            key={feed}
+            style={{
+              ...terminalStyle(14),
+              color: ACCENT_AMBER,
+              opacity: itemProgress,
+              transform: `translateY(${(1 - itemProgress) * 10}px)`,
+            }}
+          >
+            {feed}
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+// =============================================================================
+// IDEAS OUTPUT PANEL - 1.8X SCALED (positioned to the left of IDEAS node)
 // =============================================================================
 
 interface IdeasOutputProps {
@@ -653,12 +702,12 @@ const IdeasOutput: React.FC<IdeasOutputProps> = ({ progress }) => {
     <div
       style={{
         position: 'absolute',
-        left: POSITIONS.ideas.x - 160,
-        top: POSITIONS.ideas.y + NODE_HEIGHT / 2 + 25,
+        left: POSITIONS.ideas.x - NODE_WIDTH / 2 - 340,
+        top: POSITIONS.ideas.y - 60,
         width: 320,
         opacity,
         transform: `scale(${scale})`,
-        transformOrigin: 'top center',
+        transformOrigin: 'center right',
       }}
     >
       <div
@@ -685,21 +734,122 @@ const IdeasOutput: React.FC<IdeasOutputProps> = ({ progress }) => {
 };
 
 // =============================================================================
-// LIBERTAS LOGO (using actual logo image)
+// GOLD GLOW EFFECT (for IDEAS lightbulb moment)
+// =============================================================================
+
+interface GoldGlowProps {
+  x: number;
+  y: number;
+  progress: number;
+}
+
+const ACCENT_GOLD = '#ffd700';
+
+const GoldGlowEffect: React.FC<GoldGlowProps> = ({ x, y, progress }) => {
+  if (progress <= 0) return null;
+
+  // Glow grows then fades as node appears
+  const glowSize = interpolate(progress, [0, 0.5, 1], [20, 200, 80]);
+  const glowOpacity = interpolate(progress, [0, 0.3, 0.7, 1], [0, 0.8, 0.6, 0.3]);
+
+  return (
+    <div
+      style={{
+        position: 'absolute',
+        left: x - glowSize,
+        top: y - glowSize,
+        width: glowSize * 2,
+        height: glowSize * 2,
+        borderRadius: '50%',
+        background: `radial-gradient(circle, ${ACCENT_GOLD}60 0%, ${ACCENT_GOLD}20 40%, transparent 70%)`,
+        opacity: glowOpacity,
+        pointerEvents: 'none',
+      }}
+    />
+  );
+};
+
+// =============================================================================
+// DIGEST COMPILATION ANIMATION (published sources flowing into digest - continuous)
+// =============================================================================
+
+interface DigestCompilationProps {
+  active: boolean;
+}
+
+const DigestCompilation: React.FC<DigestCompilationProps> = ({ active }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+
+  if (!active) return null;
+
+  // Multiple small document icons flowing from Publish to Digest in a continuous loop
+  const docCount = 5;
+  const cycleDuration = 1.5; // seconds for full cycle
+  const cycleFrames = cycleDuration * fps;
+
+  const docs = Array.from({ length: docCount }).map((_, i) => {
+    // Stagger each document in the cycle
+    const phaseOffset = (i / docCount) * cycleFrames;
+    const adjustedFrame = (frame + phaseOffset) % cycleFrames;
+    const docProgress = adjustedFrame / cycleFrames;
+
+    // Path from Publish to Digest with some horizontal spread
+    const spreadOffset = (i - 2) * 25;
+    const startX = POSITIONS.publish.x + spreadOffset;
+    const startY = POSITIONS.publish.y + NODE_HEIGHT / 2;
+    const endX = POSITIONS.digest.x;
+    const endY = POSITIONS.digest.y - NODE_HEIGHT / 2;
+
+    const x = startX + (endX - startX) * docProgress;
+    const y = startY + (endY - startY) * docProgress;
+    const opacity = interpolate(docProgress, [0, 0.15, 0.85, 1], [0, 1, 1, 0]);
+    const scale = interpolate(docProgress, [0, 0.3, 0.7, 1], [0.4, 1, 1, 0.4]);
+
+    return (
+      <div
+        key={`doc-${i}`}
+        style={{
+          position: 'absolute',
+          left: x - 12,
+          top: y - 12,
+          fontSize: 18,
+          opacity,
+          transform: `scale(${scale})`,
+        }}
+      >
+        📄
+      </div>
+    );
+  });
+
+  return <>{docs}</>;
+};
+
+// =============================================================================
+// LIBERTAS LOGO (using actual logo image) with staggered text
 // =============================================================================
 
 interface LogoProps {
   opacity: number;
   scale: number;
+  textProgress: number;
 }
 
-const LibertasLogo: React.FC<LogoProps> = ({ opacity, scale }) => {
+const LibertasLogo: React.FC<LogoProps> = ({ opacity, scale, textProgress }) => {
   if (opacity <= 0) return null;
+
+  const letters = 'LIBERTAS'.split('');
+  // Calculate delay so last letter finishes exactly at textProgress = 1.0
+  // Formula: (letters.length - 1) * letterDelay + animDuration = 1.0
+  const animDuration = 0.2; // Time for each letter to animate
+  const letterDelay = (1 - animDuration) / (letters.length - 1); // ~0.114
 
   return (
     <AbsoluteFill
       style={{
         display: 'flex',
+        flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
         opacity,
@@ -714,6 +864,46 @@ const LibertasLogo: React.FC<LogoProps> = ({ opacity, scale }) => {
           filter: `drop-shadow(0 0 40px ${ACCENT_PRIMARY}) drop-shadow(0 0 80px ${ACCENT_PRIMARY}60)`,
         }}
       />
+
+      {/* Staggered LIBERTAS text */}
+      <div
+        style={{
+          display: 'flex',
+          gap: 8,
+          marginTop: 30,
+        }}
+      >
+        {letters.map((letter, index) => {
+          const letterProgress = interpolate(
+            textProgress,
+            [index * letterDelay, index * letterDelay + animDuration],
+            [0, 1],
+            { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }
+          );
+
+          const letterOpacity = letterProgress;
+          const letterScale = interpolate(letterProgress, [0, 1], [0.5, 1]);
+          const glowIntensity = interpolate(letterProgress, [0, 0.5, 1], [0, 30, 15]);
+
+          return (
+            <span
+              key={`letter-${index}`}
+              style={{
+                fontFamily: fontFamilies.display,
+                fontSize: 72,
+                fontWeight: 700,
+                color: ACCENT_PRIMARY,
+                opacity: letterOpacity,
+                transform: `scale(${letterScale})`,
+                textShadow: `0 0 ${glowIntensity}px ${ACCENT_PRIMARY}, 0 0 ${glowIntensity * 2}px ${ACCENT_PRIMARY}60`,
+                display: 'inline-block',
+              }}
+            >
+              {letter}
+            </span>
+          );
+        })}
+      </div>
     </AbsoluteFill>
   );
 };
@@ -724,54 +914,70 @@ const LibertasLogo: React.FC<LogoProps> = ({ opacity, scale }) => {
 
 interface ContinuousFlowProps {
   active: boolean;
+  ideasActive: boolean; // Only show IDEAS path after IDEAS phase starts
 }
 
-const ContinuousFlow: React.FC<ContinuousFlowProps> = ({ active }) => {
+const ContinuousFlow: React.FC<ContinuousFlowProps> = ({ active, ideasActive }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  const packetCount = 8;
+  if (!active) return null;
+
+  const packetCount = 6; // Reduced since IDEAS path is conditional
   const cycleDuration = 2;
   const cycleFrames = cycleDuration * fps;
 
-  const packets = useMemo(() => {
-    const paths = [
-      // Main horizontal pipeline
-      { from: POSITIONS.sources, to: POSITIONS.classify, color: ACCENT_PRIMARY },
-      { from: POSITIONS.classify, to: POSITIONS.summarize, color: ACCENT_PRIMARY },
-      { from: POSITIONS.summarize, to: POSITIONS.publish, color: ACCENT_PRIMARY },
-      // Vertical to secondary row
-      { from: POSITIONS.classify, to: POSITIONS.digest, color: ACCENT_AMBER, vertical: true },
-      { from: POSITIONS.summarize, to: POSITIONS.ideas, color: ACCENT_PRIMARY, vertical: true },
-    ];
+  // Main horizontal pipeline paths (always active when flow is active)
+  const mainPaths = [
+    { from: POSITIONS.sources, to: POSITIONS.classify, color: ACCENT_PRIMARY, direction: 'right' as const },
+    { from: POSITIONS.classify, to: POSITIONS.summarize, color: ACCENT_PRIMARY, direction: 'right' as const },
+    { from: POSITIONS.summarize, to: POSITIONS.publish, color: ACCENT_PRIMARY, direction: 'right' as const },
+  ];
 
-    return Array.from({ length: packetCount }).map((_, i) => {
-      const pathIndex = i % paths.length;
-      const path = paths[pathIndex];
-      const phaseOffset = (i / packetCount) * cycleFrames;
-      const adjustedFrame = (frame + phaseOffset) % cycleFrames;
-      const progress = adjustedFrame / cycleFrames;
+  // IDEAS path only active after IDEAS phase
+  const ideasPath = { from: POSITIONS.publish, to: POSITIONS.ideas, color: ACCENT_GOLD, direction: 'up' as const };
 
-      const fromX = path.from.x + (path.vertical ? 0 : NODE_WIDTH / 2);
-      const fromY = path.from.y + (path.vertical ? NODE_HEIGHT / 2 : 0);
-      const toX = path.to.x - (path.vertical ? 0 : NODE_WIDTH / 2);
-      const toY = path.to.y - (path.vertical ? NODE_HEIGHT / 2 : 0);
+  const mainPackets = Array.from({ length: packetCount }).map((_, i) => {
+    const pathIndex = i % mainPaths.length;
+    const path = mainPaths[pathIndex];
+    const phaseOffset = (i / packetCount) * cycleFrames;
+    const adjustedFrame = (frame + phaseOffset) % cycleFrames;
+    const progress = adjustedFrame / cycleFrames;
 
-      return {
-        from: { x: fromX, y: fromY },
-        to: { x: toX, y: toY },
-        color: path.color,
-        progress,
-        key: `packet-${i}`,
-      };
-    });
-  }, [frame, cycleFrames]);
+    const fromX = path.from.x + NODE_WIDTH / 2;
+    const fromY = path.from.y;
+    const toX = path.to.x - NODE_WIDTH / 2;
+    const toY = path.to.y;
 
-  if (!active) return null;
+    return {
+      from: { x: fromX, y: fromY },
+      to: { x: toX, y: toY },
+      color: path.color,
+      progress,
+      key: `packet-${i}`,
+    };
+  });
+
+  // IDEAS packets (only when ideasActive)
+  const ideasPackets = ideasActive ? Array.from({ length: 2 }).map((_, i) => {
+    const phaseOffset = (i / 2) * cycleFrames;
+    const adjustedFrame = (frame + phaseOffset) % cycleFrames;
+    const progress = adjustedFrame / cycleFrames;
+
+    return {
+      from: { x: ideasPath.from.x, y: ideasPath.from.y - NODE_HEIGHT / 2 },
+      to: { x: ideasPath.to.x, y: ideasPath.to.y + NODE_HEIGHT / 2 },
+      color: ideasPath.color,
+      progress,
+      key: `ideas-packet-${i}`,
+    };
+  }) : [];
+
+  const allPackets = [...mainPackets, ...ideasPackets];
 
   return (
     <>
-      {packets.map((packet) => (
+      {allPackets.map((packet) => (
         <DataPacket
           key={packet.key}
           from={packet.from}
@@ -862,13 +1068,7 @@ export const WorkflowScene: React.FC<WorkflowSceneProps> = ({ debug = false }) =
     config: { damping: 15, stiffness: 80 },
   });
 
-  // Digest node (360-480)
-  const digestArrowProgress = interpolate(
-    frame,
-    [DIGEST_START, DIGEST_START + 45],
-    [0, 1],
-    { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }
-  );
+  // Digest node (360-480) - no arrow, uses continuous doc flow instead
   const digestNodeProgress = spring({
     frame: Math.max(0, frame - DIGEST_START - 35),
     fps,
@@ -894,22 +1094,41 @@ export const WorkflowScene: React.FC<WorkflowSceneProps> = ({ debug = false }) =
     { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }
   );
 
-  // Full pipeline mode (650-810)
-  const isFullPipeline = frame >= FULL_PIPELINE_START && frame < LOGO_MORPH_START;
+  // Continuous flow starts once PUBLISH node is revealed (after frame 320 or so)
+  const continuousFlowActive = frame >= PUBLISH_START + 40;
 
-  // Logo morph (810-900)
+  // Digest compilation (continuous docs flowing) - active once DIGEST node appears
+  const digestCompilationActive = frame >= DIGEST_START + 50;
+
+  // Digest output labels progress
+  const digestOutputProgress = interpolate(
+    frame,
+    [DIGEST_START + 50, DIGEST_START + 100],
+    [0, 1],
+    { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }
+  );
+
+  // Ideas gold glow effect (grows before node appears)
+  const ideasGlowProgress = interpolate(
+    frame,
+    [IDEAS_START - 15, IDEAS_START + 60],
+    [0, 1],
+    { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }
+  );
+
+  // Logo morph (650-725) - 2.5s = 75 frames - appears ON TOP of pipeline
   const logoProgress = interpolate(
     frame,
-    [LOGO_MORPH_START, LOGO_MORPH_START + 60],
+    [LOGO_MORPH_START, LOGO_MORPH_START + 45],
     [0, 1],
     { extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.quad) }
   );
 
-  // Pipeline fade out during logo morph
-  const pipelineOpacity = interpolate(
+  // LIBERTAS text stagger (starts slightly after logo, runs for 2s = 60 frames)
+  const textProgress = interpolate(
     frame,
-    [LOGO_MORPH_START, LOGO_MORPH_START + 40],
-    [1, 0],
+    [LOGO_MORPH_START + 15, LOGO_MORPH_START + 75],
+    [0, 1],
     { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }
   );
 
@@ -939,8 +1158,8 @@ export const WorkflowScene: React.FC<WorkflowSceneProps> = ({ debug = false }) =
         verticalOffset={height / 3}
       />
 
-      {/* Pipeline container */}
-      <AbsoluteFill style={{ opacity: pipelineOpacity }}>
+      {/* Pipeline container - stays visible during logo morph */}
+      <AbsoluteFill>
         {/* === ARROWS (rendered first, behind nodes) === */}
 
         {/* Sources → Classify */}
@@ -964,24 +1183,25 @@ export const WorkflowScene: React.FC<WorkflowSceneProps> = ({ debug = false }) =
           progress={publishArrowProgress}
         />
 
-        {/* Classify → Digest (vertical down, amber) */}
-        <BranchArrow
-          from={{ x: POSITIONS.classify.x, y: POSITIONS.classify.y + NODE_HEIGHT / 2 }}
-          to={{ x: POSITIONS.digest.x, y: POSITIONS.digest.y - NODE_HEIGHT / 2 }}
-          progress={digestArrowProgress}
-          color={ACCENT_AMBER}
-          direction="down"
-        />
+        {/* Publish → Digest connection is handled by continuous doc flow animation */}
 
-        {/* Summarize → Ideas (vertical down, dashed) */}
+        {/* Publish → Ideas (vertical up, with gold glow) */}
         <FlowArrow
-          from={{ x: POSITIONS.summarize.x, y: POSITIONS.summarize.y + NODE_HEIGHT / 2 }}
-          to={{ x: POSITIONS.ideas.x, y: POSITIONS.ideas.y - NODE_HEIGHT / 2 }}
+          from={{ x: POSITIONS.publish.x, y: POSITIONS.publish.y - NODE_HEIGHT / 2 }}
+          to={{ x: POSITIONS.ideas.x, y: POSITIONS.ideas.y + NODE_HEIGHT / 2 }}
           progress={ideasArrowProgress}
-          dashed
+          color={ACCENT_GOLD}
         />
 
         {/* === NODES === */}
+
+        {/* Dotted connector lines BEHIND SOURCES node */}
+        <SourceConnectorLinesWrapper
+          centerX={POSITIONS.sources.x}
+          centerY={POSITIONS.sources.y}
+          progress={iconsProgress}
+          continuous={continuousFlowActive}
+        />
 
         {/* SOURCES node */}
         <FlowNode
@@ -993,12 +1213,12 @@ export const WorkflowScene: React.FC<WorkflowSceneProps> = ({ debug = false }) =
           scale={sourcesProgress}
         />
 
-        {/* X-pattern icons around SOURCES */}
+        {/* X-pattern icons around SOURCES - spin once pipeline flow starts */}
         <XPatternIcons
           centerX={POSITIONS.sources.x}
           centerY={POSITIONS.sources.y}
           progress={iconsProgress}
-          continuous={isFullPipeline}
+          continuous={continuousFlowActive}
         />
 
         {/* CLASSIFY node */}
@@ -1037,6 +1257,9 @@ export const WorkflowScene: React.FC<WorkflowSceneProps> = ({ debug = false }) =
           scale={publishNodeProgress}
         />
 
+        {/* Digest compilation animation (continuous docs flowing from Publish to Digest) */}
+        <DigestCompilation active={digestCompilationActive} />
+
         {/* DIGEST node (amber accent) */}
         <FlowNode
           label="DIGEST"
@@ -1049,12 +1272,23 @@ export const WorkflowScene: React.FC<WorkflowSceneProps> = ({ debug = false }) =
           scale={digestNodeProgress}
         />
 
+        {/* Digest output labels (RSS Feeds, JSON Feeds, Markdowns) */}
+        <DigestOutput progress={digestOutputProgress} />
+
+        {/* Gold glow effect for IDEAS (lightbulb moment) */}
+        <GoldGlowEffect
+          x={POSITIONS.ideas.x}
+          y={POSITIONS.ideas.y}
+          progress={ideasGlowProgress}
+        />
+
         {/* IDEAS node */}
         <FlowNode
           label="IDEAS"
           icon="💡"
           x={POSITIONS.ideas.x}
           y={POSITIONS.ideas.y}
+          accentColor={ACCENT_GOLD}
           opacity={ideasNodeProgress}
           scale={ideasNodeProgress}
         />
@@ -1091,33 +1325,27 @@ export const WorkflowScene: React.FC<WorkflowSceneProps> = ({ debug = false }) =
           />
         )}
 
-        {/* Packet: Classify → Digest */}
-        {frame >= DIGEST_START + 10 && frame < DIGEST_START + 55 && (
-          <DataPacket
-            from={{ x: POSITIONS.classify.x, y: POSITIONS.classify.y + NODE_HEIGHT / 2 }}
-            to={{ x: POSITIONS.digest.x, y: POSITIONS.digest.y - NODE_HEIGHT / 2 }}
-            progress={(frame - DIGEST_START - 10) / 45}
-            color={ACCENT_AMBER}
-          />
-        )}
+        {/* Publish → Digest uses continuous doc flow animation instead of packet */}
 
-        {/* Packet: Summarize → Ideas */}
+        {/* Packet: Publish → Ideas (gold, upward) */}
         {frame >= IDEAS_START + 10 && frame < IDEAS_START + 55 && (
           <DataPacket
-            from={{ x: POSITIONS.summarize.x, y: POSITIONS.summarize.y + NODE_HEIGHT / 2 }}
-            to={{ x: POSITIONS.ideas.x, y: POSITIONS.ideas.y - NODE_HEIGHT / 2 }}
+            from={{ x: POSITIONS.publish.x, y: POSITIONS.publish.y - NODE_HEIGHT / 2 }}
+            to={{ x: POSITIONS.ideas.x, y: POSITIONS.ideas.y + NODE_HEIGHT / 2 }}
             progress={(frame - IDEAS_START - 10) / 45}
+            color={ACCENT_GOLD}
           />
         )}
 
-        {/* Continuous data flow during full pipeline view */}
-        <ContinuousFlow active={isFullPipeline} />
+        {/* Continuous data flow through pipeline */}
+        <ContinuousFlow active={continuousFlowActive} ideasActive={frame >= IDEAS_START + 50} />
       </AbsoluteFill>
 
-      {/* Logo morph */}
+      {/* Logo morph with staggered LIBERTAS text */}
       <LibertasLogo
         opacity={logoProgress}
         scale={interpolate(logoProgress, [0, 1], [0.8, 1])}
+        textProgress={textProgress}
       />
 
       {/* CRT scanlines overlay */}
@@ -1146,8 +1374,7 @@ export const WorkflowScene: React.FC<WorkflowSceneProps> = ({ debug = false }) =
             frame < PUBLISH_START ? 'Summarize' :
             frame < DIGEST_START ? 'Publish' :
             frame < IDEAS_START ? 'Digest' :
-            frame < FULL_PIPELINE_START ? 'Ideas' :
-            frame < LOGO_MORPH_START ? 'Full Pipeline' :
+            frame < LOGO_MORPH_START ? 'Ideas' :
             'Logo Morph'
           }</div>
         </div>
@@ -1164,13 +1391,12 @@ export default WorkflowScene;
 
 /** Timing constants for use in parent composition */
 export const WORKFLOW_TIMING = {
-  duration: SCENE_DURATION,
+  duration: SCENE_DURATION, // 725 frames (24.17s)
   sourcesStart: SOURCES_START,
   classifyStart: CLASSIFY_START,
   summarizeStart: SUMMARIZE_START,
   publishStart: PUBLISH_START,
   digestStart: DIGEST_START,
   ideasStart: IDEAS_START,
-  fullPipelineStart: FULL_PIPELINE_START,
-  logoMorphStart: LOGO_MORPH_START,
+  logoMorphStart: LOGO_MORPH_START, // 650 (2.5s duration with text stagger)
 } as const;
