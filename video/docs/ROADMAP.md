@@ -15,45 +15,18 @@ Hey, I am working on the Libertas Explainer Video. We are cooking thru the roadm
 
 Reusable visual components used across multiple scenes.
 
-### 1.1 Terminal Text Component
-
-**Description:** Typewriter text effect with blinking cursor.
-
-**Requirements:**
-- [x] Create `src/compositions/LibertasExplainer/components/TypewriterText.tsx`
-- [x] Implement character-by-character reveal using string slice
-- [x] Add configurable typing speed (ms per character)
-- [x] Add blinking cursor with step animation
-- [x] Support JetBrains Mono font
-- [x] Support custom color (default #00ff41)
-- [x] Add optional prompt prefix ("> ")
-
-**Props:**
-```typescript
-interface TypewriterTextProps {
-  text: string;
-  startFrame: number;
-  msPerChar?: number;
-  showCursor?: boolean;
-  prompt?: string;
-  color?: string;
-}
-```
-
----
-
 ### 1.2 Matrix Rain Component
 
 **Description:** Falling green code rain effect for backgrounds.
 
 **Requirements:**
-- [ ] Create `src/compositions/LibertasExplainer/components/MatrixRain.tsx`
-- [ ] Generate columns of falling characters
-- [ ] Use katakana, numbers, and symbols
-- [ ] Implement variable speeds per column (parallax depth)
-- [ ] Support configurable density (number of columns)
-- [ ] Support configurable opacity
-- [ ] Optimize: limit active columns for performance
+- [x] Create `src/compositions/LibertasExplainer/components/MatrixRain.tsx`
+- [x] Generate columns of falling characters
+- [x] Use katakana, numbers, and symbols
+- [x] Implement variable speeds per column (parallax depth)
+- [x] Support configurable density (number of columns)
+- [x] Support configurable opacity
+- [x] Optimize: limit active columns for performance
 
 **Props:**
 ```typescript
@@ -491,7 +464,7 @@ npx remotion render LibertasExplainer out/libertas-explainer-final.mp4 \
 | Phase | Status | Notes |
 |-------|--------|-------|
 | Phase 0: Setup | 100% | 0.1 ✓, 0.2 ✓, 0.3 ✓, 0.4 ✓, 0.5 ✓ |
-| Phase 1: Components | 14% | 1.1 ✓ TypewriterText |
+| Phase 1: Components | 29% | 1.1 ✓ TypewriterText, 1.2 ✓ MatrixRain |
 | Phase 2: Audio | 0% | Can parallel with Phase 1 |
 | Phase 3: Scenes | 0% | Depends on Phase 1 |
 | Phase 4: Assembly | 0% | Depends on Phase 3 |
