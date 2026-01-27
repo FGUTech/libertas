@@ -7,6 +7,10 @@
 
 ---
 
+## Prompt Initialization
+
+Hey, I am working on the Libertas Explainer Video. We are cooking thru the roadmap, lets continue with:
+
 ## Phase 0: Project Setup
 
 Foundational setup before creative work begins.
@@ -16,10 +20,10 @@ Foundational setup before creative work begins.
 **Description:** Add Remotion packages needed for transitions, audio, and captions.
 
 **Requirements:**
-- [ ] Install `@remotion/transitions` for scene transitions
-- [ ] Install `@remotion/captions` for caption support (if needed)
-- [ ] Verify Tailwind CSS v4 is working with Remotion
-- [ ] Run `npm run dev` to confirm Remotion Studio launches
+- [x] Install `@remotion/transitions` for scene transitions
+- [x] Install `@remotion/captions` for caption support (if needed)
+- [x] Verify Tailwind CSS v4 is working with Remotion
+- [x] Run `npm run dev` to confirm Remotion Studio launches
 
 **Commands:**
 ```bash
@@ -564,7 +568,7 @@ npx remotion render LibertasExplainer out/libertas-explainer-final.mp4 \
 
 | Phase | Status | Notes |
 |-------|--------|-------|
-| Phase 0: Setup | 0% | Ready to start |
+| Phase 0: Setup | 20% | 0.1 complete ✓ |
 | Phase 1: Components | 0% | Depends on 0.x |
 | Phase 2: Audio | 0% | Can parallel with Phase 1 |
 | Phase 3: Scenes | 0% | Depends on Phase 1 |
