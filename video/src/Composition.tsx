@@ -5,14 +5,21 @@ import {
   fontFamilies,
   displayStyle,
   bodyStyle,
-  terminalStyle,
   dataStyle,
 } from "./utils/fonts";
+import { TypewriterText, getTypingEndFrame } from "./compositions/LibertasExplainer/components";
 
 export const MyComposition: React.FC<LibertasExplainerProps> = ({
   title,
   subtitle,
 }) => {
+  // Timing for typewriter demos
+  const line1Start = 0;
+  const line1End = getTypingEndFrame("initializing libertas...", line1Start, 50);
+  const line2Start = line1End + 15; // Small pause after first line
+  const line2End = getTypingEndFrame("loading freedom tech signals", line2Start, 40);
+  const line3Start = line2End + 15;
+
   return (
     <AbsoluteFill
       style={{
@@ -35,17 +42,44 @@ export const MyComposition: React.FC<LibertasExplainerProps> = ({
         {subtitle}
       </div>
 
-      {/* Terminal font - JetBrains Mono */}
+      {/* TypewriterText Demo - Terminal style with prompt */}
       <div
         style={{
-          ...terminalStyle(36),
-          color: colors.accent.primary,
           backgroundColor: colors.bg.secondary,
-          padding: "20px 40px",
+          padding: "24px 40px",
           borderRadius: 8,
+          minWidth: 700,
         }}
       >
-        {">"} initializing libertas...
+        {/* Line 1 - Standard terminal prompt */}
+        <TypewriterText
+          text="initializing libertas..."
+          startFrame={line1Start}
+          msPerChar={50}
+          prompt="> "
+          showCursor={false}
+          fontSize={36}
+        />
+
+        {/* Line 2 - Faster typing */}
+        <TypewriterText
+          text="loading freedom tech signals"
+          startFrame={line2Start}
+          msPerChar={40}
+          prompt="> "
+          showCursor={false}
+          fontSize={36}
+        />
+
+        {/* Line 3 - Amber warning color */}
+        <TypewriterText
+          text="system ready."
+          startFrame={line3Start}
+          msPerChar={60}
+          prompt="> "
+          color={colors.accent.amber}
+          fontSize={36}
+        />
       </div>
 
       {/* Data font - JetBrains Mono Medium */}

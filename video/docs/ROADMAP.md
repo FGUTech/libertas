@@ -11,24 +11,6 @@
 
 Hey, I am working on the Libertas Explainer Video. We are cooking thru the roadmap, lets continue with:
 
-## Phase 0: Project Setup
-
-Foundational setup before creative work begins.
-
-### 0.5 Load Custom Fonts ✓
-
-**Description:** Configure Inter, JetBrains Mono, and Space Grotesk fonts.
-
-**Requirements:**
-- [x] Download font files (or use Google Fonts static) - Using @remotion/google-fonts
-- [x] Configure font loading in Remotion - `src/utils/fonts.ts`
-- [x] Test font rendering in preview - Composition shows all fonts
-- [x] Create font family constants - `fontFamilies` export with display/body/mono
-
-**Reference:** Remotion skill `rules/fonts.md`
-
----
-
 ## Phase 1: Core Components
 
 Reusable visual components used across multiple scenes.
@@ -38,13 +20,13 @@ Reusable visual components used across multiple scenes.
 **Description:** Typewriter text effect with blinking cursor.
 
 **Requirements:**
-- [ ] Create `src/compositions/LibertasExplainer/components/TypewriterText.tsx`
-- [ ] Implement character-by-character reveal using string slice
-- [ ] Add configurable typing speed (ms per character)
-- [ ] Add blinking cursor with step animation
-- [ ] Support JetBrains Mono font
-- [ ] Support custom color (default #00ff41)
-- [ ] Add optional prompt prefix ("> ")
+- [x] Create `src/compositions/LibertasExplainer/components/TypewriterText.tsx`
+- [x] Implement character-by-character reveal using string slice
+- [x] Add configurable typing speed (ms per character)
+- [x] Add blinking cursor with step animation
+- [x] Support JetBrains Mono font
+- [x] Support custom color (default #00ff41)
+- [x] Add optional prompt prefix ("> ")
 
 **Props:**
 ```typescript
@@ -509,7 +491,7 @@ npx remotion render LibertasExplainer out/libertas-explainer-final.mp4 \
 | Phase | Status | Notes |
 |-------|--------|-------|
 | Phase 0: Setup | 100% | 0.1 ✓, 0.2 ✓, 0.3 ✓, 0.4 ✓, 0.5 ✓ |
-| Phase 1: Components | 0% | Ready to start |
+| Phase 1: Components | 14% | 1.1 ✓ TypewriterText |
 | Phase 2: Audio | 0% | Can parallel with Phase 1 |
 | Phase 3: Scenes | 0% | Depends on Phase 1 |
 | Phase 4: Assembly | 0% | Depends on Phase 3 |
