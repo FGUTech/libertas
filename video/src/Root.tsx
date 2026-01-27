@@ -2,7 +2,7 @@ import "./index.css";
 import { Composition } from "remotion";
 import { z } from "zod";
 import { MyComposition } from "./Composition";
-import { HookScene } from "./compositions/LibertasExplainer/scenes";
+import { HookScene, ProblemScene } from "./compositions/LibertasExplainer/scenes";
 
 // Props schema for LibertasExplainer composition
 export const libertasExplainerSchema = z.object({
@@ -17,6 +17,11 @@ export type LibertasExplainerProps = z.infer<typeof libertasExplainerSchema>;
 // Props schema for Hook scene (for development preview)
 export const hookSceneSchema = z.object({
   text: z.string().default("initializing libertas..."),
+  debug: z.boolean().default(false),
+});
+
+// Props schema for Problem scene (for development preview)
+export const problemSceneSchema = z.object({
   debug: z.boolean().default(false),
 });
 
@@ -49,6 +54,20 @@ export const RemotionRoot: React.FC = () => {
         schema={hookSceneSchema}
         defaultProps={{
           text: "initializing libertas...",
+          debug: false,
+        }}
+      />
+
+      {/* Problem scene preview - Section 2 (20 seconds) */}
+      <Composition
+        id="Problem"
+        component={ProblemScene}
+        durationInFrames={600}
+        fps={30}
+        width={1920}
+        height={1080}
+        schema={problemSceneSchema}
+        defaultProps={{
           debug: false,
         }}
       />

@@ -279,50 +279,42 @@ export const TerminalCard: React.FC<TerminalCardProps> = ({
           }
 
           if (isHeader) {
+            // Header line - use pre-formatted line with styled segments
             return (
-              <span key={index}>
-                <span style={{ color: borderColor }}>
-                  {BOX.vertical}{' '}
-                </span>
-                <span style={{ color: FG_PRIMARY, fontWeight: 500 }}>
-                  {header.slice(0, widthChars - 4).padEnd(widthChars - 4)}
-                </span>
-                <span style={{ color: borderColor }}>
-                  {' '}{BOX.vertical}
-                </span>
+              <span key={index} style={{ whiteSpace: 'pre' }}>
+                <span style={{ color: borderColor }}>{line.slice(0, 2)}</span>
+                <span style={{ color: FG_PRIMARY, fontWeight: 500 }}>{line.slice(2, -2)}</span>
+                <span style={{ color: borderColor }}>{line.slice(-2)}</span>
                 {'\n'}
               </span>
             );
           }
 
           if (isBadgeLine) {
-            // Render badges with individual colors
-            const innerContent = line.slice(2, -2); // Remove "│ " and " │"
+            // Badge line - render with colored badges, preserve spacing
+            const innerContent = line.slice(2, -2); // Content between borders
+            const rightPadding = innerContent.length - innerContent.trimEnd().length;
             return (
-              <span key={index}>
-                <span style={{ color: borderColor }}>{BOX.vertical} </span>
+              <span key={index} style={{ whiteSpace: 'pre' }}>
+                <span style={{ color: borderColor }}>{line.slice(0, 2)}</span>
                 <span>
-                  {renderBadgesWithColors(innerContent, badges, borderColor)}
+                  {renderBadgesWithColors(innerContent.trimEnd(), badges, borderColor)}
                 </span>
                 <span style={{ color: borderColor }}>
-                  {' '.repeat(
-                    Math.max(0, widthChars - 4 - innerContent.trimEnd().length)
-                  )}
-                  {' '}{BOX.vertical}
+                  {' '.repeat(rightPadding)}{line.slice(-2)}
                 </span>
                 {'\n'}
               </span>
             );
           }
 
-          // Regular body line
+          // Regular body line - render full line to preserve alignment
+          // The line format is: "│ content... │" with proper padding
           return (
-            <span key={index}>
-              <span style={{ color: borderColor }}>{BOX.vertical} </span>
-              <span style={{ color: FG_SECONDARY }}>
-                {line.slice(2, -2)}
-              </span>
-              <span style={{ color: borderColor }}> {BOX.vertical}</span>
+            <span key={index} style={{ whiteSpace: 'pre' }}>
+              <span style={{ color: borderColor }}>{line.slice(0, 2)}</span>
+              <span style={{ color: FG_SECONDARY }}>{line.slice(2, -2)}</span>
+              <span style={{ color: borderColor }}>{line.slice(-2)}</span>
               {'\n'}
             </span>
           );

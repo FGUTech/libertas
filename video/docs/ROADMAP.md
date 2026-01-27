@@ -15,43 +15,6 @@ Hey, I am working on the Libertas Explainer Video. We are cooking thru the roadm
 
 Build each section of the video.
 
-### 3.1 Hook Scene (0:00 - 0:05) ✓
-
-**Description:** Terminal boot sequence opening.
-
-**Requirements:**
-- [x] Create `src/compositions/LibertasExplainer/scenes/Hook.tsx`
-- [x] Black screen with cursor fade-in
-- [x] Typewriter: `> initializing libertas...`
-- [x] Matrix rain starts at frame 90
-- [x] Keyboard sound effects on typing (via AudioTrack SFX)
-- [x] Music bed begins (via AudioTrack MusicTrack)
-
-**Duration:** 150 frames (5s)
-
-**Reference:** `docs/STORYBOARD.md` - Section 1
-
----
-
-### 3.2 Problem Scene (0:05 - 0:25)
-
-**Description:** Establish threat landscape with world map and examples.
-
-**Requirements:**
-- [ ] Create `src/compositions/LibertasExplainer/scenes/Problem.tsx`
-- [ ] World map visualization with incident markers
-- [ ] Counter animation: "300+ shutdowns in 43 countries"
-- [ ] Quick-cut threat imagery (4 slides)
-- [ ] Iran example card with stats
-- [ ] CRT shutdown effect transition
-- [ ] Sync voiceover
-
-**Duration:** 600 frames (20s)
-
-**Reference:** `docs/STORYBOARD.md` - Section 2
-
----
-
 ### 3.3 Solution Scene (0:25 - 0:50)
 
 **Description:** Reveal Libertas and core value propositions.
@@ -292,7 +255,7 @@ npx remotion render LibertasExplainer out/libertas-explainer-final.mp4 \
 | Phase 0: Setup | 100% | 0.1 ✓, 0.2 ✓, 0.3 ✓, 0.4 ✓, 0.5 ✓ |
 | Phase 1: Components | 100% | 1.1 ✓ TypewriterText, 1.2 ✓ MatrixRain, 1.3 ✓ Scanlines, 1.4 ✓ GlitchEffect, 1.5 ✓ TerminalCard, 1.6 ✓ ScoreBadge, 1.7 ✓ FlowDiagram |
 | Phase 2: Audio | 75% | 2.1 ✓ Background Music, 2.2 ✓ SFX Library, 2.3 ✓ Voiceover |
-| Phase 3: Scenes | 14% | 3.1 ✓ Hook |
+| Phase 3: Scenes | 29% | 3.1 ✓ Hook, 3.2 ✓ Problem |
 | Phase 4: Assembly | 0% | Depends on Phase 3 |
 | Phase 5: Review | 0% | Depends on Phase 4 |
 

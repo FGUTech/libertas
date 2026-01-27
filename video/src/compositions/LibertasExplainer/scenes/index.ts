@@ -7,3 +7,6 @@
 
 export { HookScene, HOOK_TIMING } from './Hook';
 export type { HookSceneProps } from './Hook';
+
+export { ProblemScene, PROBLEM_TIMING } from './Problem';
+export type { ProblemSceneProps } from './Problem';
