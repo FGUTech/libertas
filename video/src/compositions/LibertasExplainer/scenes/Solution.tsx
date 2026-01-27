@@ -1,15 +1,14 @@
 /**
- * Solution Scene - Section 3 (0:25 - 0:50)
+ * Solution Scene - Section 3
  *
- * Reveals Libertas as the answer. Establishes what it is and core value props.
- * Duration: 750 frames (25s).
+ * Reveals Libertas as the answer. Establishes what it is.
+ * Duration: 500 frames (16.67s).
  *
  * Frame breakdown (scene-relative):
  * - 0-90: Boot sequence (connecting, loading URL)
  * - 90-120: URL reveal with glow: `libertas.fgu.tech`
  * - 120-250: Website hero recreation (scanline reveal)
  * - 250-500: Homepage pull-back reveal
- * - 500-750: Three value prop cards (No gatekeepers, No censorship, Fully open)
  */
 
 import React from 'react';
@@ -130,7 +129,8 @@ const SolutionAudio: React.FC = () => {
       />
 
       {/* Voiceover - starts at frame 90 (after boot sequence) */}
-      <Sequence from={90 as number} name="VO: Solution">
+      {/* Cut 2 seconds from end (was 17.8s, now 15.8s = 474 frames) to remove gatekeepers discussion */}
+      <Sequence from={90 as number} durationInFrames={474} name="VO: Solution">
         <Audio
           src={staticFile(AUDIO_FILES.voSolution)}
           volume={1.0}
@@ -484,15 +484,8 @@ const HomepagePullback: React.FC<{ frame: number }> = ({ frame }) => {
     { extrapolateRight: 'clamp' }
   );
 
-  // Fade out when value props start
-  const fadeOut = interpolate(
-    frame,
-    [VALUE_PROPS_START - 30, VALUE_PROPS_START],
-    [1, 0],
-    { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }
-  );
-
-  if (frame >= VALUE_PROPS_START) return null;
+  // No fade out - this section now stays until scene end
+  const fadeOut = 1;
 
   // Terminal prompt blink
   const cursorVisible = Math.floor(frame / 15) % 2 === 0;
@@ -724,10 +717,15 @@ const HomepagePullback: React.FC<{ frame: number }> = ({ frame }) => {
   );
 };
 
+// =============================================================================
+// UNUSED COMPONENTS (Value props section removed from render)
+// =============================================================================
+
 /**
  * Value proposition icon - larger size
+ * @deprecated Not currently used - value props section removed
  */
-const ValuePropIcon: React.FC<{
+const _ValuePropIcon: React.FC<{
   type: ValueProp['icon'];
 }> = ({ type }) => {
   const iconColor = colors.accent.primary;
@@ -815,8 +813,9 @@ const CARD_GAP = 50;
 
 /**
  * Value proposition card - larger, slower entry, fixed dimensions
+ * @deprecated Not currently used - value props section removed
  */
-const ValuePropCard: React.FC<{
+const _ValuePropCard: React.FC<{
   prop: ValueProp;
   frame: number;
   startFrame: number;
@@ -866,7 +865,7 @@ const ValuePropCard: React.FC<{
       }}
     >
       {/* Icon */}
-      <ValuePropIcon type={prop.icon} />
+      <_ValuePropIcon type={prop.icon} />
 
       {/* Label - smaller font, no letter-spacing to fit on 1 line */}
       <div
@@ -899,8 +898,9 @@ const ValuePropCard: React.FC<{
 /**
  * Value propositions section (500-750)
  * Uses absolute positioning to prevent jarring reflow when new cards appear
+ * @deprecated Not currently rendered - value props section removed from scene
  */
-const ValuePropsSection: React.FC<{ frame: number; fps: number }> = ({ frame, fps }) => {
+const _ValuePropsSection: React.FC<{ frame: number; fps: number }> = ({ frame, fps }) => {
   if (frame < VALUE_PROPS_START) return null;
 
   // Total width of all cards plus gaps
@@ -927,7 +927,7 @@ const ValuePropsSection: React.FC<{ frame: number; fps: number }> = ({ frame, fp
           const cardStartFrame = VALUE_PROPS_START + index * VALUE_PROP_STAGGER;
 
           return (
-            <ValuePropCard
+            <_ValuePropCard
               key={index}
               prop={prop}
               frame={frame}
@@ -957,8 +957,7 @@ export const SolutionScene: React.FC<SolutionSceneProps> = ({ debug = false }) =
   const isBootPhase = frame >= BOOT_START && frame < URL_REVEAL_START;
   const isURLPhase = frame >= URL_REVEAL_START && frame < HERO_REVEAL_START;
   const isHeroPhase = frame >= HERO_REVEAL_START && frame < PULLBACK_START;
-  const isPullbackPhase = frame >= PULLBACK_START && frame < VALUE_PROPS_START;
-  const isValuePropsPhase = frame >= VALUE_PROPS_START;
+  const isPullbackPhase = frame >= PULLBACK_START;
 
   // ---------------------------------------------------------------------------
   // MATRIX RAIN OPACITY
@@ -966,8 +965,8 @@ export const SolutionScene: React.FC<SolutionSceneProps> = ({ debug = false }) =
 
   const matrixOpacity = interpolate(
     frame,
-    [0, 30, VALUE_PROPS_START, VALUE_PROPS_START + 30],
-    [0, 0.3, 0.15, 0.25],
+    [0, 30],
+    [0, 0.3],
     { extrapolateRight: 'clamp' }
   );
 
@@ -1001,8 +1000,7 @@ export const SolutionScene: React.FC<SolutionSceneProps> = ({ debug = false }) =
       {/* Homepage pullback (250-500) */}
       <HomepagePullback frame={frame} />
 
-      {/* Value props (500-750) */}
-      <ValuePropsSection frame={frame} fps={fps} />
+      {/* Value props section removed - scene ends at pullback */}
 
       {/* CRT scanlines overlay */}
       <Scanlines opacity={0.03} flicker={false} />
@@ -1028,8 +1026,7 @@ export const SolutionScene: React.FC<SolutionSceneProps> = ({ debug = false }) =
             isBootPhase ? 'Boot Sequence' :
             isURLPhase ? 'URL Reveal' :
             isHeroPhase ? 'Hero Section' :
-            isPullbackPhase ? 'Homepage Pullback' :
-            isValuePropsPhase ? 'Value Props' : 'Unknown'
+            isPullbackPhase ? 'Homepage Pullback' : 'Unknown'
           }</div>
         </div>
       )}
@@ -1043,10 +1040,13 @@ export const SolutionScene: React.FC<SolutionSceneProps> = ({ debug = false }) =
 
 export default SolutionScene;
 
+// Export unused components for potential future use
+export { _ValuePropsSection as ValuePropsSection };
+
 /** Timing constants for use in parent composition */
 export const SOLUTION_TIMING = {
-  /** Total duration of Solution scene in frames */
-  duration: 750,
+  /** Total duration of Solution scene in frames (cut value props section) */
+  duration: 500,
   /** Frame when boot sequence starts */
   bootStart: BOOT_START,
   /** Frame when URL reveal starts */
@@ -1055,6 +1055,4 @@ export const SOLUTION_TIMING = {
   heroRevealStart: HERO_REVEAL_START,
   /** Frame when pullback starts */
   pullbackStart: PULLBACK_START,
-  /** Frame when value props start */
-  valuePropsStart: VALUE_PROPS_START,
 } as const;

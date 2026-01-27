@@ -59,7 +59,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="LibertasExplainer"
         component={LibertasExplainer}
-        durationInFrames={3600}
+        durationInFrames={3073}
         fps={30}
         width={1920}
         height={1080}
@@ -86,11 +86,11 @@ export const RemotionRoot: React.FC = () => {
         }}
       />
 
-      {/* Problem scene preview - Section 2 (20 seconds) */}
+      {/* Problem scene preview - Section 2 (17.2 seconds) */}
       <Composition
         id="Problem"
         component={ProblemScene}
-        durationInFrames={600}
+        durationInFrames={528}
         fps={30}
         width={1920}
         height={1080}
@@ -100,11 +100,11 @@ export const RemotionRoot: React.FC = () => {
         }}
       />
 
-      {/* Solution scene preview - Section 3 (25 seconds) */}
+      {/* Solution scene preview - Section 3 (16.67 seconds) */}
       <Composition
         id="Solution"
         component={SolutionScene}
-        durationInFrames={750}
+        durationInFrames={500}
         fps={30}
         width={1920}
         height={1080}
@@ -114,11 +114,11 @@ export const RemotionRoot: React.FC = () => {
         }}
       />
 
-      {/* Workflow scene preview - Section 4 (30 seconds) */}
+      {/* Workflow scene preview - Section 4 (23.17 seconds) */}
       <Composition
         id="Workflow"
         component={WorkflowScene}
-        durationInFrames={900}
+        durationInFrames={695}
         fps={30}
         width={1920}
         height={1080}

@@ -28,7 +28,6 @@ import {
   spring,
   AbsoluteFill,
   Sequence,
-  Easing,
   Audio,
   Img,
   staticFile,
@@ -64,7 +63,7 @@ const IDEAS_START = 480;
 const LOGO_MORPH_START = 650;
 
 /** Total scene duration (shorter without separate full pipeline section) */
-const SCENE_DURATION = 725;
+const SCENE_DURATION = 695; // Cut 1 second (30 frames) from original for faster transition
 
 // =============================================================================
 // AUDIO PATHS
@@ -828,15 +827,16 @@ const DigestCompilation: React.FC<DigestCompilationProps> = ({ active }) => {
 
 // =============================================================================
 // LIBERTAS LOGO (using actual logo image) with staggered text
+// @deprecated Not currently rendered - logo morph removed from scene
 // =============================================================================
 
-interface LogoProps {
+interface _LogoProps {
   opacity: number;
   scale: number;
   textProgress: number;
 }
 
-const LibertasLogo: React.FC<LogoProps> = ({ opacity, scale, textProgress }) => {
+const _LibertasLogo: React.FC<_LogoProps> = ({ opacity, scale, textProgress }) => {
   if (opacity <= 0) return null;
 
   const letters = 'LIBERTAS'.split('');
@@ -1116,21 +1116,7 @@ export const WorkflowScene: React.FC<WorkflowSceneProps> = ({ debug = false }) =
     { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }
   );
 
-  // Logo morph (650-725) - 2.5s = 75 frames - appears ON TOP of pipeline
-  const logoProgress = interpolate(
-    frame,
-    [LOGO_MORPH_START, LOGO_MORPH_START + 45],
-    [0, 1],
-    { extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.quad) }
-  );
-
-  // LIBERTAS text stagger (starts slightly after logo, runs for 2s = 60 frames)
-  const textProgress = interpolate(
-    frame,
-    [LOGO_MORPH_START + 15, LOGO_MORPH_START + 75],
-    [0, 1],
-    { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }
-  );
+  // Logo morph removed - pipeline stays visible until transition
 
   // Matrix rain opacity (unchanged - background)
   const matrixOpacity = interpolate(
@@ -1341,12 +1327,7 @@ export const WorkflowScene: React.FC<WorkflowSceneProps> = ({ debug = false }) =
         <ContinuousFlow active={continuousFlowActive} ideasActive={frame >= IDEAS_START + 50} />
       </AbsoluteFill>
 
-      {/* Logo morph with staggered LIBERTAS text */}
-      <LibertasLogo
-        opacity={logoProgress}
-        scale={interpolate(logoProgress, [0, 1], [0.8, 1])}
-        textProgress={textProgress}
-      />
+      {/* Logo morph removed - pipeline stays visible until transition */}
 
       {/* CRT scanlines overlay */}
       <Scanlines opacity={0.03} flicker={false} />
@@ -1391,12 +1372,14 @@ export default WorkflowScene;
 
 /** Timing constants for use in parent composition */
 export const WORKFLOW_TIMING = {
-  duration: SCENE_DURATION, // 725 frames (24.17s)
+  duration: SCENE_DURATION, // 695 frames (23.17s)
   sourcesStart: SOURCES_START,
   classifyStart: CLASSIFY_START,
   summarizeStart: SUMMARIZE_START,
   publishStart: PUBLISH_START,
   digestStart: DIGEST_START,
   ideasStart: IDEAS_START,
-  logoMorphStart: LOGO_MORPH_START, // 650 (2.5s duration with text stagger)
 } as const;
+
+// Export unused component for potential future use
+export { _LibertasLogo as LibertasLogo };

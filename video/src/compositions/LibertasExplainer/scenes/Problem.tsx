@@ -834,7 +834,7 @@ export default ProblemScene;
 
 /** Timing constants for use in parent composition */
 export const PROBLEM_TIMING = {
-  duration: 600,
+  duration: 528, // Cut 2.4 seconds total (72 frames) of black from end
   cutsStart: CUTS_START,
   iranCardStart: IRAN_CARD_START,
   mapStart: MAP_START,

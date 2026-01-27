@@ -56,9 +56,9 @@ import { BG_PRIMARY } from '../../utils/colors';
  */
 const SCENE_DURATIONS = {
   hook: 150,      // 5 seconds
-  problem: 600,   // 20 seconds
-  solution: 750,  // 25 seconds
-  workflow: 900,  // 30 seconds
+  problem: 528,   // 17.6 seconds (cut 2.4s of black from end)
+  solution: 500,  // 16.67 seconds (removed value props section)
+  workflow: 695,  // 23.17 seconds (cut 1s from end, logo morph removed)
   proof: 600,     // 20 seconds
   cta: 450,       // 15 seconds
   endCard: 150,   // 5 seconds
@@ -81,31 +81,24 @@ const TRANSITION_DURATIONS = {
  * With TransitionSeries, each transition overlaps adjacent scenes.
  * Total = sum(sceneDurations) - sum(transitionDurations)
  *
- * Base scene total: 150 + 600 + 750 + 900 + 600 + 450 + 150 = 3600
+ * Base scene total: 150 + 528 + 500 + 695 + 600 + 450 + 150 = 3073
  * Transition overlap: 12 + 18 + 15 + 15 + 18 + 15 = 93
- * Would give: 3600 - 93 = 3507 frames
+ * Final duration: 3073 - 93 = 2980 frames (~99.3 seconds)
  *
- * To hit 3600 frames, we add 93 frames distributed across scenes
- * (see ADJUSTED_SCENE_DURATIONS below)
- */
-
-/**
- * Adjusted scene durations to hit exactly 3600 frames with transitions
- * Adding the overlap back: 3507 + 93 = 3600
- * We need: sceneDurations - transitionOverlaps = 3600
- * So: sceneDurations = 3600 + 93 = 3693
- * Current sum: 150 + 600 + 750 + 900 + 600 + 450 + 150 = 3600
- * We need to add 93 frames distributed across scenes
+ * Adjusted durations add overlap compensation per scene.
  */
 const ADJUSTED_SCENE_DURATIONS = {
   hook: 150 + 12,           // 162 frames - accounts for exit transition
-  problem: 600 + 15,        // 615 frames - accounts for transitions
-  solution: 750 + 17,       // 767 frames
-  workflow: 900 + 15,       // 915 frames
+  problem: 528 + 15,        // 543 frames - cut 2.4s black + transitions
+  solution: 500 + 17,       // 517 frames - removed value props
+  workflow: 695 + 15,       // 710 frames - cut 1s, logo morph removed
   proof: 600 + 17,          // 617 frames
   cta: 450 + 17,            // 467 frames
   endCard: 150,             // 150 frames - no exit transition
 } as const;
+
+/** Total composition duration in frames */
+const TOTAL_FRAMES = 3073;
 
 // =============================================================================
 // TYPES
@@ -237,14 +230,14 @@ const DebugOverlay: React.FC = () => {
   const frame = useCurrentFrame();
   const seconds = (frame / 30).toFixed(2);
 
-  // Determine current scene based on frame
+  // Determine current scene based on frame (approximate with transitions)
   let currentScene = 'Hook';
   if (frame >= 150) currentScene = 'Problem';
-  if (frame >= 750) currentScene = 'Solution';
-  if (frame >= 1500) currentScene = 'Workflow';
-  if (frame >= 2400) currentScene = 'Proof';
-  if (frame >= 3000) currentScene = 'CTA';
-  if (frame >= 3450) currentScene = 'EndCard';
+  if (frame >= 663) currentScene = 'Solution';
+  if (frame >= 1148) currentScene = 'Workflow';
+  if (frame >= 1828) currentScene = 'Proof';
+  if (frame >= 2413) currentScene = 'CTA';
+  if (frame >= 2848) currentScene = 'EndCard';
 
   return (
     <AbsoluteFill
@@ -284,5 +277,5 @@ export default LibertasExplainer;
 export const TIMING = {
   scenes: SCENE_DURATIONS,
   transitions: TRANSITION_DURATIONS,
-  total: 3600,
+  total: TOTAL_FRAMES, // ~3085 frames (~102.8 seconds)
 } as const;
