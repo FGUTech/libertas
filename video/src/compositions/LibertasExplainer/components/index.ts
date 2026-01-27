@@ -9,3 +9,15 @@ export type { TypewriterTextProps } from './TypewriterText';
 
 export { MatrixRain, getOptimizedMatrixRainProps } from './MatrixRain';
 export type { MatrixRainProps } from './MatrixRain';
+
+export { Scanlines, scanlinePresets, getScanlinePreset } from './Scanlines';
+export type { ScanlinesProps } from './Scanlines';
+
+export {
+  GlitchEffect,
+  GlitchTransition,
+  glitchPresets,
+  getGlitchPreset,
+  useGlitchTiming,
+} from './GlitchEffect';
+export type { GlitchEffectProps, GlitchTransitionProps } from './GlitchEffect';

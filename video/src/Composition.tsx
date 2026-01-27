@@ -7,7 +7,13 @@ import {
   bodyStyle,
   dataStyle,
 } from "./utils/fonts";
-import { TypewriterText, getTypingEndFrame } from "./compositions/LibertasExplainer/components";
+import {
+  TypewriterText,
+  getTypingEndFrame,
+  GlitchTransition,
+  Scanlines,
+  MatrixRain,
+} from "./compositions/LibertasExplainer/components";
 
 export const MyComposition: React.FC<LibertasExplainerProps> = ({
   title,
@@ -24,14 +30,24 @@ export const MyComposition: React.FC<LibertasExplainerProps> = ({
     <AbsoluteFill
       style={{
         backgroundColor: colors.bg.primary,
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        gap: 40,
-        padding: 100,
       }}
     >
+      {/* Matrix rain background */}
+      <MatrixRain opacity={0.3} columnCount={30} />
+
+      {/* Main content with glitch effect at frame 60-66 and 120-126 */}
+      <GlitchTransition startFrame={60} durationFrames={6} intensity={0.7}>
+        <GlitchTransition startFrame={120} durationFrames={6} intensity={0.5}>
+          <AbsoluteFill
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: 40,
+              padding: 100,
+            }}
+          >
       {/* Display font - Space Grotesk Bold */}
       <div style={{ ...displayStyle(96), color: colors.fg.primary }}>
         {title}
@@ -113,26 +129,32 @@ export const MyComposition: React.FC<LibertasExplainerProps> = ({
         </div>
       </div>
 
-      {/* Font family labels */}
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: 12,
-          marginTop: 40,
-        }}
-      >
-        <div style={{ ...bodyStyle(20), color: colors.fg.tertiary }}>
-          Display: {fontFamilies.display.split(",")[0]}
-        </div>
-        <div style={{ ...bodyStyle(20), color: colors.fg.tertiary }}>
-          Body: {fontFamilies.body.split(",")[0]}
-        </div>
-        <div style={{ ...bodyStyle(20), color: colors.fg.tertiary }}>
-          Mono: {fontFamilies.mono.split(",")[0]}
-        </div>
-      </div>
+          {/* Font family labels */}
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: 12,
+              marginTop: 40,
+            }}
+          >
+            <div style={{ ...bodyStyle(20), color: colors.fg.tertiary }}>
+              Display: {fontFamilies.display.split(",")[0]}
+            </div>
+            <div style={{ ...bodyStyle(20), color: colors.fg.tertiary }}>
+              Body: {fontFamilies.body.split(",")[0]}
+            </div>
+            <div style={{ ...bodyStyle(20), color: colors.fg.tertiary }}>
+              Mono: {fontFamilies.mono.split(",")[0]}
+            </div>
+          </div>
+          </AbsoluteFill>
+        </GlitchTransition>
+      </GlitchTransition>
+
+      {/* CRT scanlines overlay */}
+      <Scanlines opacity={0.04} flicker movingBar />
     </AbsoluteFill>
   );
 };
