@@ -13,6 +13,7 @@ import {
   GlitchTransition,
   Scanlines,
   MatrixRain,
+  AudioTrack,
 } from "./compositions/LibertasExplainer/components";
 
 export const MyComposition: React.FC<LibertasExplainerProps> = ({
@@ -32,6 +33,9 @@ export const MyComposition: React.FC<LibertasExplainerProps> = ({
         backgroundColor: colors.bg.primary,
       }}
     >
+      {/* Audio layer - music, voiceover, and SFX */}
+      <AudioTrack />
+
       {/* Matrix rain background */}
       <MatrixRain opacity={0.3} columnCount={30} />
 

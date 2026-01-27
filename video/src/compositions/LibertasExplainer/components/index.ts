@@ -21,3 +21,16 @@ export {
   useGlitchTiming,
 } from './GlitchEffect';
 export type { GlitchEffectProps, GlitchTransitionProps } from './GlitchEffect';
+
+export {
+  AudioTrack,
+  MusicTrack,
+  VoiceoverTrack,
+  SFXTrack,
+  useIsVOPlaying,
+  useCurrentSection,
+  SECTION_TIMING,
+  VO_TIMING,
+  SFX_TIMING,
+} from '../AudioTrack';
+export type { AudioTrackProps } from '../AudioTrack';
