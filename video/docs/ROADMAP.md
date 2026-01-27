@@ -15,20 +15,6 @@ Hey, I am working on the Libertas Explainer Video. We are cooking thru the roadm
 
 Foundational setup before creative work begins.
 
-### 0.3 Set Up Project Structure ✓
-
-**Description:** Create folder structure for organized component development.
-
-**Requirements:**
-- [x] Create `src/compositions/LibertasExplainer/` directory
-- [x] Create `src/compositions/LibertasExplainer/scenes/` for section components
-- [x] Create `src/compositions/LibertasExplainer/components/` for reusable elements
-- [x] Create `src/hooks/` for shared hooks
-- [x] Create `src/utils/` for constants and helpers
-- [x] Create `src/assets/fonts/`, `src/assets/audio/`, `src/assets/images/`
-
----
-
 ### 0.4 Import Design System
 
 **Description:** Create utility file with Libertas color palette and typography.
