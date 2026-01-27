@@ -2,7 +2,7 @@ import "./index.css";
 import { Composition } from "remotion";
 import { z } from "zod";
 import { MyComposition } from "./Composition";
-import { HookScene, ProblemScene, SolutionScene } from "./compositions/LibertasExplainer/scenes";
+import { HookScene, ProblemScene, SolutionScene, WorkflowScene } from "./compositions/LibertasExplainer/scenes";
 
 // Props schema for LibertasExplainer composition
 export const libertasExplainerSchema = z.object({
@@ -27,6 +27,11 @@ export const problemSceneSchema = z.object({
 
 // Props schema for Solution scene (for development preview)
 export const solutionSceneSchema = z.object({
+  debug: z.boolean().default(false),
+});
+
+// Props schema for Workflow scene (for development preview)
+export const workflowSceneSchema = z.object({
   debug: z.boolean().default(false),
 });
 
@@ -86,6 +91,20 @@ export const RemotionRoot: React.FC = () => {
         width={1920}
         height={1080}
         schema={solutionSceneSchema}
+        defaultProps={{
+          debug: false,
+        }}
+      />
+
+      {/* Workflow scene preview - Section 4 (30 seconds) */}
+      <Composition
+        id="Workflow"
+        component={WorkflowScene}
+        durationInFrames={900}
+        fps={30}
+        width={1920}
+        height={1080}
+        schema={workflowSceneSchema}
         defaultProps={{
           debug: false,
         }}

@@ -13,3 +13,6 @@ export type { ProblemSceneProps } from './Problem';
 
 export { SolutionScene, SOLUTION_TIMING } from './Solution';
 export type { SolutionSceneProps } from './Solution';
+
+export { WorkflowScene, WORKFLOW_TIMING } from './Workflow';
+export type { WorkflowSceneProps } from './Workflow';
