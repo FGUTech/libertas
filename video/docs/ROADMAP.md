@@ -11,43 +11,27 @@
 
 Hey, I am working on the Libertas Explainer Video. We are cooking thru the roadmap, lets continue with:
 
-## Phase 1: Core Components
-
-Reusable visual components used across multiple scenes.
-
-### 1.7 Flow Diagram Components ✓
-
-**Description:** Animated node-and-arrow diagram for workflow visualization.
-
-**Requirements:**
-- [x] Create `src/compositions/LibertasExplainer/components/FlowNode.tsx`
-- [x] Create `src/compositions/LibertasExplainer/components/FlowArrow.tsx`
-- [x] Create `src/compositions/LibertasExplainer/components/FlowDiagram.tsx`
-- [x] Nodes: rounded rectangle with label and icon
-- [x] Arrows: path drawing animation with arrow head
-- [x] Data packet: small square traveling along arrow path
-- [x] Support split/merge paths (rightAngle, bezier, dashed optional flows)
-- [x] Spring animations for node appearance
-
----
-
 ## Phase 2: Audio Setup
 
 Music and sound effects preparation.
 
-### 2.1 Source Background Music
+### 2.1 Source Background Music ✓
 
 **Description:** Find and license dark synthwave track.
 
 **Requirements:**
-- [ ] Search Artlist.io, Epidemic Sound, or YouTube Audio Library
-- [ ] Target: 80-110 BPM, ~120s duration
-- [ ] Must have: tension build, hopeful resolution
-- [ ] Download high-quality audio file (WAV or 320kbps MP3)
-- [ ] Document license terms and attribution requirements
-- [ ] Place in `src/assets/audio/`
+- [x] Search Artlist.io, Epidemic Sound, or YouTube Audio Library
+- [x] Target: 80-110 BPM, ~120s duration
+- [x] Must have: tension build, hopeful resolution
+- [x] Download high-quality audio file (WAV or 320kbps MP3)
+- [x] Document license terms and attribution requirements
+- [x] Place in `src/assets/audio/`
 
-**Search terms:** "dark synthwave", "cyberpunk ambient", "retrowave tension"
+**Selected Track:** Skynet by Sky Cassette (Uppbeat)
+- **BPM:** 110
+- **Duration:** 1:52
+- **License:** Uppbeat Free Creator License (DU7JTZXXRRCTFIKL)
+- **File:** `src/assets/audio/skynet-sky-cassette-main-version-41446-01-52.mp3`
 
 ---
 
@@ -386,7 +370,7 @@ npx remotion render LibertasExplainer out/libertas-explainer-final.mp4 \
 |-------|--------|-------|
 | Phase 0: Setup | 100% | 0.1 ✓, 0.2 ✓, 0.3 ✓, 0.4 ✓, 0.5 ✓ |
 | Phase 1: Components | 100% | 1.1 ✓ TypewriterText, 1.2 ✓ MatrixRain, 1.3 ✓ Scanlines, 1.4 ✓ GlitchEffect, 1.5 ✓ TerminalCard, 1.6 ✓ ScoreBadge, 1.7 ✓ FlowDiagram |
-| Phase 2: Audio | 0% | Can parallel with Phase 1 |
+| Phase 2: Audio | 25% | 2.1 ✓ Background Music |
 | Phase 3: Scenes | 0% | Depends on Phase 1 |
 | Phase 4: Assembly | 0% | Depends on Phase 3 |
 | Phase 5: Review | 0% | Depends on Phase 4 |
@@ -412,7 +396,7 @@ The following can be worked on simultaneously:
 
 ### Before Phase 2
 - [ ] Confirm voiceover script is final
-- [ ] Confirm music track selection
+- [x] Confirm music track selection (Skynet by Sky Cassette)
 
 ### Before Phase 3
 - [ ] Confirm all component designs
