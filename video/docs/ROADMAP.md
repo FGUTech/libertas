@@ -15,40 +15,22 @@ Hey, I am working on the Libertas Explainer Video. We are cooking thru the roadm
 
 Reusable visual components used across multiple scenes.
 
-### 1.2 Matrix Rain Component
-
-**Description:** Falling green code rain effect for backgrounds.
-
-**Requirements:**
-- [x] Create `src/compositions/LibertasExplainer/components/MatrixRain.tsx`
-- [x] Generate columns of falling characters
-- [x] Use katakana, numbers, and symbols
-- [x] Implement variable speeds per column (parallax depth)
-- [x] Support configurable density (number of columns)
-- [x] Support configurable opacity
-- [x] Optimize: limit active columns for performance
-
-**Props:**
-```typescript
-interface MatrixRainProps {
-  columnCount?: number;
-  opacity?: number;
-  speedRange?: [number, number];
-}
-```
-
----
-
-### 1.3 CRT Scanlines Overlay
+### 1.3 CRT Scanlines Overlay ✓
 
 **Description:** Subtle scanline effect for retro monitor aesthetic.
 
 **Requirements:**
-- [ ] Create `src/compositions/LibertasExplainer/components/Scanlines.tsx`
-- [ ] Implement horizontal lines at 2px intervals
-- [ ] Support configurable opacity (default 3-5%)
-- [ ] Optional subtle flicker animation
-- [ ] Full-screen absolute positioning
+- [x] Create `src/compositions/LibertasExplainer/components/Scanlines.tsx`
+- [x] Implement horizontal lines at 2px intervals
+- [x] Support configurable opacity (default 3-5%)
+- [x] Optional subtle flicker animation
+- [x] Full-screen absolute positioning
+
+**Implementation Notes:**
+- Uses `repeating-linear-gradient` for performant scanline rendering
+- Includes presets: `subtle`, `standard`, `heavy`, `vhs`
+- Optional `movingBar` prop for CRT refresh effect
+- Deterministic flicker using Remotion's `random()` for reproducible renders
 
 ---
 
@@ -464,7 +446,7 @@ npx remotion render LibertasExplainer out/libertas-explainer-final.mp4 \
 | Phase | Status | Notes |
 |-------|--------|-------|
 | Phase 0: Setup | 100% | 0.1 ✓, 0.2 ✓, 0.3 ✓, 0.4 ✓, 0.5 ✓ |
-| Phase 1: Components | 29% | 1.1 ✓ TypewriterText, 1.2 ✓ MatrixRain |
+| Phase 1: Components | 43% | 1.1 ✓ TypewriterText, 1.2 ✓ MatrixRain, 1.3 ✓ Scanlines |
 | Phase 2: Audio | 0% | Can parallel with Phase 1 |
 | Phase 3: Scenes | 0% | Depends on Phase 1 |
 | Phase 4: Assembly | 0% | Depends on Phase 3 |
