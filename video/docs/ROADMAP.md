@@ -15,48 +15,6 @@ Hey, I am working on the Libertas Explainer Video. We are cooking thru the roadm
 
 Music and sound effects preparation.
 
-### 2.2 Create Sound Effects Library
-
-**Description:** Gather or create sound effects for UI interactions.
-
-**Requirements:**
-- [x] Keyboard typing sounds (mechanical, multiple variations) - [stu556 pack](https://freesound.org/people/stu556/packs/25510/)
-- [x] Command execute sound (synth hit + data whoosh) - [qubodup whoosh](https://freesound.org/people/qubodup/packs/12143/)
-- [x] Glitch transition sound (digital corruption) - [dotY21 glitch](https://freesound.org/people/dotY21/sounds/348585/)
-- [x] Warning/alert tone (low frequency) - [Erokia electronic](https://freesound.org/people/Erokia/packs/26717/)
-- [x] Success chime (positive synth) - [_lucy success](https://freesound.org/people/_lucy/sounds/780010/)
-- [x] Data transmission ambient hum - [AlaskaRobotics hum](https://freesound.org/people/AlaskaRobotics/sounds/221570/)
-- [x] CRT power-on/off sound - [dav0r CRT](https://freesound.org/people/dav0r/sounds/382312/) + [grcekh static](https://freesound.org/people/grcekh/sounds/546047/)
-- [x] Place all in `src/assets/audio/sfx/` - directory created with README
-
-**Sources:** Freesound.org (all CC0 licensed), synthesized (warning tone)
-
-**Completed:** All 10 sound effects processed and placed in `src/assets/audio/sfx/`
-
----
-
-### 2.3 Generate Voiceover Audio
-
-**Description:** Create AI voiceover using ElevenLabs or similar.
-
-**Requirements:**
-- [ ] Finalize voiceover script (from SPEC.md)
-- [ ] Create ElevenLabs account (or alternative TTS)
-- [ ] Select deep voice from library (gravitas tone)
-- [ ] Generate audio for each section separately
-- [ ] Export as WAV files
-- [ ] Normalize audio levels
-- [ ] Place in `src/assets/audio/vo/`
-
-**Sections:**
-- `vo-problem.wav`
-- `vo-solution.wav`
-- `vo-engine.wav`
-- `vo-proof.wav`
-- `vo-cta.wav`
-
----
-
 ### 2.4 Audio Integration
 
 **Description:** Set up audio components in Remotion.
@@ -352,7 +310,7 @@ npx remotion render LibertasExplainer out/libertas-explainer-final.mp4 \
 |-------|--------|-------|
 | Phase 0: Setup | 100% | 0.1 ✓, 0.2 ✓, 0.3 ✓, 0.4 ✓, 0.5 ✓ |
 | Phase 1: Components | 100% | 1.1 ✓ TypewriterText, 1.2 ✓ MatrixRain, 1.3 ✓ Scanlines, 1.4 ✓ GlitchEffect, 1.5 ✓ TerminalCard, 1.6 ✓ ScoreBadge, 1.7 ✓ FlowDiagram |
-| Phase 2: Audio | 50% | 2.1 ✓ Background Music, 2.2 ✓ SFX Library curated |
+| Phase 2: Audio | 75% | 2.1 ✓ Background Music, 2.2 ✓ SFX Library, 2.3 ✓ Voiceover |
 | Phase 3: Scenes | 0% | Depends on Phase 1 |
 | Phase 4: Assembly | 0% | Depends on Phase 3 |
 | Phase 5: Review | 0% | Depends on Phase 4 |
