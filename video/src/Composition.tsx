@@ -1,4 +1,3 @@
-import type { LibertasExplainerProps } from "./Root";
 import { AbsoluteFill } from "remotion";
 import { colors } from "./utils/colors";
 import {
@@ -16,10 +15,13 @@ import {
   AudioTrack,
 } from "./compositions/LibertasExplainer/components";
 
-export const MyComposition: React.FC<LibertasExplainerProps> = ({
-  title,
-  subtitle,
-}) => {
+/**
+ * Demo/test composition - used for component development
+ * Main video uses LibertasExplainer composition instead
+ */
+export const MyComposition: React.FC = () => {
+  const title = "Libertas";
+  const subtitle = "Freedom Tech Research Platform";
   // Timing for typewriter demos
   const line1Start = 0;
   const line1End = getTypingEndFrame("initializing libertas...", line1Start, 50);

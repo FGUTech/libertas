@@ -18,14 +18,16 @@ import {
   interpolate,
   AbsoluteFill,
   Easing,
+  Sequence,
+  staticFile,
 } from 'remotion';
+import { Audio } from '@remotion/media';
 import { colors } from '../../../utils/colors';
 import { fontFamilies } from '../../../utils/fonts';
 import { TypewriterText } from '../components/TypewriterText';
 import { MatrixRain } from '../components/MatrixRain';
 import { GlitchTransition } from '../components/GlitchEffect';
 import { Scanlines } from '../components/Scanlines';
-import { AudioTrack } from '../components';
 
 // =============================================================================
 // TIMING CONSTANTS
@@ -54,6 +56,79 @@ const GLITCH_DURATION = 10;
 
 /** Cursor blink interval in frames (0.5s on, 0.5s off = 1s cycle) */
 const CURSOR_BLINK_INTERVAL = 15;
+
+/** Audio file paths */
+const AUDIO_FILES = {
+  music: 'audio/skynet-sky-cassette-main-version-41446-01-52.mp3',
+  sfx: {
+    type1: 'audio/sfx/type-1.wav',
+    type2: 'audio/sfx/type-2.wav',
+    type3: 'audio/sfx/type-3.wav',
+    dataHum: 'audio/sfx/data-hum.wav',
+    glitch: 'audio/sfx/glitch.wav',
+  },
+} as const;
+
+// =============================================================================
+// AUDIO COMPONENT
+// =============================================================================
+
+/**
+ * Audio for Hook scene standalone preview
+ * Uses scene-relative timing (frame 0 = start of Hook)
+ */
+const HookAudio: React.FC = () => {
+  const { fps } = useVideoConfig();
+
+  // Music volume fades in over first 2 seconds
+  const getMusicVolume = (f: number) => {
+    const fadeInFrames = fps * 2;
+    if (f < fadeInFrames) {
+      return 0.35 * (f / fadeInFrames);
+    }
+    return 0.35;
+  };
+
+  return (
+    <>
+      {/* Background music - fades in */}
+      <Audio
+        src={staticFile(AUDIO_FILES.music)}
+        volume={getMusicVolume}
+      />
+
+      {/* Typing sounds - staggered during typewriter (frames 30-90) */}
+      <Sequence from={TYPING_START_FRAME} durationInFrames={15} name="SFX: Type 1">
+        <Audio src={staticFile(AUDIO_FILES.sfx.type1)} volume={0.5} />
+      </Sequence>
+      <Sequence from={TYPING_START_FRAME + 6} durationInFrames={15} name="SFX: Type 2">
+        <Audio src={staticFile(AUDIO_FILES.sfx.type2)} volume={0.5} />
+      </Sequence>
+      <Sequence from={TYPING_START_FRAME + 12} durationInFrames={15} name="SFX: Type 3">
+        <Audio src={staticFile(AUDIO_FILES.sfx.type3)} volume={0.5} />
+      </Sequence>
+      <Sequence from={TYPING_START_FRAME + 18} durationInFrames={15} name="SFX: Type 1b">
+        <Audio src={staticFile(AUDIO_FILES.sfx.type1)} volume={0.5} />
+      </Sequence>
+      <Sequence from={TYPING_START_FRAME + 24} durationInFrames={15} name="SFX: Type 2b">
+        <Audio src={staticFile(AUDIO_FILES.sfx.type2)} volume={0.5} />
+      </Sequence>
+      <Sequence from={TYPING_START_FRAME + 30} durationInFrames={15} name="SFX: Type 3b">
+        <Audio src={staticFile(AUDIO_FILES.sfx.type3)} volume={0.5} />
+      </Sequence>
+
+      {/* Data hum - starts with Matrix rain */}
+      <Sequence from={MATRIX_RAIN_START} name="SFX: Data Hum">
+        <Audio src={staticFile(AUDIO_FILES.sfx.dataHum)} volume={0.15} loop />
+      </Sequence>
+
+      {/* Glitch transition sound */}
+      <Sequence from={GLITCH_START_FRAME} durationInFrames={30} name="SFX: Glitch">
+        <Audio src={staticFile(AUDIO_FILES.sfx.glitch)} volume={0.5} />
+      </Sequence>
+    </>
+  );
+};
 
 // =============================================================================
 // TYPES
@@ -132,8 +207,8 @@ export const HookScene: React.FC<HookSceneProps> = ({
           backgroundColor: colors.bg.primary,
         }}
       >
-        {/* Audio layer - music, voiceover, and SFX */}
-        <AudioTrack />
+        {/* Audio layer - music and SFX for Hook scene */}
+        <HookAudio />
 
         {/* Matrix rain background - appears at frame 75 */}
         {frame >= MATRIX_RAIN_START && (

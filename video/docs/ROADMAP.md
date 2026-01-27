@@ -140,45 +140,13 @@ npx remotion render LibertasExplainer out/libertas-explainer-final.mp4 \
 ## Current State Summary
 
 | Phase | Status | Notes |
-|-------|--------|-------|
-| Phase 0: Setup | 100% | 0.1 ✓, 0.2 ✓, 0.3 ✓, 0.4 ✓, 0.5 ✓ |
-| Phase 1: Components | 100% | 1.1 ✓ TypewriterText, 1.2 ✓ MatrixRain, 1.3 ✓ Scanlines, 1.4 ✓ GlitchEffect, 1.5 ✓ TerminalCard, 1.6 ✓ ScoreBadge, 1.7 ✓ FlowDiagram |
-| Phase 2: Audio | 75% | 2.1 ✓ Background Music, 2.2 ✓ SFX Library, 2.3 ✓ Voiceover |
-| Phase 3: Scenes | 100% | 3.1 ✓ Hook, 3.2 ✓ Problem, 3.3 ✓ Solution, 3.4 ✓ Workflow, 3.5 ✓ Proof, 3.6 ✓ CTA, 3.7 ✓ EndCard |
 | Phase 4: Assembly | 0% | Depends on Phase 3 |
 | Phase 5: Review | 0% | Depends on Phase 4 |
 
 ---
 
-## Parallelization Notes
-
-The following can be worked on simultaneously:
-
-**Track A (Visual):**
-0.1 → 0.2 → 0.3 → 0.4 → 0.5 → 1.x → 3.x → 4.1
-
-**Track B (Audio):**
-2.1 → 2.2 → 2.3 (parallel with Track A Phase 1)
-
-**Merge Point:**
-2.4 + 4.1 → 4.2 → 4.3 → 4.4 → 5.x
-
----
-
 ## Decision Points
-
-### Before Phase 2
-- [ ] Confirm voiceover script is final
-- [x] Confirm music track selection (Skynet by Sky Cassette)
-
-### Before Phase 3
-- [ ] Confirm all component designs
-- [ ] Confirm timing for each section
 
 ### Before Phase 5
 - [ ] User review of draft video
 - [ ] Final approval on content
-
----
-
-*Last updated: Initial creation. Update as phases complete.*
