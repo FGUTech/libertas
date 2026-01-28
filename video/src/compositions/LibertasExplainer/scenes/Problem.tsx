@@ -756,7 +756,7 @@ export const ProblemScene: React.FC<ProblemSceneProps> = ({ debug = false }) => 
                 { label: 'RELEVANCE', value: 95 },
               ]}
               accentColor="red"
-              widthChars={45}
+              width={700}
               fontSize={26}
               startFrame={IRAN_CARD_START}
               slideFrom="bottom"

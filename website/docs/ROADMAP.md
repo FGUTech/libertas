@@ -41,10 +41,12 @@ Features that enhance the experience but aren't critical for launch.
 **Requirements**:
 - [ ] About page explaining Libertas mission and team
 - [ ] FAQ section answering common questions
+- [ ] Embed explainer video on About page
 
 **Implementation Notes**:
 - Use MDX or static React components
 - Ensure consistent styling with rest of site
+- Video file: `public/libertas-explainer-final.mp4` (copy from `video/out/`)
 
 ### 2.1 User Authentication (Firebase + Starknet)
 
