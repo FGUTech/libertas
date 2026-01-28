@@ -34,3 +34,6 @@ export {
   SFX_TIMING,
 } from '../AudioTrack';
 export type { AudioTrackProps } from '../AudioTrack';
+
+export { CaptionTrack } from './CaptionTrack';
+export type { CaptionTrackProps } from './CaptionTrack';

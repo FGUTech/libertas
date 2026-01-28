@@ -28,6 +28,13 @@ import {
 } from 'remotion';
 import { colors } from '../../../utils/colors';
 import { fontFamilies, displayStyle, terminalStyle } from '../../../utils/fonts';
+import {
+  AUDIO_FILES,
+  MUSIC_VOLUME_DUCKED,
+  VO_VOLUME,
+  SFX_VOLUME_QUIET,
+  SFX_VOLUME_LOUD,
+} from '../../../utils/audio';
 import { TerminalCard } from '../components/TerminalCard';
 import { Scanlines } from '../components/Scanlines';
 import { GlitchTransition } from '../components/GlitchEffect';
@@ -56,20 +63,6 @@ const COUNTER_START = 300;
 
 /** CRT shutdown section (last) */
 const CRT_SHUTDOWN_START = 450;
-
-// =============================================================================
-// AUDIO PATHS
-// =============================================================================
-
-const AUDIO_FILES = {
-  music: 'audio/skynet-sky-cassette-main-version-41446-01-52.mp3',
-  voProblem: 'audio/vo/vo-problem.mp3',
-  sfx: {
-    warning: 'audio/sfx/warning.wav',
-    glitch: 'audio/sfx/glitch.wav',
-    crtOff: 'audio/sfx/crt-off.wav',
-  },
-} as const;
 
 // =============================================================================
 // TYPES
@@ -166,35 +159,47 @@ const THREAT_SLIDES: ThreatSlide[] = [
 /**
  * Audio for Problem scene standalone preview
  * Uses scene-relative timing (frame 0 = start of Problem)
+ *
+ * Audio levels per SPEC.md:
+ * - Music ducked: -24dB = 0.063 linear (VO is playing)
+ * - VO: 0dB = 1.0 linear
+ * - Warning SFX: -15dB = 0.178 linear
+ * - CRT SFX: -12dB = 0.251 linear
  */
 const ProblemAudio: React.FC = () => {
   const { fps } = useVideoConfig();
 
+  // Volume callbacks
+  const musicVol = () => MUSIC_VOLUME_DUCKED;
+  const voVol = () => VO_VOLUME;
+  const warningVol = () => SFX_VOLUME_QUIET;
+  const crtVol = () => SFX_VOLUME_LOUD;
+
   return (
     <>
-      {/* Background music - ducked */}
+      {/* Background music - ducked during VO */}
       <Audio
         src={staticFile(AUDIO_FILES.music)}
-        volume={0.15}
+        volume={musicVol}
         startFrom={5 * fps} // Start 5 seconds into the track
       />
 
       {/* Voiceover - starts at frame 15 (0.5s in, earlier than before) */}
       <Sequence from={15} name="VO: Problem">
         <Audio
-          src={staticFile(AUDIO_FILES.voProblem)}
-          volume={1.0}
+          src={staticFile(AUDIO_FILES.vo.problem)}
+          volume={voVol}
         />
       </Sequence>
 
       {/* Warning SFX - plays during quick cuts */}
       <Sequence from={30} durationInFrames={60} name="SFX: Warning">
-        <Audio src={staticFile(AUDIO_FILES.sfx.warning)} volume={0.3} />
+        <Audio src={staticFile(AUDIO_FILES.sfx.warning)} volume={warningVol} />
       </Sequence>
 
       {/* CRT Off SFX */}
       <Sequence from={CRT_SHUTDOWN_START} durationInFrames={60} name="SFX: CRT Off">
-        <Audio src={staticFile(AUDIO_FILES.sfx.crtOff)} volume={0.6} />
+        <Audio src={staticFile(AUDIO_FILES.sfx.crtOff)} volume={crtVol} />
       </Sequence>
     </>
   );

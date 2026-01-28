@@ -3,6 +3,11 @@
  *
  * Layers background music, voiceover, and sound effects with
  * VO ducking (music volume lowers when voice plays).
+ *
+ * Audio Mix Levels (per SPEC.md):
+ * - Voiceover: 0dB (reference) = 1.0 linear
+ * - Music bed: -18dB normal, -24dB ducked = 0.126/0.063 linear
+ * - Sound effects: -12dB to -15dB = 0.251 to 0.178 linear
  */
 
 import { Audio } from "@remotion/media";
@@ -13,6 +18,21 @@ import {
   interpolate,
   staticFile,
 } from "remotion";
+
+// Import centralized audio utilities
+import {
+  AUDIO_FILES,
+  MUSIC_VOLUME_NORMAL,
+  MUSIC_VOLUME_DUCKED,
+  SFX_VOLUME_TYPING,
+  SFX_VOLUME_LOUD,
+  SFX_VOLUME_NORMAL,
+  SFX_VOLUME_QUIET,
+  SFX_VOLUME_GLITCH,
+  SFX_VOLUME_AMBIENT,
+  DUCK_TRANSITION_SEC,
+  getVOVolume,
+} from "../../utils/audio";
 
 // ============================================================================
 // TIMING CONSTANTS (frames at 30fps)
@@ -56,50 +76,21 @@ export const SFX_TIMING = {
 } as const;
 
 // ============================================================================
-// AUDIO FILE PATHS
-// ============================================================================
-
-const AUDIO_FILES = {
-  music: "audio/skynet-sky-cassette-main-version-41446-01-52.mp3",
-  vo: {
-    problem: "audio/vo/vo-problem.mp3",
-    solution: "audio/vo/vo-solution.mp3",
-    engine: "audio/vo/vo-engine.mp3",
-    proof: "audio/vo/vo-proof.mp3",
-    cta: "audio/vo/vo-cta.mp3",
-  },
-  sfx: {
-    type1: "audio/sfx/type-1.wav",
-    type2: "audio/sfx/type-2.wav",
-    type3: "audio/sfx/type-3.wav",
-    cmdExecute: "audio/sfx/cmd-execute.wav",
-    glitch: "audio/sfx/glitch.wav",
-    warning: "audio/sfx/warning.wav",
-    success: "audio/sfx/success.wav",
-    dataHum: "audio/sfx/data-hum.wav",
-    crtOn: "audio/sfx/crt-on.wav",
-    crtOff: "audio/sfx/crt-off.wav",
-  },
-} as const;
-
-// ============================================================================
 // VOLUME UTILITIES
 // ============================================================================
 
 /**
  * Calculate music volume with VO ducking
- * Lowers music when voiceover is playing
+ * Uses SPEC.md levels: -18dB normal, -24dB ducked
  */
 function getMusicVolumeAtFrame(frame: number, fps: number): number {
-  const normalVolume = 0.35;
-  const duckedVolume = 0.12;
   const fadeInFrames = fps * 2; // 2 second fade in at start
   const fadeOutFrames = fps * 3; // 3 second fade out at end
   const totalFrames = 3600;
-  const duckTransition = fps * 0.3; // 0.3 second transition
+  const duckTransition = fps * DUCK_TRANSITION_SEC;
 
   // Check if any VO is playing and calculate ducking
-  let targetVolume = normalVolume;
+  let targetVolume = MUSIC_VOLUME_NORMAL;
 
   for (const [, timing] of Object.entries(VO_TIMING)) {
     const voStart = timing.start;
@@ -111,7 +102,7 @@ function getMusicVolumeAtFrame(frame: number, fps: number): number {
         // Transition into duck
         targetVolume = Math.min(
           targetVolume,
-          interpolate(frame, [voStart - duckTransition, voStart], [normalVolume, duckedVolume], {
+          interpolate(frame, [voStart - duckTransition, voStart], [MUSIC_VOLUME_NORMAL, MUSIC_VOLUME_DUCKED], {
             extrapolateLeft: "clamp",
             extrapolateRight: "clamp",
           })
@@ -120,14 +111,14 @@ function getMusicVolumeAtFrame(frame: number, fps: number): number {
         // Transition out of duck
         targetVolume = Math.min(
           targetVolume,
-          interpolate(frame, [voEnd, voEnd + duckTransition], [duckedVolume, normalVolume], {
+          interpolate(frame, [voEnd, voEnd + duckTransition], [MUSIC_VOLUME_DUCKED, MUSIC_VOLUME_NORMAL], {
             extrapolateLeft: "clamp",
             extrapolateRight: "clamp",
           })
         );
       } else {
         // During VO - fully ducked
-        targetVolume = duckedVolume;
+        targetVolume = MUSIC_VOLUME_DUCKED;
       }
     }
   }
@@ -154,24 +145,10 @@ function getMusicVolumeAtFrame(frame: number, fps: number): number {
 
 /**
  * Calculate VO volume with fade in/out
+ * Uses SPEC.md level: 0dB (1.0 linear)
  */
 function getVOVolumeAtFrame(frame: number, durationSec: number, fps: number): number {
-  const fadeFrames = fps * 0.1; // 0.1 second fade
-  const totalFrames = durationSec * fps;
-
-  // Fade in
-  if (frame < fadeFrames) {
-    return interpolate(frame, [0, fadeFrames], [0, 1], { extrapolateRight: "clamp" });
-  }
-
-  // Fade out
-  if (frame > totalFrames - fadeFrames) {
-    return interpolate(frame, [totalFrames - fadeFrames, totalFrames], [1, 0], {
-      extrapolateLeft: "clamp",
-    });
-  }
-
-  return 1;
+  return getVOVolume(frame, durationSec, fps);
 }
 
 // ============================================================================
@@ -257,18 +234,29 @@ export const VoiceoverTrack: React.FC<{ volume?: number }> = ({ volume = 1.0 }) 
 
 /**
  * Sound effects track - synced to visual events
+ * Levels adjusted based on feedback:
+ * - Typing: -6dB (louder, clearly audible)
+ * - Glitch: -22dB (softer, less harsh)
  */
-export const SFXTrack: React.FC<{ volume?: number }> = ({ volume = 0.6 }) => {
-  // Create volume callbacks that return constant values
-  const typeVol = () => volume * 0.7;
-  const dataHumVol = () => volume * 0.15;
-  const glitchVol = () => volume * 0.5;
-  const warningVol = () => volume * 0.3;
-  const crtOffVol = () => volume * 0.7;
-  const crtOnVol = () => volume * 0.6;
-  const successVol = () => volume * 0.4;
-  const cmdVol = () => volume * 0.4;
-  const glitchSmallVol = () => volume * 0.4;
+export const SFXTrack: React.FC<{ volume?: number }> = ({ volume = 1.0 }) => {
+  // Create volume callbacks
+  // Typing sounds: -6dB (louder per feedback)
+  const typeVol = () => SFX_VOLUME_TYPING * volume;
+  // Ambient hum: -20dB (ambient)
+  const dataHumVol = () => SFX_VOLUME_AMBIENT * volume;
+  // Glitch transitions: -22dB (softer per feedback)
+  const glitchVol = () => SFX_VOLUME_GLITCH * volume;
+  // Warning tone: -15dB (quiet, background)
+  const warningVol = () => SFX_VOLUME_QUIET * volume;
+  // CRT effects: -12dB (loud, transitions)
+  const crtOffVol = () => SFX_VOLUME_LOUD * volume;
+  const crtOnVol = () => SFX_VOLUME_LOUD * volume;
+  // Success chime: -14dB (normal)
+  const successVol = () => SFX_VOLUME_NORMAL * volume;
+  // Command execute: -14dB (normal)
+  const cmdVol = () => SFX_VOLUME_NORMAL * volume;
+  // Smaller glitches: -22dB (softer per feedback)
+  const glitchSmallVol = () => SFX_VOLUME_GLITCH * volume;
 
   return (
     <>

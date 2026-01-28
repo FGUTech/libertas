@@ -45,6 +45,9 @@ import {
 // Colors
 import { BG_PRIMARY } from '../../utils/colors';
 
+// Caption overlay
+import { CaptionTrack } from './components/CaptionTrack';
+
 // =============================================================================
 // TIMING CONFIGURATION
 // =============================================================================
@@ -111,6 +114,8 @@ export interface LibertasExplainerProps {
   audioEnabled?: boolean;
   /** Master volume (0-1) */
   masterVolume?: number;
+  /** Enable baked-in captions for autoplay */
+  captionsEnabled?: boolean;
 }
 
 // =============================================================================
@@ -130,6 +135,7 @@ export const LibertasExplainer: React.FC<LibertasExplainerProps> = ({
   audioEnabled: _audioEnabled = true,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   masterVolume: _masterVolume = 1.0,
+  captionsEnabled = true,
 }) => {
   return (
     <AbsoluteFill style={{ backgroundColor: BG_PRIMARY }}>
@@ -215,6 +221,9 @@ export const LibertasExplainer: React.FC<LibertasExplainerProps> = ({
           <EndCardScene debug={debug} />
         </TransitionSeries.Sequence>
       </TransitionSeries>
+
+      {/* Caption Track - overlays all scenes */}
+      <CaptionTrack enabled={captionsEnabled} debug={debug} />
 
       {/* Global Debug Overlay */}
       {debug && <DebugOverlay />}

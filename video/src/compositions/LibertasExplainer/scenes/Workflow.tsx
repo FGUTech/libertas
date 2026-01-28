@@ -34,6 +34,13 @@ import {
 } from 'remotion';
 import { ACCENT_PRIMARY, ACCENT_AMBER, BG_PRIMARY, BG_TERTIARY, BG_SECONDARY, FG_PRIMARY, FG_SECONDARY, FG_TERTIARY } from '../../../utils/colors';
 import { fontFamilies, terminalStyle } from '../../../utils/fonts';
+import {
+  AUDIO_FILES,
+  MUSIC_VOLUME_DUCKED,
+  VO_VOLUME,
+  SFX_VOLUME_NORMAL,
+  SFX_VOLUME_AMBIENT,
+} from '../../../utils/audio';
 import { MatrixRain } from '../components/MatrixRain';
 import { Scanlines } from '../components/Scanlines';
 
@@ -64,20 +71,6 @@ const LOGO_MORPH_START = 650;
 
 /** Total scene duration (shorter without separate full pipeline section) */
 const SCENE_DURATION = 695; // Cut 1 second (30 frames) from original for faster transition
-
-// =============================================================================
-// AUDIO PATHS
-// =============================================================================
-
-const AUDIO_FILES = {
-  music: 'audio/skynet-sky-cassette-main-version-41446-01-52.mp3',
-  voEngine: 'audio/vo/vo-engine.mp3',
-  sfx: {
-    dataHum: 'audio/sfx/data-hum.wav',
-    cmdExecute: 'audio/sfx/cmd-execute.wav',
-    success: 'audio/sfx/success.wav',
-  },
-} as const;
 
 // =============================================================================
 // LAYOUT CONSTANTS - 1.8X scale (10% smaller than 2x)
@@ -132,42 +125,57 @@ interface NodeProps {
 // AUDIO COMPONENT
 // =============================================================================
 
+/**
+ * Audio for Workflow scene
+ *
+ * Audio levels per SPEC.md:
+ * - Music ducked: -24dB = 0.063 linear (VO is playing)
+ * - VO: 0dB = 1.0 linear
+ * - Data hum ambient: -20dB = 0.100 linear
+ * - Command SFX: -14dB = 0.200 linear
+ */
 const WorkflowAudio: React.FC = () => {
   const { fps } = useVideoConfig();
+
+  // Volume callbacks
+  const musicVol = () => MUSIC_VOLUME_DUCKED;
+  const voVol = () => VO_VOLUME;
+  const dataHumVol = () => SFX_VOLUME_AMBIENT;
+  const cmdVol = () => SFX_VOLUME_NORMAL;
 
   return (
     <>
       {/* Background music - section starts at 50s into track */}
       <Audio
         src={staticFile(AUDIO_FILES.music)}
-        volume={0.12}
+        volume={musicVol}
         startFrom={50 * fps}
       />
 
       {/* Voiceover - starts at frame 0 of this scene */}
       <Sequence name="VO: Engine">
         <Audio
-          src={staticFile(AUDIO_FILES.voEngine)}
-          volume={1.0}
+          src={staticFile(AUDIO_FILES.vo.engine)}
+          volume={voVol}
         />
       </Sequence>
 
       {/* Data hum ambient */}
       <Audio
         src={staticFile(AUDIO_FILES.sfx.dataHum)}
-        volume={0.15}
+        volume={dataHumVol}
         loop
       />
 
       {/* Command execute SFX at key moments */}
       <Sequence from={CLASSIFY_START + 20} durationInFrames={30} name="SFX: Classify">
-        <Audio src={staticFile(AUDIO_FILES.sfx.cmdExecute)} volume={0.4} />
+        <Audio src={staticFile(AUDIO_FILES.sfx.cmdExecute)} volume={cmdVol} />
       </Sequence>
       <Sequence from={SUMMARIZE_START + 15} durationInFrames={30} name="SFX: Summarize">
-        <Audio src={staticFile(AUDIO_FILES.sfx.cmdExecute)} volume={0.4} />
+        <Audio src={staticFile(AUDIO_FILES.sfx.cmdExecute)} volume={cmdVol} />
       </Sequence>
       <Sequence from={PUBLISH_START + 15} durationInFrames={30} name="SFX: Publish">
-        <Audio src={staticFile(AUDIO_FILES.sfx.cmdExecute)} volume={0.4} />
+        <Audio src={staticFile(AUDIO_FILES.sfx.cmdExecute)} volume={cmdVol} />
       </Sequence>
     </>
   );

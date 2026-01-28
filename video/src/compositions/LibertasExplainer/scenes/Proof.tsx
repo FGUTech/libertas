@@ -35,6 +35,13 @@ import {
   FG_TERTIARY,
 } from '../../../utils/colors';
 import { fontFamilies, displayStyle, terminalStyle } from '../../../utils/fonts';
+import {
+  AUDIO_FILES,
+  MUSIC_VOLUME_DUCKED,
+  VO_VOLUME,
+  SFX_VOLUME_NORMAL,
+  SFX_VOLUME_GLITCH,
+} from '../../../utils/audio';
 import { MatrixRain } from '../components/MatrixRain';
 import { Scanlines } from '../components/Scanlines';
 import { GlitchTransition } from '../components/GlitchEffect';
@@ -68,19 +75,6 @@ const GRID_START = 480;
 
 /** Total scene duration */
 const SCENE_DURATION = 600;
-
-// =============================================================================
-// AUDIO PATHS
-// =============================================================================
-
-const AUDIO_FILES = {
-  music: 'audio/skynet-sky-cassette-main-version-41446-01-52.mp3',
-  voProof: 'audio/vo/vo-proof.mp3',
-  sfx: {
-    success: 'audio/sfx/success.wav',
-    glitch: 'audio/sfx/glitch.wav',
-  },
-} as const;
 
 // =============================================================================
 // TYPES
@@ -157,40 +151,55 @@ const SIGNAL_CARDS: SignalCard[] = [
 // AUDIO COMPONENT
 // =============================================================================
 
+/**
+ * Audio for Proof scene
+ *
+ * Audio levels (adjusted per feedback):
+ * - Music ducked: -24dB = 0.063 linear (VO is playing)
+ * - VO: 0dB = 1.0 linear
+ * - Success SFX: -14dB = 0.200 linear
+ * - Glitch SFX: -22dB = 0.079 linear (softer, less harsh)
+ */
 const ProofAudio: React.FC = () => {
   const { fps } = useVideoConfig();
+
+  // Volume callbacks
+  const musicVol = () => MUSIC_VOLUME_DUCKED;
+  const voVol = () => VO_VOLUME;
+  const successVol = () => SFX_VOLUME_NORMAL;
+  const glitchVol = () => SFX_VOLUME_GLITCH;
 
   return (
     <>
       {/* Background music - section starts at 80s into track */}
       <Audio
         src={staticFile(AUDIO_FILES.music)}
-        volume={0.12}
+        volume={musicVol}
         startFrom={80 * fps}
       />
 
       {/* Voiceover - starts at title end */}
       <Sequence from={TITLE_START + 30} name="VO: Proof">
         <Audio
-          src={staticFile(AUDIO_FILES.voProof)}
-          volume={1.0}
+          src={staticFile(AUDIO_FILES.vo.proof)}
+          volume={voVol}
         />
       </Sequence>
 
       {/* Success SFX on title */}
       <Sequence from={20} durationInFrames={60} name="SFX: Success">
-        <Audio src={staticFile(AUDIO_FILES.sfx.success)} volume={0.4} />
+        <Audio src={staticFile(AUDIO_FILES.sfx.success)} volume={successVol} />
       </Sequence>
 
       {/* Glitch SFX on card transitions */}
       <Sequence from={UGANDA_START - 5} durationInFrames={30} name="SFX: Glitch 1">
-        <Audio src={staticFile(AUDIO_FILES.sfx.glitch)} volume={0.25} />
+        <Audio src={staticFile(AUDIO_FILES.sfx.glitch)} volume={glitchVol} />
       </Sequence>
       <Sequence from={BHUTAN_START - 5} durationInFrames={30} name="SFX: Glitch 2">
-        <Audio src={staticFile(AUDIO_FILES.sfx.glitch)} volume={0.25} />
+        <Audio src={staticFile(AUDIO_FILES.sfx.glitch)} volume={glitchVol} />
       </Sequence>
       <Sequence from={EFF_START - 5} durationInFrames={30} name="SFX: Glitch 3">
-        <Audio src={staticFile(AUDIO_FILES.sfx.glitch)} volume={0.25} />
+        <Audio src={staticFile(AUDIO_FILES.sfx.glitch)} volume={glitchVol} />
       </Sequence>
     </>
   );

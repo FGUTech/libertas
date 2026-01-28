@@ -24,6 +24,13 @@ import {
 import { Audio } from '@remotion/media';
 import { colors } from '../../../utils/colors';
 import { fontFamilies } from '../../../utils/fonts';
+import {
+  AUDIO_FILES,
+  MUSIC_VOLUME_NORMAL,
+  SFX_VOLUME_TYPING,
+  SFX_VOLUME_GLITCH,
+  SFX_VOLUME_AMBIENT,
+} from '../../../utils/audio';
 import { TypewriterText } from '../components/TypewriterText';
 import { MatrixRain } from '../components/MatrixRain';
 import { GlitchTransition } from '../components/GlitchEffect';
@@ -57,18 +64,6 @@ const GLITCH_DURATION = 10;
 /** Cursor blink interval in frames (0.5s on, 0.5s off = 1s cycle) */
 const CURSOR_BLINK_INTERVAL = 15;
 
-/** Audio file paths */
-const AUDIO_FILES = {
-  music: 'audio/skynet-sky-cassette-main-version-41446-01-52.mp3',
-  sfx: {
-    type1: 'audio/sfx/type-1.wav',
-    type2: 'audio/sfx/type-2.wav',
-    type3: 'audio/sfx/type-3.wav',
-    dataHum: 'audio/sfx/data-hum.wav',
-    glitch: 'audio/sfx/glitch.wav',
-  },
-} as const;
-
 // =============================================================================
 // AUDIO COMPONENT
 // =============================================================================
@@ -76,18 +71,29 @@ const AUDIO_FILES = {
 /**
  * Audio for Hook scene standalone preview
  * Uses scene-relative timing (frame 0 = start of Hook)
+ *
+ * Audio levels (adjusted per feedback):
+ * - Music: -18dB normal = 0.126 linear
+ * - SFX typing: -6dB = 0.501 linear (louder)
+ * - SFX ambient: -20dB = 0.100 linear
+ * - SFX glitch: -22dB = 0.079 linear (softer)
  */
 const HookAudio: React.FC = () => {
   const { fps } = useVideoConfig();
 
-  // Music volume fades in over first 2 seconds
+  // Music volume fades in over first 2 seconds to -18dB
   const getMusicVolume = (f: number) => {
     const fadeInFrames = fps * 2;
     if (f < fadeInFrames) {
-      return 0.35 * (f / fadeInFrames);
+      return MUSIC_VOLUME_NORMAL * (f / fadeInFrames);
     }
-    return 0.35;
+    return MUSIC_VOLUME_NORMAL;
   };
+
+  // Volume callbacks for SFX
+  const typeVol = () => SFX_VOLUME_TYPING;
+  const dataHumVol = () => SFX_VOLUME_AMBIENT;
+  const glitchVol = () => SFX_VOLUME_GLITCH;
 
   return (
     <>
@@ -99,32 +105,32 @@ const HookAudio: React.FC = () => {
 
       {/* Typing sounds - staggered during typewriter (frames 30-90) */}
       <Sequence from={TYPING_START_FRAME} durationInFrames={15} name="SFX: Type 1">
-        <Audio src={staticFile(AUDIO_FILES.sfx.type1)} volume={0.5} />
+        <Audio src={staticFile(AUDIO_FILES.sfx.type1)} volume={typeVol} />
       </Sequence>
       <Sequence from={TYPING_START_FRAME + 6} durationInFrames={15} name="SFX: Type 2">
-        <Audio src={staticFile(AUDIO_FILES.sfx.type2)} volume={0.5} />
+        <Audio src={staticFile(AUDIO_FILES.sfx.type2)} volume={typeVol} />
       </Sequence>
       <Sequence from={TYPING_START_FRAME + 12} durationInFrames={15} name="SFX: Type 3">
-        <Audio src={staticFile(AUDIO_FILES.sfx.type3)} volume={0.5} />
+        <Audio src={staticFile(AUDIO_FILES.sfx.type3)} volume={typeVol} />
       </Sequence>
       <Sequence from={TYPING_START_FRAME + 18} durationInFrames={15} name="SFX: Type 1b">
-        <Audio src={staticFile(AUDIO_FILES.sfx.type1)} volume={0.5} />
+        <Audio src={staticFile(AUDIO_FILES.sfx.type1)} volume={typeVol} />
       </Sequence>
       <Sequence from={TYPING_START_FRAME + 24} durationInFrames={15} name="SFX: Type 2b">
-        <Audio src={staticFile(AUDIO_FILES.sfx.type2)} volume={0.5} />
+        <Audio src={staticFile(AUDIO_FILES.sfx.type2)} volume={typeVol} />
       </Sequence>
       <Sequence from={TYPING_START_FRAME + 30} durationInFrames={15} name="SFX: Type 3b">
-        <Audio src={staticFile(AUDIO_FILES.sfx.type3)} volume={0.5} />
+        <Audio src={staticFile(AUDIO_FILES.sfx.type3)} volume={typeVol} />
       </Sequence>
 
       {/* Data hum - starts with Matrix rain */}
       <Sequence from={MATRIX_RAIN_START} name="SFX: Data Hum">
-        <Audio src={staticFile(AUDIO_FILES.sfx.dataHum)} volume={0.15} loop />
+        <Audio src={staticFile(AUDIO_FILES.sfx.dataHum)} volume={dataHumVol} loop />
       </Sequence>
 
       {/* Glitch transition sound */}
       <Sequence from={GLITCH_START_FRAME} durationInFrames={30} name="SFX: Glitch">
-        <Audio src={staticFile(AUDIO_FILES.sfx.glitch)} volume={0.5} />
+        <Audio src={staticFile(AUDIO_FILES.sfx.glitch)} volume={glitchVol} />
       </Sequence>
     </>
   );

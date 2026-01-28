@@ -25,6 +25,14 @@ import {
 } from 'remotion';
 import { colors } from '../../../utils/colors';
 import { fontFamilies, displayStyle, terminalStyle } from '../../../utils/fonts';
+import {
+  AUDIO_FILES,
+  MUSIC_VOLUME_DUCKED,
+  VO_VOLUME,
+  SFX_VOLUME_LOUD,
+  SFX_VOLUME_NORMAL,
+  SFX_VOLUME_TYPING,
+} from '../../../utils/audio';
 import { TypewriterText } from '../components/TypewriterText';
 import { MatrixRain } from '../components/MatrixRain';
 import { Scanlines } from '../components/Scanlines';
@@ -52,22 +60,6 @@ const PULLBACK_START = 250;
 /** Value proposition cards */
 const VALUE_PROPS_START = 500;
 const VALUE_PROP_STAGGER = 50; // Increased stagger between cards
-
-// =============================================================================
-// AUDIO PATHS
-// =============================================================================
-
-const AUDIO_FILES = {
-  music: 'audio/skynet-sky-cassette-main-version-41446-01-52.mp3',
-  voSolution: 'audio/vo/vo-solution.mp3',
-  sfx: {
-    crtOn: 'audio/sfx/crt-on.wav',
-    success: 'audio/sfx/success.wav',
-    type1: 'audio/sfx/type-1.wav',
-    type2: 'audio/sfx/type-2.wav',
-    type3: 'audio/sfx/type-3.wav',
-  },
-} as const;
 
 // =============================================================================
 // DATA
@@ -116,15 +108,32 @@ export interface SolutionSceneProps {
 // AUDIO COMPONENT (Scene-specific timing)
 // =============================================================================
 
+/**
+ * Audio for Solution scene
+ *
+ * Audio levels (adjusted per feedback):
+ * - Music ducked: -24dB = 0.063 linear (VO is playing)
+ * - VO: 0dB = 1.0 linear
+ * - CRT SFX: -12dB = 0.251 linear
+ * - Typing SFX: -6dB = 0.501 linear (louder)
+ * - Success SFX: -14dB = 0.200 linear
+ */
 const SolutionAudio: React.FC = () => {
   const { fps } = useVideoConfig();
 
+  // Volume callbacks
+  const musicVol = () => MUSIC_VOLUME_DUCKED;
+  const voVol = () => VO_VOLUME;
+  const crtVol = () => SFX_VOLUME_LOUD;
+  const typeVol = () => SFX_VOLUME_TYPING;
+  const successVol = () => SFX_VOLUME_NORMAL;
+
   return (
     <>
-      {/* Background music - ducked */}
+      {/* Background music - ducked during VO */}
       <Audio
         src={staticFile(AUDIO_FILES.music)}
-        volume={0.12}
+        volume={musicVol}
         startFrom={25 * fps} // Start 25 seconds into the track (where this scene begins)
       />
 
@@ -132,30 +141,30 @@ const SolutionAudio: React.FC = () => {
       {/* Scene shortened - removed classifies/analyzes/publishes section */}
       <Sequence from={90 as number} durationInFrames={270} name="VO: Solution">
         <Audio
-          src={staticFile(AUDIO_FILES.voSolution)}
-          volume={1.0}
+          src={staticFile(AUDIO_FILES.vo.solution)}
+          volume={voVol}
         />
       </Sequence>
 
       {/* CRT On SFX - boot sequence */}
       <Sequence durationInFrames={75} name="SFX: CRT On">
-        <Audio src={staticFile(AUDIO_FILES.sfx.crtOn)} volume={0.6} />
+        <Audio src={staticFile(AUDIO_FILES.sfx.crtOn)} volume={crtVol} />
       </Sequence>
 
       {/* Typing SFX */}
       <Sequence from={BOOT_LINE_1_START} durationInFrames={15} name="SFX: Type 1">
-        <Audio src={staticFile(AUDIO_FILES.sfx.type1)} volume={0.5} />
+        <Audio src={staticFile(AUDIO_FILES.sfx.type1)} volume={typeVol} />
       </Sequence>
       <Sequence from={BOOT_LINE_2_START} durationInFrames={15} name="SFX: Type 2">
-        <Audio src={staticFile(AUDIO_FILES.sfx.type2)} volume={0.5} />
+        <Audio src={staticFile(AUDIO_FILES.sfx.type2)} volume={typeVol} />
       </Sequence>
       <Sequence from={BOOT_LINE_3_START} durationInFrames={15} name="SFX: Type 3">
-        <Audio src={staticFile(AUDIO_FILES.sfx.type3)} volume={0.5} />
+        <Audio src={staticFile(AUDIO_FILES.sfx.type3)} volume={typeVol} />
       </Sequence>
 
       {/* Success chime - URL reveal */}
       <Sequence from={URL_REVEAL_START + 15} durationInFrames={90} name="SFX: Success">
-        <Audio src={staticFile(AUDIO_FILES.sfx.success)} volume={0.4} />
+        <Audio src={staticFile(AUDIO_FILES.sfx.success)} volume={successVol} />
       </Sequence>
     </>
   );

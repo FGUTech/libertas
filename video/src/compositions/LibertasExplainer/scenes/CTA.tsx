@@ -28,7 +28,13 @@ import {
   FG_PRIMARY,
   FG_TERTIARY,
 } from '../../../utils/colors';
-import { fontFamilies, displayStyle, terminalStyle } from '../../../utils/fonts';
+import { fontFamilies, displayStyle } from '../../../utils/fonts';
+import {
+  AUDIO_FILES,
+  MUSIC_VOLUME_DUCKED,
+  VO_VOLUME,
+  SFX_VOLUME_TYPING,
+} from '../../../utils/audio';
 import { MatrixRain } from '../components/MatrixRain';
 import { Scanlines } from '../components/Scanlines';
 import { TypewriterText, getTypingEndFrame } from '../components/TypewriterText';
@@ -53,20 +59,6 @@ const BRANDING_START = 200;
 const SCENE_DURATION = 450;
 
 // =============================================================================
-// AUDIO PATHS
-// =============================================================================
-
-const AUDIO_FILES = {
-  music: 'audio/skynet-sky-cassette-main-version-41446-01-52.mp3',
-  voCTA: 'audio/vo/vo-cta.mp3',
-  sfx: {
-    type1: 'audio/sfx/type-1.wav',
-    type2: 'audio/sfx/type-2.wav',
-    type3: 'audio/sfx/type-3.wav',
-  },
-} as const;
-
-// =============================================================================
 // TYPES
 // =============================================================================
 
@@ -88,11 +80,19 @@ const TERMINAL_PROMPTS = [
 // AUDIO COMPONENT
 // =============================================================================
 
+/**
+ * Audio for CTA scene
+ *
+ * Audio levels (adjusted per feedback):
+ * - Music ducked: -24dB = 0.063 linear (VO is playing)
+ * - VO: 0dB = 1.0 linear
+ * - Typing SFX: -6dB = 0.501 linear (louder)
+ */
 const CTAAudio: React.FC = () => {
   // Volume callbacks (must be functions, not direct values)
-  const musicVol = () => 0.12;
-  const voVol = () => 1.0;
-  const typeVol = () => 0.42; // 0.6 * 0.7 matching AudioTrack
+  const musicVol = () => MUSIC_VOLUME_DUCKED;
+  const voVol = () => VO_VOLUME;
+  const typeVol = () => SFX_VOLUME_TYPING;
 
   return (
     <>
@@ -106,7 +106,7 @@ const CTAAudio: React.FC = () => {
       {/* Voiceover - starts after URL typing */}
       <Sequence from={30} name="VO: CTA">
         <Audio
-          src={staticFile(AUDIO_FILES.voCTA)}
+          src={staticFile(AUDIO_FILES.vo.cta)}
           volume={voVol}
         />
       </Sequence>

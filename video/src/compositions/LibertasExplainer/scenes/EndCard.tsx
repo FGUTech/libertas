@@ -27,6 +27,7 @@ import {
   FG_TERTIARY,
 } from '../../../utils/colors';
 import { fontFamilies, displayStyle, terminalStyle } from '../../../utils/fonts';
+import { AUDIO_FILES, MUSIC_VOLUME_NORMAL } from '../../../utils/audio';
 import { MatrixRain } from '../components/MatrixRain';
 import { Scanlines } from '../components/Scanlines';
 
@@ -50,14 +51,6 @@ const SCENE_DURATION = 150;
 const CURSOR_BLINK_FRAMES = 15;
 
 // =============================================================================
-// AUDIO PATHS
-// =============================================================================
-
-const AUDIO_FILES = {
-  music: 'audio/skynet-sky-cassette-main-version-41446-01-52.mp3',
-} as const;
-
-// =============================================================================
 // TYPES
 // =============================================================================
 
@@ -69,15 +62,22 @@ export interface EndCardSceneProps {
 // AUDIO COMPONENT
 // =============================================================================
 
+/**
+ * Audio for EndCard scene
+ *
+ * Audio levels per SPEC.md:
+ * - Music normal: -18dB = 0.126 linear (no VO playing)
+ * - Fades to 0 over 4 seconds
+ */
 const EndCardAudio: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  // Music fades out: starts at normal volume, fades to 0 by MUSIC_FADE_END
+  // Music fades out: starts at normal -18dB, fades to 0 by MUSIC_FADE_END
   const musicVolume = interpolate(
     frame,
     [0, MUSIC_FADE_END],
-    [0.12, 0],
+    [MUSIC_VOLUME_NORMAL, 0],
     { extrapolateRight: 'clamp' }
   );
 
