@@ -15,72 +15,38 @@ Hey, I am working on the Libertas Explainer Video. We are cooking thru the roadm
 
 Combine scenes and polish.
 
-### 4.2 Caption Implementation
-
-**Description:** Add baked-in captions for X/Twitter autoplay.
-
-**Requirements:**
-- [ ] Create caption data file with timestamps
-- [ ] Implement word-by-word highlight sync to VO
-- [ ] Style: Inter Bold 48px, white, black shadow
-- [ ] Position: lower third (720px from top)
-- [ ] Ensure no text smaller than 48px for mobile
-
----
-
-### 4.3 Audio Mixing
-
-**Description:** Balance all audio tracks.
-
-**Requirements:**
-- [ ] Set voiceover as reference (0dB)
-- [ ] Set music bed to -18dB to -24dB
-- [ ] Set SFX to -12dB to -15dB
-- [ ] Implement volume automation for VO ducking
-- [ ] Test audio levels in final render
-
----
-
-### 4.4 Visual Polish Pass
-
-**Description:** Refine animations and effects.
-
-**Requirements:**
-- [ ] Review all spring animations for consistent feel
-- [ ] Verify glitch effects are impactful but not overused
-- [ ] Check matrix rain performance
-- [ ] Ensure smooth transitions between scenes
-- [ ] Verify color consistency with design system
-
----
-
 ## Phase 5: Review & Render
 
 Final review and export.
 
-### 5.1 Full Preview Review
-
-**Description:** Watch complete video and note issues.
-
-**Requirements:**
-- [ ] Watch in Remotion Studio at full speed
-- [ ] Check audio sync throughout
-- [ ] Verify caption timing
-- [ ] Note any performance issues
-- [ ] Check hook effectiveness (first 3 seconds)
-- [ ] Verify CTA visibility (at least 5 seconds)
-
----
-
-### 5.2 Export Thumbnail
+### 5.2 Export Thumbnail ✅
 
 **Description:** Create static thumbnail for social preview.
 
 **Requirements:**
-- [ ] Identify best frame for thumbnail
-- [ ] Export as PNG, 1920x1080
-- [ ] Ensure text is readable at small sizes
-- [ ] Consider adding "WATCH" or play button overlay
+- [x] Identify best frame for thumbnail
+- [x] Export as PNG, 1920x1080
+- [x] Ensure text is readable at small sizes
+- [x] Consider adding "WATCH" or play button overlay
+
+**Implementation:**
+- Created dedicated `Thumbnail` composition based on CTA scene
+- Registered 3 Still compositions in Root.tsx:
+  - `Thumbnail` - Clean version
+  - `ThumbnailWithPlay` - Circle play button overlay
+  - `ThumbnailWithWatch` - "WATCH" button overlay
+
+**Outputs:**
+- `out/libertas-thumbnail.png` - Clean thumbnail
+- `out/libertas-thumbnail-play.png` - With play button
+- `out/libertas-thumbnail-watch.png` - With "WATCH" button
+
+**Render commands:**
+```bash
+npx remotion still Thumbnail out/libertas-thumbnail.png
+npx remotion still ThumbnailWithPlay out/libertas-thumbnail-play.png
+npx remotion still ThumbnailWithWatch out/libertas-thumbnail-watch.png
+```
 
 ---
 

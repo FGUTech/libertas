@@ -30,6 +30,9 @@ import {
   EndCardScene,
 } from './scenes';
 
+// Thumbnail for X/Twitter first frame
+import { Thumbnail } from '../Thumbnail';
+
 // Custom transitions
 import {
   glitchCut,
@@ -58,6 +61,7 @@ import { CaptionTrack } from './components/CaptionTrack';
  * The actual timeline positions are calculated accounting for overlap.
  */
 const SCENE_DURATIONS = {
+  thumbnailIntro: 1,  // 1 frame - just enough for X first frame capture
   hook: 150,      // 5 seconds
   problem: 528,   // 17.6 seconds (cut 2.4s of black from end)
   solution: 370,  // 12.33 seconds (removed action words section)
@@ -71,6 +75,7 @@ const SCENE_DURATIONS = {
  * Transition durations in frames (at 30fps)
  */
 const TRANSITION_DURATIONS = {
+  thumbnailToHook: 1,     // 1 frame - instant cut to hook
   hookToProblem: 12,      // 0.4s - Glitch cut
   problemToSolution: 18,   // 0.6s - CRT shutdown
   solutionToWorkflow: 15,  // 0.5s - Fade through green
@@ -91,6 +96,7 @@ const TRANSITION_DURATIONS = {
  * Adjusted durations add overlap compensation per scene.
  */
 const ADJUSTED_SCENE_DURATIONS = {
+  thumbnailIntro: 1 + 1,    // 2 frames - just for X first frame capture
   hook: 150 + 12,           // 162 frames - accounts for exit transition
   problem: 528 + 15,        // 543 frames - cut 2.4s black + transitions
   solution: 370 + 17,       // 387 frames - removed action words section
@@ -100,8 +106,8 @@ const ADJUSTED_SCENE_DURATIONS = {
   endCard: 150,             // 150 frames - no exit transition
 } as const;
 
-/** Total composition duration in frames */
-const TOTAL_FRAMES = 2943;
+/** Total composition duration in frames (added 1 frame for thumbnail intro) */
+const TOTAL_FRAMES = 2944;
 
 // =============================================================================
 // TYPES
@@ -150,7 +156,18 @@ export const LibertasExplainer: React.FC<LibertasExplainerProps> = ({
 
       {/* Visual Scenes with Transitions */}
       <TransitionSeries>
-        {/* Scene 1: Hook (0:00 - 0:05) */}
+        {/* Scene 0: Thumbnail Intro (for X/Twitter first frame capture) */}
+        <TransitionSeries.Sequence durationInFrames={ADJUSTED_SCENE_DURATIONS.thumbnailIntro}>
+          <Thumbnail showPlayButton={true} playButtonStyle="rounded" xOptimized={true} />
+        </TransitionSeries.Sequence>
+
+        {/* Transition: Thumbnail → Hook (Fade) */}
+        <TransitionSeries.Transition
+          presentation={fade()}
+          timing={linearTiming({ durationInFrames: TRANSITION_DURATIONS.thumbnailToHook })}
+        />
+
+        {/* Scene 1: Hook (0:01.5 - 0:06.5) */}
         <TransitionSeries.Sequence durationInFrames={ADJUSTED_SCENE_DURATIONS.hook}>
           <HookScene debug={debug} />
         </TransitionSeries.Sequence>
@@ -240,13 +257,15 @@ const DebugOverlay: React.FC = () => {
   const seconds = (frame / 30).toFixed(2);
 
   // Determine current scene based on frame (approximate with transitions)
-  let currentScene = 'Hook';
-  if (frame >= 150) currentScene = 'Problem';
-  if (frame >= 663) currentScene = 'Solution';
-  if (frame >= 1008) currentScene = 'Workflow';
-  if (frame >= 1688) currentScene = 'Proof';
-  if (frame >= 2273) currentScene = 'CTA';
-  if (frame >= 2708) currentScene = 'EndCard';
+  // Thumbnail intro is just 1 frame at the start
+  let currentScene = 'Thumbnail';
+  if (frame >= 1) currentScene = 'Hook';
+  if (frame >= 151) currentScene = 'Problem';
+  if (frame >= 664) currentScene = 'Solution';
+  if (frame >= 1009) currentScene = 'Workflow';
+  if (frame >= 1689) currentScene = 'Proof';
+  if (frame >= 2274) currentScene = 'CTA';
+  if (frame >= 2709) currentScene = 'EndCard';
 
   return (
     <AbsoluteFill
