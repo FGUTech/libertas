@@ -79,7 +79,7 @@ const SCENE_DURATION = 695; // Cut 1 second (30 frames) from original for faster
 const CANVAS_WIDTH = 1920;
 const CANVAS_HEIGHT = 1080;
 const CENTER_X = CANVAS_WIDTH / 2;
-const CENTER_Y = CANVAS_HEIGHT / 2 - 40;
+const CENTER_Y = CANVAS_HEIGHT / 2 - 80;
 
 /** Node spacing for horizontal layout - 4 nodes in a row */
 const HORIZONTAL_SPACING = 420;

@@ -329,7 +329,7 @@ const AnimatedCounter: React.FC<{
     <div
       style={{
         position: 'absolute',
-        bottom: 120,
+        bottom: 180,
         left: '50%',
         transform: `translateX(-50%) scale(${scale})`,
         opacity,

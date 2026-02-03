@@ -259,7 +259,7 @@ const TerminalPrompts: React.FC<TerminalPromptsProps> = ({ progress }) => {
     <div
       style={{
         position: 'absolute',
-        bottom: 260,
+        bottom: 320,
         left: '50%',
         transform: 'translateX(-50%)',
         display: 'flex',
@@ -355,7 +355,7 @@ const FGUBranding: React.FC<FGUBrandingProps> = ({ progress }) => {
     <div
       style={{
         position: 'absolute',
-        bottom: 80,
+        bottom: 150,
         left: '50%',
         transform: `translateX(-50%) translateY(${translateY}px)`,
         opacity,

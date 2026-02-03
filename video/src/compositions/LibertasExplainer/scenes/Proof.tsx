@@ -265,6 +265,7 @@ interface SignalCardDisplayProps {
   progress: number;
   slideFrom?: 'left' | 'right';
   compact?: boolean;
+  compactHeight?: number;
   position?: { x: number; y: number };
 }
 
@@ -273,6 +274,7 @@ const SignalCardDisplay: React.FC<SignalCardDisplayProps> = ({
   progress,
   slideFrom = 'left',
   compact = false,
+  compactHeight = 350,
   position,
 }) => {
   const frame = useCurrentFrame();
@@ -321,11 +323,14 @@ const SignalCardDisplay: React.FC<SignalCardDisplayProps> = ({
       <div
         style={{
           width,
+          height: compact ? compactHeight : undefined,
           backgroundColor: `${BG_TERTIARY}e8`,
           border: `2px solid ${ACCENT_PRIMARY}`,
           borderRadius: 8,
           padding,
           boxShadow: `0 0 ${glowIntensity}px ${ACCENT_PRIMARY}40`,
+          display: compact ? 'flex' : undefined,
+          flexDirection: compact ? 'column' : undefined,
         }}
       >
         {/* Header with flag */}
@@ -352,7 +357,7 @@ const SignalCardDisplay: React.FC<SignalCardDisplayProps> = ({
         </div>
 
         {/* Body lines */}
-        <div style={{ marginBottom: compact ? 8 : 16 }}>
+        <div style={{ marginBottom: compact ? 8 : 16, flex: compact ? 1 : undefined }}>
           {card.lines.map((line, i) => (
             <div
               key={i}
@@ -404,6 +409,7 @@ const SignalCardDisplay: React.FC<SignalCardDisplayProps> = ({
           style={{
             ...terminalStyle(fontSize - 4),
             color: FG_TERTIARY,
+            marginTop: compact && !(card.relevance || card.credibility) ? 'auto' : undefined,
           }}
         >
           topics: {card.topics.join(', ')}
@@ -445,12 +451,12 @@ const GridView: React.FC<GridViewProps> = ({ progress }) => {
 
   const textGlow = 1 + Math.sin((frame / fps) * Math.PI * 2) * 0.2;
 
-  // Grid positions (2x2 centered)
+  // Grid positions (2x2 centered, shifted up to avoid CC overlap)
   const gridPositions = [
-    { x: 960 - 220 - 190, y: 540 - 160 - 100 }, // top-left
-    { x: 960 + 220 - 190, y: 540 - 160 - 100 }, // top-right
-    { x: 960 - 220 - 190, y: 540 + 160 - 100 }, // bottom-left
-    { x: 960 + 220 - 190, y: 540 + 160 - 100 }, // bottom-right
+    { x: 960 - 220 - 190, y: 540 - 145 - 100 }, // top-left
+    { x: 960 + 220 - 190, y: 540 - 145 - 100 }, // top-right
+    { x: 960 - 220 - 190, y: 540 + 115 - 100 }, // bottom-left
+    { x: 960 + 220 - 190, y: 540 + 115 - 100 }, // bottom-right
   ];
 
   return (
@@ -471,6 +477,7 @@ const GridView: React.FC<GridViewProps> = ({ progress }) => {
             card={card}
             progress={1}
             compact={true}
+            compactHeight={index < 2 ? 350 : 250}
             position={gridPositions[index]}
           />
         ))}
@@ -480,7 +487,7 @@ const GridView: React.FC<GridViewProps> = ({ progress }) => {
       <div
         style={{
           position: 'absolute',
-          bottom: 80,
+          bottom: 160,
           left: '50%',
           transform: 'translateX(-50%)',
           opacity: textProgress,

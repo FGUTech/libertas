@@ -30,11 +30,7 @@ Database Checks:
 Open Source
 
 
-# Phase 2: Nice-to-have
-
-Features that enhance the experience but aren't critical for launch.
-
-### 2.0 Static Content Pages
+### 1.20 Static Content Pages
 
 **Description**: Add static informational pages to the website.
 
@@ -47,6 +43,17 @@ Features that enhance the experience but aren't critical for launch.
 - Use MDX or static React components
 - Ensure consistent styling with rest of site
 - Video file: `public/libertas-explainer-final.mp4` (copy from `video/out/`)
+
+### 1.21 Self Hosted n8n
+
+**Description**: Self-host n8n on Pi4
+
+**Requirements**:
+- [ ] Research requirements and create step-by-step plan to move to self-hosted n8n
+
+# Phase 2: Nice-to-have
+
+Features that enhance the experience but aren't critical for launch.
 
 ### 2.1 User Authentication (Firebase + Starknet)
 
