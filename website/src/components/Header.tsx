@@ -76,6 +76,7 @@ export function Header() {
     { href: '/search', label: 'Search' },
     { href: '/intake', label: 'Submit' },
     { href: '/feeds', label: 'Feeds' },
+    { href: '/about', label: 'About' },
   ];
 
   const isActiveLink = (href: string) => {

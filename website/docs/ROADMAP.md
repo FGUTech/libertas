@@ -32,17 +32,22 @@ Open Source
 
 ### 1.20 Static Content Pages
 
-**Description**: Add static informational pages to the website.
+**Description**: Add static informational page to the website.
 
 **Requirements**:
 - [ ] About page explaining Libertas mission and team
 - [ ] FAQ section answering common questions
-- [ ] Embed explainer video on About page
+- [ ] Add page to header for navigation
+- [ ] Embed explainer video on About page ( found at ../video/out/LibertasExplainer.mp4 )
 
 **Implementation Notes**:
 - Use MDX or static React components
 - Ensure consistent styling with rest of site
 - Video file: `public/libertas-explainer-final.mp4` (copy from `video/out/`)
+- Ensure consistent messaging and info which can be sourced from places like:
+  - this site ( libertas.fgu.tech )
+  - The team site ( fgu.tech )
+  - The team manifesto ( https://www.fgu.tech/manifesto )
 
 ### 1.21 Self Hosted n8n
 
@@ -50,6 +55,9 @@ Open Source
 
 **Requirements**:
 - [ ] Research requirements and create step-by-step plan to move to self-hosted n8n
+
+**Implementation Notes**:
+- Do not update any documentation in this project. This is just going to be a temporary workaround
 
 # Phase 2: Nice-to-have
 
