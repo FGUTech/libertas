@@ -229,7 +229,8 @@ const WorldMap: React.FC<{ opacity: number }> = ({ opacity }) => {
           height: 'auto',
           maxHeight: '85%',
           objectFit: 'contain',
-          filter: `brightness(0.4) sepia(1) hue-rotate(70deg) saturate(0.3)`,
+          // Invert to make dark areas light, then colorize to matrix green
+          filter: `invert(1) brightness(0.4) sepia(1) hue-rotate(70deg) saturate(2)`,
           opacity: 0.6,
         }}
       />

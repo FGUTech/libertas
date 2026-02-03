@@ -2,13 +2,12 @@
  * Solution Scene - Section 3
  *
  * Reveals Libertas as the answer. Establishes what it is.
- * Duration: 360 frames (12s).
+ * Duration: 370 frames (~12.3s).
  *
  * Frame breakdown (scene-relative):
  * - 0-90: Boot sequence (connecting, loading URL)
  * - 90-120: URL reveal with glow: `libertas.fgu.tech`
- * - 120-250: Website hero recreation (scanline reveal)
- * - 250-360: Homepage pull-back reveal with signal cards
+ * - 120-370: Homepage with 6 signal cards (extended showcase)
  */
 
 import React from 'react';
@@ -50,12 +49,8 @@ const BOOT_LINE_3_START = 60;
 /** URL reveal */
 const URL_REVEAL_START = 90;
 
-/** Website hero recreation */
-const HERO_REVEAL_START = 120;
-const HERO_SCANLINE_DURATION = 60;
-
-/** Homepage pull-back */
-const PULLBACK_START = 250;
+/** Homepage section (hero removed - goes straight to homepage) */
+const HOMEPAGE_START = 120;
 
 /** Value proposition cards */
 const VALUE_PROPS_START = 500;
@@ -93,6 +88,9 @@ const SIGNAL_CARDS: SignalCard[] = [
   { title: 'Venezuela VPN Surge', score: 89, topic: 'privacy', flag: '🇻🇪', country: 'Venezuela' },
   { title: 'Turkey Signal Ban', score: 91, topic: 'comms', flag: '🇹🇷', country: 'Turkey' },
   { title: 'Myanmar Internet Cut', score: 94, topic: 'censorship-resistance', flag: '🇲🇲', country: 'Myanmar' },
+  { title: 'Russia VPN Crackdown', score: 88, topic: 'privacy', flag: '🇷🇺', country: 'Russia' },
+  { title: 'Ethiopia Telecom Block', score: 90, topic: 'censorship-resistance', flag: '🇪🇹', country: 'Ethiopia' },
+  { title: 'Cuba Mesh Networks', score: 86, topic: 'comms', flag: '🇨🇺', country: 'Cuba' },
 ];
 
 // =============================================================================
@@ -262,15 +260,15 @@ const URLReveal: React.FC<{ frame: number; fps: number }> = ({ frame, fps }) => 
   // Glow intensity
   const glowPulse = interpolate(relativeFrame, [0, 15], [0, 25], { extrapolateRight: 'clamp' });
 
-  // Fade out when hero starts
+  // Fade out when homepage starts
   const fadeOut = interpolate(
     frame,
-    [HERO_REVEAL_START - 10, HERO_REVEAL_START],
+    [HOMEPAGE_START - 10, HOMEPAGE_START],
     [1, 0],
     { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }
   );
 
-  if (frame >= HERO_REVEAL_START) return null;
+  if (frame >= HOMEPAGE_START) return null;
 
   return (
     <AbsoluteFill
@@ -302,8 +300,9 @@ const URLReveal: React.FC<{ frame: number; fps: number }> = ({ frame, fps }) => 
 
 /**
  * Scanline reveal effect
+ * @deprecated Not currently used - hero section removed
  */
-const ScanlineReveal: React.FC<{
+const _ScanlineReveal: React.FC<{
   frame: number;
   startFrame: number;
   duration: number;
@@ -352,35 +351,36 @@ const ScanlineReveal: React.FC<{
 };
 
 /**
- * Website hero recreation (120-250)
+ * Website hero recreation
+ * @deprecated Not currently used - hero section removed, replaced with extended homepage
  */
-const WebsiteHero: React.FC<{ frame: number; fps: number }> = ({ frame, fps }) => {
-  const relativeFrame = frame - HERO_REVEAL_START;
+const _WebsiteHero: React.FC<{ frame: number; fps: number }> = ({ frame, fps }) => {
+  const relativeFrame = frame - 120; // Was HERO_REVEAL_START
   if (relativeFrame < 0) return null;
 
   // Terminal prompt blink
   const cursorVisible = Math.floor(frame / 15) % 2 === 0;
 
-  // Element stagger delays
+  // Element stagger delays (deprecated)
   const terminalDelay = 0;
   const headlineDelay = 30;
   const subheadDelay = 45;
 
-  // Fade out when pullback starts
+  // Fade out when pullback would have started (deprecated)
   const fadeOut = interpolate(
     frame,
-    [PULLBACK_START - 20, PULLBACK_START],
+    [230, 250],
     [1, 0],
     { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }
   );
 
-  if (frame >= PULLBACK_START) return null;
+  if (frame >= 250) return null;
 
   return (
-    <ScanlineReveal
+    <_ScanlineReveal
       frame={frame}
-      startFrame={HERO_REVEAL_START}
-      duration={HERO_SCANLINE_DURATION}
+      startFrame={120}
+      duration={60}
     >
       <AbsoluteFill
         style={{
@@ -463,23 +463,24 @@ const WebsiteHero: React.FC<{ frame: number; fps: number }> = ({ frame, fps }) =
           Automated intelligence on censorship, surveillance, and digital resistance
         </div>
       </AbsoluteFill>
-    </ScanlineReveal>
+    </_ScanlineReveal>
   );
 };
 
 
 /**
- * Homepage pull-back reveal (250-500)
+ * Homepage reveal with signal cards (120-370)
+ * Extended duration to showcase 6 signal cards prominently
  */
-const HomepagePullback: React.FC<{ frame: number }> = ({ frame }) => {
-  const relativeFrame = frame - PULLBACK_START;
+const HomepageReveal: React.FC<{ frame: number }> = ({ frame }) => {
+  const relativeFrame = frame - HOMEPAGE_START;
   if (relativeFrame < 0) return null;
 
-  // Zoom out effect
+  // Zoom out effect - slower since we have more time
   const scale = interpolate(
     relativeFrame,
-    [0, 90],
-    [1.2, 1.0],
+    [0, 60],
+    [1.15, 1.0],
     { extrapolateRight: 'clamp', easing: Easing.out(Easing.quad) }
   );
 
@@ -502,8 +503,8 @@ const HomepagePullback: React.FC<{ frame: number }> = ({ frame }) => {
   // Terminal prompt blink
   const cursorVisible = Math.floor(frame / 15) % 2 === 0;
 
-  // Content cards stagger
-  const showCards = relativeFrame > 45;
+  // Content cards stagger - show cards earlier since we start earlier
+  const showCards = relativeFrame > 30;
 
 
   return (
@@ -610,9 +611,9 @@ const HomepagePullback: React.FC<{ frame: number }> = ({ frame }) => {
                 }}
               >
                 {SIGNAL_CARDS.map((card, index) => {
-                  const cardDelay = index * 8;
-                  const cardOpacity = relativeFrame > 45 + cardDelay
-                    ? interpolate(relativeFrame - 45 - cardDelay, [0, 15], [0, 1], { extrapolateRight: 'clamp' })
+                  const cardDelay = index * 12; // Slower stagger for more dramatic effect
+                  const cardOpacity = relativeFrame > 30 + cardDelay
+                    ? interpolate(relativeFrame - 30 - cardDelay, [0, 20], [0, 1], { extrapolateRight: 'clamp' })
                     : 0;
 
                   return (
@@ -922,9 +923,8 @@ export const SolutionScene: React.FC<SolutionSceneProps> = ({ debug = false }) =
   // ---------------------------------------------------------------------------
 
   const isBootPhase = frame >= BOOT_START && frame < URL_REVEAL_START;
-  const isURLPhase = frame >= URL_REVEAL_START && frame < HERO_REVEAL_START;
-  const isHeroPhase = frame >= HERO_REVEAL_START && frame < PULLBACK_START;
-  const isPullbackPhase = frame >= PULLBACK_START;
+  const isURLPhase = frame >= URL_REVEAL_START && frame < HOMEPAGE_START;
+  const isHomepagePhase = frame >= HOMEPAGE_START;
 
   // ---------------------------------------------------------------------------
   // MATRIX RAIN OPACITY
@@ -961,11 +961,8 @@ export const SolutionScene: React.FC<SolutionSceneProps> = ({ debug = false }) =
       {/* URL reveal (90-120) */}
       <URLReveal frame={frame} fps={fps} />
 
-      {/* Website hero (120-250) */}
-      <WebsiteHero frame={frame} fps={fps} />
-
-      {/* Homepage pullback (250-500) */}
-      <HomepagePullback frame={frame} />
+      {/* Homepage with signal cards (120-370) */}
+      <HomepageReveal frame={frame} />
 
       {/* Value props section removed - scene ends at pullback */}
 
@@ -992,8 +989,7 @@ export const SolutionScene: React.FC<SolutionSceneProps> = ({ debug = false }) =
           <div>Phase: {
             isBootPhase ? 'Boot Sequence' :
             isURLPhase ? 'URL Reveal' :
-            isHeroPhase ? 'Hero Section' :
-            isPullbackPhase ? 'Homepage Pullback' : 'Unknown'
+            isHomepagePhase ? 'Homepage + Signal Cards' : 'Unknown'
           }</div>
         </div>
       )}
@@ -1009,17 +1005,17 @@ export default SolutionScene;
 
 // Export unused components for potential future use
 export { _ValuePropsSection as ValuePropsSection };
+export { _WebsiteHero as WebsiteHero };
+export { _ScanlineReveal as ScanlineReveal };
 
 /** Timing constants for use in parent composition */
 export const SOLUTION_TIMING = {
-  /** Total duration of Solution scene in frames (removed action words section) */
+  /** Total duration of Solution scene in frames */
   duration: 370,
   /** Frame when boot sequence starts */
   bootStart: BOOT_START,
   /** Frame when URL reveal starts */
   urlRevealStart: URL_REVEAL_START,
-  /** Frame when hero section starts */
-  heroRevealStart: HERO_REVEAL_START,
-  /** Frame when pullback starts */
-  pullbackStart: PULLBACK_START,
+  /** Frame when homepage section with signal cards starts */
+  homepageStart: HOMEPAGE_START,
 } as const;

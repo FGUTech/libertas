@@ -38,7 +38,7 @@ import {
   AUDIO_FILES,
   MUSIC_VOLUME_DUCKED,
   VO_VOLUME,
-  SFX_VOLUME_NORMAL,
+  SFX_VOLUME_TYPING,
   SFX_VOLUME_AMBIENT,
 } from '../../../utils/audio';
 import { MatrixRain } from '../components/MatrixRain';
@@ -141,7 +141,7 @@ const WorkflowAudio: React.FC = () => {
   const musicVol = () => MUSIC_VOLUME_DUCKED;
   const voVol = () => VO_VOLUME;
   const dataHumVol = () => SFX_VOLUME_AMBIENT;
-  const cmdVol = () => SFX_VOLUME_NORMAL;
+  const typeVol = () => SFX_VOLUME_TYPING;
 
   return (
     <>
@@ -167,15 +167,46 @@ const WorkflowAudio: React.FC = () => {
         loop
       />
 
-      {/* Command execute SFX at key moments */}
-      <Sequence from={CLASSIFY_START + 20} durationInFrames={30} name="SFX: Classify">
-        <Audio src={staticFile(AUDIO_FILES.sfx.cmdExecute)} volume={cmdVol} />
+      {/* Rapid typing SFX when CLASSIFY node appears */}
+      <Sequence from={CLASSIFY_START + 20} durationInFrames={15} name="SFX: Classify 1">
+        <Audio src={staticFile(AUDIO_FILES.sfx.type1)} volume={typeVol} />
       </Sequence>
-      <Sequence from={SUMMARIZE_START + 15} durationInFrames={30} name="SFX: Summarize">
-        <Audio src={staticFile(AUDIO_FILES.sfx.cmdExecute)} volume={cmdVol} />
+      <Sequence from={CLASSIFY_START + 26} durationInFrames={15} name="SFX: Classify 2">
+        <Audio src={staticFile(AUDIO_FILES.sfx.type2)} volume={typeVol} />
       </Sequence>
-      <Sequence from={PUBLISH_START + 15} durationInFrames={30} name="SFX: Publish">
-        <Audio src={staticFile(AUDIO_FILES.sfx.cmdExecute)} volume={cmdVol} />
+      <Sequence from={CLASSIFY_START + 32} durationInFrames={15} name="SFX: Classify 3">
+        <Audio src={staticFile(AUDIO_FILES.sfx.type3)} volume={typeVol} />
+      </Sequence>
+      <Sequence from={CLASSIFY_START + 38} durationInFrames={15} name="SFX: Classify 4">
+        <Audio src={staticFile(AUDIO_FILES.sfx.type1)} volume={typeVol} />
+      </Sequence>
+
+      {/* Rapid typing SFX when SUMMARIZE node appears */}
+      <Sequence from={SUMMARIZE_START + 15} durationInFrames={15} name="SFX: Summarize 1">
+        <Audio src={staticFile(AUDIO_FILES.sfx.type2)} volume={typeVol} />
+      </Sequence>
+      <Sequence from={SUMMARIZE_START + 21} durationInFrames={15} name="SFX: Summarize 2">
+        <Audio src={staticFile(AUDIO_FILES.sfx.type3)} volume={typeVol} />
+      </Sequence>
+      <Sequence from={SUMMARIZE_START + 27} durationInFrames={15} name="SFX: Summarize 3">
+        <Audio src={staticFile(AUDIO_FILES.sfx.type1)} volume={typeVol} />
+      </Sequence>
+      <Sequence from={SUMMARIZE_START + 33} durationInFrames={15} name="SFX: Summarize 4">
+        <Audio src={staticFile(AUDIO_FILES.sfx.type2)} volume={typeVol} />
+      </Sequence>
+
+      {/* Rapid typing SFX when PUBLISH node appears */}
+      <Sequence from={PUBLISH_START + 15} durationInFrames={15} name="SFX: Publish 1">
+        <Audio src={staticFile(AUDIO_FILES.sfx.type3)} volume={typeVol} />
+      </Sequence>
+      <Sequence from={PUBLISH_START + 21} durationInFrames={15} name="SFX: Publish 2">
+        <Audio src={staticFile(AUDIO_FILES.sfx.type1)} volume={typeVol} />
+      </Sequence>
+      <Sequence from={PUBLISH_START + 27} durationInFrames={15} name="SFX: Publish 3">
+        <Audio src={staticFile(AUDIO_FILES.sfx.type2)} volume={typeVol} />
+      </Sequence>
+      <Sequence from={PUBLISH_START + 33} durationInFrames={15} name="SFX: Publish 4">
+        <Audio src={staticFile(AUDIO_FILES.sfx.type3)} volume={typeVol} />
       </Sequence>
     </>
   );
@@ -422,25 +453,39 @@ const useIconPositions = (centerX: number, centerY: number, continuous: boolean,
   const { fps } = useVideoConfig();
 
   const icons = [
-    { icon: '📡', label: 'RSS', baseAngle: -135 }, // top-left
-    { icon: '🌐', label: 'Web', baseAngle: -45 },  // top-right
-    { icon: '📥', label: 'Submit', baseAngle: 135 }, // bottom-left
-    { icon: '👤', label: 'Users', baseAngle: 45 },   // bottom-right
+    { icon: '📡', label: 'RSS', baseAngle: -135, phaseOffset: 0 }, // top-left
+    { icon: '🌐', label: 'Web', baseAngle: -45, phaseOffset: 0.5 },  // top-right
+    { icon: '📥', label: 'Submit', baseAngle: 135, phaseOffset: 1.0 }, // bottom-left
+    { icon: '👤', label: 'Users', baseAngle: 45, phaseOffset: 1.5 },   // bottom-right
   ];
 
   const radius = 140;
-  // Spin animation once icons are fully visible (full rotation over 4 seconds for smoother motion)
-  const spinAngle = continuous && progress >= 1 ? (frame / fps) * (360 / 4) : 0;
+
+  // Gentle bob animation (up/down) - each icon has offset phase for wave effect
+  const getBobOffset = (phaseOffset: number) => {
+    if (!continuous || progress < 1) return 0;
+    const bobCycle = 3; // seconds for full bob cycle
+    const bobAmount = 8; // pixels of vertical movement
+    return Math.sin(((frame / fps) + phaseOffset) * (Math.PI * 2 / bobCycle)) * bobAmount;
+  };
+
+  // Breathing scale animation
+  const getBreathScale = (phaseOffset: number) => {
+    if (!continuous || progress < 1) return 1;
+    const breathCycle = 4; // seconds for full breath cycle
+    const breathAmount = 0.08; // 8% scale variation
+    return 1 + Math.sin(((frame / fps) + phaseOffset * 0.7) * (Math.PI * 2 / breathCycle)) * breathAmount;
+  };
 
   const getPosition = (baseAngle: number) => {
-    const angleRad = ((baseAngle + spinAngle) * Math.PI) / 180;
+    const angleRad = (baseAngle * Math.PI) / 180;
     return {
       x: centerX + Math.cos(angleRad) * radius,
       y: centerY + Math.sin(angleRad) * radius,
     };
   };
 
-  return { icons, getPosition };
+  return { icons, getPosition, getBobOffset, getBreathScale };
 };
 
 /** Just the connector lines - rendered BEFORE SOURCES node */
@@ -450,8 +495,13 @@ const SourceConnectorLinesWrapper: React.FC<XPatternIconsProps> = ({
   progress,
   continuous = false,
 }) => {
-  const { icons, getPosition } = useIconPositions(centerX, centerY, continuous, progress);
-  const iconPositions = icons.map((item) => getPosition(item.baseAngle));
+  const { icons, getPosition, getBobOffset } = useIconPositions(centerX, centerY, continuous, progress);
+  // Include bob offset in icon positions so lines follow the bobbing icons
+  const iconPositions = icons.map((item) => {
+    const pos = getPosition(item.baseAngle);
+    const bobOffset = getBobOffset(item.phaseOffset);
+    return { x: pos.x, y: pos.y + bobOffset };
+  });
 
   return (
     <SourceConnectorLines
@@ -470,7 +520,7 @@ const XPatternIcons: React.FC<XPatternIconsProps> = ({
   progress,
   continuous = false,
 }) => {
-  const { icons, getPosition } = useIconPositions(centerX, centerY, continuous, progress);
+  const { icons, getPosition, getBobOffset, getBreathScale } = useIconPositions(centerX, centerY, continuous, progress);
 
   return (
     <>
@@ -480,8 +530,11 @@ const XPatternIcons: React.FC<XPatternIconsProps> = ({
         if (entryProgress <= 0) return null;
 
         const pos = getPosition(item.baseAngle);
+        const bobOffset = getBobOffset(item.phaseOffset);
+        const breathScale = getBreathScale(item.phaseOffset);
         const opacity = interpolate(entryProgress, [0, 0.5, 1], [0, 0.5, 1]);
-        const scale = interpolate(entryProgress, [0, 1], [0.5, 1]);
+        const baseScale = interpolate(entryProgress, [0, 1], [0.5, 1]);
+        const finalScale = baseScale * breathScale;
 
         return (
           <div
@@ -489,7 +542,7 @@ const XPatternIcons: React.FC<XPatternIconsProps> = ({
             style={{
               position: 'absolute',
               left: pos.x - 44,
-              top: pos.y - 44,
+              top: pos.y - 44 + bobOffset,
               width: 88,
               height: 88,
               display: 'flex',
@@ -497,7 +550,7 @@ const XPatternIcons: React.FC<XPatternIconsProps> = ({
               alignItems: 'center',
               justifyContent: 'center',
               opacity,
-              transform: `scale(${scale})`,
+              transform: `scale(${finalScale})`,
             }}
           >
             <span style={{ fontSize: 42 }}>{item.icon}</span>
