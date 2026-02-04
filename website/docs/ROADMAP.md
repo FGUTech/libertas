@@ -21,7 +21,6 @@ Workflow D:
   - Test all paths/follow mentally
 
 Database Checks:
-  - Cleanup all data not linked to existing insights/sources parsings
   - View each table and understand how/if its used
   - View each field and understand how/if/if it will be used
   - Ensure all fields properly populating data from workflows ( ie not hardcoded/stale/bad values )
