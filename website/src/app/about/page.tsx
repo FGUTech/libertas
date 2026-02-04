@@ -160,6 +160,72 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* Tech Stack Section */}
+        <section className="mb-12">
+          <h2 className="text-h2 mb-6">Tech Stack</h2>
+          <div className="grid gap-4 md:grid-cols-3">
+            <div className="card">
+              <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-md bg-[var(--accent-muted)] text-[var(--accent-primary)]">
+                <NextJsIcon />
+              </div>
+              <h3 className="text-h3 mb-2">Next.js 16</h3>
+              <p className="text-sm text-[var(--fg-secondary)]">
+                React 19 with App Router and Server Components for fast, SEO-friendly rendering.
+              </p>
+            </div>
+
+            <div className="card">
+              <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-md bg-[var(--accent-muted)] text-[var(--accent-primary)]">
+                <ClaudeIcon />
+              </div>
+              <h3 className="text-h3 mb-2">Claude AI</h3>
+              <p className="text-sm text-[var(--fg-secondary)]">
+                Anthropic&apos;s Claude powers classification, summarization, and idea generation agents.
+              </p>
+            </div>
+
+            <div className="card">
+              <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-md bg-[var(--accent-muted)] text-[var(--accent-primary)]">
+                <WorkflowIcon />
+              </div>
+              <h3 className="text-h3 mb-2">n8n</h3>
+              <p className="text-sm text-[var(--fg-secondary)]">
+                Open-source workflow automation orchestrating ingestion, processing, and publishing.
+              </p>
+            </div>
+
+            <div className="card">
+              <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-md bg-[var(--accent-muted)] text-[var(--accent-primary)]">
+                <DatabaseIcon />
+              </div>
+              <h3 className="text-h3 mb-2">PostgreSQL</h3>
+              <p className="text-sm text-[var(--fg-secondary)]">
+                GCP Cloud SQL with pgvector for embeddings and semantic search capabilities.
+              </p>
+            </div>
+
+            <div className="card">
+              <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-md bg-[var(--accent-muted)] text-[var(--accent-primary)]">
+                <VercelIcon />
+              </div>
+              <h3 className="text-h3 mb-2">Vercel</h3>
+              <p className="text-sm text-[var(--fg-secondary)]">
+                Edge-optimized hosting with automatic deployments on every push to main.
+              </p>
+            </div>
+
+            <div className="card">
+              <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-md bg-[var(--accent-muted)] text-[var(--accent-primary)]">
+                <TypeScriptIcon />
+              </div>
+              <h3 className="text-h3 mb-2">TypeScript</h3>
+              <p className="text-sm text-[var(--fg-secondary)]">
+                Strict mode with Zod schemas for end-to-end type safety and runtime validation.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Team Section */}
         <section className="mb-12">
           <h2 className="text-h2 mb-6">The Team</h2>
@@ -479,6 +545,117 @@ function GithubIcon() {
       strokeLinejoin="round"
     >
       <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+    </svg>
+  );
+}
+
+function NextJsIcon() {
+  return (
+    <svg
+      className="icon"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="12" cy="12" r="10" />
+      <path d="M7 8.5l8.5 11" />
+      <path d="M16 8v8" />
+    </svg>
+  );
+}
+
+function ClaudeIcon() {
+  return (
+    <svg
+      className="icon"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="12" cy="12" r="10" />
+      <path d="M8 12c0-2.2 1.8-4 4-4s4 1.8 4 4" />
+      <circle cx="9" cy="10" r="1" fill="currentColor" />
+      <circle cx="15" cy="10" r="1" fill="currentColor" />
+    </svg>
+  );
+}
+
+function WorkflowIcon() {
+  return (
+    <svg
+      className="icon"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect x="3" y="3" width="6" height="6" rx="1" />
+      <rect x="15" y="3" width="6" height="6" rx="1" />
+      <rect x="9" y="15" width="6" height="6" rx="1" />
+      <path d="M6 9v3a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V9" />
+      <path d="M12 12v3" />
+    </svg>
+  );
+}
+
+function DatabaseIcon() {
+  return (
+    <svg
+      className="icon"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <ellipse cx="12" cy="5" rx="9" ry="3" />
+      <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+      <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+    </svg>
+  );
+}
+
+function VercelIcon() {
+  return (
+    <svg
+      className="icon"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M12 2L2 19.5h20L12 2z" />
+    </svg>
+  );
+}
+
+function TypeScriptIcon() {
+  return (
+    <svg
+      className="icon"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect x="3" y="3" width="18" height="18" rx="2" />
+      <path d="M9 17V11h4" />
+      <path d="M9 14h3" />
+      <path d="M15 11v6" />
+      <path d="M13 11h4" />
     </svg>
   );
 }
