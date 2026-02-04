@@ -43,21 +43,22 @@ const GIF_DURATION = 360;
 const CANVAS_WIDTH = 480;
 const CANVAS_HEIGHT = 270;
 const CENTER_X = CANVAS_WIDTH / 2;
-const CENTER_Y = CANVAS_HEIGHT / 2 - 20;
+const CENTER_Y = CANVAS_HEIGHT / 2 - 35; // Moved up to make room for AI badge
 
-const HORIZONTAL_SPACING = 105;
+const HORIZONTAL_SPACING = 115;
 
 const POSITIONS = {
   sources: { x: CENTER_X - HORIZONTAL_SPACING * 1.5, y: CENTER_Y },
   classify: { x: CENTER_X - HORIZONTAL_SPACING * 0.5, y: CENTER_Y },
   summarize: { x: CENTER_X + HORIZONTAL_SPACING * 0.5, y: CENTER_Y },
   publish: { x: CENTER_X + HORIZONTAL_SPACING * 1.5, y: CENTER_Y },
-  ideas: { x: CENTER_X + HORIZONTAL_SPACING * 1.5, y: CENTER_Y - 55 },
-  digest: { x: CENTER_X + HORIZONTAL_SPACING * 1.5, y: CENTER_Y + 55 },
+  ideas: { x: CENTER_X + HORIZONTAL_SPACING * 1.5, y: CENTER_Y - 65 },
+  digest: { x: CENTER_X + HORIZONTAL_SPACING * 1.5, y: CENTER_Y + 65 },
 } as const;
 
-const NODE_WIDTH = 72;
-const NODE_HEIGHT = 24;
+// Increased node sizes (~40% larger)
+const NODE_WIDTH = 100;
+const NODE_HEIGHT = 32;
 
 const ACCENT_GOLD = '#ffd700';
 
@@ -110,19 +111,19 @@ const MiniFlowNode: React.FC<NodeProps> = ({
           width: '100%',
           height: '100%',
           backgroundColor: BG_TERTIARY,
-          border: `1px solid ${accentColor}`,
-          borderRadius: 4,
+          border: `2px solid ${accentColor}`,
+          borderRadius: 6,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          gap: 4,
-          boxShadow: `0 0 6px ${accentColor}30`,
+          gap: 6,
+          boxShadow: `0 0 8px ${accentColor}40`,
         }}
       >
-        <span style={{ fontSize: 12 }}>{icon}</span>
+        <span style={{ fontSize: 16 }}>{icon}</span>
         <span
           style={{
-            ...terminalStyle(9),
+            ...terminalStyle(12),
             color: FG_PRIMARY,
             letterSpacing: '0.03em',
           }}
@@ -155,7 +156,7 @@ const SourceIcons: React.FC<SourceIconsProps> = ({ centerX, centerY, progress })
     { icon: '👤', baseAngle: 45, phaseOffset: 2.1 },      // bottom-right
   ];
 
-  const radius = 35; // Scaled down for smaller GIF
+  const radius = 48; // Increased radius for larger nodes
 
   // Per-icon bob animation with staggered phases
   const getBobOffset = (phaseOffset: number) =>
@@ -217,16 +218,16 @@ const SourceIcons: React.FC<SourceIconsProps> = ({ centerX, centerY, progress })
             key={item.icon}
             style={{
               position: 'absolute',
-              left: iconX - 10,
-              top: iconY - 10 + (entryProgress >= 1 ? bobOffset : 0),
-              width: 20,
-              height: 20,
+              left: iconX - 12,
+              top: iconY - 12 + (entryProgress >= 1 ? bobOffset : 0),
+              width: 24,
+              height: 24,
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               opacity,
               transform: `scale(${scale})`,
-              fontSize: 12,
+              fontSize: 16,
             }}
           >
             {item.icon}
@@ -279,7 +280,7 @@ const MiniFlowArrow: React.FC<ArrowProps> = ({
         x2={to.x}
         y2={to.y}
         stroke={color}
-        strokeWidth={1.5}
+        strokeWidth={2}
         strokeLinecap="round"
         strokeDasharray={pathLength}
         strokeDashoffset={dashOffset}
@@ -289,7 +290,7 @@ const MiniFlowArrow: React.FC<ArrowProps> = ({
           transform={`translate(${to.x}, ${to.y}) rotate(${angle})`}
           opacity={interpolate(progress, [0.8, 1], [0, 1])}
         >
-          <polygon points="0,0 -6,-3 -6,3" fill={color} />
+          <polygon points="0,0 -8,-4 -8,4" fill={color} />
         </g>
       )}
     </svg>
@@ -313,7 +314,7 @@ const MiniDataPacket: React.FC<PacketProps> = ({
   to,
   progress,
   color = ACCENT_PRIMARY,
-  size = 8,
+  size = 10,
 }) => {
   const x = from.x + (to.x - from.x) * progress;
   const y = from.y + (to.y - from.y) * progress;
@@ -373,9 +374,9 @@ const DigestDocFlow: React.FC<{ active: boolean }> = ({ active }) => {
         key={`doc-${i}`}
         style={{
           position: 'absolute',
-          left: x - 5,
-          top: y - 5,
-          fontSize: 10,
+          left: x - 7,
+          top: y - 7,
+          fontSize: 14,
           opacity,
           transform: `scale(${scale})`,
         }}
@@ -648,6 +649,42 @@ export const WorkflowGif: React.FC<WorkflowGifProps> = ({ debug = false }) => {
         {/* Continuous flow including Ideas path */}
         <ContinuousFlow active={continuousFlowActive} ideasActive={ideasFlowActive} />
       </AbsoluteFill>
+
+      {/* AI Agent badge at bottom */}
+      <div
+        style={{
+          position: 'absolute',
+          bottom: 12,
+          left: '50%',
+          transform: 'translateX(-50%)',
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'center',
+          gap: 8,
+          opacity: 0.85,
+        }}
+      >
+        <span style={{ fontSize: 20 }}>🤖</span>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+          <span
+            style={{
+              ...terminalStyle(10),
+              color: ACCENT_PRIMARY,
+              textShadow: `0 0 6px ${ACCENT_PRIMARY}40`,
+            }}
+          >
+            AI Agents
+          </span>
+          <span
+            style={{
+              ...terminalStyle(8),
+              color: FG_TERTIARY,
+            }}
+          >
+            Watch Signals 24/7
+          </span>
+        </div>
+      </div>
 
       {/* Scanlines */}
       <Scanlines opacity={0.03} flicker={false} />
