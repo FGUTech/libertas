@@ -4,6 +4,8 @@ import { z } from "zod";
 import { LibertasExplainer } from "./compositions/LibertasExplainer";
 import { HookScene, ProblemScene, SolutionScene, WorkflowScene, ProofScene, CTAScene, EndCardScene } from "./compositions/LibertasExplainer/scenes";
 import { Thumbnail } from "./compositions/Thumbnail";
+import { HookGif, WorkflowGif, WORKFLOW_GIF_TIMING } from "./compositions/GifPreviews";
+import { VerticalExplainer, VERTICAL_TIMING } from "./compositions/Vertical";
 
 // Props schema for LibertasExplainer composition
 export const libertasExplainerSchema = z.object({
@@ -58,6 +60,17 @@ export const thumbnailSchema = z.object({
   showPlayButton: z.boolean().default(false),
   playButtonStyle: z.enum(['circle', 'rounded']).default('circle'),
   xOptimized: z.boolean().default(false),
+});
+
+// Props schema for GIF previews
+export const gifPreviewSchema = z.object({
+  debug: z.boolean().default(false),
+});
+
+// Props schema for Vertical format
+export const verticalSchema = z.object({
+  debug: z.boolean().default(false),
+  audioEnabled: z.boolean().default(true),
 });
 
 export const RemotionRoot: React.FC = () => {
@@ -230,6 +243,57 @@ export const RemotionRoot: React.FC = () => {
           showPlayButton: true,
           playButtonStyle: 'rounded',
           xOptimized: true,
+        }}
+      />
+
+      {/* ================================================================== */}
+      {/* GIF PREVIEWS - 480px wide for social media sharing                */}
+      {/* ================================================================== */}
+
+      {/* Hook GIF - 10 second loop (480x270) */}
+      <Composition
+        id="HookGif"
+        component={HookGif}
+        durationInFrames={300}
+        fps={30}
+        width={480}
+        height={270}
+        schema={gifPreviewSchema}
+        defaultProps={{
+          debug: false,
+        }}
+      />
+
+      {/* Workflow GIF - 12 second loop (480x270) */}
+      <Composition
+        id="WorkflowGif"
+        component={WorkflowGif}
+        durationInFrames={WORKFLOW_GIF_TIMING.duration}
+        fps={30}
+        width={480}
+        height={270}
+        schema={gifPreviewSchema}
+        defaultProps={{
+          debug: false,
+        }}
+      />
+
+      {/* ================================================================== */}
+      {/* VERTICAL FORMAT - 1080x1920 for TikTok/Reels                      */}
+      {/* ================================================================== */}
+
+      {/* Vertical Explainer - 60 second mobile-first version */}
+      <Composition
+        id="VerticalExplainer"
+        component={VerticalExplainer}
+        durationInFrames={VERTICAL_TIMING.duration}
+        fps={30}
+        width={1080}
+        height={1920}
+        schema={verticalSchema}
+        defaultProps={{
+          debug: false,
+          audioEnabled: true,
         }}
       />
     </>
