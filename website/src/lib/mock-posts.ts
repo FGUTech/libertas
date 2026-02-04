@@ -1099,7 +1099,7 @@ function calculateScore(post: Post, query: string): { score: number; matchedFiel
 export function searchPosts(options: SearchOptions): SearchResult[] {
   const { query = '', topics = [], dateFrom, dateTo, sortBy = 'relevance' } = options;
 
-  let results: SearchResult[] = [];
+  const results: SearchResult[] = [];
 
   for (const post of mockPosts) {
     // Apply topic filter

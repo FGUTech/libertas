@@ -29,10 +29,6 @@ Database Checks:
 
 Open Source
 
-### 1.21: About Page additions
-
-**Description**: Add a tech stack section to the About page above The Team section
-
 # Phase 2: Nice-to-have
 
 Features that enhance the experience but aren't critical for launch.
