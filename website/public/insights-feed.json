@@ -50,6 +50,27 @@
       }
     },
     {
+      "id": "3ac05fbc-8c53-4bf2-9d5c-b5b184411856",
+      "url": "https://libertas.fgu.tech/posts/russian-spy-satellites-reportedly-intercept-eu-communication",
+      "title": "Russian Spy Satellites Reportedly Intercept EU Communications Infrastructure",
+      "summary": "European officials believe Russian space vehicles have intercepted communications from dozens of EU satellites, potentially compromising sensitive data and enabling trajectory manipulation.",
+      "content_text": "Two Russian space vehicles reportedly intercepted communications from at least 12 European satellites\n• Officials claim interceptions risk compromising sensitive transmitted information\n• Moscow could potentially manipulate satellite trajectories or crash intercepted satellites\n• Russian shadowing of European satellites intensified over past three years\n• Activity coincides with heightened tensions following Ukraine invasion\n• Demonstrates vulnerabilities in satellite-based communications infrastructure\n• Highlights need for improved encryption and anti-jamming in space-based comms",
+      "date_published": "2026-02-04T17:00:31.857Z",
+      "date_modified": "2026-02-04T17:00:31.900Z",
+      "tags": [
+        "surveillance",
+        "comms",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 72,
+        "credibility_score": 85,
+        "citations": [
+          "https://arstechnica.com/space/2026/02/russian-spy-satellites-have-intercepted-eu-communications-satellites/"
+        ]
+      }
+    },
+    {
       "id": "465677e6-7a6d-4025-b130-688355936afb",
       "url": "https://libertas.fgu.tech/posts/tails-7-4-1-emergency-release-fixes-critical-openssl-vulnera",
       "title": "Tails 7.4.1 Emergency Release Fixes Critical OpenSSL Vulnerabilities in Tor",

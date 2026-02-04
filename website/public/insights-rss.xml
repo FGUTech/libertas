@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Wed, 04 Feb 2026 11:00:35 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 04 Feb 2026 17:00:40 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -28,6 +28,16 @@
     <category>privacy</category>
     <category>surveillance</category>
     <category>sovereignty</category>
+  </item>
+  <item>
+    <title>Russian Spy Satellites Reportedly Intercept EU Communications Infrastructure</title>
+    <link>https://libertas.fgu.tech/posts/russian-spy-satellites-reportedly-intercept-eu-communication</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/russian-spy-satellites-reportedly-intercept-eu-communication</guid>
+    <pubDate>Wed, 04 Feb 2026 17:00:31 GMT</pubDate>
+    <description>European officials believe Russian space vehicles have intercepted communications from dozens of EU satellites, potentially compromising sensitive data and enabling trajectory manipulation.</description>
+    <category>surveillance</category>
+    <category>comms</category>
+    <category>censorship-resistance</category>
   </item>
   <item>
     <title>Tails 7.4.1 Emergency Release Fixes Critical OpenSSL Vulnerabilities in Tor</title>
