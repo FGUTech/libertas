@@ -4,7 +4,7 @@
   "title": "ProjectIdea",
   "description": "Generated project proposal derived from insights",
   "type": "object",
-  "required": ["id", "derivedFromInsightIds", "problemStatement", "threatModel", "affectedGroups", "proposedSolution", "mvpScope", "misuseRisks", "feasibilityScore", "impactScore", "status", "createdAt", "updatedAt"],
+  "required": ["id", "derivedFromInsightIds", "title", "problemStatement", "threatModel", "affectedGroups", "proposedSolution", "mvpScope", "misuseRisks", "feasibilityScore", "impactScore", "status", "createdAt", "updatedAt"],
   "properties": {
     "id": {
       "type": "string",
@@ -19,6 +19,12 @@
       },
       "minItems": 1,
       "description": "Source insight IDs"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 80,
+      "description": "Short, descriptive title for the project idea"
     },
     "problemStatement": {
       "type": "string",

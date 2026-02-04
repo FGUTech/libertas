@@ -44,6 +44,7 @@ Return a JSON object with two arrays:
   "ideas": [
     {
       "derived_from_insight_ids": ["uuid1", "uuid2"],
+      "title": "Short, descriptive title for the project idea (5-10 words, max 80 chars)",
       "detected_pattern": "Brief description of the pattern/gap identified",
       "problem_statement": "Clear, specific problem grounded in source material (50-500 chars)",
       "threat_model": "Who is the adversary and their capabilities (50-500 chars)",
@@ -153,6 +154,7 @@ Return a JSON object with two arrays:
   "ideas": [
     {
       "derived_from_insight_ids": ["a1b2c3", "d4e5f6"],
+      "title": "Rapid-Deploy Mesh Network Toolkit",
       "detected_pattern": "Mesh networking adoption increases during shutdowns, but current tools require pre-installation and technical expertise",
       "problem_statement": "Activists in shutdown-prone regions lack methods to quickly bootstrap mesh networks when internet is cut. Current solutions require pre-installation and technical knowledge most users don't have.",
       "threat_model": "State-level adversary able to shut down internet infrastructure, monitor telecommunications, and potentially deploy IMSI catchers. May compel app stores to remove applications.",

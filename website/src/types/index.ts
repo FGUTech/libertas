@@ -189,6 +189,7 @@ export const SubmissionSchema = z.object({
 export const ProjectIdeaSchema = z.object({
   id: z.string().uuid(),
   derivedFromInsightIds: z.array(z.string().uuid()).min(1),
+  title: z.string().min(5).max(80),
   problemStatement: z.string().min(50).max(500),
   threatModel: z.string().min(50).max(500),
   affectedGroups: z.array(z.string()).min(1),

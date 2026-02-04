@@ -8,16 +8,7 @@ Feature roadmap for the Libertas website, broken into MVP, Nice-to-have, and Fut
 
 Hey, I am working to implement features for the libertas website from the roadmap. Let's continue with implementing:
 
-Workflow A:
-  - Test all paths/follow mentally
-
-Workflow B:
-  - Test all paths/follow mentally
-
 Workflow C:
-  - Test all paths/follow mentally
-
-Workflow D:
   - Test all paths/follow mentally
 
 Database Checks:

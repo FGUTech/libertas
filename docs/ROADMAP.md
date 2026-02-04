@@ -123,6 +123,23 @@ Features that enhance the system but aren't critical for launch.
 
 ---
 
+### 2.0e Source URL Deduplication for Insights
+
+**Description**: Prevent duplicate insights from being created when the same source URL is fetched on different days with slightly different content.
+
+**Requirements**:
+- [ ] Before creating a new insight, check if an existing insight already cites the same source URL
+- [ ] If match found, skip insight generation for that source item
+- [ ] Log skipped items for monitoring
+
+**Implementation Notes**:
+- Current deduplication uses `content_hash` on `source_items`, but the same article fetched on different days may produce different hashes (minor content changes, ads, timestamps)
+- This creates duplicate insights about the same event (e.g., two Gabon internet blackout insights citing the same NetBlocks URL)
+- Simple SQL check: `SELECT id FROM insights WHERE $sourceUrl = ANY(citations)`
+- Lower effort than semantic dedup (2.1); should be implemented first
+
+---
+
 ### 2.1 Semantic Deduplication
 
 **Description**: Use vector embeddings to detect near-duplicate content.
@@ -495,6 +512,7 @@ Features for future consideration after core functionality is stable.
 | JSON Schema Validation | Medium | Medium | P1 |
 | Workflow A Source Health & Error Handling | Medium | Medium | P1 |
 | Workflow B Email Newsletter | Medium | Low | P1 |
+| Source URL Deduplication | Medium | Low | P1 |
 | Semantic Deduplication | Medium | High | P1 |
 | Config Management UI | Low | Medium | P1 |
 | Additional Source Types | Medium | High | P1 |
