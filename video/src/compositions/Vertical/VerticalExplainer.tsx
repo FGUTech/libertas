@@ -815,7 +815,7 @@ const VerticalCTA: React.FC<{ frame: number; fps: number }> = ({ frame, fps }) =
             opacity: titleProgress,
           }}
         >
-          Freedom tech insights delivered weekly
+          Freedom tech insights delivered live
         </div>
 
         <div

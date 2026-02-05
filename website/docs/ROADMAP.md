@@ -8,16 +8,16 @@ Feature roadmap for the Libertas website, broken into MVP, Nice-to-have, and Fut
 
 Hey, I am working to implement features for the libertas website from the roadmap. Let's continue with implementing:
 
-Workflow C:
-  - Test all paths/follow mentally
+# Phase 1: MVP
 
 Database Checks:
   - View each table and understand how/if its used
   - View each field and understand how/if/if it will be used
   - Ensure all fields properly populating data from workflows ( ie not hardcoded/stale/bad values )
   - Think each table and how/if we should display information from it on the FE:
+  - tests/database-validation.md
 
-Open Source
+Open Source Repo
 
 # Phase 2: Nice-to-have
 
