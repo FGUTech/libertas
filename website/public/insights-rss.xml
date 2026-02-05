@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Wed, 04 Feb 2026 23:00:26 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 05 Feb 2026 23:00:34 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -30,6 +30,16 @@
     <category>sovereignty</category>
   </item>
   <item>
+    <title>Senate Democrats Propose Ban on ICE/CBP Facial Recognition Use</title>
+    <link>https://libertas.fgu.tech/posts/senate-democrats-propose-ban-on-ice-cbp-facial-recognition-u</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/senate-democrats-propose-ban-on-ice-cbp-facial-recognition-u</guid>
+    <pubDate>Thu, 05 Feb 2026 23:00:26 GMT</pubDate>
+    <description>New Senate bill would prohibit ICE and CBP from using facial recognition and other biometric surveillance, requiring deletion of existing data and allowing civil suits for violations.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
+  </item>
+  <item>
     <title>Russian Spy Satellites Reportedly Intercept EU Communications Infrastructure</title>
     <link>https://libertas.fgu.tech/posts/russian-spy-satellites-reportedly-intercept-eu-communication</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/russian-spy-satellites-reportedly-intercept-eu-communication</guid>
@@ -49,27 +59,6 @@
     <category>censorship-resistance</category>
     <category>surveillance</category>
     <category>comms</category>
-  </item>
-  <item>
-    <title>Tails 7.4 Adds Persistent Language Settings, Updates Core Privacy Tools</title>
-    <link>https://libertas.fgu.tech/posts/tails-7-4-adds-persistent-language-settings-updates-core-pri</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/tails-7-4-adds-persistent-language-settings-updates-core-pri</guid>
-    <pubDate>Thu, 22 Jan 2026 11:03:28 GMT</pubDate>
-    <description>Tails 7.4 introduces persistent language/keyboard settings for easier access while updating Tor Browser to 15.0.4 and dropping BitTorrent downloads due to security concerns.</description>
-    <category>privacy</category>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>comms</category>
-  </item>
-  <item>
-    <title>Gabon Implements Nationwide Internet Blackout During 2023 Presidential Elections</title>
-    <link>https://libertas.fgu.tech/posts/gabon-implements-nationwide-internet-blackout-during-2023-pr</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/gabon-implements-nationwide-internet-blackout-during-2023-pr</guid>
-    <pubDate>Thu, 22 Jan 2026 11:01:51 GMT</pubDate>
-    <description>Gabon cut internet access nationwide during August 2023 elections, with service restored after military coup. Government cited preventing violence and misinformation as justification.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
   </item>
   <item>
     <title>Cryptography Expert Analyzes WhatsApp Backdoor Lawsuit Claims</title>
@@ -113,48 +102,6 @@
     <category>censorship-resistance</category>
     <category>activism</category>
     <category>sovereignty</category>
-  </item>
-  <item>
-    <title>22 Rights Groups Urge UK PM to Confront China on Transnational Digital Repression</title>
-    <link>https://libertas.fgu.tech/posts/22-rights-groups-urge-uk-pm-to-confront-china-on-transnation</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/22-rights-groups-urge-uk-pm-to-confront-china-on-transnation</guid>
-    <pubDate>Thu, 22 Jan 2026 11:02:40 GMT</pubDate>
-    <description>Freedom House and 21 other rights organizations called on UK PM to address China&apos;s transnational repression tactics including surveillance, harassment by proxy, and digital intimidation of UK-based activists and diaspora communities.</description>
-    <category>surveillance</category>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-    <category>privacy</category>
-  </item>
-  <item>
-    <title>Filipino Journalist Sentenced 12-18 Years on Terrorism Charges Amid Evidence Planting Claims</title>
-    <link>https://libertas.fgu.tech/posts/filipino-journalist-sentenced-12-18-years-on-terrorism-charg</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/filipino-journalist-sentenced-12-18-years-on-terrorism-charg</guid>
-    <pubDate>Thu, 22 Jan 2026 11:02:23 GMT</pubDate>
-    <description>Frenchie Mae Cumpio, 26-year-old Filipino journalist reporting on police/military abuses, sentenced to 12-18 years for terrorism financing after 5 years detention, with allegations authorities planted weapons during arrest.</description>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-    <category>surveillance</category>
-  </item>
-  <item>
-    <title>OONI Documents Decade-Long Censorship of Women&apos;s Rights Sites in Iran</title>
-    <link>https://libertas.fgu.tech/posts/ooni-documents-decade-long-censorship-of-women-s-rights-site</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/ooni-documents-decade-long-censorship-of-women-s-rights-site</guid>
-    <pubDate>Thu, 22 Jan 2026 11:01:15 GMT</pubDate>
-    <description>OONI measurements show Iran has systematically blocked women&apos;s rights websites since at least 2014, with repression intensifying despite 2022 Women, Life, Freedom protests.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>privacy</category>
-  </item>
-  <item>
-    <title>Federal Judge Halts FBI Search of Washington Post Reporter&apos;s Seized Devices</title>
-    <link>https://libertas.fgu.tech/posts/federal-judge-halts-fbi-search-of-washington-post-reporter-s</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/federal-judge-halts-fbi-search-of-washington-post-reporter-s</guid>
-    <pubDate>Thu, 22 Jan 2026 11:00:47 GMT</pubDate>
-    <description>Judge orders temporary stop to FBI search of devices seized from WaPo reporter Hannah Natanson&apos;s home in Pentagon leak investigation, citing First Amendment concerns.</description>
-    <category>surveillance</category>
-    <category>censorship-resistance</category>
-    <category>privacy</category>
   </item>
   <item>
     <title>Bangladesh&apos;s 2026 Election Tests Digital Democracy After Youth-Led Uprising</title>
