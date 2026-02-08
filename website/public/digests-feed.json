@@ -7,6 +7,22 @@
   "language": "en-US",
   "items": [
     {
+      "id": "3696c31d-aa45-4a56-a02b-72d1756e0415",
+      "url": "https://libertas.fgu.tech/digests/weekly-2026-02-07",
+      "title": "Weekly Digest: 2026-02-01 to 2026-02-07",
+      "summary": "This week highlighted the escalating tension between surveillance states and digital freedom advocates, with governments from Gabon to Russia demonstrating sophisticated censorship capabilities while researchers advance anonymous measurement systems. Four new project ideas emerged focusing on blackout-resistant communications and adaptive circumvention tools.",
+      "content_text": "This week highlighted the escalating tension between surveillance states and digital freedom advocates, with governments from Gabon to Russia demonstrating sophisticated censorship capabilities while researchers advance anonymous measurement systems. Four new project ideas emerged focusing on blackout-resistant communications and adaptive circumvention tools.",
+      "date_published": "2026-02-08T14:00:33.327Z",
+      "tags": [
+        "weekly-digest"
+      ],
+      "_libertas": {
+        "insight_count": 10,
+        "period_start": "2026-02-01",
+        "period_end": "2026-02-07"
+      }
+    },
+    {
       "id": "6048573e-c799-45c9-95da-e313292e6ebf",
       "url": "https://libertas.fgu.tech/digests/weekly-2026-01-21",
       "title": "Weekly Digest: 2026-01-15 to 2026-01-21",
