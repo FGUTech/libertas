@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 12 Feb 2026 17:01:02 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 12 Feb 2026 23:00:51 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -102,6 +102,17 @@
     <category>censorship-resistance</category>
     <category>activism</category>
     <category>sovereignty</category>
+  </item>
+  <item>
+    <title>Kimwolf Botnet Sybil Attack Disrupts I2P Anonymity Network</title>
+    <link>https://libertas.fgu.tech/posts/kimwolf-botnet-sybil-attack-disrupts-i2p-anonymity-network</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/kimwolf-botnet-sybil-attack-disrupts-i2p-anonymity-network</guid>
+    <pubDate>Thu, 12 Feb 2026 23:00:40 GMT</pubDate>
+    <description>The massive Kimwolf IoT botnet accidentally crippled I2P&apos;s anonymous communications network by flooding it with 700k infected devices attempting to use it as fallback C2 infrastructure.</description>
+    <category>comms</category>
+    <category>censorship-resistance</category>
+    <category>privacy</category>
+    <category>surveillance</category>
   </item>
   <item>
     <title>New York Proposes Mandatory 3D Printer Surveillance for Firearm Detection</title>

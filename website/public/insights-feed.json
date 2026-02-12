@@ -201,6 +201,28 @@
       }
     },
     {
+      "id": "8fecb1ef-ab53-442d-8e48-f515a30bd2be",
+      "url": "https://libertas.fgu.tech/posts/kimwolf-botnet-sybil-attack-disrupts-i2p-anonymity-network",
+      "title": "Kimwolf Botnet Sybil Attack Disrupts I2P Anonymity Network",
+      "summary": "The massive Kimwolf IoT botnet accidentally crippled I2P's anonymous communications network by flooding it with 700k infected devices attempting to use it as fallback C2 infrastructure.",
+      "content_text": "Kimwolf botnet attempted to join 700,000 infected IoT devices to I2P network as backup command and control infrastructure\n• Mass influx overwhelmed I2P's ~15,000-20,000 daily users, causing widespread service disruptions since Feb 3\n• Attack constitutes a Sybil attack - single entity disrupting peer-to-peer network with massive fake identities\n• I2P network operating at half capacity, with new stability improvements rolling out\n• Botmasters acknowledged accident in Discord channel, seeking takedown-resistant C2 alternatives\n• Similar experiments reportedly conducted with Tor network without major disruptions\n• Incident highlights vulnerability of decentralized networks to resource exhaustion attacks\n• Botnet recently lost competent operators, leading to rookie mistakes and 600k+ device losses",
+      "date_published": "2026-02-12T23:00:40.469Z",
+      "date_modified": "2026-02-12T23:00:40.510Z",
+      "tags": [
+        "comms",
+        "censorship-resistance",
+        "privacy",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 88,
+        "citations": [
+          "https://krebsonsecurity.com/2026/02/kimwolf-botnet-swamps-anonymity-network-i2p/"
+        ]
+      }
+    },
+    {
       "id": "9c97ecdf-0ad1-49ec-b4d0-60c8b37c40eb",
       "url": "https://libertas.fgu.tech/posts/new-york-proposes-mandatory-3d-printer-surveillance-for-fire",
       "title": "New York Proposes Mandatory 3D Printer Surveillance for Firearm Detection",
