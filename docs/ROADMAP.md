@@ -201,6 +201,131 @@ Features that enhance the system but aren't critical for launch.
 
 ---
 
+### 2.3a Structured API Source Type: Infrastructure
+
+**Description**: Add `api` as a first-class source type so Workflow A can ingest structured data from JSON APIs (not just RSS feeds). This is the foundation for Cloudflare Radar, GDELT, and ACLED integrations. Inspired by [worldmonitor](https://github.com/koala73/worldmonitor)'s approach to aggregating these upstream APIs.
+
+**Requirements**:
+- [ ] Database migration: add `'api'` to `source_items.platform` CHECK constraint
+- [ ] Add `api` to source type definitions comment in `sources.yml`
+- [ ] Define API source config schema: `type: api`, `url`, `poll_interval`, `auth`, `query` (optional), `response_mapping` (optional)
+- [ ] Add `api_sources` JSON Schema in `schemas/api-source.schema.json` for validation
+- [ ] Workflow A: add a parallel branch that handles `type: api` sources separately from RSS
+- [ ] Implement API adapter node pattern: HTTP Request → Response Normalizer → existing Classify pipeline
+- [ ] Response normalizer must map heterogeneous API responses into the standard `source_items` shape (`url`, `extracted_text`, `content_hash`, `platform: 'api'`, `published_at`, `metadata`)
+- [ ] Support `auth: none | bearer | api_key` credential modes with n8n credential references
+- [ ] Add `poll_interval` support (some APIs should poll every 6h, others every 24h) — use n8n IF node to check if enough time has elapsed since last fetch per source
+- [ ] Deduplication: API items use URL-based dedup (not content hash) since structured data is deterministic
+
+**Implementation Notes**:
+- Workflow A currently assumes all sources are RSS and uses the RSS Feed Read node. API sources need an HTTP Request node path instead.
+- n8n supports branching via Switch/IF nodes — route `api` type sources to a separate processing lane before they merge back into the shared Classify → Score → Summarize pipeline.
+- The normalizer is the key abstraction: each API has a different response shape, so use a Code node with per-source mapping logic (keyed on source name or URL pattern).
+- Keep `enabled: false` on API sources in `sources.yml` until the adapter nodes are deployed.
+- Migration file: `migrations/003_add_api_platform.sql`
+
+**Database Migration**:
+```sql
+-- migrations/003_add_api_platform.sql
+ALTER TABLE source_items DROP CONSTRAINT source_items_platform_check;
+ALTER TABLE source_items ADD CONSTRAINT source_items_platform_check
+  CHECK (platform IN ('rss', 'web', 'x', 'nostr', 'github', 'email', 'api'));
+```
+
+---
+
+### 2.3b Cloudflare Radar Outage Integration
+
+**Description**: Ingest internet outage annotations from Cloudflare Radar as a high-signal freedom tech source. Internet shutdowns are a direct censorship signal and currently detected only when OONI or NetBlocks publish reports (often hours/days later). Cloudflare Radar provides near-real-time structured data.
+
+**Depends on**: 2.3a (API source type infrastructure)
+
+**Requirements**:
+- [ ] Set up Cloudflare API token with Radar read permissions
+- [ ] Add n8n credential for Cloudflare API (Bearer token)
+- [ ] Implement response normalizer for Cloudflare Radar outage annotations → `source_items`
+- [ ] Map fields: `country` → `metadata.geo`, `asn` → `metadata.asn`, `startDate/endDate` → `published_at`, `scope` → `metadata.scope`
+- [ ] Construct `extracted_text` from annotation fields: `"Internet outage detected in {country} ({scope} scope) affecting ASN {asn} from {startDate} to {endDate}"`
+- [ ] Construct `url` as `https://radar.cloudflare.com/outage-center?country={countryCode}` for citation linkback
+- [ ] Set `content_hash` as hash of `country + asn + startDate` (deterministic dedup)
+- [ ] Enable the source in `sources.yml` once adapter is deployed
+- [ ] Test with historical data to verify dedup and classification work correctly
+
+**API Details**:
+- Endpoint: `GET https://api.cloudflare.com/client/v4/radar/annotations/outages?dateRange=7d&format=json`
+- Auth: Bearer token (Cloudflare API token with `Radar:Read` permission)
+- Response contains `annotations[]` with `startDate`, `endDate`, `linkedUrl`, `scope`, `asns[]`, `locations[]`
+- Poll interval: every 6 hours (outages are rare but high-signal)
+
+**Implementation Notes**:
+- This is the highest-value API integration. Internet shutdowns map directly to Libertas topics: `censorship-resistance`, `surveillance`.
+- Cloudflare Radar also has `/radar/annotations/outages/locations` for country-level filtering if volume is too high.
+- Cross-reference with existing OONI and NetBlocks RSS items for richer insights.
+
+---
+
+### 2.3c GDELT Global Event Integration
+
+**Description**: Poll GDELT's free document search API for freedom-tech-relevant global events. GDELT monitors news from 100+ languages worldwide and provides tone analysis, geo-location, and source metadata — discovering articles from sources not in our RSS list.
+
+**Depends on**: 2.3a (API source type infrastructure)
+
+**Requirements**:
+- [ ] Implement GDELT response normalizer → `source_items`
+- [ ] Configure search query in `sources.yml` `query` field: `censorship OR "internet shutdown" OR surveillance OR "digital rights" OR "press freedom"`
+- [ ] Map fields: `title` → `extracted_text` (prepend title), `url` → `url`, `seendate` → `published_at`, `domain` → `metadata.source_domain`, `tone` → `metadata.gdelt_tone`
+- [ ] Set `content_hash` as hash of article URL (GDELT deduplicates internally)
+- [ ] Filter out articles from domains already in our RSS source list (avoid double-ingestion)
+- [ ] Limit to `maxrecords=50` per poll to avoid noise — rely on classifier to filter further
+- [ ] Test query tuning: run sample queries to verify signal-to-noise ratio before enabling
+
+**API Details**:
+- Endpoint: `GET https://api.gdeltproject.org/api/v2/doc/doc?query={query}&mode=artlist&format=json&timespan=24h&maxrecords=50`
+- Auth: None required
+- Response contains `articles[]` with `title`, `url`, `seendate`, `domain`, `language`, `tone`
+- Poll interval: every 12 hours
+- Free, no rate limit documented (but be respectful — max 1 request per poll)
+
+**Implementation Notes**:
+- GDELT is a discovery source (Tier 2/3). Its value is finding articles from outlets we don't directly follow.
+- The `tone` field (positive/negative sentiment) could be stored in `metadata` and used by the classifier as a signal.
+- Consider adding a `gdelt_tone` field to the classifier context so it can factor in GDELT's sentiment analysis.
+- Query can be tuned over time based on classifier feedback — start conservative, expand if signal is good.
+
+---
+
+### 2.3d ACLED Protest & Conflict Data Integration
+
+**Description**: Ingest structured protest and conflict event data from ACLED (Armed Conflict Location & Event Data). Protests and political violence are leading indicators for internet shutdowns, crackdowns, and censorship escalation — core Libertas territory.
+
+**Depends on**: 2.3a (API source type infrastructure)
+
+**Requirements**:
+- [ ] Register for free ACLED researcher API access (requires email + API key)
+- [ ] Add n8n credentials for ACLED API (API key + email in query params)
+- [ ] Implement ACLED response normalizer → `source_items`
+- [ ] Map fields: `event_type` + `sub_event_type` → `extracted_text`, `country` + `admin1` → `metadata.geo`, `latitude/longitude` → `metadata.coordinates`, `source` → `metadata.acled_source`, `fatalities` → `metadata.fatalities`
+- [ ] Construct `extracted_text` as: `"{event_type}: {notes}" ` (ACLED `notes` field contains a human-readable event description)
+- [ ] Construct `url` as `https://acleddata.com/dashboard/#/dashboard/{event_id}` for citation linkback
+- [ ] Set `content_hash` as hash of `data_id` (ACLED's unique event identifier)
+- [ ] Filter to event types most relevant to freedom tech: `Protests`, `Riots`, `Strategic developments` (skip `Battles` unless in monitored countries)
+- [ ] Limit to monitored regions/countries or filter by ACLED `tags` if volume is too high
+- [ ] Enable source in `sources.yml` once adapter is deployed and tested
+
+**API Details**:
+- Endpoint: `GET https://api.acleddata.com/acled/read?key={key}&email={email}&event_date={last_24h}&event_date_where=BETWEEN&limit=100`
+- Auth: API key + email as query parameters
+- Response contains `data[]` with `data_id`, `event_date`, `event_type`, `sub_event_type`, `country`, `admin1`, `latitude`, `longitude`, `source`, `notes`, `fatalities`
+- Poll interval: every 24 hours (ACLED updates daily)
+- Free for researchers; requires registration at acleddata.com
+
+**Implementation Notes**:
+- ACLED data is Tier 2. Protests alone aren't freedom tech stories, but they become high-signal when combined with internet shutdown data (Cloudflare Radar, OONI, NetBlocks).
+- Cross-referencing ACLED protest spikes with Cloudflare Radar outages in the same country/timeframe could produce very strong insights. Consider this as a future enhancement to the classifier or pattern detection (2.5).
+- ACLED has a `tags` field that sometimes includes labels like "internet" or "media" — filter on these for higher precision.
+
+---
+
 ### 2.4 Enhanced Classification Fields
 
 **Description**: Extract additional metadata in classifier.
@@ -515,7 +640,11 @@ Features for future consideration after core functionality is stable.
 | Source URL Deduplication | Medium | Low | P1 |
 | Semantic Deduplication | Medium | High | P1 |
 | Config Management UI | Low | Medium | P1 |
-| Additional Source Types | Medium | High | P1 |
+| Additional Source Types (RSS) | Medium | High | P1 |
+| API Source Type Infrastructure (2.3a) | High | Medium | P1 |
+| Cloudflare Radar Outages (2.3b) | High | Low | P1 |
+| GDELT Event Integration (2.3c) | Medium | Low | P1 |
+| ACLED Protest/Conflict Data (2.3d) | Medium | Low | P2 |
 | Admin Dashboard | Medium | High | P1 |
 | Review Queue & Publishing Gates | Medium | Low | P1 |
 | Vibe Coding Pipeline | Low | High | P2 |

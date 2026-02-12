@@ -179,8 +179,76 @@ sources:
     tags: ["global", "activism", "censorship-resistance"]
     enabled: true
 
+  # Tier 1: OSINT & Cybersecurity (sourced from worldmonitor coverage gaps)
+  - name: "Bellingcat"
+    type: "rss"
+    url: "https://www.bellingcat.com/feed/"
+    tier: 1
+    tags: ["surveillance", "osint", "human-rights"]
+    enabled: true
+
+  - name: "Krebs on Security"
+    type: "rss"
+    url: "https://krebsonsecurity.com/feed/"
+    tier: 2
+    tags: ["security", "surveillance", "privacy"]
+    enabled: true
+
+  - name: "CISA Cybersecurity Advisories"
+    type: "rss"
+    url: "https://www.cisa.gov/cybersecurity-advisories/all.xml"
+    tier: 2
+    tags: ["security", "surveillance", "infrastructure"]
+    enabled: true
+
+  # Tier 2: Conflict & Crisis Early Warning
+  - name: "International Crisis Group"
+    type: "rss"
+    url: "https://www.crisisgroup.org/latest-updates/rss"
+    tier: 2
+    tags: ["activism", "censorship-resistance", "global"]
+    enabled: true
+
+  - name: "UN News"
+    type: "rss"
+    url: "https://news.un.org/feed/subscribe/en/news/all/rss.xml"
+    tier: 2
+    tags: ["human-rights", "global", "activism"]
+    enabled: true
+
+  # Structured API Sources (requires api source type - see roadmap 2.3a-2.3d)
+  # These are not yet functional; Workflow A needs API adapter nodes first.
+  - name: "Cloudflare Radar Outages"
+    type: "api"
+    url: "https://api.cloudflare.com/client/v4/radar/annotations/outages"
+    tier: 1
+    tags: ["censorship-resistance", "internet-shutdowns", "measurement"]
+    poll_interval: "6h"
+    auth: "bearer"  # requires CLOUDFLARE_API_TOKEN credential
+    enabled: false
+
+  - name: "GDELT Event Search"
+    type: "api"
+    url: "https://api.gdeltproject.org/api/v2/doc/doc"
+    tier: 2
+    tags: ["global", "surveillance", "activism"]
+    poll_interval: "12h"
+    query: "censorship OR \"internet shutdown\" OR surveillance OR \"digital rights\" OR \"press freedom\""
+    auth: "none"
+    enabled: false
+
+  - name: "ACLED Protest & Conflict Events"
+    type: "api"
+    url: "https://api.acleddata.com/acled/read"
+    tier: 2
+    tags: ["activism", "censorship-resistance", "global"]
+    poll_interval: "24h"
+    auth: "api_key"  # requires ACLED_API_KEY and ACLED_EMAIL credentials
+    enabled: false
+
 # Source type definitions:
 # - rss: Standard RSS/Atom feed
+# - api: Structured JSON API (requires adapter node per source - see roadmap 2.3a)
 # - web: Generic web page (requires scraping)
 # - x_account: X/Twitter account (requires API)
 # - nostr: Nostr pubkey (requires relay)
