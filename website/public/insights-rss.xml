@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 06 Feb 2026 05:00:25 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 12 Feb 2026 17:01:02 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -101,6 +101,17 @@
     <category>surveillance</category>
     <category>censorship-resistance</category>
     <category>activism</category>
+    <category>sovereignty</category>
+  </item>
+  <item>
+    <title>New York Proposes Mandatory 3D Printer Surveillance for Firearm Detection</title>
+    <link>https://libertas.fgu.tech/posts/new-york-proposes-mandatory-3d-printer-surveillance-for-fire</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/new-york-proposes-mandatory-3d-printer-surveillance-for-fire</guid>
+    <pubDate>Thu, 12 Feb 2026 17:00:42 GMT</pubDate>
+    <description>New York&apos;s budget bill would require all 3D printers sold in the state to include &apos;blocking technology&apos; that scans files for potential firearm blueprints and refuses to print flagged items.</description>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>privacy</category>
     <category>sovereignty</category>
   </item>
   <item>

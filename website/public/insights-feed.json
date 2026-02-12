@@ -201,6 +201,28 @@
       }
     },
     {
+      "id": "9c97ecdf-0ad1-49ec-b4d0-60c8b37c40eb",
+      "url": "https://libertas.fgu.tech/posts/new-york-proposes-mandatory-3d-printer-surveillance-for-fire",
+      "title": "New York Proposes Mandatory 3D Printer Surveillance for Firearm Detection",
+      "summary": "New York's budget bill would require all 3D printers sold in the state to include 'blocking technology' that scans files for potential firearm blueprints and refuses to print flagged items.",
+      "content_text": "NY budget bill S.9005/A.10005 mandates 'blocking technology' in all 3D printers sold in state\n• Required software/firmware must scan print files with 'firearms blueprint detection algorithm'\n• Printers would refuse to print anything flagged as potential firearm or component\n• Bruce Schneier warns this creates same problems as DRM - controlling general-purpose computers\n• Measure targets maker community, educators, and small manufacturers statewide\n• Technical approach fundamentally flawed - algorithms can be bypassed or circumvented\n• Creates precedent for government-mandated surveillance in manufacturing tools\n• Threatens user sovereignty over personally-owned devices and equipment",
+      "date_published": "2026-02-12T17:00:42.456Z",
+      "date_modified": "2026-02-12T17:00:42.509Z",
+      "tags": [
+        "surveillance",
+        "censorship-resistance",
+        "privacy",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.schneier.com/blog/archives/2026/02/3d-printer-surveillance.html"
+        ]
+      }
+    },
+    {
       "id": "ed15b10b-9ca9-4b0a-9ab0-ebe46d32edaf",
       "url": "https://libertas.fgu.tech/posts/bangladesh-s-2026-election-tests-digital-democracy-after-you",
       "title": "Bangladesh's 2026 Election Tests Digital Democracy After Youth-Led Uprising",
