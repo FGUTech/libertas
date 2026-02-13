@@ -28,9 +28,14 @@ export const WorldMapBackground = forwardRef<
   // Expose svgRef to parent via imperative handle
   useImperativeHandle(ref, () => ({
     get svgElement() {
+      // Re-acquire from DOM if the previous ref was detached (e.g. after
+      // React reconciliation replaced the innerHTML node).
+      if (svgRef.current && !svgRef.current.isConnected && containerRef.current) {
+        svgRef.current = containerRef.current.querySelector('svg');
+      }
       return svgRef.current;
     },
-  }));
+  }), []);
 
   // Fetch the SVG on mount and pre-process for responsive scaling
   useEffect(() => {

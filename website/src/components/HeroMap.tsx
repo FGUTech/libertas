@@ -58,24 +58,39 @@ export function HeroMap({ posts, visible }: HeroMapProps) {
   // -----------------------------------------------------------------------
   // SVG measurement
   // -----------------------------------------------------------------------
-  const measureSvg = useCallback((): SvgRect | null => {
+  /** Lightweight rect read — no state updates, safe to call on every frame. */
+  const getSvgRect = useCallback((): SvgRect | null => {
     const svg = mapRef.current?.svgElement;
     const container = containerRef.current;
-    if (!svg || !container) return null;
+    if (!svg || !container || !svg.isConnected) return null;
 
     const sr = svg.getBoundingClientRect();
     const cr = container.getBoundingClientRect();
 
-    const rect: SvgRect = {
+    // Guard against stale/detached SVG element returning zero-size rects
+    if (sr.width === 0 || sr.height === 0) return null;
+
+    return {
       top: sr.top - cr.top,
       left: sr.left - cr.left,
       width: sr.width,
       height: sr.height,
     };
-    setSvgRect(rect);
-    setContainerBounds({ width: cr.width, height: cr.height });
-    return rect;
   }, []);
+
+  /** Full measurement — reads rect and commits to state (for card positioning). */
+  const measureSvg = useCallback((): SvgRect | null => {
+    const rect = getSvgRect();
+    if (!rect) return null;
+
+    setSvgRect(rect);
+    const container = containerRef.current;
+    if (container) {
+      const cr = container.getBoundingClientRect();
+      setContainerBounds({ width: cr.width, height: cr.height });
+    }
+    return rect;
+  }, [getSvgRect]);
 
   const pctToPixel = useCallback(
     (pct: GeoCoordinate, rect: SvgRect) => ({
@@ -139,19 +154,37 @@ export function HeroMap({ posts, visible }: HeroMapProps) {
   }, [posts, measureSvg, pctToPixel]);
 
   // -----------------------------------------------------------------------
-  // Resize handler
+  // Resize handler — ResizeObserver
+  // Marker positions update immediately (lightweight rect read) so they
+  // track the resize smoothly. The heavier state updates (svgRect /
+  // containerBounds used by SignalCard positioning) are debounced.
   // -----------------------------------------------------------------------
   useEffect(() => {
-    function handleResize() {
-      const rect = measureSvg();
-      if (!rect) return;
-      setMarkers((prev) =>
-        prev.map((m) => ({ ...m, px: pctToPixel(m.pct, rect) }))
-      );
-    }
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [measureSvg, pctToPixel]);
+    const container = containerRef.current;
+    if (!container) return;
+
+    let debounceTimer: ReturnType<typeof setTimeout> | null = null;
+
+    const observer = new ResizeObserver(() => {
+      // Immediate: reposition markers so they track the resize smoothly
+      const rect = getSvgRect();
+      if (rect) {
+        setMarkers((prev) =>
+          prev.map((m) => ({ ...m, px: pctToPixel(m.pct, rect) }))
+        );
+      }
+      // Debounced: commit svgRect / containerBounds state for card positioning
+      if (debounceTimer) clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => measureSvg(), 150);
+    });
+
+    observer.observe(container);
+
+    return () => {
+      if (debounceTimer) clearTimeout(debounceTimer);
+      observer.disconnect();
+    };
+  }, [getSvgRect, measureSvg, pctToPixel]);
 
   // -----------------------------------------------------------------------
   // Hover handlers (desktop)

@@ -27,20 +27,6 @@ Hey, I am working to implement features for the libertas website from the roadma
 
 ---
 
-#### Step 11: Hero section minimum height for short windows
-
-**Description**: The hero section currently uses `h-[80vh]` which can be too short on landscape/short browser windows, causing the world map to be clipped or the layout to feel cramped. Add a minimum height to ensure the map fits vertically without breaking the aspect ratio.
-
-**Files**: `HeroSection.tsx`, `globals.css`
-
-- [ ] Change the hero section height from `h-[80vh]` to `min-h-[max(80vh,600px)]` (or equivalent) — ensures at least 600px on short windows while preserving the 80vh behavior on taller ones
-- [ ] Verify the world map SVG still centers properly within the section at various heights (its `aspect-ratio: 1009.6727 / 665.96301` and `max-width: 1000px` should be preserved)
-- [ ] Test at browser heights of 500px, 600px, 700px, 900px, and 1200px to confirm map visibility and hero content layout
-- [ ] Ensure the hero content (title, description, buttons) remains properly distributed with `justify-between` and doesn't overlap the map at the minimum height
-- [ ] On mobile landscape (short + wide), verify the section scrolls naturally and doesn't create an unusually tall forced block
-
----
-
 #### Step 12: Fix markers disappearing on window resize
 
 **Description**: When the browser window is resized, all signal markers vanish and only reappear after a full page refresh. The resize handler in `HeroMap.tsx` recalculates pixel positions from stored percentages, but the markers still disappear — likely because the SVG element reference becomes stale or the `measureSvg()` call returns null during the resize.
