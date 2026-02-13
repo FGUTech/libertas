@@ -7,6 +7,7 @@ import { WorldMapBackground } from '@/components/WorldMapBackground';
 import type { WorldMapBackgroundHandle } from '@/components/WorldMapBackground';
 import { SignalMarker } from '@/components/SignalMarker';
 import { SignalCard } from '@/components/SignalCard';
+import type { ContainerBounds } from '@/components/SignalCard';
 import { getIsoCode, getRandomPointInCountryPath } from '@/lib/geo-coordinates';
 import type { GeoCoordinate } from '@/lib/geo-coordinates';
 import { topicToSignalColor } from '@/lib/signal-colors';
@@ -52,6 +53,7 @@ export function HeroMap({ posts, visible }: HeroMapProps) {
   const [hoveredMarker, setHoveredMarker] = useState<string | null>(null);
   const [markers, setMarkers] = useState<MapMarker[]>([]);
   const [svgRect, setSvgRect] = useState<SvgRect | null>(null);
+  const [containerBounds, setContainerBounds] = useState<ContainerBounds | null>(null);
 
   // -----------------------------------------------------------------------
   // SVG measurement
@@ -71,6 +73,7 @@ export function HeroMap({ posts, visible }: HeroMapProps) {
       height: sr.height,
     };
     setSvgRect(rect);
+    setContainerBounds({ width: cr.width, height: cr.height });
     return rect;
   }, []);
 
@@ -265,6 +268,7 @@ export function HeroMap({ posts, visible }: HeroMapProps) {
             key={hoveredMarkerData.key}
             posts={[hoveredMarkerData.post]}
             position={hoveredMarkerData.px}
+            containerBounds={containerBounds ?? undefined}
             onNavigate={handleNavigate}
             onMouseEnter={handleCardMouseEnter}
             onMouseLeave={handleCardMouseLeave}

@@ -27,32 +27,6 @@ Hey, I am working to implement features for the libertas website from the roadma
 
 ---
 
-#### Step 9: Topic-based marker color variance
-
-**Description**: Signal markers currently all use the same Matrix Green color. Color-code markers based on the post's primary `topic` to provide visual variety and at-a-glance topic identification. Additionally, modulate marker brightness/glow intensity based on `freedomRelevanceScore` so higher-signal posts are more visually prominent.
-
-**Topic → Color Mapping** (4 color groups, using existing design system colors + 1 new purple):
-
-| Color | CSS Variable | Hex (dark) | Topics |
-|-------|-------------|------------|--------|
-| Green | `--signal-green` | `#00ff41` | `censorship-resistance`, `activism`, `sovereignty` |
-| Amber | `--signal-amber` | `#ffb800` | `bitcoin`, `payments` |
-| Purple | `--signal-purple` | `#a855f7` | `zk`, `identity` |
-| Cyan | `--signal-cyan` | `#00b4ff` | `privacy`, `surveillance`, `comms` |
-
-**Files**: `SignalMarker.tsx`, `HeroMap.tsx`, `globals.css`, `types/index.ts` (optional helper)
-
-- [ ] Create a `topicToSignalColor()` utility mapping `Topic → color key` (uses primary topic, i.e. `post.topics[0]`)
-- [ ] Add CSS custom properties for each signal color: `--signal-green`, `--signal-amber`, `--signal-purple`, `--signal-cyan` (with corresponding glow variants)
-- [ ] Add `.signal-marker-green`, `.signal-marker-amber`, `.signal-marker-purple`, `.signal-marker-cyan` CSS classes (background, box-shadow, `@keyframes` glow color)
-- [ ] Pass `topic` (or resolved color key) as a prop to `SignalMarker`; apply the matching CSS class
-- [ ] Modulate marker opacity/glow intensity based on `freedomRelevanceScore`: scores 90–100 get full brightness + stronger glow, 70–89 get standard brightness, below 70 get slightly dimmer (e.g. opacity 0.7)
-- [ ] Update light theme overrides for each signal color (less saturated variants to stay readable)
-- [ ] `prefers-reduced-motion` still disables animation regardless of color
-- [ ] Update `SignalCard` topic tag colors to match the marker color palette for consistency
-
----
-
 #### Step 10: Smart card positioning (prevent overflow)
 
 **Description**: `SignalCard` already flips placement when it detects viewport overflow, but the current logic only runs once on mount and doesn't account for the card being near the bottom or right edge of the *hero section container* (not just the viewport). Cards near edges still clip or overflow.
@@ -65,6 +39,8 @@ Hey, I am working to implement features for the libertas website from the roadma
 - [ ] Add a small margin/padding buffer (e.g. 16px) from container edges
 - [ ] On mobile (viewport < 768px), consider pinning the card to a fixed bottom sheet or centered overlay instead of positioning relative to the marker, since small screens have limited space
 - [ ] Test with markers in all four corners and along all edges
+
+- [ ] Kinda seperate from the main issue but change "signal" to "freedom signal" on the Signal Card
 
 ---
 

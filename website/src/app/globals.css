@@ -471,6 +471,18 @@ body {
   border-top: 1px solid var(--border-subtle);
 }
 
+/* Mobile: pin card as centered bottom overlay */
+.signal-card-mobile {
+  position: absolute;
+  bottom: var(--space-4);
+  left: var(--space-4);
+  right: var(--space-4);
+  width: auto;
+  max-width: none;
+  z-index: 30;
+  pointer-events: auto;
+}
+
 /* ========================================
    Typography Classes
    ======================================== */
