@@ -219,7 +219,7 @@ const regionCentroids: Record<string, GeoCoordinate | 'random'> = {
  * Resolve a geo string to an ISO 3166-1 alpha-2 country code.
  * Checks the sub-national fallback map first, then delegates to getCountryCode().
  */
-function getIsoCode(geoString: string): string | null {
+export function getIsoCode(geoString: string): string | null {
   const normalized = geoString.toLowerCase().trim();
 
   // Sub-national lookup (cities, states, provinces)

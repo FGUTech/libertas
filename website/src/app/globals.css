@@ -329,6 +329,14 @@ body {
   outline-offset: 4px;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .signal-marker {
+    animation: none;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
 /* Signal card popover */
 .signal-card {
   position: absolute;

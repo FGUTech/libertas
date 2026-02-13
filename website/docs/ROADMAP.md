@@ -27,37 +27,6 @@ Hey, I am working to implement features for the libertas website from the roadma
 
 ---
 
-#### Step 4: Build `SignalMarker` component
-
-**Description**: A small animated dot that blinks/pulses at a given position on the map.
-
-- [x] Create `components/SignalMarker.tsx` (`'use client'`)
-- [x] Accept props: `x`, `y` (pixel positions), `postCount`, `onHoverStart`, `onHoverEnd`, `onClick`, `isActive`
-- [x] Render a small circle (10px) positioned absolutely with `left`, `top` (pixels), `transform: translate(-50%, -50%)`
-- [x] Use Matrix green (`--accent-primary`) with glow effect via `box-shadow` (matching the accent-glow pattern)
-- [x] Add CSS `@keyframes signal-pulse` animation with opacity + scale oscillation over 2s
-- [x] Stagger animation timing per marker (use `animation-delay` based on index) so they don't all blink in sync
-- [x] Set `pointer-events: auto` on markers (z-index: 20, above the hero content)
-- [x] Show cursor pointer on hover
-- [ ] Respect `prefers-reduced-motion`: disable blink animation, show static dot instead
-
----
-
-#### Step 5: Build `SignalCard` component
-
-**Description**: A popover card that appears when hovering/tapping a signal marker, showing a preview of the post.
-
-- [x] Create `components/SignalCard.tsx` (`'use client'`)
-- [x] Accept props: `posts` (Post[]), `position` (`{ x, y }` pixels), `onNavigate`, `onMouseEnter`, `onMouseLeave`
-- [x] Display: post title, primary topic tag (with existing `topicColors`), date (formatted), country flag(s) via `CountryFlags` component, freedom relevance score badge
-- [x] Style consistent with existing `.card` class: dark `--bg-elevated` background, subtle border, accent glow on hover
-- [x] Position the card near the marker but ensure it stays within viewport bounds (flip above/below/left/right as needed)
-- [x] Make the entire card clickable — navigates to `/posts/{slug}`
-- [x] Add a subtle appear animation (scale from 0.95 + fade in, using `motion/react`)
-- [x] If multiple posts share this marker location, stack them vertically (max 3 visible, show "+N more" if overflow)
-
----
-
 #### Step 6: Orchestrate map, markers, and cards in `HeroSection`
 
 **Description**: The orchestration logic that combines the map, markers, and cards. Built directly into `HeroSection.tsx` (rather than a separate `HeroMap` component) since it shares state with the terminal animation and hero content fade-in.
@@ -70,10 +39,10 @@ Hey, I am working to implement features for the libertas website from the roadma
 - [x] Click on marker or card navigates to `/posts/{slug}`
 - [x] Render: `WorldMapBackground` (z-0) → `SignalMarker[]` (z-20) → `SignalCard` (z-30), hero content (z-10, pointer-events-none with auto on buttons)
 - [x] Handle loading state: markers hidden until geo resolution completes, then fade in with hero content
-- [ ] Iterate over full `geo[]` array per post and deduplicate by resolved ISO code (currently only uses first geo entry)
-- [ ] Multiple posts in the same country should get slightly different positions via `getRandomPointInCountryPath()` (currently grouped into one marker)
-- [ ] Mobile: show card on tap, dismiss on tap-outside
-- [ ] Extract `HeroMap` as standalone component accepting `posts` prop from server component (currently uses mock data inline)
+- [x] Iterate over full `geo[]` array per post and deduplicate by resolved ISO code (currently only uses first geo entry)
+- [x] Multiple posts in the same country should get slightly different positions via `getRandomPointInCountryPath()` (currently grouped into one marker)
+- [x] Mobile: show card on tap, dismiss on tap-outside
+- [x] Extract `HeroMap` as standalone component accepting `posts` prop from server component (currently uses mock data inline)
 
 ---
 
@@ -86,7 +55,7 @@ Hey, I am working to implement features for the libertas website from the roadma
 - [x] Existing hero text, buttons, and terminal lines remain readable (hero content z-10 with `pointer-events-none`, buttons `pointer-events-auto`)
 - [x] Hero gradient overlay sits between map and text for readability
 - [x] Signal markers fade in simultaneously with title/description after terminal animation completes
-- [ ] In `src/app/page.tsx`, filter recent posts with non-empty `geo` arrays (up to last 10) and pass to HeroSection/HeroMap
+- [x] In `src/app/page.tsx`, filter recent posts with non-empty `geo` arrays and pass to HeroSection/HeroMap
 - [ ] Test in both dark and light themes
 
 ---
@@ -97,8 +66,124 @@ Hey, I am working to implement features for the libertas website from the roadma
 - [x] Add `.signal-marker` class with pulse animation, glow, z-index: 20, pointer-events: auto
 - [x] Add `.signal-card` styles for the popover card (z-index: 30, elevated bg, border glow on hover)
 - [x] Add `.signal-card-item`, `.signal-card-title`, `.signal-card-overflow` styles
-- [ ] Add `prefers-reduced-motion` override: `.signal-marker { animation: none; }`
+- [x] Add `prefers-reduced-motion` override: `.signal-marker { animation: none; }`
 - [x] All new CSS uses existing CSS variables (`--accent-primary`, `--bg-elevated`, etc.)
+
+---
+
+#### Step 9: Topic-based marker color variance
+
+**Description**: Signal markers currently all use the same Matrix Green color. Color-code markers based on the post's primary `topic` to provide visual variety and at-a-glance topic identification. Additionally, modulate marker brightness/glow intensity based on `freedomRelevanceScore` so higher-signal posts are more visually prominent.
+
+**Topic → Color Mapping** (4 color groups, using existing design system colors + 1 new purple):
+
+| Color | CSS Variable | Hex (dark) | Topics |
+|-------|-------------|------------|--------|
+| Green | `--signal-green` | `#00ff41` | `censorship-resistance`, `activism`, `sovereignty` |
+| Amber | `--signal-amber` | `#ffb800` | `bitcoin`, `payments` |
+| Purple | `--signal-purple` | `#a855f7` | `zk`, `identity` |
+| Cyan | `--signal-cyan` | `#00b4ff` | `privacy`, `surveillance`, `comms` |
+
+**Files**: `SignalMarker.tsx`, `HeroMap.tsx`, `globals.css`, `types/index.ts` (optional helper)
+
+- [ ] Create a `topicToSignalColor()` utility mapping `Topic → color key` (uses primary topic, i.e. `post.topics[0]`)
+- [ ] Add CSS custom properties for each signal color: `--signal-green`, `--signal-amber`, `--signal-purple`, `--signal-cyan` (with corresponding glow variants)
+- [ ] Add `.signal-marker-green`, `.signal-marker-amber`, `.signal-marker-purple`, `.signal-marker-cyan` CSS classes (background, box-shadow, `@keyframes` glow color)
+- [ ] Pass `topic` (or resolved color key) as a prop to `SignalMarker`; apply the matching CSS class
+- [ ] Modulate marker opacity/glow intensity based on `freedomRelevanceScore`: scores 90–100 get full brightness + stronger glow, 70–89 get standard brightness, below 70 get slightly dimmer (e.g. opacity 0.7)
+- [ ] Update light theme overrides for each signal color (less saturated variants to stay readable)
+- [ ] `prefers-reduced-motion` still disables animation regardless of color
+- [ ] Update `SignalCard` topic tag colors to match the marker color palette for consistency
+
+---
+
+#### Step 10: Smart card positioning (prevent overflow)
+
+**Description**: `SignalCard` already flips placement when it detects viewport overflow, but the current logic only runs once on mount and doesn't account for the card being near the bottom or right edge of the *hero section container* (not just the viewport). Cards near edges still clip or overflow.
+
+**Files**: `SignalCard.tsx`, `HeroMap.tsx`
+
+- [ ] Pass the hero section container rect (or a `containerBounds` prop) from `HeroMap` to `SignalCard` so positioning is relative to the container, not just the viewport
+- [ ] Recalculate placement whenever `position` changes (not just on mount) — use `useLayoutEffect` to measure before paint
+- [ ] Clamp card position so it never extends beyond the container bounds: if card would overflow right, shift left; if it would overflow bottom, shift up; handle corner cases (bottom-right) by placing card above-left
+- [ ] Add a small margin/padding buffer (e.g. 16px) from container edges
+- [ ] On mobile (viewport < 768px), consider pinning the card to a fixed bottom sheet or centered overlay instead of positioning relative to the marker, since small screens have limited space
+- [ ] Test with markers in all four corners and along all edges
+
+---
+
+#### Step 11: Hero section minimum height for short windows
+
+**Description**: The hero section currently uses `h-[80vh]` which can be too short on landscape/short browser windows, causing the world map to be clipped or the layout to feel cramped. Add a minimum height to ensure the map fits vertically without breaking the aspect ratio.
+
+**Files**: `HeroSection.tsx`, `globals.css`
+
+- [ ] Change the hero section height from `h-[80vh]` to `min-h-[max(80vh,600px)]` (or equivalent) — ensures at least 600px on short windows while preserving the 80vh behavior on taller ones
+- [ ] Verify the world map SVG still centers properly within the section at various heights (its `aspect-ratio: 1009.6727 / 665.96301` and `max-width: 1000px` should be preserved)
+- [ ] Test at browser heights of 500px, 600px, 700px, 900px, and 1200px to confirm map visibility and hero content layout
+- [ ] Ensure the hero content (title, description, buttons) remains properly distributed with `justify-between` and doesn't overlap the map at the minimum height
+- [ ] On mobile landscape (short + wide), verify the section scrolls naturally and doesn't create an unusually tall forced block
+
+---
+
+#### Step 12: Fix markers disappearing on window resize
+
+**Description**: When the browser window is resized, all signal markers vanish and only reappear after a full page refresh. The resize handler in `HeroMap.tsx` recalculates pixel positions from stored percentages, but the markers still disappear — likely because the SVG element reference becomes stale or the `measureSvg()` call returns null during the resize.
+
+**Files**: `HeroMap.tsx`
+
+- [ ] Investigate root cause: check if `mapRef.current?.svgElement` becomes null during resize (e.g. if the `WorldMapBackground` component re-renders and loses its ref)
+- [ ] Ensure the `WorldMapBackground` ref is stable across re-renders (use `forwardRef` + `useImperativeHandle` properly, avoid unnecessary re-mounts)
+- [ ] Debounce the resize handler (e.g. 100–150ms) to avoid thrashing during continuous resize, but still update promptly after resize ends
+- [ ] After recalculating positions in the resize handler, verify that `markers` state is non-empty — if measurement fails, retain the previous positions rather than setting an empty array
+- [ ] Add a `ResizeObserver` on the container element as a more reliable alternative to `window.addEventListener('resize')` — `ResizeObserver` fires when the container's dimensions actually change, not just on window resize
+- [ ] Test by resizing the window rapidly, slowly, and by toggling DevTools open/closed
+
+---
+
+#### Step 13: Reduce time-to-content (faster hero intro animation)
+
+**Description**: The terminal typing animation currently types 4 lines before fading out and revealing the hero content + signal markers. This takes several seconds. Reduce to 3 lines and begin fading in the hero content *before* the typing animation fully completes to reduce perceived wait time.
+
+**Files**: `HeroTerminal.tsx`, `HeroSection.tsx`, `HeroMap.tsx`
+
+- [ ] Reduce `LINES` array from 4 to 3 lines (remove or combine lines — e.g. `> initializing`, `> scanning global signals...`, `> publishing insights [OK]`)
+- [ ] Add a new callback prop `onNearComplete` to `HeroTerminal` that fires when the *last line begins typing* (not after it finishes), so the hero content can start fading in early
+- [ ] In `HeroSection`, begin the hero content + markers fade-in on `onNearComplete` instead of `onComplete` — use a softer/longer fade (e.g. 0.8s) that overlaps with the terminal's final line and exit animation
+- [ ] Keep `onComplete` for when the terminal fully exits (if needed for cleanup), but the visual reveal should start earlier
+- [ ] Consider reducing `CHAR_DELAY` from 15ms to ~12ms and `LINE_PAUSE` from 150ms to ~100ms for a snappier feel
+- [ ] Total animation time goal: under 2 seconds from page load to hero content visible (currently ~3-4s)
+- [ ] Ensure the terminal fade-out and hero fade-in overlap smoothly without a jarring flash
+
+---
+
+#### Step 14: Click-through navigation on signal markers
+
+**Description**: Currently clicking a signal marker toggles the preview card open/closed but doesn't navigate to the article. Only clicking within the `SignalCard` navigates. Allow clicking a marker to navigate directly to the post.
+
+**Files**: `HeroMap.tsx`, `SignalMarker.tsx`
+
+- [ ] **Desktop**: Hover shows the card (existing behavior). Clicking the marker navigates directly to `/posts/{slug}` via `router.push`. The card remains a secondary way to navigate (clicking card items also navigates, existing behavior).
+- [ ] **Mobile**: First tap opens the card (existing behavior, needed since there's no hover). Tapping the card item navigates. Optionally, double-tap on marker could navigate directly, but single-tap should still show the card for discoverability.
+- [ ] Pass the post's `slug` to `SignalMarker` so it can handle navigation, or handle in `HeroMap`'s `onClick` callback by calling `router.push` instead of `setHoveredMarker`
+- [ ] On desktop, distinguish between hover-intent (show card) and click-intent (navigate) — no change needed for hover handlers, just change the `onClick` handler
+- [ ] Ensure `cursor: pointer` on markers communicates clickability (already set)
+- [ ] Add a subtle visual affordance on hover (e.g. scale up slightly) to signal interactivity beyond just showing the card
+
+---
+
+#### Step 15: Prevent markers from covering hero text and buttons
+
+**Description**: Signal markers (z-20) render on top of the hero description text and CTA buttons (z-10). Even though hero content has `pointer-events-none` (with `pointer-events-auto` on buttons), markers can visually obscure the text and buttons, making them hard to read or click.
+
+**Files**: `HeroMap.tsx`, `HeroSection.tsx`, `globals.css`
+
+- [ ] Define exclusion zones where markers should not be placed: the title area (top center), the description + buttons area (bottom center), and a padding buffer around them
+- [ ] In `HeroMap`, after resolving marker positions, filter out or reposition any markers that fall within the exclusion zones. Shift displaced markers to the nearest valid position outside the zone.
+- [ ] Calculate exclusion zones dynamically by measuring the hero content container's bounding rect (title div + bottom div) and adding ~24px padding
+- [ ] Recalculate exclusion zones on resize along with marker positions
+- [ ] As a simpler alternative/fallback: raise the hero content z-index above markers (z-25 for text, z-30 for buttons) and add a subtle semi-transparent backdrop behind the text area so markers are still visible but don't compete with readability
+- [ ] Test with 10+ markers to ensure none overlap the CTA buttons or obscure the description text
 
 ---
 

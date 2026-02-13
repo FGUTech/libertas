@@ -2,11 +2,17 @@ import Link from "next/link";
 import { ContentCard } from "@/components/PostCard";
 import { WebsiteJsonLd } from "@/components/JsonLd";
 import { HeroSection } from "@/components/HeroSection";
-import { getAllContent, isPost } from "@/lib/posts";
+import { getAllContent, getAllPosts, isPost } from "@/lib/posts";
+import type { Post } from "@/types";
 
 export default function Home() {
   // Load all content (posts + digests) server-side (uses filesystem, falls back to mock if no content)
   const content = getAllContent().slice(0, 6);
+
+  // Get posts with geo data for the hero signal map (up to 10 most recent)
+  const heroPosts: Post[] = getAllPosts()
+    .filter((p) => p.geo && p.geo.length > 0)
+    .slice(0, 15);
 
   return (
     <div className="matrix-bg min-h-screen">
@@ -14,7 +20,7 @@ export default function Home() {
       <WebsiteJsonLd />
 
       {/* Hero Section */}
-      <HeroSection />
+      <HeroSection posts={heroPosts} />
 
       {/* Recent Posts Section */}
       <section className="py-14 md:py-16">
