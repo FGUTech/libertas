@@ -27,23 +27,6 @@ Hey, I am working to implement features for the libertas website from the roadma
 
 ---
 
-#### Step 10: Smart card positioning (prevent overflow)
-
-**Description**: `SignalCard` already flips placement when it detects viewport overflow, but the current logic only runs once on mount and doesn't account for the card being near the bottom or right edge of the *hero section container* (not just the viewport). Cards near edges still clip or overflow.
-
-**Files**: `SignalCard.tsx`, `HeroMap.tsx`
-
-- [ ] Pass the hero section container rect (or a `containerBounds` prop) from `HeroMap` to `SignalCard` so positioning is relative to the container, not just the viewport
-- [ ] Recalculate placement whenever `position` changes (not just on mount) — use `useLayoutEffect` to measure before paint
-- [ ] Clamp card position so it never extends beyond the container bounds: if card would overflow right, shift left; if it would overflow bottom, shift up; handle corner cases (bottom-right) by placing card above-left
-- [ ] Add a small margin/padding buffer (e.g. 16px) from container edges
-- [ ] On mobile (viewport < 768px), consider pinning the card to a fixed bottom sheet or centered overlay instead of positioning relative to the marker, since small screens have limited space
-- [ ] Test with markers in all four corners and along all edges
-
-- [ ] Kinda seperate from the main issue but change "signal" to "freedom signal" on the Signal Card
-
----
-
 #### Step 11: Hero section minimum height for short windows
 
 **Description**: The hero section currently uses `h-[80vh]` which can be too short on landscape/short browser windows, causing the world map to be clipped or the layout to feel cramped. Add a minimum height to ensure the map fits vertically without breaking the aspect ratio.

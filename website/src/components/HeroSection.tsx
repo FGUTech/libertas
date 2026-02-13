@@ -21,7 +21,7 @@ export function HeroSection({ posts }: HeroSectionProps) {
   const [terminalDone, setTerminalDone] = useState(false);
 
   return (
-    <section className="relative overflow-hidden h-[80vh] flex flex-col pb-8 pt-12 md:pt-6">
+    <section className="relative overflow-hidden min-h-[max(80vh,600px)] flex flex-col pb-8 pt-12 md:pt-6">
       {/* World map + signal markers */}
       <HeroMap posts={posts} visible={terminalDone} />
 

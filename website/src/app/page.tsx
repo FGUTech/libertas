@@ -23,7 +23,7 @@ export default function Home() {
       <HeroSection posts={heroPosts} />
 
       {/* Recent Posts Section */}
-      <section className="py-14 md:py-16">
+      <section className="recent-signals py-14 md:py-16">
         <div className="container">
           <div className="mb-8 flex items-center justify-between">
             <h2 className="text-h2">Recent Signals</h2>

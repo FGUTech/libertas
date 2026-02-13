@@ -750,6 +750,13 @@ body {
   overflow: hidden;
 }
 
+/* Short viewport: halve top padding above Recent Signals */
+@media (max-height: 750px) {
+  .recent-signals {
+    padding-top: 1.75rem;  /* half of py-14 (3.5rem) */
+  }
+}
+
 /* Hero section gradient overlay */
 .hero-gradient {
   background: linear-gradient(
@@ -795,6 +802,12 @@ body {
   filter: sepia(1) hue-rotate(70deg) saturate(3) brightness(0.5);
 }
 
+/* Short viewport: shift map up 30% to reclaim dead space */
+@media (max-height: 750px) {
+  .world-map-background svg {
+    top: 40%;
+  }
+}
 
 /* ========================================
    Tags & Citations
