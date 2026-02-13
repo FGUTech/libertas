@@ -4,11 +4,7 @@ Feature roadmap for the Libertas website, broken into MVP, Nice-to-have, and Fut
 
 ---
 
-## Prompt Initialization
-
-Hey, I am working to implement features for the libertas website from the roadmap. Let's continue with implementing:
-
-# Phase 1: MVP
+## TODO
 
 Database Checks:
   - View each table and understand how/if its used
@@ -17,7 +13,147 @@ Database Checks:
   - Think each table and how/if we should display information from it on the FE:
   - tests/database-validation.md
 
-Open Source Repo
+## Prompt Initialization
+
+Hey, I am working to implement features for the libertas website from the roadmap. Let's continue with implementing:
+
+# Phase 1: MVP
+
+### 1.1 Hero Signal Map — Interactive World Map Background
+
+**Description**: Add an interactive world map background to the homepage hero section. The map displays a minimal silhouette of the world (reusing the SVG from the explainer video) with blinking indicators showing where recent signals (last ~10 published posts) are geographically located. Users can hover (desktop) or tap (mobile) an indicator to see a preview card of the post, and click through to read it.
+
+**Design Reference**: Matches the world map in the Problem scene of the Libertas explainer video — minimal outline/silhouette, Matrix green colorized, with animated indicator dots.
+
+---
+
+#### Step 1: Copy world map SVG to website assets
+
+- [ ] Copy `video/public/images/world-map.svg` to `website/public/images/world-map.svg`
+- [ ] Verify the SVG renders correctly in the browser and that country paths have `id` attributes (ISO 2-letter codes like `id="SD"` for Sudan)
+
+**Notes**: The SVG is ~1.2MB. The browser caches it after first load. No optimization needed for MVP.
+
+---
+
+#### Step 2: Create geo-to-coordinate resolution utility (`lib/geo-coordinates.ts`)
+
+**Description**: Build a utility that resolves a geo string (country name, city, state, region, abbreviation) to an x,y coordinate within the corresponding SVG country path.
+
+- [ ] Create `lib/geo-coordinates.ts`
+- [ ] Create a sub-national-to-country fallback map for cities/states/provinces → parent country ISO code:
+  - `"New York"` → `"US"`, `"Minneapolis"` → `"US"`, `"Xinjiang"` → `"CN"`, `"Cabinda"` → `"AO"`, etc.
+  - Fall through to existing `getCountryCode()` from `country-flags.ts` for country names and abbreviations
+- [ ] Create a hardcoded centroid map for non-country entities that have no SVG path:
+  - `"Europe"` → `{ x: 50, y: 32 }`, `"EU"` → `{ x: 49, y: 33 }`, `"Global"` → random
+- [ ] Implement `getRandomPointInCountryPath(svgElement, isoCode)`:
+  - Query the SVG DOM for the country path element by ID (`svgElement.getElementById(isoCode)`)
+  - Get the path's bounding box via `getBBox()`
+  - Generate random candidate x,y points within the bounding box
+  - Use `isPointInFill()` (or point-in-polygon fallback) to verify the point is actually inside the country shape
+  - Retry up to N times, fall back to bounding box center if no hit
+  - This naturally gives bigger countries (US, Russia, China) more spatial spread than smaller ones (Israel, Gabon)
+- [ ] Implement `resolveGeoToCoordinate(svgElement, geoString)`:
+  - Maps geo string → ISO code (via fallback chain)
+  - Calls `getRandomPointInCountryPath()` with that code
+  - Returns `{ x, y }` as percentage coordinates relative to the SVG viewBox, or `null` if unresolvable
+- [ ] Handle edge cases: unknown locations return `null` (marker not shown), `"Hong Kong"` maps to `"HK"` (has its own SVG path)
+
+**Notes**: The SVG must be inlined (not an `<img>`) for DOM query access to work. Coordinates are computed once on mount and memoized, not recalculated on every render.
+
+---
+
+#### Step 3: Build `WorldMapBackground` component
+
+**Description**: A client component that renders the world map SVG inline as a decorative background layer.
+
+- [ ] Create `components/WorldMapBackground.tsx` (`'use client'`)
+- [ ] Fetch and inline the SVG using `fetch('/images/world-map.svg')` on mount, then inject via `dangerouslySetInnerHTML` (or use a build-time approach)
+- [ ] Expose an `svgRef` so parent components can query country paths for coordinate resolution
+- [ ] Apply Matrix green styling via CSS filter (matching the video): `filter: invert(1) brightness(0.4) sepia(1) hue-rotate(70deg) saturate(2)`, `opacity: 0.15` (subtler than video since it's a background)
+- [ ] Set `pointer-events: none` on the SVG itself so it doesn't interfere with hero content clicks
+- [ ] Position as `absolute` fill behind hero content
+- [ ] Ensure the SVG is responsive and centered within the hero section
+
+**Notes**: Opacity should be low enough that hero text remains fully readable. Test in both dark and light themes.
+
+---
+
+#### Step 4: Build `SignalMarker` component
+
+**Description**: A small animated dot that blinks/pulses at a given position on the map.
+
+- [ ] Create `components/SignalMarker.tsx` (`'use client'`)
+- [ ] Accept props: `x`, `y` (percentage positions), `postCount` (number of signals at this location), `onClick`, `isActive` (whether its card is showing)
+- [ ] Render a small circle (8-12px) positioned absolutely with `left: x%`, `top: y%`, `transform: translate(-50%, -50%)`
+- [ ] Use Matrix green (`--accent-primary`) with glow effect via `box-shadow` (matching the accent-glow pattern)
+- [ ] Add CSS blink/pulse animation (extend the existing `@keyframes blink` pattern or create a new `@keyframes pulse` with opacity + scale oscillation)
+- [ ] Stagger animation timing per marker (use animation-delay based on index or position) so they don't all blink in sync
+- [ ] Set `pointer-events: auto` on markers (they sit above the `pointer-events: none` map)
+- [ ] Show cursor pointer on hover
+- [ ] Respect `prefers-reduced-motion`: disable blink animation, show static dot instead
+
+---
+
+#### Step 5: Build `SignalCard` component
+
+**Description**: A popover card that appears when hovering/tapping a signal marker, showing a preview of the post.
+
+- [ ] Create `components/SignalCard.tsx` (`'use client'`)
+- [ ] Accept props: `post` (Post type), `position` (`{ x, y }`), `onClose`, `onNavigate`
+- [ ] Display: post title, primary topic tag (with existing `topicColors`), date (formatted), country flag(s) via `CountryFlags` component, freedom relevance score badge
+- [ ] Style consistent with existing `.card` class: dark background, subtle border, accent glow on hover
+- [ ] Position the card near the marker but ensure it stays within viewport bounds (flip above/below/left/right as needed)
+- [ ] Make the entire card clickable — navigates to `/posts/{slug}`
+- [ ] Add a subtle appear animation (scale from 0.95 + fade in, using CSS transition or `motion`)
+- [ ] If multiple posts share this marker location, stack them vertically (max 3 visible, show "+N more" if overflow)
+
+---
+
+#### Step 6: Build `HeroMap` composite component
+
+**Description**: The main orchestrator component that combines the map, markers, and cards. This is the component that gets added to the hero section.
+
+- [ ] Create `components/HeroMap.tsx` (`'use client'`)
+- [ ] Accept props: `posts` (array of Post objects with geo data, passed from server component)
+- [ ] On mount: wait for SVG to load, then resolve each post's geo locations to x,y coordinates using the geo utility
+  - For each post, iterate over its `geo[]` array
+  - Each geo string resolves to a separate marker position (a post in "United States" and "New York" gets 1 marker since NY falls back to US — deduplicate by ISO code per post)
+  - Multiple posts in the same country get slightly different positions via `getRandomPointInCountryPath()`
+- [ ] Memoize resolved positions (recompute only when posts change)
+- [ ] Track active marker state (which marker's card is showing, `null` if none)
+- [ ] Desktop: show card on `mouseenter`, hide on `mouseleave` (with small delay to allow cursor to move to card)
+- [ ] Mobile: show card on `tap`, dismiss on tap-outside (use a click-outside handler on document)
+- [ ] Render: `WorldMapBackground` (z-0) → `SignalMarker[]` (z-10) → `SignalCard` (z-20)
+- [ ] Handle loading state: show map without markers until geo resolution completes
+
+---
+
+#### Step 7: Integrate into homepage hero section
+
+**Description**: Add the `HeroMap` component as a background layer in the existing hero section on `page.tsx`.
+
+- [ ] In `src/app/page.tsx`, filter recent posts that have non-empty `geo` arrays (up to last 10)
+- [ ] Pass filtered posts to `<HeroMap posts={postsWithGeo} />`
+- [ ] Place `HeroMap` as the first child of the hero `<section>`, positioned absolutely behind the existing content
+- [ ] Adjust hero section: ensure `position: relative` and `overflow: hidden` are set
+- [ ] Ensure existing hero text, buttons, and terminal lines remain fully readable over the map (they should already be above via stacking context, but verify z-index)
+- [ ] Replace or integrate with the existing `hero-gradient` overlay — the gradient should sit between the map and the text for readability
+- [ ] Test in both dark and light themes
+
+---
+
+#### Step 8: Add `@keyframes pulse` and map-specific CSS
+
+- [ ] Add `@keyframes signal-pulse` animation in `globals.css` for the blinking markers:
+  - Oscillate opacity (0.6 → 1.0) and scale (1.0 → 1.3) over ~2s
+  - Add glow box-shadow oscillation
+- [ ] Add `.signal-marker` utility class with the pulse animation
+- [ ] Add `.signal-card` styles for the popover card
+- [ ] Add `prefers-reduced-motion` override: `.signal-marker { animation: none; }`
+- [ ] Ensure all new CSS uses existing CSS variables (`--accent-primary`, `--bg-elevated`, etc.)
+
+---
 
 # Phase 2: Nice-to-have
 
@@ -347,6 +483,7 @@ Features for future consideration after core functionality is stable.
 | Dark/Light Theme | Medium | Low | - | Done |
 | Search Functionality | Medium | Medium | - | Done |
 | Reading Progress | Low | Low | - | Done |
+| Hero Signal Map (1.1) | High | Medium | P0 | |
 | Static Content | High | Medium | P1 | |
 | Digest Viewing | High | Medium | P1 | |
 | User Auth (Firebase + Starknet) | High | Medium | P1 | |

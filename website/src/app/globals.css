@@ -291,7 +291,7 @@ body {
 
 .text-hero {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
   font-weight: var(--font-bold);
   letter-spacing: var(--tracking-tight);
   line-height: var(--leading-tight);
@@ -569,6 +569,32 @@ body {
     transparent 50%,
     rgba(0, 0, 0, 0.1) 100%
   );
+}
+
+/* World map background layer */
+.world-map-background {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0.20;
+  filter: invert(1) brightness(0.4) sepia(1) hue-rotate(70deg) saturate(2);
+}
+
+.world-map-background svg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 1000px;
+  aspect-ratio: 1009.6727 / 665.96301;
+  pointer-events: none;
+}
+
+[data-theme="light"] .world-map-background {
+  opacity: 0.20;
+  filter: sepia(1) hue-rotate(70deg) saturate(3) brightness(0.5);
 }
 
 /* ========================================

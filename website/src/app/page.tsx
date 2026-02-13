@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ContentCard } from "@/components/PostCard";
 import { WebsiteJsonLd } from "@/components/JsonLd";
+import { HeroSection } from "@/components/HeroSection";
 import { getAllContent, isPost } from "@/lib/posts";
 
 export default function Home() {
@@ -13,53 +14,7 @@ export default function Home() {
       <WebsiteJsonLd />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden pb-16 pt-16 md:pb-20 md:pt-24">
-        <div className="container container-narrow">
-          <div className="mb-6 flex items-center gap-2">
-            <span className="text-mono text-[var(--accent-primary)]">
-              {">"} initializing
-            </span>
-            <span className="terminal-cursor inline-block h-5 w-2 bg-[var(--accent-primary)]" />
-          </div>
-
-          <h1 className="text-hero mb-6">
-            Freedom Tech
-            <br />
-            <span className="hero-accent">Research Engine</span>
-          </h1>
-
-          <p className="text-body mb-2 max-w-xl text-[var(--fg-secondary)]">
-            AI-Powered research and publishing platform for
-            sovereignty, censorship resistance, and civil liberties.
-          </p>
-          <p className="text-body mb-8 max-w-xl text-[var(--fg-secondary)]">
-            Agents track and compile freedom-tech sources autonomously.
-            No gatekeepers. No censoring. Fully open.
-          </p>
-
-          <div className="flex flex-wrap gap-4">
-            <Link href="/posts" className="btn btn-primary">
-              Explore Posts
-            </Link>
-            <Link href="/intake" className="btn btn-secondary">
-              Submit a Signal
-            </Link>
-          </div>
-
-          {/* Decorative terminal lines */}
-          <div className="mt-12 space-y-1 text-mono text-lg text-[var(--fg-tertiary)]">
-            <p className="terminal-line">monitoring global signals...</p>
-            <p className="terminal-line">analyzing freedom tech...</p>
-            <p className="terminal-line">
-              publishing insights{" "}
-              <span className="text-[var(--accent-primary)]">[OK]</span>
-            </p>
-          </div>
-        </div>
-
-        {/* Subtle gradient overlay */}
-        <div className="hero-gradient pointer-events-none absolute inset-0" />
-      </section>
+      <HeroSection />
 
       {/* Recent Posts Section */}
       <section className="py-14 md:py-16">
