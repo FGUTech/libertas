@@ -285,6 +285,119 @@ body {
   50% { opacity: 0; }
 }
 
+@keyframes signal-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+}
+
+/* Signal marker on world map */
+.signal-marker {
+  position: absolute;
+  z-index: 20;
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+  background: var(--accent-primary);
+  box-shadow: var(--accent-glow);
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  animation: signal-pulse 2s ease-in-out infinite;
+  transition: box-shadow var(--duration-fast) var(--ease-default);
+}
+
+.signal-marker:hover {
+  box-shadow: 0 0 20px #00ff4180, 0 0 40px #00ff4140;
+}
+
+.signal-marker-active {
+  box-shadow: 0 0 20px #00ff4180, 0 0 40px #00ff4140;
+  animation: none;
+  opacity: 1;
+}
+
+.signal-marker:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 4px;
+}
+
+/* Signal card popover */
+.signal-card {
+  position: absolute;
+  z-index: 30;
+  pointer-events: auto;
+  width: 260px;
+  max-width: calc(100vw - 2rem);
+}
+
+.signal-card-inner {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.signal-card-inner:hover {
+  border-color: var(--accent-primary);
+  box-shadow: var(--shadow-glow);
+}
+
+.signal-card-item {
+  display: block;
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--fg-primary);
+  transition: background var(--duration-fast) var(--ease-default);
+}
+
+.signal-card-item:not(:last-child) {
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.signal-card-item:hover {
+  background: var(--bg-tertiary);
+}
+
+.signal-card-title {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  line-height: 1.4;
+  color: var(--fg-primary);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: color var(--duration-fast) var(--ease-default);
+}
+
+.signal-card-item:hover .signal-card-title {
+  color: var(--accent-primary);
+}
+
+.signal-card-overflow {
+  padding: var(--space-2) var(--space-4);
+  text-align: center;
+  font-size: var(--text-xs);
+  color: var(--fg-tertiary);
+  border-top: 1px solid var(--border-subtle);
+}
+
 /* ========================================
    Typography Classes
    ======================================== */
@@ -596,6 +709,7 @@ body {
   opacity: 0.20;
   filter: sepia(1) hue-rotate(70deg) saturate(3) brightness(0.5);
 }
+
 
 /* ========================================
    Tags & Citations
