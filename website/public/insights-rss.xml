@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 13 Feb 2026 05:00:25 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 13 Feb 2026 23:00:52 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -91,6 +91,18 @@
     <category>surveillance</category>
     <category>censorship-resistance</category>
     <category>zk</category>
+  </item>
+  <item>
+    <title>Silent.Link: Bitcoin-Native eSIM Service Bypasses SIM-Swap Attacks and State Censorship</title>
+    <link>https://libertas.fgu.tech/posts/silent-link-bitcoin-native-esim-service-bypasses-sim-swap-at</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/silent-link-bitcoin-native-esim-service-bypasses-sim-swap-at</guid>
+    <pubDate>Fri, 13 Feb 2026 23:00:33 GMT</pubDate>
+    <description>Silent.Link offers privacy-focused eSIM data/SMS services paid with Bitcoin, eliminating SIM-swap risks while bypassing state firewalls in China and Dubai&apos;s VoIP restrictions.</description>
+    <category>bitcoin</category>
+    <category>privacy</category>
+    <category>censorship-resistance</category>
+    <category>identity</category>
+    <category>comms</category>
   </item>
   <item>
     <title>HRW Reports Systematic Rights Abuses Across Southern Africa in 2025</title>
