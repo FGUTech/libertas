@@ -1,5 +1,7 @@
 'use client';
 
+import type { SignalColor } from '@/lib/signal-colors';
+
 interface SignalMarkerProps {
   /** Pixel x position relative to the hero section */
   x: number;
@@ -17,6 +19,10 @@ interface SignalMarkerProps {
   isActive: boolean;
   /** Index used for staggering animation delay */
   index?: number;
+  /** Topic-derived signal color */
+  colorKey?: SignalColor;
+  /** Freedom relevance score (0-100) for intensity modulation */
+  freedomRelevanceScore?: number;
 }
 
 export function SignalMarker({
@@ -28,14 +34,23 @@ export function SignalMarker({
   onClick,
   isActive,
   index = 0,
+  colorKey = 'green',
+  freedomRelevanceScore,
 }: SignalMarkerProps) {
+  // Continuous opacity: score 100 → 1.0, score 70 → 0.4, clamped
+  const opacity =
+    freedomRelevanceScore !== undefined
+      ? Math.min(1, Math.max(0.4, 0.4 + ((freedomRelevanceScore - 70) / 30) * 0.6))
+      : undefined;
+
   return (
     <button
-      className={`signal-marker${isActive ? ' signal-marker-active' : ''}`}
+      className={`signal-marker signal-marker-${colorKey}${isActive ? ' signal-marker-active' : ''}`}
       style={{
         left: x,
         top: y,
         animationDelay: `${index * 0.4}s`,
+        ...(opacity !== undefined && { opacity }),
       }}
       onMouseEnter={onHoverStart}
       onMouseLeave={onHoverEnd}

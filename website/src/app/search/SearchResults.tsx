@@ -8,6 +8,7 @@ import { DateRangeFilter } from './DateRangeFilter';
 import { searchContent, type SearchResult } from '@/lib/search';
 import type { Topic, ContentItem } from '@/types';
 import { TOPICS, isPost, isDigest } from '@/types';
+import { topicToSignalColor } from '@/lib/signal-colors';
 
 const RESULTS_PER_PAGE = 12;
 
@@ -231,7 +232,7 @@ function TopicFilter({ selectedTopics, onTopicToggle }: TopicFilterProps) {
             onClick={() => onTopicToggle(topic)}
             className={`tag cursor-pointer transition-all ${
               isSelected
-                ? 'tag-accent'
+                ? `tag-signal-${topicToSignalColor(topic)}`
                 : 'hover:border-[var(--border-default)] hover:text-[var(--fg-primary)]'
             }`}
           >
@@ -338,7 +339,7 @@ function SearchResultCard({ result }: SearchResultCardProps) {
           {/* Topics */}
           <div className="flex items-center gap-1.5 ml-auto">
             {topics.slice(0, 3).map((topic) => (
-              <span key={topic} className="tag text-xs py-0.5 px-1.5">
+              <span key={topic} className={`tag tag-signal-${topicToSignalColor(topic)} text-xs py-0.5 px-1.5`}>
                 {topicLabels[topic]}
               </span>
             ))}

@@ -2,7 +2,8 @@
 
 import { useRef, useEffect, useState } from 'react';
 import { motion } from 'motion/react';
-import type { Post, Topic } from '@/types';
+import type { Post } from '@/types';
+import { topicToSignalColor } from '@/lib/signal-colors';
 import { CountryFlags } from '@/components/CountryFlag';
 
 interface SignalCardProps {
@@ -17,19 +18,6 @@ interface SignalCardProps {
   /** Called when mouse leaves the card (closes it) */
   onMouseLeave: () => void;
 }
-
-const topicColors: Record<Topic, string> = {
-  bitcoin: 'tag-accent',
-  zk: 'tag-accent',
-  'censorship-resistance': 'tag-accent',
-  comms: '',
-  payments: '',
-  identity: '',
-  privacy: 'tag-accent',
-  surveillance: '',
-  activism: '',
-  sovereignty: 'tag-accent',
-};
 
 const MAX_VISIBLE = 3;
 
@@ -122,7 +110,7 @@ export function SignalCard({
               {/* Header row: topic tag + date + flags */}
               <div className="flex flex-wrap items-center gap-2 mb-1">
                 {primaryTopic && (
-                  <span className={`tag ${topicColors[primaryTopic] || ''}`}>
+                  <span className={`tag tag-signal-${topicToSignalColor(primaryTopic)}`}>
                     {primaryTopic}
                   </span>
                 )}
@@ -143,12 +131,12 @@ export function SignalCard({
                 <span
                   className={`text-xs ${
                     post.freedomRelevanceScore >= 90
-                      ? 'text-[var(--accent-primary)]'
+                      ? `text-[var(--signal-${primaryTopic ? topicToSignalColor(primaryTopic) : 'green'})]`
                       : 'text-[var(--fg-tertiary)]'
                   }`}
                   style={
                     post.freedomRelevanceScore >= 90
-                      ? { textShadow: '0 0 6px rgba(0, 255, 65, 0.4)' }
+                      ? { textShadow: `0 0 6px color-mix(in srgb, var(--signal-${primaryTopic ? topicToSignalColor(primaryTopic) : 'green'}) 40%, transparent)` }
                       : undefined
                   }
                 >

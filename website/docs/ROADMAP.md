@@ -27,50 +27,6 @@ Hey, I am working to implement features for the libertas website from the roadma
 
 ---
 
-#### Step 6: Orchestrate map, markers, and cards in `HeroSection`
-
-**Description**: The orchestration logic that combines the map, markers, and cards. Built directly into `HeroSection.tsx` (rather than a separate `HeroMap` component) since it shares state with the terminal animation and hero content fade-in.
-
-- [x] Wait for SVG to load (rAF polling), then resolve geo locations to x,y coordinates using `resolveGeoToCoordinate`
-- [x] Dynamically measure SVG bounding rect via `getBoundingClientRect` and convert percentage coords to pixel positions
-- [x] Recompute pixel positions on window resize
-- [x] Track hovered marker state (`null` if none)
-- [x] Desktop: show card on `mouseenter`, hide on `mouseleave` (with 120ms delay to allow cursor to move to card)
-- [x] Click on marker or card navigates to `/posts/{slug}`
-- [x] Render: `WorldMapBackground` (z-0) → `SignalMarker[]` (z-20) → `SignalCard` (z-30), hero content (z-10, pointer-events-none with auto on buttons)
-- [x] Handle loading state: markers hidden until geo resolution completes, then fade in with hero content
-- [x] Iterate over full `geo[]` array per post and deduplicate by resolved ISO code (currently only uses first geo entry)
-- [x] Multiple posts in the same country should get slightly different positions via `getRandomPointInCountryPath()` (currently grouped into one marker)
-- [x] Mobile: show card on tap, dismiss on tap-outside
-- [x] Extract `HeroMap` as standalone component accepting `posts` prop from server component (currently uses mock data inline)
-
----
-
-#### Step 7: Integrate into homepage hero section
-
-**Description**: Add the signal map as a background layer in the existing hero section on `page.tsx`.
-
-- [x] Map markers render within `HeroSection`, positioned absolutely behind the existing content
-- [x] Hero section has `position: relative` and `overflow: hidden`
-- [x] Existing hero text, buttons, and terminal lines remain readable (hero content z-10 with `pointer-events-none`, buttons `pointer-events-auto`)
-- [x] Hero gradient overlay sits between map and text for readability
-- [x] Signal markers fade in simultaneously with title/description after terminal animation completes
-- [x] In `src/app/page.tsx`, filter recent posts with non-empty `geo` arrays and pass to HeroSection/HeroMap
-- [ ] Test in both dark and light themes
-
----
-
-#### Step 8: Add `@keyframes pulse` and map-specific CSS
-
-- [x] Add `@keyframes signal-pulse` animation in `globals.css` for the blinking markers (opacity 0.4–1.0, scale 1.0–1.5, 2s ease-in-out infinite)
-- [x] Add `.signal-marker` class with pulse animation, glow, z-index: 20, pointer-events: auto
-- [x] Add `.signal-card` styles for the popover card (z-index: 30, elevated bg, border glow on hover)
-- [x] Add `.signal-card-item`, `.signal-card-title`, `.signal-card-overflow` styles
-- [x] Add `prefers-reduced-motion` override: `.signal-marker { animation: none; }`
-- [x] All new CSS uses existing CSS variables (`--accent-primary`, `--bg-elevated`, etc.)
-
----
-
 #### Step 9: Topic-based marker color variance
 
 **Description**: Signal markers currently all use the same Matrix Green color. Color-code markers based on the post's primary `topic` to provide visual variety and at-a-glance topic identification. Additionally, modulate marker brightness/glow intensity based on `freedomRelevanceScore` so higher-signal posts are more visually prominent.

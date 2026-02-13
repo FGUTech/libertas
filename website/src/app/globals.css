@@ -24,6 +24,20 @@
   --accent-muted: #00ff4120;
   --accent-glow: 0 0 20px #00ff4140;
 
+  /* Signal Colors — topic-based marker palette */
+  --signal-green: #00ff41;
+  --signal-green-glow: 0 0 20px #00ff4140;
+  --signal-green-glow-strong: 0 0 20px #00ff4180, 0 0 40px #00ff4140;
+  --signal-amber: #ffb800;
+  --signal-amber-glow: 0 0 20px #ffb80040;
+  --signal-amber-glow-strong: 0 0 20px #ffb80080, 0 0 40px #ffb80040;
+  --signal-purple: #a855f7;
+  --signal-purple-glow: 0 0 20px #a855f740;
+  --signal-purple-glow-strong: 0 0 20px #a855f780, 0 0 40px #a855f740;
+  --signal-cyan: #00b4ff;
+  --signal-cyan-glow: 0 0 20px #00b4ff40;
+  --signal-cyan-glow-strong: 0 0 20px #00b4ff80, 0 0 40px #00b4ff40;
+
   /* Semantic */
   --success: #00ff41;
   --warning: #ffb800;
@@ -137,6 +151,20 @@
   --accent-amber-hover: #b36b00;
   --accent-amber-muted: #cc7a0018;
   --bg-digest: #fffaf0;
+
+  /* Signal Colors — less saturated for light theme */
+  --signal-green: #00994d;
+  --signal-green-glow: 0 0 16px #00994d30;
+  --signal-green-glow-strong: 0 0 16px #00994d60, 0 0 32px #00994d30;
+  --signal-amber: #cc7a00;
+  --signal-amber-glow: 0 0 16px #cc7a0030;
+  --signal-amber-glow-strong: 0 0 16px #cc7a0060, 0 0 32px #cc7a0030;
+  --signal-purple: #7c3aed;
+  --signal-purple-glow: 0 0 16px #7c3aed30;
+  --signal-purple-glow-strong: 0 0 16px #7c3aed60, 0 0 32px #7c3aed30;
+  --signal-cyan: #0284c7;
+  --signal-cyan-glow: 0 0 16px #0284c730;
+  --signal-cyan-glow-strong: 0 0 16px #0284c760, 0 0 32px #0284c730;
 
   /* Shadows for light mode */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.08);
@@ -335,6 +363,43 @@ body {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
+}
+
+/* Signal marker color variants */
+.signal-marker-green {
+  background: var(--signal-green);
+  box-shadow: var(--signal-green-glow);
+}
+.signal-marker-green:hover,
+.signal-marker-green.signal-marker-active {
+  box-shadow: var(--signal-green-glow-strong);
+}
+
+.signal-marker-amber {
+  background: var(--signal-amber);
+  box-shadow: var(--signal-amber-glow);
+}
+.signal-marker-amber:hover,
+.signal-marker-amber.signal-marker-active {
+  box-shadow: var(--signal-amber-glow-strong);
+}
+
+.signal-marker-purple {
+  background: var(--signal-purple);
+  box-shadow: var(--signal-purple-glow);
+}
+.signal-marker-purple:hover,
+.signal-marker-purple.signal-marker-active {
+  box-shadow: var(--signal-purple-glow-strong);
+}
+
+.signal-marker-cyan {
+  background: var(--signal-cyan);
+  box-shadow: var(--signal-cyan-glow);
+}
+.signal-marker-cyan:hover,
+.signal-marker-cyan.signal-marker-active {
+  box-shadow: var(--signal-cyan-glow-strong);
 }
 
 /* Signal card popover */
@@ -758,6 +823,49 @@ body {
   background: rgba(204, 122, 0, 0.12);
   border-color: var(--accent-amber);
   color: #a66300;
+  font-weight: var(--font-medium);
+}
+
+/* Signal-color tag variants (match marker palette) */
+.tag-signal-green {
+  background: #00ff4118;
+  border-color: var(--signal-green);
+  color: var(--signal-green);
+}
+.tag-signal-amber {
+  background: #ffb80018;
+  border-color: var(--signal-amber);
+  color: var(--signal-amber);
+}
+.tag-signal-purple {
+  background: #a855f718;
+  border-color: var(--signal-purple);
+  color: var(--signal-purple);
+}
+.tag-signal-cyan {
+  background: #00b4ff18;
+  border-color: var(--signal-cyan);
+  color: var(--signal-cyan);
+}
+
+[data-theme="light"] .tag-signal-green {
+  background: rgba(0, 153, 77, 0.12);
+  color: #007a3d;
+  font-weight: var(--font-medium);
+}
+[data-theme="light"] .tag-signal-amber {
+  background: rgba(204, 122, 0, 0.12);
+  color: #a66300;
+  font-weight: var(--font-medium);
+}
+[data-theme="light"] .tag-signal-purple {
+  background: rgba(124, 58, 237, 0.12);
+  color: #6d28d9;
+  font-weight: var(--font-medium);
+}
+[data-theme="light"] .tag-signal-cyan {
+  background: rgba(2, 132, 199, 0.12);
+  color: #0369a1;
   font-weight: var(--font-medium);
 }
 

@@ -1,5 +1,6 @@
-import type { ContentItem, Topic, Post, Digest } from "@/types";
+import type { ContentItem, Post, Digest } from "@/types";
 import { isDigest } from "@/types";
+import { topicToSignalColor } from "@/lib/signal-colors";
 import { CountryFlags } from "@/components/CountryFlag";
 
 interface ContentCardProps {
@@ -10,19 +11,6 @@ interface ContentCardProps {
 interface PostCardProps {
   post: Post;
 }
-
-const topicColors: Record<Topic, string> = {
-  bitcoin: "tag-accent",
-  zk: "tag-accent",
-  "censorship-resistance": "tag-accent",
-  comms: "",
-  payments: "",
-  identity: "",
-  privacy: "tag-accent",
-  surveillance: "",
-  activism: "",
-  sovereignty: "tag-accent",
-};
 
 /**
  * ContentCard - Unified card component for posts and digests
@@ -52,7 +40,7 @@ function PostCardInner({ post }: { post: Post }) {
     <article className="card group flex h-full cursor-pointer flex-col overflow-hidden transition-all duration-200 hover:border-[var(--border-default)]">
       <div className="mb-3 flex flex-wrap items-center gap-2">
         {primaryTopic && (
-          <span className={`tag ${topicColors[primaryTopic] || ""}`}>
+          <span className={`tag tag-signal-${topicToSignalColor(primaryTopic)}`}>
             {primaryTopic}
           </span>
         )}

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import type { Topic } from "@/types";
 import { TOPICS } from "@/types";
+import { topicToSignalColor } from "@/lib/signal-colors";
 
 interface TopicFilterProps {
   selectedTopics: Topic[];
@@ -66,7 +67,7 @@ export function TopicFilter({
             onClick={() => onTopicToggle(topic)}
             className={`tag cursor-pointer transition-all ${
               isSelected
-                ? "tag-accent"
+                ? `tag-signal-${topicToSignalColor(topic)}`
                 : "hover:border-[var(--border-default)] hover:text-[var(--fg-primary)]"
             }`}
           >

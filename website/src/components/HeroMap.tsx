@@ -9,6 +9,7 @@ import { SignalMarker } from '@/components/SignalMarker';
 import { SignalCard } from '@/components/SignalCard';
 import { getIsoCode, getRandomPointInCountryPath } from '@/lib/geo-coordinates';
 import type { GeoCoordinate } from '@/lib/geo-coordinates';
+import { topicToSignalColor } from '@/lib/signal-colors';
 import type { Post } from '@/types';
 
 // ---------------------------------------------------------------------------
@@ -251,6 +252,8 @@ export function HeroMap({ posts, visible }: HeroMapProps) {
             onClick={() => handleMarkerClick(marker.key)}
             isActive={hoveredMarker === marker.key}
             index={i}
+            colorKey={marker.post.topics[0] ? topicToSignalColor(marker.post.topics[0]) : 'green'}
+            freedomRelevanceScore={marker.post.freedomRelevanceScore}
           />
         ))}
       </motion.div>

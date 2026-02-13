@@ -1,23 +1,11 @@
-import type { Post, Topic } from "@/types";
+import type { Post } from "@/types";
+import { topicToSignalColor } from "@/lib/signal-colors";
 import { CountryFlag } from "@/components/CountryFlag";
 
 interface PostMetadataProps {
   post: Post;
   readingTime?: number;
 }
-
-const topicColors: Record<Topic, string> = {
-  bitcoin: "tag-accent",
-  zk: "tag-accent",
-  "censorship-resistance": "tag-accent",
-  comms: "",
-  payments: "",
-  identity: "",
-  privacy: "tag-accent",
-  surveillance: "",
-  activism: "",
-  sovereignty: "tag-accent",
-};
 
 export function PostMetadata({ post, readingTime }: PostMetadataProps) {
   const formattedDate = new Date(post.publishedAt).toLocaleDateString("en-US", {
@@ -32,7 +20,7 @@ export function PostMetadata({ post, readingTime }: PostMetadataProps) {
       {/* Topics */}
       <div className="flex flex-wrap items-center gap-2">
         {post.topics.map((topic) => (
-          <span key={topic} className={`tag ${topicColors[topic] || ""}`}>
+          <span key={topic} className={`tag tag-signal-${topicToSignalColor(topic)}`}>
             {topic}
           </span>
         ))}

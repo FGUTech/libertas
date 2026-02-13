@@ -7,6 +7,7 @@ import { ShareButtons } from "@/components/ShareButtons";
 import { BreadcrumbJsonLd } from "@/components/JsonLd";
 import { ReadingProgress } from "@/components/ReadingProgress";
 import type { Topic } from "@/types";
+import { topicToSignalColor } from "@/lib/signal-colors";
 
 interface DigestPageProps {
   params: Promise<{ slug: string }>;
@@ -251,11 +252,8 @@ function formatDateRange(startDate: string, endDate: string): string {
 
 // Topic badge component
 function TopicBadge({ topic }: { topic: Topic }) {
-  const accentTopics = ["bitcoin", "zk", "censorship-resistance", "privacy", "sovereignty"];
-  const isAccent = accentTopics.includes(topic);
-
   return (
-    <span className={`tag ${isAccent ? "tag-accent" : ""}`}>
+    <span className={`tag tag-signal-${topicToSignalColor(topic)}`}>
       {topic}
     </span>
   );
