@@ -5,25 +5,39 @@ import { motion, AnimatePresence } from 'motion/react';
 
 const LINES = [
   '> initializing',
-  '> monitoring global signals...',
-  '> analyzing freedom tech...',
+  '> scanning global signals...',
   '> publishing insights [OK]',
 ];
 
 const CHAR_DELAY = 15; // ms per character
-const LINE_PAUSE = 150; // ms pause between lines
+const LINE_PAUSE = 100; // ms pause between lines
 const DONE_PAUSE = 200; // ms pause after last line before fade
 
 interface HeroTerminalProps {
   onComplete: () => void;
+  onNearComplete?: () => void;
 }
 
-export function HeroTerminal({ onComplete }: HeroTerminalProps) {
+export function HeroTerminal({ onComplete, onNearComplete }: HeroTerminalProps) {
   const [displayedLines, setDisplayedLines] = useState<string[]>(['']);
   const [currentLine, setCurrentLine] = useState(0);
   const [currentChar, setCurrentChar] = useState(0);
   const [isTyping, setIsTyping] = useState(true);
   const [visible, setVisible] = useState(true);
+  const [nearCompleteFired, setNearCompleteFired] = useState(false);
+
+  // Fire onNearComplete when the last line starts typing
+  useEffect(() => {
+    if (
+      !nearCompleteFired &&
+      currentLine === LINES.length - 1 &&
+      currentChar === 0 &&
+      isTyping
+    ) {
+      setNearCompleteFired(true);
+      onNearComplete?.();
+    }
+  }, [currentLine, currentChar, isTyping, nearCompleteFired, onNearComplete]);
 
   // Typewriter effect
   useEffect(() => {

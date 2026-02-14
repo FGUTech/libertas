@@ -27,21 +27,6 @@ Hey, I am working to implement features for the libertas website from the roadma
 
 ---
 
-#### Step 12: Fix markers disappearing on window resize
-
-**Description**: When the browser window is resized, all signal markers vanish and only reappear after a full page refresh. The resize handler in `HeroMap.tsx` recalculates pixel positions from stored percentages, but the markers still disappear — likely because the SVG element reference becomes stale or the `measureSvg()` call returns null during the resize.
-
-**Files**: `HeroMap.tsx`
-
-- [ ] Investigate root cause: check if `mapRef.current?.svgElement` becomes null during resize (e.g. if the `WorldMapBackground` component re-renders and loses its ref)
-- [ ] Ensure the `WorldMapBackground` ref is stable across re-renders (use `forwardRef` + `useImperativeHandle` properly, avoid unnecessary re-mounts)
-- [ ] Debounce the resize handler (e.g. 100–150ms) to avoid thrashing during continuous resize, but still update promptly after resize ends
-- [ ] After recalculating positions in the resize handler, verify that `markers` state is non-empty — if measurement fails, retain the previous positions rather than setting an empty array
-- [ ] Add a `ResizeObserver` on the container element as a more reliable alternative to `window.addEventListener('resize')` — `ResizeObserver` fires when the container's dimensions actually change, not just on window resize
-- [ ] Test by resizing the window rapidly, slowly, and by toggling DevTools open/closed
-
----
-
 #### Step 13: Reduce time-to-content (faster hero intro animation)
 
 **Description**: The terminal typing animation currently types 4 lines before fading out and revealing the hero content + signal markers. This takes several seconds. Reduce to 3 lines and begin fading in the hero content *before* the typing animation fully completes to reduce perceived wait time.

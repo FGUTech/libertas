@@ -19,21 +19,25 @@ interface HeroSectionProps {
 // ---------------------------------------------------------------------------
 export function HeroSection({ posts }: HeroSectionProps) {
   const [terminalDone, setTerminalDone] = useState(false);
+  const [nearComplete, setNearComplete] = useState(false);
 
   return (
     <section className="relative overflow-hidden min-h-[max(80vh,600px)] flex flex-col pb-8 pt-12 md:pt-6">
-      {/* World map + signal markers */}
+      {/* World map + signal markers — fade in after terminal fade-out finishes */}
       <HeroMap posts={posts} visible={terminalDone} />
 
       {/* Terminal loading animation */}
-      <HeroTerminal onComplete={() => setTerminalDone(true)} />
+      <HeroTerminal
+        onComplete={() => setTerminalDone(true)}
+        onNearComplete={() => setNearComplete(true)}
+      />
 
-      {/* Hero content — fades in after terminal completes */}
+      {/* Hero content — begins fading in when last terminal line starts typing */}
       <motion.div
         className="container relative z-10 flex flex-1 flex-col items-center justify-between pt-28 pb-32 md:pt-32 md:pb-36 lg:pb-40 pointer-events-none"
         initial={{ opacity: 0 }}
-        animate={terminalDone ? { opacity: 1 } : { opacity: 0 }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
+        animate={nearComplete ? { opacity: 1 } : { opacity: 0 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
       >
         {/* Title — top */}
         <div className="text-center">
