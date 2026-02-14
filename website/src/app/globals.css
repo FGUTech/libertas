@@ -324,6 +324,25 @@ body {
   }
 }
 
+/* Hero text backdrop — subtle vignette behind text for readability over map */
+.hero-text-backdrop {
+  position: relative;
+}
+.hero-text-backdrop::before {
+  content: '';
+  position: absolute;
+  inset: -20px -48px;
+  background: radial-gradient(
+    ellipse at center,
+    color-mix(in srgb, var(--bg-primary) 70%, transparent) 0%,
+    color-mix(in srgb, var(--bg-primary) 30%, transparent) 60%,
+    transparent 100%
+  );
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 50%;
+}
+
 /* Signal marker on world map */
 .signal-marker {
   position: absolute;

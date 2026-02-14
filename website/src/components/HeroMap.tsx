@@ -36,22 +36,44 @@ interface SvgRect {
   height: number;
 }
 
+/** Rectangle in pixel coords relative to the HeroMap container */
+interface ExclusionRect {
+  left: number;
+  top: number;
+  right: number;
+  bottom: number;
+}
+
 interface HeroMapProps {
   posts: Post[];
   visible: boolean;
+  /** Ref to the hero content container for calculating exclusion zones */
+  heroContentRef: React.RefObject<HTMLDivElement | null>;
 }
 
 // ---------------------------------------------------------------------------
 // Component
 // ---------------------------------------------------------------------------
-export function HeroMap({ posts, visible }: HeroMapProps) {
+/** Padding (px) around hero content areas where markers are excluded */
+const EXCLUSION_PAD_X = 24;
+const EXCLUSION_PAD_TOP = 8;
+const EXCLUSION_PAD_BOTTOM = 24;
+
+function isInExclusionZone(x: number, y: number, zones: ExclusionRect[]): boolean {
+  return zones.some(
+    (z) => x >= z.left && x <= z.right && y >= z.top && y <= z.bottom
+  );
+}
+
+export function HeroMap({ posts, visible, heroContentRef }: HeroMapProps) {
   const router = useRouter();
   const mapRef = useRef<WorldMapBackgroundHandle>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const hoverIntentRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const [hoveredMarker, setHoveredMarker] = useState<string | null>(null);
-  const [markers, setMarkers] = useState<MapMarker[]>([]);
+  const [allMarkers, setAllMarkers] = useState<MapMarker[]>([]);
+  const [exclusionZones, setExclusionZones] = useState<ExclusionRect[]>([]);
   const [svgRect, setSvgRect] = useState<SvgRect | null>(null);
   const [containerBounds, setContainerBounds] = useState<ContainerBounds | null>(null);
 
@@ -78,6 +100,32 @@ export function HeroMap({ posts, visible }: HeroMapProps) {
     };
   }, []);
 
+  // -----------------------------------------------------------------------
+  // Exclusion zone calculation
+  // -----------------------------------------------------------------------
+  /** Measure hero content children to build exclusion rectangles. */
+  const calcExclusionZones = useCallback((): ExclusionRect[] => {
+    const contentEl = heroContentRef.current;
+    const container = containerRef.current;
+    if (!contentEl || !container) return [];
+
+    const cr = container.getBoundingClientRect();
+    const zones: ExclusionRect[] = [];
+
+    for (const child of Array.from(contentEl.children)) {
+      const r = (child as HTMLElement).getBoundingClientRect();
+      if (r.width === 0 || r.height === 0) continue;
+      zones.push({
+        left: r.left - cr.left - EXCLUSION_PAD_X,
+        top: r.top - cr.top - EXCLUSION_PAD_TOP,
+        right: r.right - cr.left + EXCLUSION_PAD_X,
+        bottom: r.bottom - cr.top + EXCLUSION_PAD_BOTTOM,
+      });
+    }
+
+    return zones;
+  }, [heroContentRef]);
+
   /** Full measurement — reads rect and commits to state (for card positioning). */
   const measureSvg = useCallback((): SvgRect | null => {
     const rect = getSvgRect();
@@ -89,8 +137,9 @@ export function HeroMap({ posts, visible }: HeroMapProps) {
       const cr = container.getBoundingClientRect();
       setContainerBounds({ width: cr.width, height: cr.height });
     }
+    setExclusionZones(calcExclusionZones());
     return rect;
-  }, [getSvgRect]);
+  }, [getSvgRect, calcExclusionZones]);
 
   const pctToPixel = useCallback(
     (pct: GeoCoordinate, rect: SvgRect) => ({
@@ -146,7 +195,7 @@ export function HeroMap({ posts, visible }: HeroMapProps) {
         }
       }
 
-      setMarkers(result);
+      setAllMarkers(result);
     }
 
     resolve();
@@ -166,12 +215,13 @@ export function HeroMap({ posts, visible }: HeroMapProps) {
     let debounceTimer: ReturnType<typeof setTimeout> | null = null;
 
     const observer = new ResizeObserver(() => {
-      // Immediate: reposition markers so they track the resize smoothly
+      // Immediate: reposition markers and recalculate exclusion zones
       const rect = getSvgRect();
       if (rect) {
-        setMarkers((prev) =>
+        setAllMarkers((prev) =>
           prev.map((m) => ({ ...m, px: pctToPixel(m.pct, rect) }))
         );
+        setExclusionZones(calcExclusionZones());
       }
       // Debounced: commit svgRect / containerBounds state for card positioning
       if (debounceTimer) clearTimeout(debounceTimer);
@@ -184,7 +234,7 @@ export function HeroMap({ posts, visible }: HeroMapProps) {
       if (debounceTimer) clearTimeout(debounceTimer);
       observer.disconnect();
     };
-  }, [getSvgRect, measureSvg, pctToPixel]);
+  }, [getSvgRect, measureSvg, pctToPixel, calcExclusionZones]);
 
   // -----------------------------------------------------------------------
   // Hover handlers (desktop)
@@ -268,6 +318,14 @@ export function HeroMap({ posts, visible }: HeroMapProps) {
   // -----------------------------------------------------------------------
   // Derived state
   // -----------------------------------------------------------------------
+  /** Visible markers — all markers filtered through exclusion zones */
+  const markers = useMemo(() => {
+    if (exclusionZones.length === 0) return allMarkers;
+    return allMarkers.filter(
+      (m) => !isInExclusionZone(m.px.x, m.px.y, exclusionZones)
+    );
+  }, [allMarkers, exclusionZones]);
+
   const hoveredMarkerData = useMemo(
     () => markers.find((m) => m.key === hoveredMarker),
     [markers, hoveredMarker]
