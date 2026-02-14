@@ -17,46 +17,6 @@ Database Checks:
 
 Hey, I am working to implement features for the libertas website from the roadmap. Let's continue with implementing:
 
-# Phase 1: MVP
-
-### 1.1 Hero Signal Map — Interactive World Map Background
-
-**Description**: Add an interactive world map background to the homepage hero section. The map displays a minimal silhouette of the world (reusing the SVG from the explainer video) with blinking indicators showing where recent signals (last ~10 published posts) are geographically located. Users can hover (desktop) or tap (mobile) an indicator to see a preview card of the post, and click through to read it.
-
-**Design Reference**: Matches the world map in the Problem scene of the Libertas explainer video — minimal outline/silhouette, Matrix green colorized, with animated indicator dots.
-
----
-
-#### Step 14: Click-through navigation on signal markers
-
-**Description**: Currently clicking a signal marker toggles the preview card open/closed but doesn't navigate to the article. Only clicking within the `SignalCard` navigates. Allow clicking a marker to navigate directly to the post.
-
-**Files**: `HeroMap.tsx`, `SignalMarker.tsx`
-
-- [ ] **Desktop**: Hover shows the card (existing behavior). Clicking the marker navigates directly to `/posts/{slug}` via `router.push`. The card remains a secondary way to navigate (clicking card items also navigates, existing behavior).
-- [ ] **Mobile**: First tap opens the card (existing behavior, needed since there's no hover). Tapping the card item navigates. Optionally, double-tap on marker could navigate directly, but single-tap should still show the card for discoverability.
-- [ ] Pass the post's `slug` to `SignalMarker` so it can handle navigation, or handle in `HeroMap`'s `onClick` callback by calling `router.push` instead of `setHoveredMarker`
-- [ ] On desktop, distinguish between hover-intent (show card) and click-intent (navigate) — no change needed for hover handlers, just change the `onClick` handler
-- [ ] Ensure `cursor: pointer` on markers communicates clickability (already set)
-- [ ] Add a subtle visual affordance on hover (e.g. scale up slightly) to signal interactivity beyond just showing the card
-
----
-
-#### Step 15: Prevent markers from covering hero text and buttons
-
-**Description**: Signal markers (z-20) render on top of the hero description text and CTA buttons (z-10). Even though hero content has `pointer-events-none` (with `pointer-events-auto` on buttons), markers can visually obscure the text and buttons, making them hard to read or click.
-
-**Files**: `HeroMap.tsx`, `HeroSection.tsx`, `globals.css`
-
-- [ ] Define exclusion zones where markers should not be placed: the title area (top center), the description + buttons area (bottom center), and a padding buffer around them
-- [ ] In `HeroMap`, after resolving marker positions, filter out or reposition any markers that fall within the exclusion zones. Shift displaced markers to the nearest valid position outside the zone.
-- [ ] Calculate exclusion zones dynamically by measuring the hero content container's bounding rect (title div + bottom div) and adding ~24px padding
-- [ ] Recalculate exclusion zones on resize along with marker positions
-- [ ] As a simpler alternative/fallback: raise the hero content z-index above markers (z-25 for text, z-30 for buttons) and add a subtle semi-transparent backdrop behind the text area so markers are still visible but don't compete with readability
-- [ ] Test with 10+ markers to ensure none overlap the CTA buttons or obscure the description text
-
----
-
 # Phase 2: Nice-to-have
 
 Features that enhance the experience but aren't critical for launch.
