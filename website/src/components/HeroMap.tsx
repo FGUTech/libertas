@@ -213,9 +213,18 @@ export function HeroMap({ posts, visible }: HeroMapProps) {
   // -----------------------------------------------------------------------
   // Click / tap handlers
   // -----------------------------------------------------------------------
-  const handleMarkerClick = useCallback((key: string) => {
-    setHoveredMarker((prev) => (prev === key ? null : key));
-  }, []);
+  const handleMarkerClick = useCallback(
+    (key: string, slug: string) => {
+      if (hoveredMarker === key) {
+        // Card already showing (desktop hover or mobile second tap) → navigate
+        router.push(`/posts/${slug}`);
+      } else {
+        // No card yet (mobile first tap) → show card
+        setHoveredMarker(key);
+      }
+    },
+    [hoveredMarker, router]
+  );
 
   const handleNavigate = useCallback(
     (slug: string) => {
@@ -285,7 +294,7 @@ export function HeroMap({ posts, visible }: HeroMapProps) {
             postCount={1}
             onHoverStart={() => handleHoverStart(marker.key)}
             onHoverEnd={handleHoverEnd}
-            onClick={() => handleMarkerClick(marker.key)}
+            onClick={() => handleMarkerClick(marker.key, marker.post.slug)}
             isActive={hoveredMarker === marker.key}
             index={i}
             colorKey={marker.post.topics[0] ? topicToSignalColor(marker.post.topics[0]) : 'green'}

@@ -27,22 +27,6 @@ Hey, I am working to implement features for the libertas website from the roadma
 
 ---
 
-#### Step 13: Reduce time-to-content (faster hero intro animation)
-
-**Description**: The terminal typing animation currently types 4 lines before fading out and revealing the hero content + signal markers. This takes several seconds. Reduce to 3 lines and begin fading in the hero content *before* the typing animation fully completes to reduce perceived wait time.
-
-**Files**: `HeroTerminal.tsx`, `HeroSection.tsx`, `HeroMap.tsx`
-
-- [ ] Reduce `LINES` array from 4 to 3 lines (remove or combine lines — e.g. `> initializing`, `> scanning global signals...`, `> publishing insights [OK]`)
-- [ ] Add a new callback prop `onNearComplete` to `HeroTerminal` that fires when the *last line begins typing* (not after it finishes), so the hero content can start fading in early
-- [ ] In `HeroSection`, begin the hero content + markers fade-in on `onNearComplete` instead of `onComplete` — use a softer/longer fade (e.g. 0.8s) that overlaps with the terminal's final line and exit animation
-- [ ] Keep `onComplete` for when the terminal fully exits (if needed for cleanup), but the visual reveal should start earlier
-- [ ] Consider reducing `CHAR_DELAY` from 15ms to ~12ms and `LINE_PAUSE` from 150ms to ~100ms for a snappier feel
-- [ ] Total animation time goal: under 2 seconds from page load to hero content visible (currently ~3-4s)
-- [ ] Ensure the terminal fade-out and hero fade-in overlap smoothly without a jarring flash
-
----
-
 #### Step 14: Click-through navigation on signal markers
 
 **Description**: Currently clicking a signal marker toggles the preview card open/closed but doesn't navigate to the article. Only clicking within the `SignalCard` navigates. Allow clicking a marker to navigate directly to the post.

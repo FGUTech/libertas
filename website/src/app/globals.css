@@ -339,11 +339,13 @@ body {
   border: none;
   padding: 0;
   animation: signal-pulse 2s ease-in-out infinite;
-  transition: box-shadow var(--duration-fast) var(--ease-default);
+  transition: box-shadow var(--duration-fast) var(--ease-default),
+    transform var(--duration-fast) var(--ease-default);
 }
 
 .signal-marker:hover {
   box-shadow: 0 0 20px #00ff4180, 0 0 40px #00ff4140;
+  transform: translate(-50%, -50%) scale(1.5);
 }
 
 .signal-marker-active {
