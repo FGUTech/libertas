@@ -37,6 +37,22 @@
         "period_start": "2026-01-15",
         "period_end": "2026-01-21"
       }
+    },
+    {
+      "id": "a5e07001-2658-41ee-9625-165184380f7b",
+      "url": "https://libertas.fgu.tech/digests/weekly-2026-02-14",
+      "title": "Weekly Digest: 2026-02-08 to 2026-02-14",
+      "summary": "This week revealed critical vulnerabilities in freedom tech infrastructure: a massive botnet accidentally crippled I2P's anonymity network, while New York proposed mandatory surveillance for 3D printers. However, Silent.Link demonstrated how Bitcoin-native services can bypass both SIM-swap attacks and state censorship.",
+      "content_text": "This week revealed critical vulnerabilities in freedom tech infrastructure: a massive botnet accidentally crippled I2P's anonymity network, while New York proposed mandatory surveillance for 3D printers. However, Silent.Link demonstrated how Bitcoin-native services can bypass both SIM-swap attacks and state censorship.",
+      "date_published": "2026-02-15T14:00:23.902Z",
+      "tags": [
+        "weekly-digest"
+      ],
+      "_libertas": {
+        "insight_count": 3,
+        "period_start": "2026-02-08",
+        "period_end": "2026-02-14"
+      }
     }
   ]
 }
