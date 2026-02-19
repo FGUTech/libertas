@@ -7,27 +7,6 @@
   "language": "en-US",
   "items": [
     {
-      "id": "3875b99e-3a41-4f0b-8982-bffbf49a4dbf",
-      "url": "https://libertas.fgu.tech/posts/senate-democrats-propose-ban-on-ice-cbp-facial-recognition-u",
-      "title": "Senate Democrats Propose Ban on ICE/CBP Facial Recognition Use",
-      "summary": "New Senate bill would prohibit ICE and CBP from using facial recognition and other biometric surveillance, requiring deletion of existing data and allowing civil suits for violations.",
-      "content_text": "Senate Democrats introduced 'ICE Out of Our Faces Act' targeting federal immigration agencies\n• Would ban ICE and CBP from acquiring, possessing, or using biometric surveillance systems\n• Covers facial recognition, voice recognition, and other biometric technologies\n• Requires deletion of all previously collected biometric surveillance data\n• Prohibits use of biometric data in federal court cases or investigations\n• Creates private right of action for individuals to sue for damages\n• Allows state attorneys general to bring suits on behalf of residents\n• Represents significant pushback against expanding federal surveillance infrastructure",
-      "date_published": "2026-02-05T23:00:26.091Z",
-      "date_modified": "2026-02-05T23:00:26.151Z",
-      "tags": [
-        "surveillance",
-        "privacy",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 95,
-        "citations": [
-          "https://arstechnica.com/tech-policy/2026/02/ice-out-of-our-faces-act-would-ban-ice-and-cbp-use-of-facial-recognition/"
-        ]
-      }
-    },
-    {
       "id": "80b25858-ef8c-4b9e-aea5-69bcb1fbc282",
       "url": "https://libertas.fgu.tech/posts/silent-link-bitcoin-native-esim-service-bypasses-sim-swap-at",
       "title": "Silent.Link: Bitcoin-Native eSIM Service Bypasses SIM-Swap Attacks and State Censorship",
