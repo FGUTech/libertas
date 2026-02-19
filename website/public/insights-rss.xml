@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 19 Feb 2026 17:00:30 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 19 Feb 2026 18:49:58 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -39,6 +39,16 @@
     <category>comms</category>
     <category>censorship-resistance</category>
     <category>privacy</category>
+    <category>surveillance</category>
+  </item>
+  <item>
+    <title>Wisconsin VPN Ban Bill Passes Assembly, Senate Vote Imminent</title>
+    <link>https://libertas.fgu.tech/posts/wisconsin-vpn-ban-bill-passes-assembly-senate-vote-imminent</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/wisconsin-vpn-ban-bill-passes-assembly-senate-vote-imminent</guid>
+    <pubDate>Thu, 19 Feb 2026 18:49:28 GMT</pubDate>
+    <description>Wisconsin&apos;s S.B. 130/A.B. 105 effectively bans VPNs and mandates invasive age verification for websites, passed State Assembly and faces Senate vote tomorrow.</description>
+    <category>privacy</category>
+    <category>censorship-resistance</category>
     <category>surveillance</category>
   </item>
   <item>

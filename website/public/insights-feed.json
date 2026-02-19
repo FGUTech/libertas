@@ -73,6 +73,27 @@
       }
     },
     {
+      "id": "94ee8536-dc7a-40c5-97dc-f5a0fc3e4bb3",
+      "url": "https://libertas.fgu.tech/posts/wisconsin-vpn-ban-bill-passes-assembly-senate-vote-imminent",
+      "title": "Wisconsin VPN Ban Bill Passes Assembly, Senate Vote Imminent",
+      "summary": "Wisconsin's S.B. 130/A.B. 105 effectively bans VPNs and mandates invasive age verification for websites, passed State Assembly and faces Senate vote tomorrow.",
+      "content_text": "Wisconsin S.B. 130/A.B. 105 passed State Assembly, Senate vote scheduled for tomorrow\n• Bill requires websites to block VPN users and implement invasive age verification\n• Targets websites with content lawmakers deem 'sexual' with broad, vague definitions\n• EFF sent letter to entire Wisconsin Legislature urging rejection of the bill\n• Technical enforcement is unworkable - sites can't reliably determine VPN user location\n• Creates privacy nightmare requiring government IDs, financial data, biometric identifiers\n• Broadens 'harmful to minors' definition beyond court-recognized categories\n• Forces websites to choose: over-block VPNs, block all Wisconsin users, or implement nationwide restrictions",
+      "date_published": "2026-02-19T18:49:28.767Z",
+      "date_modified": "2026-02-19T18:49:28.837Z",
+      "tags": [
+        "privacy",
+        "censorship-resistance",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 88,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/02/eff-wisconsin-legislature-vpn-bans-are-still-terrible-idea"
+        ]
+      }
+    },
+    {
       "id": "9c97ecdf-0ad1-49ec-b4d0-60c8b37c40eb",
       "url": "https://libertas.fgu.tech/posts/new-york-proposes-mandatory-3d-printer-surveillance-for-fire",
       "title": "New York Proposes Mandatory 3D Printer Surveillance for Firearm Detection",
