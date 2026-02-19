@@ -5,30 +5,9 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Sat, 14 Feb 2026 05:00:29 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 19 Feb 2026 11:01:10 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
-  <item>
-    <title>EFF Closes in Solidarity with National Shutdown Against ICE/CBP Actions</title>
-    <link>https://libertas.fgu.tech/posts/eff-closes-in-solidarity-with-national-shutdown-against-ice-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-closes-in-solidarity-with-national-shutdown-against-ice-</guid>
-    <pubDate>Wed, 04 Feb 2026 03:25:26 GMT</pubDate>
-    <description>Electronic Frontier Foundation is closing Friday, Jan 30 to join national shutdown opposing ICE/CBP enforcement, while providing protest security resources.</description>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>privacy</category>
-    <category>censorship-resistance</category>
-  </item>
-  <item>
-    <title>Microsoft Provides FBI BitLocker Decryption Keys ~20 Times Annually</title>
-    <link>https://libertas.fgu.tech/posts/microsoft-provides-fbi-bitlocker-decryption-keys-20-times-an</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/microsoft-provides-fbi-bitlocker-decryption-keys-20-times-an</guid>
-    <pubDate>Wed, 04 Feb 2026 03:26:38 GMT</pubDate>
-    <description>Microsoft gives FBI access to BitLocker encryption keys about 20 times per year via court orders when users store keys on Microsoft&apos;s servers for convenience.</description>
-    <category>privacy</category>
-    <category>surveillance</category>
-    <category>sovereignty</category>
-  </item>
   <item>
     <title>Senate Democrats Propose Ban on ICE/CBP Facial Recognition Use</title>
     <link>https://libertas.fgu.tech/posts/senate-democrats-propose-ban-on-ice-cbp-facial-recognition-u</link>
@@ -38,59 +17,6 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
-  </item>
-  <item>
-    <title>Russian Spy Satellites Reportedly Intercept EU Communications Infrastructure</title>
-    <link>https://libertas.fgu.tech/posts/russian-spy-satellites-reportedly-intercept-eu-communication</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/russian-spy-satellites-reportedly-intercept-eu-communication</guid>
-    <pubDate>Wed, 04 Feb 2026 17:00:31 GMT</pubDate>
-    <description>European officials believe Russian space vehicles have intercepted communications from dozens of EU satellites, potentially compromising sensitive data and enabling trajectory manipulation.</description>
-    <category>surveillance</category>
-    <category>comms</category>
-    <category>censorship-resistance</category>
-  </item>
-  <item>
-    <title>Tails 7.4.1 Emergency Release Fixes Critical OpenSSL Vulnerabilities in Tor</title>
-    <link>https://libertas.fgu.tech/posts/tails-7-4-1-emergency-release-fixes-critical-openssl-vulnera</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/tails-7-4-1-emergency-release-fixes-critical-openssl-vulnera</guid>
-    <pubDate>Wed, 04 Feb 2026 03:28:02 GMT</pubDate>
-    <description>Tails released emergency update fixing critical OpenSSL vulnerabilities that could allow malicious Tor relays to deanonymize users.</description>
-    <category>privacy</category>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>comms</category>
-  </item>
-  <item>
-    <title>Cryptography Expert Analyzes WhatsApp Backdoor Lawsuit Claims</title>
-    <link>https://libertas.fgu.tech/posts/cryptography-expert-analyzes-whatsapp-backdoor-lawsuit-claim</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/cryptography-expert-analyzes-whatsapp-backdoor-lawsuit-claim</guid>
-    <pubDate>Wed, 04 Feb 2026 03:28:16 GMT</pubDate>
-    <description>Class action lawsuit alleges WhatsApp can read all encrypted messages despite E2E claims. Cryptography expert Matthew Green examines technical feasibility and evidence quality of backdoor allegations.</description>
-    <category>privacy</category>
-    <category>comms</category>
-    <category>surveillance</category>
-  </item>
-  <item>
-    <title>Gabon Imposes Nation-Scale Internet Blackout During Presidential Elections</title>
-    <link>https://libertas.fgu.tech/posts/gabon-imposes-nation-scale-internet-blackout-during-presiden</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/gabon-imposes-nation-scale-internet-blackout-during-presiden</guid>
-    <pubDate>Wed, 04 Feb 2026 03:27:14 GMT</pubDate>
-    <description>Gabon cut internet access nationwide during August 2023 elections, citing violence prevention. Service was restored after military coup ended the president&apos;s rule, highlighting critical need for censorship-resistant communications.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>comms</category>
-  </item>
-  <item>
-    <title>OONI Announces Anonymous Credential System for Censorship Measurement</title>
-    <link>https://libertas.fgu.tech/posts/ooni-announces-anonymous-credential-system-for-censorship-me</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/ooni-announces-anonymous-credential-system-for-censorship-me</guid>
-    <pubDate>Wed, 04 Feb 2026 03:26:26 GMT</pubDate>
-    <description>OONI is implementing anonymous credentials to authenticate probe measurements without revealing user identity or enabling cross-network tracking of censorship researchers.</description>
-    <category>privacy</category>
-    <category>surveillance</category>
-    <category>censorship-resistance</category>
-    <category>zk</category>
   </item>
   <item>
     <title>Silent.Link: Bitcoin-Native eSIM Service Bypasses SIM-Swap Attacks and State Censorship</title>
@@ -103,17 +29,6 @@
     <category>censorship-resistance</category>
     <category>identity</category>
     <category>comms</category>
-  </item>
-  <item>
-    <title>HRW Reports Systematic Rights Abuses Across Southern Africa in 2025</title>
-    <link>https://libertas.fgu.tech/posts/hrw-reports-systematic-rights-abuses-across-southern-africa-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/hrw-reports-systematic-rights-abuses-across-southern-africa-</guid>
-    <pubDate>Wed, 04 Feb 2026 11:00:31 GMT</pubDate>
-    <description>Human Rights Watch documents widespread government crackdowns on protesters, journalists, and activists across Southern Africa in 2025, with security forces using lethal force and arbitrary detention while regional bodies fail to intervene.</description>
-    <category>surveillance</category>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-    <category>sovereignty</category>
   </item>
   <item>
     <title>Kimwolf Botnet Sybil Attack Disrupts I2P Anonymity Network</title>
@@ -138,15 +53,15 @@
     <category>sovereignty</category>
   </item>
   <item>
-    <title>Bangladesh&apos;s 2026 Election Tests Digital Democracy After Youth-Led Uprising</title>
-    <link>https://libertas.fgu.tech/posts/bangladesh-s-2026-election-tests-digital-democracy-after-you</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/bangladesh-s-2026-election-tests-digital-democracy-after-you</guid>
-    <pubDate>Wed, 04 Feb 2026 03:28:39 GMT</pubDate>
-    <description>Bangladesh conducts major election 18 months after youth uprising toppled autocratic regime, but complex referendum structure, forced digitization, and low women&apos;s representation reveal democratic transition challenges.</description>
-    <category>surveillance</category>
+    <title>Philippines &apos;Red-Tags&apos; Environmental Groups, Freezes Bank Accounts of Solar/Disaster Relief NGOs</title>
+    <link>https://libertas.fgu.tech/posts/philippines-red-tags-environmental-groups-freezes-bank-accou</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/philippines-red-tags-environmental-groups-freezes-bank-accou</guid>
+    <pubDate>Thu, 19 Feb 2026 11:01:02 GMT</pubDate>
+    <description>Philippine government systematically labels environmental defenders as &apos;terrorists,&apos; freezing bank accounts of NGOs providing solar power and disaster relief to rural communities.</description>
     <category>activism</category>
-    <category>sovereignty</category>
+    <category>surveillance</category>
     <category>censorship-resistance</category>
+    <category>sovereignty</category>
   </item>
 </channel>
 </rss>

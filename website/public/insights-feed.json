@@ -7,49 +7,6 @@
   "language": "en-US",
   "items": [
     {
-      "id": "119e59f4-22bd-47cb-818b-233e7dd977b5",
-      "url": "https://libertas.fgu.tech/posts/eff-closes-in-solidarity-with-national-shutdown-against-ice-",
-      "title": "EFF Closes in Solidarity with National Shutdown Against ICE/CBP Actions",
-      "summary": "Electronic Frontier Foundation is closing Friday, Jan 30 to join national shutdown opposing ICE/CBP enforcement, while providing protest security resources.",
-      "content_text": "EFF announced office closure Friday, Jan 30 for national shutdown opposing ICE/CBP actions\n• Organization expressing solidarity with Minneapolis communities and those impacted by federal enforcement\n• EFF describes ongoing ICE/CBP activities as 'violence,' 'brutality and terror'\n• Foundation providing practical security resources for protesters and activists\n• Links provided to Surveillance Self-Defense guide for protest attendance\n• Resources include guidance on legal right to record police/ICE activity\n• Represents major digital rights organization taking direct activist stance",
-      "date_published": "2026-02-04T03:25:26.170Z",
-      "date_modified": "2026-02-04T03:25:26.224Z",
-      "tags": [
-        "surveillance",
-        "activism",
-        "privacy",
-        "censorship-resistance"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 75,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/01/eff-close-friday-solidarity-national-shutdown"
-        ]
-      }
-    },
-    {
-      "id": "261f1002-d77f-4dfb-945d-e1150510f4fe",
-      "url": "https://libertas.fgu.tech/posts/microsoft-provides-fbi-bitlocker-decryption-keys-20-times-an",
-      "title": "Microsoft Provides FBI BitLocker Decryption Keys ~20 Times Annually",
-      "summary": "Microsoft gives FBI access to BitLocker encryption keys about 20 times per year via court orders when users store keys on Microsoft's servers for convenience.",
-      "content_text": "Microsoft provides FBI BitLocker decryption capability ~20 times annually in response to court orders\n• Users can store encryption keys locally but Microsoft recommends cloud storage for convenience\n• Cloud-stored keys enable account recovery but expose users to law enforcement subpoenas\n• Demonstrates how centralized key storage creates surveillance backdoors in mainstream encryption\n• BitLocker appears secure but has architectural surveillance vulnerability when using default settings\n• Shows importance of local key storage for actual encryption security\n• Highlights gap between perceived and actual privacy protection in enterprise encryption tools",
-      "date_published": "2026-02-04T03:26:38.768Z",
-      "date_modified": "2026-02-04T03:26:38.812Z",
-      "tags": [
-        "privacy",
-        "surveillance",
-        "sovereignty"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.schneier.com/blog/archives/2026/02/microsoft-is-giving-the-fbi-bitlocker-keys.html"
-        ]
-      }
-    },
-    {
       "id": "3875b99e-3a41-4f0b-8982-bffbf49a4dbf",
       "url": "https://libertas.fgu.tech/posts/senate-democrats-propose-ban-on-ice-cbp-facial-recognition-u",
       "title": "Senate Democrats Propose Ban on ICE/CBP Facial Recognition Use",
@@ -67,114 +24,6 @@
         "credibility_score": 95,
         "citations": [
           "https://arstechnica.com/tech-policy/2026/02/ice-out-of-our-faces-act-would-ban-ice-and-cbp-use-of-facial-recognition/"
-        ]
-      }
-    },
-    {
-      "id": "3ac05fbc-8c53-4bf2-9d5c-b5b184411856",
-      "url": "https://libertas.fgu.tech/posts/russian-spy-satellites-reportedly-intercept-eu-communication",
-      "title": "Russian Spy Satellites Reportedly Intercept EU Communications Infrastructure",
-      "summary": "European officials believe Russian space vehicles have intercepted communications from dozens of EU satellites, potentially compromising sensitive data and enabling trajectory manipulation.",
-      "content_text": "Two Russian space vehicles reportedly intercepted communications from at least 12 European satellites\n• Officials claim interceptions risk compromising sensitive transmitted information\n• Moscow could potentially manipulate satellite trajectories or crash intercepted satellites\n• Russian shadowing of European satellites intensified over past three years\n• Activity coincides with heightened tensions following Ukraine invasion\n• Demonstrates vulnerabilities in satellite-based communications infrastructure\n• Highlights need for improved encryption and anti-jamming in space-based comms",
-      "date_published": "2026-02-04T17:00:31.857Z",
-      "date_modified": "2026-02-04T17:00:31.900Z",
-      "tags": [
-        "surveillance",
-        "comms",
-        "censorship-resistance"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 72,
-        "credibility_score": 85,
-        "citations": [
-          "https://arstechnica.com/space/2026/02/russian-spy-satellites-have-intercepted-eu-communications-satellites/"
-        ]
-      }
-    },
-    {
-      "id": "465677e6-7a6d-4025-b130-688355936afb",
-      "url": "https://libertas.fgu.tech/posts/tails-7-4-1-emergency-release-fixes-critical-openssl-vulnera",
-      "title": "Tails 7.4.1 Emergency Release Fixes Critical OpenSSL Vulnerabilities in Tor",
-      "summary": "Tails released emergency update fixing critical OpenSSL vulnerabilities that could allow malicious Tor relays to deanonymize users.",
-      "content_text": "Emergency Tails 7.4.1 release addresses critical OpenSSL library vulnerabilities (DSA 6113-1)\n• Vulnerabilities could potentially allow malicious Tor relays to deanonymize Tails users\n• OpenSSL updated to version 3.5.4, Tor client updated to 0.4.8.22\n• Tails team reports no known exploitation of these vulnerabilities in practice\n• Additional fixes include Gmail authentication in Thunderbird and Wi-Fi settings UI improvements\n• Automatic upgrades available from Tails 7.0 or later versions\n• Known issue: Tor Browser homepage incorrectly displays version 7.4 after upgrade",
-      "date_published": "2026-02-04T03:28:02.737Z",
-      "date_modified": "2026-02-04T03:28:02.778Z",
-      "tags": [
-        "privacy",
-        "censorship-resistance",
-        "surveillance",
-        "comms"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 95,
-        "citations": [
-          "https://tails.net/news/version_7.4.1/"
-        ]
-      }
-    },
-    {
-      "id": "707cc033-9526-40bc-b652-a7701fa614bb",
-      "url": "https://libertas.fgu.tech/posts/cryptography-expert-analyzes-whatsapp-backdoor-lawsuit-claim",
-      "title": "Cryptography Expert Analyzes WhatsApp Backdoor Lawsuit Claims",
-      "summary": "Class action lawsuit alleges WhatsApp can read all encrypted messages despite E2E claims. Cryptography expert Matthew Green examines technical feasibility and evidence quality of backdoor allegations.",
-      "content_text": "Quinn Emanuel law firm filed class action alleging WhatsApp lacks real end-to-end encryption despite public claims\n• Lawsuit claims 'whistleblowers' revealed Meta can read all WhatsApp messages except for some celebrities since April 2016\n• Bloomberg reports US authorities investigating Meta based on these same allegations\n• Elon Musk and Pavel Durov (who operate competing messaging apps) amplified the claims online\n• WhatsApp serves ~3 billion users with Signal protocol-based E2E encryption enabled by default since 2014\n• Cryptography expert Matthew Green notes complaint lacks solid evidence for backdoor claims\n• Government pressure against WhatsApp encryption has been intense from US, UK, Australia, India, and EU\n• If allegations proved true, would represent major corporate coverup affecting half the planet's communications",
-      "date_published": "2026-02-04T03:28:16.557Z",
-      "date_modified": "2026-02-04T03:28:16.637Z",
-      "tags": [
-        "privacy",
-        "comms",
-        "surveillance"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 75,
-        "credibility_score": 85,
-        "citations": [
-          "https://blog.cryptographyengineering.com/2026/02/02/whatsapp-encryption-a-lawsuit-and-a-lot-of-noise/"
-        ]
-      }
-    },
-    {
-      "id": "7513f032-29b6-464a-aaef-3875c525118a",
-      "url": "https://libertas.fgu.tech/posts/gabon-imposes-nation-scale-internet-blackout-during-presiden",
-      "title": "Gabon Imposes Nation-Scale Internet Blackout During Presidential Elections",
-      "summary": "Gabon cut internet access nationwide during August 2023 elections, citing violence prevention. Service was restored after military coup ended the president's rule, highlighting critical need for censorship-resistant communications.",
-      "content_text": "NetBlocks confirmed nation-scale internet blackout in Gabon on August 26, 2023 election day\n• Government justified shutdown to \"prevent spread of calls for violence\" and \"false information\"\n• Blackout lasted until August 30 when military officers seized power and placed President Ali Bongo under house arrest\n• Communication Minister Rodrigue Mboumba Bissawou announced indefinite internet suspension via state TV\n• Territory-wide curfew imposed from 7 PM to 6 AM starting August 27\n• Pattern continues across West/Central Africa - similar shutdowns in Zambia, Congo, Uganda, Tanzania, Guinea, and others\n• Previous internet cuts occurred during Gabon's 2019 attempted coup\n• Demonstrates exact use case where mesh networks and satellite communications become essential",
-      "date_published": "2026-02-04T03:27:14.596Z",
-      "date_modified": "2026-02-04T03:27:14.657Z",
-      "tags": [
-        "censorship-resistance",
-        "surveillance",
-        "activism",
-        "comms"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 85,
-        "credibility_score": 95,
-        "citations": [
-          "https://netblocks.org/reports/internet-cut-in-gabon-on-election-day-Q8oxM3An"
-        ]
-      }
-    },
-    {
-      "id": "7fc30424-275b-4660-b26e-1ee8e3834bb1",
-      "url": "https://libertas.fgu.tech/posts/ooni-announces-anonymous-credential-system-for-censorship-me",
-      "title": "OONI Announces Anonymous Credential System for Censorship Measurement",
-      "summary": "OONI is implementing anonymous credentials to authenticate probe measurements without revealing user identity or enabling cross-network tracking of censorship researchers.",
-      "content_text": "OONI announced development of anonymous credential system for probe authentication\n• System will verify probe properties (participation history, measurement volume) without exposing user identity\n• Addresses core challenge of establishing measurement trust without creating trackable identifiers\n• Prevents cross-network linking of censorship monitoring activity\n• Uses cryptographic mechanisms to authenticate without identification\n• Critical for protecting researchers and activists conducting internet freedom measurements\n• Part of broader OONI security enhancement to reduce operational risks",
-      "date_published": "2026-02-04T03:26:26.202Z",
-      "date_modified": "2026-02-04T03:26:26.256Z",
-      "tags": [
-        "privacy",
-        "surveillance",
-        "censorship-resistance",
-        "zk"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 85,
-        "credibility_score": 95,
-        "citations": [
-          "https://ooni.org/post/2025-announcing-ooni-new-anonymous-credential-system/"
         ]
       }
     },
@@ -198,28 +47,6 @@
         "credibility_score": 82,
         "citations": [
           "https://bitcoinmagazine.com/business/how-silent-link-solves-sim-swap-risks-and-roaming-hassles-for-traveling-bitcoiners"
-        ]
-      }
-    },
-    {
-      "id": "82c5f2c5-bbfc-4276-8eee-22c8f66993e4",
-      "url": "https://libertas.fgu.tech/posts/hrw-reports-systematic-rights-abuses-across-southern-africa-",
-      "title": "HRW Reports Systematic Rights Abuses Across Southern Africa in 2025",
-      "summary": "Human Rights Watch documents widespread government crackdowns on protesters, journalists, and activists across Southern Africa in 2025, with security forces using lethal force and arbitrary detention while regional bodies fail to intervene.",
-      "content_text": "Security forces in Angola, Eswatini, Mozambique, and Zimbabwe used excessive/lethal force against protesters in 2025\n• Governments severely restricted freedom of expression, association, and assembly across the region\n• Journalists and human rights defenders faced targeted attacks, detention, and judicial harassment\n• African Union and SADC failed to address violations or enforce human rights obligations\n• Angola and Mozambique announced investigations into protester deaths but results remain unpublished\n• Eswatini still has no accountability for 2021 pro-democracy protest crackdown\n• Pattern of impunity creates 'vicious cycles of abuse' according to HRW assessment\n• South Africa failed to protect human rights defenders, with some killed",
-      "date_published": "2026-02-04T11:00:31.527Z",
-      "date_modified": "2026-02-04T11:00:31.561Z",
-      "tags": [
-        "surveillance",
-        "censorship-resistance",
-        "activism",
-        "sovereignty"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.hrw.org/news/2026/02/04/southern-africa-grave-rights-abuses-impunity-persist"
         ]
       }
     },
@@ -268,24 +95,24 @@
       }
     },
     {
-      "id": "ed15b10b-9ca9-4b0a-9ab0-ebe46d32edaf",
-      "url": "https://libertas.fgu.tech/posts/bangladesh-s-2026-election-tests-digital-democracy-after-you",
-      "title": "Bangladesh's 2026 Election Tests Digital Democracy After Youth-Led Uprising",
-      "summary": "Bangladesh conducts major election 18 months after youth uprising toppled autocratic regime, but complex referendum structure, forced digitization, and low women's representation reveal democratic transition challenges.",
-      "content_text": "Bangladesh holds parliamentary election and constitutional referendum on February 12, 2026, following 2024 student-led overthrow of Sheikh Hasina\n• Referendum forces yes/no vote on 185-word constitutional package with no option to approve individual reforms\n• If elected parliament fails to finalize amendments within 270 days, unelected interim government's bill automatically becomes law\n• Election Commission banned physical campaign materials, forcing campaigns entirely online for first time\n• 40% of voters are under 37, with youth parties like National Citizen Party using TikTok and Instagram for mobilization\n• Digital shift excludes women, rural, elderly, and low-income populations from political discourse\n• Women represent only 4.22% of candidates despite being 50%+ of population and having higher turnout historically\n• Bangladesh Nationalist Party nominated just 3.5% women candidates, lowest rate since 1991",
-      "date_published": "2026-02-04T03:28:39.612Z",
-      "date_modified": "2026-02-04T03:28:39.662Z",
+      "id": "a734d6e8-40b9-4e08-b07c-6d955d91fce9",
+      "url": "https://libertas.fgu.tech/posts/philippines-red-tags-environmental-groups-freezes-bank-accou",
+      "title": "Philippines 'Red-Tags' Environmental Groups, Freezes Bank Accounts of Solar/Disaster Relief NGOs",
+      "summary": "Philippine government systematically labels environmental defenders as 'terrorists,' freezing bank accounts of NGOs providing solar power and disaster relief to rural communities.",
+      "content_text": "Government task forces accuse environmental NGOs of terrorism/communist links through 'red-tagging' practice\n• Leyte Center for Development (LCDe) had foreign donor accounts frozen, director faces terrorism financing charges\n• Sibat nonprofit installing solar-powered water pumps also red-tagged and harassed by military\n• UN experts confirm systematic targeting of environmental defenders, Indigenous peoples, and humanitarian workers\n• Financial censorship prevents crucial disaster relief as typhoon-prone regions lose emergency services\n• Organizations must bring EU diplomats to meetings to demonstrate legitimacy to local officials\n• Practice intensified under Duterte (2016-2022), continues under current President Marcos Jr",
+      "date_published": "2026-02-19T11:01:02.518Z",
+      "date_modified": "2026-02-19T11:01:02.567Z",
       "tags": [
-        "surveillance",
         "activism",
-        "sovereignty",
-        "censorship-resistance"
+        "surveillance",
+        "censorship-resistance",
+        "sovereignty"
       ],
       "_libertas": {
-        "freedom_relevance_score": 72,
+        "freedom_relevance_score": 78,
         "credibility_score": 85,
         "citations": [
-          "https://globalvoices.org/2026/02/03/crossroads-of-contradictions-three-tests-to-determine-bangladeshs-democracy-and-reform/"
+          "https://globalvoices.org/2026/02/19/environmental-defenders-labelled-terrorists-for-bringing-renewable-power-to-philippine-communities/"
         ]
       }
     }
