@@ -1,6 +1,7 @@
 import type { Post } from "@/types";
 import { topicToSignalColor } from "@/lib/signal-colors";
 import { CountryFlag } from "@/components/CountryFlag";
+import { FormattedDate } from "@/components/FormattedDate";
 
 interface PostMetadataProps {
   post: Post;
@@ -8,13 +9,6 @@ interface PostMetadataProps {
 }
 
 export function PostMetadata({ post, readingTime }: PostMetadataProps) {
-  const formattedDate = new Date(post.publishedAt).toLocaleDateString("en-US", {
-    weekday: "long",
-    month: "long",
-    day: "numeric",
-    year: "numeric",
-  });
-
   return (
     <div className="space-y-4">
       {/* Topics */}
@@ -31,7 +25,7 @@ export function PostMetadata({ post, readingTime }: PostMetadataProps) {
         {/* Date */}
         <span className="flex items-center gap-2">
           <CalendarIcon />
-          <time dateTime={post.publishedAt}>{formattedDate}</time>
+          <FormattedDate date={post.publishedAt} format="long" />
         </span>
 
         {/* Author */}

@@ -6,6 +6,7 @@ import { MarkdownRenderer } from "@/components/MarkdownRenderer";
 import { ShareButtons } from "@/components/ShareButtons";
 import { BreadcrumbJsonLd } from "@/components/JsonLd";
 import { ReadingProgress } from "@/components/ReadingProgress";
+import { FormattedDateRange } from "@/components/FormattedDate";
 import type { Topic } from "@/types";
 import { topicToSignalColor } from "@/lib/signal-colors";
 
@@ -111,7 +112,7 @@ export default async function DigestPage({ params }: DigestPageProps) {
 
             {/* Period */}
             <p className="text-body text-[var(--fg-tertiary)] mb-6">
-              {formatDateRange(digest.periodStart, digest.periodEnd)}
+              <FormattedDateRange start={digest.periodStart} end={digest.periodEnd} />
             </p>
 
             {/* TL;DR */}
@@ -238,17 +239,6 @@ export default async function DigestPage({ params }: DigestPageProps) {
   );
 }
 
-// Helper function to format date range
-function formatDateRange(startDate: string, endDate: string): string {
-  const start = new Date(startDate);
-  const end = new Date(endDate);
-
-  const options: Intl.DateTimeFormatOptions = { month: "long", day: "numeric" };
-  const startFormatted = start.toLocaleDateString("en-US", options);
-  const endFormatted = end.toLocaleDateString("en-US", { ...options, year: "numeric" });
-
-  return `${startFormatted} - ${endFormatted}`;
-}
 
 // Topic badge component
 function TopicBadge({ topic }: { topic: Topic }) {

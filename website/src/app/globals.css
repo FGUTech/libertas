@@ -803,7 +803,7 @@ body {
   inset: 0;
   pointer-events: none;
   overflow: hidden;
-  opacity: 0.20;
+  opacity: 0.40;
   filter: invert(1) brightness(0.4) sepia(1) hue-rotate(70deg) saturate(2);
 }
 
@@ -819,7 +819,7 @@ body {
 }
 
 [data-theme="light"] .world-map-background {
-  opacity: 0.20;
+  opacity: 0.40;
   filter: sepia(1) hue-rotate(70deg) saturate(3) brightness(0.5);
 }
 

@@ -2,6 +2,7 @@ import type { ContentItem, Post, Digest } from "@/types";
 import { isDigest } from "@/types";
 import { topicToSignalColor } from "@/lib/signal-colors";
 import { CountryFlags } from "@/components/CountryFlag";
+import { FormattedDate, FormattedDateRange } from "@/components/FormattedDate";
 
 interface ContentCardProps {
   item: ContentItem;
@@ -46,7 +47,7 @@ function PostCardInner({ post }: { post: Post }) {
         )}
         <span className="text-sm text-[var(--fg-tertiary)] flex items-center gap-2">
           {hasGeo && <CountryFlags locations={post.geo!} size="md" max={2} />}
-          {formatDate(post.publishedAt)}
+          <FormattedDate date={post.publishedAt} />
         </span>
       </div>
       <h3 className="text-h3 mb-2 line-clamp-3 transition-colors group-hover:text-[var(--accent-primary)]">
@@ -96,7 +97,7 @@ function DigestCard({ digest }: { digest: Digest }) {
           Weekly Digest
         </span>
         <span className="text-small text-[var(--fg-tertiary)]">
-          {formatDateRange(digest.periodStart, digest.periodEnd)}
+          <FormattedDateRange start={digest.periodStart} end={digest.periodEnd} />
         </span>
       </div>
       <h3 className="text-h3 mb-2 line-clamp-3 transition-colors group-hover:text-[var(--accent-amber)]">
@@ -121,32 +122,6 @@ function DigestCard({ digest }: { digest: Digest }) {
   );
 }
 
-function formatDate(dateString: string): string {
-  const date = new Date(dateString);
-  return date.toLocaleDateString("en-US", {
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-  });
-}
-
-function formatDateRange(startDate: string, endDate: string): string {
-  const start = new Date(startDate);
-  const end = new Date(endDate);
-
-  const startMonth = start.toLocaleDateString("en-US", { month: "short" });
-  const endMonth = end.toLocaleDateString("en-US", { month: "short" });
-  const startDay = start.getDate();
-  const endDay = end.getDate();
-  const year = end.getFullYear();
-
-  // Same month
-  if (startMonth === endMonth) {
-    return `${startMonth} ${startDay} - ${endDay}, ${year}`;
-  }
-  // Different months
-  return `${startMonth} ${startDay} - ${endMonth} ${endDay}, ${year}`;
-}
 
 function SignalIcon() {
   return (
