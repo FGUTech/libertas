@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 20 Feb 2026 16:32:43 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 20 Feb 2026 23:02:06 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -18,6 +18,16 @@
     <category>privacy</category>
     <category>comms</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>DHS Plans Unified Biometric Platform After Dismantling Privacy Reviews</title>
+    <link>https://libertas.fgu.tech/posts/dhs-plans-unified-biometric-platform-after-dismantling-priva</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/dhs-plans-unified-biometric-platform-after-dismantling-priva</guid>
+    <pubDate>Fri, 20 Feb 2026 23:01:06 GMT</pubDate>
+    <description>Department of Homeland Security seeks to merge face and fingerprint databases into single platform while removing centralized privacy oversight and facial recognition limits.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>identity</category>
   </item>
   <item>
     <title>EFF Calls on Tech Giants to Resist DHS&apos;s Unlawful Surveillance Subpoenas Targeting Activists</title>
@@ -100,6 +110,15 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>FCC Chairman Urges Broadcasters to Join &apos;Pledge America Campaign&apos; for Pro-America Programming</title>
+    <link>https://libertas.fgu.tech/posts/fcc-chairman-urges-broadcasters-to-join-pledge-america-campa</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/fcc-chairman-urges-broadcasters-to-join-pledge-america-campa</guid>
+    <pubDate>Fri, 20 Feb 2026 23:00:43 GMT</pubDate>
+    <description>FCC Chairman Brendan Carr launched a campaign asking broadcasters to voluntarily air patriotic programming including daily Pledge of Allegiance and civic education content for Trump&apos;s America 250th celebration.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
   </item>
   <item>
     <title>Senegal Implements Multi-Phase Internet Shutdowns During Political Protests</title>
@@ -700,6 +719,15 @@
     <category>privacy</category>
   </item>
   <item>
+    <title>Microsoft Shares BitLocker Recovery Keys with FBI, Compromising Disk Encryption</title>
+    <link>https://libertas.fgu.tech/posts/microsoft-shares-bitlocker-recovery-keys-with-fbi-compromisi</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/microsoft-shares-bitlocker-recovery-keys-with-fbi-compromisi</guid>
+    <pubDate>Fri, 20 Feb 2026 23:02:06 GMT</pubDate>
+    <description>Microsoft routinely provides BitLocker backup keys to law enforcement like the FBI, undermining the privacy protection of Windows&apos; built-in disk encryption for users storing keys in Microsoft accounts.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+  </item>
+  <item>
     <title>Turkey Throttles Social Media During Political Protests - OONI Documents Technical Evidence</title>
     <link>https://libertas.fgu.tech/posts/turkey-throttles-social-media-during-political-protests-ooni</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/turkey-throttles-social-media-during-political-protests-ooni</guid>
@@ -751,6 +779,18 @@
     <category>surveillance</category>
     <category>censorship-resistance</category>
     <category>identity</category>
+  </item>
+  <item>
+    <title>Gabon Shuts Down Social Media Amid Protests, Coalition Demands Restoration</title>
+    <link>https://libertas.fgu.tech/posts/gabon-shuts-down-social-media-amid-protests-coalition-demand</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/gabon-shuts-down-social-media-amid-protests-coalition-demand</guid>
+    <pubDate>Fri, 20 Feb 2026 23:01:32 GMT</pubDate>
+    <description>Gabon&apos;s government ordered indefinite social media shutdown during anti-government protests, blocking Facebook, WhatsApp, TikTok, Instagram and YouTube. 345+ human rights orgs demand immediate restoration.</description>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>surveillance</category>
+    <category>comms</category>
+    <category>sovereignty</category>
   </item>
   <item>
     <title>Guinea Blocks Social Media During Protests, Army Called In</title>
