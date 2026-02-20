@@ -13,7 +13,7 @@ import { TOPICS, isPost, isDigest } from "@/types";
 
 const POSTS_PER_PAGE = 12;
 
-type SortOption = "newest" | "relevance";
+type SortOption = "newest" | "relevance" | "top";
 
 interface PostsFeedProps {
   /** Posts loaded server-side and passed as props */
@@ -149,7 +149,14 @@ export function ContentFeed({ items: allItems }: ContentFeedProps) {
     }
 
     // Sort
-    if (sortBy === "relevance") {
+    if (sortBy === "top") {
+      items.sort((a, b) => {
+        const scoreA = isPost(a) ? a.freedomRelevanceScore : -Infinity;
+        const scoreB = isPost(b) ? b.freedomRelevanceScore : -Infinity;
+        if (scoreA !== scoreB) return scoreB - scoreA;
+        return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
+      });
+    } else if (sortBy === "relevance") {
       // For relevance sort, posts come first sorted by score, then digests by date
       items.sort((a, b) => {
         const scoreA = getRelevanceScore(a);
@@ -315,7 +322,13 @@ export function PostsFeed({ posts: allPosts }: PostsFeedProps) {
     }
 
     // Sort
-    if (sortBy === "relevance") {
+    if (sortBy === "top") {
+      posts.sort((a, b) => {
+        if (a.freedomRelevanceScore !== b.freedomRelevanceScore)
+          return b.freedomRelevanceScore - a.freedomRelevanceScore;
+        return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
+      });
+    } else if (sortBy === "relevance") {
       const now = Date.now();
       posts.sort((a, b) => {
         const daysOldA = (now - new Date(a.publishedAt).getTime()) / (1000 * 60 * 60 * 24);

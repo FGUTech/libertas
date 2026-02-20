@@ -3,11 +3,23 @@ import { ContentCard } from "@/components/PostCard";
 import { WebsiteJsonLd } from "@/components/JsonLd";
 import { HeroSection } from "@/components/HeroSection";
 import { getAllContent, getAllPosts, isPost } from "@/lib/posts";
-import type { Post } from "@/types";
+import type { Post, ContentItem } from "@/types";
 
 export default function Home() {
-  // Load all content (posts + digests) server-side (uses filesystem, falls back to mock if no content)
-  const content = getAllContent().slice(0, 6);
+  // Load all content sorted by time-decayed relevance (score - days old)
+  const now = Date.now();
+  const content = getAllContent()
+    .sort((a: ContentItem, b: ContentItem) => {
+      const scoreA = isPost(a)
+        ? a.freedomRelevanceScore - (now - new Date(a.publishedAt).getTime()) / 864e5
+        : -Infinity;
+      const scoreB = isPost(b)
+        ? b.freedomRelevanceScore - (now - new Date(b.publishedAt).getTime()) / 864e5
+        : -Infinity;
+      if (scoreA !== scoreB) return scoreB - scoreA;
+      return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
+    })
+    .slice(0, 6);
 
   // Get posts with geo data for the hero signal map (up to 15 most recent)
   const heroPosts: Post[] = getAllPosts()
