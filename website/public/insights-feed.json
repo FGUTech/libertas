@@ -7,6 +7,756 @@
   "language": "en-US",
   "items": [
     {
+      "id": "03220b9e-37f6-4f59-87e1-57138ecd1c9f",
+      "url": "https://libertas.fgu.tech/posts/cbp-signs-deal-with-clearview-ai-for-border-surveillance-fac",
+      "title": "CBP Signs Deal with Clearview AI for Border Surveillance Face Recognition",
+      "summary": "US Border Patrol intelligence units will deploy Clearview AI's facial recognition system built on billions of scraped internet images for 'tactical targeting' operations.",
+      "content_text": "US Customs and Border Protection (CBP) signed contract with Clearview AI for facial recognition access\n• System built on billions of images scraped from social media and internet without consent\n• Border Patrol intelligence units will use tool for 'tactical targeting' operations\n• Expands government surveillance capabilities at borders and potentially inland\n• Threatens anonymity of travelers, activists, immigrants, and anyone with online presence\n• Clearview AI previously faced lawsuits and bans over privacy violations\n• Deal represents normalization of mass biometric surveillance infrastructure",
+      "date_published": "2026-02-20T04:42:09.708Z",
+      "date_modified": "2026-02-20T04:42:09.810Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "comms",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.wired.com/story/cbp-signs-clearview-ai-deal-to-use-face-recognition-for-tactical-targeting/",
+          "https://www.wired.com/story/how-to-organize-safely-in-the-age-of-surveillance/"
+        ]
+      }
+    },
+    {
+      "id": "0edbd262-69fd-410a-8d72-d08371a2e2a3",
+      "url": "https://libertas.fgu.tech/posts/eff-calls-on-tech-giants-to-resist-dhs-s-unlawful-surveillan",
+      "title": "EFF Calls on Tech Giants to Resist DHS's Unlawful Surveillance Subpoenas Targeting Activists",
+      "summary": "EFF and ACLU are demanding major tech companies require court orders before complying with DHS subpoenas that target First Amendment activities, after DHS withdrew challenged subpoenas rather than defend them in court.",
+      "content_text": "EFF sent open letter to 10 major tech companies (Meta, Google, Amazon, Apple, Discord, Microsoft, Reddit, SNAP, TikTok, X) demanding stronger resistance to DHS subpoenas\n• DHS has systematically targeted users documenting ICE activities, criticizing government, and attending protests using administrative subpoenas\n• When challenged in court, DHS withdrew subpoenas rather than defend their legality, proving government knows they're unlawful\n• Administrative subpoenas don't require judicial approval, unlike search warrants - companies can legally refuse without court order\n• Google complied with subpoena targeting Cornell PhD student who attended Gaza protest, breaking their own user notification promise\n• DHS subpoenaed Meta to unmask anonymous Instagram accounts tracking ICE raids in California and Pennsylvania\n• EFF demands: require court intervention, maximize user notification, resist gag orders that prevent user notification",
+      "date_published": "2026-02-20T04:41:12.422Z",
+      "date_modified": "2026-02-20T04:41:12.493Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/02/open-letter-tech-companies-protect-your-users-lawless-dhs-subpoenas",
+          "https://www.eff.org/deeplinks/2026/02/free-surveillance-tech-still-comes-high-and-dangerous-cost"
+        ]
+      }
+    },
+    {
+      "id": "158b677e-dd8f-4344-bc77-0f6893743186",
+      "url": "https://libertas.fgu.tech/posts/citizen-lab-reports-on-transnational-repression-methods-to-e",
+      "title": "Citizen Lab Reports on Transnational Repression Methods to EU Parliament",
+      "summary": "Citizen Lab researchers present findings on transnational repression tactics within EU to Parliament committee, recommending EU-wide TNR definition and central knowledge hub for counter-strategies.",
+      "content_text": "Citizen Lab presenting transnational repression (TNR) report to EU Parliament Foreign Affairs Committee on January 28\n• Research team includes senior associate Emile Dirks and independent researchers examining TNR within EU borders\n• Report analyzes perpetrators and methods of cross-border surveillance and harassment targeting activists\n• Key recommendations include developing EU-wide TNR definition and creating central 'knowledge hub'\n• Study addresses systematic methods used to intimidate civil society and digital rights advocates\n• EU Parliament setting suggests potential policy responses to protect activists from state-sponsored harassment\n• Citizen Lab's involvement brings technical expertise on digital surveillance methods to policy discussions",
+      "date_published": "2026-02-20T04:44:03.573Z",
+      "date_modified": "2026-02-20T04:44:03.656Z",
+      "tags": [
+        "surveillance",
+        "activism",
+        "sovereignty",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://citizenlab.ca/perpetrators-and-methods-of-transnational-repression-and-possible-counter-strategies/"
+        ]
+      }
+    },
+    {
+      "id": "2308d3c4-e7fa-4e05-9f87-700df8a47c98",
+      "url": "https://libertas.fgu.tech/posts/new-attacks-on-fiat-shamir-zero-knowledge-proofs-threaten-pr",
+      "title": "New Attacks on Fiat-Shamir Zero-Knowledge Proofs Threaten Privacy Systems",
+      "summary": "Researchers found practical attacks against Fiat-Shamir-based zero-knowledge proof systems, potentially compromising privacy protocols that rely on these cryptographic foundations.",
+      "content_text": "Khovratovich, Rothblum and Soukhanov published 'How to Prove False Statements' showing attacks on Fiat-Shamir\n• Targets GKR15 proof system and similar interactive protocols converted to non-interactive using Fiat-Shamir heuristic\n• Attack exploits 'weak challenges' - specific challenge values that allow proving false statements\n• Affects proof systems used in privacy-preserving applications and blockchain protocols\n• Interactive versions remain secure, but non-interactive Fiat-Shamir conversions vulnerable\n• Hash functions like SHA-3 replacing random oracles create exploitable gaps in security\n• Threatens zero-knowledge systems used for private transactions and anonymous credentials",
+      "date_published": "2026-02-20T04:47:28.975Z",
+      "date_modified": "2026-02-20T04:47:29.072Z",
+      "tags": [
+        "privacy",
+        "censorship-resistance",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 88,
+        "citations": [
+          "https://blog.cryptographyengineering.com/2025/02/19/how-to-prove-false-statements-part-3/",
+          "https://blog.cryptographyengineering.com/2025/02/23/three-questions-about-apple-encryption-and-the-u-k/"
+        ]
+      }
+    },
+    {
+      "id": "298e7721-074e-4a92-a2f6-a4cffaf1cb3d",
+      "url": "https://libertas.fgu.tech/posts/signal-launches-built-in-censorship-circumvention-with-tls-p",
+      "title": "Signal Launches Built-in Censorship Circumvention with TLS Proxy Support",
+      "summary": "Signal deployed built-in censorship circumvention features including TLS proxy support to help users bypass government blocks and maintain private communications.",
+      "content_text": "Signal officially launched built-in censorship circumvention functionality\n• Feature includes support for simple TLS proxy to bypass government blocks\n• Response to recent Signal blocks in multiple countries\n• Designed to help users maintain trusted, safe communication channels\n• TLS proxy can circumvent blocks \"in many circumstances\" according to Signal\n• Feature is now integrated directly into Signal app, no external tools needed\n• Represents Signal's proactive approach to anti-censorship infrastructure",
+      "date_published": "2026-02-20T04:44:53.922Z",
+      "date_modified": "2026-02-20T04:44:54.015Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "comms"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://signal.org/blog/proxy-please/",
+          "https://signal.org/blog/signal-doesnt-recall/"
+        ]
+      }
+    },
+    {
+      "id": "2c6af462-67d4-4c6b-a2df-84b8e2c815ef",
+      "url": "https://libertas.fgu.tech/posts/ooni-documents-media-censorship-during-india-pakistan-confli",
+      "title": "OONI Documents Media Censorship During India-Pakistan Conflict",
+      "summary": "OONI and Digital Rights Foundation documented coordinated media censorship by both India and Pakistan during their May 2025 conflict, with governments blocking news outlets citing 'disinformation' and 'hate speech.'",
+      "content_text": "4-day India-Pakistan conflict in May 2025 triggered coordinated media censorship\n• Both governments blocked multiple news media outlets during the armed conflict\n• Censorship justified as fighting 'disinformation campaigns' and 'hate speech'\n• OONI (Open Observatory of Network Interference) measured and documented the blocks\n• Collaboration with Digital Rights Foundation Pakistan provided on-ground context\n• Report provides technical evidence of information control tactics during crisis\n• Demonstrates how governments use conflict as pretext for expanded censorship\n• OONI's measurement infrastructure captured real-time censorship deployment",
+      "date_published": "2026-02-20T04:43:23.886Z",
+      "date_modified": "2026-02-20T04:43:23.995Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://ooni.org/post/2025-media-censorship-in-india-and-pakistan/"
+        ]
+      }
+    },
+    {
+      "id": "2d069f96-9101-41b9-968d-c7826a708d74",
+      "url": "https://libertas.fgu.tech/posts/signal-announces-new-features-roll-call-blog-series-for-app-",
+      "title": "Signal Announces New Features Roll Call Blog Series for App Improvements",
+      "summary": "Signal launched a periodic blog series to highlight new features and quality of life improvements, emphasizing their commitment to truly private messaging without data harvesting for ads or AI training.",
+      "content_text": "Signal announced new 'New Features Roll Call' periodic blog series\n• Series will highlight multiple features and improvements in single posts\n• Signal reaffirms commitment to private messaging without data harvesting\n• Emphasizes protection against targeted advertising and AI training on user data\n• Focus on improving user experience while maintaining privacy guarantees\n• Represents ongoing effort to communicate development progress to users\n• Reinforces Signal's position as privacy-first alternative to mainstream platforms",
+      "date_published": "2026-02-20T04:44:53.923Z",
+      "date_modified": "2026-02-20T04:44:54.015Z",
+      "tags": [
+        "comms",
+        "censorship-resistance",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 88,
+        "credibility_score": 95,
+        "citations": [
+          "https://signal.org/blog/new-features-fall-2023/",
+          "https://signal.org/blog/proxy-please/"
+        ]
+      }
+    },
+    {
+      "id": "2f396d98-f2b6-439d-acf3-e633a22e1f78",
+      "url": "https://libertas.fgu.tech/posts/india-civil-society-updates-ooni-website-censorship-test-lis",
+      "title": "India Civil Society Updates OONI Website Censorship Test Lists",
+      "summary": "The Bachchao Project and OONI collaborated to update the website list used for monitoring internet censorship in India, strengthening civil society's ability to track government blocking.",
+      "content_text": "The Bachchao Project partnered with OONI to review India's website test list in June 2025\n• Updated list used by OONI Probe to monitor website censorship across India\n• Workshop involved experts updating specific categories of tested websites\n• Part of broader effort to strengthen civil society engagement in internet freedom monitoring\n• Test list maintained by Citizen Lab contains URLs regularly tested for blocking\n• Enhanced monitoring capabilities provide better visibility into government censorship patterns\n• Represents organized approach to documenting digital rights violations in India",
+      "date_published": "2026-02-20T04:43:23.886Z",
+      "date_modified": "2026-02-20T04:43:23.995Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://ooni.org/post/2025-event-india-test-list/"
+        ]
+      }
+    },
+    {
+      "id": "304b26ac-3655-49ec-9379-82ff35dcfed9",
+      "url": "https://libertas.fgu.tech/posts/federal-agents-clone-marine-veteran-s-phone-without-warrant-",
+      "title": "Federal Agents Clone Marine Veteran's Phone Without Warrant After Minneapolis Shooting",
+      "summary": "Federal ICE/Border Patrol agents detained Marine veteran Steven Saari for 6+ hours, forced biometric collection, and cloned his phone without a warrant after he observed the Alex Pretti shooting scene in Minneapolis.",
+      "content_text": "Steven Saari, Iraq/Afghanistan Marine veteran, observed federal shooting scene in Minneapolis\n• Federal agents initially mistook him for undercover officer, then detained him for 6+ hours\n• Agents forced biometric data collection including facial scans and DNA samples\n• Phone was cloned without warrant, consent, or judicial authorization according to Saari\n• Detention included denial of attorney access despite repeated requests\n• Legal experts cite clear Fourth Amendment violations referencing Riley v. California (2014)\n• ACLU notes narrow emergency exceptions don't apply once person and device are secured\n• Released without charges into sub-zero weather with no transportation",
+      "date_published": "2026-02-20T04:47:58.487Z",
+      "date_modified": "2026-02-20T04:47:58.590Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://theintercept.com/2026/02/12/minneapolis-federal-agents-phone-surveillance-alex-pretti/",
+          "https://theintercept.com/2026/02/15/palantir-contract-new-york-city-health-hospitals/"
+        ]
+      }
+    },
+    {
+      "id": "343b8c00-11d1-47c4-a0e1-c6b2555037b7",
+      "url": "https://libertas.fgu.tech/posts/senegal-implements-multi-phase-internet-shutdowns-during-pol",
+      "title": "Senegal Implements Multi-Phase Internet Shutdowns During Political Protests",
+      "summary": "NetBlocks documented systematic internet censorship in Senegal during 2023 protests, including social media blocks, mobile data curfews, and platform-specific restrictions targeting opposition to Ousmane Sonko's sentencing.",
+      "content_text": "Social media platforms (Facebook, Twitter, WhatsApp, Instagram, YouTube, Telegram) restricted starting June 1, 2023\n• Mobile data completely suspended June 4-7 in daily curfew-style pattern (1pm-2am local time)\n• Restrictions triggered by protests over opposition leader Ousmane Sonko's sentencing and arrest\n• Second wave of mobile data curfews began July 31 after Sonko's arrest, lasting at least 6 days\n• TikTok specifically blocked August 2 due to alleged 'hateful and subversive messages'\n• Shutdowns affected major providers Orange (Sonatel) and Free (Tigo) based on 4000 measurements\n• VPNs could circumvent social media blocks but not mobile data shutdowns\n• Government also faced activist cyberattacks that took down state websites on ADIE network",
+      "date_published": "2026-02-20T04:44:28.767Z",
+      "date_modified": "2026-02-20T04:44:28.860Z",
+      "tags": [
+        "censorship-resistance",
+        "comms",
+        "surveillance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 88,
+        "credibility_score": 95,
+        "citations": [
+          "https://netblocks.org/reports/social-media-restricted-and-mobile-internet-cut-in-senegal-amid-political-unrest-W80QkaAK"
+        ]
+      }
+    },
+    {
+      "id": "34baf9a5-300d-433b-afb6-3b6877ab9ec2",
+      "url": "https://libertas.fgu.tech/posts/signal-rolls-out-secure-backups-feature-after-years-of-user-",
+      "title": "Signal Rolls Out Secure Backups Feature After Years of User Requests",
+      "summary": "Signal launches opt-in secure backups in Android beta, addressing the top user request to preserve encrypted message history when phones are lost or damaged.",
+      "content_text": "Signal begins rolling out secure backups feature after extensive development\n• Feature is opt-in and currently available in Android beta version only\n• Addresses most common user request for message history preservation\n• Enables recovery of messages, media, and documents if phone is lost/damaged\n• iOS and Desktop versions planned for near future release\n• Represents significant UX improvement for encrypted communications adoption\n• Maintains Signal's security model while solving usability gap",
+      "date_published": "2026-02-20T04:44:53.922Z",
+      "date_modified": "2026-02-20T04:44:54.015Z",
+      "tags": [
+        "comms",
+        "privacy",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://signal.org/blog/introducing-secure-backups/",
+          "https://signal.org/blog/spqr/"
+        ]
+      }
+    },
+    {
+      "id": "3f6f65d9-adff-4103-8deb-fd9ea634b66b",
+      "url": "https://libertas.fgu.tech/posts/signal-announces-new-president-role-to-focus-on-sustainabili",
+      "title": "Signal Announces New President Role to Focus on Sustainability and Strategy",
+      "summary": "Signal appointed a new President on September 12 to focus on long-term sustainability, strategy, and communications for the encrypted messaging platform.",
+      "content_text": "Signal created new President position filled by longtime board member\n• Role focuses on financial sustainability and strategic planning\n• President will work on broadening Signal's public communications\n• Appointee has been involved with Signal since RedPhone/TextSecure era\n• Signal emphasizes importance of building 'long taproot' for future resilience\n• Organizational restructuring aimed at strengthening both app and organization\n• Move signals Signal's focus on long-term institutional stability",
+      "date_published": "2026-02-20T04:44:53.923Z",
+      "date_modified": "2026-02-20T04:44:54.015Z",
+      "tags": [
+        "comms",
+        "privacy",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://signal.org/blog/announcing-signal-president/",
+          "https://signal.org/blog/pqxdh/"
+        ]
+      }
+    },
+    {
+      "id": "406834a3-b64f-4c14-85b1-eeaa9e4ae06c",
+      "url": "https://libertas.fgu.tech/posts/ukrainian-authorities-investigated-for-surveilling-10-anti-c",
+      "title": "Ukrainian Authorities Investigated for Surveilling 10 Anti-Corruption Journalists",
+      "summary": "Ukrainian police opened criminal investigation after NABU uncovered alleged surveillance of 10 journalists covering corruption, with their personal data found on seized devices from a criminal organization involving government officials.",
+      "content_text": "National Anti-Corruption Bureau of Ukraine (NABU) discovered personal information of 10 investigative journalists on seized digital devices during 15-month 'Operation Midas'\n• Criminal organization allegedly included government officials and businessmen who embezzled energy sector funds and collected intelligence on journalists, politicians, and anti-corruption officials\n• Ukrainian national police launched criminal investigation to determine if journalists' privacy was violated\n• Nine journalists identified include editors from major outlets like Forbes Ukraine, Censor.NET, and investigative platforms Nashi Groshi and Ukrainska Pravda\n• Follows pattern of surveillance targeting Ukrainian investigative journalists - in 2024, SBU's Department for Protection of National Statehood spied on 30 journalists at Bihus.Info\n• Committee to Protect Journalists calls for accountability, noting surveillance threatens corruption investigations\n• Case highlights state-level surveillance infrastructure targeting press freedom advocates",
+      "date_published": "2026-02-20T04:45:22.841Z",
+      "date_modified": "2026-02-20T04:45:22.919Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://cpj.org/2026/02/cpj-calls-for-accountability-in-ukrainian-journalist-surveillance-allegations/"
+        ]
+      }
+    },
+    {
+      "id": "4bfdd0d0-11a6-495c-9fe5-4948c9073167",
+      "url": "https://libertas.fgu.tech/posts/uk-issues-secret-order-for-apple-icloud-encryption-backdoor-",
+      "title": "UK Issues Secret Order for Apple iCloud Encryption Backdoor, Global Impact Feared",
+      "summary": "UK government secretly ordered Apple to backdoor end-to-end encrypted iCloud backups globally. Apple disabled Advanced Data Protection for UK users rather than comply, highlighting encryption policy precedent risks.",
+      "content_text": "UK issued secret Technical Capability Notice demanding backdoor access to Apple's end-to-end encrypted iCloud backups [Washington Post]\n• Order requires 'blanket capability to view fully encrypted material' globally, not just UK users\n• Apple responded by disabling Advanced Data Protection feature for all UK users rather than comply\n• UK's 2016 Investigatory Powers Act enables secret demands that don't distinguish between UK and non-UK customers\n• Apple's lawyers warned in 2024 that UK could become 'arbiter of all cybersecurity defense measures globally'\n• Technical implementation would likely require global backdoor due to operational complexity\n• Sets dangerous precedent where single nation could dictate encryption standards worldwide\n• Compliance could trigger similar demands from China, US, and other governments",
+      "date_published": "2026-02-20T04:47:28.975Z",
+      "date_modified": "2026-02-20T04:47:29.072Z",
+      "tags": [
+        "privacy",
+        "comms",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://blog.cryptographyengineering.com/2025/02/23/three-questions-about-apple-encryption-and-the-u-k/",
+          "https://blog.cryptographyengineering.com/2025/03/01/dear-apple-add-disappearing-messages-to-imessage-right-now/"
+        ]
+      }
+    },
+    {
+      "id": "4c722089-7b43-4f5b-bc6f-b1011e5fa720",
+      "url": "https://libertas.fgu.tech/posts/fbi-asset-helped-run-dark-web-market-for-years-approved-fent",
+      "title": "FBI Asset Helped Run Dark Web Market for Years, Approved Fentanyl Sales",
+      "summary": "FBI secretly controlled a staffer at Incognito dark web market who approved sales of fentanyl-laced drugs, revealing extent of law enforcement infiltration of anonymous marketplaces.",
+      "content_text": "FBI asset was embedded as staffer within Incognito dark web marketplace operations\n• Asset reportedly approved sales of fentanyl-tainted pills over extended period\n• Sales included drugs from dealer linked to confirmed overdose death\n• Reveals FBI's willingness to allow harmful drug sales to maintain operational cover\n• Demonstrates sophisticated law enforcement infiltration of Tor-based markets\n• Raises questions about liability for deaths occurring during FBI operations\n• Shows dark web market operators face threats from both exit scams and law enforcement control",
+      "date_published": "2026-02-20T04:42:09.708Z",
+      "date_modified": "2026-02-20T04:42:09.810Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://www.wired.com/story/an-fbi-asset-helped-run-a-dark-web-site-that-sold-fentanyl-laced-drugs-for-years/",
+          "https://www.wired.com/story/a-10k-bounty-awaits-anyone-who-can-hack-ring-cameras-to-stop-sharing-data-with-amazon/"
+        ]
+      }
+    },
+    {
+      "id": "4db0cd0a-ce7f-4b6e-bfcd-9bdb70df55c2",
+      "url": "https://libertas.fgu.tech/posts/pakistan-implements-total-internet-shutdowns-during-politica",
+      "title": "Pakistan Implements Total Internet Shutdowns During Political Arrests",
+      "summary": "Pakistan disrupted social media platforms and imposed total mobile internet shutdowns following former PM Imran Khan's arrest, with NetBlocks confirming multi-day blackouts affecting fundamental rights.",
+      "content_text": "NetBlocks confirmed disruption of Twitter, Facebook, and YouTube across multiple Pakistani ISPs on May 9, 2023\n• Total internet shutdowns implemented on mobile networks in some regions during former PM Imran Khan's arrest\n• Social media restrictions could be circumvented with VPNs, but mobile broadband shutdowns created total blackouts\n• Disruptions continued for multiple days, intensifying in some areas with Instagram also becoming unreachable\n• Hundreds of protesters reportedly detained during the information blackout period\n• NetBlocks used 120 measurements from 60 vantage points across Pakistan to document the censorship\n• Shutdowns demonstrate government willingness to use internet disruption as tool for political control",
+      "date_published": "2026-02-20T04:44:28.768Z",
+      "date_modified": "2026-02-20T04:44:28.860Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "comms"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 88,
+        "credibility_score": 95,
+        "citations": [
+          "https://netblocks.org/reports/internet-disrupted-in-pakistan-amid-arrest-of-former-pm-imran-khan-JA6RmrAQ"
+        ]
+      }
+    },
+    {
+      "id": "51124d1c-dbbd-4048-acb2-fbfe1fdffe4a",
+      "url": "https://libertas.fgu.tech/posts/russia-s-media-crackdown-27-jailed-355-labeled-foreign-agent",
+      "title": "Russia's Media Crackdown: 27 Jailed, 355 Labeled 'Foreign Agents', 25K+ Sites Blocked",
+      "summary": "CPJ documents unprecedented Russian media repression since 2022: 27 journalists imprisoned, 355 outlets labeled 'foreign agents', and over 25,000 websites blocked, creating urgent need for censorship-resistant tools.",
+      "content_text": "27 journalists imprisoned on criminal charges since Feb 2022 (15 Russian, 10 Ukrainian, 2 American)\n• 355 journalists and media outlets branded 'foreign agents' requiring detailed government reporting\n• 27 exiled journalists sentenced to jail in absentia for continued reporting\n• Over 25,000 websites blocked in connection with war reporting coverage\n• 9 journalists jailed for 'fake' news, 14 for terrorism/extremism charges\n• Recent cases include detention of journalists reporting on protests and opposition activities\n• New laws allow prosecution of 'foreign agents' in absentia for violations committed abroad\n• Pattern shows escalating repression making secure communication tools critical for journalists",
+      "date_published": "2026-02-20T04:45:22.841Z",
+      "date_modified": "2026-02-20T04:45:22.919Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 88,
+        "credibility_score": 92,
+        "citations": [
+          "https://cpj.org/2026/02/russias-repression-record/",
+          "https://cpj.org/2026/02/i-literally-felt-naked-angolan-journalist-teixeira-candido-targeted-with-predator-spyware/"
+        ]
+      }
+    },
+    {
+      "id": "520e24c9-cd8a-4da6-96e1-b19dff9abe9e",
+      "url": "https://libertas.fgu.tech/posts/eff-defends-section-230-as-essential-protection-for-online-s",
+      "title": "EFF Defends Section 230 as Essential Protection for Online Speech and Freedom Tech",
+      "summary": "EFF argues Section 230's immunity protections are critical for free expression online, warning that weakening them would force platforms to pre-censor content and chill speech across the internet.",
+      "content_text": "EFF published op-ed defending Section 230 on its 30th anniversary\n• Section 230 prevents civil suits against online services based on user-generated content\n• Law protects both platforms and users who act as intermediaries (forwarding emails, retweeting)\n• Alternatives like duty-of-care standards would create chilling effects and mass takedowns\n• Notice-and-takedown systems invite abuse and lead to over-censorship\n• AI cannot make legal determinations about content at scale\n• Without immunity, platforms would need to review all content before publication\n• Benefits small platforms and users, not just 'big tech' companies\n• Essential for email, messaging, blogging, and social media to function",
+      "date_published": "2026-02-20T04:41:12.425Z",
+      "date_modified": "2026-02-20T04:41:12.493Z",
+      "tags": [
+        "censorship-resistance",
+        "privacy",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/02/op-ed-weakening-section-230-would-chill-online-speech",
+          "https://www.eff.org/deeplinks/2026/02/its-30th-birthday-section-230-remains-lynchpin-users-speech"
+        ]
+      }
+    },
+    {
+      "id": "5555d4c5-cbd7-4f74-99a1-38d1d204e41a",
+      "url": "https://libertas.fgu.tech/posts/eff-hosts-livestream-on-fighting-flock-alpr-surveillance-in-",
+      "title": "EFF Hosts Livestream on Fighting Flock ALPR Surveillance in Cities",
+      "summary": "EFF is hosting a livestream Feb 19 on fighting Flock automated license plate readers, featuring case studies of successful campaigns that blocked surveillance deployments across US cities.",
+      "content_text": "EFF hosting 'Get the Flock Out of Our City' livestream February 19, 12-1PM Pacific\n• Event focuses on fighting Flock Automated License Plate Reader (ALPR) surveillance systems\n• Speakers include EFF staff, Fight for the Future, and Rural Privacy Coalition representatives\n• Will cover legal implications of ALPR data collection and successful resistance campaigns\n• Cities from Austin to Cambridge to Texas towns have rejected Flock contracts\n• Evidence shows Flock systems used to surveil abortion seekers, protesters, and targeted communities\n• Free event includes live Q&A and will be recorded for later viewing\n• Demonstrates growing organized resistance to municipal surveillance infrastructure",
+      "date_published": "2026-02-20T04:41:12.423Z",
+      "date_modified": "2026-02-20T04:41:12.493Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/02/effecting-change-get-flock-out-our-city",
+          "https://www.eff.org/press/releases/coalition-urges-california-revoke-permits-federal-license-plate-reader-surveillance"
+        ]
+      }
+    },
+    {
+      "id": "55ab09de-8209-459b-b1f9-006d4cdf1efd",
+      "url": "https://libertas.fgu.tech/posts/amazon-ring-expands-biometric-surveillance-network-with-ai-p",
+      "title": "Amazon Ring Expands Biometric Surveillance Network with AI-Powered Pet Tracking",
+      "summary": "Amazon Ring's new 'Search Party' feature uses AI biometrics to scan neighborhood camera networks, expanding surveillance infrastructure with law enforcement partnerships despite privacy violations.",
+      "content_text": "Ring launched 'Search Party' feature that uses AI to scan footage across neighborhood Ring devices for biometric identification\n• Feature builds on existing 'Familiar Faces' face recognition technology, creating potential for combined neighborhood-wide facial surveillance\n• Search Party is enabled by default, requiring users to manually opt-out through app settings\n• Ring maintains partnerships with police surveillance companies Axon and Flock Safety after claiming to end warrantless access in 2024\n• EFF warns this creates infrastructure for pervasive street-level surveillance disguised as pet recovery\n• Ring has history of FTC violations including employee access to customer footage and warrantless police data sharing\n• Feature may violate biometric privacy laws in states requiring explicit consent for facial recognition",
+      "date_published": "2026-02-20T04:41:12.422Z",
+      "date_modified": "2026-02-20T04:41:12.493Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "censorship-resistance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 88,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/02/no-one-including-our-furry-friends-will-be-safer-rings-surveillance-nightmare-0",
+          "https://www.eff.org/deeplinks/2026/02/open-letter-tech-companies-protect-your-users-lawless-dhs-subpoenas"
+        ]
+      }
+    },
+    {
+      "id": "593245c7-9ebd-4753-9eff-37fcb9195d2c",
+      "url": "https://libertas.fgu.tech/posts/ethiopia-blocks-major-social-media-platforms-during-religiou",
+      "title": "Ethiopia Blocks Major Social Media Platforms During Religious Protests",
+      "summary": "Ethiopia restricted Facebook, Telegram, TikTok and YouTube on state ISP Ethio Telecom during anti-government protests over Ethiopian Orthodox Church tensions, with NetBlocks confirming circumvention via VPN services.",
+      "content_text": "NetBlocks confirmed restriction of Facebook, Telegram, TikTok on Feb 9, 2023, YouTube added Feb 10\n• Restrictions implemented on state internet provider Ethio Telecom amid religious protests\n• Protests sparked by government attempt to split Ethiopian Orthodox Tewhado Church (EOTC)\n• Users migrated to YouTube after initial platforms blocked, prompting additional restrictions\n• NetBlocks measured disruption from 20 vantage points showing targeted platform blocking\n• VPN services confirmed as effective circumvention method for these restrictions\n• Pattern consistent with Ethiopia's history of social media blocks during protests\n• Authorities typically implement restrictions without public announcement",
+      "date_published": "2026-02-20T04:44:28.769Z",
+      "date_modified": "2026-02-20T04:44:28.860Z",
+      "tags": [
+        "censorship-resistance",
+        "comms",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 90,
+        "citations": [
+          "https://netblocks.org/reports/social-media-and-messaging-apps-restricted-in-ethiopia-amid-religious-tensions-DA3RJz8W"
+        ]
+      }
+    },
+    {
+      "id": "61c663d6-9f28-45e2-b9df-a8a3089d6737",
+      "url": "https://libertas.fgu.tech/posts/ooni-launches-2025-fundraising-campaign-amid-global-censorsh",
+      "title": "OONI Launches 2025 Fundraising Campaign Amid Global Censorship Surge",
+      "summary": "Internet freedom measurement organization OONI launches fundraising campaign as they document increasing censorship of social media, messaging apps, and news sites across 10+ countries in 2024.",
+      "content_text": "OONI (Open Observatory of Network Interference) launched end-of-year fundraising campaign\n• Organization documented surge in internet censorship globally throughout 2024\n• Social media blocks observed in Togo, Cameroon, and Tanzania\n• Messaging apps (Telegram, WhatsApp) blocked in Kenya, Vietnam, Nepal, and Iran\n• Independent news media websites blocked in India, Egypt, and Jordan\n• Censorship often coincides with protests and elections, limiting critical communication\n• OONI provides essential measurement tools for documenting network interference",
+      "date_published": "2026-02-20T04:43:23.885Z",
+      "date_modified": "2026-02-20T04:43:23.995Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://ooni.org/post/2025-fundraising-campaign/"
+        ]
+      }
+    },
+    {
+      "id": "64dc96bf-9f5b-46fe-82b0-7146b8febfc0",
+      "url": "https://libertas.fgu.tech/posts/fbi-counterterrorism-unit-targets-climate-activists-under-tr",
+      "title": "FBI Counterterrorism Unit Targets Climate Activists Under Trump's NSPM-7 Directive",
+      "summary": "FBI counterterrorism agents visited former Extinction Rebellion member's home for questioning, marking escalation in Trump administration's targeting of activist groups as domestic terrorists under NSPM-7.",
+      "content_text": "FBI Joint Terrorism Task Force agents questioned former Extinction Rebellion NYC member at his home\n• Agents traveled hundreds of miles and made multiple contact attempts over weeks\n• Investigation linked to Trump's NSPM-7 directive targeting progressive groups for 'anti-fascism' beliefs\n• Similar visits occurred to climate activists in Boston area in March 2024\n• Internal FBI report shows active NSPM-7 investigations in 27 locations including New York\n• Extinction Rebellion NYC conducts only public, non-violent direct actions typically charged as misdemeanors\n• Assistant AG Harmeet Dhillon threatened investigation after group protested Rep. Suozzi's ICE funding vote\n• Pattern suggests systematic federal surveillance of climate and anti-ICE activists nationwide",
+      "date_published": "2026-02-20T04:47:58.487Z",
+      "date_modified": "2026-02-20T04:47:58.590Z",
+      "tags": [
+        "censorship-resistance",
+        "privacy",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 88,
+        "credibility_score": 85,
+        "citations": [
+          "https://theintercept.com/2026/02/12/fbi-counterterror-extinction-rebellion/",
+          "https://theintercept.com/2026/02/16/daniel-sanchez-estrada-prairieland-trial-zines/"
+        ]
+      }
+    },
+    {
+      "id": "6759aed4-5084-462b-8d11-cabaeccbe779",
+      "url": "https://libertas.fgu.tech/posts/ooni-establishes-foundation-advances-global-censorship-detec",
+      "title": "OONI Establishes Foundation, Advances Global Censorship Detection Tools in 2024",
+      "summary": "OONI launched a new foundation and significantly upgraded its censorship detection toolkit with OONI Run v2, multiplatform apps, and enhanced data analysis capabilities to support global internet freedom monitoring.",
+      "content_text": "Open Observatory of Network Interference Foundation (OONI) ETS officially established in Rome, Italy in February 2024\n• Launched OONI Run v2 for coordinated censorship measurement campaigns\n• Developing multiplatform OONI Probe app to expand measurement coverage\n• Enhanced OONI Explorer with thematic censorship findings presentation\n• Introduced new experiments and expanded testing model for richer input analysis\n• Advanced data analysis methods for better censorship detection accuracy\n• Conducted OONI Partner Gathering 2024 in Malaysia with global research community\n• Published research reports and censorship findings accessible via OONI Explorer\n• Expanded localization efforts including Test Lists Editor and Outreach Kit\n• Strengthened partnerships and conducted workshops globally to build measurement capacity",
+      "date_published": "2026-02-20T04:43:23.888Z",
+      "date_modified": "2026-02-20T04:43:23.995Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://ooni.org/post/2024-year-in-review/"
+        ]
+      }
+    },
+    {
+      "id": "6816c7c0-4515-4c74-a9a0-30db18c4097c",
+      "url": "https://libertas.fgu.tech/posts/brazil-blocks-telegram-over-refusal-to-provide-user-data-on-",
+      "title": "Brazil Blocks Telegram Over Refusal to Provide User Data on Far-Right Groups",
+      "summary": "Brazil restricted Telegram on major ISPs after the messaging platform refused court orders to provide user data from alleged far-right groups planning school attacks.",
+      "content_text": "NetBlocks confirmed Telegram restriction on major Brazilian ISPs Claro and Vivo as of April 27, 2023\n• Court ordered suspension after Telegram failed to provide complete user data from two group chats allegedly planning school attacks\n• Federal Police requested data as part of investigations into far-right and neo-Nazi online activity\n• Service remains accessible on smaller networks and via VPN circumvention\n• Brazil has history of Telegram restrictions (2015, 2016) despite generally open internet policy\n• Block affects Telegram frontends and backends on networks AS28573 and AS18881\n• NetBlocks opposes messaging restrictions due to disproportionate impact on public communication rights",
+      "date_published": "2026-02-20T04:44:28.768Z",
+      "date_modified": "2026-02-20T04:44:28.860Z",
+      "tags": [
+        "censorship-resistance",
+        "comms",
+        "privacy",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 90,
+        "citations": [
+          "https://netblocks.org/reports/telegram-restricted-in-brazil-after-refusal-to-supply-user-data-to-authorities-JBZxOr86"
+        ]
+      }
+    },
+    {
+      "id": "6a80adc6-e97c-4137-995b-d30217939637",
+      "url": "https://libertas.fgu.tech/posts/eff-backs-state-laws-to-sue-federal-agents-for-constitutiona",
+      "title": "EFF Backs State Laws to Sue Federal Agents for Constitutional Violations",
+      "summary": "EFF supports California S.B. 747 and similar state laws enabling lawsuits against federal agents who violate constitutional rights, as Supreme Court has gutted federal protections while ICE/CBP violate filming rights.",
+      "content_text": "ICE/CBP agents are violating First Amendment right to record law enforcement, including before killing Alex Pretti and Renee Good in Minnesota\n• Supreme Court has systematically weakened Bivens doctrine that allowed suing federal agents for constitutional violations since 1971\n• No federal statute exists to sue federal officials (unlike 42 U.S.C. § 1983 for state/local officials from Reconstruction era)\n• California S.B. 747 ('No Kings Act') would create state-level remedy to sue federal agents for constitutional violations\n• EFF argues state laws don't violate Supremacy Clause because they enforce federal constitutional rights\n• Legal accountability systems encourage agents to follow law while impunity encourages violations\n• Model legislation from Protect Democracy called 'Universal Constitutional Remedies Act' spreading to other states",
+      "date_published": "2026-02-20T04:41:12.425Z",
+      "date_modified": "2026-02-20T04:41:12.493Z",
+      "tags": [
+        "censorship-resistance",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/02/protecting-our-right-sue-federal-agents-who-violate-constitution",
+          "https://www.eff.org/deeplinks/2026/02/op-ed-weakening-section-230-would-chill-online-speech"
+        ]
+      }
+    },
+    {
+      "id": "6cb51944-108e-47a2-b2cd-391e179c3e56",
+      "url": "https://libertas.fgu.tech/posts/ooni-develops-anonymous-credential-system-for-censorship-mea",
+      "title": "OONI Develops Anonymous Credential System for Censorship Measurement Privacy",
+      "summary": "OONI is integrating anonymous credentials into OONI Probe to increase trust in censorship measurements while preserving user privacy and anonymity.",
+      "content_text": "OONI developing anonymous credential system for OONI Probe censorship measurement tool\n• Goal is to enrich measurement data with probe properties while preserving user privacy\n• System aims to increase trust in OONI's global censorship measurement dataset\n• Part of broader effort to enhance security without requiring user identification\n• OONI published comprehensive academic literature review of anonymous credential systems\n• Critical for protecting activists and researchers measuring internet censorship\n• Could set precedent for privacy-preserving verification in freedom tech tools",
+      "date_published": "2026-02-20T04:43:23.888Z",
+      "date_modified": "2026-02-20T04:43:23.995Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "censorship-resistance",
+        "identity"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://ooni.org/post/2025-requirements-for-oonis-anonymous-credentials/"
+        ]
+      }
+    },
+    {
+      "id": "702220f9-fc32-45d4-8428-9362245ff947",
+      "url": "https://libertas.fgu.tech/posts/iran-implements-complete-internet-shutdown-during-protests-2",
+      "title": "Iran Implements Complete Internet Shutdown During Protests, 2,403+ Killed",
+      "summary": "Iran shut down all internet and mobile connectivity nationwide on Jan 8, 2026 amid currency protests. Over 2,400 protesters killed, 18,000+ arrested as authorities jam even satellite internet to conceal violence.",
+      "content_text": "Complete nationwide internet shutdown began Jan 8, 2026 following currency collapse protests starting Dec 28, 2025\n• Cloudflare data confirms internet traffic dropped to near zero at 18:45 UTC on Jan 8\n• At least 2,403 protesters killed and 18,000+ arrested as of Jan 13, 2026 [HRANA]\n• Authorities initially throttled internet by 35% and blocked circumvention tools before total shutdown\n• Satellite internet services also disrupted through signal jamming and equipment confiscation\n• Tech activists and internet freedom community achieved limited connectivity restoration during shutdown\n• Pattern matches previous Iran shutdowns during 2019 and 2022 protests that preceded mass violence\n• Access Now and 40+ organizations demand immediate restoration and accountability",
+      "date_published": "2026-02-20T04:42:41.228Z",
+      "date_modified": "2026-02-20T04:42:41.330Z",
+      "tags": [
+        "censorship-resistance",
+        "comms",
+        "activism",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 90,
+        "citations": [
+          "https://www.accessnow.org/press-release/keepiton-iran-digital-darkness-human-rights-abuses/",
+          "https://www.accessnow.org/press-release/civil-society-coalition-launches-campaign-calling-for-direct-to-cell-satellite-connectivity-amid-irans-internet-shutdowns/"
+        ]
+      }
+    },
+    {
+      "id": "71ed164f-309e-4d02-9b0a-62c384dd8fae",
+      "url": "https://libertas.fgu.tech/posts/tails-7-0-rc2-released-with-debian-13-updated-privacy-tools",
+      "title": "Tails 7.0 RC2 Released with Debian 13, Updated Privacy Tools",
+      "summary": "Tails privacy OS releases second release candidate based on Debian 13, updating core freedom tech tools like Tor, Electrum Bitcoin wallet, and OnionShare file sharing.",
+      "content_text": "Tails 7.0~rc2 is second release candidate, official release planned September 18 or October 16\n• First Tails version based on Debian 13 (Trixie) and GNOME 48\n• Increases minimum RAM requirements from 2GB to 3GB (affects <2% of users)\n• Updates Tor client to 0.4.8.17 and Linux kernel to 6.12.41 for better hardware support\n• Updates Electrum Bitcoin wallet from 4.3.4 to 4.5.8\n• Updates OnionShare anonymous file sharing from 2.6.2 to 2.6.3\n• Updates KeePassXC password manager from 2.7.4 to 2.7.10\n• Removes aircrack-ng wireless security tool and other legacy software\n• Known issue: slower boot times to be fixed in final release",
+      "date_published": "2026-02-20T04:46:59.701Z",
+      "date_modified": "2026-02-20T04:46:59.844Z",
+      "tags": [
+        "privacy",
+        "censorship-resistance",
+        "activism",
+        "comms"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://tails.net/news/test_7.0-rc2/",
+          "https://tails.net/news/version_7.0/"
+        ]
+      }
+    },
+    {
+      "id": "7680af9b-33f0-42ab-a533-88d51d9efa8b",
+      "url": "https://libertas.fgu.tech/posts/ooni-and-digitally-right-document-network-shutdowns-during-b",
+      "title": "OONI and Digitally Right Document Network Shutdowns During Bangladesh Protests",
+      "summary": "OONI collaborated with local digital rights group Digitally Right to document internet shutdowns and censorship during recent Bangladesh protests, providing crucial evidence of network interference.",
+      "content_text": "Open Observatory of Network Interference (OONI) partnered with Bangladesh-based Digitally Right\n• Study documented network interference and shutdowns during Bangladesh protests\n• Research involved Network Measurement Fellows tracking disruptions across Bangladesh\n• Key contributors include Tohidul Islam Raso (Digitally Right) and Maria Xynou (OONI)\n• Journalist Suhadha Afrin from Prothom Alo contributed to research and documentation\n• Study combines technical measurement data with on-ground reporting\n• Operators and service providers provided interviews and information\n• Report provides evidence base for documenting government censorship tactics",
+      "date_published": "2026-02-20T04:43:23.887Z",
+      "date_modified": "2026-02-20T04:43:23.995Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://ooni.org/post/2025-bangladesh-report/"
+        ]
+      }
+    },
+    {
+      "id": "7938582c-ea2a-438c-8e43-ad802a418885",
+      "url": "https://libertas.fgu.tech/posts/cpj-report-58-of-59-palestinian-journalists-report-torture-i",
+      "title": "CPJ Report: 58 of 59 Palestinian Journalists Report Torture in Israeli Detention",
+      "summary": "Committee to Protect Journalists releasing report Feb 19 documenting systematic torture claims from 58 of 59 Palestinian journalists detained by Israel since Oct 2023.",
+      "content_text": "CPJ conducted in-depth interviews with 59 Palestinian journalists released since October 7, 2023\n• 58 of 59 journalists reported experiencing torture, abuse, or violence in Israeli custody\n• Alleged abuses include beatings, starvation, medical neglect, sexual violence including rape\n• Journalists describe stress positions, prolonged high-volume sound exposure, and threats\n• CPJ reviewed supporting evidence including photographs, medical reports, and legal documents\n• Systematic targeting of journalists represents critical threat to information freedom\n• Report demonstrates how physical suppression of media workers enables information control\n• Pattern suggests coordinated effort to silence Palestinian media coverage",
+      "date_published": "2026-02-20T04:45:22.842Z",
+      "date_modified": "2026-02-20T04:45:22.919Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://cpj.org/2026/02/cpj-to-release-report-documenting-palestinian-journalists-claims-of-torture-in-israeli-prisons/",
+          "https://cpj.org/2026/02/russias-repression-record/"
+        ]
+      }
+    },
+    {
+      "id": "7a5ed08c-a83a-420d-8622-8ac1148b5845",
+      "url": "https://libertas.fgu.tech/posts/tails-7-4-adds-persistent-language-settings-drops-bittorrent",
+      "title": "Tails 7.4 Adds Persistent Language Settings, Drops BitTorrent Support",
+      "summary": "Tails 7.4 introduces persistent language/keyboard settings and removes BitTorrent downloads due to security concerns with v1 to v2 transition.",
+      "content_text": "New feature allows saving language and keyboard layout settings to USB stick for automatic application on restart\n• Language/keyboard data stored unencrypted on USB to enable easier Persistent Storage passphrase entry\n• Updated Tor Browser to 15.0.4 and Thunderbird to 140.6.0 for latest security patches\n• Linux kernel updated to 6.12.63 for improved hardware support and security\n• BitTorrent download support removed due to security concerns with v1 format during transition to v2\n• Fixed critical bugs including VeraCrypt desktop crashes and Kleopatra GPG file handling\n• Automatic upgrades available from Tails 7.0+ with manual upgrade fallback option",
+      "date_published": "2026-02-20T04:46:59.700Z",
+      "date_modified": "2026-02-20T04:46:59.844Z",
+      "tags": [
+        "privacy",
+        "censorship-resistance",
+        "comms",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 95,
+        "citations": [
+          "https://tails.net/news/version_7.4/"
+        ]
+      }
+    },
+    {
+      "id": "7c290576-2381-4e47-b17e-9f1c6a53cad7",
+      "url": "https://libertas.fgu.tech/posts/signal-announces-quantum-resistant-protocol-upgrade-pqxdh",
+      "title": "Signal Announces Quantum-Resistant Protocol Upgrade (PQXDH)",
+      "summary": "Signal Protocol introduces PQXDH upgrade, adding quantum-resistant cryptography layer to protect against future quantum computers that could break current encryption.",
+      "content_text": "Signal Protocol announces first quantum resistance upgrade called PQXDH\n• Upgrades existing X3DH key agreement protocol with quantum-resistant protections\n• Signal Protocol used by billions globally across Signal and other messaging platforms\n• Addresses threat of future quantum computers breaking current encryption standards\n• Technical whitepaper and specifications published for developer implementation\n• Represents proactive step toward post-quantum cryptography for secure communications\n• Critical for long-term protection of activist and dissident communications",
+      "date_published": "2026-02-20T04:44:53.923Z",
+      "date_modified": "2026-02-20T04:44:54.015Z",
+      "tags": [
+        "privacy",
+        "identity",
+        "comms"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 95,
+        "citations": [
+          "https://signal.org/blog/pqxdh/",
+          "https://signal.org/blog/phone-number-privacy-usernames/"
+        ]
+      }
+    },
+    {
+      "id": "7c4cc50d-936c-455a-a17b-e49baef5e6e1",
+      "url": "https://libertas.fgu.tech/posts/ooni-launches-enhanced-censorship-detection-platform-seeks-c",
+      "title": "OONI Launches Enhanced Censorship Detection Platform, Seeks Community Feedback",
+      "summary": "OONI has released major platform upgrades including new censorship findings tools and improved methodologies, and is requesting community feedback to evaluate impact.",
+      "content_text": "OONI released new Explorer Censorship Findings platform for better censorship event monitoring\n• Added thematic censorship pages for targeted analysis of specific censorship patterns\n• Published new research reports based on OONI measurement data\n• Implemented improved throttling detection methodology for more accurate measurements\n• Deployed OONI Pipeline v5 with enhanced data analysis capabilities\n• Seeking community feedback to evaluate impact and guide future improvements\n• Enhancements aim to better support internet freedom community responses to censorship",
+      "date_published": "2026-02-20T04:43:23.885Z",
+      "date_modified": "2026-02-20T04:43:23.995Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://ooni.org/post/2025-ooni-survey/"
+        ]
+      }
+    },
+    {
       "id": "80b25858-ef8c-4b9e-aea5-69bcb1fbc282",
       "url": "https://libertas.fgu.tech/posts/silent-link-bitcoin-native-esim-service-bypasses-sim-swap-at",
       "title": "Silent.Link: Bitcoin-Native eSIM Service Bypasses SIM-Swap Attacks and State Censorship",
@@ -26,6 +776,161 @@
         "credibility_score": 82,
         "citations": [
           "https://bitcoinmagazine.com/business/how-silent-link-solves-sim-swap-risks-and-roaming-hassles-for-traveling-bitcoiners"
+        ]
+      }
+    },
+    {
+      "id": "8106db9b-7f37-4e60-b14e-cb784f8e816a",
+      "url": "https://libertas.fgu.tech/posts/open-measurement-gathering-hosts-public-ama-on-internet-cens",
+      "title": "Open Measurement Gathering Hosts Public AMA on Internet Censorship Detection Tools",
+      "summary": "Key internet measurement organizations (OONI, Censored Planet, IODA, Measurement Lab) held public AMA sharing project updates and future plans for detecting censorship and network interference.",
+      "content_text": "Open Measurement Gathering (OMG) held public virtual event June 25, 2025\n• Featured four major internet measurement organizations: OONI, Censored Planet, IODA, and Measurement Lab\n• Each group presented 30-minute updates on platforms, tools, and datasets\n• Event aimed to gather community feedback on censorship detection infrastructure\n• Third OMG convening, following two previous private meetings with public reports\n• Organizations provide critical data on internet shutdowns and censorship globally\n• Community engagement suggests coordination among measurement infrastructure providers",
+      "date_published": "2026-02-20T04:43:23.887Z",
+      "date_modified": "2026-02-20T04:43:23.995Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://ooni.org/post/2025-omg/"
+        ]
+      }
+    },
+    {
+      "id": "831cf072-5aa9-46c7-9f20-5c17874933cf",
+      "url": "https://libertas.fgu.tech/posts/meta-considers-facial-recognition-for-smart-glasses-despite-",
+      "title": "Meta Considers Facial Recognition for Smart Glasses Despite $7B Privacy Settlement History",
+      "summary": "Meta is reportedly planning facial recognition for smart glasses, timing launch during political distractions. EFF warns of mass surveillance risks and billions in legal costs.",
+      "content_text": "Meta considering facial recognition for smart glasses according to internal documents [New York Times]\n• Company plans launch \"during dynamic political environment\" to avoid civil society scrutiny\n• Would require collecting faceprints from everyone in camera view without consent\n• Meta previously paid nearly $7 billion in facial recognition privacy settlements\n• Dozens of state laws require affirmative consent for biometric data collection\n• EFF warns of mass surveillance, data breach, and discrimination risks\n• Public backlash already seen with ICE's Mobile Fortify and Amazon Ring facial recognition",
+      "date_published": "2026-02-20T04:41:12.420Z",
+      "date_modified": "2026-02-20T04:41:12.493Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/02/seven-billion-reasons-facebook-abandon-its-face-recognition-plans",
+          "https://www.eff.org/press/releases/new-report-helps-journalists-dig-deeper-police-surveillance-technology"
+        ]
+      }
+    },
+    {
+      "id": "85ab4ef5-d1f0-45ce-b91e-0cc30459b5f5",
+      "url": "https://libertas.fgu.tech/posts/ooni-documents-ongoing-x-twitter-blocking-across-tanzania-ne",
+      "title": "OONI Documents Ongoing X/Twitter Blocking Across Tanzania Networks",
+      "summary": "Technical measurements confirm X (Twitter) has been blocked across major Tanzanian ISPs since May 2025, with network-level censorship affecting multiple autonomous systems.",
+      "content_text": "OONI data confirms X/Twitter blocking across Tanzania since May 2025\n• Censorship implemented across major ISPs: Airtel Tanzania, Vodacom, Tanzania Telecom, and Zanzibar Connections\n• Technical analysis shows DNS and IP-based blocking methods being deployed\n• Network variances suggest coordinated but technically different implementation approaches\n• Blocking affects both twitter.com and x.com domains\n• Government censorship targets major social media platform used for information sharing\n• OONI's measurements provide technical evidence for circumvention tool development",
+      "date_published": "2026-02-20T04:43:23.886Z",
+      "date_modified": "2026-02-20T04:43:23.995Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://ooni.org/post/2025-tanzania-blocked-twitter/"
+        ]
+      }
+    },
+    {
+      "id": "881e0648-7321-4a0a-bf11-9072d8028f58",
+      "url": "https://libertas.fgu.tech/posts/journalist-safety-expert-highlights-digital-security-tools-f",
+      "title": "Journalist Safety Expert Highlights Digital Security Tools for High-Risk Environments",
+      "summary": "Free Press Unlimited's Pablo Arcuri outlines digital security priorities for journalists, emphasizing phone protection and tools like VPNs while connecting online disinformation to physical violence.",
+      "content_text": "Pablo Arcuri from Free Press Unlimited interviewed on multi-dimensional threats to journalists\n• Primary digital advice: treat phones as most sensitive equipment, avoid suspicious apps/links\n• State-sponsored spyware like Pegasus still often requires user interaction to deploy\n• Recommends VPNs, password managers, and Totem Project for journalist digital safety training\n• SLAPPs (Strategic Lawsuits Against Public Participation) used as harassment tool in democracies\n• Online disinformation campaigns serve as precursors to real-world violence against journalists\n• 90% global impunity rate for journalist murders according to UNESCO data\n• Women journalists face disproportionate gender-based online harassment and physical threats",
+      "date_published": "2026-02-20T04:48:25.974Z",
+      "date_modified": "2026-02-20T04:48:26.121Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "censorship-resistance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 72,
+        "credibility_score": 85,
+        "citations": [
+          "https://globalvoices.org/2026/02/18/impunity-and-unsolved-crimes-against-journalists-kill-public-trust/"
+        ]
+      }
+    },
+    {
+      "id": "8ca0db6b-3d0f-4a13-bd80-58cec5b7db2c",
+      "url": "https://libertas.fgu.tech/posts/uk-court-orders-saudi-arabia-to-pay-3m-to-dissident-targeted",
+      "title": "UK Court Orders Saudi Arabia to Pay £3m to Dissident Targeted with Pegasus Spyware",
+      "summary": "UK court awarded £3m to Saudi dissident Ghanem Al-Masarir after Citizen Lab proved his phones were infected with NSO Group's Pegasus spyware by Saudi operators, setting precedent for transnational surveillance accountability.",
+      "content_text": "UK court ordered Saudi Arabia to pay £3m to London-based dissident Ghanem Al-Masarir in January 2026\n• Al-Masarir's iPhones were infected with NSO Group's Pegasus spyware by Saudi operator 'KINGDOM'\n• Citizen Lab researcher Bill Marczak provided key forensic evidence proving spyware infection\n• Damages awarded for psychological harm, lost earnings, and physical assault by Saudi agents\n• Court judgment establishes legal precedent for accountability in transnational digital repression\n• Case demonstrates sophisticated state-sponsored surveillance targeting dissidents abroad\n• Citizen Lab initially discovered KINGDOM's targeting of Saudi dissidents in 2018\n• Al-Masarir is a Saudi activist and political YouTuber operating from London",
+      "date_published": "2026-02-20T04:44:03.573Z",
+      "date_modified": "2026-02-20T04:44:03.656Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 88,
+        "credibility_score": 95,
+        "citations": [
+          "https://citizenlab.ca/saudi-arabia-ordered-to-pay-3m-to-london-dissident-over-pegasus-spying/"
+        ]
+      }
+    },
+    {
+      "id": "8df56334-04a0-4335-af56-bd7c22c2ad2b",
+      "url": "https://libertas.fgu.tech/posts/uganda-faces-election-internet-shutdown-threat-despite-coali",
+      "title": "Uganda Faces Election Internet Shutdown Threat Despite Coalition Warning",
+      "summary": "Digital rights coalition warns Uganda's government against internet shutdowns ahead of 2026 elections, citing escalating media crackdown and concerning signals including VPN threats and Starlink blocking directive.",
+      "content_text": "345-org #KeepItOn coalition appeals to President Museveni to maintain internet access during January 15, 2026 elections\n• Uganda Communications Commission (UCC) threatened VPN users accessing blocked Facebook platform\n• UCC directed Starlink to disable services weeks before elections, raising connectivity concerns\n• Electoral Commission officials suggested internet shutdown may be necessary due to 'uncontrollable' misinformation\n• Government escalating crackdown includes journalist accreditation revocations at NTV Uganda and Daily Monitor\n• Uganda has history of election shutdowns: 4-day blackout in 2021, social media blocks in 2016\n• Facebook remains blocked since 2021 elections; government previously blocked 100+ VPNs\n• Pattern indicates high likelihood of digital restrictions during politically sensitive period",
+      "date_published": "2026-02-20T04:42:41.229Z",
+      "date_modified": "2026-02-20T04:42:41.330Z",
+      "tags": [
+        "censorship-resistance",
+        "comms",
+        "surveillance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 88,
+        "credibility_score": 92,
+        "citations": [
+          "https://www.accessnow.org/press-release/keepiton-uganda-internet-access-2026-elections/",
+          "https://www.accessnow.org/press-release/keepiton-coalition-raise-the-alarm-on-potential-shutdown-during-upcoming-elections-in-uganda/"
+        ]
+      }
+    },
+    {
+      "id": "8e9ccf48-0642-477a-b3e8-41420983e4ec",
+      "url": "https://libertas.fgu.tech/posts/mtn-congo-accused-of-enabling-state-surveillance-in-gang-cra",
+      "title": "MTN Congo Accused of Enabling State Surveillance in Gang Crackdown",
+      "summary": "Access Now alleges MTN Congo sent mass SMS bounty messages for security forces targeting suspected gang members, potentially violating human rights commitments and data protection laws.",
+      "content_text": "Congo's Presidential Security (DGSP) conducting crackdown on 'Kuluna' gang members since September 2024, reportedly with extrajudicial killings\n• MTN Congo allegedly sent mass SMS messages offering rewards up to $1,760 USD for information on suspected gang members\n• Access Now claims this violates MTN's UN Global Compact commitments and Global Network Initiative membership obligations\n• MTN Congo has 3.3M subscribers (over half the market), making mass surveillance capability significant\n• Alleged violations of Congo's 2019 data protection law requiring impact assessments for high-risk processing\n• DGSP operating outside legal mandate - tasked with presidential security, not public order maintenance\n• Human rights groups CAD and OCDH documented extrajudicial killings during the operation\n• Access Now demanding independent investigation into MTN's data sharing practices with authorities",
+      "date_published": "2026-02-20T04:42:41.229Z",
+      "date_modified": "2026-02-20T04:42:41.330Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 88,
+        "citations": [
+          "https://www.accessnow.org/press-release/mtn-group-must-commission-an-independent-investigation-into-potential-human-rights-violations/",
+          "https://www.accessnow.org/press-release/mtn-group-must-answer-for-dangerous-bounty-sms-campaign-in-the-republic-of-congo/"
         ]
       }
     },
@@ -52,6 +957,95 @@
       }
     },
     {
+      "id": "90808e25-de68-4535-8a93-1374635df44e",
+      "url": "https://libertas.fgu.tech/posts/tails-7-4-2-emergency-release-fixes-critical-kernel-vulnerab",
+      "title": "Tails 7.4.2 Emergency Release Fixes Critical Kernel Vulnerabilities",
+      "summary": "Tails issued emergency update fixing Linux kernel vulnerabilities that could allow privilege escalation and potential deanonymization of users.",
+      "content_text": "Emergency release addresses DSA 6126-1, multiple critical Linux kernel security vulnerabilities\n• Vulnerabilities could allow applications to gain admin privileges and potentially deanonymize users\n• Linux kernel updated to version 6.12.69 to patch security flaws\n• Attack vector requires chaining with other exploits, making it complex but possible for advanced adversaries\n• Tails team notes governments or hacking firms could potentially exploit these vulnerabilities\n• Additional fixes include Wi-Fi settings, Electrum wallet crashes, and language persistence issues\n• Automatic upgrades available from Tails 7.0+, manual upgrade option provided for compatibility issues",
+      "date_published": "2026-02-20T04:46:59.699Z",
+      "date_modified": "2026-02-20T04:46:59.844Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "censorship-resistance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 95,
+        "citations": [
+          "https://tails.net/news/version_7.4.2/",
+          "https://lists.debian.org/debian-security-announce/2026/msg00035.html"
+        ]
+      }
+    },
+    {
+      "id": "90c6a186-a4a4-46a5-84f3-8b167da0a4c2",
+      "url": "https://libertas.fgu.tech/posts/proton-guide-technical-tools-to-resist-ai-training-data-scra",
+      "title": "Proton Guide: Technical Tools to Resist AI Training Data Scraping",
+      "summary": "Privacy company Proton outlines practical methods for creators to protect their work from AI training scraping, including pixel-level cloaking tools, data poisoning techniques, and GDPR opt-outs.",
+      "content_text": "Major AI companies like OpenAI and Meta scrape public internet content without creator consent for model training\n• Meta admits to scraping all public Facebook/Instagram posts back to 2007 for AI training\n• Technical protection tools available: Glaze (pixel cloaking) and Nightshade (data poisoning)\n• Glaze makes subtle pixel changes that confuse AI models while remaining invisible to humans\n• Nightshade introduces poison data causing AI to mislearn associations (cars as cats, etc.)\n• Have I Been Trained website lets creators check if work appears in known AI datasets\n• EU residents can leverage GDPR to demand exclusion from AI training datasets\n• Research shows current protections may weaken as AI systems evolve\n• Double standard: AI companies claim fair use for scraping but treat outputs as proprietary",
+      "date_published": "2026-02-20T04:46:35.080Z",
+      "date_modified": "2026-02-20T04:46:35.147Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "identity"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 72,
+        "credibility_score": 85,
+        "citations": [
+          "https://proton.me/blog/stop-ai-art",
+          "https://proton.me/blog/discord-global-age-verification"
+        ]
+      }
+    },
+    {
+      "id": "9447f7e2-5259-4a30-b544-55b8de5fd6bf",
+      "url": "https://libertas.fgu.tech/posts/mauritania-imposed-6-day-mobile-internet-shutdown-after-pris",
+      "title": "Mauritania Imposed 6-Day Mobile Internet Shutdown After Prison Break",
+      "summary": "Mauritania cut mobile internet nationwide for 6 days following a violent prison escape, affecting businesses and demonstrating how infrastructure-level shutdowns bypass VPN protections.",
+      "content_text": "Four high-risk prisoners escaped Nouakchott Civil Prison on March 5, 2023, killing two guards\n• Government responded with nation-scale mobile internet shutdown lasting 6 days (March 6-12)\n• Fixed-line internet remained available while mobile data was completely cut\n• VPN services ineffective against this infrastructure-level disruption method\n• Local businesses severely impacted, especially those relying on mobile payment apps\n• NetBlocks confirmed shutdown using technical measurement data from Google Transparency\n• Mauritania has history of election-related internet shutdowns (June 2019)\n• Service restored after authorities reported fugitives killed or captured",
+      "date_published": "2026-02-20T04:44:28.769Z",
+      "date_modified": "2026-02-20T04:44:28.860Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "comms"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 88,
+        "citations": [
+          "https://netblocks.org/reports/mobile-internet-disrupted-in-mauritania-following-prison-break-3An41by2"
+        ]
+      }
+    },
+    {
+      "id": "949ec023-c73f-4cc5-8a75-1110212ac217",
+      "url": "https://libertas.fgu.tech/posts/ethiopia-revokes-reuters-credentials-after-sudan-training-ca",
+      "title": "Ethiopia Revokes Reuters Credentials After Sudan Training Camp Investigation",
+      "summary": "Ethiopia revoked Reuters journalists' accreditation following report alleging secret UAE-financed camp training Sudan's RSF fighters, part of broader media crackdown ahead of June elections.",
+      "content_text": "Ethiopian Media Authority revoked accreditation of three Reuters journalists on February 14, 2026\n• Action followed Reuters February 10 investigation alleging Ethiopia hosts UAE-financed camp training Sudan's RSF fighters\n• Reuters barred from covering African Union summit in Addis Ababa\n• Part of escalating press restrictions including suspension of Deutsche Welle correspondents in October\n• Wazema Radio's license revoked in January for reporting against 'national interest'\n• Crackdown intensifying ahead of June 2026 general election amid ongoing regional conflicts\n• Pattern demonstrates government using regulatory power to silence critical reporting on sensitive geopolitical activities",
+      "date_published": "2026-02-20T04:45:22.842Z",
+      "date_modified": "2026-02-20T04:45:22.919Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 85,
+        "citations": [
+          "https://cpj.org/2026/02/ethiopia-revokes-reuters-journalists-accreditation-following-investigative-report/",
+          "https://cpj.org/2026/02/cpj-to-release-report-documenting-palestinian-journalists-claims-of-torture-in-israeli-prisons/"
+        ]
+      }
+    },
+    {
       "id": "94ee8536-dc7a-40c5-97dc-f5a0fc3e4bb3",
       "url": "https://libertas.fgu.tech/posts/wisconsin-vpn-ban-bill-passes-assembly-senate-vote-imminent",
       "title": "Wisconsin VPN Ban Bill Passes Assembly, Senate Vote Imminent",
@@ -69,6 +1063,27 @@
         "credibility_score": 95,
         "citations": [
           "https://www.eff.org/deeplinks/2026/02/eff-wisconsin-legislature-vpn-bans-are-still-terrible-idea"
+        ]
+      }
+    },
+    {
+      "id": "97e5fefa-a832-4fe4-934c-e038b22743ea",
+      "url": "https://libertas.fgu.tech/posts/ooni-publishes-complete-security-audit-report-for-censorship",
+      "title": "OONI Publishes Complete Security Audit Report for Censorship Measurement Tools",
+      "summary": "OONI publicly released a comprehensive security audit report of its internet censorship measurement platform, conducted by Radically Open Security with OTF support.",
+      "content_text": "OONI published full penetration test report conducted by Radically Open Security\n• Security audit ran from August 5 to October 18, 2024 with Open Technology Fund support\n• Crystal box penetration test evaluated core components of OONI's censorship measurement software\n• Complete transparency approach - full detailed report made publicly available\n• Audit focused on ensuring high security standards for tools used by activists and researchers\n• Part of OONI's broader commitment to secure, high-quality free software development\n• Critical for user safety given OONI's use in repressive environments worldwide",
+      "date_published": "2026-02-20T04:43:23.886Z",
+      "date_modified": "2026-02-20T04:43:23.995Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 95,
+        "citations": [
+          "https://ooni.org/post/ooni-security-audit/"
         ]
       }
     },
@@ -95,6 +1110,116 @@
       }
     },
     {
+      "id": "9cf2efe6-2602-4751-b478-23c2c491f5e9",
+      "url": "https://libertas.fgu.tech/posts/ooni-launches-community-survey-to-improve-censorship-measure",
+      "title": "OONI Launches Community Survey to Improve Censorship Measurement Tools",
+      "summary": "OONI, the global internet censorship measurement network, is surveying its 50+ partner organizations and hundreds of thousands of users to improve their tools and outreach.",
+      "content_text": "OONI (Open Observatory of Network Interference) launched community survey\n• Network includes over 50 partner organizations worldwide\n• Hundreds of thousands of OONI Probe users contribute measurements globally\n• Survey aims to improve outreach, tools, and documentation\n• Community contributes through censorship measurements, localization, and research\n• Feedback will inform development of critical internet freedom infrastructure\n• OONI remains primary source for documenting global internet censorship",
+      "date_published": "2026-02-20T04:43:23.889Z",
+      "date_modified": "2026-02-20T04:43:23.995Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 95,
+        "citations": [
+          "https://ooni.org/post/2025-community-survey/"
+        ]
+      }
+    },
+    {
+      "id": "9d8580cb-9557-4e54-863f-b0dfc9222f06",
+      "url": "https://libertas.fgu.tech/posts/ooni-explorer-launches-thematic-censorship-tracking-pages",
+      "title": "OONI Explorer Launches Thematic Censorship Tracking Pages",
+      "summary": "OONI Explorer released new dedicated pages tracking global censorship of social media, news media, and circumvention tools with charts and data-driven reports.",
+      "content_text": "OONI Explorer launched three new thematic censorship pages with interactive charts\n• New pages track blocking of social media, news media, and circumvention tools globally\n• Data comes from OONI's measurement network - the world's largest open censorship dataset\n• Pages provide country-specific blocking data and trends over time\n• Tool enables researchers and activists to identify censorship patterns\n• Represents significant improvement in accessibility of censorship intelligence\n• Previously this data required manual analysis of raw OONI measurements",
+      "date_published": "2026-02-20T04:43:23.887Z",
+      "date_modified": "2026-02-20T04:43:23.995Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "comms"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://ooni.org/post/2025-ooni-explorer-thematic-censorship-pages/"
+        ]
+      }
+    },
+    {
+      "id": "a0eefc57-c6d4-4510-8690-0915e3dd1569",
+      "url": "https://libertas.fgu.tech/posts/eff-releases-guide-for-journalists-to-investigate-police-sur",
+      "title": "EFF Releases Guide for Journalists to Investigate Police Surveillance Tech",
+      "summary": "EFF, Center for Just Journalism, and IPVM released 'Selling Safety' report to help journalists cut through police tech marketing hype and report accurately on surveillance tools' costs, effectiveness, and privacy impacts.",
+      "content_text": "New 'Selling Safety' report published by EFF, Center for Just Journalism, and IPVM\n• Guide helps journalists investigate police surveillance technology claims and marketing\n• Report exposes how police tech companies manufacture appearance of effectiveness without measurement\n• Industry described as 'unregulated, unexamined, and consequential' with profit motive driving adoption\n• Provides tools for journalists to ask better questions about costs, privacy, and accountability\n• Addresses pattern of unsubstantiated claims from surveillance technology vendors\n• Complements EFF's existing Street-Level Surveillance hub and Atlas of Surveillance resources",
+      "date_published": "2026-02-20T04:41:12.420Z",
+      "date_modified": "2026-02-20T04:41:12.493Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 82,
+        "credibility_score": 88,
+        "citations": [
+          "https://www.eff.org/press/releases/new-report-helps-journalists-dig-deeper-police-surveillance-technology",
+          "https://www.eff.org/deeplinks/2026/02/op-ed-san-jose-can-protect-immigrants-ending-flock-surveillance-system"
+        ]
+      }
+    },
+    {
+      "id": "a50720ee-6695-4461-abff-cf92e0393193",
+      "url": "https://libertas.fgu.tech/posts/rights-groups-demand-accountability-from-applogic-networks-f",
+      "title": "Rights Groups Demand Accountability from AppLogic Networks for Egypt Censorship Infrastructure",
+      "summary": "Human rights coalition demands transparency from AppLogic Networks (formerly Sandvine) over withdrawal from Egypt, where its deep packet inspection tech blocked 630+ websites including independent media outlets.",
+      "content_text": "10 human rights orgs demand AppLogic Networks provide evidence of complete withdrawal from Egypt by Feb 26, 2026\n• AppLogic's deep packet inspection technology used to block 630+ websites in Egypt, targeting independent media\n• Company committed to exiting Egypt by Dec 31, 2025 as condition for removal from US Commerce Entity List\n• Recent blocks continue: Brussels-based Zawia3 outlet blocked Feb 20, 2025, along with backup domain\n• Technical research from Citizen Lab and Egyptian orgs like Masaar documented mass censorship traceable to AppLogic tech\n• AppLogic cancelled engagement meetings with Egyptian civil society 'at last minute' citing vague safety concerns\n• Coalition questions whether promised 1% profit donations for remediation reached affected Egyptian organizations\n• Demands include evidence of hardware removal, plans for stakeholder engagement, and disclosure of remediation funds",
+      "date_published": "2026-02-20T04:42:41.227Z",
+      "date_modified": "2026-02-20T04:42:41.330Z",
+      "tags": [
+        "surveillance",
+        "censorship-resistance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 88,
+        "citations": [
+          "https://www.accessnow.org/press-release/human-rights-abuses-facilitated-by-applogic-networks-in-egypt/"
+        ]
+      }
+    },
+    {
+      "id": "a6ab8258-725b-4efe-ab0b-7ccdc55ccd4a",
+      "url": "https://libertas.fgu.tech/posts/tor-project-launches-free-the-internet-fundraising-campaign-",
+      "title": "Tor Project Launches 'Free the Internet' Fundraising Campaign with Matched Donations",
+      "summary": "Tor Project announces fundraising campaign highlighting real-world censorship resistance use cases in Turkmenistan, Russia, and Egypt, with donations matched 1:1 up to $250K.",
+      "content_text": "Tor Project launches 'FREE THE INTERNET' fundraising campaign with Power Up Privacy matching donations 1:1 up to $250,000\n• Turkmen.news uses Tor to provide safe internet access in heavily censored Turkmenistan\n• Freedom of the Press Foundation relies on Tor as backbone for SecureDrop journalist communication tool\n• Users in Russia and Egypt access encrypted email services like Tuta Mail via Tor Browser to bypass blocks\n• Campaign runs for three months with merchandise incentives for donations over $25\n• Two 'State of the Onion' virtual events scheduled for November 12 and December 10\n• December 10 event coincides with UN Universal Declaration of Human Rights anniversary",
+      "date_published": "2026-02-20T04:46:59.700Z",
+      "date_modified": "2026-02-20T04:46:59.844Z",
+      "tags": [
+        "censorship-resistance",
+        "privacy",
+        "surveillance",
+        "comms",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://tails.net/news/free_the_internet/"
+        ]
+      }
+    },
+    {
       "id": "a734d6e8-40b9-4e08-b07c-6d955d91fce9",
       "url": "https://libertas.fgu.tech/posts/philippines-red-tags-environmental-groups-freezes-bank-accou",
       "title": "Philippines 'Red-Tags' Environmental Groups, Freezes Bank Accounts of Solar/Disaster Relief NGOs",
@@ -113,6 +1238,607 @@
         "credibility_score": 85,
         "citations": [
           "https://globalvoices.org/2026/02/19/environmental-defenders-labelled-terrorists-for-bringing-renewable-power-to-philippine-communities/"
+        ]
+      }
+    },
+    {
+      "id": "a84d9f8d-9def-4bf2-854c-b99875e79b44",
+      "url": "https://libertas.fgu.tech/posts/ooni-advances-probe-security-with-anonymous-digital-transact",
+      "title": "OONI Advances Probe Security with Anonymous Digital Transaction Framework",
+      "summary": "OONI published research on enhancing probe security using principles from David Chaum's anonymous transaction systems, enabling censorship measurement without user identification.",
+      "content_text": "OONI released new research on probe security without identification requirements\n• Work builds on David Chaum's foundational anonymous transaction system concepts\n• Addresses critical need for privacy-preserving internet censorship measurement\n• Enables users to contribute to censorship research without exposing their identity\n• Research supported by Taiwan's Open Culture Foundation (OCF) community\n• Post available in Mandarin, indicating focus on Chinese-speaking regions\n• Framework could protect activists and researchers in high-surveillance environments",
+      "date_published": "2026-02-20T04:43:23.888Z",
+      "date_modified": "2026-02-20T04:43:23.995Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "identity",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://ooni.org/post/2025-probe-security-without-identification/"
+        ]
+      }
+    },
+    {
+      "id": "afafa9f8-8ab6-438c-8957-9a4bd1bed1bc",
+      "url": "https://libertas.fgu.tech/posts/ai-tools-create-new-censorship-information-access-risks",
+      "title": "AI Tools Create New Censorship & Information Access Risks",
+      "summary": "AccessNow analysis shows LLMs pose availability risks through data deletion, service disruptions, and content refusals. DeepSeek censors Tiananmen Square topics, while open-source models enable bias removal.",
+      "content_text": "AccessNow examines how AI/LLMs impact information availability and system access\n• German professor lost two years of data when ChatGPT deleted all chats after settings change\n• AI agents can disrupt availability by wiping data or making unauthorized system changes\n• Chinese DeepSeek R1 refuses to answer questions about Tiananmen Square and sensitive topics\n• Perplexity AI successfully retrained open-source DeepSeek model to remove censorship\n• Google Bard allegedly refused all questions containing Gaza/IDF keywords\n• Closed-source models from Google/OpenAI lack transparency in their refusal mechanisms\n• Open-source AI models enable customization and reduce dependency on corporate gatekeepers",
+      "date_published": "2026-02-20T04:42:41.227Z",
+      "date_modified": "2026-02-20T04:42:41.330Z",
+      "tags": [
+        "censorship-resistance",
+        "privacy",
+        "surveillance",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://www.accessnow.org/artificial-insecurity-access-and-availability/?pk_campaign=feed&#038;pk_kwd=artificial-insecurity-access-and-availability"
+        ]
+      }
+    },
+    {
+      "id": "b666bf47-39f2-45a6-a936-b37123d28b7e",
+      "url": "https://libertas.fgu.tech/posts/ooni-documents-telegram-blocks-during-kenya-exams-supports-l",
+      "title": "OONI Documents Telegram Blocks During Kenya Exams, Supports Legal Challenge",
+      "summary": "OONI provided technical evidence of Telegram blocking during Kenya's national exams in 2023 and 2024, which is being used in a High Court case challenging internet shutdowns.",
+      "content_text": "OONI documented systematic Telegram blocking during Kenya's KCSE national exams in November 2023 and November 2024\n• Blocking targeted Telegram website, web interface, and app endpoints across multiple ISPs\n• Technical measurements show coordinated censorship likely aimed at preventing exam cheating\n• OONI's data is being used as evidence in High Court of Kenya petition filed in May 2025\n• Case represents landmark public interest litigation challenging unlawful internet disruptions\n• Demonstrates how technical measurement organizations can support legal resistance to censorship\n• BAKE and 6 other organizations are challenging the shutdowns in court",
+      "date_published": "2026-02-20T04:43:23.887Z",
+      "date_modified": "2026-02-20T04:43:23.995Z",
+      "tags": [
+        "censorship-resistance",
+        "comms",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://ooni.org/post/2025-kenya-blocked-telegram-kcse-exams/"
+        ]
+      }
+    },
+    {
+      "id": "b6dc8106-2d19-47b9-9ecb-4512d71bf1f5",
+      "url": "https://libertas.fgu.tech/posts/human-rights-groups-challenge-sandvine-rebrand-after-entity-",
+      "title": "Human Rights Groups Challenge Sandvine Rebrand After Entity List Removal",
+      "summary": "Access Now demands AppLogic Networks (formerly Sandvine) prove its surveillance tech reforms after U.S. removed company from Entity List, citing lack of transparency on Egypt exit and failure to remedy DPI abuses.",
+      "content_text": "U.S. Commerce Dept removed AppLogic Networks (formerly Sandvine) from Entity List in October 2024 citing announced reforms\n• Company was blacklisted in February 2024 for enabling Egyptian mass surveillance via deep packet inspection (DPI) technology\n• DPI equipment was used for web monitoring, censorship, and spyware injection against dissidents and human rights defenders\n• AppLogic committed to exiting Egypt by December 31, 2025 and consulting with civil society groups\n• Access Now reports company has failed to engage with Egyptian civil society despite outreach attempts\n• No transparent confirmation provided of complete Egypt exit or remediation plans for remaining equipment\n• Human rights groups warn Entity List removal based on PR statements rather than verifiable actions\n• Case highlights fragility of accountability mechanisms for surveillance tech companies",
+      "date_published": "2026-02-20T04:42:41.227Z",
+      "date_modified": "2026-02-20T04:42:41.330Z",
+      "tags": [
+        "surveillance",
+        "censorship-resistance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 88,
+        "citations": [
+          "https://www.accessnow.org/press-release/from-sandvine-to-applogic-networks-a-rebrand-doesnt-mean-reform/"
+        ]
+      }
+    },
+    {
+      "id": "b853f11b-0e89-455b-aacf-9ca8b49041d8",
+      "url": "https://libertas.fgu.tech/posts/ooni-data-shows-iran-blocks-women-s-rights-websites-since-20",
+      "title": "OONI Data Shows Iran Blocks Women's Rights Websites Since 2014",
+      "summary": "OONI measurement data documents systematic blocking of women's rights websites in Iran since at least 2014, with censorship intensifying despite 2022 Women, Life, Freedom protests.",
+      "content_text": "OONI network measurements confirm Iran blocks women's rights websites since 2014\n• Censorship has persisted despite widespread Women, Life, Freedom protests following Mahsa Jina Amini's death in 2022\n• UN reports that repression of women in Iran has intensified in recent years\n• OONI Explorer data provides technical evidence of systematic information control\n• Women's rights websites join broader pattern of severely restricted information access in Iran\n• Demonstrates need for censorship circumvention tools targeting gender-focused activism\n• Technical measurement data offers verifiable documentation of state repression",
+      "date_published": "2026-02-20T04:43:23.885Z",
+      "date_modified": "2026-02-20T04:43:23.995Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://ooni.org/post/2025-iran-censorship-womens-rights/"
+        ]
+      }
+    },
+    {
+      "id": "bd404b79-ace0-4535-8be7-52e6df30c504",
+      "url": "https://libertas.fgu.tech/posts/ooni-study-reveals-inconsistent-dns-censorship-infrastructur",
+      "title": "OONI Study Reveals Inconsistent DNS Censorship Infrastructure Across French ISPs",
+      "summary": "OONI analysis shows France implementing widespread website blocking via DNS manipulation across ISPs, but with inconsistent enforcement that creates escalation risks toward more invasive censorship methods.",
+      "content_text": "OONI researchers documented extensive DNS-based website blocking across France's four major commercial ISPs in fall 2024\n• Censorship targets include copyright infringement, sports streaming, gambling, pornography, Russian organizations, and cybercrime sites\n• Implementation is highly inconsistent between ISPs, with different providers blocking different subsets of court-ordered sites\n• Blocking operates at DNS resolver level, making it easily bypassable with alternative DNS services\n• French courts and administrative agencies have expanded blocking powers through multiple recent laws and court orders\n• TikTok was blocked in New Caledonia during civil unrest, showing political application of censorship infrastructure\n• Researchers warn that easily-bypassed current system may drive authorities toward more invasive deep packet inspection\n• Study provides detailed legal framework analysis covering both judiciary and administrative censorship authorities",
+      "date_published": "2026-02-20T04:43:23.888Z",
+      "date_modified": "2026-02-20T04:43:23.995Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://ooni.org/post/2025-france-report/",
+          "https://censxres.fr/"
+        ]
+      }
+    },
+    {
+      "id": "bfab5197-bac8-4340-8a8f-3b4d08bf431b",
+      "url": "https://libertas.fgu.tech/posts/mtn-enabled-gov-t-bounty-sms-system-linked-to-extrajudicial-",
+      "title": "MTN Enabled Gov't Bounty SMS System Linked to Extrajudicial Killings in Congo",
+      "summary": "Access Now demands MTN Group investigate how Congo's presidential security forces used MTN's network to send bounty SMS messages offering rewards for informants, amid reports of summary executions.",
+      "content_text": "Congo's DGSP (presidential security) sent SMS bounties via MTN Congo offering money for gang informants\n• Campaign linked to crackdown beginning Sept 2024 that reportedly includes summary executions\n• DGSP operates outside legal mandate - tasked with presidential security, not public order\n• Access Now filed open letter demanding MTN Group investigate data breach and law enforcement practices\n• Telco infrastructure weaponized for state surveillance enabling arbitrary detentions and disappearances\n• MTN Group as majority shareholder of MTN Congo must review subscriber data sharing policies\n• Case demonstrates how mobile networks can become surveillance tools for authoritarian governments\n• Congo law specifically requires telcos to protect subscriber data - MTN allegedly violated duty of care",
+      "date_published": "2026-02-20T04:42:41.229Z",
+      "date_modified": "2026-02-20T04:42:41.330Z",
+      "tags": [
+        "censorship-resistance",
+        "comms",
+        "surveillance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 95,
+        "credibility_score": 85,
+        "citations": [
+          "https://www.accessnow.org/press-release/mtn-group-must-answer-for-dangerous-bounty-sms-campaign-in-the-republic-of-congo/",
+          "https://www.accessnow.org/press-release/keepiton-uganda-internet-access-2026-elections/"
+        ]
+      }
+    },
+    {
+      "id": "c77d745d-f3a8-4620-907c-5a11e59e77ad",
+      "url": "https://libertas.fgu.tech/posts/turkey-throttles-social-media-during-political-protests-ooni",
+      "title": "Turkey Throttles Social Media During Political Protests - OONI Documents Technical Evidence",
+      "summary": "OONI documented systematic throttling of major social media platforms and blocking of Telegram during March 2025 protests in Turkey following arrest of Istanbul mayor Ekrem İmamoğlu.",
+      "content_text": "Protests erupted across Turkey on March 19, 2025 following arrest of Istanbul mayor and presidential candidate Ekrem İmamoğlu\n• OONI network measurements detected throttling of Twitter/X, Facebook, Instagram, WhatsApp, YouTube, TikTok, and Signal\n• Telegram access was completely blocked rather than throttled\n• YouTube specifically blocked via DNS on TurkNet (AS12735) network\n• Interference occurred across multiple ISPs during both March and September 2025 protest periods\n• Technical evidence shows coordinated government response using different censorship techniques\n• Pattern demonstrates sophisticated approach: throttling vs blocking based on platform",
+      "date_published": "2026-02-20T04:43:23.886Z",
+      "date_modified": "2026-02-20T04:43:23.995Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "comms"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://ooni.org/post/2025-turkiye-throttling-social-media/"
+        ]
+      }
+    },
+    {
+      "id": "c7a86bf2-3b77-417d-9349-cc46a2b85019",
+      "url": "https://libertas.fgu.tech/posts/dave-farber-grandfather-of-internet-and-eff-board-member-die",
+      "title": "Dave Farber, 'Grandfather of Internet' and EFF Board Member, Dies at 91",
+      "summary": "Dave Farber, longest-serving EFF Board member and internet pioneer known as the 'Grandfather of the Internet,' has died at 91, ending decades of advocacy for digital rights and open source protections.",
+      "content_text": "Dave Farber, 91, died in Tokyo where he was Distinguished Professor at Keio University\n• Served as EFF's longest-tenured Board member since early 1990s, before WWW creation\n• Known as 'Grandfather of the Internet' for foundational contributions to internet development\n• Managed influential 'Interesting People' email list connecting internet pioneers globally\n• Served as Chief Technologist at U.S. Federal Communications Commission (2000-2001)\n• Mentored generations of internet developers and open source community members\n• Consistently advocated for user rights and developer liberties throughout internet's growth\n• Provided credibility and institutional knowledge to EFF's mission for over 30 years",
+      "date_published": "2026-02-20T04:41:12.424Z",
+      "date_modified": "2026-02-20T04:41:12.493Z",
+      "tags": [
+        "censorship-resistance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/02/rip-dave-farber-eff-board-member-and-friend",
+          "https://www.eff.org/deeplinks/2026/02/internet-still-works-wikipedia-defends-its-editors"
+        ]
+      }
+    },
+    {
+      "id": "c8a1afbe-07e2-4c2f-95e5-901519770b8e",
+      "url": "https://libertas.fgu.tech/posts/cryptographers-find-practical-attacks-on-fiat-shamir-zero-kn",
+      "title": "Cryptographers Find Practical Attacks on Fiat-Shamir Zero-Knowledge Proofs",
+      "summary": "New research reveals vulnerabilities in Fiat-Shamir heuristic used in ZK proof systems, showing how attackers can potentially prove false statements in widely-used cryptographic protocols.",
+      "content_text": "Paper by Khovratovich, Rothblum and Soukhanov demonstrates practical attacks on Fiat-Shamir heuristic\n• Fiat-Shamir transforms interactive ZK proofs into non-interactive ones using hash functions\n• Vulnerability allows proving false statements in systems that appear secure\n• Attack exploits gap between theoretical security models and real-world implementations\n• Affects verifiable computation systems commonly used in blockchain and privacy applications\n• Research highlights ongoing tension between practical crypto deployment and theoretical guarantees\n• Issue stems from replacing random oracles with actual hash functions in practice",
+      "date_published": "2026-02-20T04:47:28.976Z",
+      "date_modified": "2026-02-20T04:47:29.072Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "censorship-resistance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 92,
+        "citations": [
+          "https://blog.cryptographyengineering.com/2025/02/06/how-to-prove-false-statements-part-2/",
+          "https://blog.cryptographyengineering.com/2025/02/12/u-k-asks-to-backdoor-icloud-backup-encryption/"
+        ]
+      }
+    },
+    {
+      "id": "c9622235-4f98-4628-bd54-c2400bfe0e8f",
+      "url": "https://libertas.fgu.tech/posts/suriname-blocks-meta-platforms-during-cost-of-living-protest",
+      "title": "Suriname Blocks Meta Platforms During Cost of Living Protests",
+      "summary": "Suriname restricted Facebook, WhatsApp, Instagram and Messenger on government network Telesur during February 2023 protests when demonstrators stormed parliament over economic crisis.",
+      "content_text": "NetBlocks confirmed restriction of Meta platforms (Facebook, WhatsApp, Instagram, Messenger) in Suriname February 17-18, 2023\n• Blocks implemented on government-owned telecom network Telesur (AS27775) during cost of living protests\n• Protesters stormed National Assembly in Paramaribo amid economic crisis and currency devaluation\n• Social media restrictions lasted from Friday evening through Saturday morning\n• NetBlocks verified disruption using real-time metrics from 100 measurement points across 10 vantage points\n• VPN services confirmed as effective workaround for circumventing restrictions\n• Exceptional measure for Suriname, which lacks significant internet censorship history\n• Government condemned protests and established task force to manage situation",
+      "date_published": "2026-02-20T04:44:28.769Z",
+      "date_modified": "2026-02-20T04:44:28.860Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://netblocks.org/reports/social-media-restricted-in-suriname-amid-cost-of-living-protests-QAdPQNAl"
+        ]
+      }
+    },
+    {
+      "id": "cd8a9271-adf6-4744-92a4-58e2e0fd9357",
+      "url": "https://libertas.fgu.tech/posts/dhs-using-administrative-subpoenas-to-demand-user-data-from-",
+      "title": "DHS Using Administrative Subpoenas to Demand User Data from Tech Companies",
+      "summary": "Department of Homeland Security is abusing administrative subpoenas to force tech companies like Google to hand over names and locations of users who criticize government online.",
+      "content_text": "DHS demanding user names, locations, and personal data from tech companies using administrative subpoenas\n• Targeting users who criticize government online according to EFF reporting\n• Administrative subpoenas bypass normal court oversight processes unlike traditional warrants\n• EFF providing guidance to tech companies on how to resist these requests\n• Part of broader pattern including ICE facial recognition surveillance programs\n• EFF campaigning for expanded end-to-end encryption protections in response\n• Section 230 protections identified as critical defense for online speech rights",
+      "date_published": "2026-02-20T04:41:12.421Z",
+      "date_modified": "2026-02-20T04:41:12.493Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "censorship-resistance",
+        "identity"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 82,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/02/homeland-security-wants-names-effector-383",
+          "https://www.eff.org/deeplinks/2026/02/discord-voluntarily-pushes-mandatory-age-verification-despite-recent-data-breach"
+        ]
+      }
+    },
+    {
+      "id": "d4adc707-20a6-47db-be26-e658eb9af0ad",
+      "url": "https://libertas.fgu.tech/posts/guinea-blocks-social-media-during-protests-army-called-in",
+      "title": "Guinea Blocks Social Media During Protests, Army Called In",
+      "summary": "Guinea restricted Facebook, WhatsApp, Instagram, TikTok and other platforms on May 17, 2023 as authorities deployed army to suppress planned protests.",
+      "content_text": "NetBlocks confirmed social media restrictions across Guinea on May 17, 2023\n• Facebook, WhatsApp, Instagram, TikTok blocked on Orange and MTN networks\n• Restrictions coincide with government calling in army to assist police against protests\n• Measurements taken from 860 data points across 18 vantage points in Guinea\n• NetBlocks notes VPN services can circumvent these government censorship measures\n• Government cites maintaining public order as justification for restrictions\n• Pattern follows previous internet shutdowns during Guinea's elections and political events\n• Disruptions impact fundamental rights including freedom of expression and assembly",
+      "date_published": "2026-02-20T04:44:28.768Z",
+      "date_modified": "2026-02-20T04:44:28.860Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "comms"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 88,
+        "citations": [
+          "https://netblocks.org/reports/social-media-restricted-in-guinea-amid-political-unrest-dAmJ4EB9"
+        ]
+      }
+    },
+    {
+      "id": "d8141c8f-b9ca-44de-b825-f512a63dc844",
+      "url": "https://libertas.fgu.tech/posts/netblocks-documents-systematic-internet-shutdowns-during-sch",
+      "title": "NetBlocks Documents Systematic Internet Shutdowns During School Exams Across MENA",
+      "summary": "NetBlocks documented coordinated internet shutdowns and platform restrictions across Kenya, Iraq, Syria, and Algeria during 2023 school exams, revealing systematic government censorship tactics.",
+      "content_text": "Kenya selectively blocked Telegram during morning exam hours in November 2023, targeting exam paper leak channels\n• Iraq implemented 4-hour daily internet shutdowns (4-8 AM) during June and August exam periods, excluding Kurdistan region\n• Syria conducted 4-hour morning internet blackouts in May, June, and August coinciding with exam schedules\n• Algeria throttled internet connectivity twice daily matching morning/afternoon exam times during June Baccalaureate exams\n• Kurdistan region operated independently with 2-hour shutdowns (6-8 AM) during high school exams\n• Kenya authorities arrested 6 Telegram channel administrators running exam leak groups with 18,000+ members\n• Shutdowns demonstrate government capability for rapid, coordinated digital infrastructure control\n• Pattern reveals systematic use of internet disruption as policy tool across multiple authoritarian contexts",
+      "date_published": "2026-02-20T04:44:28.767Z",
+      "date_modified": "2026-02-20T04:44:28.860Z",
+      "tags": [
+        "censorship-resistance",
+        "comms",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://netblocks.org/reports/internet-disruptions-registered-during-school-exams-JBQV2Lyo"
+        ]
+      }
+    },
+    {
+      "id": "d8c41170-0480-45d5-b206-0454569a8e83",
+      "url": "https://libertas.fgu.tech/posts/wikipedia-defends-volunteer-editors-against-rising-takedown-",
+      "title": "Wikipedia Defends Volunteer Editors Against Rising Takedown Demands",
+      "summary": "Wikimedia Foundation received 664 takedown requests in 2024 (up from 304 over two years a decade ago) but granted only 4, defending community-governed content creation through Section 230 protections.",
+      "content_text": "Takedown requests against Wikipedia content jumped from 304 over two years (decade ago) to 664 in 2024 alone\n• Wikimedia Foundation granted only 4 of the 664 requests, defending volunteer editors through expanded legal team\n• Section 230 enables community dispute resolution rather than centralized content moderation\n• Without Section 230, potential litigation costs could bankrupt the platform (~$20k minimum per court filing)\n• EU lacks Section 230 protections; Digital Services Act allows courts to order content removal via injunctions\n• German court rejected Wikipedia sources as insufficient, demanding state media over trade publications\n• EU litigation costs range from $30k per hearing to hundreds of thousands for complex cases\n• Pseudonymous editing protection critical for sensitive topics like political history and religious content",
+      "date_published": "2026-02-20T04:41:12.424Z",
+      "date_modified": "2026-02-20T04:41:12.493Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/02/internet-still-works-wikipedia-defends-its-editors",
+          "https://www.eff.org/deeplinks/2026/02/effecting-change-get-flock-out-our-city"
+        ]
+      }
+    },
+    {
+      "id": "da5f4e32-6c58-4696-b543-df0b9940e232",
+      "url": "https://libertas.fgu.tech/posts/access-now-report-ai-tools-systematically-undermine-data-con",
+      "title": "Access Now Report: AI Tools Systematically Undermine Data Confidentiality and Privacy",
+      "summary": "Major AI platforms like ChatGPT and Meta AI are compromising user privacy through data breaches, lack of encryption, and forced integration that breaks E2EE promises.",
+      "content_text": "Access Now published comprehensive analysis of AI security vulnerabilities threatening confidentiality\n• DeepSeek exposed publicly accessible database with chat histories and sensitive user data [Wiz Research]\n• OpenAI suffered breach exposing names, emails, location data via third-party analytics provider\n• Meta AI integration in WhatsApp breaks E2EE by default - summaries pass through Meta servers unencrypted\n• Urban Cyber Security VPN extensions promising 'AI protection' actually harvested 8 million users' LLM data\n• New York Times lawsuit seeks access to 20+ million private ChatGPT conversations for copyright case\n• Most AI chatbots lack end-to-end encryption as standard feature, leaving chat histories exposed\n• Emerging 'agentic AI' with system-level access creates new attack vectors via prompt injection\n• Report frames issues using CIA triad (Confidentiality-Integrity-Availability) security model",
+      "date_published": "2026-02-20T04:42:41.228Z",
+      "date_modified": "2026-02-20T04:42:41.330Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "comms",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://www.accessnow.org/artificial-insecurity-compromising-confidentality/?pk_campaign=feed&#038;pk_kwd=artificial-insecurity-compromising-confidentality"
+        ]
+      }
+    },
+    {
+      "id": "db79b8e9-4bbd-47dd-a045-7c26aa1c800e",
+      "url": "https://libertas.fgu.tech/posts/iraq-blocks-telegram-nationwide-kurdistan-region-remains-onl",
+      "title": "Iraq Blocks Telegram Nationwide, Kurdistan Region Remains Online",
+      "summary": "Iraq restricted Telegram across most of the country citing national security and leaked personal data concerns, while the autonomous Kurdistan region maintains access.",
+      "content_text": "Iraq's Ministry of Communications ordered Telegram suspension on August 6, 2023 over national security and personal data concerns\n• NetBlocks confirmed restriction affects major ISPs Zain and Earthlink but not Kurdish operators Kurdistan Net and Korek Telecom\n• Block excludes autonomous Iraqi Kurdistan region, creating geographic disparity in access\n• Restriction targets both Telegram frontends and backends, indicating comprehensive technical implementation\n• VPN services can circumvent the censorship measures according to NetBlocks analysis\n• Follows pattern of Iraq using internet restrictions during political crises and exam periods\n• Telegram's popularity with activists and relatively unregulated status makes it frequent government target",
+      "date_published": "2026-02-20T04:44:28.767Z",
+      "date_modified": "2026-02-20T04:44:28.860Z",
+      "tags": [
+        "censorship-resistance",
+        "comms",
+        "privacy",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://netblocks.org/reports/telegram-restricted-in-iraq-over-personal-data-leaks-9AkJ4o8D"
+        ]
+      }
+    },
+    {
+      "id": "def7df7b-9406-4511-b4ef-dbc9a2c54abb",
+      "url": "https://libertas.fgu.tech/posts/microsoft-routinely-shares-bitlocker-recovery-keys-with-fbi",
+      "title": "Microsoft Routinely Shares BitLocker Recovery Keys with FBI",
+      "summary": "Proton explains BitLocker encryption following revelations that Microsoft regularly provides BitLocker recovery keys to law enforcement agencies like the FBI.",
+      "content_text": "Microsoft routinely hands over BitLocker backup keys to law enforcement agencies including FBI [Forbes]\n• BitLocker is Windows' built-in full-disk encryption, with Device Encryption as simplified version on Windows Home\n• Device Encryption automatically backs up recovery keys to Microsoft accounts by default\n• Windows Pro/Enterprise BitLocker allows users to choose where recovery keys are stored (USB, file, printed copy)\n• TPM 2.0 chip provides hardware-based protection but keys still recoverable via Microsoft accounts\n• Protection strong against theft/loss when powered off, but vulnerable to legal process targeting Microsoft\n• Demonstrates risks of relying on proprietary encryption with centralized key backup systems",
+      "date_published": "2026-02-20T04:46:35.080Z",
+      "date_modified": "2026-02-20T04:46:35.147Z",
+      "tags": [
+        "privacy",
+        "sovereignty",
+        "surveillance",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 82,
+        "citations": [
+          "https://proton.me/blog/what-is-bitlocker",
+          "https://www.forbes.com/sites/thomasbrewster/2026/01/22/microsoft-gave-fbi-keys-to-unlock-bitlocker-encrypted-data/",
+          "https://proton.me/blog/european-alternative-us-tech-survey"
+        ]
+      }
+    },
+    {
+      "id": "df336e0e-ce69-4acf-92ec-18e5043489cf",
+      "url": "https://libertas.fgu.tech/posts/eff-report-how-free-surveillance-tech-creates-accountability",
+      "title": "EFF Report: How 'Free' Surveillance Tech Creates Accountability Gaps and Mass Data Sharing",
+      "summary": "EFF analysis reveals how surveillance vendors use 'free' trials, continued service without funding, and donations to bypass local oversight, creating data pipelines to ICE and eroding civil liberties.",
+      "content_text": "Surveillance vendors offer 'free' ALPRs, face recognition, drones, and data platforms to bypass local oversight processes\n• Denver running competing drone trials from Flock Safety and Skydio/Axon for drone-as-first-responder programs through August 2026\n• Companies continue providing services even after funding ends - Fall River used ShotSpotter for free after refusing $90k annual cost\n• Denver mayor kept Flock ALPR cameras running despite city council unanimously rejecting $666k contract extension\n• Data sharing agreements create pipelines to ICE, undermining sanctuary city protections\n• Subscription models mean 'free' tools eventually require taxpayer funding for expanded feature sets\n• Community groups launched grassroots campaigns demanding surveillance systems be shut off, not just defunded\n• EFF recommends cities reject federal grants, vendor trials, and donations that facilitate surveillance experimentation",
+      "date_published": "2026-02-20T04:41:12.421Z",
+      "date_modified": "2026-02-20T04:41:12.493Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "censorship-resistance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/02/free-surveillance-tech-still-comes-high-and-dangerous-cost",
+          "https://www.eff.org/deeplinks/2026/02/homeland-security-wants-names-effector-383"
+        ]
+      }
+    },
+    {
+      "id": "e268dfa1-67e9-40ff-82a2-9a82b9807f67",
+      "url": "https://libertas.fgu.tech/posts/citizen-lab-submits-un-reports-on-surveillance-tech-enabling",
+      "title": "Citizen Lab Submits UN Reports on Surveillance Tech Enabling Enforced Disappearances",
+      "summary": "Citizen Lab researchers submitted two reports to UN bodies detailing how targeted surveillance technology facilitates enforced disappearances and transnational repression of migrants.",
+      "content_text": "Citizen Lab co-authored two submissions to UN Committee on Enforced Disappearances\n• First submission focuses on digital tools enabling state-sponsored disappearances\n• Report calls on host states to protect against digital transnational repression\n• Second submission examines how migration processes increase vulnerability to repression\n• Authors highlight risks from inadequate privacy safeguards and data sharing agreements\n• Both reports emphasize host state responsibility to protect vulnerable populations\n• Submissions provide policy recommendations for addressing surveillance-enabled rights violations",
+      "date_published": "2026-02-20T04:44:03.572Z",
+      "date_modified": "2026-02-20T04:44:03.656Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://citizenlab.ca/submissions-to-the-committee-on-enforced-disappearances-and-the-un-working-group-on-enforced-and-involuntary-disappearances/"
+        ]
+      }
+    },
+    {
+      "id": "e2830875-c7e7-45bd-96ec-1633c44d7c40",
+      "url": "https://libertas.fgu.tech/posts/coalition-demands-california-revoke-federal-license-plate-re",
+      "title": "Coalition Demands California Revoke Federal License Plate Reader Permits",
+      "summary": "EFF and 25+ organizations demand California revoke permits allowing CBP and DEA to deploy automated license plate readers disguised as traffic barrels along border highways.",
+      "content_text": "Coalition led by EFF and Imperial Valley Equity & Justice sent letter to Gov. Newsom and Caltrans Director\n• Demands revocation of permits for federal ALPR surveillance on California highways\n• CBP, DEA, and Border Patrol using ALPRs disguised as traffic barrels for mass surveillance\n• Coalition cites risks of harassment, detention, and deportation for residents and migrants\n• 25+ organizations signed letter including ACLU California Action, Fight for the Future, EPIC\n• Timing linked to return of USBP Chief Greg Bovino to El Centro sector\n• State-level pushback against federal surveillance infrastructure deployment",
+      "date_published": "2026-02-20T04:41:12.422Z",
+      "date_modified": "2026-02-20T04:41:12.493Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/press/releases/coalition-urges-california-revoke-permits-federal-license-plate-reader-surveillance",
+          "https://www.eff.org/deeplinks/2026/02/no-one-including-our-furry-friends-will-be-safer-rings-surveillance-nightmare-0"
+        ]
+      }
+    },
+    {
+      "id": "e9188b09-ed03-45aa-bffe-34bf5531c936",
+      "url": "https://libertas.fgu.tech/posts/uganda-implements-election-internet-shutdown-threatens-vpn-u",
+      "title": "Uganda Implements Election Internet Shutdown, Threatens VPN Users with Device Targeting",
+      "summary": "Uganda shut down internet and blocked major platforms during 2026 elections despite international pressure. Authorities warn VPN users could be targeted via their devices, highlighting escalating digital surveillance threats.",
+      "content_text": "Uganda Communications Commission ordered 95% internet shutdown during January 2026 elections [Cloudflare Radar/IODA data]\n• WhatsApp, Instagram, X, Facebook, and mobile money services remain blocked even after partial restoration\n• UCC explicitly threatened VPN users could be 'targeted via their devices' for bypassing restrictions\n• Starlink services were disabled weeks before elections, cutting satellite internet backup\n• Pattern continues from 2016 and 2021 elections when Uganda imposed similar shutdowns and VPN blocks\n• Access Now and #KeepItOn coalition documented real-time shutdown despite prior government commitments\n• African Commission on Human and Peoples' Rights issued statement condemning the restrictions\n• Demonstrates urgent need for censorship-resistant infrastructure in authoritarian contexts",
+      "date_published": "2026-02-20T04:42:41.229Z",
+      "date_modified": "2026-02-20T04:42:41.330Z",
+      "tags": [
+        "censorship-resistance",
+        "comms",
+        "surveillance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 95,
+        "credibility_score": 85,
+        "citations": [
+          "https://www.accessnow.org/press-release/keepiton-coalition-raise-the-alarm-on-potential-shutdown-during-upcoming-elections-in-uganda/",
+          "https://www.accessnow.org/press-release/keepiton-iran-digital-darkness-human-rights-abuses/"
+        ]
+      }
+    },
+    {
+      "id": "eb8ef337-a21a-404f-9a49-14602326a11c",
+      "url": "https://libertas.fgu.tech/posts/ooni-and-partners-host-internet-measurement-village-at-globa",
+      "title": "OONI and Partners Host Internet Measurement Village at Global Gathering 2025",
+      "summary": "Four major internet measurement projects are hosting an 'OMG Village' at Global Gathering 2025 in Portugal to advance censorship monitoring and shutdown detection capabilities.",
+      "content_text": "OONI hosting Open Measurement Gathering (OMG) Village at Global Gathering 2025 in Estoril, Portugal\n• Four core partners: OONI, Measurement Lab (M-Lab), Internet Outage Detection & Analysis (IODA), and Censored Planet\n• Additional participants include Netalitica and Project Ainita hosting booths\n• Focus on internet shutdown investigation, censorship detection tools, and open datasets\n• Community space for researchers, activists, and builders working on network interference\n• Collaboration between established measurement platforms strengthens censorship detection ecosystem\n• Event provides opportunity for knowledge transfer on technical measurement methodologies",
+      "date_published": "2026-02-20T04:43:23.886Z",
+      "date_modified": "2026-02-20T04:43:23.995Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 95,
+        "citations": [
+          "https://ooni.org/post/2025-gg-omg-village/"
+        ]
+      }
+    },
+    {
+      "id": "efce1b6f-1982-43d9-9a03-56ac36b4d678",
+      "url": "https://libertas.fgu.tech/posts/signal-discusses-global-tech-industry-us-china-centralizatio",
+      "title": "Signal Discusses Global Tech Industry US-China Centralization",
+      "summary": "Signal's official blog examines how the tech industry is centered in the US and China due to historical material conditions rather than superior talent, touching on implications for global tech development.",
+      "content_text": "Signal published blog post analyzing tech industry geographic concentration\n• Industry centered in US and China due to historical material conditions, not superior talent\n• US advantages traced to early military investments in networked computation\n• Timeline includes US becoming global superpower, privatization/commercialization of networks, dot-com boom\n• Post appears to address Signal's global accessibility and mission\n• Analysis provides context for why freedom tech tools often emerge from specific regions\n• Suggests broader discussion about democratizing secure communications globally",
+      "date_published": "2026-02-20T04:44:53.923Z",
+      "date_modified": "2026-02-20T04:44:54.015Z",
+      "tags": [
+        "privacy",
+        "comms",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://signal.org/blog/signal-is-for-everyone/",
+          "https://signal.org/blog/signal-is-expensive/"
+        ]
+      }
+    },
+    {
+      "id": "f4fe9794-687b-49f8-bd1d-fb06563809a7",
+      "url": "https://libertas.fgu.tech/posts/signal-deploys-faster-oram-for-privacy-preserving-contact-di",
+      "title": "Signal Deploys Faster ORAM for Privacy-Preserving Contact Discovery",
+      "summary": "Signal improved their contact discovery system using advanced ORAM techniques and enclaves, laying groundwork for usernames and enhanced phone number privacy controls.",
+      "content_text": "Signal enhanced Contact Discovery Service Infrastructure (CDSI) with new ORAM implementation\n• System lets users find Signal contacts without revealing social graphs to Signal servers\n• Uses secure enclaves and oblivious memory access patterns to protect privacy\n• New implementation is faster and more efficient than previous version\n• Technical foundation enables upcoming username feature and phone number privacy controls\n• Represents advancement in privacy-preserving identity infrastructure\n• Demonstrates scalable approach to private contact discovery for secure messaging",
+      "date_published": "2026-02-20T04:44:53.924Z",
+      "date_modified": "2026-02-20T04:44:54.015Z",
+      "tags": [
+        "privacy",
+        "censorship-resistance",
+        "comms",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://signal.org/blog/building-faster-oram/",
+          "https://signal.org/blog/uk-online-safety-bill/"
+        ]
+      }
+    },
+    {
+      "id": "f9143226-344a-49a3-8567-a10121b56246",
+      "url": "https://libertas.fgu.tech/posts/discord-rolls-out-mandatory-age-verification-despite-data-br",
+      "title": "Discord Rolls Out Mandatory Age Verification Despite Data Breach History",
+      "summary": "Discord begins global mandatory age verification requiring government ID or face scans for many users, despite winning EFF's 2025 'Breachie Award' for exposing 70k users' identity documents in a hack.",
+      "content_text": "Discord launching mandatory age verification globally starting March 2026, not required by law in most jurisdictions\n• Users estimated under 18 or with insufficient data face restrictions unless they upload government ID or face scan\n• Third-party vendors k-ID (global) and Persona (UK) now handle verification after 2025 breach exposed 70,000 users' documents\n• EFF warns this creates surveillance infrastructure and chills anonymous speech for vulnerable groups\n• Users locked into 'teen experience' face content filters, DM restrictions, and blocked community features\n• Age inference system uses account tenure, device data, and platform patterns to automatically sort most adults\n• Facial age estimation technology is 'notoriously unreliable' especially for marginalized groups [EFF]\n• Platform promises to delete IDs and keep face scans on-device, but users have no independent verification",
+      "date_published": "2026-02-20T04:41:12.420Z",
+      "date_modified": "2026-02-20T04:41:12.493Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "identity"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/02/discord-voluntarily-pushes-mandatory-age-verification-despite-recent-data-breach",
+          "https://www.eff.org/deeplinks/2026/02/seven-billion-reasons-facebook-abandon-its-face-recognition-plans"
+        ]
+      }
+    },
+    {
+      "id": "fce44db8-b51f-4d57-b89d-75395b98c0ce",
+      "url": "https://libertas.fgu.tech/posts/senegal-arrests-second-journalist-for-challenging-official-a",
+      "title": "Senegal Arrests Second Journalist for Challenging Official Account of Student Death",
+      "summary": "Senegalese authorities arrested freelance commentator Abdou Nguer for questioning prosecutor's denial of torture in student death during university protest crackdown, marking escalating press freedom concerns.",
+      "content_text": "Abdou Nguer arrested February 19, 2026 for challenging prosecutor's statement on student death cause\n• Charged with spreading false news for disputing official dismissal of torture allegations\n• Second journalist detained over university protest coverage after Sen TV's Modou Fall (arrested Feb 11)\n• Nguer questioned prosecutor Ousmane Ndoye's claim student fell from building vs medical autopsy showing traumas\n• Student died after police stormed university campus in Dakar during protests\n• Nguer previously detained 7 months in 2025, served 3 months for 'offending head of state'\n• Pattern of false news charges targeting journalists covering state violence and public affairs\n• Committee to Protect Journalists calls systematic intimidation of Senegalese press",
+      "date_published": "2026-02-20T04:45:22.840Z",
+      "date_modified": "2026-02-20T04:45:22.919Z",
+      "tags": [
+        "censorship-resistance",
+        "activism",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://cpj.org/2026/02/senegalese-commentator-arrested-for-remarks-about-students-death/"
         ]
       }
     }
