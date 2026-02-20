@@ -353,7 +353,7 @@
         "specifyBody": "json",
         "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 1024,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": {{ JSON.stringify($('Merge Config & Agents').first().json._agents?.classify + \"\\n\\n# Input\\n\\n\" + JSON.stringify({ sourceUrl: $json.url, extractedText: ($json.extracted_text || '').substring(0, 8000), platform: $json.platform, author: $json.author, publishedAt: $json.published_at })) }}\n  }]\n}",
         "options": {
-          "timeout": 30000
+          "timeout": 120000
         }
       },
       "type": "n8n-nodes-base.httpRequest",
@@ -364,6 +364,7 @@
       ],
       "id": "fb831e88-f4f1-4963-a327-b4e6e3b6b508",
       "name": "Classify with Claude API",
+      "onError": "continueRegularOutput",
       "credentials": {
         "httpHeaderAuth": {
           "id": "2ueFHzVgKw4S5KuR",
@@ -412,7 +413,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Build UPDATE query to store classification scores in source_items\n// This enables debugging why items didn't result in insights\nconst items = $input.all();\n\nreturn items.map(item => {\n  const data = item.json;\n  const classification = data.classification || {};\n  \n  const relevanceScore = classification.freedom_relevance_score ?? 0;\n  const credibilityScore = classification.credibility_score ?? 0;\n  \n  const query = `UPDATE source_items SET freedom_relevance_score = ${relevanceScore}, credibility_score = ${credibilityScore} WHERE id = '${data.sourceItemId}'`;\n  \n  return {\n    json: {\n      ...data,\n      _classificationUpdateQuery: query\n    }\n  };\n});"
+        "jsCode": "// Batch collect all items and build a combined UPDATE query\n// Stores original items for fan-out after the query runs\nconst items = $input.all();\nconst originalItems = [];\nconst updateClauses = [];\n\nfor (const item of items) {\n  const data = item.json;\n  originalItems.push(data);\n\n  const classification = data.classification || {};\n  const relevanceScore = classification.freedom_relevance_score ?? 0;\n  const credibilityScore = classification.credibility_score ?? 0;\n  const id = data.sourceItemId;\n\n  if (id) {\n    updateClauses.push(\n      `UPDATE source_items SET freedom_relevance_score = ${relevanceScore}, credibility_score = ${credibilityScore} WHERE id = '${id}'`\n    );\n  }\n}\n\nconst batchQuery = updateClauses.length > 0\n  ? updateClauses.join('; ')\n  : 'SELECT 1';\n\nreturn [{\n  json: {\n    _batchItems: originalItems,\n    _batchQuery: batchQuery\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -420,13 +421,13 @@
         6368,
         42416
       ],
-      "id": "de4538f5-d8e0-4d3a-aa2d-3d40fdb68ebb",
-      "name": "Build Classification Update"
+      "id": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+      "name": "Batch Classification Updates"
     },
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "={{ $json._classificationUpdateQuery }}",
+        "query": "={{ $json._batchQuery }}",
         "options": {}
       },
       "type": "n8n-nodes-base.postgres",
@@ -435,8 +436,9 @@
         6528,
         42416
       ],
-      "id": "1a9e667f-803b-40a3-9ae3-5c455ce4aeaf",
-      "name": "Update Source Classification",
+      "id": "b2c3d4e5-f6a7-4b8c-9d0e-1f2a3b4c5d6e",
+      "name": "Run Classification Updates",
+      "alwaysOutputData": true,
       "credentials": {
         "postgres": {
           "id": "qDXwbsZ3b2DpBCrd",
@@ -446,7 +448,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Restore original data after Postgres UPDATE (which only returns query result)\n// Reference the Build Classification Update node to get the original item data\nconst postgresResults = $input.all();\nconst originalItems = $('Build Classification Update').all();\n\nreturn postgresResults.map((result, index) => {\n  // Get original data from Build Classification Update by index\n  const originalData = originalItems[index]?.json || {};\n  return { json: originalData };\n});"
+        "jsCode": "// Fan back out to all original items after batch UPDATE\nconst batchData = $('Batch Classification Updates').first().json;\nconst originalItems = batchData._batchItems;\n\nreturn originalItems.map(itemData => {\n  return { json: itemData };\n});"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -454,8 +456,8 @@
         6688,
         42416
       ],
-      "id": "0def64e8-3704-4fb4-9686-855c47471cf2",
-      "name": "Restore Classification Data"
+      "id": "c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f",
+      "name": "Fan Out Classified Items"
     },
     {
       "parameters": {
@@ -557,7 +559,7 @@
         "specifyBody": "json",
         "jsonBody": "={\n  \"model\": \"claude-sonnet-4-20250514\",\n  \"max_tokens\": 2048,\n  \"messages\": [{\n    \"role\": \"user\",\n    \"content\": {{ JSON.stringify($json._agents?.summarize + \"\\n\\n# Input\\n\\n\" + JSON.stringify({ sourceUrl: $json.sourceItemUrl, extractedText: $json.extractedText.substring(0, 8000), classification: $json.classification, includeDeepDive: $json.classification.freedom_relevance_score >= 85 })) }}\n  }]\n}",
         "options": {
-          "timeout": 60000
+          "timeout": 120000
         }
       },
       "type": "n8n-nodes-base.httpRequest",
@@ -568,6 +570,7 @@
       ],
       "id": "1ba417a0-eb97-43ae-b0cd-3d01b003f882",
       "name": "Summarize with Claude API",
+      "onError": "continueRegularOutput",
       "credentials": {
         "httpHeaderAuth": {
           "id": "2ueFHzVgKw4S5KuR",
@@ -616,7 +619,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Build complete INSERT query with proper escaping - process ALL items\nconst items = $input.all();\n\nfunction escapeStr(str) {\n  if (str === null || str === undefined) return 'NULL';\n  // Escape single quotes by doubling them\n  return \"'\" + String(str).replace(/'/g, \"''\") + \"'\";\n}\n\nfunction formatPgArray(arr) {\n  if (!arr || arr.length === 0) return \"'{}'\";\n  const escaped = arr.map(s => '\"' + String(s).replace(/\"/g, '\\\\\"').replace(/'/g, \"''\") + '\"');\n  return \"'{\" + escaped.join(',') + \"}'\";\n}\n\nfunction formatUuidArray(arr) {\n  if (!arr || arr.length === 0) return \"'{}'\";\n  return \"'{\" + arr.join(',') + \"}'\";\n}\n\nreturn items.map(item => {\n  const data = item.json;\n  \n  const query = `INSERT INTO insights (\n    source_item_ids, title, tldr, summary_bullets, deep_dive_markdown,\n    topics, geo, freedom_relevance_score, credibility_score, citations,\n    status, published_url, published_at\n  ) VALUES (\n    ${formatUuidArray([data.sourceItemId])},\n    ${escapeStr(data.title || 'Untitled')},\n    ${escapeStr(data.tldr || '')},\n    ${formatPgArray(data.summaryBullets || [])},\n    ${data.deepDiveMarkdown ? escapeStr(data.deepDiveMarkdown) : 'NULL'},\n    ${formatPgArray(data.topics || [])},\n    ${formatPgArray(data.geo || [])},\n    ${data.freedomRelevanceScore},\n    ${data.credibilityScore},\n    ${formatPgArray(data.citations || [])},\n    ${escapeStr(data.status)},\n    ${data.publishedUrl ? escapeStr(data.publishedUrl) : 'NULL'},\n    ${data.publishedAt ? escapeStr(data.publishedAt) : 'NULL'}\n  ) RETURNING id, title, status, published_url`;\n\n  return { json: { query, sourceData: data } };\n});"
+        "jsCode": "// Batch collect all items and build a combined INSERT query\n// Stores original items for fan-out after the query runs\nconst items = $input.all();\nconst originalItems = [];\nconst valuesClauses = [];\n\nfunction escapeStr(str) {\n  if (str === null || str === undefined) return 'NULL';\n  return \"'\" + String(str).replace(/'/g, \"''\") + \"'\";\n}\n\nfunction formatPgArray(arr) {\n  if (!arr || arr.length === 0) return \"'{}'\";\n  const escaped = arr.map(s => '\"' + String(s).replace(/\"/g, '\\\\\"').replace(/'/g, \"''\") + '\"');\n  return \"'{\" + escaped.join(',') + \"}'\";\n}\n\nfunction formatUuidArray(arr) {\n  if (!arr || arr.length === 0) return \"'{}'\";\n  return \"'{\" + arr.join(',') + \"}'\";\n}\n\nfor (const item of items) {\n  const data = item.json;\n  originalItems.push(data);\n\n  valuesClauses.push(`(\n    ${formatUuidArray([data.sourceItemId])},\n    ${escapeStr(data.title || 'Untitled')},\n    ${escapeStr(data.tldr || '')},\n    ${formatPgArray(data.summaryBullets || [])},\n    ${data.deepDiveMarkdown ? escapeStr(data.deepDiveMarkdown) : 'NULL'},\n    ${formatPgArray(data.topics || [])},\n    ${formatPgArray(data.geo || [])},\n    ${data.freedomRelevanceScore},\n    ${data.credibilityScore},\n    ${formatPgArray(data.citations || [])},\n    ${escapeStr(data.status)},\n    ${data.publishedUrl ? escapeStr(data.publishedUrl) : 'NULL'},\n    ${data.publishedAt ? escapeStr(data.publishedAt) : 'NULL'}\n  )`);\n}\n\nconst batchQuery = valuesClauses.length > 0\n  ? `INSERT INTO insights (\n      source_item_ids, title, tldr, summary_bullets, deep_dive_markdown,\n      topics, geo, freedom_relevance_score, credibility_score, citations,\n      status, published_url, published_at\n    ) VALUES ${valuesClauses.join(', ')}\n    RETURNING id, title, status, published_url`\n  : 'SELECT NULL AS id, NULL AS title, NULL AS status, NULL AS published_url WHERE false';\n\nreturn [{\n  json: {\n    _batchItems: originalItems,\n    _batchQuery: batchQuery\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -624,13 +627,13 @@
         6384,
         42816
       ],
-      "id": "f2c2c13e-c7bd-4e9f-b1c5-4ea1952bcfab",
-      "name": "Build Insight Query"
+      "id": "d4e5f6a7-b8c9-4d0e-1f2a-3b4c5d6e7f80",
+      "name": "Batch Insight Queries"
     },
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "={{ $json.query }}",
+        "query": "={{ $json._batchQuery }}",
         "options": {}
       },
       "type": "n8n-nodes-base.postgres",
@@ -639,14 +642,28 @@
         6528,
         42816
       ],
-      "id": "0587dc5b-2bea-4285-9c29-6a091644157a",
-      "name": "Insert Insight",
+      "id": "e5f6a7b8-c9d0-4e1f-2a3b-4c5d6e7f8091",
+      "name": "Run Insert Insights",
+      "alwaysOutputData": true,
       "credentials": {
         "postgres": {
           "id": "qDXwbsZ3b2DpBCrd",
           "name": "Postgres account"
         }
       }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Fan back out: merge Postgres RETURNING data with original items\nconst batchData = $('Batch Insight Queries').first().json;\nconst originalItems = batchData._batchItems;\nconst insertResults = $input.all();\n\nreturn originalItems.map((itemData, index) => {\n  const dbResult = insertResults[index]?.json || {};\n  return {\n    json: {\n      ...itemData,\n      insightId: dbResult.id || null,\n      status: dbResult.status || itemData.status,\n      published_url: dbResult.published_url || itemData.publishedUrl || null\n    }\n  };\n});"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        6628,
+        42816
+      ],
+      "id": "f6a7b8c9-d0e1-4f2a-3b4c-5d6e7f809102",
+      "name": "Fan Out Insight Results"
     },
     {
       "parameters": {
@@ -1505,20 +1522,31 @@
     },
     {
       "parameters": {
-        "operation": "executeQuery",
-        "query": "SELECT id FROM source_items WHERE content_hash = $1 LIMIT 1",
-        "options": {
-          "queryReplacement": "={{ $json.contentHash }}"
-        }
+        "jsCode": "// Collect all items and their hashes for batch duplicate check\nconst items = $input.all();\nconst hashes = [];\nconst itemsData = [];\n\nfor (const item of items) {\n  const json = item.json;\n  itemsData.push(json);\n  if (!json._skip && json.contentHash) {\n    hashes.push(json.contentHash);\n  }\n}\n\n// Build query string from validated SHA256 hex hashes\nconst hashQuery = hashes.length > 0\n  ? hashes.map(h => `'${h}'`).join(',')\n  : '';\n\n// Output single item containing all data for batch query\nreturn [{\n  json: {\n    _batchItems: itemsData,\n    _hashList: hashes,\n    _hashQuery: hashQuery\n  }\n}];"
       },
-      "type": "n8n-nodes-base.postgres",
-      "typeVersion": 2.6,
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
       "position": [
         5536,
         42128
       ],
-      "id": "a2f8ac0b-1687-4711-8096-95579c4c1fa5",
-      "name": "Check Duplicate",
+      "id": "b3a1d7e2-4f8c-4a12-9e6b-1c5d3f8a2b47",
+      "name": "Batch Check Hashes"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "={{ $json._hashQuery ? 'SELECT content_hash FROM source_items WHERE content_hash IN (' + $json._hashQuery + ')' : 'SELECT content_hash FROM source_items WHERE false' }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        5636,
+        42128
+      ],
+      "id": "d4e2f5a3-7b9c-4d23-8f1a-2e6c4a9b5d78",
+      "name": "Batch Query Duplicates",
       "alwaysOutputData": true,
       "credentials": {
         "postgres": {
@@ -1529,7 +1557,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Evaluate duplicate check result and merge with original data\n// Must match each Postgres result with its corresponding original item by index\n// Route _skip items to the duplicate path (isNew=false) to bypass processing\nconst duplicateResults = $input.all();\nconst originalItems = $('Compute Hash').all();\n\n// Process each item, matching by index\nreturn duplicateResults.map((result, index) => {\n  const originalData = originalItems[index]?.json || {};\n  \n  // Route _skip items to duplicate path (bypasses classification/summarization)\n  if (originalData._skip) {\n    return {\n      json: {\n        ...originalData,\n        isNew: false,\n        skippedReason: originalData.error || originalData.noItems ? 'source_error' : 'skip_flag'\n      }\n    };\n  }\n  \n  // Postgres returns object with id if duplicate found, empty/undefined otherwise\n  const isDuplicate = result.json && result.json.id;\n  \n  return {\n    json: {\n      ...originalData,\n      isNew: !isDuplicate,\n      duplicateId: isDuplicate ? result.json.id : null\n    }\n  };\n});"
+        "jsCode": "// Compare batch query results against all original items\n// Mark each item as new or duplicate, handling _skip items\n\n// Get the batch data from Batch Check Hashes\nconst batchData = $('Batch Check Hashes').first().json;\nconst originalItems = batchData._batchItems;\n\n// Get duplicate hashes from Postgres query result\nconst duplicateResults = $input.all();\nconst duplicateHashes = new Set();\nfor (const result of duplicateResults) {\n  if (result.json && result.json.content_hash) {\n    duplicateHashes.add(result.json.content_hash);\n  }\n}\n\n// Fan back out to multiple items, each marked as new or duplicate\nreturn originalItems.map(itemData => {\n  // Route _skip items to duplicate path\n  if (itemData._skip) {\n    return {\n      json: {\n        ...itemData,\n        isNew: false,\n        skippedReason: itemData.error || itemData.noItems ? 'source_error' : 'skip_flag'\n      }\n    };\n  }\n\n  const isDuplicate = duplicateHashes.has(itemData.contentHash);\n  return {\n    json: {\n      ...itemData,\n      isNew: !isDuplicate,\n      duplicateId: isDuplicate ? itemData.contentHash : null\n    }\n  };\n});"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -1537,8 +1565,8 @@
         5712,
         42128
       ],
-      "id": "ebe5f82e-03c7-48f2-8457-742cbfa9d2c3",
-      "name": "Evaluate Duplicate"
+      "id": "f5a3b6c4-8d1e-4f34-a2b9-3c7d5e0f1a89",
+      "name": "Evaluate Duplicates"
     },
     {
       "parameters": {
@@ -1806,7 +1834,18 @@
       "main": [
         [
           {
-            "node": "Check Duplicate",
+            "node": "Batch Check Hashes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Batch Check Hashes": {
+      "main": [
+        [
+          {
+            "node": "Batch Query Duplicates",
             "type": "main",
             "index": 0
           }
@@ -1919,36 +1958,36 @@
       "main": [
         [
           {
-            "node": "Build Classification Update",
+            "node": "Batch Classification Updates",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Build Classification Update": {
+    "Batch Classification Updates": {
       "main": [
         [
           {
-            "node": "Update Source Classification",
+            "node": "Run Classification Updates",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Update Source Classification": {
+    "Run Classification Updates": {
       "main": [
         [
           {
-            "node": "Restore Classification Data",
+            "node": "Fan Out Classified Items",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Restore Classification Data": {
+    "Fan Out Classified Items": {
       "main": [
         [
           {
@@ -2043,25 +2082,36 @@
       "main": [
         [
           {
-            "node": "Build Insight Query",
+            "node": "Batch Insight Queries",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Build Insight Query": {
+    "Batch Insight Queries": {
       "main": [
         [
           {
-            "node": "Insert Insight",
+            "node": "Run Insert Insights",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Insert Insight": {
+    "Run Insert Insights": {
+      "main": [
+        [
+          {
+            "node": "Fan Out Insight Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fan Out Insight Results": {
       "main": [
         [
           {
@@ -2510,18 +2560,18 @@
         ]
       ]
     },
-    "Check Duplicate": {
+    "Batch Query Duplicates": {
       "main": [
         [
           {
-            "node": "Evaluate Duplicate",
+            "node": "Evaluate Duplicates",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Evaluate Duplicate": {
+    "Evaluate Duplicates": {
       "main": [
         [
           {

@@ -12,7 +12,7 @@ export default function Home() {
   // Get posts with geo data for the hero signal map (up to 15 most recent)
   const heroPosts: Post[] = getAllPosts()
     .filter((p) => p.geo && p.geo.length > 0)
-    .slice(0, 15);
+    .slice(0, 25);
 
   return (
     <div className="matrix-bg min-h-screen">

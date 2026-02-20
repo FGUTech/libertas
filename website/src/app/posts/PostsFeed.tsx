@@ -41,7 +41,7 @@ export function ContentFeed({ items: allItems }: ContentFeedProps) {
     return topics.split(",").filter((t): t is Topic => TOPICS.includes(t as Topic));
   }, [searchParams]);
 
-  const sortBy = (searchParams.get("sort") as SortOption) || "newest";
+  const sortBy = (searchParams.get("sort") as SortOption) || "relevance";
   const currentPage = parseInt(searchParams.get("page") || "1", 10);
   const digestsOnly = searchParams.get("type") === "digests";
 
@@ -91,7 +91,7 @@ export function ContentFeed({ items: allItems }: ContentFeedProps) {
 
   const handleSortChange = useCallback(
     (sort: SortOption) => {
-      updateParams({ sort: sort === "newest" ? null : sort });
+      updateParams({ sort: sort === "relevance" ? null : sort });
     },
     [updateParams]
   );
@@ -111,13 +111,16 @@ export function ContentFeed({ items: allItems }: ContentFeedProps) {
     return item.topTopics;
   };
 
-  // Get relevance score for sorting (digests use average, so we default to 0)
+  // Get time-decayed relevance score: posts lose 1 point per day of age
   const getRelevanceScore = (item: ContentItem): number => {
     if (isPost(item)) {
-      return item.freedomRelevanceScore;
+      const now = Date.now();
+      const publishedAt = new Date(item.publishedAt).getTime();
+      const daysOld = (now - publishedAt) / (1000 * 60 * 60 * 24);
+      return item.freedomRelevanceScore - daysOld;
     }
     // Digests don't have a relevance score, sort them by date instead
-    return 0;
+    return -Infinity;
   };
 
   // Get the appropriate URL for the item
@@ -243,7 +246,7 @@ export function PostsFeed({ posts: allPosts }: PostsFeedProps) {
     return topics.split(",").filter((t): t is Topic => TOPICS.includes(t as Topic));
   }, [searchParams]);
 
-  const sortBy = (searchParams.get("sort") as SortOption) || "newest";
+  const sortBy = (searchParams.get("sort") as SortOption) || "relevance";
   const currentPage = parseInt(searchParams.get("page") || "1", 10);
 
   // Update URL params
@@ -288,7 +291,7 @@ export function PostsFeed({ posts: allPosts }: PostsFeedProps) {
 
   const handleSortChange = useCallback(
     (sort: SortOption) => {
-      updateParams({ sort: sort === "newest" ? null : sort });
+      updateParams({ sort: sort === "relevance" ? null : sort });
     },
     [updateParams]
   );
@@ -313,7 +316,15 @@ export function PostsFeed({ posts: allPosts }: PostsFeedProps) {
 
     // Sort
     if (sortBy === "relevance") {
-      posts.sort((a, b) => b.freedomRelevanceScore - a.freedomRelevanceScore);
+      const now = Date.now();
+      posts.sort((a, b) => {
+        const daysOldA = (now - new Date(a.publishedAt).getTime()) / (1000 * 60 * 60 * 24);
+        const daysOldB = (now - new Date(b.publishedAt).getTime()) / (1000 * 60 * 60 * 24);
+        const scoreA = a.freedomRelevanceScore - daysOldA;
+        const scoreB = b.freedomRelevanceScore - daysOldB;
+        if (scoreA !== scoreB) return scoreB - scoreA;
+        return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
+      });
     } else {
       posts.sort(
         (a, b) =>
