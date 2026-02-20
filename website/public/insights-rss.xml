@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 20 Feb 2026 05:00:29 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 20 Feb 2026 16:32:43 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -398,6 +398,17 @@
     <category>activism</category>
   </item>
   <item>
+    <title>Gabon Implements Indefinite Social Media Shutdown Amid Anti-Government Protests</title>
+    <link>https://libertas.fgu.tech/posts/gabon-implements-indefinite-social-media-shutdown-amid-anti-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/gabon-implements-indefinite-social-media-shutdown-amid-anti-</guid>
+    <pubDate>Fri, 20 Feb 2026 16:31:23 GMT</pubDate>
+    <description>Gabon&apos;s communications authority ordered indefinite social media blocking of Facebook, WhatsApp, TikTok, Instagram and YouTube during ongoing protests, with #KeepItOn coalition demanding immediate restoration.</description>
+    <category>censorship-resistance</category>
+    <category>comms</category>
+    <category>activism</category>
+    <category>surveillance</category>
+  </item>
+  <item>
     <title>OONI Documents Ongoing X/Twitter Blocking Across Tanzania Networks</title>
     <link>https://libertas.fgu.tech/posts/ooni-documents-ongoing-x-twitter-blocking-across-tanzania-ne</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/ooni-documents-ongoing-x-twitter-blocking-across-tanzania-ne</guid>
@@ -562,6 +573,17 @@
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-releases-guide-for-journalists-to-investigate-police-sur</guid>
     <pubDate>Fri, 20 Feb 2026 04:41:12 GMT</pubDate>
     <description>EFF, Center for Just Journalism, and IPVM released &apos;Selling Safety&apos; report to help journalists cut through police tech marketing hype and report accurately on surveillance tools&apos; costs, effectiveness, and privacy impacts.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
+  </item>
+  <item>
+    <title>North Korea Escalates Surveillance and Punishment of Tech-Savvy Youth</title>
+    <link>https://libertas.fgu.tech/posts/north-korea-escalates-surveillance-and-punishment-of-tech-sa</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/north-korea-escalates-surveillance-and-punishment-of-tech-sa</guid>
+    <pubDate>Fri, 20 Feb 2026 16:32:05 GMT</pubDate>
+    <description>Human Rights Watch reports North Korea has intensified surveillance targeting young people with technical skills, with punishments including execution for accessing foreign media or sharing content.</description>
+    <category>censorship-resistance</category>
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
@@ -825,6 +847,17 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Pakistan Jails Human Rights Lawyers 17 Years for Military Criticism Tweets</title>
+    <link>https://libertas.fgu.tech/posts/pakistan-jails-human-rights-lawyers-17-years-for-military-cr</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/pakistan-jails-human-rights-lawyers-17-years-for-military-cr</guid>
+    <pubDate>Fri, 20 Feb 2026 16:32:43 GMT</pubDate>
+    <description>Two Pakistani human rights lawyers sentenced to 17 years under cybercrime law PECA for tweets criticizing military abuses in Balochistan, demonstrating weaponization of digital legislation against dissent.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>privacy</category>
   </item>
   <item>
     <title>Uganda Implements Election Internet Shutdown, Threatens VPN Users with Device Targeting</title>

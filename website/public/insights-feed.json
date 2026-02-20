@@ -824,6 +824,28 @@
       }
     },
     {
+      "id": "84d34509-8d01-432a-b017-ef0713dc1d1a",
+      "url": "https://libertas.fgu.tech/posts/gabon-implements-indefinite-social-media-shutdown-amid-anti-",
+      "title": "Gabon Implements Indefinite Social Media Shutdown Amid Anti-Government Protests",
+      "summary": "Gabon's communications authority ordered indefinite social media blocking of Facebook, WhatsApp, TikTok, Instagram and YouTube during ongoing protests, with #KeepItOn coalition demanding immediate restoration.",
+      "content_text": "Gabon's High Authority for Communication ordered indefinite social media shutdown on February 17, 2026\n• OONI confirms blocking of Facebook, WhatsApp, TikTok, Instagram, and YouTube as of February 18, 2026\n• Shutdown coincides with ongoing anti-government protests and labor strikes\n• Government claims measures prevent 'spread of false information' and protect national unity\n• Coalition of 345+ human rights organizations from 105 countries demands immediate reversal\n• Gabon has history of shutdowns: 2023 elections, 2021 COVID protests, 2019 coup attempt, 2016 protests\n• ISPs Moov Gabon, Gabon Telecom, and Airtel Gabon called to refuse enforcement of shutdown orders\n• Pattern demonstrates recurring use of digital repression during political instability",
+      "date_published": "2026-02-20T16:31:23.595Z",
+      "date_modified": "2026-02-20T16:31:23.687Z",
+      "tags": [
+        "censorship-resistance",
+        "comms",
+        "activism",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 88,
+        "credibility_score": 85,
+        "citations": [
+          "https://www.accessnow.org/press-release/keepiton-social-media-restore-access-in-gabon/"
+        ]
+      }
+    },
+    {
       "id": "85ab4ef5-d1f0-45ce-b91e-0cc30459b5f5",
       "url": "https://libertas.fgu.tech/posts/ooni-documents-ongoing-x-twitter-blocking-across-tanzania-ne",
       "title": "OONI Documents Ongoing X/Twitter Blocking Across Tanzania Networks",
@@ -1171,6 +1193,28 @@
         "citations": [
           "https://www.eff.org/press/releases/new-report-helps-journalists-dig-deeper-police-surveillance-technology",
           "https://www.eff.org/deeplinks/2026/02/op-ed-san-jose-can-protect-immigrants-ending-flock-surveillance-system"
+        ]
+      }
+    },
+    {
+      "id": "a3d12515-1d4d-4bf5-99b3-bbb84d29332b",
+      "url": "https://libertas.fgu.tech/posts/north-korea-escalates-surveillance-and-punishment-of-tech-sa",
+      "title": "North Korea Escalates Surveillance and Punishment of Tech-Savvy Youth",
+      "summary": "Human Rights Watch reports North Korea has intensified surveillance targeting young people with technical skills, with punishments including execution for accessing foreign media or sharing content.",
+      "content_text": "North Korea's 9th Party Congress convenes amid escalated repression focused on young people since 2021\n• Tech-savvy youth specifically targeted for surveillance according to defector testimony [Kim Il-hyuk, rice trader]\n• Public execution documented of 22-year-old man in 2022 for listening to South Korean songs and sharing foreign media\n• Multiple laws criminalize foreign information access with punishments from forced labor to execution\n• Reactionary Ideology and Culture Rejection Law bans watching/sharing foreign media and 'non-socialist' cultural expression\n• Government mobilizes unpaid forced labor for Party Congress preparations through quotas on workers and students\n• Songbun caste system compounds repression by limiting access to resources based on political reliability\n• UN reports North Korean repression has worsened over past decade, with forced labor potentially constituting crimes against humanity",
+      "date_published": "2026-02-20T16:32:05.927Z",
+      "date_modified": "2026-02-20T16:32:06.071Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 90,
+        "citations": [
+          "https://www.hrw.org/news/2026/02/20/north-korea-party-congress-set-to-bolster-repression"
         ]
       }
     },
@@ -1705,6 +1749,28 @@
         "citations": [
           "https://www.eff.org/press/releases/coalition-urges-california-revoke-permits-federal-license-plate-reader-surveillance",
           "https://www.eff.org/deeplinks/2026/02/no-one-including-our-furry-friends-will-be-safer-rings-surveillance-nightmare-0"
+        ]
+      }
+    },
+    {
+      "id": "e54f5da7-24f2-4a2e-b891-ab0028a66cdc",
+      "url": "https://libertas.fgu.tech/posts/pakistan-jails-human-rights-lawyers-17-years-for-military-cr",
+      "title": "Pakistan Jails Human Rights Lawyers 17 Years for Military Criticism Tweets",
+      "summary": "Two Pakistani human rights lawyers sentenced to 17 years under cybercrime law PECA for tweets criticizing military abuses in Balochistan, demonstrating weaponization of digital legislation against dissent.",
+      "content_text": "Imaan Mazari-Hazir and Hadi Ali Chattha sentenced January 24, 2026 for 2021-2025 tweets about military abuses\n• Charged under Pakistan's Prevention of Electronic Crimes Act (PECA) Sections 9, 10, 11, and 26A\n• Trial moved unusually fast - indictment to sentencing in under 3 months vs typical years-long timeline\n• Evidence consisted of tweet screenshots and witness statements; defense denied adequate cross-examination\n• Couple represented Baloch activists, missing persons families, and journalists facing state harassment\n• PECA originally designed for cybercrime now systematically used to silence critics of state institutions\n• International condemnation from UN Human Rights Office, EU, Amnesty International as judicial persecution\n• Part of broader pattern - at least 23 documented cases of journalists targeted under PECA since 2021",
+      "date_published": "2026-02-20T16:32:43.653Z",
+      "date_modified": "2026-02-20T16:32:43.827Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 88,
+        "citations": [
+          "https://globalvoices.org/2026/02/20/pakistan-jails-two-lawyers-for-17-years-over-old-tweets/"
         ]
       }
     },
