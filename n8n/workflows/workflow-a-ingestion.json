@@ -706,7 +706,20 @@
     },
     {
       "parameters": {
-        "jsCode": "// Workflow Complete - triggered when all sources have been processed\n// Now triggers batched publishing of all new insights from this run\n\nconsole.log('=== Workflow A Complete ===');\nconsole.log('All sources processed. Starting batched publishing...');\nconsole.log('Timestamp:', new Date().toISOString());\n\n// Get thresholds from input items (passed through from Load Sources)\nconst items = $input.all();\nlet thresholds = { runtime: { use_stubs: true }, publishing: { auto_publish_relevance: 70, auto_publish_credibility: 60 } };\n\n// Try to get thresholds from any item that has them\nfor (const item of items) {\n  if (item.json?._thresholds) {\n    thresholds = item.json._thresholds;\n    break;\n  }\n}\n\nconsole.log('Using thresholds:', JSON.stringify(thresholds.runtime));\n\nreturn [{ json: { \n  workflowComplete: true, \n  completedAt: new Date().toISOString(),\n  _thresholds: thresholds\n}}];"
+        "jsCode": "// Batch convergence gate: merge all branch paths into a single output.\n// Prevents SplitInBatches from firing 'done' multiple times by ensuring\n// exactly ONE output per source batch, regardless of how many branches fire.\n//\n// Root cause: When items from a source split across Is New Item?, Meets Threshold?,\n// and Is Published? branches, each branch independently delivers items here.\n// Without this gate, each delivery would trigger Aggregate Results separately,\n// causing SplitInBatches to fire 'done' once per delivery after the last batch.\n//\n// Expected count is set by 'Evaluate Duplicates' via $execution.customData\n// before items diverge through the branches.\n\nconst items = $input.all();\nconst newItems = items.length;\n\n// Get expected count (set by Evaluate Duplicates before branches diverge)\nconst expected = parseInt($execution.customData.get('batchExpectedItems') || '0');\n\n// Update collected count\nconst collected = parseInt($execution.customData.get('batchCollectedItems') || '0') + newItems;\n$execution.customData.set('batchCollectedItems', collected.toString());\n\nif (collected >= expected && expected > 0) {\n  // All items for this batch collected - release to continue loop\n  console.log(`Batch gate: ${collected}/${expected} items collected - releasing`);\n  return items;\n}\n\n// Not all items yet - suppress output to prevent premature loop advance\nconsole.log(`Batch gate: ${collected}/${expected} items collected - waiting`);\nreturn [];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        6800,
+        43104
+      ],
+      "id": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+      "name": "Merge Batch Paths"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Workflow Complete - triggered when SplitInBatches fires done output.\n// The Merge Batch Paths gate node ensures this fires exactly ONCE per execution\n// by collecting all branch items before releasing to Aggregate Results.\n\nconsole.log('=== Workflow A Complete ===');\nconsole.log('All sources processed. Starting batched publishing...');\nconsole.log('Timestamp:', new Date().toISOString());\n\n// Get thresholds from input items (passed through from Load Sources)\nconst items = $input.all();\nlet thresholds = { runtime: { use_stubs: true }, publishing: { auto_publish_relevance: 70, auto_publish_credibility: 60 } };\n\n// Try to get thresholds from any item that has them\nfor (const item of items) {\n  if (item.json?._thresholds) {\n    thresholds = item.json._thresholds;\n    break;\n  }\n}\n\nconsole.log('Using thresholds:', JSON.stringify(thresholds.runtime));\n\nreturn [{ json: { \n  workflowComplete: true, \n  completedAt: new Date().toISOString(),\n  _thresholds: thresholds\n}}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -720,7 +733,7 @@
     {
       "parameters": {
         "operation": "executeQuery",
-        "query": "SELECT \n  id, title, tldr, summary_bullets, deep_dive_markdown,\n  topics, geo, freedom_relevance_score, credibility_score,\n  citations, status, published_url, published_at, created_at, updated_at\nFROM insights \nWHERE status = 'published' AND published_at >= NOW() - INTERVAL '7 hours'\nORDER BY published_at DESC",
+        "query": "SELECT \n  id, title, tldr, summary_bullets, deep_dive_markdown,\n  topics, geo, freedom_relevance_score, credibility_score,\n  citations, status, published_url, published_at, created_at, updated_at\nFROM insights \nWHERE status = 'published' AND published_at >= NOW() - INTERVAL '1 hour'\nORDER BY published_at DESC",
         "options": {}
       },
       "type": "n8n-nodes-base.postgres",
@@ -770,6 +783,19 @@
       ],
       "id": "8484ea18-df55-44d5-98df-cb6474eb8847",
       "name": "Has New Insights?"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Collapse to single item to prevent duplicate query executions downstream.\n// Has New Insights? passes all N items through TRUE branch (one per insight row),\n// but Query All Published Insights only needs 1 trigger item.\n// Without this gate, the Postgres node would execute the same query N times,\n// and those N*M result items could leak through Code nodes to the git pipeline,\n// causing N duplicate commits.\nconst itemCount = $input.all().length;\nconsole.log(`Collapsing ${itemCount} items to single trigger item for feed publishing`);\nreturn [{ json: { proceed: true, collapsedFrom: itemCount } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        10488,
+        42080
+      ],
+      "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      "name": "Ensure Single Item"
     },
     {
       "parameters": {
@@ -840,7 +866,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Generate RSS 2.0 feed from all published insights (BATCHED MODE)\n// Gets all published insights from input, new insights from Query New Published\n// Deduplicate by ID to prevent duplicate entries in feeds\nconst rawInsights = $input.all().map(item => item.json).filter(i => i.id);\nconst seenIds = new Set();\nconst insights = rawInsights.filter(i => {\n  if (seenIds.has(i.id)) return false;\n  seenIds.add(i.id);\n  return true;\n});\n\n// Get new insights from this workflow run (for markdown generation later)\n// Also deduplicate new insights\nconst rawNewInsights = $('Query New Published Insights').all().map(item => item.json).filter(i => i.id);\nconst seenNewIds = new Set();\nconst newInsights = rawNewInsights.filter(i => {\n  if (seenNewIds.has(i.id)) return false;\n  seenNewIds.add(i.id);\n  return true;\n});\n\n// Get thresholds directly from original config (more reliable than passing through pipeline)\nconst configData = $('Merge Config & Agents').first()?.json || {};\nconst thresholds = {\n  runtime: configData._thresholdsConfig?.runtime || { use_stubs: true },\n  publishing: configData._thresholdsConfig?.publishing || {}\n};\nconsole.log('Publishing with use_stubs:', thresholds.runtime.use_stubs);\n\n// Site metadata\nconst siteUrl = 'https://libertas.fgu.tech';\nconst feedTitle = 'Libertas - Freedom Tech Signals';\nconst feedDescription = 'Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.';\nconst feedLanguage = 'en-us';\nconst buildDate = new Date().toUTCString();\n\n// Helper to escape XML\nfunction escapeXml(str) {\n  if (!str) return '';\n  return String(str)\n    .replace(/&/g, '&amp;')\n    .replace(/</g, '&lt;')\n    .replace(/>/g, '&gt;')\n    .replace(/\"/g, '&quot;')\n    .replace(/'/g, '&apos;');\n}\n\n// Generate RSS items from ALL published insights\nconst items = insights.map(insight => {\n  const pubDate = insight.published_at ? new Date(insight.published_at).toUTCString() : buildDate;\n  const topics = Array.isArray(insight.topics) ? insight.topics : [];\n  const categories = topics.map(t => `    <category>${escapeXml(t)}</category>`).join('\\n');\n  \n  const slug = insight.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').substring(0, 60);\n  const link = `${siteUrl}/posts/${slug}`;\n  \n  return `  <item>\\n    <title>${escapeXml(insight.title)}</title>\\n    <link>${link}</link>\\n    <guid isPermaLink=\"true\">${link}</guid>\\n    <pubDate>${pubDate}</pubDate>\\n    <description>${escapeXml(insight.tldr)}</description>\\n${categories}\\n  </item>`;\n}).join('\\n');\n\nconst rssFeed = `<?xml version=\"1.0\" encoding=\"UTF-8\"?>\\n<rss version=\"2.0\" xmlns:atom=\"http://www.w3.org/2005/Atom\">\\n<channel>\\n  <title>${escapeXml(feedTitle)}</title>\\n  <link>${siteUrl}</link>\\n  <description>${escapeXml(feedDescription)}</description>\\n  <language>${feedLanguage}</language>\\n  <lastBuildDate>${buildDate}</lastBuildDate>\\n  <atom:link href=\"${siteUrl}/insights-rss.xml\" rel=\"self\" type=\"application/rss+xml\"/>\\n  <generator>Libertas n8n Workflow</generator>\\n${items}\\n</channel>\\n</rss>`;\n\nconsole.log(`Generated RSS feed with ${insights.length} items, ${newInsights.length} new in this run`);\n\nreturn [{\n  json: {\n    rssFeed,\n    insightCount: insights.length,\n    insights,\n    newInsights,\n    _thresholds: thresholds\n  }\n}];"
+        "jsCode": "// Generate RSS 2.0 feed from all published insights (BATCHED MODE)\n// Gets all published insights from input, new insights from Query New Published\n// Deduplicate by ID to prevent duplicate entries in feeds\nconst rawInsights = $input.all().map(item => item.json).filter(i => i.id);\nconst seenIds = new Set();\nconst insights = rawInsights.filter(i => {\n  if (seenIds.has(i.id)) return false;\n  seenIds.add(i.id);\n  return true;\n});\n\n// Get new insights from this workflow run (for markdown generation later)\n// Also deduplicate new insights\nconst rawNewInsights = $('Query New Published Insights').all().map(item => item.json).filter(i => i.id);\nconst seenNewIds = new Set();\nconst newInsights = rawNewInsights.filter(i => {\n  if (seenNewIds.has(i.id)) return false;\n  seenNewIds.add(i.id);\n  return true;\n});\n\n// Get thresholds directly from original config (more reliable than passing through pipeline)\nconst configData = $('Merge Config & Agents').first()?.json || {};\nconst thresholds = {\n  runtime: configData._thresholdsConfig?.runtime || { use_stubs: true },\n  publishing: configData._thresholdsConfig?.publishing || {}\n};\nconsole.log('Publishing with use_stubs:', thresholds.runtime.use_stubs);\n\n// Site metadata\nconst siteUrl = 'https://libertas.fgu.tech';\nconst feedTitle = 'Libertas - Freedom Tech Signals';\nconst feedDescription = 'Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.';\nconst feedLanguage = 'en-us';\n// Use deterministic date (latest published_at) so duplicate pipeline executions\n// produce identical RSS content, enabling tree SHA comparison to skip duplicate commits\nconst latestPub = insights.reduce((latest, i) => {\n  const d = new Date(i.published_at || i.created_at);\n  return d > latest ? d : latest;\n}, new Date(0));\nconst buildDate = latestPub.getTime() > 0 ? latestPub.toUTCString() : new Date().toUTCString();\n\n// Helper to escape XML\nfunction escapeXml(str) {\n  if (!str) return '';\n  return String(str)\n    .replace(/&/g, '&amp;')\n    .replace(/</g, '&lt;')\n    .replace(/>/g, '&gt;')\n    .replace(/\"/g, '&quot;')\n    .replace(/'/g, '&apos;');\n}\n\n// Generate RSS items from ALL published insights\nconst items = insights.map(insight => {\n  const pubDate = insight.published_at ? new Date(insight.published_at).toUTCString() : buildDate;\n  const topics = Array.isArray(insight.topics) ? insight.topics : [];\n  const categories = topics.map(t => `    <category>${escapeXml(t)}</category>`).join('\\n');\n  \n  const slug = insight.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').substring(0, 60);\n  const link = `${siteUrl}/posts/${slug}`;\n  \n  return `  <item>\\n    <title>${escapeXml(insight.title)}</title>\\n    <link>${link}</link>\\n    <guid isPermaLink=\"true\">${link}</guid>\\n    <pubDate>${pubDate}</pubDate>\\n    <description>${escapeXml(insight.tldr)}</description>\\n${categories}\\n  </item>`;\n}).join('\\n');\n\nconst rssFeed = `<?xml version=\"1.0\" encoding=\"UTF-8\"?>\\n<rss version=\"2.0\" xmlns:atom=\"http://www.w3.org/2005/Atom\">\\n<channel>\\n  <title>${escapeXml(feedTitle)}</title>\\n  <link>${siteUrl}</link>\\n  <description>${escapeXml(feedDescription)}</description>\\n  <language>${feedLanguage}</language>\\n  <lastBuildDate>${buildDate}</lastBuildDate>\\n  <atom:link href=\"${siteUrl}/insights-rss.xml\" rel=\"self\" type=\"application/rss+xml\"/>\\n  <generator>Libertas n8n Workflow</generator>\\n${items}\\n</channel>\\n</rss>`;\n\nconsole.log(`Generated RSS feed with ${insights.length} items, ${newInsights.length} new in this run`);\n\nreturn [{\n  json: {\n    rssFeed,\n    insightCount: insights.length,\n    insights,\n    newInsights,\n    _thresholds: thresholds\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -1062,6 +1088,51 @@
           "name": "Github API Token"
         }
       }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "tree-changed",
+              "leftValue": "={{ $json.sha }}",
+              "rightValue": "={{ $('Build Tree Entries').first().json._baseTreeSha }}",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        12400,
+        42192
+      ],
+      "id": "b1c2d3e4-f5a6-7890-bcde-f12345678901",
+      "name": "Tree Changed?"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Tree SHA matches base tree - no files actually changed.\n// This happens when a duplicate pipeline execution runs after the first\n// already committed the same content. Skip to avoid duplicate commits.\nconst newTreeSha = $('Create Tree').first().json.sha;\nconst baseTreeSha = $('Build Tree Entries').first().json._baseTreeSha;\nconsole.log(`[Skip] Tree unchanged (${newTreeSha.substring(0, 8)}), commit already exists. Skipping duplicate.`);\nreturn [{ json: { skipped: true, reason: 'Tree unchanged - duplicate pipeline execution', treeSha: newTreeSha } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        12560,
+        42320
+      ],
+      "id": "c2d3e4f5-a6b7-8901-cdef-123456789012",
+      "name": "Log Skipped Commit"
     },
     {
       "parameters": {
@@ -1557,7 +1628,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Compare batch query results against all original items\n// Mark each item as new or duplicate, handling _skip items\n\n// Get the batch data from Batch Check Hashes\nconst batchData = $('Batch Check Hashes').first().json;\nconst originalItems = batchData._batchItems;\n\n// Get duplicate hashes from Postgres query result\nconst duplicateResults = $input.all();\nconst duplicateHashes = new Set();\nfor (const result of duplicateResults) {\n  if (result.json && result.json.content_hash) {\n    duplicateHashes.add(result.json.content_hash);\n  }\n}\n\n// Fan back out to multiple items, each marked as new or duplicate\nreturn originalItems.map(itemData => {\n  // Route _skip items to duplicate path\n  if (itemData._skip) {\n    return {\n      json: {\n        ...itemData,\n        isNew: false,\n        skippedReason: itemData.error || itemData.noItems ? 'source_error' : 'skip_flag'\n      }\n    };\n  }\n\n  const isDuplicate = duplicateHashes.has(itemData.contentHash);\n  return {\n    json: {\n      ...itemData,\n      isNew: !isDuplicate,\n      duplicateId: isDuplicate ? itemData.contentHash : null\n    }\n  };\n});"
+        "jsCode": "// Compare batch query results against all original items\n// Mark each item as new or duplicate, handling _skip items\n\n// Get the batch data from Batch Check Hashes\nconst batchData = $('Batch Check Hashes').first().json;\nconst originalItems = batchData._batchItems;\n\n// Store expected item count for batch convergence gate (Merge Batch Paths node).\n// This count is used downstream to ensure exactly ONE output per batch to\n// Aggregate Results, preventing SplitInBatches from firing done multiple times.\n$execution.customData.set('batchExpectedItems', originalItems.length.toString());\n$execution.customData.set('batchCollectedItems', '0');\n\n// Get duplicate hashes from Postgres query result\nconst duplicateResults = $input.all();\nconst duplicateHashes = new Set();\nfor (const result of duplicateResults) {\n  if (result.json && result.json.content_hash) {\n    duplicateHashes.add(result.json.content_hash);\n  }\n}\n\n// Fan back out to multiple items, each marked as new or duplicate\nreturn originalItems.map(itemData => {\n  // Route _skip items to duplicate path\n  if (itemData._skip) {\n    return {\n      json: {\n        ...itemData,\n        isNew: false,\n        skippedReason: itemData.error || itemData.noItems ? 'source_error' : 'skip_flag'\n      }\n    };\n  }\n\n  const isDuplicate = duplicateHashes.has(itemData.contentHash);\n  return {\n    json: {\n      ...itemData,\n      isNew: !isDuplicate,\n      duplicateId: isDuplicate ? itemData.contentHash : null\n    }\n  };\n});"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -2126,14 +2197,14 @@
       "main": [
         [
           {
-            "node": "Aggregate Results",
+            "node": "Merge Batch Paths",
             "type": "main",
             "index": 0
           }
         ],
         [
           {
-            "node": "Aggregate Results",
+            "node": "Merge Batch Paths",
             "type": "main",
             "index": 0
           }
@@ -2250,7 +2321,25 @@
       "main": [
         [
           {
+            "node": "Tree Changed?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tree Changed?": {
+      "main": [
+        [
+          {
             "node": "Create Commit",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Log Skipped Commit",
             "type": "main",
             "index": 0
           }
@@ -2283,7 +2372,7 @@
       "main": [
         [
           {
-            "node": "Aggregate Results",
+            "node": "Merge Batch Paths",
             "type": "main",
             "index": 0
           }
@@ -2291,6 +2380,17 @@
       ]
     },
     "Log Duplicate": {
+      "main": [
+        [
+          {
+            "node": "Merge Batch Paths",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge Batch Paths": {
       "main": [
         [
           {
@@ -2546,7 +2646,7 @@
       "main": [
         [
           {
-            "node": "Query All Published Insights",
+            "node": "Ensure Single Item",
             "type": "main",
             "index": 0
           }
@@ -2554,6 +2654,17 @@
         [
           {
             "node": "Log No New Insights",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ensure Single Item": {
+      "main": [
+        [
+          {
+            "node": "Query All Published Insights",
             "type": "main",
             "index": 0
           }
