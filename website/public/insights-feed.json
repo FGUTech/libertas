@@ -1951,6 +1951,28 @@
       }
     },
     {
+      "id": "f7dea1ed-385c-4c13-81d8-fc392aede036",
+      "url": "https://libertas.fgu.tech/posts/iran-s-internet-blackout-enabled-mass-state-violence-and-nar",
+      "title": "Iran's Internet Blackout Enabled Mass State Violence and Narrative Control",
+      "summary": "Iran's 15-day internet shutdown during 2026 protests enabled unprecedented state violence (reportedly 30,000+ deaths) while regime-aligned diaspora voices filled the information vacuum to control international narratives.",
+      "content_text": "Iran imposed total internet shutdown Jan 8-23, 2026 during nationwide protests across 30+ provinces\n• NetBlocks confirmed near-complete connectivity collapse affecting mobile, fixed-line, and international gateways\n• UN Human Rights Council described resulting state violence as 'unprecedented in scope and brutality'\n• Anonymous state officials reportedly confirm over 30,000 deaths; HRANA documents 41,800-50,000 arrests\n• Regime-aligned diaspora voices like NIAC's Trita Parsi filled information vacuum during blackout\n• Iranian state media discussed building 'Iran lobby' in US, explicitly naming Parsi and NIAC as assets\n• Systematic disinformation playbook deployed: questioning evidence, demanding impossible proof standards\n• Pattern mirrors 2019 shutdown and Woman Life Freedom movement information control tactics",
+      "date_published": "2026-02-21T11:01:09.521Z",
+      "date_modified": "2026-02-21T11:01:09.704Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "comms",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 88,
+        "credibility_score": 82,
+        "citations": [
+          "https://globalvoices.org/2026/02/21/irans-internet-blackout-as-media-event-networks-algorithms-and-the-politics-of-visibility/"
+        ]
+      }
+    },
+    {
       "id": "f9143226-344a-49a3-8567-a10121b56246",
       "url": "https://libertas.fgu.tech/posts/discord-rolls-out-mandatory-age-verification-despite-data-br",
       "title": "Discord Rolls Out Mandatory Age Verification Despite Data Breach History",
