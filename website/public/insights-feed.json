@@ -1527,6 +1527,50 @@
       }
     },
     {
+      "id": "c22d5ebe-28b5-4b1f-bd28-eeba291491f5",
+      "url": "https://libertas.fgu.tech/posts/17-nonprofits-challenge-ftc-s-retaliatory-investigation-of-m",
+      "title": "17 Nonprofits Challenge FTC's Retaliatory Investigation of Media Matters",
+      "summary": "Coalition led by The Intercept's Press Freedom Defense Fund filed amicus brief to stop FTC's allegedly retaliatory investigation of Media Matters, citing pattern of government intimidation tactics.",
+      "content_text": "17 nonprofits filed amicus brief in U.S. Court of Appeals for D.C. Circuit\n• Challenging FTC investigation into Media Matters for America over Trump administration criticism\n• Brief argues investigation is retaliatory and part of broader government intimidation pattern\n• Coalition includes EFF, Freedom of the Press Foundation, and other freedom tech organizations\n• Seeks to uphold preliminary injunction against the investigation\n• Brief cites similar tactics across Justice Department and FCC under current administration\n• Legal strategy aims to prevent chilling effect on nonprofit journalism and research",
+      "date_published": "2026-02-23T17:02:44.250Z",
+      "date_modified": "2026-02-23T17:02:44.386Z",
+      "tags": [
+        "censorship-resistance",
+        "privacy",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://theintercept.com/2026/02/23/press-freedom-defense-fund-ftc-media-matters-amicus-brief/"
+        ]
+      }
+    },
+    {
+      "id": "c2f3141d-82ef-40db-83ac-92ecfc852682",
+      "url": "https://libertas.fgu.tech/posts/gabon-blocks-social-media-platforms-during-anti-government-p",
+      "title": "Gabon Blocks Social Media Platforms During Anti-Government Protests",
+      "summary": "Gabon's government indefinitely blocked Facebook, WhatsApp, TikTok, Instagram, and YouTube during ongoing protests, with 345+ rights organizations demanding immediate restoration of access.",
+      "content_text": "Jean-Claude Mendome of Gabon's High Authority for Communication announced indefinite social media shutdown on Feb 17, 2026\n• OONI confirmed blocking of Facebook, WhatsApp, TikTok, Instagram, and YouTube as of Feb 18, 2026\n• Shutdown coincides with anti-government protests and labor strikes across the country\n• Government claims blocks prevent 'spread of false information' and protect national unity\n• 345+ human rights organizations from #KeepItOn coalition demand immediate access restoration\n• Gabon has pattern of shutdowns: 2023 elections, 2021 COVID protests, 2019 attempted coup, 2016 post-election\n• Coalition calls on ISPs (Moov Gabon, Gabon Telecom, Airtel Gabon) to refuse government shutdown orders\n• Violations cited include Gabonese Constitution Article 1(2) and international human rights frameworks",
+      "date_published": "2026-02-23T17:01:24.872Z",
+      "date_modified": "2026-02-23T17:01:24.951Z",
+      "tags": [
+        "censorship-resistance",
+        "activism",
+        "surveillance",
+        "comms"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 90,
+        "citations": [
+          "https://www.accessnow.org/press-release/keepiton-social-media-restore-access-in-gabon/"
+        ]
+      }
+    },
+    {
       "id": "c7113fb1-ac38-4b8e-b4ec-05d5124cbfbd",
       "url": "https://libertas.fgu.tech/posts/microsoft-shares-bitlocker-recovery-keys-with-fbi-compromisi",
       "title": "Microsoft Shares BitLocker Recovery Keys with FBI, Compromising Disk Encryption",
@@ -1765,6 +1809,28 @@
         "credibility_score": 85,
         "citations": [
           "https://www.accessnow.org/artificial-insecurity-compromising-confidentality/?pk_campaign=feed&#038;pk_kwd=artificial-insecurity-compromising-confidentality"
+        ]
+      }
+    },
+    {
+      "id": "db251375-1d2a-4dde-83d9-73262c6dc879",
+      "url": "https://libertas.fgu.tech/posts/cameroon-police-seize-journalists-equipment-investigating-us",
+      "title": "Cameroon Police Seize Journalists' Equipment Investigating US Migrant Deportations",
+      "summary": "Cameroonian police detained 4 journalists for 5 hours, seized their phones/laptops while investigating secret US deportation flights, threatening to breach device security and expose confidential sources.",
+      "content_text": "Four journalists detained by Cameroon judicial police while covering secret US migrant deportations\n• AP reporters Nalova Akua, Angel Ngwe, Arnold Ndal plus freelancer Randy Joe Sa'ah held for 5 hours\n• Police confiscated cellphones, laptop, and other equipment under criminal trespass investigation\n• Officers threatened to circumvent device passwords and access private information\n• Lawyer warned anonymous sources could be compromised through device forensics\n• Journalists threatened with being 'crushed' and told one would 'disappear without a trace'\n• Equipment remains with police despite no formal charges filed against journalists\n• Incident highlights digital security risks for journalists in authoritarian environments",
+      "date_published": "2026-02-23T17:02:02.197Z",
+      "date_modified": "2026-02-23T17:02:02.277Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "censorship-resistance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 85,
+        "citations": [
+          "https://cpj.org/2026/02/cameroon-police-probe-journalists-investigating-secret-us-migrant-deportations-seize-equipment/"
         ]
       }
     },

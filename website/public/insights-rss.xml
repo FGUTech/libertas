@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Mon, 23 Feb 2026 11:01:01 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 23 Feb 2026 17:02:44 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -741,6 +741,28 @@
     <category>privacy</category>
   </item>
   <item>
+    <title>17 Nonprofits Challenge FTC&apos;s Retaliatory Investigation of Media Matters</title>
+    <link>https://libertas.fgu.tech/posts/17-nonprofits-challenge-ftc-s-retaliatory-investigation-of-m</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/17-nonprofits-challenge-ftc-s-retaliatory-investigation-of-m</guid>
+    <pubDate>Mon, 23 Feb 2026 17:02:44 GMT</pubDate>
+    <description>Coalition led by The Intercept&apos;s Press Freedom Defense Fund filed amicus brief to stop FTC&apos;s allegedly retaliatory investigation of Media Matters, citing pattern of government intimidation tactics.</description>
+    <category>censorship-resistance</category>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>activism</category>
+  </item>
+  <item>
+    <title>Gabon Blocks Social Media Platforms During Anti-Government Protests</title>
+    <link>https://libertas.fgu.tech/posts/gabon-blocks-social-media-platforms-during-anti-government-p</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/gabon-blocks-social-media-platforms-during-anti-government-p</guid>
+    <pubDate>Mon, 23 Feb 2026 17:01:24 GMT</pubDate>
+    <description>Gabon&apos;s government indefinitely blocked Facebook, WhatsApp, TikTok, Instagram, and YouTube during ongoing protests, with 345+ rights organizations demanding immediate restoration of access.</description>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>surveillance</category>
+    <category>comms</category>
+  </item>
+  <item>
     <title>Microsoft Shares BitLocker Recovery Keys with FBI, Compromising Disk Encryption</title>
     <link>https://libertas.fgu.tech/posts/microsoft-shares-bitlocker-recovery-keys-with-fbi-compromisi</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/microsoft-shares-bitlocker-recovery-keys-with-fbi-compromisi</guid>
@@ -855,6 +877,17 @@
     <category>surveillance</category>
     <category>comms</category>
     <category>censorship-resistance</category>
+  </item>
+  <item>
+    <title>Cameroon Police Seize Journalists&apos; Equipment Investigating US Migrant Deportations</title>
+    <link>https://libertas.fgu.tech/posts/cameroon-police-seize-journalists-equipment-investigating-us</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/cameroon-police-seize-journalists-equipment-investigating-us</guid>
+    <pubDate>Mon, 23 Feb 2026 17:02:02 GMT</pubDate>
+    <description>Cameroonian police detained 4 journalists for 5 hours, seized their phones/laptops while investigating secret US deportation flights, threatening to breach device security and expose confidential sources.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>censorship-resistance</category>
+    <category>activism</category>
   </item>
   <item>
     <title>Iraq Blocks Telegram Nationwide, Kurdistan Region Remains Online</title>
