@@ -73,6 +73,28 @@
       }
     },
     {
+      "id": "14885e67-4410-43ea-8156-a0202dc1ff46",
+      "url": "https://libertas.fgu.tech/posts/cameroon-police-seize-journalists-equipment-threaten-sources",
+      "title": "Cameroon Police Seize Journalists' Equipment, Threaten Sources Over US Deportation Story",
+      "summary": "Cameroonian police detained 4 journalists for 5 hours, seized phones/laptops, and threatened to 'crush' them while investigating secret US migrant deportations, raising source protection concerns.",
+      "content_text": "Four journalists detained by Cameroon judicial police while reporting on secret US deportations\n• Police seized cellphones, laptop, and other equipment - devices not yet returned\n• AP reporters Nalova Akua, Angel Ngwe, Arnold Ndal plus freelancer Randy Joe Sa'ah affected\n• Journalists threatened they would be 'crushed' and would 'disappear without a trace'\n• Police investigating 'criminal trespass' charges for reporting at deportation center\n• Lawyer concerned police will circumvent device passwords and compromise anonymous sources\n• Story covered secret deportation flights of African migrants under Trump administration\n• Demonstrates operational security risks for journalists in hostile environments",
+      "date_published": "2026-02-23T11:00:44.917Z",
+      "date_modified": "2026-02-23T11:00:45.015Z",
+      "tags": [
+        "surveillance",
+        "censorship-resistance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 88,
+        "citations": [
+          "https://cpj.org/2026/02/cameroon-police-probe-journalists-investigating-secret-us-migrant-deportations-seize-equipment/"
+        ]
+      }
+    },
+    {
       "id": "158b677e-dd8f-4344-bc77-0f6893743186",
       "url": "https://libertas.fgu.tech/posts/citizen-lab-reports-on-transnational-repression-methods-to-e",
       "title": "Citizen Lab Reports on Transnational Repression Methods to EU Parliament",
@@ -508,6 +530,28 @@
         "credibility_score": 90,
         "citations": [
           "https://netblocks.org/reports/social-media-and-messaging-apps-restricted-in-ethiopia-amid-religious-tensions-DA3RJz8W"
+        ]
+      }
+    },
+    {
+      "id": "60b453a7-cbe7-4364-aa37-8e9f21d05221",
+      "url": "https://libertas.fgu.tech/posts/north-korea-escalates-tech-surveillance-and-info-controls-ta",
+      "title": "North Korea Escalates Tech Surveillance and Info Controls Targeting Youth",
+      "summary": "North Korea's 2026 Party Congress coincides with intensified crackdowns on tech-savvy youth accessing foreign media, with new laws criminalizing information access and public executions for sharing content.",
+      "content_text": "North Korea's Workers' Party Congress convenes amid escalating repression since 2021\n• Government specifically targets 'tech-savvy young people' for surveillance and punishment\n• Three new laws criminalize foreign media access, South Korean expressions, and 'non-socialist' cultural practices\n• Punishments range from forced labor to execution - witness reports 22-year-old executed for sharing foreign media in 2022\n• Kim Jong Un praised youth who sacrificed 'precious dreams' for state demands, including military deployment to Ukraine\n• Crackdowns focus on information control through schools, workplaces, and party youth organizations\n• UN reports worsening repression over past decade, with forced labor potentially constituting crimes against humanity\n• Human Rights Watch calls for ending criminal penalties for information access and independent monitoring",
+      "date_published": "2026-02-23T11:01:01.623Z",
+      "date_modified": "2026-02-23T11:01:01.745Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.hrw.org/news/2026/02/20/north-korea-party-congress-set-to-bolster-repression"
         ]
       }
     },

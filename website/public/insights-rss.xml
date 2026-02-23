@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Sat, 21 Feb 2026 11:01:09 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 23 Feb 2026 11:01:01 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -38,6 +38,17 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Cameroon Police Seize Journalists&apos; Equipment, Threaten Sources Over US Deportation Story</title>
+    <link>https://libertas.fgu.tech/posts/cameroon-police-seize-journalists-equipment-threaten-sources</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/cameroon-police-seize-journalists-equipment-threaten-sources</guid>
+    <pubDate>Mon, 23 Feb 2026 11:00:44 GMT</pubDate>
+    <description>Cameroonian police detained 4 journalists for 5 hours, seized phones/laptops, and threatened to &apos;crush&apos; them while investigating secret US migrant deportations, raising source protection concerns.</description>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>privacy</category>
   </item>
   <item>
     <title>Citizen Lab Reports on Transnational Repression Methods to EU Parliament</title>
@@ -244,6 +255,17 @@
     <category>censorship-resistance</category>
     <category>comms</category>
     <category>surveillance</category>
+    <category>activism</category>
+  </item>
+  <item>
+    <title>North Korea Escalates Tech Surveillance and Info Controls Targeting Youth</title>
+    <link>https://libertas.fgu.tech/posts/north-korea-escalates-tech-surveillance-and-info-controls-ta</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/north-korea-escalates-tech-surveillance-and-info-controls-ta</guid>
+    <pubDate>Mon, 23 Feb 2026 11:01:01 GMT</pubDate>
+    <description>North Korea&apos;s 2026 Party Congress coincides with intensified crackdowns on tech-savvy youth accessing foreign media, with new laws criminalizing information access and public executions for sharing content.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>privacy</category>
     <category>activism</category>
   </item>
   <item>
