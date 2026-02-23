@@ -117,6 +117,28 @@
       }
     },
     {
+      "id": "22507473-6427-4174-85ce-826014fe93b7",
+      "url": "https://libertas.fgu.tech/posts/un-rules-pakistani-human-rights-defender-s-detention-violate",
+      "title": "UN Rules Pakistani Human Rights Defender's Detention Violates International Law",
+      "summary": "UN Working Group found Pakistan's imprisonment of Pashtun human rights defender Idris Khattak unlawful, calling for immediate release after 5+ years detention for documenting enforced disappearances.",
+      "content_text": "UN Working Group on Arbitrary Detention ruled Idris Khattak's detention violates international law\n• Khattak is Pashtun human rights defender known as 'Pakistan's expert on enforced disappearances'\n• Abducted November 2019, disappeared for 7 months, then convicted by military court under Official Secrets Act\n• WGAD found he was detained specifically for his human rights work and freedom of expression\n• Due process violations included: 2 years pretrial detention, denied counsel, forced confession, secret evidence\n• Military court conviction improper under international law for civilian human rights defender\n• Pakistan's Freedom House score declined from 43/100 (2017) to 32/100 (2025)\n• Case represents broader pattern of silencing dissent and targeting minority rights defenders",
+      "date_published": "2026-02-23T23:01:49.791Z",
+      "date_modified": "2026-02-23T23:01:49.898Z",
+      "tags": [
+        "activism",
+        "surveillance",
+        "censorship-resistance",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 95,
+        "citations": [
+          "https://freedomhouse.org/article/freedom-house-commends-un-working-group-ruling-urges-immediate-release-pakistani-human"
+        ]
+      }
+    },
+    {
       "id": "2308d3c4-e7fa-4e05-9f87-700df8a47c98",
       "url": "https://libertas.fgu.tech/posts/new-attacks-on-fiat-shamir-zero-knowledge-proofs-threaten-pr",
       "title": "New Attacks on Fiat-Shamir Zero-Knowledge Proofs Threaten Privacy Systems",
@@ -309,6 +331,28 @@
         "citations": [
           "https://signal.org/blog/introducing-secure-backups/",
           "https://signal.org/blog/spqr/"
+        ]
+      }
+    },
+    {
+      "id": "3604a0d0-3a77-4f51-a4da-b3acf4c6291a",
+      "url": "https://libertas.fgu.tech/posts/17-orgs-fight-ftc-s-retaliatory-investigation-into-media-mat",
+      "title": "17 Orgs Fight FTC's Retaliatory Investigation Into Media Matters",
+      "summary": "Coalition led by The Intercept filed amicus brief to stop FTC's allegedly retaliatory investigation into Media Matters after they published critical Trump administration coverage.",
+      "content_text": "17 nonprofits filed amicus brief urging D.C. Circuit Court to halt FTC investigation into Media Matters\n• Investigation allegedly launched after Media Matters published critical reporting on Trump allies\n• Brief describes 'pretextual investigations' as troublingly common government intimidation tactic\n• Coalition includes EFF, Freedom of the Press Foundation, Center for Investigative Reporting\n• Pattern cited across agencies: DOJ, FCC using similar coercive investigation tactics\n• Brief seeks to uphold preliminary injunction against the investigation\n• Argues such investigations chill coverage adverse to those in power\n• Mentions related press freedom attacks: journalist arrests in Minnesota, seizure of communications in D.C.",
+      "date_published": "2026-02-23T23:02:17.415Z",
+      "date_modified": "2026-02-23T23:02:17.616Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://theintercept.com/2026/02/23/press-freedom-defense-fund-ftc-media-matters-amicus-brief/"
         ]
       }
     },
@@ -683,6 +727,28 @@
         "credibility_score": 95,
         "citations": [
           "https://ooni.org/post/2025-requirements-for-oonis-anonymous-credentials/"
+        ]
+      }
+    },
+    {
+      "id": "6cde5f97-cb31-4826-8451-6769f18e33cb",
+      "url": "https://libertas.fgu.tech/posts/pakistan-jails-human-rights-lawyers-17-years-for-tweets-crit",
+      "title": "Pakistan Jails Human Rights Lawyers 17 Years for Tweets Criticizing Military",
+      "summary": "Pakistan sentenced two human rights lawyers to 17 years in prison for tweets criticizing military abuses in Balochistan, using cybercrime laws to prosecute digital dissent.",
+      "content_text": "Imaan Mazari and Hadi Ali Chattha sentenced to 17 years under Pakistan's Prevention of Electronic Crimes Act (PECA)\n• Charged for 2021-2025 tweets criticizing military operations in Balochistan and Khyber Pakhtunkhwa provinces\n• Trial moved unusually fast - indictment to sentencing in under 3 months vs typical years-long timeline\n• Evidence consisted of tweet screenshots and witness statements; defense denied adequate cross-examination\n• PECA originally designed for cybercrime now weaponized against journalists, activists, and opposition members\n• Sections 9, 10, 11, and 26A cited - including 'cyber terrorism' and 'false information' provisions with vague definitions\n• UN Human Rights Office and EU condemned sentencing as judicial persecution\n• Pakistan bar associations staged three-day strike; Amnesty called it 'miscarriage of justice'",
+      "date_published": "2026-02-23T23:02:45.278Z",
+      "date_modified": "2026-02-23T23:02:45.422Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 88,
+        "citations": [
+          "https://globalvoices.org/2026/02/20/pakistan-jails-two-lawyers-for-17-years-over-old-tweets/"
         ]
       }
     },
@@ -2012,6 +2078,27 @@
         "credibility_score": 95,
         "citations": [
           "https://ooni.org/post/2025-gg-omg-village/"
+        ]
+      }
+    },
+    {
+      "id": "ecc63e9d-b9aa-483f-94e3-cd6bcc721501",
+      "url": "https://libertas.fgu.tech/posts/ukraine-10-investigative-journalists-surveilled-by-criminal-",
+      "title": "Ukraine: 10 Investigative Journalists Surveilled by Criminal Network Tied to Government Officials",
+      "summary": "Ukrainian authorities are investigating surveillance of 10 corruption journalists by a criminal network including government officials, discovered during a 15-month anti-corruption probe called 'Operation Midas'.",
+      "content_text": "National Anti-Corruption Bureau (NABU) uncovered surveillance of 10 Ukrainian journalists covering corruption during 'Operation Midas' investigation\n• Criminal network allegedly included government officials and businessmen who embezzled energy sector funds\n• Journalists' personal information found on seized digital devices alongside data on politicians and security officials\n• Committee to Protect Journalists calls for swift investigation into privacy violations\n• Nine journalist names publicly released, including editors from Forbes Ukraine, Censor.NET, and investigative outlet Nashi Groshi\n• Two of the surveilled journalists are now deceased\n• Pattern follows January 2024 case where 30 SBU officers spied on Bihus.Info journalists\n• Highlights operational security vulnerabilities for investigative journalists in conflict zones",
+      "date_published": "2026-02-23T23:01:34.290Z",
+      "date_modified": "2026-02-23T23:01:34.392Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 90,
+        "citations": [
+          "https://cpj.org/2026/02/cpj-calls-for-accountability-in-ukrainian-journalist-surveillance-allegations/"
         ]
       }
     },
