@@ -1617,6 +1617,27 @@
       }
     },
     {
+      "id": "bfc11daa-a7de-4e39-8748-899ca7c46c47",
+      "url": "https://libertas.fgu.tech/posts/reports-binance-investigators-found-crypto-flows-to-iran-com",
+      "title": "Reports: Binance Investigators Found Crypto Flows to Iran, Company Denies Firings",
+      "summary": "Unverified reports claim Binance internal investigators discovered substantial crypto flows to Iran through user accounts, though Binance denies firing investigators over the findings.",
+      "content_text": "Unverified reports allege Binance investigators found significant crypto flows to Iran\n• Flows reportedly occurred through regular Binance user accounts\n• Binance has denied firing internal investigators related to these findings\n• Iran faces extensive financial sanctions from US and other jurisdictions\n• Crypto exchanges face regulatory pressure to enforce sanctions compliance\n• Limited details available on scale, timeframe, or verification of alleged flows\n• Story highlights ongoing tension between crypto accessibility and sanctions enforcement",
+      "date_published": "2026-02-24T11:00:19.575Z",
+      "date_modified": "2026-02-24T11:00:19.636Z",
+      "tags": [
+        "payments",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 85,
+        "citations": [
+          "https://www.theblock.co/post/390952/binance-denies-firing-investigators",
+          "https://www.theblock.co/post/390970/fed-bank-supervision-debanking?utm_source=rss&amp;utm_medium=rss"
+        ]
+      }
+    },
+    {
       "id": "c22d5ebe-28b5-4b1f-bd28-eeba291491f5",
       "url": "https://libertas.fgu.tech/posts/17-nonprofits-challenge-ftc-s-retaliatory-investigation-of-m",
       "title": "17 Nonprofits Challenge FTC's Retaliatory Investigation of Media Matters",

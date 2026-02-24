@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Tue, 24 Feb 2026 05:01:35 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 24 Feb 2026 11:00:19 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -784,6 +784,15 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>Reports: Binance Investigators Found Crypto Flows to Iran, Company Denies Firings</title>
+    <link>https://libertas.fgu.tech/posts/reports-binance-investigators-found-crypto-flows-to-iran-com</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/reports-binance-investigators-found-crypto-flows-to-iran-com</guid>
+    <pubDate>Tue, 24 Feb 2026 11:00:19 GMT</pubDate>
+    <description>Unverified reports claim Binance internal investigators discovered substantial crypto flows to Iran through user accounts, though Binance denies firing investigators over the findings.</description>
+    <category>payments</category>
+    <category>sovereignty</category>
   </item>
   <item>
     <title>17 Nonprofits Challenge FTC&apos;s Retaliatory Investigation of Media Matters</title>
