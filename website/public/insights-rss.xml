@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Tue, 24 Feb 2026 17:02:05 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 24 Feb 2026 23:02:02 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -165,6 +165,28 @@
     <category>censorship-resistance</category>
   </item>
   <item>
+    <title>Iran Conducts Mass Arrests, Enforced Disappearances Following January 2026 Massacre</title>
+    <link>https://libertas.fgu.tech/posts/iran-conducts-mass-arrests-enforced-disappearances-following</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/iran-conducts-mass-arrests-enforced-disappearances-following</guid>
+    <pubDate>Tue, 24 Feb 2026 23:02:02 GMT</pubDate>
+    <description>Iran arrested tens of thousands following January 8-9 massacres, conducting mass enforced disappearances, torture, and death sentences in coordinated crackdown to suppress dissent.</description>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>comms</category>
+    <category>privacy</category>
+  </item>
+  <item>
+    <title>Zimbabwe Detains Journalist for Week Over Online Corruption Report</title>
+    <link>https://libertas.fgu.tech/posts/zimbabwe-detains-journalist-for-week-over-online-corruption-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/zimbabwe-detains-journalist-for-week-over-online-corruption-</guid>
+    <pubDate>Tue, 24 Feb 2026 23:01:32 GMT</pubDate>
+    <description>Zimbabwean authorities detained Bulawayo24 journalist Gideon Madzikatidze for a week on cyberbullying and broadcasting charges after he published online corruption allegations against waste management company.</description>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>surveillance</category>
+  </item>
+  <item>
     <title>17 Orgs Fight FTC&apos;s Retaliatory Investigation Into Media Matters</title>
     <link>https://libertas.fgu.tech/posts/17-orgs-fight-ftc-s-retaliatory-investigation-into-media-mat</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/17-orgs-fight-ftc-s-retaliatory-investigation-into-media-mat</guid>
@@ -174,6 +196,16 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>Senator Blumenthal Opens Binance Investigation Over Iran Sanctions Evasion Reports</title>
+    <link>https://libertas.fgu.tech/posts/senator-blumenthal-opens-binance-investigation-over-iran-san</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/senator-blumenthal-opens-binance-investigation-over-iran-san</guid>
+    <pubDate>Tue, 24 Feb 2026 23:00:38 GMT</pubDate>
+    <description>US Senator Richard Blumenthal launched an inquiry into Binance following reports the exchange may have facilitated Iran-linked sanctions violations.</description>
+    <category>bitcoin</category>
+    <category>sovereignty</category>
+    <category>censorship-resistance</category>
   </item>
   <item>
     <title>Signal Announces New President Role to Focus on Sustainability and Strategy</title>
@@ -890,6 +922,17 @@
     <category>activism</category>
   </item>
   <item>
+    <title>Cameroon Police Seize Journalist Equipment, Target Sources in Deportation Investigation</title>
+    <link>https://libertas.fgu.tech/posts/cameroon-police-seize-journalist-equipment-target-sources-in</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/cameroon-police-seize-journalist-equipment-target-sources-in</guid>
+    <pubDate>Tue, 24 Feb 2026 23:01:32 GMT</pubDate>
+    <description>Cameroonian police detained 4 journalists covering secret US migrant deportations, seized their devices, and threatened to access confidential sources by circumventing passwords.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+  </item>
+  <item>
     <title>DHS Using Administrative Subpoenas to Demand User Data from Tech Companies</title>
     <link>https://libertas.fgu.tech/posts/dhs-using-administrative-subpoenas-to-demand-user-data-from-</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/dhs-using-administrative-subpoenas-to-demand-user-data-from-</guid>
@@ -911,6 +954,17 @@
     <category>surveillance</category>
     <category>comms</category>
     <category>sovereignty</category>
+  </item>
+  <item>
+    <title>Angola&apos;s Parliament Passes Restrictive NGO Bill Threatening Civil Society Operations</title>
+    <link>https://libertas.fgu.tech/posts/angola-s-parliament-passes-restrictive-ngo-bill-threatening-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/angola-s-parliament-passes-restrictive-ngo-bill-threatening-</guid>
+    <pubDate>Tue, 24 Feb 2026 23:02:02 GMT</pubDate>
+    <description>Angola&apos;s parliament approved legislation granting sweeping government control over NGOs, including mandatory authorization, extensive monitoring, financial restrictions, and administrative suspension powers that undermine civil society independence.</description>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>surveillance</category>
+    <category>privacy</category>
   </item>
   <item>
     <title>Guinea Blocks Social Media During Protests, Army Called In</title>
@@ -1008,6 +1062,16 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Ethiopia Revokes Independent Media License in Escalating Press Crackdown</title>
+    <link>https://libertas.fgu.tech/posts/ethiopia-revokes-independent-media-license-in-escalating-pre</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/ethiopia-revokes-independent-media-license-in-escalating-pre</guid>
+    <pubDate>Tue, 24 Feb 2026 23:01:32 GMT</pubDate>
+    <description>Ethiopian authorities revoked Addis Standard&apos;s media license citing vague &apos;national interest&apos; violations, part of broader crackdown including Reuters accreditation denials and newsroom raids.</description>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>surveillance</category>
   </item>
   <item>
     <title>Coalition Demands California Revoke Federal License Plate Reader Permits</title>
