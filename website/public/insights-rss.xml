@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Tue, 24 Feb 2026 11:00:19 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 24 Feb 2026 17:02:05 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -194,6 +194,17 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Israel Blocks 37 Aid Groups Over Staff Data Requirements, Citing Security</title>
+    <link>https://libertas.fgu.tech/posts/israel-blocks-37-aid-groups-over-staff-data-requirements-cit</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/israel-blocks-37-aid-groups-over-staff-data-requirements-cit</guid>
+    <pubDate>Tue, 24 Feb 2026 17:02:05 GMT</pubDate>
+    <description>Israeli authorities are barring 37 international NGOs from Gaza/West Bank operations after they refused new registration requirements demanding staff lists and biodata, citing violations of humanitarian neutrality principles.</description>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>sovereignty</category>
   </item>
   <item>
     <title>UK Issues Secret Order for Apple iCloud Encryption Backdoor, Global Impact Feared</title>
@@ -815,6 +826,17 @@
     <category>activism</category>
     <category>surveillance</category>
     <category>comms</category>
+  </item>
+  <item>
+    <title>Bruce Schneier: AI Arms Races Threaten Democratic Participation and Concentrate Power in Big Tech</title>
+    <link>https://libertas.fgu.tech/posts/bruce-schneier-ai-arms-races-threaten-democratic-participati</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/bruce-schneier-ai-arms-races-threaten-democratic-participati</guid>
+    <pubDate>Tue, 24 Feb 2026 17:01:43 GMT</pubDate>
+    <description>Security expert Bruce Schneier warns that AI is creating adversarial arms races across domains like government-citizen interactions, benefiting Big Tech monopolies while potentially undermining authentic democratic participation.</description>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>sovereignty</category>
+    <category>activism</category>
   </item>
   <item>
     <title>Microsoft Shares BitLocker Recovery Keys with FBI, Compromising Disk Encryption</title>
