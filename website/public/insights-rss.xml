@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Mon, 23 Feb 2026 23:02:45 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 24 Feb 2026 05:01:35 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -267,6 +267,18 @@
     <category>privacy</category>
     <category>censorship-resistance</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Thai Court Sentences 4 Free Speech Activists to 32 Months for Royal Criticism</title>
+    <link>https://libertas.fgu.tech/posts/thai-court-sentences-4-free-speech-activists-to-32-months-fo</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/thai-court-sentences-4-free-speech-activists-to-32-months-fo</guid>
+    <pubDate>Tue, 24 Feb 2026 05:01:35 GMT</pubDate>
+    <description>Thai activists including Pimsiri Petchnamrob received 32-month prison sentences for criticizing the monarchy under lese majeste laws, highlighting severe censorship repression in Thailand.</description>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>censorship-resistance</category>
+    <category>comms</category>
+    <category>privacy</category>
   </item>
   <item>
     <title>Ethiopia Blocks Major Social Media Platforms During Religious Protests</title>
