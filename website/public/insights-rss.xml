@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Wed, 25 Feb 2026 11:01:38 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 25 Feb 2026 23:02:43 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -378,6 +378,17 @@
     <category>privacy</category>
   </item>
   <item>
+    <title>EFF Warns of Growing Age Verification Mandates and Facial Recognition Surveillance</title>
+    <link>https://libertas.fgu.tech/posts/eff-warns-of-growing-age-verification-mandates-and-facial-re</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-warns-of-growing-age-verification-mandates-and-facial-re</guid>
+    <pubDate>Wed, 25 Feb 2026 23:01:27 GMT</pubDate>
+    <description>EFF highlights escalating threats to online privacy including Discord&apos;s mandatory age verification, Meta&apos;s face-scanning smart glasses, and surveillance tech normalization.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>identity</category>
+  </item>
+  <item>
     <title>FBI Counterterrorism Unit Targets Climate Activists Under Trump&apos;s NSPM-7 Directive</title>
     <link>https://libertas.fgu.tech/posts/fbi-counterterrorism-unit-targets-climate-activists-under-tr</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/fbi-counterterrorism-unit-targets-climate-activists-under-tr</guid>
@@ -569,6 +580,17 @@
     <category>activism</category>
   </item>
   <item>
+    <title>40 Uyghurs Forcibly Returned to China by Thailand Remain Missing After One Year</title>
+    <link>https://libertas.fgu.tech/posts/40-uyghurs-forcibly-returned-to-china-by-thailand-remain-mis</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/40-uyghurs-forcibly-returned-to-china-by-thailand-remain-mis</guid>
+    <pubDate>Wed, 25 Feb 2026 23:02:43 GMT</pubDate>
+    <description>Thailand deported 40 Uyghur men to China in February 2025 despite torture risks. Their whereabouts remain unknown, constituting forced disappearances under international law.</description>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>sovereignty</category>
+    <category>identity</category>
+  </item>
+  <item>
     <title>Journalist Safety Expert Highlights Digital Security Tools for High-Risk Environments</title>
     <link>https://libertas.fgu.tech/posts/journalist-safety-expert-highlights-digital-security-tools-f</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/journalist-safety-expert-highlights-digital-security-tools-f</guid>
@@ -684,6 +706,18 @@
     <category>censorship-resistance</category>
     <category>surveillance</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>Trump Admin Cuts Freedom Tech Funding While Launching &apos;Anti-Censorship&apos; Portal</title>
+    <link>https://libertas.fgu.tech/posts/trump-admin-cuts-freedom-tech-funding-while-launching-anti-c</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/trump-admin-cuts-freedom-tech-funding-while-launching-anti-c</guid>
+    <pubDate>Wed, 25 Feb 2026 23:02:43 GMT</pubDate>
+    <description>Trump administration launches freedom.gov to bypass European regulations while simultaneously cutting funding to organizations that build censorship circumvention tools and support at-risk activists globally.</description>
+    <category>censorship-resistance</category>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>comms</category>
   </item>
   <item>
     <title>New York Proposes Mandatory 3D Printer Surveillance for Firearm Detection</title>
@@ -1159,6 +1193,16 @@
     <category>censorship-resistance</category>
   </item>
   <item>
+    <title>Ethiopia Shutters Independent Media Outlets Ahead of National Elections</title>
+    <link>https://libertas.fgu.tech/posts/ethiopia-shutters-independent-media-outlets-ahead-of-nationa</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/ethiopia-shutters-independent-media-outlets-ahead-of-nationa</guid>
+    <pubDate>Wed, 25 Feb 2026 23:02:43 GMT</pubDate>
+    <description>Ethiopian authorities revoked the license of Addis Standard, one of the country&apos;s last independent news outlets, three months before national elections, escalating systematic media suppression.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+  </item>
+  <item>
     <title>Signal Deploys Faster ORAM for Privacy-Preserving Contact Discovery</title>
     <link>https://libertas.fgu.tech/posts/signal-deploys-faster-oram-for-privacy-preserving-contact-di</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/signal-deploys-faster-oram-for-privacy-preserving-contact-di</guid>
@@ -1168,6 +1212,17 @@
     <category>censorship-resistance</category>
     <category>comms</category>
     <category>surveillance</category>
+  </item>
+  <item>
+    <title>Access Now Launches Digital Security Webinar Series Targeting Civil Society Spear-Phishing Threats</title>
+    <link>https://libertas.fgu.tech/posts/access-now-launches-digital-security-webinar-series-targetin</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/access-now-launches-digital-security-webinar-series-targetin</guid>
+    <pubDate>Wed, 25 Feb 2026 23:02:15 GMT</pubDate>
+    <description>Access Now&apos;s Digital Security Helpline launches webinar series starting March 2026, focusing on spear-phishing defense for activists and civil society with expert speakers from Citizen Lab and security industry.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>comms</category>
   </item>
   <item>
     <title>Iran&apos;s Internet Blackout Enabled Mass State Violence and Narrative Control</title>
