@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Wed, 25 Feb 2026 05:02:01 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 25 Feb 2026 11:01:38 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -1189,6 +1189,17 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>identity</category>
+  </item>
+  <item>
+    <title>Access Now Launches Digital Security Training Series for Civil Society</title>
+    <link>https://libertas.fgu.tech/posts/access-now-launches-digital-security-training-series-for-civ</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/access-now-launches-digital-security-training-series-for-civ</guid>
+    <pubDate>Wed, 25 Feb 2026 11:01:38 GMT</pubDate>
+    <description>Access Now&apos;s Digital Security Helpline is hosting webinar series starting March 2026, focusing on spear-phishing defense for activists, journalists, and civil society facing targeted attacks.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>censorship-resistance</category>
   </item>
   <item>
     <title>Senegal Arrests Second Journalist for Challenging Official Account of Student Death</title>

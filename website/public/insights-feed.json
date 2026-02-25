@@ -2455,6 +2455,28 @@
       }
     },
     {
+      "id": "fc14dea4-5693-4736-881e-8b84c9c2025a",
+      "url": "https://libertas.fgu.tech/posts/access-now-launches-digital-security-training-series-for-civ",
+      "title": "Access Now Launches Digital Security Training Series for Civil Society",
+      "summary": "Access Now's Digital Security Helpline is hosting webinar series starting March 2026, focusing on spear-phishing defense for activists, journalists, and civil society facing targeted attacks.",
+      "content_text": "Access Now launching 'Safe and Strong' webinar series on digital security for civil society\n• First session March 10, 2026 focuses on spear-phishing attacks targeting activists and journalists\n• Training draws from documented attack cases in Eastern Europe and Middle East regions\n• Expert speakers include Citizen Lab researcher, Lookout threat analyst, and regional security practitioners\n• Series addresses increasing complexity of digital attacks against civil society organizations\n• Content specifically tailored for high-risk users including human rights defenders\n• Training includes practical examples and best practices for prevention and incident response",
+      "date_published": "2026-02-25T11:01:38.762Z",
+      "date_modified": "2026-02-25T11:01:38.849Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "activism",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.accessnow.org/event/digital-security-webinars/"
+        ]
+      }
+    },
+    {
       "id": "fce44db8-b51f-4d57-b89d-75395b98c0ce",
       "url": "https://libertas.fgu.tech/posts/senegal-arrests-second-journalist-for-challenging-official-a",
       "title": "Senegal Arrests Second Journalist for Challenging Official Account of Student Death",
