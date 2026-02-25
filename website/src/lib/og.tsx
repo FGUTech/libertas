@@ -5,13 +5,11 @@ import { getPostBySlug } from "@/lib/posts";
 import { getDigestBySlug } from "@/lib/posts";
 
 const OG_SIZE = { width: 1200, height: 630 };
+const TWITTER_SIZE = { width: 800, height: 800 };
 
 // Read logo once at module level
 const logoData = readFileSync(join(process.cwd(), "public", "app-icon.png"));
 const logoSrc = `data:image/png;base64,${logoData.toString("base64")}`;
-
-const MATRIX_CHARS =
-  "01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン";
 
 const TOPIC_COLORS: Record<string, string> = {
   bitcoin: "#ffb800",
@@ -26,40 +24,49 @@ const TOPIC_COLORS: Record<string, string> = {
   sovereignty: "#00ff41",
 };
 
-function seededRandom(seed: string) {
-  let hash = 0;
-  for (let i = 0; i < seed.length; i++) {
-    hash = ((hash << 5) - hash + seed.charCodeAt(i)) | 0;
+/**
+ * Generate matrix rain as rows of text strings for efficient rendering.
+ * Mixes ASCII symbols with katakana for a classic matrix aesthetic.
+ */
+const MATRIX_MIXED = "01<>|*+=@#アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン                                 ";
+
+function generateMatrixRows(
+  slug: string,
+  width: number = 1200,
+  height: number = 630,
+): { text: string; opacity: number }[] {
+  const charW = 10;
+  const rowH = 22;
+  // Generate 3x wider than needed so it always overflows
+  const cols = Math.floor((width * 3) / charW);
+  const numRows = Math.floor(height / rowH);
+
+  let seed = 0;
+  for (let i = 0; i < slug.length; i++) {
+    seed = ((seed << 5) - seed + slug.charCodeAt(i)) | 0;
   }
-  return () => {
-    hash = ((hash * 1103515245 + 12345) & 0x7fffffff);
-    return (hash % 1000) / 1000;
-  };
-}
 
-function generateMatrixChars(
-  slug: string
-): { char: string; x: number; y: number; opacity: number }[] {
-  const rand = seededRandom(slug);
-  const chars: { char: string; x: number; y: number; opacity: number }[] = [];
+  const rows: { text: string; opacity: number }[] = [];
 
-  for (let col = 0; col < 60; col++) {
-    const x = col * 20;
-    const colLength = Math.floor(rand() * 15) + 5;
-    const startY = Math.floor(rand() * 300);
-
-    for (let row = 0; row < colLength; row++) {
-      const charIdx = Math.floor(rand() * MATRIX_CHARS.length);
-      chars.push({
-        char: MATRIX_CHARS[charIdx],
-        x,
-        y: startY + row * 28,
-        opacity: Math.max(0.03, 0.12 - row * 0.008),
-      });
+  for (let row = 0; row < numRows; row++) {
+    let line = "";
+    for (let col = 0; col < cols; col++) {
+      const h = ((seed ^ (row * 2654435761) ^ (col * 40503)) * 48271) >>> 0;
+      if (h % 100 < 70) {
+        line += " ";
+      } else {
+        const charIdx = ((h >> 3) ^ (h >> 7)) % MATRIX_MIXED.length;
+        line += MATRIX_MIXED[charIdx];
+      }
     }
+    const rowFactor = row / numRows;
+    rows.push({
+      text: line,
+      opacity: 0.1 + (1 - rowFactor) * 0.18,
+    });
   }
 
-  return chars;
+  return rows;
 }
 
 function formatDate(dateStr: string): string {
@@ -77,11 +84,15 @@ function formatDate(dateStr: string): string {
 function MatrixBackground({
   slug,
   color,
+  width = 1200,
+  height = 630,
 }: {
   slug: string;
   color: string;
+  width?: number;
+  height?: number;
 }) {
-  const matrixChars = generateMatrixChars(slug);
+  const matrixRows = generateMatrixRows(slug, width, height);
 
   return (
     <>
@@ -90,37 +101,42 @@ function MatrixBackground({
           position: "absolute",
           top: 0,
           left: 0,
-          width: "1200px",
-          height: "630px",
+          width: `${width}px`,
+          height: `${height}px`,
           display: "flex",
+          flexDirection: "column",
+          alignItems: "flex-start",
+          justifyContent: "flex-start",
+          overflow: "hidden",
         }}
       >
-        {matrixChars.map((mc, i) => (
+        {matrixRows.map((row, i) => (
           <div
             key={i}
             style={{
-              position: "absolute",
-              left: `${mc.x}px`,
-              top: `${mc.y}px`,
+              display: "flex",
               color,
-              fontSize: "16px",
+              fontSize: "14px",
               fontFamily: "monospace",
-              opacity: mc.opacity,
+              opacity: row.opacity,
+              whiteSpace: "pre",
+              lineHeight: "22px",
+              width: `${width}px`,
             }}
           >
-            {mc.char}
+            {row.text}
           </div>
         ))}
       </div>
+      {/* Radial vignette: darkens center for content readability */}
       <div
         style={{
           position: "absolute",
           top: 0,
           left: 0,
-          width: "1200px",
-          height: "630px",
-          background:
-            "linear-gradient(180deg, rgba(10,10,10,0.4) 0%, rgba(10,10,10,0.85) 35%, rgba(10,10,10,0.95) 100%)",
+          width: `${width}px`,
+          height: `${height}px`,
+          background: "radial-gradient(ellipse 60% 55% at 50% 50%, rgba(10,10,10,0.88) 0%, rgba(10,10,10,0.45) 70%, rgba(10,10,10,0.05) 100%)",
           display: "flex",
         }}
       />
@@ -441,5 +457,256 @@ export async function renderDigestOgImage(slug: string) {
       </div>
     ),
     { ...OG_SIZE }
+  );
+}
+
+/**
+ * Square Twitter card image for a post (summary card)
+ * Logo centered, "LIBERTAS" text, topic badges. No title (Twitter shows it from meta tags).
+ */
+export async function renderPostTwitterImage(slug: string) {
+  const post = getPostBySlug(slug);
+
+  if (!post) {
+    return new ImageResponse(
+      (
+        <div
+          style={{
+            width: "100%",
+            height: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            backgroundColor: "#0a0a0a",
+            color: "#e0e0e0",
+            fontSize: 28,
+          }}
+        >
+          Signal Not Found
+        </div>
+      ),
+      { ...TWITTER_SIZE }
+    );
+  }
+
+  return new ImageResponse(
+    (
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          backgroundColor: "#0a0a0a",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        <MatrixBackground slug={slug} color="#00ff41" width={800} height={800} />
+
+        {/* Content centered */}
+        <div
+          style={{
+            position: "relative",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "40px",
+            width: "100%",
+            height: "100%",
+            padding: "60px",
+          }}
+        >
+          {/* Logo */}
+          <img
+            src={logoSrc}
+            width={240}
+            height={240}
+            style={{ borderRadius: "16px" }}
+          />
+
+          {/* Brand text */}
+          <span
+            style={{
+              color: "#00ff41",
+              fontSize: "52px",
+              fontWeight: 700,
+              letterSpacing: "8px",
+            }}
+          >
+            LIBERTAS
+          </span>
+
+          {/* Green accent line */}
+          <div
+            style={{
+              width: "80px",
+              height: "4px",
+              backgroundColor: "#00ff41",
+              borderRadius: "2px",
+              display: "flex",
+            }}
+          />
+
+          {/* Topic badges */}
+          <div style={{ display: "flex", gap: "16px", flexWrap: "wrap", justifyContent: "center", maxWidth: "700px" }}>
+            {post.topics.slice(0, 4).map((topic) => {
+              const color = TOPIC_COLORS[topic] || "#00ff41";
+              return (
+                <div
+                  key={topic}
+                  style={{
+                    color,
+                    fontSize: "24px",
+                    fontWeight: 600,
+                    border: `2px solid ${color}60`,
+                    borderRadius: "10px",
+                    padding: "10px 28px",
+                    backgroundColor: `${color}15`,
+                    display: "flex",
+                  }}
+                >
+                  {topic}
+                </div>
+              );
+            })}
+          </div>
+
+          {/* URL */}
+          <span style={{ color: "#868686", fontSize: "22px" }}>
+            libertas.fgu.tech
+          </span>
+        </div>
+      </div>
+    ),
+    { ...TWITTER_SIZE }
+  );
+}
+
+/**
+ * Square Twitter card image for a digest (summary card)
+ * Logo centered with amber theme, "WEEKLY DIGEST" badge, topic badges.
+ */
+export async function renderDigestTwitterImage(slug: string) {
+  const digest = getDigestBySlug(slug);
+
+  if (!digest) {
+    return new ImageResponse(
+      (
+        <div
+          style={{
+            width: "100%",
+            height: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            backgroundColor: "#0a0a0a",
+            color: "#e0e0e0",
+            fontSize: 28,
+          }}
+        >
+          Digest Not Found
+        </div>
+      ),
+      { ...TWITTER_SIZE }
+    );
+  }
+
+  return new ImageResponse(
+    (
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          backgroundColor: "#0a0a0a",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        <MatrixBackground slug={slug} color="#ffb800" width={800} height={800} />
+
+        {/* Content centered */}
+        <div
+          style={{
+            position: "relative",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "36px",
+            width: "100%",
+            height: "100%",
+            padding: "60px",
+          }}
+        >
+          {/* Logo */}
+          <img
+            src={logoSrc}
+            width={220}
+            height={220}
+            style={{ borderRadius: "16px" }}
+          />
+
+          {/* Brand text */}
+          <span
+            style={{
+              color: "#00ff41",
+              fontSize: "48px",
+              fontWeight: 700,
+              letterSpacing: "8px",
+            }}
+          >
+            LIBERTAS
+          </span>
+
+          {/* Digest badge */}
+          <div
+            style={{
+              color: "#ffb800",
+              fontSize: "26px",
+              fontWeight: 600,
+              border: "2px solid #ffb80060",
+              borderRadius: "10px",
+              padding: "10px 32px",
+              backgroundColor: "#ffb80020",
+              display: "flex",
+            }}
+          >
+            WEEKLY DIGEST
+          </div>
+
+          {/* Topic badges */}
+          <div style={{ display: "flex", gap: "16px", flexWrap: "wrap", justifyContent: "center", maxWidth: "700px" }}>
+            {digest.topTopics.slice(0, 4).map((topic) => {
+              const color = TOPIC_COLORS[topic] || "#00ff41";
+              return (
+                <div
+                  key={topic}
+                  style={{
+                    color,
+                    fontSize: "24px",
+                    fontWeight: 600,
+                    border: `2px solid ${color}60`,
+                    borderRadius: "10px",
+                    padding: "10px 28px",
+                    backgroundColor: `${color}15`,
+                    display: "flex",
+                  }}
+                >
+                  {topic}
+                </div>
+              );
+            })}
+          </div>
+
+          {/* URL */}
+          <span style={{ color: "#868686", fontSize: "22px" }}>
+            libertas.fgu.tech
+          </span>
+        </div>
+      </div>
+    ),
+    { ...TWITTER_SIZE }
   );
 }

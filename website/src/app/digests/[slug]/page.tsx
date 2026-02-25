@@ -45,7 +45,7 @@ export async function generateMetadata({
       tags: digest.topTopics,
     },
     twitter: {
-      card: "summary_large_image",
+      card: "summary",
       title: digest.title,
       description: digest.tldr,
     },
