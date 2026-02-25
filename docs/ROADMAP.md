@@ -506,17 +506,364 @@ Features for future consideration after core functionality is stable.
 
 ---
 
-### 3.2 Social Media Bots
+### 3.2 Social Distribution Pipeline
 
-**Description**: Automated posting to social platforms.
+**Description**: Automated social post generation and publishing across platforms, powered by specialized Claude Code skills that pull from Postgres data (insights, digests, project ideas, patterns). Each post type has a dedicated generation skill; all skills inherit from a shared voice/style reference. Posts are generated, queued for optional review, then published via n8n Workflow F.
+
+**Voice model**: Mixed register per post type — signal alerts and breaking news are institutional/factual; threads and commentary get more editorial personality; project spotlights are enthusiastic but grounded.
+
+**Target platforms**: X/Twitter (primary), Reddit, Nostr, LinkedIn (secondary).
+
+---
+
+### 3.2a FGUTech Voice & Style Reference
+
+**Description**: Master reference document defining @FGUTech's brand voice, tone spectrum, anti-patterns, and platform-specific formatting rules. All social post generation skills inherit from this reference.
+
+**Deliverable**: `agents/social/voice-reference.md` — loaded by all social generation agents as shared context.
 
 **Requirements**:
-- Twitter/X bot for insight highlights
-- Nostr relay publishing
-- LinkedIn professional updates
-- TikTok content adaptation (if applicable)
+- [x] Define FGUTech brand identity (not a person — a sharp, credible research entity)
+- [x] Define tone spectrum with register levels: `institutional` (signal alerts, breaking), `editorial` (threads, digests), `conversational` (commentary, engagement)
+- [x] Document writing rules: max lengths per platform, citation style, link formatting, hashtag policy (none on X, subreddit-appropriate on Reddit)
+- [x] Document anti-patterns: no engagement farming, no crypto-bro language, no "gm/wagmi/lfg", no emojis in body, no sensationalism, no speculation beyond source data
+- [x] Define topic framing guidelines per Libertas topic (`bitcoin`, `zk`, `censorship-resistance`, `privacy`, `surveillance`, etc.)
+- [x] Define citation/attribution rules: always link to Libertas insight URL, credit original source
+- [x] Platform-specific formatting rules appendix (X: 280 char / thread conventions, Reddit: markdown / subreddit norms, Nostr: NIP-01 note format, LinkedIn: professional framing)
+- [x] Include 3-5 golden examples per register level
+- [x] Include explicit "cringe test" checklist (would FGU be embarrassed by this in 6 months?)
 
-**Notes**: Each platform has different content formatting needs.
+**Implementation Notes**:
+- Pattern follows `agents/summarize.md` structure: Role → Context → Rules → Examples
+- This file is a reference, not an agent prompt — it gets included as context in post-generation agent prompts
+- Voice should be distinct from @BrandonJRobertz (personal) — FGU is an organization, not an individual
+- Review with team before finalizing; voice is hard to change once established
+
+---
+
+### 3.2b Database: Social Posts Table & Scheduling
+
+**Description**: Database schema and n8n workflow infrastructure for social post lifecycle: generation → review queue → scheduling → publishing → tracking.
+
+**Deliverable**: Migration file + n8n Workflow F (Social Publisher).
+
+**Requirements**:
+- [ ] Create `social_posts` table:
+  ```sql
+  CREATE TABLE social_posts (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    source_type VARCHAR(20) NOT NULL CHECK (source_type IN ('insight', 'digest', 'project_idea', 'pattern', 'manual')),
+    source_id UUID,                    -- FK to insights/digests/project_ideas
+    platform VARCHAR(20) NOT NULL CHECK (platform IN ('x', 'reddit', 'nostr', 'linkedin')),
+    post_type VARCHAR(30) NOT NULL CHECK (post_type IN ('signal_alert', 'insight_thread', 'digest_recap', 'pattern_alert', 'project_spotlight', 'breaking', 'commentary')),
+    content_json JSONB NOT NULL,       -- Platform-specific content (text, thread parts, media refs)
+    status VARCHAR(20) NOT NULL DEFAULT 'draft' CHECK (status IN ('draft', 'queued', 'approved', 'published', 'rejected', 'failed')),
+    scheduled_at TIMESTAMPTZ,
+    published_at TIMESTAMPTZ,
+    platform_post_id TEXT,             -- X tweet ID, Reddit post ID, Nostr event ID, etc.
+    platform_url TEXT,                 -- Direct link to published post
+    metadata JSONB DEFAULT '{}',       -- Engagement metrics, error details, etc.
+    created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
+  );
+  ```
+- [ ] Add indexes on `(platform, status)`, `(source_type, source_id)`, `(scheduled_at)`
+- [ ] Add `updated_at` trigger (reuse existing pattern from `source_items`)
+- [ ] Add TypeScript types and Zod schema for `SocialPost`
+- [ ] Add JSON Schema in `schemas/social-post.schema.json`
+- [ ] Design n8n Workflow F: poll `social_posts` where `status = 'approved'` and `scheduled_at <= now()` → publish to platform API → update status + `platform_post_id`
+
+**Implementation Notes**:
+- `content_json` is platform-specific: X posts store `{ text, thread_parts[], media_urls[] }`, Reddit stores `{ title, body_markdown, subreddit, flair }`, etc.
+- Scheduling allows batching (don't post 10 tweets in 10 minutes)
+- `source_id` enables tracing any social post back to the insight/digest/idea that spawned it
+- Migration file: `migrations/004_social_posts.sql`
+
+---
+
+### 3.2c X: Signal Alert Posts
+
+**Description**: Single-tweet posts for individual published insights. The most common post type — one tweet per noteworthy insight with the TL;DR and a link.
+
+**Deliverable**: `agents/social/x-signal-alert.md` agent prompt + Claude Code skill.
+
+**Depends on**: 3.2a (voice reference), 3.2b (social_posts table)
+
+**Requirements**:
+- [ ] Agent prompt that takes an Insight (title, tldr, topics, relevance_score, citations, published_url) and generates a single tweet
+- [ ] Tone register: `institutional` — factual, direct, no editorializing
+- [ ] Format: Signal text + insight URL, must fit 280 chars (URL counts as ~23 chars via t.co)
+- [ ] Topic-appropriate framing (e.g., censorship items lead with the country/event, bitcoin items lead with the technical development)
+- [ ] Auto-trigger: Workflow A publishes insight with `relevance_score >= 70` → generate signal alert → insert into `social_posts` as `draft` or `queued` (configurable gate)
+- [ ] Generate 3 variations, pick the best (or let reviewer choose)
+- [ ] Golden tests: 5+ input/output pairs covering different topics
+
+**Input** (from Postgres):
+```sql
+SELECT title, tldr, topics, freedom_relevance_score, credibility_score, citations, published_url
+FROM insights WHERE status = 'published' AND id = $1
+```
+
+**Example Output**:
+```
+Internet outage detected across Pakistan as authorities jail human rights lawyers — censorship escalation following legal defense of political dissidents.
+
+fgu.tech/signals/pakistan-jails-human-rights-lawyers
+```
+
+---
+
+### 3.2d X: Insight Thread Posts
+
+**Description**: Multi-tweet threads for high-signal insights that deserve deeper exposition. Uses summary bullets and deep dive content to build a narrative thread.
+
+**Deliverable**: `agents/social/x-insight-thread.md` agent prompt + Claude Code skill.
+
+**Depends on**: 3.2a (voice reference), 3.2b (social_posts table)
+
+**Requirements**:
+- [ ] Agent prompt that takes a high-signal Insight (including `deep_dive_markdown`, `summary_bullets`, `citations`) and generates a thread (3-8 tweets)
+- [ ] Tone register: `editorial` — more personality, connects dots, highlights implications
+- [ ] Thread structure: Hook tweet (most compelling angle) → Key facts (from bullets) → Why it matters (from deep dive) → Sources + link to full insight
+- [ ] Each tweet in thread must stand alone as readable (no "1/" numbering)
+- [ ] Auto-trigger: insight with `relevance_score >= 85` AND `deep_dive_markdown IS NOT NULL`
+- [ ] `content_json` stores `{ thread_parts: string[] }` for ordered tweet sequence
+- [ ] Golden tests: 3+ input/output pairs
+
+**Implementation Notes**:
+- Thread tweets should be connected but each individually retweetable
+- Final tweet always links back to the full insight on fgu.tech
+- Consider including a relevant image/chart placeholder for tweet 1 (media support in future iteration)
+
+---
+
+### 3.2e X: Weekly Digest Recap
+
+**Description**: Thread summarizing the weekly digest — posted when Workflow B publishes a new digest. Gives followers the week's highlights without needing to read the full digest.
+
+**Deliverable**: `agents/social/x-digest-recap.md` agent prompt + Claude Code skill.
+
+**Depends on**: 3.2a (voice reference), 3.2b (social_posts table)
+
+**Requirements**:
+- [ ] Agent prompt that takes a Digest (tldr, sections, emerging_patterns, insight_count, top_topics) and generates a recap thread (4-10 tweets)
+- [ ] Tone register: `editorial` — narrative, connects the week's dots
+- [ ] Thread structure: "This week in freedom tech" hook → Top signal per category → Emerging patterns → Looking ahead → Link to full digest
+- [ ] Auto-trigger: Workflow B publishes digest → generate recap → queue
+- [ ] Golden tests: 2+ input/output pairs
+
+**Input** (from Postgres):
+```sql
+SELECT title, tldr, sections, emerging_patterns, insight_count, top_topics, published_at
+FROM digests WHERE id = $1
+```
+
+---
+
+### 3.2f X: Pattern & Trend Posts
+
+**Description**: Single tweets or short threads highlighting emerging patterns detected across multiple insights. These connect dots that individual signal alerts don't.
+
+**Deliverable**: `agents/social/x-pattern-alert.md` agent prompt + Claude Code skill.
+
+**Depends on**: 3.2a (voice reference), 3.2b (social_posts table)
+
+**Requirements**:
+- [ ] Agent prompt that takes an EmergingPattern (from digest or cross-topic detection) with supporting insight references and generates 1-3 tweets
+- [ ] Tone register: `editorial` to `conversational` — analytical, "here's what we're seeing"
+- [ ] Must cite at least 2 supporting signals with links
+- [ ] Auto-trigger: digest `emerging_patterns` array OR Workflow D pattern detection output
+- [ ] Golden tests: 3+ input/output pairs
+
+**Example Output**:
+```
+Pattern we're tracking: Three countries in East Africa have implemented internet shutdowns during election periods in the past month.
+
+Uganda, Tanzania, and Ethiopia — all following the same playbook.
+
+Sources and analysis: fgu.tech/digest/weekly-2026-02-22
+```
+
+---
+
+### 3.2g X: Project Spotlight Posts
+
+**Description**: Posts highlighting new project ideas generated by Workflow D. Designed to attract builders and collaborators.
+
+**Deliverable**: `agents/social/x-project-spotlight.md` agent prompt + Claude Code skill.
+
+**Depends on**: 3.2a (voice reference), 3.2b (social_posts table)
+
+**Requirements**:
+- [ ] Agent prompt that takes a ProjectIdea (problem_statement, proposed_solution, affected_groups, feasibility_score, impact_score) and generates 1-2 tweets
+- [ ] Tone register: `conversational` — enthusiastic but grounded, builder-oriented
+- [ ] Must frame as "here's a problem that needs solving" not "we have a great idea"
+- [ ] Include link to GitHub issue if available
+- [ ] Auto-trigger: Workflow D creates idea with `impact_score >= 70`
+- [ ] Golden tests: 3+ input/output pairs
+
+**Example Output**:
+```
+Problem worth solving: Mesh network bootstrapping in shutdown-prone regions is still too slow and technical for non-experts.
+
+What if there was a pre-configured node kit with encrypted messaging + Bitcoin Lightning built in?
+
+Builders welcome → github.com/FGUTech/libertas/issues/42
+```
+
+---
+
+### 3.2h X: Breaking Signal Posts
+
+**Description**: Urgent single tweets for exceptionally high-signal items (internet shutdowns, major censorship events, critical vulnerabilities). Faster cadence than regular signal alerts.
+
+**Deliverable**: `agents/social/x-breaking.md` agent prompt + Claude Code skill.
+
+**Depends on**: 3.2a (voice reference), 3.2b (social_posts table)
+
+**Requirements**:
+- [ ] Agent prompt that takes a high-urgency Insight and generates a single punchy tweet
+- [ ] Tone register: `institutional` — factual, urgent, no editorializing
+- [ ] Must include geographic context if applicable
+- [ ] Auto-trigger: insight with `relevance_score >= 90` AND topics include `censorship-resistance` or `surveillance`
+- [ ] Skip review queue (auto-approve) for items above threshold — configurable in `thresholds.yml`
+- [ ] Rate limit: max 2 breaking alerts per 24h to avoid fatigue
+- [ ] Golden tests: 3+ input/output pairs
+
+**Threshold Integration** (`config/thresholds.yml`):
+- `social.breaking_alert_threshold` (default: 90) — minimum relevance score for breaking treatment
+- `social.breaking_auto_approve` (default: false) — skip review queue for breaking alerts
+- `social.breaking_max_per_day` (default: 2) — rate limit
+
+---
+
+### 3.2i X: Commentary Posts
+
+**Description**: Reactive commentary on trending freedom tech news or external tweets. Unlike other post types, these are manually triggered or triggered by high-signal external items, not automated from Libertas data alone.
+
+**Deliverable**: `agents/social/x-commentary.md` agent prompt + Claude Code skill.
+
+**Depends on**: 3.2a (voice reference), 3.2b (social_posts table)
+
+**Requirements**:
+- [ ] Agent prompt that takes external context (URL, quote text, or topic) plus relevant Libertas insights and generates commentary (1-3 tweets)
+- [ ] Tone register: `conversational` — opinionated but data-backed, references Libertas research
+- [ ] Must always ground commentary in published Libertas data (no pure opinion)
+- [ ] Manual trigger only (never auto-generated) — invoked via Claude Code skill
+- [ ] Supports quote-tweet style: references external content + adds FGU analysis
+- [ ] Golden tests: 3+ input/output pairs
+
+**Implementation Notes**:
+- This is the most "personality-forward" post type — voice reference register rules are especially important here
+- Query Postgres for relevant insights to back up commentary:
+  ```sql
+  SELECT title, tldr, published_url FROM insights
+  WHERE topics && $topics AND status = 'published'
+  ORDER BY freedom_relevance_score DESC LIMIT 5
+  ```
+
+---
+
+### 3.2j Workflow F: Social Publisher
+
+**Description**: n8n workflow that manages the social post publishing lifecycle — polling the queue, publishing to platform APIs, tracking results.
+
+**Deliverable**: `n8n/workflows/workflow-f-social-publisher.json`
+
+**Depends on**: 3.2b (social_posts table)
+
+**Requirements**:
+- [ ] Poll `social_posts` for `status = 'approved'` AND `scheduled_at <= now()` (every 15 min)
+- [ ] Platform routing: Switch node branches for `x`, `reddit`, `nostr`, `linkedin`
+- [ ] X publishing: use X API v2 (`POST /2/tweets`) with OAuth 2.0 PKCE — handle threads via reply chains
+- [ ] On success: update `status = 'published'`, store `platform_post_id` and `platform_url`
+- [ ] On failure: update `status = 'failed'`, store error in `metadata.error`
+- [ ] Rate limiting: respect per-platform rate limits (X: 50 tweets/24h per app)
+- [ ] Stub mode: `runtime.use_stubs` toggle (log post instead of publishing)
+- [ ] Set up n8n credentials for X API (OAuth 2.0 app credentials)
+
+**Implementation Notes**:
+- Same stub/real pattern as Workflows A-D
+- Thread publishing on X: post first tweet, get tweet ID, reply to it with next tweet, etc.
+- Consider a "dry run" mode that generates but doesn't publish (useful for voice tuning)
+
+---
+
+### 3.2k Reddit: Long-form Signal Posts
+
+**Description**: Reddit posts for high-signal insights, formatted as long-form markdown posts to relevant subreddits. Reddit's audience expects depth and sources.
+
+**Deliverable**: `agents/social/reddit-signal.md` agent prompt + Claude Code skill.
+
+**Depends on**: 3.2a (voice reference), 3.2b (social_posts table), 3.2j (Workflow F)
+
+**Requirements**:
+- [ ] Agent prompt that takes an Insight (full content including deep_dive, bullets, citations) and generates a Reddit post with `title` + `body_markdown`
+- [ ] Subreddit targeting: map Libertas topics to subreddits (e.g., `privacy` → r/privacy, `bitcoin` → r/Bitcoin, `surveillance` → r/netsec + r/privacy, `censorship-resistance` → r/technology)
+- [ ] Format: descriptive title, structured body with headers/bullets/sources, TL;DR at top
+- [ ] Auto-trigger: insight with `relevance_score >= 80` AND topic maps to a subreddit
+- [ ] `content_json` stores `{ title, body_markdown, subreddit, flair }`
+- [ ] Respect subreddit rules (no self-promotion spam — max 1 post per sub per day)
+- [ ] Workflow F: Reddit publishing via Reddit API (OAuth2)
+- [ ] Golden tests: 3+ input/output pairs
+
+**Implementation Notes**:
+- Reddit values depth and original sources over hot takes — lean fully into the institutional register
+- Each subreddit has different norms; the agent should have subreddit-specific formatting notes in the reference
+- Consider a "soft launch" period: post manually first to build karma before automating
+
+---
+
+### 3.2l Nostr: Relay Publishing
+
+**Description**: Cross-post published insights to Nostr relays as NIP-01 text notes. Aligns with Libertas' censorship-resistant ethos — content lives on decentralized relays, not just fgu.tech.
+
+**Deliverable**: `agents/social/nostr-note.md` agent prompt + n8n Nostr publishing node.
+
+**Depends on**: 3.2a (voice reference), 3.2b (social_posts table), 3.2j (Workflow F)
+
+**Requirements**:
+- [ ] Agent prompt that takes an Insight and generates a Nostr-formatted note (plain text, no markdown)
+- [ ] NIP-01 event structure: `kind: 1` text note with content + tags
+- [ ] Include `t` tags for topics, `r` tag for source URL
+- [ ] Nostr key management: generate and securely store nsec for @FGUTech identity
+- [ ] NIP-05 verification: `_fgu@fgu.tech` identifier (add `.well-known/nostr.json` to website)
+- [ ] Relay selection: post to 3-5 well-connected relays (e.g., `relay.damus.io`, `nos.lol`, `relay.nostr.band`)
+- [ ] Auto-trigger: all published insights (Nostr is permissionless, no review gate needed)
+- [ ] Workflow F: Nostr publishing via HTTP to relay WebSocket (or use `nostr-tools` in Code node)
+- [ ] Golden tests: 3+ input/output pairs
+
+**Implementation Notes**:
+- Merges with existing 3.4 (Nostr Deep Integration) roadmap item — this is the publishing half
+- Nostr notes are plain text, no markdown rendering — agent must format accordingly
+- Consider NIP-23 (long-form content) for deep dive insights as a future enhancement
+- `nsec` must be stored securely in n8n credentials, never in config files or git
+
+---
+
+### 3.2m LinkedIn: Professional Signal Posts
+
+**Description**: Professional-framed posts for LinkedIn, targeting policy makers, institutional researchers, and freedom tech-adjacent professionals.
+
+**Deliverable**: `agents/social/linkedin-professional.md` agent prompt + Claude Code skill.
+
+**Depends on**: 3.2a (voice reference), 3.2b (social_posts table), 3.2j (Workflow F)
+
+**Requirements**:
+- [ ] Agent prompt that takes a high-signal Insight or Digest and generates a LinkedIn post (1300 char limit for visible portion)
+- [ ] Tone register: fully `institutional` — professional, no slang, frames in terms of policy/rights/infrastructure implications
+- [ ] Format: opening hook → context → key findings → implications → link to full analysis
+- [ ] Target audience framing: human rights orgs, policy researchers, institutional technologists
+- [ ] Auto-trigger: insights with `relevance_score >= 80` AND topics include `surveillance`, `censorship-resistance`, or `activism`
+- [ ] Workflow F: LinkedIn publishing via LinkedIn API (OAuth 2.0, requires company page)
+- [ ] Golden tests: 3+ input/output pairs
+- [ ] Manual review required for all LinkedIn posts (no auto-approve)
+
+**Implementation Notes**:
+- LinkedIn audience is very different from X — avoid any crypto/builder jargon
+- Frame everything in terms of real-world impact (people affected, countries, organizations)
+- LinkedIn company page required; set up FGUTech company page
+- LinkedIn API has strict rate limits and requires app review for posting permissions
 
 ---
 
@@ -536,15 +883,15 @@ Features for future consideration after core functionality is stable.
 
 ### 3.4 Nostr Deep Integration
 
-**Description**: Full Nostr protocol support for decentralized publishing.
+**Description**: Full Nostr protocol support beyond basic publishing (which is covered in 3.2l).
 
 **Requirements**:
-- Cross-post insights to Nostr relays
-- Read comments from Nostr
-- NIP-05 verification for Libertas identity
-- Nostr key management
+- Read comments/reactions from Nostr relays (NIP-25)
+- NIP-23 long-form content for deep dive insights
+- Nostr-based intake submissions (relay → Workflow C)
+- Zap support (NIP-57) for Lightning-based engagement signals
 
-**Notes**: Aligns with censorship-resistant ethos.
+**Notes**: 3.2l covers basic NIP-01 note publishing + NIP-05 identity. This item covers the deeper bidirectional integration.
 
 ---
 
@@ -648,7 +995,19 @@ Features for future consideration after core functionality is stable.
 | Admin Dashboard | Medium | High | P1 |
 | Review Queue & Publishing Gates | Medium | Low | P1 |
 | Vibe Coding Pipeline | Low | High | P2 |
-| Social Media Bots | Low | High | P2 |
+| FGUTech Voice & Style Reference (3.2a) | High | Low | P1 |
+| Social Posts DB & Scheduling (3.2b) | High | Medium | P1 |
+| X: Signal Alert Posts (3.2c) | High | Low | P1 |
+| X: Insight Thread Posts (3.2d) | Medium | Medium | P1 |
+| X: Weekly Digest Recap (3.2e) | Medium | Low | P1 |
+| X: Pattern & Trend Posts (3.2f) | Medium | Low | P2 |
+| X: Project Spotlight Posts (3.2g) | Medium | Low | P2 |
+| X: Breaking Signal Posts (3.2h) | High | Low | P1 |
+| X: Commentary Posts (3.2i) | Low | Medium | P2 |
+| Workflow F: Social Publisher (3.2j) | High | High | P1 |
+| Reddit: Long-form Signal Posts (3.2k) | Medium | Medium | P2 |
+| Nostr: Relay Publishing (3.2l) | Medium | Medium | P2 |
+| LinkedIn: Professional Posts (3.2m) | Low | Medium | P3 |
 | Self-hosted LLM | Low | High | P2 |
 | Performance SLO Tracking | Low | Medium | P2 |
 
@@ -674,6 +1033,7 @@ Features for future consideration after core functionality is stable.
 | Firebase Auth | 0% | Documented but not implemented |
 | Resend Email | 20% | Template exists, API not wired, need IF toggle |
 | Feed Generation | 100% | RSS 2.0 and JSON Feed 1.1 generation implemented in Workflow A (1.6 complete) |
+| Social Distribution Pipeline | 5% | Voice reference complete (3.2a); DB schema, agent prompts, Workflow F pending (3.2b-3.2m) |
 
 ---
 
@@ -694,7 +1054,17 @@ Features for future consideration after core functionality is stable.
 
 - [ ] Categories allowed for vibe coding
 - [ ] Human reviewer assignment process
-- [ ] Social platform account ownership
+
+### Before Social Distribution (3.2)
+
+- [ ] Create @FGUTech X account and obtain API keys (X API v2, OAuth 2.0 PKCE)
+- [ ] FGUTech voice/tone review with team (3.2a deliverable)
+- [ ] Review queue policy: which post types auto-approve vs require human review?
+- [ ] Posting cadence targets: max posts per day per platform?
+- [ ] Reddit account + karma building strategy (manual posting before automation)
+- [ ] Nostr key generation and NIP-05 setup on fgu.tech
+- [ ] LinkedIn company page creation
+- [ ] Social `thresholds.yml` section review (breaking thresholds, auto-approve gates)
 
 ---
 
