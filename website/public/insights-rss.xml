@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Tue, 24 Feb 2026 23:02:02 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 25 Feb 2026 05:02:01 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -60,6 +60,16 @@
     <category>activism</category>
     <category>sovereignty</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>Pentagon Threatens AI Company Anthropic Over Surveillance Restrictions</title>
+    <link>https://libertas.fgu.tech/posts/pentagon-threatens-ai-company-anthropic-over-surveillance-re</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/pentagon-threatens-ai-company-anthropic-over-surveillance-re</guid>
+    <pubDate>Wed, 25 Feb 2026 05:01:15 GMT</pubDate>
+    <description>Department of Defense threatening to label Anthropic a &quot;supply chain risk&quot; after company refused to lift restrictions on surveillance and autonomous weapons use of their AI.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
   </item>
   <item>
     <title>UN Rules Pakistani Human Rights Defender&apos;s Detention Violates International Law</title>
@@ -344,6 +354,17 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Access Now Launches Digital Security Webinar Series for Civil Society</title>
+    <link>https://libertas.fgu.tech/posts/access-now-launches-digital-security-webinar-series-for-civi</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/access-now-launches-digital-security-webinar-series-for-civi</guid>
+    <pubDate>Wed, 25 Feb 2026 05:02:01 GMT</pubDate>
+    <description>Access Now&apos;s Digital Security Helpline launches &apos;Safe and Strong&apos; webinar series targeting spear-phishing threats against activists, journalists, and civil society with expert guidance from Citizen Lab and security researchers.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>censorship-resistance</category>
   </item>
   <item>
     <title>OONI Launches 2025 Fundraising Campaign Amid Global Censorship Surge</title>

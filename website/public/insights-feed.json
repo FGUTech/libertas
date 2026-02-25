@@ -117,6 +117,27 @@
       }
     },
     {
+      "id": "1dff1168-503e-4c7d-9d06-c4d578d1d0af",
+      "url": "https://libertas.fgu.tech/posts/pentagon-threatens-ai-company-anthropic-over-surveillance-re",
+      "title": "Pentagon Threatens AI Company Anthropic Over Surveillance Restrictions",
+      "summary": "Department of Defense threatening to label Anthropic a \"supply chain risk\" after company refused to lift restrictions on surveillance and autonomous weapons use of their AI.",
+      "content_text": "Pentagon gave ultimatum to Anthropic demanding removal of restrictions on military AI use\n• Anthropic maintains \"bright red lines\" against surveillance of US persons and autonomous weapons\n• DoD threatens \"supply chain risk\" label that would ban other defense contractors from using Anthropic's AI\n• Dispute began after Anthropic suspected their AI was used in January 3, 2026 attack on Venezuela via Palantir partnership\n• Anthropic was first AI company cleared for classified operations in 2025\n• EFF urges Anthropic to resist government pressure and maintain ethical restrictions\n• Case represents broader pattern of government pressure on tech companies to enable surveillance",
+      "date_published": "2026-02-25T05:01:15.876Z",
+      "date_modified": "2026-02-25T05:01:15.919Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/02/tech-companies-shouldnt-be-bullied-doing-surveillance"
+        ]
+      }
+    },
+    {
       "id": "22507473-6427-4174-85ce-826014fe93b7",
       "url": "https://libertas.fgu.tech/posts/un-rules-pakistani-human-rights-defender-s-detention-violate",
       "title": "UN Rules Pakistani Human Rights Defender's Detention Violates International Law",
@@ -708,6 +729,28 @@
         "credibility_score": 95,
         "citations": [
           "https://www.hrw.org/news/2026/02/20/north-korea-party-congress-set-to-bolster-repression"
+        ]
+      }
+    },
+    {
+      "id": "60ff443a-c867-4498-a814-b723f17a5eee",
+      "url": "https://libertas.fgu.tech/posts/access-now-launches-digital-security-webinar-series-for-civi",
+      "title": "Access Now Launches Digital Security Webinar Series for Civil Society",
+      "summary": "Access Now's Digital Security Helpline launches 'Safe and Strong' webinar series targeting spear-phishing threats against activists, journalists, and civil society with expert guidance from Citizen Lab and security researchers.",
+      "content_text": "Access Now launching 'Safe and Strong' webinar series on digital security for civil society\n• First session March 10, 2026 focuses on spear-phishing attacks targeting activists and journalists\n• Expert speakers include Citizen Lab's Rebekah Brown, Lookout's Justin Albrecht, and regional digital security specialists\n• Content draws from documented attacks in Eastern Europe and Middle East regions\n• Initiative aims to share actionable insights as digital attacks against civil society grow more complex\n• Webinar targets high-profile activists, journalists, and NGO members who face sophisticated social engineering\n• Event brings together civil society, private sector, and support organizations for resilience building",
+      "date_published": "2026-02-25T05:02:01.594Z",
+      "date_modified": "2026-02-25T05:02:01.762Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "activism",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.accessnow.org/event/digital-security-webinars/"
         ]
       }
     },
