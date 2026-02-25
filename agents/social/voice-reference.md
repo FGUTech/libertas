@@ -108,7 +108,7 @@ FGUTech uses three register levels depending on post type. The register dictates
 
 ### 3.3 Link formatting
 
-- Use the short domain where available: `libertas.fgu.tech/signals/[slug]` for insights, `libertas.fgu.tech/digests/[slug]` for digests
+- Use the short domain where available: `libertas.fgu.tech/posts/[slug]` for insights, `libertas.fgu.tech/digests/[slug]` for digests
 - Links go at the end of the post, separated by a blank line (on platforms that support it)
 - On X: links consume ~23 characters (t.co wrapping) — budget accordingly
 
@@ -231,7 +231,7 @@ Each Libertas topic should be framed through its specific lens. This ensures con
 
 Every social post must include a link to the corresponding Libertas insight or digest page. This is the primary citation — the page contains full analysis, source links, and provenance.
 
-**Format**: `libertas.fgu.tech/signals/[slug]`
+**Format**: `libertas.fgu.tech/posts/[slug]`
 
 ### 6.2 Original source credit
 
@@ -309,7 +309,7 @@ When a post references multiple insights (e.g., pattern alerts, digest recaps), 
 
 **Tag conventions**:
 - `t` tags for topics (e.g., `["t", "censorship-resistance"]`, `["t", "bitcoin"]`)
-- `r` tag for source URL (e.g., `["r", "https://libertas.fgu.tech/signals/slug"]`)
+- `r` tag for source URL (e.g., `["r", "https://libertas.fgu.tech/posts/slug"]`)
 
 **Nostr formatting rules**:
 - Plain text only — no markdown, no formatting
@@ -352,19 +352,19 @@ When a post references multiple insights (e.g., pattern alerts, digest recaps), 
 
 > Internet outage detected across Pakistan as authorities jail human rights lawyers for defending political dissidents — censorship escalation following weeks of protest suppression.
 >
-> libertas.fgu.tech/signals/pakistan-jails-human-rights-lawyers
+> libertas.fgu.tech/posts/pakistan-jails-human-rights-lawyers
 
 **Example 2 — Signal alert (X, single tweet)**:
 
 > North Korea deploys AI-powered surveillance system to monitor citizens' mobile devices in real time. Defectors report automated flagging of foreign media content.
 >
-> libertas.fgu.tech/signals/north-korea-ai-surveillance-mobile
+> libertas.fgu.tech/posts/north-korea-ai-surveillance-mobile
 
 **Example 3 — Breaking alert (X, single tweet)**:
 
 > Gabon has shut down all social media platforms indefinitely amid anti-government protests. NetBlocks confirms nationwide restrictions on X, Facebook, WhatsApp, and Telegram.
 >
-> libertas.fgu.tech/signals/gabon-social-media-shutdown
+> libertas.fgu.tech/posts/gabon-social-media-shutdown
 
 **Example 4 — LinkedIn post**:
 
@@ -382,7 +382,7 @@ When a post references multiple insights (e.g., pattern alerts, digest recaps), 
 
 > Uganda's telecom regulator issued a formal warning against mesh networking apps used by activists during internet shutdowns. Government acknowledgment typically signals the tools are working.
 >
-> libertas.fgu.tech/signals/uganda-mesh-network-warning
+> libertas.fgu.tech/posts/uganda-mesh-network-warning
 
 ### 8.2 Editorial register examples
 
@@ -400,7 +400,7 @@ Tweet 3:
 Tweet 4:
 > Full analysis with sources and regional data:
 >
-> libertas.fgu.tech/signals/east-africa-shutdown-pattern
+> libertas.fgu.tech/posts/east-africa-shutdown-pattern
 
 **Example 2 — Digest recap thread (X, opening tweet)**:
 
@@ -450,13 +450,13 @@ Tweet 1:
 Tweet 2:
 > What we've observed aligns — our data shows the same geographic concentration in Sub-Saharan Africa, with election periods as the primary trigger. The question isn't whether shutdowns are increasing. It's whether countermeasure deployment is keeping pace.
 >
-> libertas.fgu.tech/signals/access-now-2025-shutdown-report
+> libertas.fgu.tech/posts/access-now-2025-shutdown-report
 
 **Example 4 — Commentary (X, single tweet)**:
 
 > New OONI data shows deep packet inspection being used to throttle VPN traffic in three Central Asian countries. The technical response from privacy tool developers has been fast — new obfuscation protocols deployed within days.
 >
-> libertas.fgu.tech/signals/central-asia-dpi-vpn-throttling
+> libertas.fgu.tech/posts/central-asia-dpi-vpn-throttling
 
 **Example 5 — Project spotlight (X, single tweet)**:
 
