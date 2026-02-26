@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 26 Feb 2026 17:02:44 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 26 Feb 2026 23:02:59 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -366,6 +366,16 @@
     <category>activism</category>
   </item>
   <item>
+    <title>Cambodia Sentences Two Journalists to 14 Years for Border Conflict Photography</title>
+    <link>https://libertas.fgu.tech/posts/cambodia-sentences-two-journalists-to-14-years-for-border-co</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/cambodia-sentences-two-journalists-to-14-years-for-border-co</guid>
+    <pubDate>Thu, 26 Feb 2026 23:01:58 GMT</pubDate>
+    <description>Cambodian court sentenced two journalists to 14 years for treason after photographing soldiers near disputed Thai border, part of broader press freedom crackdown targeting at least four journalists since July 2025.</description>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>surveillance</category>
+  </item>
+  <item>
     <title>Wisconsin Removes VPN Ban from Age Verification Bill After Pushback</title>
     <link>https://libertas.fgu.tech/posts/wisconsin-removes-vpn-ban-from-age-verification-bill-after-p</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/wisconsin-removes-vpn-ban-from-age-verification-bill-after-p</guid>
@@ -374,6 +384,17 @@
     <category>privacy</category>
     <category>censorship-resistance</category>
     <category>surveillance</category>
+  </item>
+  <item>
+    <title>Access Now Launches Spear Phishing Defense Webinar Series for Civil Society</title>
+    <link>https://libertas.fgu.tech/posts/access-now-launches-spear-phishing-defense-webinar-series-fo</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/access-now-launches-spear-phishing-defense-webinar-series-fo</guid>
+    <pubDate>Thu, 26 Feb 2026 23:01:37 GMT</pubDate>
+    <description>Access Now&apos;s Digital Security Helpline is launching a webinar series on March 10, 2026, starting with spear phishing defense training for activists, journalists, and civil society organizations.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>censorship-resistance</category>
   </item>
   <item>
     <title>Florida Proposes State Spy Unit to &apos;Neutralize&apos; People Based on Views and Opinions</title>
@@ -590,6 +611,18 @@
     <category>privacy</category>
   </item>
   <item>
+    <title>Iran&apos;s Total Internet Shutdown Enables Mass State Violence During 2026 Uprising</title>
+    <link>https://libertas.fgu.tech/posts/iran-s-total-internet-shutdown-enables-mass-state-violence-d</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/iran-s-total-internet-shutdown-enables-mass-state-violence-d</guid>
+    <pubDate>Thu, 26 Feb 2026 23:02:59 GMT</pubDate>
+    <description>Iran imposed a 15-day total internet blackout during nationwide protests, enabling unprecedented state violence with 30,000+ deaths while regime-aligned voices abroad filled the information vacuum to shape international narratives.</description>
+    <category>censorship-resistance</category>
+    <category>comms</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>sovereignty</category>
+  </item>
+  <item>
     <title>Meta Considers Facial Recognition for Smart Glasses Despite $7B Privacy Settlement History</title>
     <link>https://libertas.fgu.tech/posts/meta-considers-facial-recognition-for-smart-glasses-despite-</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/meta-considers-facial-recognition-for-smart-glasses-despite-</guid>
@@ -674,17 +707,6 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
-  </item>
-  <item>
-    <title>Kimwolf Botnet Sybil Attack Disrupts I2P Anonymity Network</title>
-    <link>https://libertas.fgu.tech/posts/kimwolf-botnet-sybil-attack-disrupts-i2p-anonymity-network</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/kimwolf-botnet-sybil-attack-disrupts-i2p-anonymity-network</guid>
-    <pubDate>Thu, 12 Feb 2026 23:00:40 GMT</pubDate>
-    <description>The massive Kimwolf IoT botnet accidentally crippled I2P&apos;s anonymous communications network by flooding it with 700k infected devices attempting to use it as fallback C2 infrastructure.</description>
-    <category>comms</category>
-    <category>censorship-resistance</category>
-    <category>privacy</category>
-    <category>surveillance</category>
   </item>
   <item>
     <title>Tails 7.4.2 Emergency Release Fixes Critical Kernel Vulnerabilities</title>
@@ -1200,6 +1222,16 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>Florida Bill Creates State Spy Unit to &apos;Neutralize&apos; Those with Threatening &apos;Views or Opinions&apos;</title>
+    <link>https://libertas.fgu.tech/posts/florida-bill-creates-state-spy-unit-to-neutralize-those-with</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/florida-bill-creates-state-spy-unit-to-neutralize-those-with</guid>
+    <pubDate>Thu, 26 Feb 2026 23:02:28 GMT</pubDate>
+    <description>Florida legislation would create a state counterintelligence unit empowered to track and &apos;neutralize&apos; people whose &apos;views or opinions&apos; threaten the state, raising COINTELPRO-style civil liberties concerns.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
   </item>
   <item>
     <title>OONI and Partners Host Internet Measurement Village at Global Gathering 2025</title>
