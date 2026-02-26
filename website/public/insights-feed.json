@@ -711,6 +711,27 @@
       }
     },
     {
+      "id": "5c5bb25a-9ac1-4945-85d1-861e4587f556",
+      "url": "https://libertas.fgu.tech/posts/wisconsin-removes-vpn-ban-from-age-verification-bill-after-p",
+      "title": "Wisconsin Removes VPN Ban from Age Verification Bill After Pushback",
+      "summary": "Wisconsin lawmakers removed VPN bans from age verification bill S.B. 130/A.B. 105 after widespread opposition, though EFF still opposes the bill awaiting Governor Evers' signature.",
+      "content_text": "Wisconsin removed VPN ban provision from S.B. 130/A.B. 105 on February 25, 2026 after pushback\n• Bill still requires invasive age verification for websites with content deemed 'sexual'\n• EFF continues opposing the bill despite VPN provision removal\n• Original bill would have forced websites to block all VPN users to comply with Wisconsin law\n• Technical impossibility of geo-blocking VPN users would lead to over-blocking or nationwide restrictions\n• Bill expands definition of 'harmful to minors' beyond historically narrow court-recognized categories\n• Age verification requirements create privacy nightmare requiring government IDs and biometric data\n• Governor Tony Evers urged to veto the bill despite VPN provision removal",
+      "date_published": "2026-02-26T05:01:30.022Z",
+      "date_modified": "2026-02-26T05:01:30.064Z",
+      "tags": [
+        "privacy",
+        "censorship-resistance",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 88,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/02/eff-wisconsin-legislature-vpn-bans-are-still-terrible-idea"
+        ]
+      }
+    },
+    {
       "id": "60b453a7-cbe7-4364-aa37-8e9f21d05221",
       "url": "https://libertas.fgu.tech/posts/north-korea-escalates-tech-surveillance-and-info-controls-ta",
       "title": "North Korea Escalates Tech Surveillance and Info Controls Targeting Youth",
@@ -1614,6 +1635,27 @@
       }
     },
     {
+      "id": "a67ac71b-291c-4eb8-b4f8-276f3273c96f",
+      "url": "https://libertas.fgu.tech/posts/eff-releases-guide-to-expose-police-surveillance-tech-sales-",
+      "title": "EFF Releases Guide to Expose Police Surveillance Tech Sales Hype",
+      "summary": "EFF, CJJ, and IPVM released 'Selling Safety' report helping journalists critically examine police surveillance technology claims and expose industry tactics that exploit taxpayers while eroding civil liberties.",
+      "content_text": "EFF, Center for Just Journalism, and IPVM released joint 'Selling Safety' report for journalists\n• Guide helps cut through surveillance tech marketing claims that are 'often misleading'\n• Police tech industry described as 'unregulated, unexamined, and consequential' with billion-dollar profit motives\n• Companies manufacture appearance of effectiveness rather than measuring actual results\n• Report provides tools for better questions, understanding incentives, and finding accountability stories\n• Surveillance technologies spreading faster than public understanding or oversight\n• EFF maintains Street-Level Surveillance hub and Atlas of Surveillance mapping tools\n• Resource aims to protect taxpayer dollars and civil liberties through critical journalism",
+      "date_published": "2026-02-26T05:01:30.023Z",
+      "date_modified": "2026-02-26T05:01:30.064Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/press/releases/new-report-helps-journalists-dig-deeper-police-surveillance-technology"
+        ]
+      }
+    },
+    {
       "id": "a6ab8258-725b-4efe-ab0b-7ccdc55ccd4a",
       "url": "https://libertas.fgu.tech/posts/tor-project-launches-free-the-internet-fundraising-campaign-",
       "title": "Tor Project Launches 'Free the Internet' Fundraising Campaign with Matched Donations",
@@ -2472,6 +2514,27 @@
         "credibility_score": 95,
         "citations": [
           "https://www.hrw.org/news/2026/02/25/ethiopia-shutters-key-news-outlet"
+        ]
+      }
+    },
+    {
+      "id": "f31a2603-2370-49be-bf77-11371f976b38",
+      "url": "https://libertas.fgu.tech/posts/coalition-demands-california-revoke-federal-alpr-surveillanc",
+      "title": "Coalition Demands California Revoke Federal ALPR Surveillance Permits on Border Highways",
+      "summary": "EFF-led coalition demands California revoke permits allowing CBP and DEA to deploy automated license plate readers disguised as traffic barrels on border highways, citing mass surveillance risks.",
+      "content_text": "Coalition of 25+ orgs led by EFF and Imperial Valley Equity & Justice sent letter to Gov. Newsom and Caltrans\n• Federal agencies CBP and DEA have permits to deploy ALPRs along California border highways\n• Surveillance devices often disguised as traffic barrels to avoid detection\n• Coalition argues ALPRs put residents and migrants at risk of harassment, detention, and deportation\n• Letter references return of USBP Chief Greg Bovino who led 'brutal campaigns' in other cities\n• Demands immediate revocation of permits and removal of existing surveillance infrastructure\n• Broad coalition includes nurses, teachers, ACLU, privacy groups, and immigrant rights organizations",
+      "date_published": "2026-02-26T05:01:30.023Z",
+      "date_modified": "2026-02-26T05:01:30.064Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/press/releases/coalition-urges-california-revoke-permits-federal-license-plate-reader-surveillance"
         ]
       }
     },

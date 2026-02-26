@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Wed, 25 Feb 2026 23:02:43 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 26 Feb 2026 05:01:30 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -343,6 +343,16 @@
     <category>comms</category>
     <category>surveillance</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Wisconsin Removes VPN Ban from Age Verification Bill After Pushback</title>
+    <link>https://libertas.fgu.tech/posts/wisconsin-removes-vpn-ban-from-age-verification-bill-after-p</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/wisconsin-removes-vpn-ban-from-age-verification-bill-after-p</guid>
+    <pubDate>Thu, 26 Feb 2026 05:01:30 GMT</pubDate>
+    <description>Wisconsin lawmakers removed VPN bans from age verification bill S.B. 130/A.B. 105 after widespread opposition, though EFF still opposes the bill awaiting Governor Evers&apos; signature.</description>
+    <category>privacy</category>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
   </item>
   <item>
     <title>North Korea Escalates Tech Surveillance and Info Controls Targeting Youth</title>
@@ -784,6 +794,16 @@
     <category>privacy</category>
   </item>
   <item>
+    <title>EFF Releases Guide to Expose Police Surveillance Tech Sales Hype</title>
+    <link>https://libertas.fgu.tech/posts/eff-releases-guide-to-expose-police-surveillance-tech-sales-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-releases-guide-to-expose-police-surveillance-tech-sales-</guid>
+    <pubDate>Thu, 26 Feb 2026 05:01:30 GMT</pubDate>
+    <description>EFF, CJJ, and IPVM released &apos;Selling Safety&apos; report helping journalists critically examine police surveillance technology claims and expose industry tactics that exploit taxpayers while eroding civil liberties.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
+  </item>
+  <item>
     <title>Tor Project Launches &apos;Free the Internet&apos; Fundraising Campaign with Matched Donations</title>
     <link>https://libertas.fgu.tech/posts/tor-project-launches-free-the-internet-fundraising-campaign-</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/tor-project-launches-free-the-internet-fundraising-campaign-</guid>
@@ -1200,6 +1220,16 @@
     <description>Ethiopian authorities revoked the license of Addis Standard, one of the country&apos;s last independent news outlets, three months before national elections, escalating systematic media suppression.</description>
     <category>censorship-resistance</category>
     <category>surveillance</category>
+    <category>activism</category>
+  </item>
+  <item>
+    <title>Coalition Demands California Revoke Federal ALPR Surveillance Permits on Border Highways</title>
+    <link>https://libertas.fgu.tech/posts/coalition-demands-california-revoke-federal-alpr-surveillanc</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/coalition-demands-california-revoke-federal-alpr-surveillanc</guid>
+    <pubDate>Thu, 26 Feb 2026 05:01:30 GMT</pubDate>
+    <description>EFF-led coalition demands California revoke permits allowing CBP and DEA to deploy automated license plate readers disguised as traffic barrels on border highways, citing mass surveillance risks.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
     <category>activism</category>
   </item>
   <item>
