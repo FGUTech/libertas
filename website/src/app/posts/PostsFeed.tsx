@@ -111,13 +111,13 @@ export function ContentFeed({ items: allItems }: ContentFeedProps) {
     return item.topTopics;
   };
 
-  // Get time-decayed relevance score: posts lose 1 point per day of age
+  // Get time-decayed relevance score: posts lose 1.5 points per day of age
   const getRelevanceScore = (item: ContentItem): number => {
     if (isPost(item)) {
       const now = Date.now();
       const publishedAt = new Date(item.publishedAt).getTime();
       const daysOld = (now - publishedAt) / (1000 * 60 * 60 * 24);
-      return item.freedomRelevanceScore - daysOld;
+      return item.freedomRelevanceScore - daysOld * 1.5;
     }
     // Digests don't have a relevance score, sort them by date instead
     return -Infinity;
@@ -333,8 +333,8 @@ export function PostsFeed({ posts: allPosts }: PostsFeedProps) {
       posts.sort((a, b) => {
         const daysOldA = (now - new Date(a.publishedAt).getTime()) / (1000 * 60 * 60 * 24);
         const daysOldB = (now - new Date(b.publishedAt).getTime()) / (1000 * 60 * 60 * 24);
-        const scoreA = a.freedomRelevanceScore - daysOldA;
-        const scoreB = b.freedomRelevanceScore - daysOldB;
+        const scoreA = a.freedomRelevanceScore - daysOldA * 1.5;
+        const scoreB = b.freedomRelevanceScore - daysOldB * 1.5;
         if (scoreA !== scoreB) return scoreB - scoreA;
         return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
       });

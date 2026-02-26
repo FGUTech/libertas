@@ -6,15 +6,15 @@ import { getAllContent, getAllPosts, isPost } from "@/lib/posts";
 import type { Post, ContentItem } from "@/types";
 
 export default function Home() {
-  // Load all content sorted by time-decayed relevance (score - days old)
+  // Load all content sorted by time-decayed relevance (score - 1.5 * days old)
   const now = Date.now();
   const content = getAllContent()
     .sort((a: ContentItem, b: ContentItem) => {
       const scoreA = isPost(a)
-        ? a.freedomRelevanceScore - (now - new Date(a.publishedAt).getTime()) / 864e5
+        ? a.freedomRelevanceScore - (now - new Date(a.publishedAt).getTime()) / 864e5 * 1.5
         : -Infinity;
       const scoreB = isPost(b)
-        ? b.freedomRelevanceScore - (now - new Date(b.publishedAt).getTime()) / 864e5
+        ? b.freedomRelevanceScore - (now - new Date(b.publishedAt).getTime()) / 864e5 * 1.5
         : -Infinity;
       if (scoreA !== scoreB) return scoreB - scoreA;
       return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
