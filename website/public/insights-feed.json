@@ -248,6 +248,27 @@
       }
     },
     {
+      "id": "2cd04f00-b7ca-4c33-a48a-1e4774b04dc0",
+      "url": "https://libertas.fgu.tech/posts/israel-bans-five-palestinian-news-outlets-as-terrorist-organ",
+      "title": "Israel Bans Five Palestinian News Outlets as 'Terrorist Organizations'",
+      "summary": "Israel designated five Palestinian news outlets as terrorist organizations, forcing suspensions and journalist arrests. No evidence provided for Hamas links allegations.",
+      "content_text": "Israeli Defence Minister Israel Katz banned Al-Asima News, Quds Plus, Maydan Al-Quds, Al-Quds Albawsala, and Maraj outlets\n• Outlets designated as 'terrorist organizations' allegedly linked to Hamas without evidence presented\n• Al-Asima News suspended operations to protect journalists; others continue reporting on social platforms\n• Palestinian journalist Nisreen Salem arrested, charged with dealing with 'banned' outlet\n• Salem placed under house arrest with 180-day Al-Aqsa Mosque ban and complete communication restrictions\n• Follows 2024 law allowing shutdown of foreign broadcasters deemed 'security threats'\n• Previously banned Al Jazeera and Al Mayadeen under same legal framework\n• Committee to Protect Journalists calls it part of broader pattern to silence independent journalism",
+      "date_published": "2026-02-26T17:02:44.526Z",
+      "date_modified": "2026-02-26T17:02:44.640Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 88,
+        "citations": [
+          "https://cpj.org/2026/02/israel-designates-5-palestinian-news-sites-terrorist-groups/"
+        ]
+      }
+    },
+    {
       "id": "2d069f96-9101-41b9-968d-c7826a708d74",
       "url": "https://libertas.fgu.tech/posts/signal-announces-new-features-roll-call-blog-series-for-app-",
       "title": "Signal Announces New Features Roll Call Blog Series for App Improvements",
@@ -1543,28 +1564,6 @@
         "credibility_score": 90,
         "citations": [
           "https://www.hrw.org/news/2026/02/25/trumps-selective-war-on-censorship"
-        ]
-      }
-    },
-    {
-      "id": "9c97ecdf-0ad1-49ec-b4d0-60c8b37c40eb",
-      "url": "https://libertas.fgu.tech/posts/new-york-proposes-mandatory-3d-printer-surveillance-for-fire",
-      "title": "New York Proposes Mandatory 3D Printer Surveillance for Firearm Detection",
-      "summary": "New York's budget bill would require all 3D printers sold in the state to include 'blocking technology' that scans files for potential firearm blueprints and refuses to print flagged items.",
-      "content_text": "NY budget bill S.9005/A.10005 mandates 'blocking technology' in all 3D printers sold in state\n• Required software/firmware must scan print files with 'firearms blueprint detection algorithm'\n• Printers would refuse to print anything flagged as potential firearm or component\n• Bruce Schneier warns this creates same problems as DRM - controlling general-purpose computers\n• Measure targets maker community, educators, and small manufacturers statewide\n• Technical approach fundamentally flawed - algorithms can be bypassed or circumvented\n• Creates precedent for government-mandated surveillance in manufacturing tools\n• Threatens user sovereignty over personally-owned devices and equipment",
-      "date_published": "2026-02-12T17:00:42.456Z",
-      "date_modified": "2026-02-12T17:00:42.509Z",
-      "tags": [
-        "surveillance",
-        "censorship-resistance",
-        "privacy",
-        "sovereignty"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.schneier.com/blog/archives/2026/02/3d-printer-surveillance.html"
         ]
       }
     },

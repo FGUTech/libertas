@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 26 Feb 2026 11:02:39 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 26 Feb 2026 17:02:44 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -120,6 +120,16 @@
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/ooni-documents-media-censorship-during-india-pakistan-confli</guid>
     <pubDate>Fri, 20 Feb 2026 04:43:23 GMT</pubDate>
     <description>OONI and Digital Rights Foundation documented coordinated media censorship by both India and Pakistan during their May 2025 conflict, with governments blocking news outlets citing &apos;disinformation&apos; and &apos;hate speech.&apos;</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+  </item>
+  <item>
+    <title>Israel Bans Five Palestinian News Outlets as &apos;Terrorist Organizations&apos;</title>
+    <link>https://libertas.fgu.tech/posts/israel-bans-five-palestinian-news-outlets-as-terrorist-organ</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/israel-bans-five-palestinian-news-outlets-as-terrorist-organ</guid>
+    <pubDate>Thu, 26 Feb 2026 17:02:44 GMT</pubDate>
+    <description>Israel designated five Palestinian news outlets as terrorist organizations, forcing suspensions and journalist arrests. No evidence provided for Hamas links allegations.</description>
     <category>censorship-resistance</category>
     <category>surveillance</category>
     <category>activism</category>
@@ -749,17 +759,6 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>comms</category>
-  </item>
-  <item>
-    <title>New York Proposes Mandatory 3D Printer Surveillance for Firearm Detection</title>
-    <link>https://libertas.fgu.tech/posts/new-york-proposes-mandatory-3d-printer-surveillance-for-fire</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/new-york-proposes-mandatory-3d-printer-surveillance-for-fire</guid>
-    <pubDate>Thu, 12 Feb 2026 17:00:42 GMT</pubDate>
-    <description>New York&apos;s budget bill would require all 3D printers sold in the state to include &apos;blocking technology&apos; that scans files for potential firearm blueprints and refuses to print flagged items.</description>
-    <category>surveillance</category>
-    <category>censorship-resistance</category>
-    <category>privacy</category>
-    <category>sovereignty</category>
   </item>
   <item>
     <title>OONI Launches Community Survey to Improve Censorship Measurement Tools</title>
