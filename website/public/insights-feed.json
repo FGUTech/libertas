@@ -95,6 +95,28 @@
       }
     },
     {
+      "id": "137a37c5-ff8e-4649-b3a5-6cbcbd5499ca",
+      "url": "https://libertas.fgu.tech/posts/tenth-circuit-overturns-overbroad-digital-searches-of-protes",
+      "title": "Tenth Circuit Overturns Overbroad Digital Searches of Protesters",
+      "summary": "Federal appeals court ruled Colorado Springs police violated Fourth Amendment with sweeping device searches of housing protester, denying qualified immunity in rare victory for digital privacy rights.",
+      "content_text": "Tenth Circuit overturned dismissal of lawsuit challenging warrants to search protester's devices and nonprofit's social media\n• Police obtained warrants for two-month search of all photos, videos, emails, texts, and location data for simple assault allegation\n• Warrants included unlimited keyword searches for broad terms like 'bike,' 'assault,' 'celebration,' and 'right'\n• Court found warrants 'overbroad and lacking in particularity' regarding scope and duration\n• Officers denied qualified immunity protection - extremely rare outcome in search warrant cases\n• Police also searched Facebook page of Chinook Center nonprofit that organized protest despite no criminal allegations\n• Creates important precedent protecting protesters' digital privacy rights under Fourth Amendment",
+      "date_published": "2026-02-27T11:00:18.732Z",
+      "date_modified": "2026-02-27T11:00:18.780Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "activism",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/02/victory-tenth-circuit-finds-fourth-amendment-doesnt-support-broad-search-0"
+        ]
+      }
+    },
+    {
       "id": "14885e67-4410-43ea-8156-a0202dc1ff46",
       "url": "https://libertas.fgu.tech/posts/cameroon-police-seize-journalists-equipment-threaten-sources",
       "title": "Cameroon Police Seize Journalists' Equipment, Threaten Sources Over US Deportation Story",
