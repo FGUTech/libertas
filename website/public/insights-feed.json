@@ -1280,29 +1280,6 @@
       }
     },
     {
-      "id": "80b25858-ef8c-4b9e-aea5-69bcb1fbc282",
-      "url": "https://libertas.fgu.tech/posts/silent-link-bitcoin-native-esim-service-bypasses-sim-swap-at",
-      "title": "Silent.Link: Bitcoin-Native eSIM Service Bypasses SIM-Swap Attacks and State Censorship",
-      "summary": "Silent.Link offers privacy-focused eSIM data/SMS services paid with Bitcoin, eliminating SIM-swap risks while bypassing state firewalls in China and Dubai's VoIP restrictions.",
-      "content_text": "Silent.Link provides global eSIM-only mobile data and SMS services paid with Bitcoin\n• No personal information collected - users can purchase without even providing email\n• Authentication via backup codes (similar to Bitcoin seed phrases) eliminates SIM-swap attack vectors\n• Reportedly bypasses Chinese firewall and Dubai VoIP restrictions\n• Founded by Bitcoin community members inspired by Matt Odell, profitable and self-funded\n• Automated roaming across countries without carrier negotiations or overcharges\n• No outgoing SMS or voice calls - focuses on data and incoming authentication messages\n• Built on BTCPay Server stack with Lightning support for Bitcoin-native payments",
-      "date_published": "2026-02-13T23:00:33.190Z",
-      "date_modified": "2026-02-13T23:00:33.251Z",
-      "tags": [
-        "bitcoin",
-        "privacy",
-        "censorship-resistance",
-        "identity",
-        "comms"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 82,
-        "citations": [
-          "https://bitcoinmagazine.com/business/how-silent-link-solves-sim-swap-risks-and-roaming-hassles-for-traveling-bitcoiners"
-        ]
-      }
-    },
-    {
       "id": "8106db9b-7f37-4e60-b14e-cb784f8e816a",
       "url": "https://libertas.fgu.tech/posts/open-measurement-gathering-hosts-public-ama-on-internet-cens",
       "title": "Open Measurement Gathering Hosts Public AMA on Internet Censorship Detection Tools",
@@ -1829,6 +1806,27 @@
         "credibility_score": 88,
         "citations": [
           "https://www.accessnow.org/press-release/human-rights-abuses-facilitated-by-applogic-networks-in-egypt/"
+        ]
+      }
+    },
+    {
+      "id": "a5622bc3-996a-441f-997d-4e7d2dd41ede",
+      "url": "https://libertas.fgu.tech/posts/pro-palestine-student-activist-fights-deportation-despite-go",
+      "title": "Pro-Palestine Student Activist Fights Deportation Despite Government Lacking Evidence",
+      "summary": "Mahmoud Khalil faces deportation to Algeria for pro-Palestine activism at Columbia, with newly unsealed DHS memo showing government lacked evidence but proceeded anyway as retaliation for speech.",
+      "content_text": "Student activist Mahmoud Khalil faces deportation to Algeria for pro-Palestine campus activism at Columbia University\n• Other student activists targeted in same crackdown (Öztürk, Mahdawi) have successfully beaten their deportation cases\n• Newly unsealed March 2025 DHS memo admits government lacked evidence to support deportation case against Khalil\n• Government initially used rare 'foreign policy grounds' provision, later added immigration fraud charge after legal pushback\n• ICE transferred Khalil from NYC to Louisiana within hours - unusual speed designed to isolate from support networks\n• Immigration judge refused to consider First Amendment claims, denied waiver application without hearing\n• Legal team filing motion to move case back to New York and introduce new evidence of government retaliation\n• Case demonstrates use of immigration system as tool for political censorship of protected speech",
+      "date_published": "2026-02-27T23:02:04.712Z",
+      "date_modified": "2026-02-27T23:02:04.922Z",
+      "tags": [
+        "censorship-resistance",
+        "activism",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 85,
+        "citations": [
+          "https://theintercept.com/2026/02/26/mahmoud-khalil-deportation-case-free-speech/"
         ]
       }
     },
@@ -2780,6 +2778,28 @@
       }
     },
     {
+      "id": "f4d60d54-d7a9-422d-b79d-498128d7fcea",
+      "url": "https://libertas.fgu.tech/posts/azerbaijani-journalist-under-armed-surveillance-in-switzerla",
+      "title": "Azerbaijani Journalist Under Armed Surveillance in Switzerland",
+      "summary": "Exiled Azerbaijani journalist Emin Huseynov reports being followed by armed men in Switzerland, highlighting transnational repression risks for freedom tech builders and activists.",
+      "content_text": "Emin Huseynov, co-founder of Institute for Reporters' Freedom and Safety, reports surveillance by armed men in Geneva\n• Huseynov filmed one incident, posted footage to YouTube as evidence\n• Swiss police investigating multiple surveillance episodes reported by Huseynov\n• His brother Mehman Huseynov publishing critical videos of Azerbaijani president, living under police protection\n• Pattern follows previous Azerbaijani state-linked assassination attempts against exiled journalist Mahammad Mirzali\n• 2017 precedent: journalist Afgan Mukhtarli abducted from Georgia, linked to Azerbaijani authorities\n• Demonstrates operational security failures and need for better protection protocols for exiled activists\n• Azerbaijan ranks as world's 6th worst jailer of journalists with 24 currently imprisoned",
+      "date_published": "2026-02-27T23:01:10.368Z",
+      "date_modified": "2026-02-27T23:01:10.451Z",
+      "tags": [
+        "surveillance",
+        "activism",
+        "privacy",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://cpj.org/2026/02/cpj-calls-on-swiss-authorities-to-protect-azerbaijani-journalist-emin-huseynov/"
+        ]
+      }
+    },
+    {
       "id": "f4fe9794-687b-49f8-bd1d-fb06563809a7",
       "url": "https://libertas.fgu.tech/posts/signal-deploys-faster-oram-for-privacy-preserving-contact-di",
       "title": "Signal Deploys Faster ORAM for Privacy-Preserving Contact Discovery",
@@ -2843,6 +2863,27 @@
         "credibility_score": 82,
         "citations": [
           "https://globalvoices.org/2026/02/21/irans-internet-blackout-as-media-event-networks-algorithms-and-the-politics-of-visibility/"
+        ]
+      }
+    },
+    {
+      "id": "f8e88a79-455c-44d5-8e63-ac026e81b2d5",
+      "url": "https://libertas.fgu.tech/posts/freedom-house-documents-artists-imprisoned-for-creative-diss",
+      "title": "Freedom House Documents Artists Imprisoned for Creative Dissent Across 7 Authoritarian States",
+      "summary": "Freedom House catalogs political imprisonment of artists in Russia, Belarus, Cuba, Azerbaijan, Egypt, China, and Venezuela, highlighting systematic state repression of creative expression that challenges power.",
+      "content_text": "Freedom House documents crackdowns on artists across 7 countries: Russia, Belarus, Cuba, Azerbaijan, Egypt, China, and Venezuela\n• Luis Manuel Otero Alcántara, Cuban artist and San Isidro Movement cofounder, imprisoned since July 11, 2021 protests\n• Sentenced to 5 years for 'contempt, public disorder, and insulting symbols of the homeland' after protesting Decree 348\n• Maykel Osorbo Castillo Pérez, musician and co-writer of protest song 'Patria y Vida', arrested 121 times in 5 months\n• Cuba's Decree 348 (2018) requires government pre-approval for even private artistic performances\n• Artists targeted because creative work can 'expose, ridicule, and condemn in emotive and powerful ways'\n• Pattern shows systematic use of state machinery to silence criticism through imprisonment of creative dissidents",
+      "date_published": "2026-02-27T23:01:25.328Z",
+      "date_modified": "2026-02-27T23:01:25.432Z",
+      "tags": [
+        "censorship-resistance",
+        "activism",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 85,
+        "citations": [
+          "https://freedomhouse.org/article/political-prisoners-watch-artists-behind-bars"
         ]
       }
     },

@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 27 Feb 2026 17:02:08 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 27 Feb 2026 23:02:04 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -622,18 +622,6 @@
     <category>activism</category>
   </item>
   <item>
-    <title>Silent.Link: Bitcoin-Native eSIM Service Bypasses SIM-Swap Attacks and State Censorship</title>
-    <link>https://libertas.fgu.tech/posts/silent-link-bitcoin-native-esim-service-bypasses-sim-swap-at</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/silent-link-bitcoin-native-esim-service-bypasses-sim-swap-at</guid>
-    <pubDate>Fri, 13 Feb 2026 23:00:33 GMT</pubDate>
-    <description>Silent.Link offers privacy-focused eSIM data/SMS services paid with Bitcoin, eliminating SIM-swap risks while bypassing state firewalls in China and Dubai&apos;s VoIP restrictions.</description>
-    <category>bitcoin</category>
-    <category>privacy</category>
-    <category>censorship-resistance</category>
-    <category>identity</category>
-    <category>comms</category>
-  </item>
-  <item>
     <title>Open Measurement Gathering Hosts Public AMA on Internet Censorship Detection Tools</title>
     <link>https://libertas.fgu.tech/posts/open-measurement-gathering-hosts-public-ama-on-internet-cens</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/open-measurement-gathering-hosts-public-ama-on-internet-cens</guid>
@@ -891,6 +879,16 @@
     <category>censorship-resistance</category>
     <category>activism</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>Pro-Palestine Student Activist Fights Deportation Despite Government Lacking Evidence</title>
+    <link>https://libertas.fgu.tech/posts/pro-palestine-student-activist-fights-deportation-despite-go</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/pro-palestine-student-activist-fights-deportation-despite-go</guid>
+    <pubDate>Fri, 27 Feb 2026 23:02:04 GMT</pubDate>
+    <description>Mahmoud Khalil faces deportation to Algeria for pro-Palestine activism at Columbia, with newly unsealed DHS memo showing government lacked evidence but proceeded anyway as retaliation for speech.</description>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>surveillance</category>
   </item>
   <item>
     <title>EFF Releases Guide to Expose Police Surveillance Tech Sales Hype</title>
@@ -1352,6 +1350,17 @@
     <category>activism</category>
   </item>
   <item>
+    <title>Azerbaijani Journalist Under Armed Surveillance in Switzerland</title>
+    <link>https://libertas.fgu.tech/posts/azerbaijani-journalist-under-armed-surveillance-in-switzerla</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/azerbaijani-journalist-under-armed-surveillance-in-switzerla</guid>
+    <pubDate>Fri, 27 Feb 2026 23:01:10 GMT</pubDate>
+    <description>Exiled Azerbaijani journalist Emin Huseynov reports being followed by armed men in Switzerland, highlighting transnational repression risks for freedom tech builders and activists.</description>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>privacy</category>
+    <category>censorship-resistance</category>
+  </item>
+  <item>
     <title>Signal Deploys Faster ORAM for Privacy-Preserving Contact Discovery</title>
     <link>https://libertas.fgu.tech/posts/signal-deploys-faster-oram-for-privacy-preserving-contact-di</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/signal-deploys-faster-oram-for-privacy-preserving-contact-di</guid>
@@ -1383,6 +1392,16 @@
     <category>surveillance</category>
     <category>comms</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Freedom House Documents Artists Imprisoned for Creative Dissent Across 7 Authoritarian States</title>
+    <link>https://libertas.fgu.tech/posts/freedom-house-documents-artists-imprisoned-for-creative-diss</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/freedom-house-documents-artists-imprisoned-for-creative-diss</guid>
+    <pubDate>Fri, 27 Feb 2026 23:01:25 GMT</pubDate>
+    <description>Freedom House catalogs political imprisonment of artists in Russia, Belarus, Cuba, Azerbaijan, Egypt, China, and Venezuela, highlighting systematic state repression of creative expression that challenges power.</description>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>surveillance</category>
   </item>
   <item>
     <title>Discord Rolls Out Mandatory Age Verification Despite Data Breach History</title>
