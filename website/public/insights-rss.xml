@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 27 Feb 2026 11:00:18 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 27 Feb 2026 17:02:08 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -82,6 +82,18 @@
     <category>activism</category>
     <category>sovereignty</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>Iran Deploys Two-Tiered &apos;Digital Apartheid&apos; Internet During 2026 Protests</title>
+    <link>https://libertas.fgu.tech/posts/iran-deploys-two-tiered-digital-apartheid-internet-during-20</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/iran-deploys-two-tiered-digital-apartheid-internet-during-20</guid>
+    <pubDate>Fri, 27 Feb 2026 17:01:16 GMT</pubDate>
+    <description>Iran implemented its most severe internet shutdown ever in 2026, featuring a &apos;class-based&apos; system with privileged &apos;white SIM cards&apos; for loyalists while completely disconnecting ordinary citizens during protests.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>comms</category>
+    <category>sovereignty</category>
   </item>
   <item>
     <title>Pentagon Threatens AI Company Anthropic Over Surveillance Restrictions</title>
@@ -267,6 +279,17 @@
     <description>Ukrainian police opened criminal investigation after NABU uncovered alleged surveillance of 10 journalists covering corruption, with their personal data found on seized devices from a criminal organization involving government officials.</description>
     <category>surveillance</category>
     <category>privacy</category>
+    <category>activism</category>
+  </item>
+  <item>
+    <title>Trump Admin Uses Federal Agencies to Target Critical Media and Anonymous Activists</title>
+    <link>https://libertas.fgu.tech/posts/trump-admin-uses-federal-agencies-to-target-critical-media-a</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/trump-admin-uses-federal-agencies-to-target-critical-media-a</guid>
+    <pubDate>Fri, 27 Feb 2026 17:02:08 GMT</pubDate>
+    <description>Federal agencies launch retaliatory investigations against Media Matters, journalists, and anonymous critics, including seizure of Signal account with 1,000+ sources and subpoenas to unmask anti-ICE activists.</description>
+    <category>censorship-resistance</category>
+    <category>privacy</category>
+    <category>surveillance</category>
     <category>activism</category>
   </item>
   <item>
@@ -956,6 +979,16 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>EU Mandates Crypto Platform Reporting Starting 2026</title>
+    <link>https://libertas.fgu.tech/posts/eu-mandates-crypto-platform-reporting-starting-2026</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eu-mandates-crypto-platform-reporting-starting-2026</guid>
+    <pubDate>Fri, 27 Feb 2026 17:00:36 GMT</pubDate>
+    <description>EU implementing new crypto tax rules requiring platforms to report user data and transactions to authorities, significantly reducing financial privacy for digital assets starting 2026.</description>
+    <category>bitcoin</category>
+    <category>privacy</category>
+    <category>surveillance</category>
   </item>
   <item>
     <title>OONI Study Reveals Inconsistent DNS Censorship Infrastructure Across French ISPs</title>
