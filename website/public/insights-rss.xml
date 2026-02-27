@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 26 Feb 2026 23:02:59 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 27 Feb 2026 05:02:09 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -654,6 +654,17 @@
     <category>activism</category>
   </item>
   <item>
+    <title>Pakistani Academic Sentenced to Death for Facebook Posts Spends 13 Years in Solitary</title>
+    <link>https://libertas.fgu.tech/posts/pakistani-academic-sentenced-to-death-for-facebook-posts-spe</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/pakistani-academic-sentenced-to-death-for-facebook-posts-spe</guid>
+    <pubDate>Fri, 27 Feb 2026 05:01:26 GMT</pubDate>
+    <description>Junaid Hafeez has been imprisoned for 13 years, mostly in solitary confinement, after being sentenced to death for alleged blasphemous Facebook posts, highlighting Pakistan&apos;s systematic suppression of online speech.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>privacy</category>
+  </item>
+  <item>
     <title>40 Uyghurs Forcibly Returned to China by Thailand Remain Missing After One Year</title>
     <link>https://libertas.fgu.tech/posts/40-uyghurs-forcibly-returned-to-china-by-thailand-remain-mis</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/40-uyghurs-forcibly-returned-to-china-by-thailand-remain-mis</guid>
@@ -802,6 +813,18 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>comms</category>
+  </item>
+  <item>
+    <title>Iran&apos;s DPI-Powered Internet Whitelisting System Built with Russian Tech Support</title>
+    <link>https://libertas.fgu.tech/posts/iran-s-dpi-powered-internet-whitelisting-system-built-with-r</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/iran-s-dpi-powered-internet-whitelisting-system-built-with-r</guid>
+    <pubDate>Fri, 27 Feb 2026 05:02:09 GMT</pubDate>
+    <description>Iran deployed infrastructure-level internet whitelisting using Deep Packet Inspection during 2025-26 protests, with Russian company Protei providing DPI systems to major Iranian telecoms, enabling granular traffic control beyond previous shutdowns.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>comms</category>
+    <category>privacy</category>
   </item>
   <item>
     <title>EFF Releases Guide for Journalists to Investigate Police Surveillance Tech</title>
