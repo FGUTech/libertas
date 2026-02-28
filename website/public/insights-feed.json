@@ -2315,6 +2315,27 @@
       }
     },
     {
+      "id": "d2064147-561e-46b2-b867-821a1ad67427",
+      "url": "https://libertas.fgu.tech/posts/iranian-prayer-app-hacked-to-send-surrender-messages-during-",
+      "title": "Iranian Prayer App Hacked to Send Surrender Messages During Israeli Strikes",
+      "summary": "Iranians received push notifications promising amnesty and saying 'help is on the way' through a compromised prayer app during Israeli airstrikes on Tehran.",
+      "content_text": "Iranian users received mysterious push notifications during Israeli airstrikes on Tehran\n• Messages promised amnesty and stated 'help is on the way' if recipients surrendered\n• Notifications delivered through a compromised prayer app\n• Demonstrates weaponization of civilian digital infrastructure during conflict\n• Highlights vulnerability of centralized apps to hostile takeover\n• Shows how push notification systems can be used for psychological operations\n• Exposes lack of user control over notifications on their own devices",
+      "date_published": "2026-02-28T17:00:51.088Z",
+      "date_modified": "2026-02-28T17:00:51.162Z",
+      "tags": [
+        "surveillance",
+        "censorship-resistance",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 85,
+        "citations": [
+          "https://www.wired.com/story/hacked-prayer-app-sends-surrender-messages-to-iranians-amid-israeli-strikes/"
+        ]
+      }
+    },
+    {
       "id": "d21d0c70-82dd-454c-ba08-80720d2b5b6d",
       "url": "https://libertas.fgu.tech/posts/gabon-shuts-down-social-media-amid-protests-coalition-demand",
       "title": "Gabon Shuts Down Social Media Amid Protests, Coalition Demands Restoration",

@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 27 Feb 2026 23:02:04 GMT</lastBuildDate>
+  <lastBuildDate>Sat, 28 Feb 2026 17:00:51 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -1124,6 +1124,16 @@
     <category>surveillance</category>
     <category>censorship-resistance</category>
     <category>identity</category>
+  </item>
+  <item>
+    <title>Iranian Prayer App Hacked to Send Surrender Messages During Israeli Strikes</title>
+    <link>https://libertas.fgu.tech/posts/iranian-prayer-app-hacked-to-send-surrender-messages-during-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/iranian-prayer-app-hacked-to-send-surrender-messages-during-</guid>
+    <pubDate>Sat, 28 Feb 2026 17:00:51 GMT</pubDate>
+    <description>Iranians received push notifications promising amnesty and saying &apos;help is on the way&apos; through a compromised prayer app during Israeli airstrikes on Tehran.</description>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>privacy</category>
   </item>
   <item>
     <title>Gabon Shuts Down Social Media Amid Protests, Coalition Demands Restoration</title>
