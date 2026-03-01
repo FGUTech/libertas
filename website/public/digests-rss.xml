@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Weekly summaries of freedom technology developments</description>
   <language>en-us</language>
-  <lastBuildDate>Sun, 15 Feb 2026 14:00:23 GMT</lastBuildDate>
+  <lastBuildDate>Sun, 01 Mar 2026 14:01:00 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/digests-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -22,6 +22,14 @@
     <guid isPermaLink="true">https://libertas.fgu.tech/digests/weekly-2026-01-21</guid>
     <pubDate>Thu, 22 Jan 2026 00:45:55 GMT</pubDate>
     <description>Iran&apos;s complete internet blackout during deadly protests demonstrates the urgent need for censorship-resistant communication tools, while copyright law&apos;s structural incentives continue driving platform over-censorship. Meanwhile, nation-state blockchain adoption expands with Bhutan&apos;s validator operations.</description>
+    <category>weekly-digest</category>
+  </item>
+  <item>
+    <title>Weekly Digest: 2026-02-22 to 2026-02-28</title>
+    <link>https://libertas.fgu.tech/digests/weekly-2026-02-28</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/digests/weekly-2026-02-28</guid>
+    <pubDate>Sun, 01 Mar 2026 14:01:00 GMT</pubDate>
+    <description>Authoritarian regimes deployed unprecedented digital repression techniques this week, with Iran implementing &apos;digital apartheid&apos; internet systems during deadly protests while governments globally escalated surveillance and censorship tactics. The Trump administration&apos;s contradictory approach—launching &apos;anti-censorship&apos; portals while cutting freedom tech funding—highlights the selective nature of digital rights advocacy.</description>
     <category>weekly-digest</category>
   </item>
   <item>
