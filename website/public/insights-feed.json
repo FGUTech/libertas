@@ -205,6 +205,28 @@
       }
     },
     {
+      "id": "209fc223-b4da-4c5d-9d5b-ab2393bb7119",
+      "url": "https://libertas.fgu.tech/posts/federal-agents-arrest-independent-photographer-seize-equipme",
+      "title": "Federal Agents Arrest Independent Photographer, Seize Equipment Over ICE Protest Coverage",
+      "summary": "DOJ charged independent photographer Shane Ryan Bollman with felony civil rights violations for covering an anti-ICE protest, with HSI agents seizing his devices without warrant.",
+      "content_text": "Federal agents arrested independent photographer Shane Ryan Bollman (Junn Bollmann) in Los Angeles on February 27\n• Charged with felony 'conspiring to deprive others of their civil rights' (up to 10 years) plus FACE Act misdemeanor over January 18 anti-ICE protest coverage in Minnesota\n• Homeland Security Investigations confiscated phone, camera, and laptop without providing search warrant\n• Same charges filed against former CNN reporter Don Lemon and independent reporter Georgia Fort\n• Committee to Protect Journalists calls pattern of using 'federal force to undermine journalists' First Amendment rights'\n• Rare escalation: federal felony charges against journalists 'extremely rare' according to CPJ\n• Part of broader crackdown with 30 total arrests connected to church demonstration during Sunday service\n• Devices not returned upon release, creating operational security concerns for journalist sources",
+      "date_published": "2026-03-02T23:01:38.016Z",
+      "date_modified": "2026-03-02T23:01:38.147Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://cpj.org/2026/03/independent-photographer-among-30-more-arrested-charged-in-connection-with-minnesota-ice-protest-following-lemon-and-fort-cases/"
+        ]
+      }
+    },
+    {
       "id": "22507473-6427-4174-85ce-826014fe93b7",
       "url": "https://libertas.fgu.tech/posts/un-rules-pakistani-human-rights-defender-s-detention-violate",
       "title": "UN Rules Pakistani Human Rights Defender's Detention Violates International Law",
@@ -2047,6 +2069,28 @@
       }
     },
     {
+      "id": "b656d551-6299-4a09-852d-22944709bc8a",
+      "url": "https://libertas.fgu.tech/posts/anonymous-credentials-privacy-tech-for-the-age-verification-",
+      "title": "Anonymous Credentials: Privacy Tech for the Age Verification Era",
+      "summary": "Cryptographer Matthew Green explains anonymous credentials as essential privacy tech to combat growing government ID verification requirements across 25 US states and multiple countries that threaten online anonymity.",
+      "content_text": "Age verification laws now active in 25 US states and dozen+ countries requiring government ID for site access\n• Sites like Wikipedia, social media platforms increasingly forced to verify real-world identity before access\n• Anonymous credentials allow proving authorization (e.g., 'over 18') without revealing specific identity to service providers\n• David Chaum's 1980s concept breaks linkage between credential issuance and usage to preserve privacy\n• System works like digital wristband: show real ID once to issuer, then use anonymous token for access\n• Prevents websites from linking browsing history to real-world government identity\n• Critical as AI proliferation and advertising incentives drive demand for verified human identity data\n• Offers path to comply with age verification while maintaining user privacy and pseudonymity",
+      "date_published": "2026-03-02T23:02:48.056Z",
+      "date_modified": "2026-03-02T23:02:48.200Z",
+      "tags": [
+        "privacy",
+        "identity",
+        "surveillance",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://blog.cryptographyengineering.com/2026/03/02/anonymous-credentials-an-illustrated-primer/"
+        ]
+      }
+    },
+    {
       "id": "b666bf47-39f2-45a6-a936-b37123d28b7e",
       "url": "https://libertas.fgu.tech/posts/ooni-documents-telegram-blocks-during-kenya-exams-supports-l",
       "title": "OONI Documents Telegram Blocks During Kenya Exams, Supports Legal Challenge",
@@ -2197,6 +2241,28 @@
         "citations": [
           "https://www.theblock.co/post/390952/binance-denies-firing-investigators",
           "https://www.theblock.co/post/390970/fed-bank-supervision-debanking?utm_source=rss&amp;utm_medium=rss"
+        ]
+      }
+    },
+    {
+      "id": "c00741b5-98c5-49fc-a55a-4c7704c9467b",
+      "url": "https://libertas.fgu.tech/posts/lao-government-critic-found-dead-after-arrest-highlighting-d",
+      "title": "Lao Government Critic Found Dead After Arrest, Highlighting Digital Activist Risks",
+      "summary": "Sisay Luangmonda, a prominent social media critic of Laos government, was found dead after being arrested by soldiers, part of systematic repression of digital dissent in authoritarian regimes.",
+      "content_text": "Sisay Luangmonda (Bao Mor Khaen), 32, found dead February 20, 2026, four days after family reported him missing\n• Witnesses reported soldiers arrested him outside Vientiane on February 14 and took him to Phonthan Prison\n• Sisay used social media to criticize corruption and mismanagement by ruling Lao People's Revolutionary Party\n• He had received death threats related to his online commentary before his death\n• Authorities provided no information to family about his whereabouts and have not started investigation\n• Part of pattern: multiple Lao activists disappeared or killed since 2012, including exiles in Thailand\n• Demonstrates real-world consequences activists face for digital political expression\n• No attacks on Lao dissidents have been resolved or prosecuted to date",
+      "date_published": "2026-03-02T23:02:16.352Z",
+      "date_modified": "2026-03-02T23:02:16.493Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.hrw.org/news/2026/03/02/laos-investigate-prominent-dissidents-death"
         ]
       }
     },

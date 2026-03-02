@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Mon, 02 Mar 2026 17:02:53 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 02 Mar 2026 23:02:48 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -104,6 +104,17 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Federal Agents Arrest Independent Photographer, Seize Equipment Over ICE Protest Coverage</title>
+    <link>https://libertas.fgu.tech/posts/federal-agents-arrest-independent-photographer-seize-equipme</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/federal-agents-arrest-independent-photographer-seize-equipme</guid>
+    <pubDate>Mon, 02 Mar 2026 23:01:38 GMT</pubDate>
+    <description>DOJ charged independent photographer Shane Ryan Bollman with felony civil rights violations for covering an anti-ICE protest, with HSI agents seizing his devices without warrant.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>privacy</category>
   </item>
   <item>
     <title>UN Rules Pakistani Human Rights Defender&apos;s Detention Violates International Law</title>
@@ -997,6 +1008,17 @@
     <category>sovereignty</category>
   </item>
   <item>
+    <title>Anonymous Credentials: Privacy Tech for the Age Verification Era</title>
+    <link>https://libertas.fgu.tech/posts/anonymous-credentials-privacy-tech-for-the-age-verification-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/anonymous-credentials-privacy-tech-for-the-age-verification-</guid>
+    <pubDate>Mon, 02 Mar 2026 23:02:48 GMT</pubDate>
+    <description>Cryptographer Matthew Green explains anonymous credentials as essential privacy tech to combat growing government ID verification requirements across 25 US states and multiple countries that threaten online anonymity.</description>
+    <category>privacy</category>
+    <category>identity</category>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+  </item>
+  <item>
     <title>OONI Documents Telegram Blocks During Kenya Exams, Supports Legal Challenge</title>
     <link>https://libertas.fgu.tech/posts/ooni-documents-telegram-blocks-during-kenya-exams-supports-l</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/ooni-documents-telegram-blocks-during-kenya-exams-supports-l</guid>
@@ -1068,6 +1090,17 @@
     <pubDate>Tue, 24 Feb 2026 11:00:19 GMT</pubDate>
     <description>Unverified reports claim Binance internal investigators discovered substantial crypto flows to Iran through user accounts, though Binance denies firing investigators over the findings.</description>
     <category>payments</category>
+    <category>sovereignty</category>
+  </item>
+  <item>
+    <title>Lao Government Critic Found Dead After Arrest, Highlighting Digital Activist Risks</title>
+    <link>https://libertas.fgu.tech/posts/lao-government-critic-found-dead-after-arrest-highlighting-d</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/lao-government-critic-found-dead-after-arrest-highlighting-d</guid>
+    <pubDate>Mon, 02 Mar 2026 23:02:16 GMT</pubDate>
+    <description>Sisay Luangmonda, a prominent social media critic of Laos government, was found dead after being arrested by soldiers, part of systematic repression of digital dissent in authoritarian regimes.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
     <category>sovereignty</category>
   </item>
   <item>
