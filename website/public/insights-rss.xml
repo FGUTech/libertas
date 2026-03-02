@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Sat, 28 Feb 2026 17:00:51 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 02 Mar 2026 17:02:53 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -197,6 +197,17 @@
     <category>surveillance</category>
   </item>
   <item>
+    <title>Cake Wallet Adds Self-Custody Lightning Network With Privacy Defaults</title>
+    <link>https://libertas.fgu.tech/posts/cake-wallet-adds-self-custody-lightning-network-with-privacy</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/cake-wallet-adds-self-custody-lightning-network-with-privacy</guid>
+    <pubDate>Mon, 02 Mar 2026 17:00:32 GMT</pubDate>
+    <description>Cake Wallet integrated Bitcoin Lightning Network with self-custody and privacy-first design using Breez SDK and custom Spark implementation, avoiding common Lightning privacy leaks.</description>
+    <category>bitcoin</category>
+    <category>payments</category>
+    <category>privacy</category>
+    <category>sovereignty</category>
+  </item>
+  <item>
     <title>Senegal Implements Multi-Phase Internet Shutdowns During Political Protests</title>
     <link>https://libertas.fgu.tech/posts/senegal-implements-multi-phase-internet-shutdowns-during-pol</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/senegal-implements-multi-phase-internet-shutdowns-during-pol</guid>
@@ -252,6 +263,15 @@
     <category>privacy</category>
   </item>
   <item>
+    <title>Austrian Interior Ministry Deploys €900K Mass Surveillance Tool Used by ICE</title>
+    <link>https://libertas.fgu.tech/posts/austrian-interior-ministry-deploys-900k-mass-surveillance-to</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/austrian-interior-ministry-deploys-900k-mass-surveillance-to</guid>
+    <pubDate>Mon, 02 Mar 2026 17:02:14 GMT</pubDate>
+    <description>Austria&apos;s Interior Ministry spent €900K on Cobwebs&apos; Tangles surveillance software that harvests social media and web data, with officials refusing to disclose usage details or capabilities.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+  </item>
+  <item>
     <title>Senator Blumenthal Opens Binance Investigation Over Iran Sanctions Evasion Reports</title>
     <link>https://libertas.fgu.tech/posts/senator-blumenthal-opens-binance-investigation-over-iran-san</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/senator-blumenthal-opens-binance-investigation-over-iran-san</guid>
@@ -260,6 +280,16 @@
     <category>bitcoin</category>
     <category>sovereignty</category>
     <category>censorship-resistance</category>
+  </item>
+  <item>
+    <title>LLMs Enable Scalable De-anonymization of Online Posts Across Platforms</title>
+    <link>https://libertas.fgu.tech/posts/llms-enable-scalable-de-anonymization-of-online-posts-across</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/llms-enable-scalable-de-anonymization-of-online-posts-across</guid>
+    <pubDate>Mon, 02 Mar 2026 17:01:50 GMT</pubDate>
+    <description>Research shows LLMs can identify anonymous users from their online posts with high precision across platforms like Hacker News and Reddit, scaling to tens of thousands of candidates.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>identity</category>
   </item>
   <item>
     <title>Signal Announces New President Role to Focus on Sustainability and Strategy</title>
@@ -344,6 +374,16 @@
     <category>privacy</category>
     <category>activism</category>
     <category>censorship-resistance</category>
+  </item>
+  <item>
+    <title>Greek Court Convicts Spyware Executives in Landmark Predatorgate Ruling</title>
+    <link>https://libertas.fgu.tech/posts/greek-court-convicts-spyware-executives-in-landmark-predator</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/greek-court-convicts-spyware-executives-in-landmark-predator</guid>
+    <pubDate>Mon, 02 Mar 2026 17:02:53 GMT</pubDate>
+    <description>Athens court found four Intellexa spyware executives guilty of unlawfully targeting journalists and politicians with Predator spyware, marking the first criminal accountability for surveillance tech companies in Greece.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
   </item>
   <item>
     <title>EFF Defends Section 230 as Essential Protection for Online Speech and Freedom Tech</title>
@@ -578,6 +618,17 @@
     <category>censorship-resistance</category>
     <category>surveillance</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Access Now Launches Digital Security Training Series for Civil Society</title>
+    <link>https://libertas.fgu.tech/posts/access-now-launches-digital-security-training-series-for-civ</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/access-now-launches-digital-security-training-series-for-civ</guid>
+    <pubDate>Mon, 02 Mar 2026 17:01:31 GMT</pubDate>
+    <description>Access Now&apos;s Digital Security Helpline is launching a webinar series starting March 10, 2026, focusing on spear phishing defense for activists, journalists, and civil society organizations facing targeted attacks.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>censorship-resistance</category>
   </item>
   <item>
     <title>CPJ Report: 58 of 59 Palestinian Journalists Report Torture in Israeli Detention</title>
@@ -1080,6 +1131,16 @@
     <description>Dave Farber, longest-serving EFF Board member and internet pioneer known as the &apos;Grandfather of the Internet,&apos; has died at 91, ending decades of advocacy for digital rights and open source protections.</description>
     <category>censorship-resistance</category>
     <category>privacy</category>
+    <category>activism</category>
+  </item>
+  <item>
+    <title>EFF Executive Director Cindy Cohn Releases Memoir on 30-Year Digital Privacy Fight</title>
+    <link>https://libertas.fgu.tech/posts/eff-executive-director-cindy-cohn-releases-memoir-on-30-year</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-executive-director-cindy-cohn-releases-memoir-on-30-year</guid>
+    <pubDate>Mon, 02 Mar 2026 17:00:19 GMT</pubDate>
+    <description>EFF Executive Director Cindy Cohn publishes memoir documenting three decades of digital privacy battles including Crypto Wars, NSA surveillance, and FBI gag orders as she prepares to step down.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
     <category>activism</category>
   </item>
   <item>

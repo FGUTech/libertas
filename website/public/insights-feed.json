@@ -399,6 +399,28 @@
       }
     },
     {
+      "id": "340f2555-163b-4528-8e5d-59bec8847d8f",
+      "url": "https://libertas.fgu.tech/posts/cake-wallet-adds-self-custody-lightning-network-with-privacy",
+      "title": "Cake Wallet Adds Self-Custody Lightning Network With Privacy Defaults",
+      "summary": "Cake Wallet integrated Bitcoin Lightning Network with self-custody and privacy-first design using Breez SDK and custom Spark implementation, avoiding common Lightning privacy leaks.",
+      "content_text": "Cake Wallet launched Lightning Network support with full self-custody via Breez SDK and Spark\n• Custom Spark implementation prevents address embedding in Lightning invoices\n• Transaction data not published to public explorers by default\n• Wallet already supports advanced Bitcoin privacy features like Silent Payments and Payjoin\n• No Lightning node management required for users while maintaining self-custody\n• Added social payments feature 'Birdpay' for sending crypto to X.com usernames\n• Positions Cake among few wallets offering Lightning with strong privacy defaults",
+      "date_published": "2026-03-02T17:00:32.508Z",
+      "date_modified": "2026-03-02T17:00:32.555Z",
+      "tags": [
+        "bitcoin",
+        "payments",
+        "privacy",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 85,
+        "citations": [
+          "https://bitcoinmagazine.com/business/cake-wallet-launches-bitcoin-lightning-network-support-with-full-self-custody-and-privacy-defaults"
+        ]
+      }
+    },
+    {
       "id": "343b8c00-11d1-47c4-a0e1-c6b2555037b7",
       "url": "https://libertas.fgu.tech/posts/senegal-implements-multi-phase-internet-shutdowns-during-pol",
       "title": "Senegal Implements Multi-Phase Internet Shutdowns During Political Protests",
@@ -510,6 +532,26 @@
       }
     },
     {
+      "id": "373f79cb-a404-49af-9530-ba126922304c",
+      "url": "https://libertas.fgu.tech/posts/austrian-interior-ministry-deploys-900k-mass-surveillance-to",
+      "title": "Austrian Interior Ministry Deploys €900K Mass Surveillance Tool Used by ICE",
+      "summary": "Austria's Interior Ministry spent €900K on Cobwebs' Tangles surveillance software that harvests social media and web data, with officials refusing to disclose usage details or capabilities.",
+      "content_text": "Austrian Interior Ministry purchased Tangles surveillance software for €900K from Israeli firm Cobwebs\n• Tool gathers and analyzes data across social media platforms and web sources for mass surveillance\n• Same software suite used by U.S. Immigration and Customs Enforcement (ICE)\n• Ministry refuses to disclose what the tool will be used for or its surveillance scope\n• Unclear if Austria also purchased WebLoc feature that tracks mobile device movements in designated areas\n• Citizen Lab researchers discovered the purchase, raising concerns about democratic oversight\n• Tool potentially enables surveillance using behavioral data from digital advertising networks\n• Represents deployment of military-grade surveillance tech by democratic government without transparency",
+      "date_published": "2026-03-02T17:02:14.397Z",
+      "date_modified": "2026-03-02T17:02:14.490Z",
+      "tags": [
+        "surveillance",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://citizenlab.ca/austrian-interior-ministry-using-cobwebs-surveillance-software/"
+        ]
+      }
+    },
+    {
       "id": "3a84d753-c0a5-44b2-8648-bd173d6f40ce",
       "url": "https://libertas.fgu.tech/posts/senator-blumenthal-opens-binance-investigation-over-iran-san",
       "title": "Senator Blumenthal Opens Binance Investigation Over Iran Sanctions Evasion Reports",
@@ -528,6 +570,27 @@
         "citations": [
           "https://www.theblock.co/post/391141/blumenthal-investigates-binance-reports-iran-linked-sanctions-evasion",
           "https://www.theblock.co/post/391141/blumenthal-investigates-binance-reports-iran-linked-sanctions-evasion?utm_source=rss&amp;utm_medium=rss"
+        ]
+      }
+    },
+    {
+      "id": "3cb62185-dde7-432c-bb2d-176bdf669430",
+      "url": "https://libertas.fgu.tech/posts/llms-enable-scalable-de-anonymization-of-online-posts-across",
+      "title": "LLMs Enable Scalable De-anonymization of Online Posts Across Platforms",
+      "summary": "Research shows LLMs can identify anonymous users from their online posts with high precision across platforms like Hacker News and Reddit, scaling to tens of thousands of candidates.",
+      "content_text": "LLM agents successfully de-anonymize users from anonymous posts on Hacker News, Reddit, LinkedIn, and interview transcripts\n• Method works at scale, testing against tens of thousands of potential candidates\n• LLMs infer location, occupation, and interests from handful of comments, then search web for matches\n• Breakthrough makes previously human-intensive de-anonymization practical and automated\n• Reported by Bruce Schneier, indicating credible security research [Source]\n• Threatens pseudonymous communication relied upon by activists and dissidents\n• Represents major shift from theoretical to practical de-anonymization capabilities",
+      "date_published": "2026-03-02T17:01:50.686Z",
+      "date_modified": "2026-03-02T17:01:50.800Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "identity"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.schneier.com/blog/archives/2026/03/llm-assisted-deanonymization.html"
         ]
       }
     },
@@ -704,6 +767,27 @@
         "citations": [
           "https://cpj.org/2026/02/russias-repression-record/",
           "https://cpj.org/2026/02/i-literally-felt-naked-angolan-journalist-teixeira-candido-targeted-with-predator-spyware/"
+        ]
+      }
+    },
+    {
+      "id": "51ad20f7-03b1-4e70-a05b-38bb6ad4382c",
+      "url": "https://libertas.fgu.tech/posts/greek-court-convicts-spyware-executives-in-landmark-predator",
+      "title": "Greek Court Convicts Spyware Executives in Landmark Predatorgate Ruling",
+      "summary": "Athens court found four Intellexa spyware executives guilty of unlawfully targeting journalists and politicians with Predator spyware, marking the first criminal accountability for surveillance tech companies in Greece.",
+      "content_text": "Athens court convicted four Intellexa executives for unlawful surveillance using Predator spyware\n• Defendants include Tal Dilian, Sara Hamou, Felix Bitzios, and Giannis Lavranos - sentenced to 8 years each (suspended pending appeal)\n• First criminal convictions in Greece's 'Predatorgate' scandal targeting journalists, politicians, and activists\n• Court referred case back to prosecutors for felony-level investigation including potential espionage charges\n• Predator spyware was used alongside traditional wiretaps by Greece's intelligence service against dozens of targets\n• Ruling establishes legal precedent for holding surveillance technology companies criminally liable for abuse\n• State officials who ordered the surveillance remain unprosecuted despite documented evidence of involvement\n• Human Rights Watch documented chilling effects on media freedom and journalist intimidation from the scandal",
+      "date_published": "2026-03-02T17:02:53.468Z",
+      "date_modified": "2026-03-02T17:02:53.573Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.hrw.org/news/2026/03/02/greek-court-finds-spyware-executives-guilty"
         ]
       }
     },
@@ -1188,6 +1272,28 @@
         "credibility_score": 95,
         "citations": [
           "https://ooni.org/post/2025-bangladesh-report/"
+        ]
+      }
+    },
+    {
+      "id": "774271ab-c7f6-4c9b-b609-51307ef71f1e",
+      "url": "https://libertas.fgu.tech/posts/access-now-launches-digital-security-training-series-for-civ",
+      "title": "Access Now Launches Digital Security Training Series for Civil Society",
+      "summary": "Access Now's Digital Security Helpline is launching a webinar series starting March 10, 2026, focusing on spear phishing defense for activists, journalists, and civil society organizations facing targeted attacks.",
+      "content_text": "Access Now announces 'Safe and Strong' webinar series on digital security for civil society\n• First session March 10, 2026 focuses on spear phishing attacks targeting activists and journalists\n• Training will use real-world examples from documented attacks in Eastern Europe and Middle East\n• Expert speakers include researchers from Citizen Lab, Lookout, and Digital Security Lab Ukraine\n• Aims to address increasingly complex digital attacks against civil society organizations\n• Registration available through Access Now's Digital Security Helpline platform\n• Part of broader initiative to increase digital resilience for at-risk communities",
+      "date_published": "2026-03-02T17:01:31.584Z",
+      "date_modified": "2026-03-02T17:01:31.642Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "activism",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.accessnow.org/event/digital-security-webinars/"
         ]
       }
     },
@@ -2222,6 +2328,27 @@
         "citations": [
           "https://www.eff.org/deeplinks/2026/02/rip-dave-farber-eff-board-member-and-friend",
           "https://www.eff.org/deeplinks/2026/02/internet-still-works-wikipedia-defends-its-editors"
+        ]
+      }
+    },
+    {
+      "id": "c85324d6-aa25-4910-8a02-e57c3bea5f58",
+      "url": "https://libertas.fgu.tech/posts/eff-executive-director-cindy-cohn-releases-memoir-on-30-year",
+      "title": "EFF Executive Director Cindy Cohn Releases Memoir on 30-Year Digital Privacy Fight",
+      "summary": "EFF Executive Director Cindy Cohn publishes memoir documenting three decades of digital privacy battles including Crypto Wars, NSA surveillance, and FBI gag orders as she prepares to step down.",
+      "content_text": "Cindy Cohn releasing memoir 'Privacy's Defender: My Thirty-Year Fight Against Digital Surveillance' via MIT Press\n• Book covers Crypto Wars of 1990s, NSA dragnet surveillance battles, and fights against FBI gag orders\n• Cohn stepping down as EFF Executive Director after 25 years with the organization\n• National book tour launching with San Francisco and Berkeley events in March\n• Book features endorsements from Edward Snowden, Lawrence Lessig, and Senator Ron Wyden\n• Proceeds from book sales benefit EFF\n• Documents legal battles representing technology users, innovators, whistleblowers, and researchers",
+      "date_published": "2026-03-02T17:00:19.339Z",
+      "date_modified": "2026-03-02T17:00:19.389Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/press/releases/national-book-tour-cindy-cohns-memoir-privacys-defender"
         ]
       }
     },
