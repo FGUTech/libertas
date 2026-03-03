@@ -596,6 +596,28 @@
       }
     },
     {
+      "id": "37d24c68-8991-46a6-82f8-f66823c48e56",
+      "url": "https://libertas.fgu.tech/posts/federal-agents-arrest-journalist-seize-electronics-without-w",
+      "title": "Federal Agents Arrest Journalist, Seize Electronics Without Warrant in ICE Protest Coverage",
+      "summary": "DOJ charged independent photographer Junn Bollmann with felony civil rights violations for covering anti-ICE protest, confiscating his devices without warrant—part of broader crackdown on press freedom.",
+      "content_text": "Independent photographer Shane Ryan Bollman (Junn Bollmann) arrested by HSI agents in Los Angeles February 27\n• Charged with felony 'conspiring to deprive others of civil rights' for covering January 18 anti-ICE protest in St. Paul\n• Federal agents confiscated phone, camera, laptop without providing search warrant\n• Faces up to 10 years prison plus potential $10,000 fine under FACE Act misdemeanor\n• Same charges filed against former CNN reporter Don Lemon and independent reporter Georgia Fort\n• Part of 30-person federal indictment related to January church demonstration coverage\n• CPJ calls pattern of using federal force to undermine First Amendment rights\n• Devices not returned upon release, creating operational security concerns for journalist",
+      "date_published": "2026-03-03T17:02:26.291Z",
+      "date_modified": "2026-03-03T17:02:26.408Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 88,
+        "citations": [
+          "https://cpj.org/2026/03/independent-photographer-among-30-more-arrested-charged-in-connection-with-minnesota-ice-protest-following-lemon-and-fort-cases/"
+        ]
+      }
+    },
+    {
       "id": "3a84d753-c0a5-44b2-8648-bd173d6f40ce",
       "url": "https://libertas.fgu.tech/posts/senator-blumenthal-opens-binance-investigation-over-iran-san",
       "title": "Senator Blumenthal Opens Binance Investigation Over Iran Sanctions Evasion Reports",
@@ -657,6 +679,29 @@
         "citations": [
           "https://signal.org/blog/announcing-signal-president/",
           "https://signal.org/blog/pqxdh/"
+        ]
+      }
+    },
+    {
+      "id": "404260f6-1608-4349-8a8c-c268bd52fa87",
+      "url": "https://libertas.fgu.tech/posts/proton-releases-comprehensive-protest-privacy-guide-against-",
+      "title": "Proton Releases Comprehensive Protest Privacy Guide Against AI Surveillance",
+      "summary": "Proton published detailed operational security guide for protesters facing AI facial recognition, biometric tracking, and mobile surveillance tools like ICE's Mobile Fortify app.",
+      "content_text": "Proton released comprehensive guide for protecting privacy during protests and political demonstrations\n• Highlights escalating surveillance threats: AI facial recognition cameras, ICE Mobile Fortify biometric tools, IMSI-catchers (Stingrays)\n• Mobile Fortify allows real-time crowd identification via smartphone cameras matching federal databases\n• Federal agencies bypass warrant requirements by purchasing bulk location data from commercial brokers\n• Guide covers three protection strategies: leaving phone home, using clean burner device, or hardening primary phone\n• Recommends Faraday bags, disabling 2G, using Proton VPN with F-Droid for clean phone setup\n• Addresses both digital and physical surveillance countermeasures for political expression",
+      "date_published": "2026-03-03T17:03:09.202Z",
+      "date_modified": "2026-03-03T17:03:09.341Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "activism",
+        "comms",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 88,
+        "citations": [
+          "https://proton.me/blog/how-to-protect-privacy-at-protests"
         ]
       }
     },
@@ -1253,6 +1298,28 @@
       }
     },
     {
+      "id": "6eebc736-7b90-4c2a-9ca6-c8b31c3a8b0e",
+      "url": "https://libertas.fgu.tech/posts/pentagon-rejects-ai-ethics-constraints-enables-autonomous-we",
+      "title": "Pentagon Rejects AI Ethics Constraints, Enables Autonomous Weapons Development",
+      "summary": "US Defense Department rejected Anthropic's ethical red lines against fully autonomous weapons and mass surveillance, signing with OpenAI instead under new 'any lawful use' requirements.",
+      "content_text": "Pentagon on Feb 27 rejected Anthropic's refusal to enable fully autonomous weapons and mass surveillance of US citizens\n• Defense Secretary Pete Hegseth designated Anthropic a 'supply chain risk' for maintaining ethical boundaries\n• DOD signed deal with OpenAI under new requirement accepting 'any lawful use' of AI products\n• January AI memo removed requirement for 'appropriate levels of human judgment' in autonomous weapons\n• Policy shift prioritizes 'Military AI Dominance' over human oversight safeguards\n• Autonomous weapons pose risks to civilian protection and accountability in armed conflicts\n• Built-in algorithmic biases could disproportionately harm marginalized populations\n• UN Convention on Conventional Weapons meeting this week to discuss autonomous weapons treaty",
+      "date_published": "2026-03-03T17:02:42.146Z",
+      "date_modified": "2026-03-03T17:02:42.272Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "sovereignty",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://www.hrw.org/news/2026/03/03/us-militarys-dangerous-slide-toward-fully-autonomous-killing"
+        ]
+      }
+    },
+    {
       "id": "702220f9-fc32-45d4-8428-9362245ff947",
       "url": "https://libertas.fgu.tech/posts/iran-implements-complete-internet-shutdown-during-protests-2",
       "title": "Iran Implements Complete Internet Shutdown During Protests, 2,403+ Killed",
@@ -1361,6 +1428,27 @@
         "citations": [
           "https://cpj.org/2026/02/cpj-to-release-report-documenting-palestinian-journalists-claims-of-torture-in-israeli-prisons/",
           "https://cpj.org/2026/02/russias-repression-record/"
+        ]
+      }
+    },
+    {
+      "id": "796746ab-fd3a-4820-9561-5a715291f9df",
+      "url": "https://libertas.fgu.tech/posts/turkey-weaponizes-justice-system-against-leading-opposition-",
+      "title": "Turkey Weaponizes Justice System Against Leading Opposition Politician",
+      "summary": "Istanbul mayor and presidential candidate Ekrem İmamoğlu faces mass corruption trial March 9, after year in detention as Turkey systematically targets opposition party through courts.",
+      "content_text": "Istanbul Mayor Ekrem İmamoğlu to stand trial March 9, 2026 as central defendant in mass corruption case with 407 defendants\n• İmamoğlu detained for one year after being selected as Republican People's Party (CHP) presidential candidate\n• Faces up to 1929 years in prison if convicted on all charges including organized crime, corruption, and espionage\n• Human Rights Watch documents timeline showing politically motivated targeting coinciding with İmamoğlu's political rise\n• Evidence relies heavily on 15 'secret witnesses' and testimonies from co-defendants seeking reduced sentences\n• Systematic crackdown includes detention/removal of CHP mayors in Istanbul districts and major cities like Adana, Antalya\n• Independent TV channels covering İmamoğlu's arrest face fines, broadcast bans, and journalist detentions\n• CHP won 37.8% in March 2024 elections, surpassing Erdoğan's AKP (35.5%) for first time in 22 years",
+      "date_published": "2026-03-03T17:02:42.146Z",
+      "date_modified": "2026-03-03T17:02:42.272Z",
+      "tags": [
+        "surveillance",
+        "activism",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.hrw.org/news/2026/03/03/turkiye-leading-opponent-of-erdogan-on-trial"
         ]
       }
     },
@@ -1784,6 +1872,28 @@
       }
     },
     {
+      "id": "94ddf7dd-c006-48ad-a1b1-0da47c7f4eaf",
+      "url": "https://libertas.fgu.tech/posts/mexico-partially-unblocks-tor-access-after-years-of-governme",
+      "title": "Mexico Partially Unblocks Tor Access After Years of Government Website Censorship",
+      "summary": "Mexico's new administration under Claudia Sheinbaum partially lifted a Tor network block affecting 20+ million users, allowing access to main government sites while maintaining restrictions elsewhere.",
+      "content_text": "21 Mexican government agencies blocked Tor network access across multiple administrations from 2012-2025\n• An estimated 20 million people use Tor in Mexico for secure internet access and evading surveillance\n• Block was partially lifted in July 2025 under President Claudia Sheinbaum's administration\n• Main government portal gob.mx now accessible via Tor, but datos.gob.mx remains blocked\n• Previous administration acknowledged blocking Tor traffic as 'security measure' against malicious activity\n• Government simultaneously used Tor for anti-corruption whistleblower systems while blocking citizen access\n• Civil society, journalists, and human rights groups actively use Tor for anonymous communications\n• Tor Project argues technical solutions exist to balance security without wholesale blocking",
+      "date_published": "2026-03-03T17:04:08.285Z",
+      "date_modified": "2026-03-03T17:04:08.434Z",
+      "tags": [
+        "censorship-resistance",
+        "privacy",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 88,
+        "citations": [
+          "https://globalvoices.org/2026/03/03/mexican-government-partially-unblocks-secure-internet/"
+        ]
+      }
+    },
+    {
       "id": "94ee8536-dc7a-40c5-97dc-f5a0fc3e4bb3",
       "url": "https://libertas.fgu.tech/posts/wisconsin-vpn-ban-bill-passes-assembly-senate-vote-imminent",
       "title": "Wisconsin VPN Ban Bill Passes Assembly, Senate Vote Imminent",
@@ -1845,6 +1955,27 @@
         "credibility_score": 90,
         "citations": [
           "https://www.hrw.org/news/2026/02/25/trumps-selective-war-on-censorship"
+        ]
+      }
+    },
+    {
+      "id": "9caa4da2-ca71-43b2-a7c6-74fdf16984eb",
+      "url": "https://libertas.fgu.tech/posts/eff-challenges-geofence-warrants-at-supreme-court-as-unconst",
+      "title": "EFF Challenges Geofence Warrants at Supreme Court as Unconstitutional Digital Dragnets",
+      "summary": "EFF filed Supreme Court brief in Chatrie v. United States arguing geofence warrants violate Fourth Amendment by compelling mass location data searches of innocent people without individualized suspicion.",
+      "content_text": "EFF, ACLU, and Georgetown Law filed amicus brief challenging geofence warrants as unconstitutional\n• Case involves 2019 warrant forcing Google to search hundreds of millions of accounts for Virginia crime scene proximity\n• Geofence warrants cast 'digital dragnets' capturing location data from all devices in geographic areas during time periods\n• Unlike traditional warrants, these don't target specific suspects but turn innocent bystanders into suspects\n• Brief argues practice violates Fourth Amendment prohibition against general warrants and exploratory searches\n• Google ended mass geofence searches in July 2025, but other companies still collect similar location data\n• Supreme Court ruling in Chatrie v. United States could set precedent for all suspicionless mass surveillance searches",
+      "date_published": "2026-03-03T17:00:35.610Z",
+      "date_modified": "2026-03-03T17:00:35.663Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/press/releases/eff-supreme-court-shut-down-unconstitutional-geofence-searches"
         ]
       }
     },
@@ -2638,6 +2769,28 @@
       }
     },
     {
+      "id": "d292abcf-62ea-4ab2-9745-e4ffd1cca38d",
+      "url": "https://libertas.fgu.tech/posts/iran-internet-blackout-isolates-15-jailed-journalists-during",
+      "title": "Iran Internet Blackout Isolates 15 Jailed Journalists During Regional Conflict",
+      "summary": "Iran imposed near-total internet blackout during regional escalation, cutting off at least 15 imprisoned journalists from outside contact, with three held at Evin prison in Israeli-ordered evacuation zone.",
+      "content_text": "Iran implemented near-total internet blackout and severe communication disruptions during ongoing regional conflict\n• At least 15 journalists remain imprisoned in Iran, completely isolated from families and outside world\n• Three journalists (Reza Valizadeh, Shinnosuke Kawashima, Mohammad Zare-Foumani) held at Evin prison in Tehran evacuation zone\n• Evin Prison previously struck in Israeli attacks, killing 80+ people including prisoners\n• Prison authorities reportedly abandoned facility, leaving special counter-terrorism forces in control\n• Food shortages and deteriorating conditions reported in prison wards\n• Internet blackouts being weaponized to suppress information flow and isolate detainees during conflict",
+      "date_published": "2026-03-03T17:02:26.291Z",
+      "date_modified": "2026-03-03T17:02:26.408Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "comms"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://cpj.org/2026/03/cpj-calls-for-immediate-release-of-jailed-journalists-in-iran-amid-escalating-conflict/"
+        ]
+      }
+    },
+    {
       "id": "d3b2906d-9fef-4f2d-9e6f-ced2cf0b749c",
       "url": "https://libertas.fgu.tech/posts/angola-s-parliament-passes-restrictive-ngo-bill-threatening-",
       "title": "Angola's Parliament Passes Restrictive NGO Bill Threatening Civil Society Operations",
@@ -2921,6 +3074,29 @@
         "credibility_score": 88,
         "citations": [
           "https://globalvoices.org/2026/02/20/pakistan-jails-two-lawyers-for-17-years-over-old-tweets/"
+        ]
+      }
+    },
+    {
+      "id": "e6909acd-58e9-468f-8cc5-59d4c58f808b",
+      "url": "https://libertas.fgu.tech/posts/lugano-expands-bitcoin-infrastructure-with-6-3m-plan-phase-i",
+      "title": "Lugano Expands Bitcoin Infrastructure with $6.3M Plan ₿ Phase II",
+      "summary": "Tether and Lugano launch Phase II expansion targeting digital sovereignty through decentralized infrastructure, privacy-preserving identity, and AI agents by 2030.",
+      "content_text": "Tether commits CHF 5M ($6.3M) for Lugano's Plan ₿ Phase II (2026-2030) digital infrastructure expansion\n• Over 400 Lugano merchants now accept Bitcoin, USDT, and LVGA token after 4-year pilot program\n• Five strategic pillars: institutional blockchain (SwissLedger), digital trade, privacy-preserving identity, decentralized AI, resilient urban infrastructure\n• Privacy pillar uses zero-knowledge technologies for voluntary citizen/business verification\n• PoW.space hub has attracted 100+ blockchain companies to the city\n• Mayor explicitly frames initiative as preserving 'freedom' through data sovereignty and service autonomy\n• Demonstrates municipal-scale adoption of freedom tech infrastructure in European context",
+      "date_published": "2026-03-03T17:01:01.406Z",
+      "date_modified": "2026-03-03T17:01:01.471Z",
+      "tags": [
+        "bitcoin",
+        "payments",
+        "identity",
+        "privacy",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://bitcoinmagazine.com/news/tether-and-lugano-launch-plan-%e2%82%bf"
         ]
       }
     },
@@ -3249,6 +3425,28 @@
         "credibility_score": 95,
         "citations": [
           "https://cpj.org/2026/02/senegalese-commentator-arrested-for-remarks-about-students-death/"
+        ]
+      }
+    },
+    {
+      "id": "fe654fb7-4dad-4777-a81d-ee97608833d6",
+      "url": "https://libertas.fgu.tech/posts/anonymous-credentials-privacy-preserving-auth-against-age-ve",
+      "title": "Anonymous Credentials: Privacy-Preserving Auth Against Age Verification Laws",
+      "summary": "Cryptographer Matthew Green explains anonymous credentials as essential defense against privacy dystopia created by age verification laws requiring government ID for most online activities.",
+      "content_text": "25 U.S. states and dozen+ countries now require age verification using government ID for 'inappropriate' content\n• Laws originally targeting porn now affect social media, encyclopedias (Wikipedia facing UK Online Safety Bill)\n• Traditional authentication creates surveillance trail linking real identity to all online activity\n• Anonymous credentials allow proving authorization (age, humanity) without revealing specific identity\n• Based on 1980s work by David Chaum, breaks linkage between credential issuance and usage\n• User shows ID once to issuer, receives unlinkable credential for repeated anonymous access\n• Provides anonymity set protection - site knows user has valid credential but not which specific user\n• Critical for preventing advertising-driven retention of identity data despite legal data minimization",
+      "date_published": "2026-03-03T17:03:34.363Z",
+      "date_modified": "2026-03-03T17:03:34.506Z",
+      "tags": [
+        "privacy",
+        "identity",
+        "surveillance",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 88,
+        "credibility_score": 95,
+        "citations": [
+          "https://blog.cryptographyengineering.com/2026/03/02/anonymous-credentials-an-illustrated-primer/"
         ]
       }
     }

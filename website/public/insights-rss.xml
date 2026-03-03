@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Tue, 03 Mar 2026 11:00:47 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 03 Mar 2026 17:04:08 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -293,6 +293,17 @@
     <category>privacy</category>
   </item>
   <item>
+    <title>Federal Agents Arrest Journalist, Seize Electronics Without Warrant in ICE Protest Coverage</title>
+    <link>https://libertas.fgu.tech/posts/federal-agents-arrest-journalist-seize-electronics-without-w</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/federal-agents-arrest-journalist-seize-electronics-without-w</guid>
+    <pubDate>Tue, 03 Mar 2026 17:02:26 GMT</pubDate>
+    <description>DOJ charged independent photographer Junn Bollmann with felony civil rights violations for covering anti-ICE protest, confiscating his devices without warrant—part of broader crackdown on press freedom.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>privacy</category>
+  </item>
+  <item>
     <title>Senator Blumenthal Opens Binance Investigation Over Iran Sanctions Evasion Reports</title>
     <link>https://libertas.fgu.tech/posts/senator-blumenthal-opens-binance-investigation-over-iran-san</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/senator-blumenthal-opens-binance-investigation-over-iran-san</guid>
@@ -320,6 +331,18 @@
     <description>Signal appointed a new President on September 12 to focus on long-term sustainability, strategy, and communications for the encrypted messaging platform.</description>
     <category>comms</category>
     <category>privacy</category>
+    <category>censorship-resistance</category>
+  </item>
+  <item>
+    <title>Proton Releases Comprehensive Protest Privacy Guide Against AI Surveillance</title>
+    <link>https://libertas.fgu.tech/posts/proton-releases-comprehensive-protest-privacy-guide-against-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/proton-releases-comprehensive-protest-privacy-guide-against-</guid>
+    <pubDate>Tue, 03 Mar 2026 17:03:09 GMT</pubDate>
+    <description>Proton published detailed operational security guide for protesters facing AI facial recognition, biometric tracking, and mobile surveillance tools like ICE&apos;s Mobile Fortify app.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>comms</category>
     <category>censorship-resistance</category>
   </item>
   <item>
@@ -609,6 +632,17 @@
     <category>privacy</category>
   </item>
   <item>
+    <title>Pentagon Rejects AI Ethics Constraints, Enables Autonomous Weapons Development</title>
+    <link>https://libertas.fgu.tech/posts/pentagon-rejects-ai-ethics-constraints-enables-autonomous-we</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/pentagon-rejects-ai-ethics-constraints-enables-autonomous-we</guid>
+    <pubDate>Tue, 03 Mar 2026 17:02:42 GMT</pubDate>
+    <description>US Defense Department rejected Anthropic&apos;s ethical red lines against fully autonomous weapons and mass surveillance, signing with OpenAI instead under new &apos;any lawful use&apos; requirements.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>sovereignty</category>
+    <category>activism</category>
+  </item>
+  <item>
     <title>Iran Implements Complete Internet Shutdown During Protests, 2,403+ Killed</title>
     <link>https://libertas.fgu.tech/posts/iran-implements-complete-internet-shutdown-during-protests-2</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/iran-implements-complete-internet-shutdown-during-protests-2</guid>
@@ -661,6 +695,16 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Turkey Weaponizes Justice System Against Leading Opposition Politician</title>
+    <link>https://libertas.fgu.tech/posts/turkey-weaponizes-justice-system-against-leading-opposition-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/turkey-weaponizes-justice-system-against-leading-opposition-</guid>
+    <pubDate>Tue, 03 Mar 2026 17:02:42 GMT</pubDate>
+    <description>Istanbul mayor and presidential candidate Ekrem İmamoğlu faces mass corruption trial March 9, after year in detention as Turkey systematically targets opposition party through courts.</description>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>censorship-resistance</category>
   </item>
   <item>
     <title>Tails 7.4 Adds Persistent Language Settings, Drops BitTorrent Support</title>
@@ -866,6 +910,17 @@
     <category>privacy</category>
   </item>
   <item>
+    <title>Mexico Partially Unblocks Tor Access After Years of Government Website Censorship</title>
+    <link>https://libertas.fgu.tech/posts/mexico-partially-unblocks-tor-access-after-years-of-governme</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/mexico-partially-unblocks-tor-access-after-years-of-governme</guid>
+    <pubDate>Tue, 03 Mar 2026 17:04:08 GMT</pubDate>
+    <description>Mexico&apos;s new administration under Claudia Sheinbaum partially lifted a Tor network block affecting 20+ million users, allowing access to main government sites while maintaining restrictions elsewhere.</description>
+    <category>censorship-resistance</category>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>activism</category>
+  </item>
+  <item>
     <title>Wisconsin VPN Ban Bill Passes Assembly, Senate Vote Imminent</title>
     <link>https://libertas.fgu.tech/posts/wisconsin-vpn-ban-bill-passes-assembly-senate-vote-imminent</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/wisconsin-vpn-ban-bill-passes-assembly-senate-vote-imminent</guid>
@@ -896,6 +951,16 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>comms</category>
+  </item>
+  <item>
+    <title>EFF Challenges Geofence Warrants at Supreme Court as Unconstitutional Digital Dragnets</title>
+    <link>https://libertas.fgu.tech/posts/eff-challenges-geofence-warrants-at-supreme-court-as-unconst</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-challenges-geofence-warrants-at-supreme-court-as-unconst</guid>
+    <pubDate>Tue, 03 Mar 2026 17:00:35 GMT</pubDate>
+    <description>EFF filed Supreme Court brief in Chatrie v. United States arguing geofence warrants violate Fourth Amendment by compelling mass location data searches of innocent people without individualized suspicion.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
   </item>
   <item>
     <title>OONI Launches Community Survey to Improve Censorship Measurement Tools</title>
@@ -1283,6 +1348,17 @@
     <category>sovereignty</category>
   </item>
   <item>
+    <title>Iran Internet Blackout Isolates 15 Jailed Journalists During Regional Conflict</title>
+    <link>https://libertas.fgu.tech/posts/iran-internet-blackout-isolates-15-jailed-journalists-during</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/iran-internet-blackout-isolates-15-jailed-journalists-during</guid>
+    <pubDate>Tue, 03 Mar 2026 17:02:26 GMT</pubDate>
+    <description>Iran imposed near-total internet blackout during regional escalation, cutting off at least 15 imprisoned journalists from outside contact, with three held at Evin prison in Israeli-ordered evacuation zone.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>comms</category>
+  </item>
+  <item>
     <title>Angola&apos;s Parliament Passes Restrictive NGO Bill Threatening Civil Society Operations</title>
     <link>https://libertas.fgu.tech/posts/angola-s-parliament-passes-restrictive-ngo-bill-threatening-</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/angola-s-parliament-passes-restrictive-ngo-bill-threatening-</guid>
@@ -1420,6 +1496,18 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>Lugano Expands Bitcoin Infrastructure with $6.3M Plan ₿ Phase II</title>
+    <link>https://libertas.fgu.tech/posts/lugano-expands-bitcoin-infrastructure-with-6-3m-plan-phase-i</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/lugano-expands-bitcoin-infrastructure-with-6-3m-plan-phase-i</guid>
+    <pubDate>Tue, 03 Mar 2026 17:01:01 GMT</pubDate>
+    <description>Tether and Lugano launch Phase II expansion targeting digital sovereignty through decentralized infrastructure, privacy-preserving identity, and AI agents by 2030.</description>
+    <category>bitcoin</category>
+    <category>payments</category>
+    <category>identity</category>
+    <category>privacy</category>
+    <category>sovereignty</category>
   </item>
   <item>
     <title>Uganda Implements Election Internet Shutdown, Threatens VPN Users with Device Targeting</title>
@@ -1578,6 +1666,17 @@
     <category>censorship-resistance</category>
     <category>activism</category>
     <category>surveillance</category>
+  </item>
+  <item>
+    <title>Anonymous Credentials: Privacy-Preserving Auth Against Age Verification Laws</title>
+    <link>https://libertas.fgu.tech/posts/anonymous-credentials-privacy-preserving-auth-against-age-ve</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/anonymous-credentials-privacy-preserving-auth-against-age-ve</guid>
+    <pubDate>Tue, 03 Mar 2026 17:03:34 GMT</pubDate>
+    <description>Cryptographer Matthew Green explains anonymous credentials as essential defense against privacy dystopia created by age verification laws requiring government ID for most online activities.</description>
+    <category>privacy</category>
+    <category>identity</category>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
   </item>
 </channel>
 </rss>
