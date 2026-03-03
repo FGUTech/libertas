@@ -1,0 +1,17 @@
+{
+  "id": "f1a2b3c4-d5e6-7890-abcd-111111111111",
+  "title": "Offline-First Encrypted Document Vault",
+  "problem_statement": "Human rights lawyers in countries with frequent internet shutdowns lose access to case files stored in cloud services. No tool exists for offline-first encrypted document management that syncs opportunistically when connectivity returns.",
+  "proposed_solution": "A local-first encrypted document store with conflict-free replicated data types (CRDTs) for opportunistic sync. Documents encrypted at rest with user-held keys. Sync occurs over any available channel — internet, mesh, Bluetooth, USB.",
+  "affected_groups": ["Human rights lawyers", "Investigative journalists", "NGO field workers"],
+  "feasibility_score": 78,
+  "impact_score": 82,
+  "github_issue_url": "https://github.com/FGUTech/libertas/issues/91",
+  "mvp_scope": "Desktop app (Electron or Tauri) with local AES-256 encrypted storage and USB-based sync between devices. Basic folder structure and search.",
+  "threat_model": "State adversary seizing devices and cutting internet. Cloud providers complying with government data requests.",
+  "derived_from_insight_ids": ["a1111111-0000-0000-0000-000000000001", "a1111111-0000-0000-0000-000000000002"],
+  "suggested_stack": ["Rust", "Tauri", "automerge"],
+  "prior_art": ["Standard Notes", "Cryptpad", "Logseq"],
+  "open_questions": ["How to handle key recovery without a trusted server?", "Maximum practical document size for mesh sync?"],
+  "created_at": "2026-03-01T10:00:00Z"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "a4b5c6d7-e8f9-0123-abcd-444444444444",
+  "title": "Satellite-Based Bitcoin Transaction Broadcaster",
+  "problem_statement": "In regions where internet infrastructure is controlled or destroyed, Bitcoin users cannot broadcast transactions. Blockstream Satellite provides block data downlink but no uplink path for transactions from users without internet access.",
+  "proposed_solution": "A low-cost device that encodes signed Bitcoin transactions into short burst data messages transmitted via Iridium satellite network. Transactions reach a relay node with internet access for broadcasting to the Bitcoin network.",
+  "affected_groups": ["Bitcoin users in conflict zones", "Humanitarian organizations operating in infrastructure-damaged areas", "Merchants in remote regions"],
+  "feasibility_score": 60,
+  "impact_score": 74,
+  "github_issue_url": "https://github.com/FGUTech/libertas/issues/112",
+  "mvp_scope": "Iridium SBD modem connected to a Raspberry Pi running a stripped-down Bitcoin wallet. User signs transaction locally, device transmits via satellite to a relay server that broadcasts to the Bitcoin network.",
+  "threat_model": "Adversary controlling terrestrial internet infrastructure. Satellite signal jamming (expensive but possible). Relay server operator as potential point of failure.",
+  "derived_from_insight_ids": ["d4444444-0000-0000-0000-000000000001", "d4444444-0000-0000-0000-000000000002"],
+  "suggested_stack": ["Rust", "Bitcoin Core", "Iridium SBD API"],
+  "prior_art": ["Blockstream Satellite", "TxTenna", "goTenna"],
+  "open_questions": ["Cost per transaction via Iridium SBD?", "Latency acceptable for merchant use cases?"],
+  "created_at": "2026-03-03T08:00:00Z"
+}

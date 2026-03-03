@@ -79,6 +79,7 @@ Load and strictly follow `agents/social/voice-reference.md` for all voice, tone,
   - Tweet 1: "Problem worth solving:" + problem statement
   - Tweet 2 (optional): Proposed approach + link to GitHub issue or Libertas
 - **Source data**: `project_ideas` table (queried from database)
+- **Dedicated agent**: See `agents/social/project-spotlight.md` for full prompt, hard rules, and examples
 
 ### Breaking Signal
 

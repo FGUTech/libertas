@@ -1,0 +1,17 @@
+{
+  "id": "d3c4e5f6-a7b8-9012-cdef-333333333333",
+  "title": "Anonymous Whistleblower Submission Platform with ZK Proofs",
+  "problem_statement": "Existing whistleblower platforms (SecureDrop, GlobaLeaks) require trust in the receiving organization's infrastructure. If the server is compromised or the organization is coerced, whistleblower identities can be exposed retroactively.",
+  "proposed_solution": "A submission platform where the whistleblower proves organizational affiliation (e.g., 'I work at Company X') via zero-knowledge proof without revealing their specific identity. Submissions are end-to-end encrypted and stored on decentralized infrastructure.",
+  "affected_groups": ["Corporate whistleblowers", "Government employees reporting corruption", "Journalists receiving tips"],
+  "feasibility_score": 55,
+  "impact_score": 88,
+  "github_issue_url": null,
+  "mvp_scope": "Web app with ZK credential verification for a single employer domain. E2E encrypted submission box. Decentralized storage via IPFS pinning.",
+  "threat_model": "Employer with IT department access. Government with legal authority to compel server operators. Nation-state adversary with traffic analysis capabilities.",
+  "derived_from_insight_ids": ["c3333333-0000-0000-0000-000000000001", "c3333333-0000-0000-0000-000000000002", "c3333333-0000-0000-0000-000000000003"],
+  "suggested_stack": ["Rust", "STARK proofs", "IPFS", "TypeScript"],
+  "prior_art": ["SecureDrop", "GlobaLeaks", "Semaphore"],
+  "open_questions": ["How to issue ZK-compatible credentials without employer cooperation?", "Acceptable UX complexity for high-risk users?"],
+  "created_at": "2026-03-02T09:00:00Z"
+}

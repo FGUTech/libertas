@@ -1,0 +1,15 @@
+{
+  "format": "project-spotlight",
+  "register": "conversational",
+  "platform": "x",
+  "tweet_count": 1,
+  "tweets": [
+    {
+      "text": "Real gap in the ecosystem: most mobile users in censored countries can't change their DNS settings without root access. A simple toggle app routing queries through encrypted DNS could bypass ISP-level filtering for millions of people.\n\ngithub.com/FGUTech/libertas/issues/104",
+      "characters": 234
+    }
+  ],
+  "source_id": "e2b3c4d5-f6a7-8901-bcde-222222222222",
+  "source_title": "Censorship-Resistant DNS Resolver for Mobile",
+  "link": "https://github.com/FGUTech/libertas/issues/104"
+}

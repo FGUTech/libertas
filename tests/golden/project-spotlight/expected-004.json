@@ -1,0 +1,19 @@
+{
+  "format": "project-spotlight",
+  "register": "conversational",
+  "platform": "x",
+  "tweet_count": 2,
+  "tweets": [
+    {
+      "text": "Interesting gap: Blockstream Satellite lets you receive Bitcoin blocks without internet, but there's no uplink path. If your internet is destroyed or controlled, you can verify transactions but can't send them.",
+      "characters": 210
+    },
+    {
+      "text": "A low-cost satellite modem could relay signed transactions via Iridium short burst data to a relay node with internet access. The hardware exists. The integration doesn't. Builders who know satellite comms — this one's for you.\n\ngithub.com/FGUTech/libertas/issues/112",
+      "characters": 227
+    }
+  ],
+  "source_id": "a4b5c6d7-e8f9-0123-abcd-444444444444",
+  "source_title": "Satellite-Based Bitcoin Transaction Broadcaster",
+  "link": "https://github.com/FGUTech/libertas/issues/112"
+}

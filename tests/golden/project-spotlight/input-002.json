@@ -1,0 +1,17 @@
+{
+  "id": "e2b3c4d5-f6a7-8901-bcde-222222222222",
+  "title": "Censorship-Resistant DNS Resolver for Mobile",
+  "problem_statement": "Mobile users in censored regions rely on system DNS resolvers controlled by ISPs compliant with government filtering orders. Switching DNS settings requires technical knowledge or root access that most users lack.",
+  "proposed_solution": "A lightweight mobile app that routes DNS queries through encrypted channels (DoH/DoT) with automatic fallback to multiple resolvers. No root required. Presents as a simple on/off toggle.",
+  "affected_groups": ["Mobile internet users in censored countries", "Journalists accessing blocked sources", "Students accessing educational content"],
+  "feasibility_score": 85,
+  "impact_score": 76,
+  "github_issue_url": "https://github.com/FGUTech/libertas/issues/104",
+  "mvp_scope": "Android app using VPN API to intercept DNS queries locally. Toggle switch UI. Pre-configured with 5 trusted DoH resolvers with automatic failover.",
+  "threat_model": "ISP-level DNS filtering and monitoring. Government mandating DNS resolver usage. DPI detecting and blocking known DoH endpoints.",
+  "derived_from_insight_ids": ["b2222222-0000-0000-0000-000000000001"],
+  "suggested_stack": ["Kotlin", "Android VPN API", "DNS-over-HTTPS"],
+  "prior_art": ["1.1.1.1 app", "Intra by Jigsaw", "DNSCloak"],
+  "open_questions": ["How to handle DPI blocking of known DoH endpoints?"],
+  "created_at": "2026-03-02T14:00:00Z"
+}

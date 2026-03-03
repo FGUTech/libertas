@@ -1,0 +1,19 @@
+{
+  "format": "project-spotlight",
+  "register": "conversational",
+  "platform": "x",
+  "tweet_count": 2,
+  "tweets": [
+    {
+      "text": "Problem worth solving: Human rights lawyers in countries with internet shutdowns lose access to case files stored in the cloud. There's no offline-first encrypted document tool that syncs when connectivity returns.",
+      "characters": 214
+    },
+    {
+      "text": "What if your case files lived on your device, encrypted with keys only you hold, and synced over whatever channel was available — internet, mesh, even USB? The building blocks exist. The glue doesn't.\n\ngithub.com/FGUTech/libertas/issues/91",
+      "characters": 200
+    }
+  ],
+  "source_id": "f1a2b3c4-d5e6-7890-abcd-111111111111",
+  "source_title": "Offline-First Encrypted Document Vault",
+  "link": "https://github.com/FGUTech/libertas/issues/91"
+}

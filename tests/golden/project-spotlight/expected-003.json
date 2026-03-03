@@ -1,0 +1,19 @@
+{
+  "format": "project-spotlight",
+  "register": "conversational",
+  "platform": "x",
+  "tweet_count": 2,
+  "tweets": [
+    {
+      "text": "Problem worth solving: Whistleblower platforms like SecureDrop still require trusting the receiving organization's server. If that server is compromised or legally compelled, identities can be exposed retroactively.",
+      "characters": 215
+    },
+    {
+      "text": "What if a whistleblower could prove \"I work at Company X\" without revealing who they are? ZK proofs make this cryptographically possible. The gap is a usable submission platform built on it. Idea surfaced from three recent signals.\n\nlibertas.fgu.tech/ideas/anonymous-whistleblower-submission-platform-with-zk-proofs",
+      "characters": 231
+    }
+  ],
+  "source_id": "d3c4e5f6-a7b8-9012-cdef-333333333333",
+  "source_title": "Anonymous Whistleblower Submission Platform with ZK Proofs",
+  "link": "libertas.fgu.tech/ideas/anonymous-whistleblower-submission-platform-with-zk-proofs"
+}
