@@ -1539,6 +1539,28 @@
       }
     },
     {
+      "id": "7fbf73ae-c2d6-4a7e-80d0-b955c7dbaef4",
+      "url": "https://libertas.fgu.tech/posts/chinese-whistleblower-exposes-surveillance-operations-in-chi",
+      "title": "Chinese Whistleblower Exposes Surveillance Operations in China and US",
+      "summary": "A Chinese whistleblower has revealed details about China's surveillance operations targeting citizens domestically and in the United States, according to CNN reporting.",
+      "content_text": "Chinese whistleblower disclosed information about state surveillance operations [CNN via Freedom House]\n• Surveillance targets include Chinese citizens both domestically and in the US\n• Story involves China's United Front Work Department (UFWD) operations\n• Revelations provide insight into Chinese intelligence gathering methods\n• Exposes cross-border surveillance capabilities and reach\n• Highlights need for robust privacy protection tools for at-risk populations\n• Demonstrates ongoing threats that freedom tech tools are designed to counter",
+      "date_published": "2026-03-03T23:02:04.626Z",
+      "date_modified": "2026-03-03T23:02:04.722Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 80,
+        "citations": [
+          "https://edition.cnn.com/2026/02/27/us/china-nyc-whistleblower-ufwd-intl-hnk-dst",
+          "https://freedomhouse.org/article/chinese-whistleblower-reveals-how-china-spies-citizens-home-and-us"
+        ]
+      }
+    },
+    {
       "id": "8106db9b-7f37-4e60-b14e-cb784f8e816a",
       "url": "https://libertas.fgu.tech/posts/open-measurement-gathering-hosts-public-ama-on-internet-cens",
       "title": "Open Measurement Gathering Hosts Public AMA on Internet Censorship Detection Tools",
@@ -2988,6 +3010,26 @@
         "citations": [
           "https://www.eff.org/deeplinks/2026/02/free-surveillance-tech-still-comes-high-and-dangerous-cost",
           "https://www.eff.org/deeplinks/2026/02/homeland-security-wants-names-effector-383"
+        ]
+      }
+    },
+    {
+      "id": "e04eab2f-8530-4efa-b6f3-c53bd327eaf5",
+      "url": "https://libertas.fgu.tech/posts/sophisticated-iphone-hacking-toolkit-linked-to-us-government",
+      "title": "Sophisticated iPhone Hacking Toolkit Linked to US Government Infects Tens of Thousands",
+      "summary": "A highly advanced iPhone exploitation toolkit, likely developed for the US government, has reportedly infected tens of thousands of devices in a mass surveillance operation.",
+      "content_text": "Sophisticated iPhone hacking techniques discovered affecting tens of thousands of phones\n• Evidence suggests toolkit was originally built for US government use\n• Scale indicates potential mass surveillance operation rather than targeted attacks\n• Advanced exploitation capabilities demonstrate state-level technical resources\n• Represents significant privacy threat to iPhone users globally\n• Highlights ongoing government investment in mobile device compromise tools",
+      "date_published": "2026-03-03T23:01:31.936Z",
+      "date_modified": "2026-03-03T23:01:32.006Z",
+      "tags": [
+        "surveillance",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 85,
+        "citations": [
+          "https://www.wired.com/story/coruna-iphone-hacking-toolkit-us-government/"
         ]
       }
     },
