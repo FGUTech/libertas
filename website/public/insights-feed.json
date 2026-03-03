@@ -2242,6 +2242,28 @@
       }
     },
     {
+      "id": "bd039b1f-b3fa-40f0-b600-96e0428cd1c5",
+      "url": "https://libertas.fgu.tech/posts/journalists-use-satellite-links-encrypted-apps-to-report-fro",
+      "title": "Journalists Use Satellite Links, Encrypted Apps to Report from Internet-Cut Iran",
+      "summary": "After Iran cut internet access following strikes on officials, journalists are using satellite connections and encrypted messaging to circumvent state censorship and continue reporting.",
+      "content_text": "Iran severed internet access after strikes killed senior Iranian officials\n• Journalists inside Iran are using satellite links to maintain connectivity\n• Encrypted messaging apps being deployed to bypass communications blocks\n• Smuggled footage serving as additional workaround for information flow\n• Demonstrates real-world effectiveness of censorship-resistant tools during crisis\n• Pattern shows satellite connectivity as critical backup during internet shutdowns\n• Highlights importance of encrypted communications under authoritarian response",
+      "date_published": "2026-03-03T11:00:47.139Z",
+      "date_modified": "2026-03-03T11:00:47.231Z",
+      "tags": [
+        "censorship-resistance",
+        "comms",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 88,
+        "credibility_score": 85,
+        "citations": [
+          "https://www.wired.com/story/how-journalists-are-reporting-from-iran-with-no-internet/"
+        ]
+      }
+    },
+    {
       "id": "bd404b79-ace0-4535-8be7-52e6df30c504",
       "url": "https://libertas.fgu.tech/posts/ooni-study-reveals-inconsistent-dns-censorship-infrastructur",
       "title": "OONI Study Reveals Inconsistent DNS Censorship Infrastructure Across French ISPs",

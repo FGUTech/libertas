@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Tue, 03 Mar 2026 05:01:25 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 03 Mar 2026 11:00:47 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -1090,6 +1090,17 @@
     <category>bitcoin</category>
     <category>privacy</category>
     <category>surveillance</category>
+  </item>
+  <item>
+    <title>Journalists Use Satellite Links, Encrypted Apps to Report from Internet-Cut Iran</title>
+    <link>https://libertas.fgu.tech/posts/journalists-use-satellite-links-encrypted-apps-to-report-fro</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/journalists-use-satellite-links-encrypted-apps-to-report-fro</guid>
+    <pubDate>Tue, 03 Mar 2026 11:00:47 GMT</pubDate>
+    <description>After Iran cut internet access following strikes on officials, journalists are using satellite connections and encrypted messaging to circumvent state censorship and continue reporting.</description>
+    <category>censorship-resistance</category>
+    <category>comms</category>
+    <category>surveillance</category>
+    <category>activism</category>
   </item>
   <item>
     <title>OONI Study Reveals Inconsistent DNS Censorship Infrastructure Across French ISPs</title>
