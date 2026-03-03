@@ -184,6 +184,28 @@
       }
     },
     {
+      "id": "18fcb416-bdb0-419d-940d-a8ab23162b79",
+      "url": "https://libertas.fgu.tech/posts/us-senate-bill-blocks-federal-reserve-cbdc-issuance-until-20",
+      "title": "US Senate Bill Blocks Federal Reserve CBDC Issuance Until 2031",
+      "summary": "US Senate housing bill includes provision prohibiting Federal Reserve from issuing a Central Bank Digital Currency through beginning of 2031, blocking government digital currency surveillance infrastructure.",
+      "content_text": "Senate housing bill contains anti-CBDC provision blocking Federal Reserve issuance\n• Prohibition extends through beginning of 2031 - roughly 6-year moratorium\n• Represents legislative pushback against government-controlled digital currency\n• CBDCs would enable real-time transaction surveillance and spending controls\n• Provision embedded in housing legislation rather than standalone financial bill\n• Temporary nature suggests ongoing political battle over digital dollar\n• Protects existing financial privacy and cash-based transactions short-term",
+      "date_published": "2026-03-03T05:00:49.385Z",
+      "date_modified": "2026-03-03T05:00:49.457Z",
+      "tags": [
+        "bitcoin",
+        "sovereignty",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 85,
+        "citations": [
+          "https://www.theblock.co.ug/post/391889/us-senate-anti-cbdc-housing-bill",
+          "https://www.theblock.co/post/391889/us-senate-anti-cbdc-housing-bill?utm_source=rss&amp;utm_medium=rss"
+        ]
+      }
+    },
+    {
       "id": "1dff1168-503e-4c7d-9d06-c4d578d1d0af",
       "url": "https://libertas.fgu.tech/posts/pentagon-threatens-ai-company-anthropic-over-surveillance-re",
       "title": "Pentagon Threatens AI Company Anthropic Over Surveillance Restrictions",
@@ -1408,6 +1430,27 @@
       }
     },
     {
+      "id": "7d7b8c5b-16ee-4f9a-8090-1b9c9c0d43da",
+      "url": "https://libertas.fgu.tech/posts/turkey-systematically-targets-opposition-leader-i-mamo-lu-in",
+      "title": "Turkey Systematically Targets Opposition Leader İmamoğlu in Mass Trial",
+      "summary": "Istanbul mayor and presidential candidate Ekrem İmamoğlu faces politically motivated mass trial with 407 defendants, part of 17-month campaign to remove opposition leadership through weaponized justice system.",
+      "content_text": "Ekrem İmamoğlu, Istanbul mayor and CHP presidential candidate, stands trial March 9, 2026 on corruption charges\n• Mass prosecution includes 407 defendants, mostly Istanbul Metropolitan Municipality employees\n• İmamoğlu detained for one year, faces up to 1929 years in prison if convicted on all counts\n• Evidence relies heavily on 15 'secret witnesses' and testimony from co-defendants seeking reduced sentences\n• Timeline shows coordinated campaign: investigations opened day after presidential candidacy announcement\n• CHP won 37.8% in 2024 local elections, surpassing Erdoğan's AKP (35.5%) for first time in 22 years\n• Similar prosecutions target CHP mayors across multiple cities including Adana and Antalya\n• Independent media covering İmamoğlu's arrest face fines, broadcast bans, and journalist detentions",
+      "date_published": "2026-03-03T05:01:25.349Z",
+      "date_modified": "2026-03-03T05:01:25.462Z",
+      "tags": [
+        "surveillance",
+        "censorship-resistance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.hrw.org/news/2026/03/03/turkiye-leading-opponent-of-erdogan-on-trial"
+        ]
+      }
+    },
+    {
       "id": "8106db9b-7f37-4e60-b14e-cb784f8e816a",
       "url": "https://libertas.fgu.tech/posts/open-measurement-gathering-hosts-public-ama-on-internet-cens",
       "title": "Open Measurement Gathering Hosts Public AMA on Internet Censorship Detection Tools",
@@ -2043,6 +2086,27 @@
         "credibility_score": 95,
         "citations": [
           "https://ooni.org/post/2025-probe-security-without-identification/"
+        ]
+      }
+    },
+    {
+      "id": "aefd5ba7-3faf-45b8-ae5d-2377559354ab",
+      "url": "https://libertas.fgu.tech/posts/eff-fights-legal-challenge-that-could-make-website-embedding",
+      "title": "EFF Fights Legal Challenge That Could Make Website Embedding Illegal",
+      "summary": "EFF filed amicus brief defending 'server test' that protects website embedding from copyright liability. Publisher wants to make link embedding directly liable for infringement.",
+      "content_text": "Emmerich Newspapers challenges 20-year 'server test' precedent in Fifth Circuit appeal\n• Server test holds that whoever controls hosting server bears primary copyright liability, not those who embed links\n• Publisher argues embedding constitutes 'displaying' content, making embedders directly liable for infringement\n• EFF warns this would make common internet activities legally risky and destabilize web architecture\n• Millions of websites embed external content for fonts, streaming, customer support, compliance tools\n• Additional claim: URL shorteners could violate DMCA by altering copyright management information\n• District court rejected publisher's theories; case now on appeal\n• Outcome could fundamentally change how information flows online",
+      "date_published": "2026-03-03T05:00:25.966Z",
+      "date_modified": "2026-03-03T05:00:26.017Z",
+      "tags": [
+        "censorship-resistance",
+        "privacy",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 72,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/03/eff-court-dont-make-embedding-illegal"
         ]
       }
     },

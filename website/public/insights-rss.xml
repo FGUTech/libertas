@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Mon, 02 Mar 2026 23:02:48 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 03 Mar 2026 05:01:25 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -94,6 +94,16 @@
     <category>activism</category>
     <category>comms</category>
     <category>sovereignty</category>
+  </item>
+  <item>
+    <title>US Senate Bill Blocks Federal Reserve CBDC Issuance Until 2031</title>
+    <link>https://libertas.fgu.tech/posts/us-senate-bill-blocks-federal-reserve-cbdc-issuance-until-20</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/us-senate-bill-blocks-federal-reserve-cbdc-issuance-until-20</guid>
+    <pubDate>Tue, 03 Mar 2026 05:00:49 GMT</pubDate>
+    <description>US Senate housing bill includes provision prohibiting Federal Reserve from issuing a Central Bank Digital Currency through beginning of 2031, blocking government digital currency surveillance infrastructure.</description>
+    <category>bitcoin</category>
+    <category>sovereignty</category>
+    <category>privacy</category>
   </item>
   <item>
     <title>Pentagon Threatens AI Company Anthropic Over Surveillance Restrictions</title>
@@ -684,6 +694,16 @@
     <category>activism</category>
   </item>
   <item>
+    <title>Turkey Systematically Targets Opposition Leader İmamoğlu in Mass Trial</title>
+    <link>https://libertas.fgu.tech/posts/turkey-systematically-targets-opposition-leader-i-mamo-lu-in</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/turkey-systematically-targets-opposition-leader-i-mamo-lu-in</guid>
+    <pubDate>Tue, 03 Mar 2026 05:01:25 GMT</pubDate>
+    <description>Istanbul mayor and presidential candidate Ekrem İmamoğlu faces politically motivated mass trial with 407 defendants, part of 17-month campaign to remove opposition leadership through weaponized justice system.</description>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+  </item>
+  <item>
     <title>Open Measurement Gathering Hosts Public AMA on Internet Censorship Detection Tools</title>
     <link>https://libertas.fgu.tech/posts/open-measurement-gathering-hosts-public-ama-on-internet-cens</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/open-measurement-gathering-hosts-public-ama-on-internet-cens</guid>
@@ -995,6 +1015,16 @@
     <category>surveillance</category>
     <category>identity</category>
     <category>censorship-resistance</category>
+  </item>
+  <item>
+    <title>EFF Fights Legal Challenge That Could Make Website Embedding Illegal</title>
+    <link>https://libertas.fgu.tech/posts/eff-fights-legal-challenge-that-could-make-website-embedding</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-fights-legal-challenge-that-could-make-website-embedding</guid>
+    <pubDate>Tue, 03 Mar 2026 05:00:25 GMT</pubDate>
+    <description>EFF filed amicus brief defending &apos;server test&apos; that protects website embedding from copyright liability. Publisher wants to make link embedding directly liable for infringement.</description>
+    <category>censorship-resistance</category>
+    <category>privacy</category>
+    <category>surveillance</category>
   </item>
   <item>
     <title>AI Tools Create New Censorship &amp; Information Access Risks</title>
