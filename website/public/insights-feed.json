@@ -117,6 +117,27 @@
       }
     },
     {
+      "id": "141f2ebe-223a-4af5-98f9-75ac6f564667",
+      "url": "https://libertas.fgu.tech/posts/eff-challenges-warrantless-border-device-searches-in-third-c",
+      "title": "EFF Challenges Warrantless Border Device Searches in Third Circuit Appeal",
+      "summary": "EFF filed amicus brief urging Third Circuit to require warrants for border device searches, citing 55,318 CBP device searches in FY2025 and arguing digital data searches exceed original border exception purpose.",
+      "content_text": "EFF and ACLU filed amicus brief in U.S. v. Roggio challenging warrantless border device searches\n• Case involves man whose devices were forensically searched at JFK without warrant during criminal investigation\n• CBP conducted 55,318 device searches in FY2025, both manual and forensic extractions\n• Border officers use forensic tools like Cellebrite to extract data from locked/encrypted devices\n• EFF argues Riley v. California balancing test should apply - traveler privacy vs government interests\n• Physical contraband can't be found in digital data, digital contraband likely already in country via cloud\n• Searching for evidence of crimes (vs contraband itself) exceeds original border search exception purpose\n• If warrant not required, EFF argues searches should need reasonable suspicion and be limited to digital contraband\n• Extends Ninth Circuit's U.S. v. Cano ruling that required reasonable suspicion only for forensic searches",
+      "date_published": "2026-03-04T05:00:25.708Z",
+      "date_modified": "2026-03-04T05:00:25.766Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/03/eff-third-circuit-electronic-device-searches-border-require-warrant"
+        ]
+      }
+    },
+    {
       "id": "14885e67-4410-43ea-8156-a0202dc1ff46",
       "url": "https://libertas.fgu.tech/posts/cameroon-police-seize-journalists-equipment-threaten-sources",
       "title": "Cameroon Police Seize Journalists' Equipment, Threaten Sources Over US Deportation Story",
