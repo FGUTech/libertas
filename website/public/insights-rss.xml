@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Wed, 04 Mar 2026 05:00:25 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 04 Mar 2026 23:02:49 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -46,6 +46,17 @@
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-calls-on-tech-giants-to-resist-dhs-s-unlawful-surveillan</guid>
     <pubDate>Fri, 20 Feb 2026 04:41:12 GMT</pubDate>
     <description>EFF and ACLU are demanding major tech companies require court orders before complying with DHS subpoenas that target First Amendment activities, after DHS withdrew challenged subpoenas rather than defend them in court.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
+  </item>
+  <item>
+    <title>Rights Groups Demand Transparency from AppLogic Networks Over Egypt Censorship Tech</title>
+    <link>https://libertas.fgu.tech/posts/rights-groups-demand-transparency-from-applogic-networks-ove</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/rights-groups-demand-transparency-from-applogic-networks-ove</guid>
+    <pubDate>Wed, 04 Mar 2026 23:02:03 GMT</pubDate>
+    <description>Human rights orgs are demanding AppLogic Networks prove they&apos;ve actually withdrawn deep packet inspection tech from Egypt after years of facilitating mass censorship of 630+ websites including independent media.</description>
+    <category>censorship-resistance</category>
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
@@ -226,6 +237,17 @@
     <description>FCC Chairman Brendan Carr launched a campaign asking broadcasters to voluntarily air patriotic programming including daily Pledge of Allegiance and civic education content for Trump&apos;s America 250th celebration.</description>
     <category>censorship-resistance</category>
     <category>surveillance</category>
+  </item>
+  <item>
+    <title>Civil Rights Groups Challenge Surveillance Firm&apos;s Rebrand from Sandvine to AppLogic Networks</title>
+    <link>https://libertas.fgu.tech/posts/civil-rights-groups-challenge-surveillance-firm-s-rebrand-fr</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/civil-rights-groups-challenge-surveillance-firm-s-rebrand-fr</guid>
+    <pubDate>Wed, 04 Mar 2026 23:02:03 GMT</pubDate>
+    <description>Access Now and other rights groups demand transparency from AppLogic (formerly Sandvine) after its removal from US Entity List, citing lack of remedy for DPI surveillance abuses in Egypt.</description>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>privacy</category>
+    <category>activism</category>
   </item>
   <item>
     <title>Cake Wallet Adds Self-Custody Lightning Network With Privacy Defaults</title>
@@ -685,6 +707,16 @@
     <category>activism</category>
   </item>
   <item>
+    <title>Taliban Shuts Down and Seizes Private TV Station in Afghanistan</title>
+    <link>https://libertas.fgu.tech/posts/taliban-shuts-down-and-seizes-private-tv-station-in-afghanis</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/taliban-shuts-down-and-seizes-private-tv-station-in-afghanis</guid>
+    <pubDate>Wed, 04 Mar 2026 23:02:49 GMT</pubDate>
+    <description>Taliban intelligence raided and forcibly closed Rah-e-Farda TV in Kabul, seizing assets and expelling staff after owner criticized Taliban-Pakistan conflict.</description>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>surveillance</category>
+  </item>
+  <item>
     <title>Access Now Launches Digital Security Training Series for Civil Society</title>
     <link>https://libertas.fgu.tech/posts/access-now-launches-digital-security-training-series-for-civ</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/access-now-launches-digital-security-training-series-for-civ</guid>
@@ -820,6 +852,16 @@
     <category>censorship-resistance</category>
     <category>surveillance</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>LLMs Enable Large-Scale Deanonymization of Online Posts</title>
+    <link>https://libertas.fgu.tech/posts/llms-enable-large-scale-deanonymization-of-online-posts</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/llms-enable-large-scale-deanonymization-of-online-posts</guid>
+    <pubDate>Wed, 04 Mar 2026 23:02:27 GMT</pubDate>
+    <description>New research shows LLM agents can identify anonymous users across platforms like Reddit and Hacker News with high precision, scaling to tens of thousands of candidates by inferring location, occupation, and interests.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>identity</category>
   </item>
   <item>
     <title>Pakistani Academic Sentenced to Death for Facebook Posts Spends 13 Years in Solitary</title>
@@ -1100,6 +1142,18 @@
     <category>surveillance</category>
     <category>identity</category>
     <category>censorship-resistance</category>
+  </item>
+  <item>
+    <title>Building Self-Hosted Communities: Taiwan&apos;s Response to Platform Censorship</title>
+    <link>https://libertas.fgu.tech/posts/building-self-hosted-communities-taiwan-s-response-to-platfo</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/building-self-hosted-communities-taiwan-s-response-to-platfo</guid>
+    <pubDate>Wed, 04 Mar 2026 23:00:47 GMT</pubDate>
+    <description>Shin Yang built Lezismore, an independent self-hosted platform for Taiwan&apos;s sexual minorities, after mainstream platforms like Facebook drove LGBTQ+ communities to self-censor or face removal.</description>
+    <category>privacy</category>
+    <category>censorship-resistance</category>
+    <category>identity</category>
+    <category>surveillance</category>
+    <category>activism</category>
   </item>
   <item>
     <title>EFF Fights Legal Challenge That Could Make Website Embedding Illegal</title>

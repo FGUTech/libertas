@@ -95,6 +95,28 @@
       }
     },
     {
+      "id": "10537055-ff0d-4abb-8562-347e1f2c4831",
+      "url": "https://libertas.fgu.tech/posts/rights-groups-demand-transparency-from-applogic-networks-ove",
+      "title": "Rights Groups Demand Transparency from AppLogic Networks Over Egypt Censorship Tech",
+      "summary": "Human rights orgs are demanding AppLogic Networks prove they've actually withdrawn deep packet inspection tech from Egypt after years of facilitating mass censorship of 630+ websites including independent media.",
+      "content_text": "AppLogic Networks (formerly Sandvine) committed to exiting Egypt by Dec 31, 2025 after being placed on US Entity List\n• Company's deep packet inspection technology documented as enabling mass censorship of 630+ websites in Egypt\n• Independent media outlets like Zawia3 continue being blocked even after claimed company withdrawal\n• Technical research from Citizen Lab and Egyptian org Masaar traced censorship to AppLogic's DPI technology\n• Company cancelled engagement meetings with Egyptian civil society citing 'staff safety concerns'\n• Rights groups demand proof of complete hardware removal and disclosure of 1% profit donation to affected orgs\n• Pattern shows gap between corporate human rights commitments and actual transparency/remediation",
+      "date_published": "2026-03-04T23:02:03.574Z",
+      "date_modified": "2026-03-04T23:02:03.659Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 88,
+        "citations": [
+          "https://www.accessnow.org/press-release/human-rights-abuses-facilitated-by-applogic-networks-in-egypt/"
+        ]
+      }
+    },
+    {
       "id": "137a37c5-ff8e-4649-b3a5-6cbcbd5499ca",
       "url": "https://libertas.fgu.tech/posts/tenth-circuit-overturns-overbroad-digital-searches-of-protes",
       "title": "Tenth Circuit Overturns Overbroad Digital Searches of Protesters",
@@ -460,6 +482,28 @@
         "credibility_score": 85,
         "citations": [
           "https://arstechnica.com/tech-policy/2026/02/fcc-asks-stations-for-pro-america-programming-like-daily-pledge-of-allegiance/"
+        ]
+      }
+    },
+    {
+      "id": "32e60e78-c2bf-492a-897b-2f48a7c9a9a0",
+      "url": "https://libertas.fgu.tech/posts/civil-rights-groups-challenge-surveillance-firm-s-rebrand-fr",
+      "title": "Civil Rights Groups Challenge Surveillance Firm's Rebrand from Sandvine to AppLogic Networks",
+      "summary": "Access Now and other rights groups demand transparency from AppLogic (formerly Sandvine) after its removal from US Entity List, citing lack of remedy for DPI surveillance abuses in Egypt.",
+      "content_text": "AppLogic Networks (rebranded from Sandvine) removed from US Commerce Entity List in October 2024 after announcing corporate reforms\n• Company was blacklisted in February 2024 for deep packet inspection (DPI) technology misuse by Egyptian authorities\n• DPI systems enabled mass web monitoring, censorship, and spyware injection against human rights defenders and dissidents\n• AppLogic committed to exiting Egypt by December 31, 2025, but has not provided transparent accounting of withdrawal\n• Company has failed to engage with Egyptian civil society or provide remedies for past surveillance abuses\n• Access Now and other rights groups warn that corporate reforms remain at level of public statements only\n• Case exposes weaknesses in accountability mechanisms that rely on PR statements rather than verifiable actions",
+      "date_published": "2026-03-04T23:02:03.575Z",
+      "date_modified": "2026-03-04T23:02:03.659Z",
+      "tags": [
+        "surveillance",
+        "censorship-resistance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 88,
+        "citations": [
+          "https://www.accessnow.org/press-release/from-sandvine-to-applogic-networks-a-rebrand-doesnt-mean-reform/"
         ]
       }
     },
@@ -1408,6 +1452,27 @@
       }
     },
     {
+      "id": "770f1dab-7939-406e-97dc-e5ce89c213b8",
+      "url": "https://libertas.fgu.tech/posts/taliban-shuts-down-and-seizes-private-tv-station-in-afghanis",
+      "title": "Taliban Shuts Down and Seizes Private TV Station in Afghanistan",
+      "summary": "Taliban intelligence raided and forcibly closed Rah-e-Farda TV in Kabul, seizing assets and expelling staff after owner criticized Taliban-Pakistan conflict.",
+      "content_text": "Taliban intelligence officers raided Rah-e-Farda TV's Kabul office on February 28, 2026\n• Station forced off air, staff verbally abused and expelled from premises\n• Assets confiscated by order of Taliban leader Hibatullah Akhundzada\n• Closure triggered by owner Mohammad Mohaqiq's comments on Taliban-Pakistan conflict\n• Fighting escalated after Pakistan conducted airstrikes in Afghanistan over militant allegations\n• Pattern continues: Taliban previously seized Kawoon Ghag radio station in 2023\n• Demonstrates systematic repression of independent media under Taliban rule",
+      "date_published": "2026-03-04T23:02:49.841Z",
+      "date_modified": "2026-03-04T23:02:49.964Z",
+      "tags": [
+        "censorship-resistance",
+        "activism",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 88,
+        "citations": [
+          "https://cpj.org/2026/03/taliban-shut-down-and-seize-rah-e-farda-tv-station-in-afghanistan/"
+        ]
+      }
+    },
+    {
       "id": "774271ab-c7f6-4c9b-b609-51307ef71f1e",
       "url": "https://libertas.fgu.tech/posts/access-now-launches-digital-security-training-series-for-civ",
       "title": "Access Now Launches Digital Security Training Series for Civil Society",
@@ -1688,6 +1753,27 @@
         "credibility_score": 95,
         "citations": [
           "https://ooni.org/post/2025-tanzania-blocked-twitter/"
+        ]
+      }
+    },
+    {
+      "id": "85fc2446-60de-4550-8ab4-cf37554d0267",
+      "url": "https://libertas.fgu.tech/posts/llms-enable-large-scale-deanonymization-of-online-posts",
+      "title": "LLMs Enable Large-Scale Deanonymization of Online Posts",
+      "summary": "New research shows LLM agents can identify anonymous users across platforms like Reddit and Hacker News with high precision, scaling to tens of thousands of candidates by inferring location, occupation, and interests.",
+      "content_text": "LLM agents successfully deanonymize users from anonymous posts across multiple platforms\n• Method works on Hacker News, Reddit, LinkedIn, and anonymized interview transcripts\n• System scales to tens of thousands of potential candidate matches\n• LLMs infer location, occupation, and interests from handful of comments\n• Automated approach overcomes previous practical limitations of manual investigation\n• Research demonstrates shift from theoretical to practical deanonymization threat\n• Reported by Bruce Schneier with links to academic research paper",
+      "date_published": "2026-03-04T23:02:27.326Z",
+      "date_modified": "2026-03-04T23:02:27.415Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "identity"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.schneier.com/blog/archives/2026/03/llm-assisted-deanonymization.html"
         ]
       }
     },
@@ -2260,6 +2346,29 @@
         "credibility_score": 95,
         "citations": [
           "https://ooni.org/post/2025-probe-security-without-identification/"
+        ]
+      }
+    },
+    {
+      "id": "ae0fa6a2-a16f-49fc-935c-60b6a091cb98",
+      "url": "https://libertas.fgu.tech/posts/building-self-hosted-communities-taiwan-s-response-to-platfo",
+      "title": "Building Self-Hosted Communities: Taiwan's Response to Platform Censorship",
+      "summary": "Shin Yang built Lezismore, an independent self-hosted platform for Taiwan's sexual minorities, after mainstream platforms like Facebook drove LGBTQ+ communities to self-censor or face removal.",
+      "content_text": "Lezismore is a self-hosted, open-source community platform for sexual minorities in Taiwan\n• Built in response to 2013 shutdown of local bulletin boards as Facebook dominated Taiwan's digital ecosystem\n• Platform emphasizes anonymity, minimal data collection, and behavior-based accountability\n• Designed as alternative to mainstream platforms where sexual expression faces reporting and flagging\n• Uses community-elected governance model inspired by traditional bulletin board systems (BBS)\n• Creator advocates for 'ecospace' infrastructure enabling survival and growth over just 'safe spaces'\n• Addresses intra-community censorship where LGBTQ+ groups self-police to gain mainstream approval",
+      "date_published": "2026-03-04T23:00:47.996Z",
+      "date_modified": "2026-03-04T23:00:48.040Z",
+      "tags": [
+        "privacy",
+        "censorship-resistance",
+        "identity",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/03/speaking-freely-shin-yang"
         ]
       }
     },
