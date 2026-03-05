@@ -1385,6 +1385,28 @@
       }
     },
     {
+      "id": "6efed6f0-7884-4b44-884c-99094488c1ef",
+      "url": "https://libertas.fgu.tech/posts/ice-uses-biometric-surveillance-to-stalk-legal-observers-to-",
+      "title": "ICE Uses Biometric Surveillance to Stalk Legal Observers to Their Homes",
+      "summary": "Federal immigration agents are using advanced surveillance tools including Mobile Fortify biometric app to identify legal observers and intimidate them by following them home, chilling First Amendment monitoring activities.",
+      "content_text": "ICE/CBP agents identified legal observers by name and address, led multiple observers back to their homes\n• Agents use Mobile Fortify smartphone app for field biometrics, accessing databases covering 75% of U.S. adults\n• Former Minnesota state senator Matt Little blocked in his driveway by federal SUVs after lawfully observing agents\n• Observer Beth Jackson had TSA PreCheck revoked after false violent threat allegations, guns drawn on her vehicle\n• Emily Beltz had her name and home address shouted at her by masked agents from federal vehicle\n• Ed Higgins pursued through Columbia Heights, agents tried to force him off road and struck his car with firearms\n• Pattern documented in federal lawsuit Tincher v. Noem with sworn declarations and video evidence\n• Surveillance infrastructure includes automated license plate readers, face recognition, commercial data brokers",
+      "date_published": "2026-03-05T11:02:21.485Z",
+      "date_modified": "2026-03-05T11:02:21.634Z",
+      "tags": [
+        "surveillance",
+        "activism",
+        "privacy",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 88,
+        "citations": [
+          "https://theintercept.com/2026/03/05/ice-cbp-minnesota-surveillance-intimidation-observers/"
+        ]
+      }
+    },
+    {
       "id": "702220f9-fc32-45d4-8428-9362245ff947",
       "url": "https://libertas.fgu.tech/posts/iran-implements-complete-internet-shutdown-during-protests-2",
       "title": "Iran Implements Complete Internet Shutdown During Protests, 2,403+ Killed",
@@ -2302,28 +2324,6 @@
         "credibility_score": 95,
         "citations": [
           "https://tails.net/news/free_the_internet/"
-        ]
-      }
-    },
-    {
-      "id": "a734d6e8-40b9-4e08-b07c-6d955d91fce9",
-      "url": "https://libertas.fgu.tech/posts/philippines-red-tags-environmental-groups-freezes-bank-accou",
-      "title": "Philippines 'Red-Tags' Environmental Groups, Freezes Bank Accounts of Solar/Disaster Relief NGOs",
-      "summary": "Philippine government systematically labels environmental defenders as 'terrorists,' freezing bank accounts of NGOs providing solar power and disaster relief to rural communities.",
-      "content_text": "Government task forces accuse environmental NGOs of terrorism/communist links through 'red-tagging' practice\n• Leyte Center for Development (LCDe) had foreign donor accounts frozen, director faces terrorism financing charges\n• Sibat nonprofit installing solar-powered water pumps also red-tagged and harassed by military\n• UN experts confirm systematic targeting of environmental defenders, Indigenous peoples, and humanitarian workers\n• Financial censorship prevents crucial disaster relief as typhoon-prone regions lose emergency services\n• Organizations must bring EU diplomats to meetings to demonstrate legitimacy to local officials\n• Practice intensified under Duterte (2016-2022), continues under current President Marcos Jr",
-      "date_published": "2026-02-19T11:01:02.518Z",
-      "date_modified": "2026-02-19T11:01:02.567Z",
-      "tags": [
-        "activism",
-        "surveillance",
-        "censorship-resistance",
-        "sovereignty"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 85,
-        "citations": [
-          "https://globalvoices.org/2026/02/19/environmental-defenders-labelled-terrorists-for-bringing-renewable-power-to-philippine-communities/"
         ]
       }
     },

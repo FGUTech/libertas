@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Wed, 04 Mar 2026 23:02:49 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 05 Mar 2026 11:02:21 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -675,6 +675,17 @@
     <category>activism</category>
   </item>
   <item>
+    <title>ICE Uses Biometric Surveillance to Stalk Legal Observers to Their Homes</title>
+    <link>https://libertas.fgu.tech/posts/ice-uses-biometric-surveillance-to-stalk-legal-observers-to-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/ice-uses-biometric-surveillance-to-stalk-legal-observers-to-</guid>
+    <pubDate>Thu, 05 Mar 2026 11:02:21 GMT</pubDate>
+    <description>Federal immigration agents are using advanced surveillance tools including Mobile Fortify biometric app to identify legal observers and intimidate them by following them home, chilling First Amendment monitoring activities.</description>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>privacy</category>
+    <category>censorship-resistance</category>
+  </item>
+  <item>
     <title>Iran Implements Complete Internet Shutdown During Protests, 2,403+ Killed</title>
     <link>https://libertas.fgu.tech/posts/iran-implements-complete-internet-shutdown-during-protests-2</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/iran-implements-complete-internet-shutdown-during-protests-2</guid>
@@ -1120,17 +1131,6 @@
     <category>surveillance</category>
     <category>comms</category>
     <category>activism</category>
-  </item>
-  <item>
-    <title>Philippines &apos;Red-Tags&apos; Environmental Groups, Freezes Bank Accounts of Solar/Disaster Relief NGOs</title>
-    <link>https://libertas.fgu.tech/posts/philippines-red-tags-environmental-groups-freezes-bank-accou</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/philippines-red-tags-environmental-groups-freezes-bank-accou</guid>
-    <pubDate>Thu, 19 Feb 2026 11:01:02 GMT</pubDate>
-    <description>Philippine government systematically labels environmental defenders as &apos;terrorists,&apos; freezing bank accounts of NGOs providing solar power and disaster relief to rural communities.</description>
-    <category>activism</category>
-    <category>surveillance</category>
-    <category>censorship-resistance</category>
-    <category>sovereignty</category>
   </item>
   <item>
     <title>OONI Advances Probe Security with Anonymous Digital Transaction Framework</title>
