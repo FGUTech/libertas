@@ -204,6 +204,27 @@
       }
     },
     {
+      "id": "17284ee5-8434-4e2e-9885-281be6061a46",
+      "url": "https://libertas.fgu.tech/posts/cbp-admits-using-online-ad-systems-for-warrantless-location-",
+      "title": "CBP Admits Using Online Ad Systems for Warrantless Location Tracking",
+      "summary": "Customs and Border Protection confirmed using real-time bidding (RTB) ad data to track phone locations without warrants, exposing how advertising surveillance enables government surveillance.",
+      "content_text": "CBP document confirms agency used location data from real-time bidding (RTB) advertising systems for surveillance\n• RTB broadcasts user location data to thousands of companies during millisecond ad auctions on websites and apps\n• Federal agencies (CBP, ICE, FBI) have purchased location data from brokers like Venntell to identify and arrest immigrants\n• ICE recently bought Webloc tool that tracks millions of phones and can filter by unique advertising IDs\n• Data collection happens through app SDKs and RTB systems, often without app developers' knowledge\n• Government bypasses warrant requirements by purchasing commercially available surveillance data\n• Document covers 2019-2021 pilot but agencies continue purchasing location tracking tools\n• EFF calls this direct evidence that targeted advertising infrastructure doubles as state surveillance system",
+      "date_published": "2026-03-05T17:01:19.349Z",
+      "date_modified": "2026-03-05T17:01:19.398Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "identity"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/03/targeted-advertising-gives-your-location-government-just-ask-cbp"
+        ]
+      }
+    },
+    {
       "id": "18ef0068-e432-4675-beef-c3144e862491",
       "url": "https://libertas.fgu.tech/posts/iran-deploys-two-tiered-digital-apartheid-internet-during-20",
       "title": "Iran Deploys Two-Tiered 'Digital Apartheid' Internet During 2026 Protests",
@@ -722,6 +743,28 @@
         "credibility_score": 95,
         "citations": [
           "https://www.schneier.com/blog/archives/2026/03/llm-assisted-deanonymization.html"
+        ]
+      }
+    },
+    {
+      "id": "3e5362a7-5d18-4cb0-9011-ff827b89985b",
+      "url": "https://libertas.fgu.tech/posts/angola-enacts-sweeping-civil-society-restrictions-expands-st",
+      "title": "Angola Enacts Sweeping Civil Society Restrictions, Expands State Control Over Media",
+      "summary": "Angola's president signed legislation granting government broad powers to monitor, suspend, and restrict NGOs under vague 'security threat' provisions, part of expanding crackdown on civil society and media.",
+      "content_text": "President João Lourenço signed new NGO law allowing government to authorize, monitor, suspend, and financially restrict civil society organizations\n• Law grants powers under vague 'security threats' language without clear legal safeguards or independent oversight\n• Part of broader 2024-2026 legislative crackdown including vandalism law criminalizing peaceful protest participants\n• National Security Law empowers security forces to supervise media outlets and interrupt broadcasts without judicial oversight\n• Draft 'online disinformation' legislation introduced January 2026 threatens further restrictions on digital expression\n• Human Rights Watch and other organizations warn laws violate international freedom of association and expression conventions\n• Creates regulatory environment that increases demand for censorship-resistant communications and organizing tools",
+      "date_published": "2026-03-05T17:02:36.134Z",
+      "date_modified": "2026-03-05T17:02:36.244Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.hrw.org/news/2026/03/05/angolas-president-signs-repressive-civil-society-law"
         ]
       }
     },
@@ -2412,6 +2455,28 @@
         "credibility_score": 85,
         "citations": [
           "https://www.accessnow.org/artificial-insecurity-access-and-availability/?pk_campaign=feed&#038;pk_kwd=artificial-insecurity-access-and-availability"
+        ]
+      }
+    },
+    {
+      "id": "b606d15e-fb9c-4d67-b430-454be5bd39fc",
+      "url": "https://libertas.fgu.tech/posts/popular-iranian-prayer-app-hacked-for-us-israeli-propaganda-",
+      "title": "Popular Iranian Prayer App Hacked for US-Israeli Propaganda Messages",
+      "summary": "A prayer app with 5M+ downloads was reportedly compromised by US/Israeli forces to send propaganda messages to Iranians during recent explosions, demonstrating state-level mobile app infiltration capabilities.",
+      "content_text": "BadeSaba Calendar prayer app with 5+ million downloads from Google Play was reportedly hacked\n• App sent burst of messages to Iranian users during explosions, starting with 'Help has arrived'\n• Messages delivered over 30-minute period beginning at 9:52 AM Tehran time\n• No party officially claimed responsibility for the app compromise\n• Schneier assesses this as likely US/Israeli government operation due to speed and coordination\n• Demonstrates pre-positioning of access in popular mobile applications\n• Shows how legitimate apps can become vectors for state propaganda campaigns\n• Affects millions of users who trusted app for religious purposes",
+      "date_published": "2026-03-05T17:02:11.181Z",
+      "date_modified": "2026-03-05T17:02:11.287Z",
+      "tags": [
+        "surveillance",
+        "censorship-resistance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 82,
+        "citations": [
+          "https://www.schneier.com/blog/archives/2026/03/hacked-app-part-of-us-israeli-propaganda-campaign-against-iran.html"
         ]
       }
     },

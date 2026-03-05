@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 05 Mar 2026 11:02:21 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 05 Mar 2026 17:02:36 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -103,6 +103,16 @@
     <category>activism</category>
     <category>sovereignty</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>CBP Admits Using Online Ad Systems for Warrantless Location Tracking</title>
+    <link>https://libertas.fgu.tech/posts/cbp-admits-using-online-ad-systems-for-warrantless-location-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/cbp-admits-using-online-ad-systems-for-warrantless-location-</guid>
+    <pubDate>Thu, 05 Mar 2026 17:01:19 GMT</pubDate>
+    <description>Customs and Border Protection confirmed using real-time bidding (RTB) ad data to track phone locations without warrants, exposing how advertising surveillance enables government surveillance.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>identity</category>
   </item>
   <item>
     <title>Iran Deploys Two-Tiered &apos;Digital Apartheid&apos; Internet During 2026 Protests</title>
@@ -354,6 +364,17 @@
     <category>privacy</category>
     <category>surveillance</category>
     <category>identity</category>
+  </item>
+  <item>
+    <title>Angola Enacts Sweeping Civil Society Restrictions, Expands State Control Over Media</title>
+    <link>https://libertas.fgu.tech/posts/angola-enacts-sweeping-civil-society-restrictions-expands-st</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/angola-enacts-sweeping-civil-society-restrictions-expands-st</guid>
+    <pubDate>Thu, 05 Mar 2026 17:02:36 GMT</pubDate>
+    <description>Angola&apos;s president signed legislation granting government broad powers to monitor, suspend, and restrict NGOs under vague &apos;security threat&apos; provisions, part of expanding crackdown on civil society and media.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>sovereignty</category>
   </item>
   <item>
     <title>Signal Announces New President Role to Focus on Sustainability and Strategy</title>
@@ -1175,6 +1196,17 @@
     <category>privacy</category>
     <category>surveillance</category>
     <category>sovereignty</category>
+  </item>
+  <item>
+    <title>Popular Iranian Prayer App Hacked for US-Israeli Propaganda Messages</title>
+    <link>https://libertas.fgu.tech/posts/popular-iranian-prayer-app-hacked-for-us-israeli-propaganda-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/popular-iranian-prayer-app-hacked-for-us-israeli-propaganda-</guid>
+    <pubDate>Thu, 05 Mar 2026 17:02:11 GMT</pubDate>
+    <description>A prayer app with 5M+ downloads was reportedly compromised by US/Israeli forces to send propaganda messages to Iranians during recent explosions, demonstrating state-level mobile app infiltration capabilities.</description>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>privacy</category>
   </item>
   <item>
     <title>Anonymous Credentials: Privacy Tech for the Age Verification Era</title>
