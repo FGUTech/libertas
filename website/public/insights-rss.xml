@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 05 Mar 2026 17:02:36 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 05 Mar 2026 23:02:32 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -812,6 +812,15 @@
     <category>activism</category>
   </item>
   <item>
+    <title>Panama Court Order Blocks Journalists from Reporting on Sanctioned Contractors</title>
+    <link>https://libertas.fgu.tech/posts/panama-court-order-blocks-journalists-from-reporting-on-sanc</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/panama-court-order-blocks-journalists-from-reporting-on-sanc</guid>
+    <pubDate>Thu, 05 Mar 2026 23:02:32 GMT</pubDate>
+    <description>Panamanian prosecutor issued 4-month gag order against journalists investigating state contractors later sanctioned by US Treasury for supporting Maduro regime.</description>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+  </item>
+  <item>
     <title>Turkey Systematically Targets Opposition Leader İmamoğlu in Mass Trial</title>
     <link>https://libertas.fgu.tech/posts/turkey-systematically-targets-opposition-leader-i-mamo-lu-in</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/turkey-systematically-targets-opposition-leader-i-mamo-lu-in</guid>
@@ -841,6 +850,16 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>Belarus Sentences Radio Host to 3 Years for &apos;Extremist&apos; Journalism Activities</title>
+    <link>https://libertas.fgu.tech/posts/belarus-sentences-radio-host-to-3-years-for-extremist-journa</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/belarus-sentences-radio-host-to-3-years-for-extremist-journa</guid>
+    <pubDate>Thu, 05 Mar 2026 23:02:32 GMT</pubDate>
+    <description>Belarusian court sentenced radio journalist Aleh Khamenka to 3 years in prison for &apos;extremist activities&apos; related to his work with Poland-based Radio Racyja, marking the third journalist conviction in under a week.</description>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>surveillance</category>
   </item>
   <item>
     <title>Iran&apos;s Total Internet Shutdown Enables Mass State Violence During 2026 Uprising</title>
@@ -1015,16 +1034,6 @@
     <category>activism</category>
   </item>
   <item>
-    <title>Wisconsin VPN Ban Bill Passes Assembly, Senate Vote Imminent</title>
-    <link>https://libertas.fgu.tech/posts/wisconsin-vpn-ban-bill-passes-assembly-senate-vote-imminent</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/wisconsin-vpn-ban-bill-passes-assembly-senate-vote-imminent</guid>
-    <pubDate>Thu, 19 Feb 2026 18:49:28 GMT</pubDate>
-    <description>Wisconsin&apos;s S.B. 130/A.B. 105 effectively bans VPNs and mandates invasive age verification for websites, passed State Assembly and faces Senate vote tomorrow.</description>
-    <category>privacy</category>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-  </item>
-  <item>
     <title>OONI Publishes Complete Security Audit Report for Censorship Measurement Tools</title>
     <link>https://libertas.fgu.tech/posts/ooni-publishes-complete-security-audit-report-for-censorship</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/ooni-publishes-complete-security-audit-report-for-censorship</guid>
@@ -1130,6 +1139,16 @@
     <category>censorship-resistance</category>
     <category>activism</category>
     <category>surveillance</category>
+  </item>
+  <item>
+    <title>Intellexa Executives Sentenced to 8 Years for Greek Predator Spyware Scandal</title>
+    <link>https://libertas.fgu.tech/posts/intellexa-executives-sentenced-to-8-years-for-greek-predator</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/intellexa-executives-sentenced-to-8-years-for-greek-predator</guid>
+    <pubDate>Thu, 05 Mar 2026 23:02:06 GMT</pubDate>
+    <description>Four Intellexa executives including the founder received 8-year prison sentences for deploying Predator spyware against 90+ Greek public figures - the first criminal conviction of mercenary spyware company leadership.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
   </item>
   <item>
     <title>EFF Releases Guide to Expose Police Surveillance Tech Sales Hype</title>
