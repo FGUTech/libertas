@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 06 Mar 2026 05:01:45 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 06 Mar 2026 17:04:38 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -18,6 +18,16 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>Nawat Indigenous Language Gets Official Wikipedia After 16-Year Incubation</title>
+    <link>https://libertas.fgu.tech/posts/nawat-indigenous-language-gets-official-wikipedia-after-16-y</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/nawat-indigenous-language-gets-official-wikipedia-after-16-y</guid>
+    <pubDate>Fri, 06 Mar 2026 17:04:38 GMT</pubDate>
+    <description>Wikipedia in Nawat, a critically endangered indigenous language of El Salvador, achieved official status in January 2026 after community mobilization focused on digital sovereignty and knowledge preservation.</description>
+    <category>sovereignty</category>
+    <category>identity</category>
+    <category>censorship-resistance</category>
   </item>
   <item>
     <title>DHS Plans Unified Biometric Platform After Dismantling Privacy Reviews</title>
@@ -36,6 +46,16 @@
     <pubDate>Wed, 04 Mar 2026 23:02:03 GMT</pubDate>
     <description>Human rights orgs are demanding AppLogic Networks prove they&apos;ve actually withdrawn deep packet inspection tech from Egypt after years of facilitating mass censorship of 630+ websites including independent media.</description>
     <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
+  </item>
+  <item>
+    <title>State Actors Weaponize Consumer Camera Hijacking During Military Operations</title>
+    <link>https://libertas.fgu.tech/posts/state-actors-weaponize-consumer-camera-hijacking-during-mili</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/state-actors-weaponize-consumer-camera-hijacking-during-mili</guid>
+    <pubDate>Fri, 06 Mar 2026 17:03:29 GMT</pubDate>
+    <description>New research reveals Iranian state hackers hijacked hundreds of consumer cameras coordinated with missile strikes, with Israel, Russia, and Ukraine adopting similar surveillance warfare tactics.</description>
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
@@ -220,6 +240,17 @@
     <category>privacy</category>
   </item>
   <item>
+    <title>Utexo Raises $7.5M for Bitcoin-Native USDT Settlement with Privacy Features</title>
+    <link>https://libertas.fgu.tech/posts/utexo-raises-7-5m-for-bitcoin-native-usdt-settlement-with-pr</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/utexo-raises-7-5m-for-bitcoin-native-usdt-settlement-with-pr</guid>
+    <pubDate>Fri, 06 Mar 2026 17:00:43 GMT</pubDate>
+    <description>Utexo secured $7.5M led by Tether to build Bitcoin-native USDT settlement infrastructure with encrypted transactions and sub-second settlement, abstracting Lightning Network complexity behind a single API.</description>
+    <category>bitcoin</category>
+    <category>payments</category>
+    <category>privacy</category>
+    <category>sovereignty</category>
+  </item>
+  <item>
     <title>Federal Agents Arrest Journalist, Seize Electronics Without Warrant in ICE Protest Coverage</title>
     <link>https://libertas.fgu.tech/posts/federal-agents-arrest-journalist-seize-electronics-without-w</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/federal-agents-arrest-journalist-seize-electronics-without-w</guid>
@@ -392,6 +423,16 @@
     <category>identity</category>
   </item>
   <item>
+    <title>ICE Detains Colombian Journalist Covering Immigration Enforcement in Nashville</title>
+    <link>https://libertas.fgu.tech/posts/ice-detains-colombian-journalist-covering-immigration-enforc</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/ice-detains-colombian-journalist-covering-immigration-enforc</guid>
+    <pubDate>Fri, 06 Mar 2026 17:04:06 GMT</pubDate>
+    <description>ICE detained journalist Estefany Rodríguez, who covers immigration enforcement for Nashville Notícias, despite being in the US legally with pending asylum and green card applications.</description>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>surveillance</category>
+  </item>
+  <item>
     <title>Pakistan Jails Human Rights Lawyers 17 Years for Tweets Criticizing Military</title>
     <link>https://libertas.fgu.tech/posts/pakistan-jails-human-rights-lawyers-17-years-for-tweets-crit</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/pakistan-jails-human-rights-lawyers-17-years-for-tweets-crit</guid>
@@ -507,17 +548,6 @@
     <category>sovereignty</category>
   </item>
   <item>
-    <title>Gabon Implements Indefinite Social Media Shutdown Amid Anti-Government Protests</title>
-    <link>https://libertas.fgu.tech/posts/gabon-implements-indefinite-social-media-shutdown-amid-anti-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/gabon-implements-indefinite-social-media-shutdown-amid-anti-</guid>
-    <pubDate>Fri, 20 Feb 2026 16:31:23 GMT</pubDate>
-    <description>Gabon&apos;s communications authority ordered indefinite social media blocking of Facebook, WhatsApp, TikTok, Instagram and YouTube during ongoing protests, with #KeepItOn coalition demanding immediate restoration.</description>
-    <category>censorship-resistance</category>
-    <category>comms</category>
-    <category>activism</category>
-    <category>surveillance</category>
-  </item>
-  <item>
     <title>LLMs Enable Large-Scale Deanonymization of Online Posts</title>
     <link>https://libertas.fgu.tech/posts/llms-enable-large-scale-deanonymization-of-online-posts</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/llms-enable-large-scale-deanonymization-of-online-posts</guid>
@@ -571,6 +601,16 @@
     <category>activism</category>
   </item>
   <item>
+    <title>Iran Internet Shutdowns Impact Diaspora Family Communications</title>
+    <link>https://libertas.fgu.tech/posts/iran-internet-shutdowns-impact-diaspora-family-communication</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/iran-internet-shutdowns-impact-diaspora-family-communication</guid>
+    <pubDate>Fri, 06 Mar 2026 17:03:41 GMT</pubDate>
+    <description>Iranian internet restrictions are forcing diaspora families to rely on messaging app read receipts as vital signs of life for relatives inside the country.</description>
+    <category>censorship-resistance</category>
+    <category>comms</category>
+    <category>surveillance</category>
+  </item>
+  <item>
     <title>Trump Admin Cuts Freedom Tech Funding While Launching &apos;Anti-Censorship&apos; Portal</title>
     <link>https://libertas.fgu.tech/posts/trump-admin-cuts-freedom-tech-funding-while-launching-anti-c</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/trump-admin-cuts-freedom-tech-funding-while-launching-anti-c</guid>
@@ -603,17 +643,6 @@
     <category>activism</category>
     <category>comms</category>
     <category>privacy</category>
-  </item>
-  <item>
-    <title>North Korea Escalates Surveillance and Punishment of Tech-Savvy Youth</title>
-    <link>https://libertas.fgu.tech/posts/north-korea-escalates-surveillance-and-punishment-of-tech-sa</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/north-korea-escalates-surveillance-and-punishment-of-tech-sa</guid>
-    <pubDate>Fri, 20 Feb 2026 16:32:05 GMT</pubDate>
-    <description>Human Rights Watch reports North Korea has intensified surveillance targeting young people with technical skills, with punishments including execution for accessing foreign media or sharing content.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>privacy</category>
-    <category>activism</category>
   </item>
   <item>
     <title>Pro-Palestine Student Activist Fights Deportation Despite Government Lacking Evidence</title>
@@ -866,17 +895,6 @@
     <category>censorship-resistance</category>
     <category>activism</category>
     <category>surveillance</category>
-  </item>
-  <item>
-    <title>Pakistan Jails Human Rights Lawyers 17 Years for Military Criticism Tweets</title>
-    <link>https://libertas.fgu.tech/posts/pakistan-jails-human-rights-lawyers-17-years-for-military-cr</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/pakistan-jails-human-rights-lawyers-17-years-for-military-cr</guid>
-    <pubDate>Fri, 20 Feb 2026 16:32:43 GMT</pubDate>
-    <description>Two Pakistani human rights lawyers sentenced to 17 years under cybercrime law PECA for tweets criticizing military abuses in Balochistan, demonstrating weaponization of digital legislation against dissent.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>privacy</category>
   </item>
   <item>
     <title>Lugano Expands Bitcoin Infrastructure with $6.3M Plan ₿ Phase II</title>
