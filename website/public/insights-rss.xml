@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 06 Mar 2026 17:04:38 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 06 Mar 2026 23:03:23 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -28,16 +28,6 @@
     <category>sovereignty</category>
     <category>identity</category>
     <category>censorship-resistance</category>
-  </item>
-  <item>
-    <title>DHS Plans Unified Biometric Platform After Dismantling Privacy Reviews</title>
-    <link>https://libertas.fgu.tech/posts/dhs-plans-unified-biometric-platform-after-dismantling-priva</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/dhs-plans-unified-biometric-platform-after-dismantling-priva</guid>
-    <pubDate>Fri, 20 Feb 2026 23:01:06 GMT</pubDate>
-    <description>Department of Homeland Security seeks to merge face and fingerprint databases into single platform while removing centralized privacy oversight and facial recognition limits.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
-    <category>identity</category>
   </item>
   <item>
     <title>Rights Groups Demand Transparency from AppLogic Networks Over Egypt Censorship Tech</title>
@@ -167,15 +157,6 @@
     <category>activism</category>
   </item>
   <item>
-    <title>FCC Chairman Urges Broadcasters to Join &apos;Pledge America Campaign&apos; for Pro-America Programming</title>
-    <link>https://libertas.fgu.tech/posts/fcc-chairman-urges-broadcasters-to-join-pledge-america-campa</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/fcc-chairman-urges-broadcasters-to-join-pledge-america-campa</guid>
-    <pubDate>Fri, 20 Feb 2026 23:00:43 GMT</pubDate>
-    <description>FCC Chairman Brendan Carr launched a campaign asking broadcasters to voluntarily air patriotic programming including daily Pledge of Allegiance and civic education content for Trump&apos;s America 250th celebration.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-  </item>
-  <item>
     <title>Civil Rights Groups Challenge Surveillance Firm&apos;s Rebrand from Sandvine to AppLogic Networks</title>
     <link>https://libertas.fgu.tech/posts/civil-rights-groups-challenge-surveillance-firm-s-rebrand-fr</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/civil-rights-groups-challenge-surveillance-firm-s-rebrand-fr</guid>
@@ -291,6 +272,17 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>sovereignty</category>
+  </item>
+  <item>
+    <title>CPJ Documents Systematic ICE Targeting of Journalists During Second Trump Administration</title>
+    <link>https://libertas.fgu.tech/posts/cpj-documents-systematic-ice-targeting-of-journalists-during</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/cpj-documents-systematic-ice-targeting-of-journalists-during</guid>
+    <pubDate>Fri, 06 Mar 2026 23:02:16 GMT</pubDate>
+    <description>Immigration authorities detained Tennessee journalist Estefany Rodríguez despite legal status, part of documented pattern targeting press covering ICE activities and immigration issues.</description>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>privacy</category>
   </item>
   <item>
     <title>Proton Releases Comprehensive Protest Privacy Guide Against AI Surveillance</title>
@@ -466,6 +458,17 @@
     <category>censorship-resistance</category>
   </item>
   <item>
+    <title>Kenya Court Strikes Down &apos;Fake News&apos; Law Sections, Upholds Surveillance Powers</title>
+    <link>https://libertas.fgu.tech/posts/kenya-court-strikes-down-fake-news-law-sections-upholds-surv</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/kenya-court-strikes-down-fake-news-law-sections-upholds-surv</guid>
+    <pubDate>Fri, 06 Mar 2026 23:02:16 GMT</pubDate>
+    <description>Kenya&apos;s Court of Appeal nullified cybercrime law sections criminalizing &apos;false news&apos; publication but upheld cyber harassment and surveillance provisions affecting digital rights.</description>
+    <category>censorship-resistance</category>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>activism</category>
+  </item>
+  <item>
     <title>Taliban Shuts Down and Seizes Private TV Station in Afghanistan</title>
     <link>https://libertas.fgu.tech/posts/taliban-shuts-down-and-seizes-private-tv-station-in-afghanis</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/taliban-shuts-down-and-seizes-private-tv-station-in-afghanis</guid>
@@ -514,6 +517,18 @@
     <category>surveillance</category>
     <category>censorship-resistance</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>EFF Highlights Women Pioneers in Digital Rights and Security Culture</title>
+    <link>https://libertas.fgu.tech/posts/eff-highlights-women-pioneers-in-digital-rights-and-security</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-highlights-women-pioneers-in-digital-rights-and-security</guid>
+    <pubDate>Fri, 06 Mar 2026 23:00:56 GMT</pubDate>
+    <description>EFF celebrates women who shaped digital rights, from NSA surveillance fighters to the Jane Collective&apos;s analog security practices that pioneered compartmentalization and secure deletion for activists.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>identity</category>
   </item>
   <item>
     <title>Chinese Whistleblower Exposes Surveillance Operations in China and US</title>
@@ -623,6 +638,16 @@
     <category>comms</category>
   </item>
   <item>
+    <title>EFF: OpenAI&apos;s Pentagon Deal Contains Surveillance Loopholes Despite Public Assurances</title>
+    <link>https://libertas.fgu.tech/posts/eff-openai-s-pentagon-deal-contains-surveillance-loopholes-d</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-openai-s-pentagon-deal-contains-surveillance-loopholes-d</guid>
+    <pubDate>Fri, 06 Mar 2026 23:00:56 GMT</pubDate>
+    <description>EFF analysis reveals OpenAI&apos;s amended Pentagon contract uses &quot;weasel words&quot; like &quot;intentionally&quot; and &quot;unconstrained&quot; that could enable mass surveillance of US persons despite public promises.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
+  </item>
+  <item>
     <title>EFF Challenges Geofence Warrants at Supreme Court as Unconstitutional Digital Dragnets</title>
     <link>https://libertas.fgu.tech/posts/eff-challenges-geofence-warrants-at-supreme-court-as-unconst</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-challenges-geofence-warrants-at-supreme-court-as-unconst</guid>
@@ -631,6 +656,16 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Iran&apos;s Internet Connectivity Drops 99% Amid Strikes and Shutdowns</title>
+    <link>https://libertas.fgu.tech/posts/iran-s-internet-connectivity-drops-99-amid-strikes-and-shutd</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/iran-s-internet-connectivity-drops-99-amid-strikes-and-shutd</guid>
+    <pubDate>Fri, 06 Mar 2026 23:01:39 GMT</pubDate>
+    <description>Iran has cut internet connectivity by 99%, with air strikes causing additional outages and circumvention tools reportedly failing to provide reliable access.</description>
+    <category>censorship-resistance</category>
+    <category>comms</category>
+    <category>surveillance</category>
   </item>
   <item>
     <title>Iran&apos;s DPI-Powered Internet Whitelisting System Built with Russian Tech Support</title>
@@ -643,6 +678,16 @@
     <category>activism</category>
     <category>comms</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>Nawat Language Wikipedia Launches After 16-Year Journey to Digital Sovereignty</title>
+    <link>https://libertas.fgu.tech/posts/nawat-language-wikipedia-launches-after-16-year-journey-to-d</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/nawat-language-wikipedia-launches-after-16-year-journey-to-d</guid>
+    <pubDate>Fri, 06 Mar 2026 23:03:23 GMT</pubDate>
+    <description>El Salvador&apos;s critically endangered Nawat language launched its own Wikipedia in 2026 after community mobilization by Indigenous speakers seeking digital sovereignty and knowledge preservation.</description>
+    <category>identity</category>
+    <category>sovereignty</category>
+    <category>censorship-resistance</category>
   </item>
   <item>
     <title>Pro-Palestine Student Activist Fights Deportation Despite Government Lacking Evidence</title>
@@ -695,6 +740,17 @@
     <category>censorship-resistance</category>
     <category>privacy</category>
     <category>surveillance</category>
+  </item>
+  <item>
+    <title>DHS Deploys Surveillance Tech Against Activists While Expanding Election Authority</title>
+    <link>https://libertas.fgu.tech/posts/dhs-deploys-surveillance-tech-against-activists-while-expand</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/dhs-deploys-surveillance-tech-against-activists-while-expand</guid>
+    <pubDate>Fri, 06 Mar 2026 23:03:05 GMT</pubDate>
+    <description>Department of Homeland Security is using facial recognition and surveillance databases to target activists while an election denier leads DHS election integrity efforts, raising concerns about 2026 midterm interference.</description>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>privacy</category>
+    <category>censorship-resistance</category>
   </item>
   <item>
     <title>Popular Iranian Prayer App Hacked for US-Israeli Propaganda Messages</title>
@@ -793,15 +849,6 @@
     <category>activism</category>
   </item>
   <item>
-    <title>Microsoft Shares BitLocker Recovery Keys with FBI, Compromising Disk Encryption</title>
-    <link>https://libertas.fgu.tech/posts/microsoft-shares-bitlocker-recovery-keys-with-fbi-compromisi</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/microsoft-shares-bitlocker-recovery-keys-with-fbi-compromisi</guid>
-    <pubDate>Fri, 20 Feb 2026 23:02:06 GMT</pubDate>
-    <description>Microsoft routinely provides BitLocker backup keys to law enforcement like the FBI, undermining the privacy protection of Windows&apos; built-in disk encryption for users storing keys in Microsoft accounts.</description>
-    <category>privacy</category>
-    <category>surveillance</category>
-  </item>
-  <item>
     <title>EFF Executive Director Cindy Cohn Releases Memoir on 30-Year Digital Privacy Fight</title>
     <link>https://libertas.fgu.tech/posts/eff-executive-director-cindy-cohn-releases-memoir-on-30-year</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-executive-director-cindy-cohn-releases-memoir-on-30-year</guid>
@@ -831,18 +878,6 @@
     <category>surveillance</category>
     <category>censorship-resistance</category>
     <category>privacy</category>
-  </item>
-  <item>
-    <title>Gabon Shuts Down Social Media Amid Protests, Coalition Demands Restoration</title>
-    <link>https://libertas.fgu.tech/posts/gabon-shuts-down-social-media-amid-protests-coalition-demand</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/gabon-shuts-down-social-media-amid-protests-coalition-demand</guid>
-    <pubDate>Fri, 20 Feb 2026 23:01:32 GMT</pubDate>
-    <description>Gabon&apos;s government ordered indefinite social media shutdown during anti-government protests, blocking Facebook, WhatsApp, TikTok, Instagram and YouTube. 345+ human rights orgs demand immediate restoration.</description>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-    <category>surveillance</category>
-    <category>comms</category>
-    <category>sovereignty</category>
   </item>
   <item>
     <title>Iran Internet Blackout Isolates 15 Jailed Journalists During Regional Conflict</title>
