@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 06 Mar 2026 23:03:23 GMT</lastBuildDate>
+  <lastBuildDate>Sat, 07 Mar 2026 05:00:43 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -773,6 +773,18 @@
     <category>identity</category>
     <category>surveillance</category>
     <category>censorship-resistance</category>
+  </item>
+  <item>
+    <title>EFF Honors Women Digital Rights Pioneers on International Women&apos;s Day</title>
+    <link>https://libertas.fgu.tech/posts/eff-honors-women-digital-rights-pioneers-on-international-wo</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-honors-women-digital-rights-pioneers-on-international-wo</guid>
+    <pubDate>Sat, 07 Mar 2026 05:00:43 GMT</pubDate>
+    <description>EFF celebrates women who shaped digital rights, from NSA surveillance fighter Cindy Cohn to the Jane abortion collective&apos;s analog infosec practices that pioneered modern movement security culture.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>censorship-resistance</category>
+    <category>identity</category>
   </item>
   <item>
     <title>EU Mandates Crypto Platform Reporting Starting 2026</title>

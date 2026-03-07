@@ -1570,6 +1570,29 @@
       }
     },
     {
+      "id": "b848b654-afc0-47fc-99b2-bf2d94ba999a",
+      "url": "https://libertas.fgu.tech/posts/eff-honors-women-digital-rights-pioneers-on-international-wo",
+      "title": "EFF Honors Women Digital Rights Pioneers on International Women's Day",
+      "summary": "EFF celebrates women who shaped digital rights, from NSA surveillance fighter Cindy Cohn to the Jane abortion collective's analog infosec practices that pioneered modern movement security culture.",
+      "content_text": "EFF staff highlight women who inspired digital rights and tech activism work\n• Anna Politkovskaya: Russian investigative journalist killed for exposing political abuses, exemplifying courage in defending freedom of expression\n• Cindy Cohn: Led EFF's legal work for 30 years, established code as constitutionally protected speech, fought NSA mass surveillance\n• Jane Collective (1960s-70s): Underground abortion service that pioneered infosec practices - code names, compartmentalized roles, minimal records\n• Jane's principles still relevant today: 'Collect less, separate what you do collect, and be ready to burn the file box'\n• Ebele Okobi: Influential voice in tech and human rights, advocating for digital rights across Africa\n• Historical examples demonstrate evolution from analog to digital security practices in activist movements",
+      "date_published": "2026-03-07T05:00:43.855Z",
+      "date_modified": "2026-03-07T05:00:43.904Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "activism",
+        "censorship-resistance",
+        "identity"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/03/admiring-our-heroes-international-womens-day-five-women-tech-eff-admires-0"
+        ]
+      }
+    },
+    {
       "id": "bcf93c2f-e983-4223-ad07-125f7ae244ad",
       "url": "https://libertas.fgu.tech/posts/eu-mandates-crypto-platform-reporting-starting-2026",
       "title": "EU Mandates Crypto Platform Reporting Starting 2026",
