@@ -1007,6 +1007,26 @@
       }
     },
     {
+      "id": "7b75c2de-0c38-4d47-973a-b8f543fc0b7b",
+      "url": "https://libertas.fgu.tech/posts/cbp-uses-ad-data-for-phone-tracking-proton-helps-fbi-id-prot",
+      "title": "CBP Uses Ad Data for Phone Tracking; Proton Helps FBI ID Protester",
+      "summary": "US border agency CBP used online advertising data to track phone locations, while encrypted email provider Proton assisted FBI in identifying a protester.",
+      "content_text": "US Customs and Border Protection (CBP) used online advertising data to track phone locations\n• Proton, the encrypted email provider, helped FBI identify a protester\n• International operation successfully shut down Leakbase cybercrime forum\n• Demonstrates government agencies leveraging commercial data for surveillance\n• Raises questions about privacy guarantees from encrypted service providers\n• Shows continued expansion of surveillance capabilities using ad tech infrastructure\n• Highlights tension between privacy tools and law enforcement cooperation",
+      "date_published": "2026-03-07T17:01:30.186Z",
+      "date_modified": "2026-03-07T17:01:30.259Z",
+      "tags": [
+        "surveillance",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 85,
+        "citations": [
+          "https://www.wired.com/story/cbp-used-online-ad-data-to-track-phone-locations/"
+        ]
+      }
+    },
+    {
       "id": "7ce45668-915a-4dd6-8451-dd08445fda82",
       "url": "https://libertas.fgu.tech/posts/panama-court-order-blocks-journalists-from-reporting-on-sanc",
       "title": "Panama Court Order Blocks Journalists from Reporting on Sanctioned Contractors",
@@ -2064,28 +2084,6 @@
         "credibility_score": 95,
         "citations": [
           "https://www.accessnow.org/event/digital-security-webinars/"
-        ]
-      }
-    },
-    {
-      "id": "f7dea1ed-385c-4c13-81d8-fc392aede036",
-      "url": "https://libertas.fgu.tech/posts/iran-s-internet-blackout-enabled-mass-state-violence-and-nar",
-      "title": "Iran's Internet Blackout Enabled Mass State Violence and Narrative Control",
-      "summary": "Iran's 15-day internet shutdown during 2026 protests enabled unprecedented state violence (reportedly 30,000+ deaths) while regime-aligned diaspora voices filled the information vacuum to control international narratives.",
-      "content_text": "Iran imposed total internet shutdown Jan 8-23, 2026 during nationwide protests across 30+ provinces\n• NetBlocks confirmed near-complete connectivity collapse affecting mobile, fixed-line, and international gateways\n• UN Human Rights Council described resulting state violence as 'unprecedented in scope and brutality'\n• Anonymous state officials reportedly confirm over 30,000 deaths; HRANA documents 41,800-50,000 arrests\n• Regime-aligned diaspora voices like NIAC's Trita Parsi filled information vacuum during blackout\n• Iranian state media discussed building 'Iran lobby' in US, explicitly naming Parsi and NIAC as assets\n• Systematic disinformation playbook deployed: questioning evidence, demanding impossible proof standards\n• Pattern mirrors 2019 shutdown and Woman Life Freedom movement information control tactics",
-      "date_published": "2026-02-21T11:01:09.521Z",
-      "date_modified": "2026-02-21T11:01:09.704Z",
-      "tags": [
-        "censorship-resistance",
-        "surveillance",
-        "comms",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 88,
-        "credibility_score": 82,
-        "citations": [
-          "https://globalvoices.org/2026/02/21/irans-internet-blackout-as-media-event-networks-algorithms-and-the-politics-of-visibility/"
         ]
       }
     },

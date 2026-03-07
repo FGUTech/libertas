@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Sat, 07 Mar 2026 05:00:43 GMT</lastBuildDate>
+  <lastBuildDate>Sat, 07 Mar 2026 17:01:30 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -498,6 +498,15 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>censorship-resistance</category>
+  </item>
+  <item>
+    <title>CBP Uses Ad Data for Phone Tracking; Proton Helps FBI ID Protester</title>
+    <link>https://libertas.fgu.tech/posts/cbp-uses-ad-data-for-phone-tracking-proton-helps-fbi-id-prot</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/cbp-uses-ad-data-for-phone-tracking-proton-helps-fbi-id-prot</guid>
+    <pubDate>Sat, 07 Mar 2026 17:01:30 GMT</pubDate>
+    <description>US border agency CBP used online advertising data to track phone locations, while encrypted email provider Proton assisted FBI in identifying a protester.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
   </item>
   <item>
     <title>Panama Court Order Blocks Journalists from Reporting on Sanctioned Contractors</title>
@@ -1016,17 +1025,6 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>comms</category>
-  </item>
-  <item>
-    <title>Iran&apos;s Internet Blackout Enabled Mass State Violence and Narrative Control</title>
-    <link>https://libertas.fgu.tech/posts/iran-s-internet-blackout-enabled-mass-state-violence-and-nar</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/iran-s-internet-blackout-enabled-mass-state-violence-and-nar</guid>
-    <pubDate>Sat, 21 Feb 2026 11:01:09 GMT</pubDate>
-    <description>Iran&apos;s 15-day internet shutdown during 2026 protests enabled unprecedented state violence (reportedly 30,000+ deaths) while regime-aligned diaspora voices filled the information vacuum to control international narratives.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>comms</category>
-    <category>activism</category>
   </item>
   <item>
     <title>Freedom House Documents Artists Imprisoned for Creative Dissent Across 7 Authoritarian States</title>
