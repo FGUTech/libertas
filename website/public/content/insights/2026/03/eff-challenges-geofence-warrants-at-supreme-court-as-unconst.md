@@ -1,7 +1,7 @@
 ---
 title: "EFF Challenges Geofence Warrants at Supreme Court as Unconstitutional Digital Dragnets"
 slug: "eff-challenges-geofence-warrants-at-supreme-court-as-unconst"
-published_at: "2026-03-03T17:00:35.610Z"
+published_at: "2026-03-07T23:01:21.232Z"
 status: "published"
 topics:
   - "surveillance"
@@ -13,41 +13,41 @@ geo:
   - "United States"
   - "Virginia"
 citations:
-  - "https://www.eff.org/press/releases/eff-supreme-court-shut-down-unconstitutional-geofence-searches"
+  - "https://www-prod.int.eff.org/press/releases/eff-supreme-court-shut-down-unconstitutional-geofence-searches"
 ---
 
 # EFF Challenges Geofence Warrants at Supreme Court as Unconstitutional Digital Dragnets
 
-**TL;DR:** EFF filed Supreme Court brief in Chatrie v. United States arguing geofence warrants violate Fourth Amendment by compelling mass location data searches of innocent people without individualized suspicion.
+**TL;DR:** EFF and civil liberties groups filed Supreme Court brief arguing geofence warrants violate Fourth Amendment by turning location data into mass surveillance dragnets that make suspects of innocent bystanders.
 
 ## Key Points
 
-- EFF, ACLU, and Georgetown Law filed amicus brief challenging geofence warrants as unconstitutional
-- Case involves 2019 warrant forcing Google to search hundreds of millions of accounts for Virginia crime scene proximity
-- Geofence warrants cast 'digital dragnets' capturing location data from all devices in geographic areas during time periods
-- Unlike traditional warrants, these don't target specific suspects but turn innocent bystanders into suspects
-- Brief argues practice violates Fourth Amendment prohibition against general warrants and exploratory searches
-- Google ended mass geofence searches in July 2025, but other companies still collect similar location data
-- Supreme Court ruling in Chatrie v. United States could set precedent for all suspicionless mass surveillance searches
+- EFF, ACLU, and Georgetown Law filed amicus brief in Chatrie v. United States case
+- Geofence warrants compel companies to provide data on every device in geographic area during time period
+- 2019 Google warrant covered area size of several football fields, searched hundreds of millions of accounts
+- Brief argues these are 'general warrants' that Fourth Amendment specifically prohibits
+- Unlike traditional warrants, no specific suspect or device targeted - creates digital dragnet
+- Google ended mass geofence searches in July 2025, but other companies still collect location data
+- Supreme Court ruling could establish precedent protecting against suspicionless location surveillance
 
 ## Deep Dive
 
-## Constitutional Challenge to Mass Surveillance
+## Constitutional Stakes
 
-The Supreme Court case *Chatrie v. United States* represents a critical test of Fourth Amendment protections in the digital age. The 2019 geofence warrant at issue compelled Google to search the location history of hundreds of millions of users to identify devices within a multi-football-field radius around a Northern Virginia crime scene, encompassing homes, businesses, and a church. This dragnet approach fundamentally differs from traditional law enforcement, which requires individualized suspicion before searching specific people or places.
+The Supreme Court case *Chatrie v. United States* represents a critical moment for Fourth Amendment protections in the digital age. The 2019 geofence warrant at issue compelled Google to search through accounts of hundreds of millions of users to identify anyone present within a Northern Virginia crime scene radius covering multiple football fields, including homes, businesses, and a church. This represents exactly the kind of "exploratory rummaging" the Fourth Amendment's drafters sought to prevent through their prohibition on general warrants.
 
 ## Technical and Legal Implications
 
-Geofence warrants exploit the ubiquitous location tracking built into modern smartphones and services. Unlike traditional warrants targeting known suspects or specific locations, these searches reverse the investigative process—casting a wide net first, then sorting through the catch for potential suspects. The brief argues this mirrors the "general warrants" that American colonists specifically rebelled against, where authorities could search anyone without particular cause.
+Geofence warrants operate by reverse-engineering investigations - instead of having a suspect and seeking evidence, police define geographic boundaries and time windows to discover unknown suspects from location data. This fundamentally inverts traditional law enforcement methodology and constitutional protections. While Google discontinued mass geofence searches in July 2025, the underlying surveillance infrastructure remains intact across multiple technology companies collecting granular location data.
 
-## Broader Surveillance Landscape
+## Broader Surveillance Ecosystem
 
-While Google discontinued mass geofence searches in July 2025, the underlying surveillance infrastructure remains intact across multiple platforms and data brokers. The Supreme Court's ruling could establish whether any form of suspicionless mass data collection—whether through geofence warrants, tower dumps, or other digital dragnet techniques—can survive Fourth Amendment scrutiny. This case may determine the constitutional boundaries for all forms of reverse-engineered surveillance that start with mass data collection rather than individualized suspicion.
+The case highlights how modern digital surveillance capabilities far exceed what constitutional framers could have anticipated, yet the principles remain relevant. The brief warns that allowing such "suspicionless searches" establishes precedent for increasingly invasive digital dragnets. With location data collection now ubiquitous across smartphones, apps, and services, the Supreme Court's ruling will determine whether constitutional protections scale with surveillance capabilities.
 
-## What This Means for Digital Rights
+## What This Means for Builders
 
-A favorable Supreme Court ruling would establish strong precedent protecting location privacy and constraining mass surveillance techniques. Conversely, legitimizing geofence warrants could open the door for even broader suspicionless searches of digital data, fundamentally altering the balance between law enforcement capabilities and individual privacy rights in the digital age.
+A favorable ruling would strengthen legal protections against mass location surveillance, potentially requiring more targeted approaches to data requests. However, builders should not assume legal protections alone will preserve privacy - technical measures like location data minimization, differential privacy, and user control over location sharing remain critical regardless of legal outcomes.
 
 ## Sources
 
-- https://www.eff.org/press/releases/eff-supreme-court-shut-down-unconstitutional-geofence-searches
+- https://www-prod.int.eff.org/press/releases/eff-supreme-court-shut-down-unconstitutional-geofence-searches

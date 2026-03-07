@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Sat, 07 Mar 2026 17:01:30 GMT</lastBuildDate>
+  <lastBuildDate>Sat, 07 Mar 2026 23:01:21 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -835,6 +835,16 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>sovereignty</category>
+  </item>
+  <item>
+    <title>EFF Challenges Geofence Warrants at Supreme Court as Unconstitutional Digital Dragnets</title>
+    <link>https://libertas.fgu.tech/posts/eff-challenges-geofence-warrants-at-supreme-court-as-unconst</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-challenges-geofence-warrants-at-supreme-court-as-unconst</guid>
+    <pubDate>Sat, 07 Mar 2026 23:01:21 GMT</pubDate>
+    <description>EFF and civil liberties groups filed Supreme Court brief arguing geofence warrants violate Fourth Amendment by turning location data into mass surveillance dragnets that make suspects of innocent bystanders.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
   </item>
   <item>
     <title>17 Nonprofits Challenge FTC&apos;s Retaliatory Investigation of Media Matters</title>
