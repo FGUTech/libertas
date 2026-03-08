@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Sat, 07 Mar 2026 23:01:21 GMT</lastBuildDate>
+  <lastBuildDate>Sun, 08 Mar 2026 16:01:35 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -749,6 +749,16 @@
     <category>censorship-resistance</category>
     <category>privacy</category>
     <category>surveillance</category>
+  </item>
+  <item>
+    <title>OpenAI Wins Pentagon Contract After Anthropic Exit, Won&apos;t Release Surveillance Terms</title>
+    <link>https://libertas.fgu.tech/posts/openai-wins-pentagon-contract-after-anthropic-exit-won-t-rel</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/openai-wins-pentagon-contract-after-anthropic-exit-won-t-rel</guid>
+    <pubDate>Sun, 08 Mar 2026 16:01:35 GMT</pubDate>
+    <description>OpenAI secured Pentagon contract after Anthropic was forced out for refusing mass surveillance terms. Company claims anti-surveillance protections but won&apos;t release contract details for verification.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
   </item>
   <item>
     <title>DHS Deploys Surveillance Tech Against Activists While Expanding Election Authority</title>
