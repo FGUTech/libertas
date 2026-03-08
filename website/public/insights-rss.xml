@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Sun, 08 Mar 2026 16:01:35 GMT</lastBuildDate>
+  <lastBuildDate>Sun, 08 Mar 2026 22:01:09 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -423,6 +423,18 @@
     <category>censorship-resistance</category>
     <category>activism</category>
     <category>surveillance</category>
+  </item>
+  <item>
+    <title>EFF Honors Women Digital Rights Pioneers on International Women&apos;s Day</title>
+    <link>https://libertas.fgu.tech/posts/eff-honors-women-digital-rights-pioneers-on-international-wo</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-honors-women-digital-rights-pioneers-on-international-wo</guid>
+    <pubDate>Sun, 08 Mar 2026 22:01:09 GMT</pubDate>
+    <description>EFF staff highlight influential women in digital rights, from NSA surveillance fighter Cindy Cohn to the Jane Collective&apos;s 1970s abortion access infosec project that pioneered modern movement security practices.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>identity</category>
   </item>
   <item>
     <title>Pakistan Jails Human Rights Lawyers 17 Years for Tweets Criticizing Military</title>
