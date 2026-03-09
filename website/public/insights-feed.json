@@ -1136,6 +1136,27 @@
       }
     },
     {
+      "id": "802dbdfa-413d-4dc0-8a99-ddb3cb105744",
+      "url": "https://libertas.fgu.tech/posts/taliban-seizes-private-tv-station-continues-media-crackdown-",
+      "title": "Taliban Seizes Private TV Station, Continues Media Crackdown in Afghanistan",
+      "summary": "Taliban intelligence raided and shut down Rah-e-Farda TV in Kabul, seizing assets and expelling staff, continuing systematic suppression of independent media in Afghanistan.",
+      "content_text": "Taliban intelligence officers raided Rah-e-Farda TV's Kabul office on February 28, 2026\n• Staff were verbally abused and expelled, station forced off air by order of Taliban leader Hibatullah Akhundzada\n• Station assets were confiscated and building seized by authorities\n• Taliban claimed shutdown was due to owner Mohammad Mohaqiq's comments about Taliban-Pakistan conflict\n• Follows 2023 pattern when Taliban seized Kawoon Ghag radio station in Laghman province\n• Committee to Protect Journalists reports this as part of systematic media repression campaign\n• Demonstrates escalating control over information infrastructure and independent reporting\n• Creates environment where censorship-resistant communication tools become essential for journalists",
+      "date_published": "2026-03-09T10:01:13.523Z",
+      "date_modified": "2026-03-09T10:01:13.604Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 95,
+        "citations": [
+          "https://cpj.org/2026/03/taliban-shut-down-and-seize-rah-e-farda-tv-station-in-afghanistan/"
+        ]
+      }
+    },
+    {
       "id": "82c722d6-d38e-409b-83fc-e1bc636a5fa1",
       "url": "https://libertas.fgu.tech/posts/belarus-sentences-radio-host-to-3-years-for-extremist-journa",
       "title": "Belarus Sentences Radio Host to 3 Years for 'Extremist' Journalism Activities",

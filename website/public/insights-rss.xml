@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Sun, 08 Mar 2026 22:01:09 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 09 Mar 2026 10:01:13 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -559,6 +559,16 @@
     <description>A Chinese whistleblower has revealed details about China&apos;s surveillance operations targeting citizens domestically and in the United States, according to CNN reporting.</description>
     <category>surveillance</category>
     <category>privacy</category>
+    <category>activism</category>
+  </item>
+  <item>
+    <title>Taliban Seizes Private TV Station, Continues Media Crackdown in Afghanistan</title>
+    <link>https://libertas.fgu.tech/posts/taliban-seizes-private-tv-station-continues-media-crackdown-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/taliban-seizes-private-tv-station-continues-media-crackdown-</guid>
+    <pubDate>Mon, 09 Mar 2026 10:01:13 GMT</pubDate>
+    <description>Taliban intelligence raided and shut down Rah-e-Farda TV in Kabul, seizing assets and expelling staff, continuing systematic suppression of independent media in Afghanistan.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
     <category>activism</category>
   </item>
   <item>
