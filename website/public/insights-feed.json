@@ -202,6 +202,27 @@
       }
     },
     {
+      "id": "19b0af62-63d9-43da-99d5-ec9057b42c2b",
+      "url": "https://libertas.fgu.tech/posts/cbp-confirms-use-of-ad-tech-data-for-warrantless-location-su",
+      "title": "CBP Confirms Use of Ad Tech Data for Warrantless Location Surveillance",
+      "summary": "CBP admits it uses location data from online advertising systems (RTB) to track phones without warrants, confirming the advertising surveillance infrastructure enables government spying.",
+      "content_text": "CBP document confirms use of real-time bidding (RTB) location data for surveillance operations\n• Government agencies (CBP, ICE, FBI) purchase location data from brokers like Venntel to bypass warrant requirements\n• RTB system exposes user location data to thousands of companies during ad auction process\n• ICE uses tools like Webloc to track millions of phones and filter by advertising IDs\n• Location data harvested from apps via SDKs and RTB without user knowledge\n• Federal agencies continue purchasing commercial location data despite privacy concerns\n• Document covers 2019-2021 pilot but agencies have expanded surveillance tool purchases since\n• Advertising ecosystem creates pathway for warrantless government location tracking",
+      "date_published": "2026-03-09T22:00:53.699Z",
+      "date_modified": "2026-03-09T22:00:53.753Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/03/targeted-advertising-gives-your-location-government-just-ask-cbp"
+        ]
+      }
+    },
+    {
       "id": "1dff1168-503e-4c7d-9d06-c4d578d1d0af",
       "url": "https://libertas.fgu.tech/posts/pentagon-threatens-ai-company-anthropic-over-surveillance-re",
       "title": "Pentagon Threatens AI Company Anthropic Over Surveillance Restrictions",
@@ -1460,6 +1481,26 @@
       }
     },
     {
+      "id": "a4e80bba-62eb-4736-962a-98b30da2b22f",
+      "url": "https://libertas.fgu.tech/posts/eff-executive-director-discusses-30-year-fight-against-digit",
+      "title": "EFF Executive Director Discusses 30-Year Fight Against Digital Surveillance in New Book",
+      "summary": "EFF's Cindy Cohn hosts livestream March 19th to discuss her new book 'Privacy's Defender' covering three decades of legal battles against NSA, FBI, and Justice Department surveillance.",
+      "content_text": "EFF Executive Director Cindy Cohn releasing book 'Privacy's Defender: My Thirty-Year Fight Against Digital Surveillance'\n• Free livestream event March 19th, 11 AM-12 PM Pacific with 404 Media's Jason Koebler\n• Book chronicles legal battles against Justice Department, NSA, and FBI over digital privacy rights\n• Cohn led landmark Bernstein v. Dept. of Justice case challenging crypto export restrictions in 1993\n• Central question addressed: Can private conversations exist when living online?\n• Event includes live Q&A session and will be recorded for later viewing\n• Part of EFF's 'EFFecting Change' livestream series marking organization's advocacy work",
+      "date_published": "2026-03-09T22:00:53.698Z",
+      "date_modified": "2026-03-09T22:00:53.753Z",
+      "tags": [
+        "privacy",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/03/effecting-change-privacys-defender"
+        ]
+      }
+    },
+    {
       "id": "a5622bc3-996a-441f-997d-4e7d2dd41ede",
       "url": "https://libertas.fgu.tech/posts/pro-palestine-student-activist-fights-deportation-despite-go",
       "title": "Pro-Palestine Student Activist Fights Deportation Despite Government Lacking Evidence",
@@ -1784,50 +1825,6 @@
       }
     },
     {
-      "id": "c22d5ebe-28b5-4b1f-bd28-eeba291491f5",
-      "url": "https://libertas.fgu.tech/posts/17-nonprofits-challenge-ftc-s-retaliatory-investigation-of-m",
-      "title": "17 Nonprofits Challenge FTC's Retaliatory Investigation of Media Matters",
-      "summary": "Coalition led by The Intercept's Press Freedom Defense Fund filed amicus brief to stop FTC's allegedly retaliatory investigation of Media Matters, citing pattern of government intimidation tactics.",
-      "content_text": "17 nonprofits filed amicus brief in U.S. Court of Appeals for D.C. Circuit\n• Challenging FTC investigation into Media Matters for America over Trump administration criticism\n• Brief argues investigation is retaliatory and part of broader government intimidation pattern\n• Coalition includes EFF, Freedom of the Press Foundation, and other freedom tech organizations\n• Seeks to uphold preliminary injunction against the investigation\n• Brief cites similar tactics across Justice Department and FCC under current administration\n• Legal strategy aims to prevent chilling effect on nonprofit journalism and research",
-      "date_published": "2026-02-23T17:02:44.250Z",
-      "date_modified": "2026-02-23T17:02:44.386Z",
-      "tags": [
-        "censorship-resistance",
-        "privacy",
-        "surveillance",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 85,
-        "citations": [
-          "https://theintercept.com/2026/02/23/press-freedom-defense-fund-ftc-media-matters-amicus-brief/"
-        ]
-      }
-    },
-    {
-      "id": "c2f3141d-82ef-40db-83ac-92ecfc852682",
-      "url": "https://libertas.fgu.tech/posts/gabon-blocks-social-media-platforms-during-anti-government-p",
-      "title": "Gabon Blocks Social Media Platforms During Anti-Government Protests",
-      "summary": "Gabon's government indefinitely blocked Facebook, WhatsApp, TikTok, Instagram, and YouTube during ongoing protests, with 345+ rights organizations demanding immediate restoration of access.",
-      "content_text": "Jean-Claude Mendome of Gabon's High Authority for Communication announced indefinite social media shutdown on Feb 17, 2026\n• OONI confirmed blocking of Facebook, WhatsApp, TikTok, Instagram, and YouTube as of Feb 18, 2026\n• Shutdown coincides with anti-government protests and labor strikes across the country\n• Government claims blocks prevent 'spread of false information' and protect national unity\n• 345+ human rights organizations from #KeepItOn coalition demand immediate access restoration\n• Gabon has pattern of shutdowns: 2023 elections, 2021 COVID protests, 2019 attempted coup, 2016 post-election\n• Coalition calls on ISPs (Moov Gabon, Gabon Telecom, Airtel Gabon) to refuse government shutdown orders\n• Violations cited include Gabonese Constitution Article 1(2) and international human rights frameworks",
-      "date_published": "2026-02-23T17:01:24.872Z",
-      "date_modified": "2026-02-23T17:01:24.951Z",
-      "tags": [
-        "censorship-resistance",
-        "activism",
-        "surveillance",
-        "comms"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 85,
-        "credibility_score": 90,
-        "citations": [
-          "https://www.accessnow.org/press-release/keepiton-social-media-restore-access-in-gabon/"
-        ]
-      }
-    },
-    {
       "id": "c54c5717-2029-4fa0-b18e-b984c062e05b",
       "url": "https://libertas.fgu.tech/posts/bruce-schneier-ai-arms-races-threaten-democratic-participati",
       "title": "Bruce Schneier: AI Arms Races Threaten Democratic Participation and Concentrate Power in Big Tech",
@@ -1958,28 +1955,6 @@
       }
     },
     {
-      "id": "db251375-1d2a-4dde-83d9-73262c6dc879",
-      "url": "https://libertas.fgu.tech/posts/cameroon-police-seize-journalists-equipment-investigating-us",
-      "title": "Cameroon Police Seize Journalists' Equipment Investigating US Migrant Deportations",
-      "summary": "Cameroonian police detained 4 journalists for 5 hours, seized their phones/laptops while investigating secret US deportation flights, threatening to breach device security and expose confidential sources.",
-      "content_text": "Four journalists detained by Cameroon judicial police while covering secret US migrant deportations\n• AP reporters Nalova Akua, Angel Ngwe, Arnold Ndal plus freelancer Randy Joe Sa'ah held for 5 hours\n• Police confiscated cellphones, laptop, and other equipment under criminal trespass investigation\n• Officers threatened to circumvent device passwords and access private information\n• Lawyer warned anonymous sources could be compromised through device forensics\n• Journalists threatened with being 'crushed' and told one would 'disappear without a trace'\n• Equipment remains with police despite no formal charges filed against journalists\n• Incident highlights digital security risks for journalists in authoritarian environments",
-      "date_published": "2026-02-23T17:02:02.197Z",
-      "date_modified": "2026-02-23T17:02:02.277Z",
-      "tags": [
-        "surveillance",
-        "privacy",
-        "censorship-resistance",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 75,
-        "credibility_score": 85,
-        "citations": [
-          "https://cpj.org/2026/02/cameroon-police-probe-journalists-investigating-secret-us-migrant-deportations-seize-equipment/"
-        ]
-      }
-    },
-    {
       "id": "e04eab2f-8530-4efa-b6f3-c53bd327eaf5",
       "url": "https://libertas.fgu.tech/posts/sophisticated-iphone-hacking-toolkit-linked-to-us-government",
       "title": "Sophisticated iPhone Hacking Toolkit Linked to US Government Infects Tens of Thousands",
@@ -1996,6 +1971,27 @@
         "credibility_score": 85,
         "citations": [
           "https://www.wired.com/story/coruna-iphone-hacking-toolkit-us-government/"
+        ]
+      }
+    },
+    {
+      "id": "e2206a70-e3f8-49c5-8686-f26b7b6bd0d7",
+      "url": "https://libertas.fgu.tech/posts/eff-executive-director-releases-privacy-rights-memoir-privac",
+      "title": "EFF Executive Director Releases Privacy Rights Memoir 'Privacy's Defender'",
+      "summary": "EFF's Cindy Cohn is launching a book chronicling her 30-year battle for digital privacy rights, covering crypto wars, surveillance state resistance, and EFF's evolution into a major digital rights organization.",
+      "content_text": "Cindy Cohn, EFF Executive Director, releasing 'Privacy's Defender' memoir in March 2026\n• Book covers 30-year fight for digital privacy rights and chronicles crypto wars history\n• Details EFF's growth from 'ragtag group of lawyers and hackers' to major digital rights org\n• Cohn led successful First Amendment challenge to crypto export restrictions in Bernstein v. DOJ case\n• Memoir addresses post-9/11 surveillance state and FBI gag orders\n• Central question: 'Can we still have private conversations if we live our lives online?'\n• Book launch event March 12, 2026 in Berkeley with conversation between Cohn and Annalee Newitz\n• Proceeds benefit EFF's digital rights mission",
+      "date_published": "2026-03-09T22:00:53.698Z",
+      "date_modified": "2026-03-09T22:00:53.753Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/03/privacys-defender-launch-party-berkeley"
         ]
       }
     },
@@ -2106,6 +2102,27 @@
         "credibility_score": 88,
         "citations": [
           "https://bitcoinmagazine.com/news/u-s-treasury-crypto-mixers"
+        ]
+      }
+    },
+    {
+      "id": "f237c2c5-39fe-4113-be2b-a0e8b30043e2",
+      "url": "https://libertas.fgu.tech/posts/eff-analysis-safe-act-proposes-major-section-702-surveillanc",
+      "title": "EFF Analysis: SAFE Act Proposes Major Section 702 Surveillance Reforms",
+      "summary": "The bipartisan SAFE Act would require FBI warrants for accessing Americans' communications collected via Section 702, address parallel construction, and partially close data broker loopholes.",
+      "content_text": "Senators Lee (R-UT) and Durbin (D-IL) introduced SAFE Act to reform Section 702 FISA surveillance authority\n• Bill would require FBI warrants before accessing content of Americans' incidentally collected communications\n• Would mandate disclosure of Section 702 evidence in court proceedings to prevent parallel construction\n• Includes provisions to close data broker loophole for intelligence agencies purchasing location/personal data\n• Section 702 expires April 2026, creating window for reform vs White House push for clean reauthorization\n• FBI conducted 3.4 million warrantless searches of US persons' 702 data in 2021 alone\n• EFF calls reforms imperfect but significant improvement over unconstitutional status quo\n• Federal court recently ruled backdoor searches of 702 data unconstitutional",
+      "date_published": "2026-03-09T22:00:53.698Z",
+      "date_modified": "2026-03-09T22:00:53.753Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/03/safe-act-imperfect-vehicle-real-section-702-reform"
         ]
       }
     },

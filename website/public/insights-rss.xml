@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Mon, 09 Mar 2026 16:02:12 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 09 Mar 2026 22:00:53 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -102,6 +102,16 @@
     <category>bitcoin</category>
     <category>sovereignty</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>CBP Confirms Use of Ad Tech Data for Warrantless Location Surveillance</title>
+    <link>https://libertas.fgu.tech/posts/cbp-confirms-use-of-ad-tech-data-for-warrantless-location-su</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/cbp-confirms-use-of-ad-tech-data-for-warrantless-location-su</guid>
+    <pubDate>Mon, 09 Mar 2026 22:00:53 GMT</pubDate>
+    <description>CBP admits it uses location data from online advertising systems (RTB) to track phones without warrants, confirming the advertising surveillance infrastructure enables government spying.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
   </item>
   <item>
     <title>Pentagon Threatens AI Company Anthropic Over Surveillance Restrictions</title>
@@ -720,6 +730,15 @@
     <category>censorship-resistance</category>
   </item>
   <item>
+    <title>EFF Executive Director Discusses 30-Year Fight Against Digital Surveillance in New Book</title>
+    <link>https://libertas.fgu.tech/posts/eff-executive-director-discusses-30-year-fight-against-digit</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-executive-director-discusses-30-year-fight-against-digit</guid>
+    <pubDate>Mon, 09 Mar 2026 22:00:53 GMT</pubDate>
+    <description>EFF&apos;s Cindy Cohn hosts livestream March 19th to discuss her new book &apos;Privacy&apos;s Defender&apos; covering three decades of legal battles against NSA, FBI, and Justice Department surveillance.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+  </item>
+  <item>
     <title>Pro-Palestine Student Activist Fights Deportation Despite Government Lacking Evidence</title>
     <link>https://libertas.fgu.tech/posts/pro-palestine-student-activist-fights-deportation-despite-go</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/pro-palestine-student-activist-fights-deportation-despite-go</guid>
@@ -878,28 +897,6 @@
     <category>activism</category>
   </item>
   <item>
-    <title>17 Nonprofits Challenge FTC&apos;s Retaliatory Investigation of Media Matters</title>
-    <link>https://libertas.fgu.tech/posts/17-nonprofits-challenge-ftc-s-retaliatory-investigation-of-m</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/17-nonprofits-challenge-ftc-s-retaliatory-investigation-of-m</guid>
-    <pubDate>Mon, 23 Feb 2026 17:02:44 GMT</pubDate>
-    <description>Coalition led by The Intercept&apos;s Press Freedom Defense Fund filed amicus brief to stop FTC&apos;s allegedly retaliatory investigation of Media Matters, citing pattern of government intimidation tactics.</description>
-    <category>censorship-resistance</category>
-    <category>privacy</category>
-    <category>surveillance</category>
-    <category>activism</category>
-  </item>
-  <item>
-    <title>Gabon Blocks Social Media Platforms During Anti-Government Protests</title>
-    <link>https://libertas.fgu.tech/posts/gabon-blocks-social-media-platforms-during-anti-government-p</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/gabon-blocks-social-media-platforms-during-anti-government-p</guid>
-    <pubDate>Mon, 23 Feb 2026 17:01:24 GMT</pubDate>
-    <description>Gabon&apos;s government indefinitely blocked Facebook, WhatsApp, TikTok, Instagram, and YouTube during ongoing protests, with 345+ rights organizations demanding immediate restoration of access.</description>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-    <category>surveillance</category>
-    <category>comms</category>
-  </item>
-  <item>
     <title>Bruce Schneier: AI Arms Races Threaten Democratic Participation and Concentrate Power in Big Tech</title>
     <link>https://libertas.fgu.tech/posts/bruce-schneier-ai-arms-races-threaten-democratic-participati</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/bruce-schneier-ai-arms-races-threaten-democratic-participati</guid>
@@ -964,17 +961,6 @@
     <category>privacy</category>
   </item>
   <item>
-    <title>Cameroon Police Seize Journalists&apos; Equipment Investigating US Migrant Deportations</title>
-    <link>https://libertas.fgu.tech/posts/cameroon-police-seize-journalists-equipment-investigating-us</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/cameroon-police-seize-journalists-equipment-investigating-us</guid>
-    <pubDate>Mon, 23 Feb 2026 17:02:02 GMT</pubDate>
-    <description>Cameroonian police detained 4 journalists for 5 hours, seized their phones/laptops while investigating secret US deportation flights, threatening to breach device security and expose confidential sources.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-  </item>
-  <item>
     <title>Sophisticated iPhone Hacking Toolkit Linked to US Government Infects Tens of Thousands</title>
     <link>https://libertas.fgu.tech/posts/sophisticated-iphone-hacking-toolkit-linked-to-us-government</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/sophisticated-iphone-hacking-toolkit-linked-to-us-government</guid>
@@ -982,6 +968,16 @@
     <description>A highly advanced iPhone exploitation toolkit, likely developed for the US government, has reportedly infected tens of thousands of devices in a mass surveillance operation.</description>
     <category>surveillance</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>EFF Executive Director Releases Privacy Rights Memoir &apos;Privacy&apos;s Defender&apos;</title>
+    <link>https://libertas.fgu.tech/posts/eff-executive-director-releases-privacy-rights-memoir-privac</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-executive-director-releases-privacy-rights-memoir-privac</guid>
+    <pubDate>Mon, 09 Mar 2026 22:00:53 GMT</pubDate>
+    <description>EFF&apos;s Cindy Cohn is launching a book chronicling her 30-year battle for digital privacy rights, covering crypto wars, surveillance state resistance, and EFF&apos;s evolution into a major digital rights organization.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>activism</category>
   </item>
   <item>
     <title>Ethiopia Revokes Independent Media License in Escalating Press Crackdown</title>
@@ -1036,6 +1032,16 @@
     <category>censorship-resistance</category>
     <category>surveillance</category>
     <category>payments</category>
+  </item>
+  <item>
+    <title>EFF Analysis: SAFE Act Proposes Major Section 702 Surveillance Reforms</title>
+    <link>https://libertas.fgu.tech/posts/eff-analysis-safe-act-proposes-major-section-702-surveillanc</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-analysis-safe-act-proposes-major-section-702-surveillanc</guid>
+    <pubDate>Mon, 09 Mar 2026 22:00:53 GMT</pubDate>
+    <description>The bipartisan SAFE Act would require FBI warrants for accessing Americans&apos; communications collected via Section 702, address parallel construction, and partially close data broker loopholes.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
   </item>
   <item>
     <title>Ethiopia Shutters Independent Media Outlets Ahead of National Elections</title>
