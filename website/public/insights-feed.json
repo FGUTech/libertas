@@ -136,28 +136,6 @@
       }
     },
     {
-      "id": "14885e67-4410-43ea-8156-a0202dc1ff46",
-      "url": "https://libertas.fgu.tech/posts/cameroon-police-seize-journalists-equipment-threaten-sources",
-      "title": "Cameroon Police Seize Journalists' Equipment, Threaten Sources Over US Deportation Story",
-      "summary": "Cameroonian police detained 4 journalists for 5 hours, seized phones/laptops, and threatened to 'crush' them while investigating secret US migrant deportations, raising source protection concerns.",
-      "content_text": "Four journalists detained by Cameroon judicial police while reporting on secret US deportations\n• Police seized cellphones, laptop, and other equipment - devices not yet returned\n• AP reporters Nalova Akua, Angel Ngwe, Arnold Ndal plus freelancer Randy Joe Sa'ah affected\n• Journalists threatened they would be 'crushed' and would 'disappear without a trace'\n• Police investigating 'criminal trespass' charges for reporting at deportation center\n• Lawyer concerned police will circumvent device passwords and compromise anonymous sources\n• Story covered secret deportation flights of African migrants under Trump administration\n• Demonstrates operational security risks for journalists in hostile environments",
-      "date_published": "2026-02-23T11:00:44.917Z",
-      "date_modified": "2026-02-23T11:00:45.015Z",
-      "tags": [
-        "surveillance",
-        "censorship-resistance",
-        "activism",
-        "privacy"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 88,
-        "citations": [
-          "https://cpj.org/2026/02/cameroon-police-probe-journalists-investigating-secret-us-migrant-deportations-seize-equipment/"
-        ]
-      }
-    },
-    {
       "id": "17284ee5-8434-4e2e-9885-281be6061a46",
       "url": "https://libertas.fgu.tech/posts/cbp-admits-using-online-ad-systems-for-warrantless-location-",
       "title": "CBP Admits Using Online Ad Systems for Warrantless Location Tracking",
@@ -768,28 +746,6 @@
       }
     },
     {
-      "id": "60b453a7-cbe7-4364-aa37-8e9f21d05221",
-      "url": "https://libertas.fgu.tech/posts/north-korea-escalates-tech-surveillance-and-info-controls-ta",
-      "title": "North Korea Escalates Tech Surveillance and Info Controls Targeting Youth",
-      "summary": "North Korea's 2026 Party Congress coincides with intensified crackdowns on tech-savvy youth accessing foreign media, with new laws criminalizing information access and public executions for sharing content.",
-      "content_text": "North Korea's Workers' Party Congress convenes amid escalating repression since 2021\n• Government specifically targets 'tech-savvy young people' for surveillance and punishment\n• Three new laws criminalize foreign media access, South Korean expressions, and 'non-socialist' cultural practices\n• Punishments range from forced labor to execution - witness reports 22-year-old executed for sharing foreign media in 2022\n• Kim Jong Un praised youth who sacrificed 'precious dreams' for state demands, including military deployment to Ukraine\n• Crackdowns focus on information control through schools, workplaces, and party youth organizations\n• UN reports worsening repression over past decade, with forced labor potentially constituting crimes against humanity\n• Human Rights Watch calls for ending criminal penalties for information access and independent monitoring",
-      "date_published": "2026-02-23T11:01:01.623Z",
-      "date_modified": "2026-02-23T11:01:01.745Z",
-      "tags": [
-        "censorship-resistance",
-        "surveillance",
-        "privacy",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.hrw.org/news/2026/02/20/north-korea-party-congress-set-to-bolster-repression"
-        ]
-      }
-    },
-    {
       "id": "60ff443a-c867-4498-a814-b723f17a5eee",
       "url": "https://libertas.fgu.tech/posts/access-now-launches-digital-security-webinar-series-for-civi",
       "title": "Access Now Launches Digital Security Webinar Series for Civil Society",
@@ -808,6 +764,27 @@
         "credibility_score": 95,
         "citations": [
           "https://www.accessnow.org/event/digital-security-webinars/"
+        ]
+      }
+    },
+    {
+      "id": "6379e275-abb8-4fe8-a714-3889a46ba6ab",
+      "url": "https://libertas.fgu.tech/posts/columbia-university-failed-to-protect-students-from-warrantl",
+      "title": "Columbia University Failed to Protect Students from Warrantless ICE Raids Despite Clear Policies",
+      "summary": "ICE agents repeatedly entered Columbia University housing without warrants using deception, with school security failing to enforce policies requiring judicial warrants for non-public areas.",
+      "content_text": "ICE agents arrested neuroscience student Elmina Aghayeva from Columbia housing after deceiving security by claiming to search for missing child\n• Columbia has explicit policy requiring judicial warrants for law enforcement entry to non-public school property since March 2025\n• School security and staff repeatedly failed to enforce warrant requirements despite clear policies\n• Palestinian student Mahmoud Khalil previously arrested by ICE from university housing without warrant after leading Gaza protests\n• University showed differential response - quickly mobilized resources for Aghayeva but provided no support for Palestinian students\n• Pattern shows multiple warrantless entries into university buildings over past year\n• Columbia invested more in training security to suppress student protests than protect students from federal agents",
+      "date_published": "2026-03-09T16:02:12.172Z",
+      "date_modified": "2026-03-09T16:02:12.286Z",
+      "tags": [
+        "surveillance",
+        "activism",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://theintercept.com/2026/03/08/columbia-ice-raids-warrant-khalil/"
         ]
       }
     },
@@ -1262,6 +1239,28 @@
         "credibility_score": 95,
         "citations": [
           "https://www.hrw.org/news/2026/02/26/unknown-fate-for-uyghurs-deported-from-thailand-to-china"
+        ]
+      }
+    },
+    {
+      "id": "882da34b-713c-4c5c-97bd-925485ec32c9",
+      "url": "https://libertas.fgu.tech/posts/tibet-45-detained-for-digital-communications-as-china-intens",
+      "title": "Tibet: 45 Detained for Digital Communications as China Intensifies Phone Surveillance",
+      "summary": "Chinese authorities detained 45 Tibetans in 2024-25, primarily for phone content including sharing information abroad or having Dalai Lama materials, with random phone searches as key surveillance tactic.",
+      "content_text": "45 politically motivated detentions in Tibet during 2024-25, mostly for digital communications [HRW]\n• 19 Tibetans punished for sending information abroad, sharing 'illegal' Dalai Lama content, or storing such material\n• Random phone searches used as surveillance tactic - waitress detained after search, held year without charge\n• 15 cases constitute enforced disappearances with unknown whereabouts, including three popular singers\n• Two detainees died in custody, two died shortly after release\n• Four senior religious figures detained, including operators of Tibetan language schools\n• Mass arrests followed protests against dam construction and gold mining operations\n• Almost no independent news escapes Tibet due to information controls",
+      "date_published": "2026-03-09T16:01:53.338Z",
+      "date_modified": "2026-03-09T16:01:53.426Z",
+      "tags": [
+        "surveillance",
+        "censorship-resistance",
+        "activism",
+        "comms"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://www.hrw.org/news/2026/03/09/dont-forget-tibet-on-anniversary-of-1959-lhasa-uprising"
         ]
       }
     },
@@ -2084,6 +2083,29 @@
         "credibility_score": 90,
         "citations": [
           "https://cpj.org/2026/02/cpj-calls-for-accountability-in-ukrainian-journalist-surveillance-allegations/"
+        ]
+      }
+    },
+    {
+      "id": "edd5adcd-f5a1-4c43-816d-ef4f54da506b",
+      "url": "https://libertas.fgu.tech/posts/us-treasury-acknowledges-legitimate-uses-of-crypto-mixers-in",
+      "title": "US Treasury Acknowledges Legitimate Uses of Crypto Mixers in Congressional Report",
+      "summary": "U.S. Treasury told Congress that crypto mixers serve legitimate privacy purposes, marking a significant policy shift while proposing new 'hold law' for suspicious digital assets.",
+      "content_text": "Treasury submitted 32-page report to Congress acknowledging legitimate privacy uses for crypto mixers\n• Major shift from previous stance that led to Tornado Cash sanctions in 2022\n• Report cites lawful uses including protecting personal wealth info and business payment privacy\n• Proposes 'hold law' giving financial institutions safe harbor to freeze suspicious digital assets\n• Treasury data shows $37.4B in bridge withdrawals since 2020, with $1.6B from mixing services\n• DPRK-linked actors stole $2.8B in digital assets Jan 2024-Sep 2025, heavily using mixers\n• No new restrictions recommended for non-custodial mixers; FinCEN 2023 recordkeeping rule not finalized\n• Comes after Tornado Cash sanctions lifted in March 2025 following federal appeals court ruling",
+      "date_published": "2026-03-09T16:00:44.717Z",
+      "date_modified": "2026-03-09T16:00:44.792Z",
+      "tags": [
+        "privacy",
+        "bitcoin",
+        "censorship-resistance",
+        "surveillance",
+        "payments"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 88,
+        "citations": [
+          "https://bitcoinmagazine.com/news/u-s-treasury-crypto-mixers"
         ]
       }
     },

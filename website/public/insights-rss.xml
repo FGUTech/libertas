@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Mon, 09 Mar 2026 10:01:13 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 09 Mar 2026 16:02:12 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -70,17 +70,6 @@
     <category>privacy</category>
     <category>surveillance</category>
     <category>activism</category>
-  </item>
-  <item>
-    <title>Cameroon Police Seize Journalists&apos; Equipment, Threaten Sources Over US Deportation Story</title>
-    <link>https://libertas.fgu.tech/posts/cameroon-police-seize-journalists-equipment-threaten-sources</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/cameroon-police-seize-journalists-equipment-threaten-sources</guid>
-    <pubDate>Mon, 23 Feb 2026 11:00:44 GMT</pubDate>
-    <description>Cameroonian police detained 4 journalists for 5 hours, seized phones/laptops, and threatened to &apos;crush&apos; them while investigating secret US migrant deportations, raising source protection concerns.</description>
-    <category>surveillance</category>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-    <category>privacy</category>
   </item>
   <item>
     <title>CBP Admits Using Online Ad Systems for Warrantless Location Tracking</title>
@@ -382,23 +371,22 @@
     <category>activism</category>
   </item>
   <item>
-    <title>North Korea Escalates Tech Surveillance and Info Controls Targeting Youth</title>
-    <link>https://libertas.fgu.tech/posts/north-korea-escalates-tech-surveillance-and-info-controls-ta</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/north-korea-escalates-tech-surveillance-and-info-controls-ta</guid>
-    <pubDate>Mon, 23 Feb 2026 11:01:01 GMT</pubDate>
-    <description>North Korea&apos;s 2026 Party Congress coincides with intensified crackdowns on tech-savvy youth accessing foreign media, with new laws criminalizing information access and public executions for sharing content.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>privacy</category>
-    <category>activism</category>
-  </item>
-  <item>
     <title>Access Now Launches Digital Security Webinar Series for Civil Society</title>
     <link>https://libertas.fgu.tech/posts/access-now-launches-digital-security-webinar-series-for-civi</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/access-now-launches-digital-security-webinar-series-for-civi</guid>
     <pubDate>Wed, 25 Feb 2026 05:02:01 GMT</pubDate>
     <description>Access Now&apos;s Digital Security Helpline launches &apos;Safe and Strong&apos; webinar series targeting spear-phishing threats against activists, journalists, and civil society with expert guidance from Citizen Lab and security researchers.</description>
     <category>privacy</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>censorship-resistance</category>
+  </item>
+  <item>
+    <title>Columbia University Failed to Protect Students from Warrantless ICE Raids Despite Clear Policies</title>
+    <link>https://libertas.fgu.tech/posts/columbia-university-failed-to-protect-students-from-warrantl</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/columbia-university-failed-to-protect-students-from-warrantl</guid>
+    <pubDate>Mon, 09 Mar 2026 16:02:12 GMT</pubDate>
+    <description>ICE agents repeatedly entered Columbia University housing without warrants using deception, with school security failing to enforce policies requiring judicial warrants for non-public areas.</description>
     <category>surveillance</category>
     <category>activism</category>
     <category>censorship-resistance</category>
@@ -624,6 +612,17 @@
     <category>activism</category>
     <category>sovereignty</category>
     <category>identity</category>
+  </item>
+  <item>
+    <title>Tibet: 45 Detained for Digital Communications as China Intensifies Phone Surveillance</title>
+    <link>https://libertas.fgu.tech/posts/tibet-45-detained-for-digital-communications-as-china-intens</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/tibet-45-detained-for-digital-communications-as-china-intens</guid>
+    <pubDate>Mon, 09 Mar 2026 16:01:53 GMT</pubDate>
+    <description>Chinese authorities detained 45 Tibetans in 2024-25, primarily for phone content including sharing information abroad or having Dalai Lama materials, with random phone searches as key surveillance tactic.</description>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>comms</category>
   </item>
   <item>
     <title>Vietnam Imprisons Women Activists for Digital Dissent and Rights Advocacy</title>
@@ -1025,6 +1024,18 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>US Treasury Acknowledges Legitimate Uses of Crypto Mixers in Congressional Report</title>
+    <link>https://libertas.fgu.tech/posts/us-treasury-acknowledges-legitimate-uses-of-crypto-mixers-in</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/us-treasury-acknowledges-legitimate-uses-of-crypto-mixers-in</guid>
+    <pubDate>Mon, 09 Mar 2026 16:00:44 GMT</pubDate>
+    <description>U.S. Treasury told Congress that crypto mixers serve legitimate privacy purposes, marking a significant policy shift while proposing new &apos;hold law&apos; for suspicious digital assets.</description>
+    <category>privacy</category>
+    <category>bitcoin</category>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>payments</category>
   </item>
   <item>
     <title>Ethiopia Shutters Independent Media Outlets Ahead of National Elections</title>
