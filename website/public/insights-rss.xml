@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Tue, 10 Mar 2026 04:01:35 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 10 Mar 2026 10:02:42 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -304,18 +304,6 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
-  </item>
-  <item>
-    <title>Thai Court Sentences 4 Free Speech Activists to 32 Months for Royal Criticism</title>
-    <link>https://libertas.fgu.tech/posts/thai-court-sentences-4-free-speech-activists-to-32-months-fo</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/thai-court-sentences-4-free-speech-activists-to-32-months-fo</guid>
-    <pubDate>Tue, 24 Feb 2026 05:01:35 GMT</pubDate>
-    <description>Thai activists including Pimsiri Petchnamrob received 32-month prison sentences for criticizing the monarchy under lese majeste laws, highlighting severe censorship repression in Thailand.</description>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>censorship-resistance</category>
-    <category>comms</category>
-    <category>privacy</category>
   </item>
   <item>
     <title>Cambodia Sentences Two Journalists to 14 Years for Border Conflict Photography</title>
@@ -758,6 +746,16 @@
     <category>surveillance</category>
   </item>
   <item>
+    <title>Access Now Submits Legal Challenge to Kazakhstan Court Over 2022 Internet Shutdowns</title>
+    <link>https://libertas.fgu.tech/posts/access-now-submits-legal-challenge-to-kazakhstan-court-over-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/access-now-submits-legal-challenge-to-kazakhstan-court-over-</guid>
+    <pubDate>Tue, 10 Mar 2026 10:01:47 GMT</pubDate>
+    <description>Digital rights organization Access Now has filed a submission to Kazakhstan&apos;s Constitutional Court challenging the legality of internet shutdowns that occurred in 2022.</description>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>surveillance</category>
+  </item>
+  <item>
     <title>OpenAI Wins Pentagon Contract After Anthropic Exit, Won&apos;t Release Surveillance Terms</title>
     <link>https://libertas.fgu.tech/posts/openai-wins-pentagon-contract-after-anthropic-exit-won-t-rel</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/openai-wins-pentagon-contract-after-anthropic-exit-won-t-rel</guid>
@@ -917,6 +915,15 @@
     <category>comms</category>
   </item>
   <item>
+    <title>Netherlands Considers Jailbreaking F-35 Jets to Break US Software Dependency</title>
+    <link>https://libertas.fgu.tech/posts/netherlands-considers-jailbreaking-f-35-jets-to-break-us-sof</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/netherlands-considers-jailbreaking-f-35-jets-to-break-us-sof</guid>
+    <pubDate>Tue, 10 Mar 2026 10:02:00 GMT</pubDate>
+    <description>Dutch Defense Secretary said he could jailbreak F-35 fighter jets to accept third-party software, highlighting growing concerns about US technological dependencies.</description>
+    <category>sovereignty</category>
+    <category>censorship-resistance</category>
+  </item>
+  <item>
     <title>Angola&apos;s Parliament Passes Restrictive NGO Bill Threatening Civil Society Operations</title>
     <link>https://libertas.fgu.tech/posts/angola-s-parliament-passes-restrictive-ngo-bill-threatening-</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/angola-s-parliament-passes-restrictive-ngo-bill-threatening-</guid>
@@ -978,6 +985,17 @@
     <category>activism</category>
     <category>censorship-resistance</category>
     <category>comms</category>
+  </item>
+  <item>
+    <title>Zimbabwe Escalates Crackdown on Opposition to Presidential Term Extension</title>
+    <link>https://libertas.fgu.tech/posts/zimbabwe-escalates-crackdown-on-opposition-to-presidential-t</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/zimbabwe-escalates-crackdown-on-opposition-to-presidential-t</guid>
+    <pubDate>Tue, 10 Mar 2026 10:02:42 GMT</pubDate>
+    <description>Zimbabwean authorities are using violence, intimidation, and surveillance against civil society groups opposing a constitutional amendment that would extend President Mnangagwa&apos;s rule until 2030.</description>
+    <category>activism</category>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>sovereignty</category>
   </item>
   <item>
     <title>Florida Bill Creates State Spy Unit to &apos;Neutralize&apos; Those with Threatening &apos;Views or Opinions&apos;</title>
