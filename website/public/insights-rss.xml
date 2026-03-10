@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Tue, 10 Mar 2026 16:03:45 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 10 Mar 2026 22:02:47 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -283,17 +283,6 @@
     <category>privacy</category>
     <category>surveillance</category>
     <category>activism</category>
-  </item>
-  <item>
-    <title>Israel Blocks 37 Aid Groups Over Staff Data Requirements, Citing Security</title>
-    <link>https://libertas.fgu.tech/posts/israel-blocks-37-aid-groups-over-staff-data-requirements-cit</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/israel-blocks-37-aid-groups-over-staff-data-requirements-cit</guid>
-    <pubDate>Tue, 24 Feb 2026 17:02:05 GMT</pubDate>
-    <description>Israeli authorities are barring 37 international NGOs from Gaza/West Bank operations after they refused new registration requirements demanding staff lists and biodata, citing violations of humanitarian neutrality principles.</description>
-    <category>surveillance</category>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-    <category>sovereignty</category>
   </item>
   <item>
     <title>BIP-360 Proposes Quantum Defense Upgrades for Bitcoin</title>
@@ -705,6 +694,17 @@
     <category>privacy</category>
   </item>
   <item>
+    <title>Anthropic Sues Pentagon Over AI Surveillance Mandate, EFF Backs First Amendment Defense</title>
+    <link>https://libertas.fgu.tech/posts/anthropic-sues-pentagon-over-ai-surveillance-mandate-eff-bac</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/anthropic-sues-pentagon-over-ai-surveillance-mandate-eff-bac</guid>
+    <pubDate>Tue, 10 Mar 2026 22:01:15 GMT</pubDate>
+    <description>Anthropic is challenging the Pentagon&apos;s designation of the company as a &apos;supply chain risk&apos; after refusing to remove AI guardrails for government surveillance, with EFF arguing this violates First Amendment protections.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+  </item>
+  <item>
     <title>Nawat Language Wikipedia Launches After 16-Year Journey to Digital Sovereignty</title>
     <link>https://libertas.fgu.tech/posts/nawat-language-wikipedia-launches-after-16-year-journey-to-d</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/nawat-language-wikipedia-launches-after-16-year-journey-to-d</guid>
@@ -794,6 +794,16 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Proton Launches Lumo: Private AI Alternative After ChatGPT Surveillance Concerns</title>
+    <link>https://libertas.fgu.tech/posts/proton-launches-lumo-private-ai-alternative-after-chatgpt-su</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/proton-launches-lumo-private-ai-alternative-after-chatgpt-su</guid>
+    <pubDate>Tue, 10 Mar 2026 22:02:47 GMT</pubDate>
+    <description>Proton released Lumo, a privacy-focused AI assistant with end-to-end encryption and no data logging, following reports that 4M users pledged to leave ChatGPT over government surveillance partnerships.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
   </item>
   <item>
     <title>DHS Deploys Surveillance Tech Against Activists While Expanding Election Authority</title>
@@ -892,17 +902,6 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>comms</category>
-  </item>
-  <item>
-    <title>Bruce Schneier: AI Arms Races Threaten Democratic Participation and Concentrate Power in Big Tech</title>
-    <link>https://libertas.fgu.tech/posts/bruce-schneier-ai-arms-races-threaten-democratic-participati</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/bruce-schneier-ai-arms-races-threaten-democratic-participati</guid>
-    <pubDate>Tue, 24 Feb 2026 17:01:43 GMT</pubDate>
-    <description>Security expert Bruce Schneier warns that AI is creating adversarial arms races across domains like government-citizen interactions, benefiting Big Tech monopolies while potentially undermining authentic democratic participation.</description>
-    <category>surveillance</category>
-    <category>censorship-resistance</category>
-    <category>sovereignty</category>
-    <category>activism</category>
   </item>
   <item>
     <title>EFF Executive Director Cindy Cohn Releases Memoir on 30-Year Digital Privacy Fight</title>
@@ -1145,6 +1144,15 @@
     <category>identity</category>
     <category>surveillance</category>
     <category>censorship-resistance</category>
+  </item>
+  <item>
+    <title>EFF Warns Against Meta Smart Glasses Over Privacy and Surveillance Concerns</title>
+    <link>https://libertas.fgu.tech/posts/eff-warns-against-meta-smart-glasses-over-privacy-and-survei</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-warns-against-meta-smart-glasses-over-privacy-and-survei</guid>
+    <pubDate>Tue, 10 Mar 2026 22:01:15 GMT</pubDate>
+    <description>EFF raises alarm about Meta&apos;s Ray-Ban smart glasses, highlighting that footage is reviewed by human contractors, used for AI training, and enables covert surveillance of bystanders.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
   </item>
 </channel>
 </rss>

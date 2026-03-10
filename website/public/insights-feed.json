@@ -571,28 +571,6 @@
       }
     },
     {
-      "id": "447a5c40-3f97-438c-81ec-7ea402ac98fa",
-      "url": "https://libertas.fgu.tech/posts/israel-blocks-37-aid-groups-over-staff-data-requirements-cit",
-      "title": "Israel Blocks 37 Aid Groups Over Staff Data Requirements, Citing Security",
-      "summary": "Israeli authorities are barring 37 international NGOs from Gaza/West Bank operations after they refused new registration requirements demanding staff lists and biodata, citing violations of humanitarian neutrality principles.",
-      "content_text": "37 international NGOs face operational ban starting March 1, 2026 for refusing new Israeli registration requirements\n• Government Resolution No. 2542 mandates organizations provide complete staff lists and personal biodata to Ministry of Diaspora Affairs\n• Aid groups including Oxfam, MSF, Save the Children refuse citing humanitarian neutrality principles and data protection obligations\n• Organizations argue requirements create surveillance mechanism and compromise staff safety in conflict zone\n• Ban affects groups running 60% of field hospitals and all child malnutrition centers in Gaza\n• Law gives Israeli government broad power to deny registration for 'public safety or state security' risks\n• Only 27 organizations have completed approved registration under new requirements\n• UN estimates closure would immediately shut one-third of remaining health facilities in Gaza",
-      "date_published": "2026-02-24T17:02:05.542Z",
-      "date_modified": "2026-02-24T17:02:05.720Z",
-      "tags": [
-        "surveillance",
-        "censorship-resistance",
-        "activism",
-        "sovereignty"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 72,
-        "credibility_score": 88,
-        "citations": [
-          "https://www.hrw.org/news/2026/02/24/israel-aid-groups-barred-from-gaza-west-bank"
-        ]
-      }
-    },
-    {
       "id": "4b90f03e-7bc9-4c0a-a3b7-0f94e75a350f",
       "url": "https://libertas.fgu.tech/posts/bip-360-proposes-quantum-defense-upgrades-for-bitcoin",
       "title": "BIP-360 Proposes Quantum Defense Upgrades for Bitcoin",
@@ -1434,6 +1412,28 @@
       }
     },
     {
+      "id": "a065f5dc-5d88-4145-969e-5c6e8856d57b",
+      "url": "https://libertas.fgu.tech/posts/anthropic-sues-pentagon-over-ai-surveillance-mandate-eff-bac",
+      "title": "Anthropic Sues Pentagon Over AI Surveillance Mandate, EFF Backs First Amendment Defense",
+      "summary": "Anthropic is challenging the Pentagon's designation of the company as a 'supply chain risk' after refusing to remove AI guardrails for government surveillance, with EFF arguing this violates First Amendment protections.",
+      "content_text": "Pentagon designated Anthropic as 'supply chain risk' after company refused to enable AI surveillance of Americans\n• Anthropic filed lawsuit arguing government cannot compel rewriting of code under First Amendment protections\n• EFF and other civil liberties groups filed amicus brief supporting Anthropic's constitutional challenge\n• DoD reportedly acquires vast personal data including location, social media, and browsing information from commercial sources\n• AI can rapidly analyze government datasets to infer sensitive details like religious beliefs, political opinions, and associations\n• Research shows surveillance creates chilling effects on dissent and anonymous speech online\n• Case represents corporate resistance to government surveillance demands with potential retaliation consequences\n• EFF argues companies must be allowed to maintain privacy guardrails absent Congressional action on surveillance reform",
+      "date_published": "2026-03-10T22:01:15.410Z",
+      "date_modified": "2026-03-10T22:01:15.483Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "censorship-resistance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 88,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/03/government-must-not-force-companies-participate-ai-powered-surveillance"
+        ]
+      }
+    },
+    {
       "id": "a2bb1ccc-f66c-4464-96f1-8f743010849e",
       "url": "https://libertas.fgu.tech/posts/nawat-language-wikipedia-launches-after-16-year-journey-to-d",
       "title": "Nawat Language Wikipedia Launches After 16-Year Journey to Digital Sovereignty",
@@ -1620,6 +1620,28 @@
         "credibility_score": 88,
         "citations": [
           "https://theintercept.com/2026/03/08/openai-anthropic-military-contract-ethics-surveillance/"
+        ]
+      }
+    },
+    {
+      "id": "b1ebdfbc-97b7-4cbe-bd39-0a6e86d73c88",
+      "url": "https://libertas.fgu.tech/posts/proton-launches-lumo-private-ai-alternative-after-chatgpt-su",
+      "title": "Proton Launches Lumo: Private AI Alternative After ChatGPT Surveillance Concerns",
+      "summary": "Proton released Lumo, a privacy-focused AI assistant with end-to-end encryption and no data logging, following reports that 4M users pledged to leave ChatGPT over government surveillance partnerships.",
+      "content_text": "Over 4 million users reportedly pledged to leave ChatGPT after controversial US government partnership raised surveillance fears\n• Proton launched Lumo as private alternative with bidirectional asymmetric encryption for all conversations\n• Lumo uses zero-access encrypted chat history - only user can access their data\n• User conversations never used for AI training, unlike mainstream AI tools\n• Hosted on European servers under EU jurisdiction, protecting from US warrantless surveillance\n• Built on open-source models with transparent, auditable code\n• No third-party data sharing, ads, or behavioral profiling - subscription-funded model",
+      "date_published": "2026-03-10T22:02:47.267Z",
+      "date_modified": "2026-03-10T22:02:47.392Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 72,
+        "credibility_score": 85,
+        "citations": [
+          "https://proton.me/blog/chatgpt-alternative",
+          "https://quitgpt.org/"
         ]
       }
     },
@@ -1817,28 +1839,6 @@
         "credibility_score": 95,
         "citations": [
           "https://cpj.org/2026/03/press-freedom-violations-in-the-middle-east-during-the-iran-war/"
-        ]
-      }
-    },
-    {
-      "id": "c54c5717-2029-4fa0-b18e-b984c062e05b",
-      "url": "https://libertas.fgu.tech/posts/bruce-schneier-ai-arms-races-threaten-democratic-participati",
-      "title": "Bruce Schneier: AI Arms Races Threaten Democratic Participation and Concentrate Power in Big Tech",
-      "summary": "Security expert Bruce Schneier warns that AI is creating adversarial arms races across domains like government-citizen interactions, benefiting Big Tech monopolies while potentially undermining authentic democratic participation.",
-      "content_text": "Schneier identifies AI-driven arms races across multiple domains: academia, legal systems, open source development, and democratic processes\n• Government-citizen interactions increasingly involve AI on both sides - constituents using AI to generate comments, agencies using AI to process them\n• 2017 FCC comment fraud exemplifies early version: broadband providers and activists both used bots to flood regulatory feedback\n• One-fifth of Consumer Financial Protection Bureau submissions reportedly AI-generated by 2025\n• US Congress staff using AI for constituent correspondence; politicians automating fundraising and outreach\n• Primary beneficiaries are Big Tech corporations extracting trillions from AI infrastructure and model development\n• Schneier advocates dual strategy: use AI for community advantage while resisting corporate power concentration\n• Suggests antitrust regulation, human rights protections, and public AI alternatives as resistance tools",
-      "date_published": "2026-02-24T17:01:43.634Z",
-      "date_modified": "2026-02-24T17:01:43.727Z",
-      "tags": [
-        "surveillance",
-        "censorship-resistance",
-        "sovereignty",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 90,
-        "citations": [
-          "https://www.schneier.com/blog/archives/2026/02/is-ai-good-for-democracy.html"
         ]
       }
     },
@@ -2335,6 +2335,26 @@
         "credibility_score": 95,
         "citations": [
           "https://blog.cryptographyengineering.com/2026/03/02/anonymous-credentials-an-illustrated-primer/"
+        ]
+      }
+    },
+    {
+      "id": "fe9457fb-3f13-419c-bccd-17decbf47f0a",
+      "url": "https://libertas.fgu.tech/posts/eff-warns-against-meta-smart-glasses-over-privacy-and-survei",
+      "title": "EFF Warns Against Meta Smart Glasses Over Privacy and Surveillance Concerns",
+      "summary": "EFF raises alarm about Meta's Ray-Ban smart glasses, highlighting that footage is reviewed by human contractors, used for AI training, and enables covert surveillance of bystanders.",
+      "content_text": "Meta's Ray-Ban smart glasses automatically upload footage to Meta AI app by default\n• Human contractors review and annotate sensitive footage including nudity and bathroom visits for AI training\n• Glasses designed to look like regular eyewear, making recording nearly invisible to bystanders\n• Small recording indicator light can be disabled with cheap hardware hacks\n• Audio conversations with Meta AI are saved by default and must be manually deleted\n• Footage may also reach Apple/Google servers via phone storage, potentially accessible to law enforcement\n• Google partnering with Warby Parker and Apple reportedly developing competing products\n• EFF warns constant recording creates new privacy risks beyond traditional phone cameras",
+      "date_published": "2026-03-10T22:01:15.410Z",
+      "date_modified": "2026-03-10T22:01:15.483Z",
+      "tags": [
+        "privacy",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 72,
+        "credibility_score": 88,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/03/think-twice-buying-or-using-metas-ray-bans"
         ]
       }
     }
