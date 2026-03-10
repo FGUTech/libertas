@@ -593,6 +593,28 @@
       }
     },
     {
+      "id": "4b90f03e-7bc9-4c0a-a3b7-0f94e75a350f",
+      "url": "https://libertas.fgu.tech/posts/bip-360-proposes-quantum-defense-upgrades-for-bitcoin",
+      "title": "BIP-360 Proposes Quantum Defense Upgrades for Bitcoin",
+      "summary": "BIP-360 introduces quantum resistance improvements to Bitcoin's security model, though it falls short of providing complete post-quantum protection.",
+      "content_text": "BIP-360 proposes quantum defense strategy for Bitcoin protocol\n• Upgrade aims to improve Bitcoin's resistance to quantum computing attacks\n• Proposal does not provide full post-quantum security guarantees\n• Changes would affect Bitcoin's cryptographic foundations\n• Initiative addresses long-term threat to sound money infrastructure\n• Implementation timeline and adoption requirements unclear from current information",
+      "date_published": "2026-03-10T16:01:57.258Z",
+      "date_modified": "2026-03-10T16:01:57.310Z",
+      "tags": [
+        "bitcoin",
+        "sovereignty",
+        "payments"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 85,
+        "citations": [
+          "https://cointelegraph.com/news/bitcoin-s-quantum-upgrade-path-what-bip-360-changes-and-what-it-does-not?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+          "https://cointelegraph.com/news/republican-opposition-cbdc-housing-affordability-bill?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+        ]
+      }
+    },
+    {
       "id": "51ad20f7-03b1-4e70-a05b-38bb6ad4382c",
       "url": "https://libertas.fgu.tech/posts/greek-court-convicts-spyware-executives-in-landmark-predator",
       "title": "Greek Court Convicts Spyware Executives in Landmark Predatorgate Ruling",
@@ -610,6 +632,27 @@
         "credibility_score": 95,
         "citations": [
           "https://www.hrw.org/news/2026/03/02/greek-court-finds-spyware-executives-guilty"
+        ]
+      }
+    },
+    {
+      "id": "58abbc03-664d-4b36-aa96-9578b9e026aa",
+      "url": "https://libertas.fgu.tech/posts/anonymous-credentials-privacy-preserving-authentication-for-",
+      "title": "Anonymous Credentials: Privacy-Preserving Authentication for Age Verification Era",
+      "summary": "Matthew Green explores anonymous credentials as a solution to maintain privacy while complying with new age verification laws across 25 US states and multiple countries that threaten to create citizen-level online surveillance.",
+      "content_text": "Age verification laws in 25 US states and dozen+ countries now require ID checks for 'inappropriate' content\n• Major platforms (Facebook, BlueSky, X, Discord, Wikipedia) implementing identity verification systems\n• Current trajectory creates government ID-linked transcript of all online activity\n• David Chaum's 1980s anonymous credentials concept offers technical solution\n• System allows proving eligibility (age, authorization) without revealing specific identity\n• Works like club wristband: show ID once at door, use anonymous token at bar\n• Breaks linkage between credential issuance and usage to preserve privacy\n• Critical for preventing advertising-driven retention of real identity data",
+      "date_published": "2026-03-10T16:03:30.140Z",
+      "date_modified": "2026-03-10T16:03:30.246Z",
+      "tags": [
+        "privacy",
+        "identity",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://blog.cryptographyengineering.com/2026/03/02/anonymous-credentials-an-illustrated-primer/"
         ]
       }
     },
@@ -1061,6 +1104,27 @@
         "credibility_score": 95,
         "citations": [
           "https://cpj.org/2026/03/taliban-shut-down-and-seize-rah-e-farda-tv-station-in-afghanistan/"
+        ]
+      }
+    },
+    {
+      "id": "8034006e-d039-4dfe-818c-c9cb3089b1bf",
+      "url": "https://libertas.fgu.tech/posts/ice-detains-journalist-reporting-on-immigration-enforcement",
+      "title": "ICE Detains Journalist Reporting on Immigration Enforcement",
+      "summary": "ICE detained Colombian journalist Estefany Rodríguez who covered immigration enforcement for Nashville Notícias, with legal team claiming retaliation for her reporting.",
+      "content_text": "ICE detained journalist Estefany Rodríguez on March 4 in Nashville without initial warrant\n• Rodríguez covered ICE activities for Nashville Notícias, legal team claims detention is retaliation\n• Journalist fled Colombia in 2021 after death threats, has pending asylum case and work authorization\n• 40+ press freedom organizations demand her release from ICE custody\n• Part of documented pattern of press suppression under second Trump administration\n• Similar case: journalist Mario Guevara was deported to El Salvador despite legal status\n• Habeas corpus hearing scheduled for March 17\n• Demonstrates escalating government pressure on immigration reporting",
+      "date_published": "2026-03-10T16:02:53.624Z",
+      "date_modified": "2026-03-10T16:02:53.738Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 90,
+        "citations": [
+          "https://cpj.org/2026/03/cpj-free-press-lead-call-for-journalist-estefany-rodriguezs-release-from-ice-detention/"
         ]
       }
     },
@@ -1692,27 +1756,6 @@
       }
     },
     {
-      "id": "bfc11daa-a7de-4e39-8748-899ca7c46c47",
-      "url": "https://libertas.fgu.tech/posts/reports-binance-investigators-found-crypto-flows-to-iran-com",
-      "title": "Reports: Binance Investigators Found Crypto Flows to Iran, Company Denies Firings",
-      "summary": "Unverified reports claim Binance internal investigators discovered substantial crypto flows to Iran through user accounts, though Binance denies firing investigators over the findings.",
-      "content_text": "Unverified reports allege Binance investigators found significant crypto flows to Iran\n• Flows reportedly occurred through regular Binance user accounts\n• Binance has denied firing internal investigators related to these findings\n• Iran faces extensive financial sanctions from US and other jurisdictions\n• Crypto exchanges face regulatory pressure to enforce sanctions compliance\n• Limited details available on scale, timeframe, or verification of alleged flows\n• Story highlights ongoing tension between crypto accessibility and sanctions enforcement",
-      "date_published": "2026-02-24T11:00:19.575Z",
-      "date_modified": "2026-02-24T11:00:19.636Z",
-      "tags": [
-        "payments",
-        "sovereignty"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 75,
-        "credibility_score": 85,
-        "citations": [
-          "https://www.theblock.co/post/390952/binance-denies-firing-investigators",
-          "https://www.theblock.co/post/390970/fed-bank-supervision-debanking?utm_source=rss&amp;utm_medium=rss"
-        ]
-      }
-    },
-    {
       "id": "c00741b5-98c5-49fc-a55a-4c7704c9467b",
       "url": "https://libertas.fgu.tech/posts/lao-government-critic-found-dead-after-arrest-highlighting-d",
       "title": "Lao Government Critic Found Dead After Arrest, Highlighting Digital Activist Risks",
@@ -1752,6 +1795,28 @@
         "credibility_score": 95,
         "citations": [
           "https://www-prod.int.eff.org/press/releases/eff-supreme-court-shut-down-unconstitutional-geofence-searches"
+        ]
+      }
+    },
+    {
+      "id": "c3bfd38c-a10f-401f-bbf3-aaad866199fc",
+      "url": "https://libertas.fgu.tech/posts/iran-war-triggers-massive-internet-blackout-systematic-media",
+      "title": "Iran War Triggers Massive Internet Blackout, Systematic Media Suppression Across Middle East",
+      "summary": "Iran imposed near-total internet blackout (down to 1% connectivity) as war began, while multiple states targeted journalists, bombed media facilities, and restricted press coverage across the region.",
+      "content_text": "Iran shut down nationwide internet to 1% of normal levels after U.S.-Israel strikes killed Supreme Leader Khamenei\n• Committee to Protect Journalists documented 2 killed, 8 media outlets bombed, 7 journalists detained in first week\n• Only government-linked media retained limited access through Iran's restricted 'white internet'\n• Israeli forces targeted multiple media facilities including Iranian state broadcaster IRIB and Lebanese outlets\n• Multiple countries imposed reporting restrictions: Jordan, Saudi Arabia, Kuwait banned coverage of military operations\n• UAE blocked press X accounts; Qatar banned photographing incident sites\n• Israeli authorities confiscated equipment, accessed journalists' phones without consent during detentions\n• At least 15 journalists remain imprisoned in Iran's Evin Prison amid IDF evacuation orders for the area",
+      "date_published": "2026-03-10T16:02:53.624Z",
+      "date_modified": "2026-03-10T16:02:53.738Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "comms"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://cpj.org/2026/03/press-freedom-violations-in-the-middle-east-during-the-iran-war/"
         ]
       }
     },
@@ -1922,6 +1987,28 @@
         "credibility_score": 85,
         "citations": [
           "https://www.wired.com/story/coruna-iphone-hacking-toolkit-us-government/"
+        ]
+      }
+    },
+    {
+      "id": "e1ddb384-93e6-41cd-87ce-cf68e24ea1e9",
+      "url": "https://libertas.fgu.tech/posts/far-right-think-tank-helped-craft-doj-antifa-terror-indictme",
+      "title": "Far-Right Think Tank Helped Craft DOJ Antifa Terror Indictment Against ICE Protesters",
+      "summary": "Researcher from Islamophobic think tank provided language for first-ever domestic terrorism case against alleged antifa cell, citing Signal use and security practices as evidence.",
+      "content_text": "Kyle Shideler from Center for Security Policy helped DOJ craft terror indictment against Texas ICE protesters\n• First domestic terrorism case against purported antifa cell involves 9 defendants facing life sentences\n• Charges stem from July 4 protest at Prairieland ICE detention center where officer was shot\n• Shideler testified Signal messaging, black bloc clothing, and security culture are 'antifa hallmarks'\n• Center for Security Policy founded by Frank Gaffney, labeled hate group by SPLC for Islamophobic views\n• Defense highlighted Shideler lacks academic credentials, doesn't use peer review or social science methods\n• Prosecutors using privacy tools and operational security as evidence of extremist activity\n• Case demonstrates concerning cooperation between federal prosecutors and far-right advocacy groups",
+      "date_published": "2026-03-10T16:03:45.266Z",
+      "date_modified": "2026-03-10T16:03:45.385Z",
+      "tags": [
+        "surveillance",
+        "activism",
+        "privacy",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://theintercept.com/2026/03/09/prairieland-antifa-ice-protest-frank-gaffney-islamophobic/"
         ]
       }
     },

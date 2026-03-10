@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Tue, 10 Mar 2026 10:02:42 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 10 Mar 2026 16:03:45 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -296,6 +296,16 @@
     <category>sovereignty</category>
   </item>
   <item>
+    <title>BIP-360 Proposes Quantum Defense Upgrades for Bitcoin</title>
+    <link>https://libertas.fgu.tech/posts/bip-360-proposes-quantum-defense-upgrades-for-bitcoin</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/bip-360-proposes-quantum-defense-upgrades-for-bitcoin</guid>
+    <pubDate>Tue, 10 Mar 2026 16:01:57 GMT</pubDate>
+    <description>BIP-360 introduces quantum resistance improvements to Bitcoin&apos;s security model, though it falls short of providing complete post-quantum protection.</description>
+    <category>bitcoin</category>
+    <category>sovereignty</category>
+    <category>payments</category>
+  </item>
+  <item>
     <title>Greek Court Convicts Spyware Executives in Landmark Predatorgate Ruling</title>
     <link>https://libertas.fgu.tech/posts/greek-court-convicts-spyware-executives-in-landmark-predator</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/greek-court-convicts-spyware-executives-in-landmark-predator</guid>
@@ -304,6 +314,16 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Anonymous Credentials: Privacy-Preserving Authentication for Age Verification Era</title>
+    <link>https://libertas.fgu.tech/posts/anonymous-credentials-privacy-preserving-authentication-for-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/anonymous-credentials-privacy-preserving-authentication-for-</guid>
+    <pubDate>Tue, 10 Mar 2026 16:03:30 GMT</pubDate>
+    <description>Matthew Green explores anonymous credentials as a solution to maintain privacy while complying with new age verification laws across 25 US states and multiple countries that threaten to create citizen-level online surveillance.</description>
+    <category>privacy</category>
+    <category>identity</category>
+    <category>surveillance</category>
   </item>
   <item>
     <title>Cambodia Sentences Two Journalists to 14 Years for Border Conflict Photography</title>
@@ -520,6 +540,16 @@
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/taliban-seizes-private-tv-station-continues-media-crackdown-</guid>
     <pubDate>Mon, 09 Mar 2026 10:01:13 GMT</pubDate>
     <description>Taliban intelligence raided and shut down Rah-e-Farda TV in Kabul, seizing assets and expelling staff, continuing systematic suppression of independent media in Afghanistan.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+  </item>
+  <item>
+    <title>ICE Detains Journalist Reporting on Immigration Enforcement</title>
+    <link>https://libertas.fgu.tech/posts/ice-detains-journalist-reporting-on-immigration-enforcement</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/ice-detains-journalist-reporting-on-immigration-enforcement</guid>
+    <pubDate>Tue, 10 Mar 2026 16:02:53 GMT</pubDate>
+    <description>ICE detained Colombian journalist Estefany Rodríguez who covered immigration enforcement for Nashville Notícias, with legal team claiming retaliation for her reporting.</description>
     <category>censorship-resistance</category>
     <category>surveillance</category>
     <category>activism</category>
@@ -832,15 +862,6 @@
     <category>activism</category>
   </item>
   <item>
-    <title>Reports: Binance Investigators Found Crypto Flows to Iran, Company Denies Firings</title>
-    <link>https://libertas.fgu.tech/posts/reports-binance-investigators-found-crypto-flows-to-iran-com</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/reports-binance-investigators-found-crypto-flows-to-iran-com</guid>
-    <pubDate>Tue, 24 Feb 2026 11:00:19 GMT</pubDate>
-    <description>Unverified reports claim Binance internal investigators discovered substantial crypto flows to Iran through user accounts, though Binance denies firing investigators over the findings.</description>
-    <category>payments</category>
-    <category>sovereignty</category>
-  </item>
-  <item>
     <title>Lao Government Critic Found Dead After Arrest, Highlighting Digital Activist Risks</title>
     <link>https://libertas.fgu.tech/posts/lao-government-critic-found-dead-after-arrest-highlighting-d</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/lao-government-critic-found-dead-after-arrest-highlighting-d</guid>
@@ -860,6 +881,17 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Iran War Triggers Massive Internet Blackout, Systematic Media Suppression Across Middle East</title>
+    <link>https://libertas.fgu.tech/posts/iran-war-triggers-massive-internet-blackout-systematic-media</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/iran-war-triggers-massive-internet-blackout-systematic-media</guid>
+    <pubDate>Tue, 10 Mar 2026 16:02:53 GMT</pubDate>
+    <description>Iran imposed near-total internet blackout (down to 1% connectivity) as war began, while multiple states targeted journalists, bombed media facilities, and restricted press coverage across the region.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>comms</category>
   </item>
   <item>
     <title>Bruce Schneier: AI Arms Races Threaten Democratic Participation and Concentrate Power in Big Tech</title>
@@ -942,6 +974,17 @@
     <description>A highly advanced iPhone exploitation toolkit, likely developed for the US government, has reportedly infected tens of thousands of devices in a mass surveillance operation.</description>
     <category>surveillance</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>Far-Right Think Tank Helped Craft DOJ Antifa Terror Indictment Against ICE Protesters</title>
+    <link>https://libertas.fgu.tech/posts/far-right-think-tank-helped-craft-doj-antifa-terror-indictme</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/far-right-think-tank-helped-craft-doj-antifa-terror-indictme</guid>
+    <pubDate>Tue, 10 Mar 2026 16:03:45 GMT</pubDate>
+    <description>Researcher from Islamophobic think tank provided language for first-ever domestic terrorism case against alleged antifa cell, citing Signal use and security practices as evidence.</description>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>privacy</category>
+    <category>censorship-resistance</category>
   </item>
   <item>
     <title>EFF Executive Director Releases Privacy Rights Memoir &apos;Privacy&apos;s Defender&apos;</title>
