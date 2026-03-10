@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Mon, 09 Mar 2026 22:00:53 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 10 Mar 2026 04:01:35 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -135,17 +135,6 @@
     <category>privacy</category>
   </item>
   <item>
-    <title>UN Rules Pakistani Human Rights Defender&apos;s Detention Violates International Law</title>
-    <link>https://libertas.fgu.tech/posts/un-rules-pakistani-human-rights-defender-s-detention-violate</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/un-rules-pakistani-human-rights-defender-s-detention-violate</guid>
-    <pubDate>Mon, 23 Feb 2026 23:01:49 GMT</pubDate>
-    <description>UN Working Group found Pakistan&apos;s imprisonment of Pashtun human rights defender Idris Khattak unlawful, calling for immediate release after 5+ years detention for documenting enforced disappearances.</description>
-    <category>activism</category>
-    <category>surveillance</category>
-    <category>censorship-resistance</category>
-    <category>sovereignty</category>
-  </item>
-  <item>
     <title>Israel Bans Five Palestinian News Outlets as &apos;Terrorist Organizations&apos;</title>
     <link>https://libertas.fgu.tech/posts/israel-bans-five-palestinian-news-outlets-as-terrorist-organ</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/israel-bans-five-palestinian-news-outlets-as-terrorist-organ</guid>
@@ -198,17 +187,6 @@
     <category>censorship-resistance</category>
     <category>activism</category>
     <category>surveillance</category>
-  </item>
-  <item>
-    <title>17 Orgs Fight FTC&apos;s Retaliatory Investigation Into Media Matters</title>
-    <link>https://libertas.fgu.tech/posts/17-orgs-fight-ftc-s-retaliatory-investigation-into-media-mat</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/17-orgs-fight-ftc-s-retaliatory-investigation-into-media-mat</guid>
-    <pubDate>Mon, 23 Feb 2026 23:02:17 GMT</pubDate>
-    <description>Coalition led by The Intercept filed amicus brief to stop FTC&apos;s allegedly retaliatory investigation into Media Matters after they published critical Trump administration coverage.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>privacy</category>
   </item>
   <item>
     <title>Austrian Interior Ministry Deploys €900K Mass Surveillance Tool Used by ICE</title>
@@ -433,17 +411,6 @@
     <category>censorship-resistance</category>
     <category>activism</category>
     <category>identity</category>
-  </item>
-  <item>
-    <title>Pakistan Jails Human Rights Lawyers 17 Years for Tweets Criticizing Military</title>
-    <link>https://libertas.fgu.tech/posts/pakistan-jails-human-rights-lawyers-17-years-for-tweets-crit</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/pakistan-jails-human-rights-lawyers-17-years-for-tweets-crit</guid>
-    <pubDate>Mon, 23 Feb 2026 23:02:45 GMT</pubDate>
-    <description>Pakistan sentenced two human rights lawyers to 17 years in prison for tweets criticizing military abuses in Balochistan, using cybercrime laws to prosecute digital dissent.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>privacy</category>
   </item>
   <item>
     <title>Pentagon Rejects AI Ethics Constraints, Enables Autonomous Weapons Development</title>
@@ -1002,6 +969,17 @@
     <category>sovereignty</category>
   </item>
   <item>
+    <title>Gov&apos;t Uses Privacy Tools as Evidence in First Domestic Terror Case Against Antifa Cell</title>
+    <link>https://libertas.fgu.tech/posts/gov-t-uses-privacy-tools-as-evidence-in-first-domestic-terro</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/gov-t-uses-privacy-tools-as-evidence-in-first-domestic-terro</guid>
+    <pubDate>Tue, 10 Mar 2026 04:01:35 GMT</pubDate>
+    <description>Federal prosecutors worked with far-right think tank researcher to craft terror charges against Texas activists, citing use of Signal and security practices as evidence of antifa membership.</description>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>censorship-resistance</category>
+    <category>comms</category>
+  </item>
+  <item>
     <title>Florida Bill Creates State Spy Unit to &apos;Neutralize&apos; Those with Threatening &apos;Views or Opinions&apos;</title>
     <link>https://libertas.fgu.tech/posts/florida-bill-creates-state-spy-unit-to-neutralize-those-with</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/florida-bill-creates-state-spy-unit-to-neutralize-those-with</guid>
@@ -1009,16 +987,6 @@
     <description>Florida legislation would create a state counterintelligence unit empowered to track and &apos;neutralize&apos; people whose &apos;views or opinions&apos; threaten the state, raising COINTELPRO-style civil liberties concerns.</description>
     <category>censorship-resistance</category>
     <category>surveillance</category>
-    <category>activism</category>
-  </item>
-  <item>
-    <title>Ukraine: 10 Investigative Journalists Surveilled by Criminal Network Tied to Government Officials</title>
-    <link>https://libertas.fgu.tech/posts/ukraine-10-investigative-journalists-surveilled-by-criminal-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/ukraine-10-investigative-journalists-surveilled-by-criminal-</guid>
-    <pubDate>Mon, 23 Feb 2026 23:01:34 GMT</pubDate>
-    <description>Ukrainian authorities are investigating surveillance of 10 corruption journalists by a criminal network including government officials, discovered during a 15-month anti-corruption probe called &apos;Operation Midas&apos;.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
     <category>activism</category>
   </item>
   <item>
