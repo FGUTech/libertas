@@ -785,6 +785,27 @@
       }
     },
     {
+      "id": "6f4ec3ac-09aa-4d89-beaf-38a4a362af83",
+      "url": "https://libertas.fgu.tech/posts/eff-confirms-government-using-ad-surveillance-networks-to-ac",
+      "title": "EFF Confirms Government Using Ad Surveillance Networks to Access User Data",
+      "summary": "EFF confirms government agencies are tapping into advertising surveillance infrastructure to collect citizen data, including CBP using targeted ads to track locations.",
+      "content_text": "EFF newsletter confirms government agencies accessing data through advertising surveillance networks\n• Customs and Border Protection (CBP) using targeted advertising systems for location tracking\n• EFF Staff Attorney Lena Cohen discusses how ad targeting reveals locations to federal law enforcement\n• Newsletter covers related privacy victories including Tenth Circuit ruling on Fourth Amendment protections for protesters\n• Highlights concerning Department of Defense AI usage conflicts with privacy protections\n• EFF launching podcast format to reach broader audience on digital rights issues\n• Pattern demonstrates intersection of commercial surveillance and government data collection",
+      "date_published": "2026-03-11T16:00:23.664Z",
+      "date_modified": "2026-03-11T16:00:23.711Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/03/government-spying-targeted-advertising-effector-385"
+        ]
+      }
+    },
+    {
       "id": "714bb389-dedd-4338-9ef6-b2305a9696c5",
       "url": "https://libertas.fgu.tech/posts/kenya-court-strikes-down-fake-news-law-sections-upholds-surv",
       "title": "Kenya Court Strikes Down 'Fake News' Law Sections, Upholds Surveillance Powers",
@@ -846,6 +867,27 @@
         "credibility_score": 95,
         "citations": [
           "https://www.accessnow.org/event/digital-security-webinars/"
+        ]
+      }
+    },
+    {
+      "id": "77b57e06-0a1e-41a1-bd1e-35c39cceeb96",
+      "url": "https://libertas.fgu.tech/posts/schneier-advocates-for-canadian-public-ai-to-counter-u-s-tec",
+      "title": "Schneier Advocates for Canadian Public AI to Counter U.S. Tech Dependence",
+      "summary": "Security expert Bruce Schneier argues Canada should build public AI infrastructure instead of relying on U.S. companies like OpenAI, citing Switzerland's Apertus model as proof of concept.",
+      "content_text": "Canada investing $2B in Sovereign AI Compute Strategy with OpenAI aggressively pursuing contracts\n• OpenAI failed to alert authorities about B.C. shooter's gun-violence ChatGPT interactions until after incident\n• OpenAI for Countries initiative operates 'in coordination with U.S. government'\n• Switzerland's Apertus demonstrates viable public AI model built by academic consortium\n• Apertus cost fraction of corporate AI budgets while providing adequate performance for most applications\n• Public AI enables democratic oversight of critical decisions around bias, access, and sensitive applications\n• Canada has existing AI research infrastructure through Vector Institute, Mila, and CIFAR\n• Proposal shifts focus from attracting private capital to building fully open public AI model",
+      "date_published": "2026-03-11T16:02:20.583Z",
+      "date_modified": "2026-03-11T16:02:20.683Z",
+      "tags": [
+        "sovereignty",
+        "surveillance",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 72,
+        "credibility_score": 85,
+        "citations": [
+          "https://www.schneier.com/blog/archives/2026/03/canada-needs-nationalized-public-ai.html"
         ]
       }
     },
@@ -1882,6 +1924,26 @@
       }
     },
     {
+      "id": "dbb75718-72e5-4a23-830a-033d95039721",
+      "url": "https://libertas.fgu.tech/posts/bitcoin-core-ibd-optimization-critical-for-maintaining-decen",
+      "title": "Bitcoin Core IBD Optimization Critical for Maintaining Decentralized Node Access",
+      "summary": "Bitcoin Core developers continuously optimize Initial Block Download to prevent cheap consumer hardware from being priced out of running full nodes as blockchain grows.",
+      "content_text": "Initial Block Download (IBD) requires new nodes to download and verify 17 years of Bitcoin transaction history\n• Without constant optimization, consumer hardware like Raspberry Pis might lose ability to join network\n• IBD process involves peer discovery, header download, block download, and validation - much runs in parallel\n• Key historical improvements include Ultraprune UTXO set (2012), multithreaded validation (2013), libsecp256k1 (8x faster crypto)\n• Headers-first sync (2014) enabled downloading blocks from multiple peers simultaneously\n• assumevalid (2017) cut IBD time roughly in half by making signature verification optional for older blocks\n• Custom memory allocator (2022) delivered 21% faster IBD with better cache efficiency\n• Performance bottlenecks shift over time - from CPU-bound signature verification to IO-bound chainstate access\n• Bitcoin Core uses extensive benchmarking across different hardware configurations to validate optimizations",
+      "date_published": "2026-03-11T16:00:38.727Z",
+      "date_modified": "2026-03-11T16:00:38.767Z",
+      "tags": [
+        "bitcoin",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 72,
+        "credibility_score": 95,
+        "citations": [
+          "https://bitcoinmagazine.com/print/the-core-issue-outrunning-entropy-why-bitcoin-cant-stand-still"
+        ]
+      }
+    },
+    {
       "id": "e04eab2f-8530-4efa-b6f3-c53bd327eaf5",
       "url": "https://libertas.fgu.tech/posts/sophisticated-iphone-hacking-toolkit-linked-to-us-government",
       "title": "Sophisticated iPhone Hacking Toolkit Linked to US Government Infects Tens of Thousands",
@@ -2057,6 +2119,28 @@
       }
     },
     {
+      "id": "eea6a85b-f506-47eb-9e00-93c5a3b69854",
+      "url": "https://libertas.fgu.tech/posts/iran-s-98-internet-shutdown-drives-push-for-direct-to-cell-s",
+      "title": "Iran's 98% Internet Shutdown Drives Push for Direct-to-Cell Satellite Tech",
+      "summary": "Iran imposed a near-total internet blackout during conflict, prompting digital rights advocates to urgently call for Direct-to-Cell satellite technology that connects smartphones directly to satellites, bypassing government shutdowns.",
+      "content_text": "Iran cut internet connectivity by 98% starting February 28, 2026 following U.S.-Israel military attacks\n• Access Now condemns the shutdown affecting millions during critical conflict period\n• Blackout blocks journalists and human rights defenders from documenting violations\n• Information vacuum enables disinformation spread and hampers accountability efforts\n• Access Now advocates for Direct-to-Cell (D2C) satellite technology as solution\n• D2C connects ordinary smartphones directly to satellites, bypassing censorship\n• Civil society coalition calls for accelerated humanitarian deployment of D2C tech\n• Pattern continues Iran's history of using shutdowns to control crisis information",
+      "date_published": "2026-03-11T16:01:45.218Z",
+      "date_modified": "2026-03-11T16:01:45.303Z",
+      "tags": [
+        "censorship-resistance",
+        "comms",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 88,
+        "credibility_score": 85,
+        "citations": [
+          "https://www.accessnow.org/press-release/iran-connect-the-population-statement/"
+        ]
+      }
+    },
+    {
       "id": "f237c2c5-39fe-4113-be2b-a0e8b30043e2",
       "url": "https://libertas.fgu.tech/posts/eff-analysis-safe-act-proposes-major-section-702-surveillanc",
       "title": "EFF Analysis: SAFE Act Proposes Major Section 702 Surveillance Reforms",
@@ -2181,28 +2265,6 @@
         "credibility_score": 85,
         "citations": [
           "https://freedomhouse.org/article/political-prisoners-watch-artists-behind-bars"
-        ]
-      }
-    },
-    {
-      "id": "fc14dea4-5693-4736-881e-8b84c9c2025a",
-      "url": "https://libertas.fgu.tech/posts/access-now-launches-digital-security-training-series-for-civ",
-      "title": "Access Now Launches Digital Security Training Series for Civil Society",
-      "summary": "Access Now's Digital Security Helpline is hosting webinar series starting March 2026, focusing on spear-phishing defense for activists, journalists, and civil society facing targeted attacks.",
-      "content_text": "Access Now launching 'Safe and Strong' webinar series on digital security for civil society\n• First session March 10, 2026 focuses on spear-phishing attacks targeting activists and journalists\n• Training draws from documented attack cases in Eastern Europe and Middle East regions\n• Expert speakers include Citizen Lab researcher, Lookout threat analyst, and regional security practitioners\n• Series addresses increasing complexity of digital attacks against civil society organizations\n• Content specifically tailored for high-risk users including human rights defenders\n• Training includes practical examples and best practices for prevention and incident response",
-      "date_published": "2026-02-25T11:01:38.762Z",
-      "date_modified": "2026-02-25T11:01:38.849Z",
-      "tags": [
-        "privacy",
-        "surveillance",
-        "activism",
-        "censorship-resistance"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.accessnow.org/event/digital-security-webinars/"
         ]
       }
     },

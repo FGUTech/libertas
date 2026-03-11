@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Wed, 11 Mar 2026 10:00:42 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 11 Mar 2026 16:02:20 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -389,6 +389,16 @@
     <category>censorship-resistance</category>
   </item>
   <item>
+    <title>EFF Confirms Government Using Ad Surveillance Networks to Access User Data</title>
+    <link>https://libertas.fgu.tech/posts/eff-confirms-government-using-ad-surveillance-networks-to-ac</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-confirms-government-using-ad-surveillance-networks-to-ac</guid>
+    <pubDate>Wed, 11 Mar 2026 16:00:23 GMT</pubDate>
+    <description>EFF confirms government agencies are tapping into advertising surveillance infrastructure to collect citizen data, including CBP using targeted ads to track locations.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
+  </item>
+  <item>
     <title>Kenya Court Strikes Down &apos;Fake News&apos; Law Sections, Upholds Surveillance Powers</title>
     <link>https://libertas.fgu.tech/posts/kenya-court-strikes-down-fake-news-law-sections-upholds-surv</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/kenya-court-strikes-down-fake-news-law-sections-upholds-surv</guid>
@@ -419,6 +429,16 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>censorship-resistance</category>
+  </item>
+  <item>
+    <title>Schneier Advocates for Canadian Public AI to Counter U.S. Tech Dependence</title>
+    <link>https://libertas.fgu.tech/posts/schneier-advocates-for-canadian-public-ai-to-counter-u-s-tec</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/schneier-advocates-for-canadian-public-ai-to-counter-u-s-tec</guid>
+    <pubDate>Wed, 11 Mar 2026 16:02:20 GMT</pubDate>
+    <description>Security expert Bruce Schneier argues Canada should build public AI infrastructure instead of relying on U.S. companies like OpenAI, citing Switzerland&apos;s Apertus model as proof of concept.</description>
+    <category>sovereignty</category>
+    <category>surveillance</category>
+    <category>privacy</category>
   </item>
   <item>
     <title>Turkey Weaponizes Justice System Against Leading Opposition Politician</title>
@@ -922,6 +942,15 @@
     <category>censorship-resistance</category>
   </item>
   <item>
+    <title>Bitcoin Core IBD Optimization Critical for Maintaining Decentralized Node Access</title>
+    <link>https://libertas.fgu.tech/posts/bitcoin-core-ibd-optimization-critical-for-maintaining-decen</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/bitcoin-core-ibd-optimization-critical-for-maintaining-decen</guid>
+    <pubDate>Wed, 11 Mar 2026 16:00:38 GMT</pubDate>
+    <description>Bitcoin Core developers continuously optimize Initial Block Download to prevent cheap consumer hardware from being priced out of running full nodes as blockchain grows.</description>
+    <category>bitcoin</category>
+    <category>sovereignty</category>
+  </item>
+  <item>
     <title>Sophisticated iPhone Hacking Toolkit Linked to US Government Infects Tens of Thousands</title>
     <link>https://libertas.fgu.tech/posts/sophisticated-iphone-hacking-toolkit-linked-to-us-government</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/sophisticated-iphone-hacking-toolkit-linked-to-us-government</guid>
@@ -1008,6 +1037,17 @@
     <category>payments</category>
   </item>
   <item>
+    <title>Iran&apos;s 98% Internet Shutdown Drives Push for Direct-to-Cell Satellite Tech</title>
+    <link>https://libertas.fgu.tech/posts/iran-s-98-internet-shutdown-drives-push-for-direct-to-cell-s</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/iran-s-98-internet-shutdown-drives-push-for-direct-to-cell-s</guid>
+    <pubDate>Wed, 11 Mar 2026 16:01:45 GMT</pubDate>
+    <description>Iran imposed a near-total internet blackout during conflict, prompting digital rights advocates to urgently call for Direct-to-Cell satellite technology that connects smartphones directly to satellites, bypassing government shutdowns.</description>
+    <category>censorship-resistance</category>
+    <category>comms</category>
+    <category>surveillance</category>
+    <category>activism</category>
+  </item>
+  <item>
     <title>EFF Analysis: SAFE Act Proposes Major Section 702 Surveillance Reforms</title>
     <link>https://libertas.fgu.tech/posts/eff-analysis-safe-act-proposes-major-section-702-surveillanc</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-analysis-safe-act-proposes-major-section-702-surveillanc</guid>
@@ -1068,17 +1108,6 @@
     <category>censorship-resistance</category>
     <category>activism</category>
     <category>surveillance</category>
-  </item>
-  <item>
-    <title>Access Now Launches Digital Security Training Series for Civil Society</title>
-    <link>https://libertas.fgu.tech/posts/access-now-launches-digital-security-training-series-for-civ</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/access-now-launches-digital-security-training-series-for-civ</guid>
-    <pubDate>Wed, 25 Feb 2026 11:01:38 GMT</pubDate>
-    <description>Access Now&apos;s Digital Security Helpline is hosting webinar series starting March 2026, focusing on spear-phishing defense for activists, journalists, and civil society facing targeted attacks.</description>
-    <category>privacy</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>censorship-resistance</category>
   </item>
   <item>
     <title>Anonymous Credentials: Privacy-Preserving Auth Against Age Verification Laws</title>
