@@ -223,6 +223,29 @@
       }
     },
     {
+      "id": "1d25e9a3-8476-4bb1-98a6-4d0acf25288a",
+      "url": "https://libertas.fgu.tech/posts/iran-maintains-98-internet-shutdown-during-military-conflict",
+      "title": "Iran Maintains 98% Internet Shutdown During Military Conflict, Highlighting Need for D2C Satellite",
+      "summary": "Iran has blocked 98% of internet connectivity for 12+ days during U.S./Israel military attacks, prompting calls for Direct-to-Cell satellite deployment to bypass government shutdowns.",
+      "content_text": "Iran imposed near-total internet shutdown (98% connectivity drop) starting February 28, 2026 during military conflict\n• Shutdown has lasted 12+ days, affecting millions during critical period when information access is vital\n• Access Now condemns blackout as continuation of Iran's pattern of using shutdowns to control information during crises\n• Shutdown blocks documentation of potential violations, hampers journalists and human rights defenders\n• Information vacuum enables disinformation spread and manipulation by various parties\n• Access Now highlights Direct-to-Cell (D2C) satellite technology as viable solution to bypass government network controls\n• D2C can connect smartphones directly to satellites, circumventing censorship and shutdowns\n• Civil society coalition calls for prioritized humanitarian deployment of D2C technology with human rights safeguards",
+      "date_published": "2026-03-11T22:01:35.769Z",
+      "date_modified": "2026-03-11T22:01:35.875Z",
+      "tags": [
+        "censorship-resistance",
+        "comms",
+        "surveillance",
+        "activism",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 88,
+        "credibility_score": 85,
+        "citations": [
+          "https://www.accessnow.org/press-release/iran-connect-the-population-statement/"
+        ]
+      }
+    },
+    {
       "id": "209fc223-b4da-4c5d-9d5b-ab2393bb7119",
       "url": "https://libertas.fgu.tech/posts/federal-agents-arrest-independent-photographer-seize-equipme",
       "title": "Federal Agents Arrest Independent Photographer, Seize Equipment Over ICE Protest Coverage",
@@ -483,6 +506,28 @@
       }
     },
     {
+      "id": "40cd51ca-e9bf-4a8d-872b-d613c6018532",
+      "url": "https://libertas.fgu.tech/posts/drc-journalists-detained-broadcasters-occupied-as-warring-pa",
+      "title": "DRC Journalists Detained, Broadcasters Occupied as Warring Parties Control Information Flow",
+      "summary": "Government forces and M23 rebels in eastern DRC systematically detain journalists and occupy broadcast stations to control war coverage, creating information blackout zones.",
+      "content_text": "Multiple journalists detained by both DRC government forces and M23 rebels over war coverage in January-March 2026\n• Serge Sindani (Kis24.info) arrested by intelligence agents, accused of being M23 spy for publishing rebel statements\n• Patient Chimusa detained by military for interviewing rebel spokesperson, released on $500 bail\n• M23 rebels physically occupied Walungu Community Radio, looting transmission equipment and establishing military positions\n• Rebels forced at least three state broadcasters (RTNC) to only air pro-M23 content\n• Pattern shows both sides systematically targeting media infrastructure to control information flow\n• Creates information vacuum in conflict zones where independent reporting is criminalized by all parties",
+      "date_published": "2026-03-11T22:01:57.162Z",
+      "date_modified": "2026-03-11T22:01:57.286Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "comms"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 88,
+        "citations": [
+          "https://cpj.org/2026/03/journalists-in-eastern-drc-detained-over-war-coverage-broadcasters-occupied/"
+        ]
+      }
+    },
+    {
       "id": "423c7dc2-e794-4df2-bfa1-778794bff325",
       "url": "https://libertas.fgu.tech/posts/trump-admin-uses-federal-agencies-to-target-critical-media-a",
       "title": "Trump Admin Uses Federal Agencies to Target Critical Media and Anonymous Activists",
@@ -714,6 +759,29 @@
         "credibility_score": 88,
         "citations": [
           "https://cpj.org/2026/03/cpj-calls-on-immigration-authorities-to-release-tennessee-based-journalist-estefany-rodriguez/"
+        ]
+      }
+    },
+    {
+      "id": "65947d09-b8e4-4efa-a302-c65c613c3447",
+      "url": "https://libertas.fgu.tech/posts/bitcoin-crosses-1t-threshold-as-institutional-etfs-drive-mar",
+      "title": "Bitcoin Crosses $1T Threshold as Institutional ETFs Drive Market Maturation",
+      "summary": "Bitcoin has evolved from experimental asset to macro-scale financial instrument with $1T+ market cap, driven by institutional ETFs absorbing 6.3% of supply and fundamentally changing market dynamics.",
+      "content_text": "Bitcoin market cap exceeds $1 trillion with institutional flows now driving price dynamics over retail speculation\n• US spot ETFs launched January 2024 hold 1.26M BTC (6.3% of supply) worth $84.9B with $54.4B net inflows\n• Large transactions over $1M now account for 69% of transfer volume since November 2022\n• Long-term holders (155+ days) captured 75% of realized profits this cycle vs ~50% in previous cycles\n• Bitcoin's volatility profile now resembles major equities like QQQ rather than speculative assets\n• Options markets expanded significantly with Deribit and IBIT reaching tens of billions in open interest\n• Network continues functioning as high-value settlement system with trillions in economically meaningful transfers\n• Recent geopolitical shocks tested resilience with BTC maintaining $60-70K range during market turbulence",
+      "date_published": "2026-03-11T22:00:38.005Z",
+      "date_modified": "2026-03-11T22:00:38.077Z",
+      "tags": [
+        "bitcoin",
+        "privacy",
+        "censorship-resistance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://bitcoinmagazine.com/markets/bitcoin-is-now-financial-player",
+          "https://bitcoinmagazine.com/culture/samourai-letter-4-notes-from-the-inside"
         ]
       }
     },

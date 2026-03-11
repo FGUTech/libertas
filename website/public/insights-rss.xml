@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Wed, 11 Mar 2026 16:02:20 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 11 Mar 2026 22:01:57 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -112,6 +112,18 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Iran Maintains 98% Internet Shutdown During Military Conflict, Highlighting Need for D2C Satellite</title>
+    <link>https://libertas.fgu.tech/posts/iran-maintains-98-internet-shutdown-during-military-conflict</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/iran-maintains-98-internet-shutdown-during-military-conflict</guid>
+    <pubDate>Wed, 11 Mar 2026 22:01:35 GMT</pubDate>
+    <description>Iran has blocked 98% of internet connectivity for 12+ days during U.S./Israel military attacks, prompting calls for Direct-to-Cell satellite deployment to bypass government shutdowns.</description>
+    <category>censorship-resistance</category>
+    <category>comms</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>sovereignty</category>
   </item>
   <item>
     <title>Federal Agents Arrest Independent Photographer, Seize Equipment Over ICE Protest Coverage</title>
@@ -242,6 +254,17 @@
     <category>censorship-resistance</category>
   </item>
   <item>
+    <title>DRC Journalists Detained, Broadcasters Occupied as Warring Parties Control Information Flow</title>
+    <link>https://libertas.fgu.tech/posts/drc-journalists-detained-broadcasters-occupied-as-warring-pa</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/drc-journalists-detained-broadcasters-occupied-as-warring-pa</guid>
+    <pubDate>Wed, 11 Mar 2026 22:01:57 GMT</pubDate>
+    <description>Government forces and M23 rebels in eastern DRC systematically detain journalists and occupy broadcast stations to control war coverage, creating information blackout zones.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>comms</category>
+  </item>
+  <item>
     <title>Trump Admin Uses Federal Agencies to Target Critical Media and Anonymous Activists</title>
     <link>https://libertas.fgu.tech/posts/trump-admin-uses-federal-agencies-to-target-critical-media-a</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/trump-admin-uses-federal-agencies-to-target-critical-media-a</guid>
@@ -353,6 +376,17 @@
     <category>censorship-resistance</category>
     <category>activism</category>
     <category>surveillance</category>
+  </item>
+  <item>
+    <title>Bitcoin Crosses $1T Threshold as Institutional ETFs Drive Market Maturation</title>
+    <link>https://libertas.fgu.tech/posts/bitcoin-crosses-1t-threshold-as-institutional-etfs-drive-mar</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/bitcoin-crosses-1t-threshold-as-institutional-etfs-drive-mar</guid>
+    <pubDate>Wed, 11 Mar 2026 22:00:38 GMT</pubDate>
+    <description>Bitcoin has evolved from experimental asset to macro-scale financial instrument with $1T+ market cap, driven by institutional ETFs absorbing 6.3% of supply and fundamentally changing market dynamics.</description>
+    <category>bitcoin</category>
+    <category>privacy</category>
+    <category>censorship-resistance</category>
+    <category>activism</category>
   </item>
   <item>
     <title>EFF Honors Women Digital Rights Pioneers on International Women&apos;s Day</title>
