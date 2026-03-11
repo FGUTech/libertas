@@ -223,27 +223,6 @@
       }
     },
     {
-      "id": "1dff1168-503e-4c7d-9d06-c4d578d1d0af",
-      "url": "https://libertas.fgu.tech/posts/pentagon-threatens-ai-company-anthropic-over-surveillance-re",
-      "title": "Pentagon Threatens AI Company Anthropic Over Surveillance Restrictions",
-      "summary": "Department of Defense threatening to label Anthropic a \"supply chain risk\" after company refused to lift restrictions on surveillance and autonomous weapons use of their AI.",
-      "content_text": "Pentagon gave ultimatum to Anthropic demanding removal of restrictions on military AI use\n• Anthropic maintains \"bright red lines\" against surveillance of US persons and autonomous weapons\n• DoD threatens \"supply chain risk\" label that would ban other defense contractors from using Anthropic's AI\n• Dispute began after Anthropic suspected their AI was used in January 3, 2026 attack on Venezuela via Palantir partnership\n• Anthropic was first AI company cleared for classified operations in 2025\n• EFF urges Anthropic to resist government pressure and maintain ethical restrictions\n• Case represents broader pattern of government pressure on tech companies to enable surveillance",
-      "date_published": "2026-02-25T05:01:15.876Z",
-      "date_modified": "2026-02-25T05:01:15.919Z",
-      "tags": [
-        "surveillance",
-        "privacy",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 85,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/02/tech-companies-shouldnt-be-bullied-doing-surveillance"
-        ]
-      }
-    },
-    {
       "id": "209fc223-b4da-4c5d-9d5b-ab2393bb7119",
       "url": "https://libertas.fgu.tech/posts/federal-agents-arrest-independent-photographer-seize-equipme",
       "title": "Federal Agents Arrest Independent Photographer, Seize Equipment Over ICE Protest Coverage",
@@ -347,6 +326,27 @@
         "credibility_score": 95,
         "citations": [
           "https://citizenlab.ca/austrian-interior-ministry-using-cobwebs-surveillance-software/"
+        ]
+      }
+    },
+    {
+      "id": "376e2bb2-7400-410c-8950-7e9e1f511bcb",
+      "url": "https://libertas.fgu.tech/posts/research-exposes-eu-agencies-private-surveillance-partnershi",
+      "title": "Research Exposes EU Agencies' Private Surveillance Partnerships Targeting Migrants",
+      "summary": "Access Now research reveals 450+ companies pitch surveillance tech to EU agencies via exclusive industry events, building biometric databases and AI systems that bypass data protection laws.",
+      "content_text": "Access Now mapped 450+ companies attending EU agency industry events (eu-LISA, Europol, Frontex) pitching surveillance products\n• Companies presented 600+ products including biometric systems, airborne surveillance, and AI analytics for migration control\n• eu-LISA manages databases collecting migrant biometric data while bypassing EU data protection laws\n• Major participants include Airbus, Fujitsu, Idemia, Thales, plus consultancies like Accenture and Deloitte\n• Events create exclusive opportunities for private sector to influence EU migration policy and spending\n• Research shows 'open door' policy including companies from countries implicated in war crimes\n• Surveillance infrastructure increasingly targets migrants, activists, and solidarity groups\n• Both Frontex and Europol received significant budget increases for next decade with expanded mandates",
+      "date_published": "2026-03-11T10:00:42.246Z",
+      "date_modified": "2026-03-11T10:00:42.340Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://www.accessnow.org/companies-powering-eu-war-on-migrants/?pk_campaign=feed&#038;pk_kwd=companies-powering-eu-war-on-migrants"
         ]
       }
     },
@@ -654,28 +654,6 @@
       }
     },
     {
-      "id": "60ff443a-c867-4498-a814-b723f17a5eee",
-      "url": "https://libertas.fgu.tech/posts/access-now-launches-digital-security-webinar-series-for-civi",
-      "title": "Access Now Launches Digital Security Webinar Series for Civil Society",
-      "summary": "Access Now's Digital Security Helpline launches 'Safe and Strong' webinar series targeting spear-phishing threats against activists, journalists, and civil society with expert guidance from Citizen Lab and security researchers.",
-      "content_text": "Access Now launching 'Safe and Strong' webinar series on digital security for civil society\n• First session March 10, 2026 focuses on spear-phishing attacks targeting activists and journalists\n• Expert speakers include Citizen Lab's Rebekah Brown, Lookout's Justin Albrecht, and regional digital security specialists\n• Content draws from documented attacks in Eastern Europe and Middle East regions\n• Initiative aims to share actionable insights as digital attacks against civil society grow more complex\n• Webinar targets high-profile activists, journalists, and NGO members who face sophisticated social engineering\n• Event brings together civil society, private sector, and support organizations for resilience building",
-      "date_published": "2026-02-25T05:02:01.594Z",
-      "date_modified": "2026-02-25T05:02:01.762Z",
-      "tags": [
-        "privacy",
-        "surveillance",
-        "activism",
-        "censorship-resistance"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.accessnow.org/event/digital-security-webinars/"
-        ]
-      }
-    },
-    {
       "id": "6379e275-abb8-4fe8-a714-3889a46ba6ab",
       "url": "https://libertas.fgu.tech/posts/columbia-university-failed-to-protect-students-from-warrantl",
       "title": "Columbia University Failed to Protect Students from Warrantless ICE Raids Despite Clear Policies",
@@ -909,6 +887,27 @@
         "credibility_score": 85,
         "citations": [
           "https://www.wired.com/story/cbp-used-online-ad-data-to-track-phone-locations/"
+        ]
+      }
+    },
+    {
+      "id": "7cb9e40d-4bd6-43cc-844e-a33e0fb8d3bf",
+      "url": "https://libertas.fgu.tech/posts/access-now-maps-450-companies-building-eu-s-migration-survei",
+      "title": "Access Now Maps 450 Companies Building EU's Migration Surveillance Infrastructure",
+      "summary": "Access Now investigation reveals 450+ private companies pitched 600+ surveillance technologies to EU migration agencies, creating mass surveillance system targeting migrants with limited oversight.",
+      "content_text": "Access Now mapped 450+ private companies pitching surveillance tech to EU migration agencies since 2017\n• Three key agencies involved: eu-LISA (databases), Frontex (border control), Europol (law enforcement)\n• Over 600 technological solutions pitched across biometrics, airborne surveillance, and AI/big data categories\n• Private sector directly influences EU surveillance capabilities through closed-door pitch events\n• Relationship between agencies and companies intentionally shielded from public scrutiny\n• Affects millions of migrants through biometric collection and activity monitoring without consent\n• Research highlights lack of transparency in procurement deals using public funds\n• Demonstrates systematic privacy violations enabled by public-private surveillance partnerships",
+      "date_published": "2026-03-11T10:00:42.253Z",
+      "date_modified": "2026-03-11T10:00:42.340Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://www.accessnow.org/press-release/shadowy-surveillance-eu-migration-policies/"
         ]
       }
     },

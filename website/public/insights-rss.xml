@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Wed, 11 Mar 2026 04:01:05 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 11 Mar 2026 10:00:42 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -114,16 +114,6 @@
     <category>activism</category>
   </item>
   <item>
-    <title>Pentagon Threatens AI Company Anthropic Over Surveillance Restrictions</title>
-    <link>https://libertas.fgu.tech/posts/pentagon-threatens-ai-company-anthropic-over-surveillance-re</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/pentagon-threatens-ai-company-anthropic-over-surveillance-re</guid>
-    <pubDate>Wed, 25 Feb 2026 05:01:15 GMT</pubDate>
-    <description>Department of Defense threatening to label Anthropic a &quot;supply chain risk&quot; after company refused to lift restrictions on surveillance and autonomous weapons use of their AI.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
-    <category>activism</category>
-  </item>
-  <item>
     <title>Federal Agents Arrest Independent Photographer, Seize Equipment Over ICE Protest Coverage</title>
     <link>https://libertas.fgu.tech/posts/federal-agents-arrest-independent-photographer-seize-equipme</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/federal-agents-arrest-independent-photographer-seize-equipme</guid>
@@ -174,6 +164,16 @@
     <description>Austria&apos;s Interior Ministry spent €900K on Cobwebs&apos; Tangles surveillance software that harvests social media and web data, with officials refusing to disclose usage details or capabilities.</description>
     <category>surveillance</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>Research Exposes EU Agencies&apos; Private Surveillance Partnerships Targeting Migrants</title>
+    <link>https://libertas.fgu.tech/posts/research-exposes-eu-agencies-private-surveillance-partnershi</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/research-exposes-eu-agencies-private-surveillance-partnershi</guid>
+    <pubDate>Wed, 11 Mar 2026 10:00:42 GMT</pubDate>
+    <description>Access Now research reveals 450+ companies pitch surveillance tech to EU agencies via exclusive industry events, building biometric databases and AI systems that bypass data protection laws.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
   </item>
   <item>
     <title>Utexo Raises $7.5M for Bitcoin-Native USDT Settlement with Privacy Features</title>
@@ -324,17 +324,6 @@
     <category>activism</category>
   </item>
   <item>
-    <title>Access Now Launches Digital Security Webinar Series for Civil Society</title>
-    <link>https://libertas.fgu.tech/posts/access-now-launches-digital-security-webinar-series-for-civi</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/access-now-launches-digital-security-webinar-series-for-civi</guid>
-    <pubDate>Wed, 25 Feb 2026 05:02:01 GMT</pubDate>
-    <description>Access Now&apos;s Digital Security Helpline launches &apos;Safe and Strong&apos; webinar series targeting spear-phishing threats against activists, journalists, and civil society with expert guidance from Citizen Lab and security researchers.</description>
-    <category>privacy</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>censorship-resistance</category>
-  </item>
-  <item>
     <title>Columbia University Failed to Protect Students from Warrantless ICE Raids Despite Clear Policies</title>
     <link>https://libertas.fgu.tech/posts/columbia-university-failed-to-protect-students-from-warrantl</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/columbia-university-failed-to-protect-students-from-warrantl</guid>
@@ -449,6 +438,16 @@
     <description>US border agency CBP used online advertising data to track phone locations, while encrypted email provider Proton assisted FBI in identifying a protester.</description>
     <category>surveillance</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>Access Now Maps 450 Companies Building EU&apos;s Migration Surveillance Infrastructure</title>
+    <link>https://libertas.fgu.tech/posts/access-now-maps-450-companies-building-eu-s-migration-survei</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/access-now-maps-450-companies-building-eu-s-migration-survei</guid>
+    <pubDate>Wed, 11 Mar 2026 10:00:42 GMT</pubDate>
+    <description>Access Now investigation reveals 450+ private companies pitched 600+ surveillance technologies to EU migration agencies, creating mass surveillance system targeting migrants with limited oversight.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
   </item>
   <item>
     <title>Panama Court Order Blocks Journalists from Reporting on Sanctioned Contractors</title>
