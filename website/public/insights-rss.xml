@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 12 Mar 2026 16:01:47 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 12 Mar 2026 22:03:08 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -146,16 +146,6 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>privacy</category>
-  </item>
-  <item>
-    <title>Israel Bans Five Palestinian News Outlets as &apos;Terrorist Organizations&apos;</title>
-    <link>https://libertas.fgu.tech/posts/israel-bans-five-palestinian-news-outlets-as-terrorist-organ</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/israel-bans-five-palestinian-news-outlets-as-terrorist-organ</guid>
-    <pubDate>Thu, 26 Feb 2026 17:02:44 GMT</pubDate>
-    <description>Israel designated five Palestinian news outlets as terrorist organizations, forcing suspensions and journalist arrests. No evidence provided for Hamas links allegations.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
   </item>
   <item>
     <title>Civil Rights Groups Challenge Surveillance Firm&apos;s Rebrand from Sandvine to AppLogic Networks</title>
@@ -381,6 +371,17 @@
     <category>identity</category>
   </item>
   <item>
+    <title>EFF: Age Verification Laws Enable Government Control Over Online Speech</title>
+    <link>https://libertas.fgu.tech/posts/eff-age-verification-laws-enable-government-control-over-onl</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-age-verification-laws-enable-government-control-over-onl</guid>
+    <pubDate>Thu, 12 Mar 2026 22:00:24 GMT</pubDate>
+    <description>EFF defends Minnesota lawmaker who warned that age verification mandates are being used to restrict LGBTQ+ youth access to information, demonstrating broader government control over online speech.</description>
+    <category>censorship-resistance</category>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>identity</category>
+  </item>
+  <item>
     <title>Pentagon Rejects AI Ethics Constraints, Enables Autonomous Weapons Development</title>
     <link>https://libertas.fgu.tech/posts/pentagon-rejects-ai-ethics-constraints-enables-autonomous-we</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/pentagon-rejects-ai-ethics-constraints-enables-autonomous-we</guid>
@@ -422,6 +423,15 @@
     <category>privacy</category>
     <category>surveillance</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Bipartisan Bill Targets FBI Warrantless Surveillance and Commercial Data Purchases</title>
+    <link>https://libertas.fgu.tech/posts/bipartisan-bill-targets-fbi-warrantless-surveillance-and-com</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/bipartisan-bill-targets-fbi-warrantless-surveillance-and-com</guid>
+    <pubDate>Thu, 12 Mar 2026 22:01:24 GMT</pubDate>
+    <description>US lawmakers introduce bipartisan legislation requiring FBI warrants for reading Americans&apos; messages and banning federal purchase of commercial data on US residents before critical April deadline.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
   </item>
   <item>
     <title>Taliban Shuts Down and Seizes Private TV Station in Afghanistan</title>
@@ -819,6 +829,16 @@
     <category>identity</category>
   </item>
   <item>
+    <title>California&apos;s A.B. 1043 Age Verification Law Creates Censorship Trap for Open-Source Developers</title>
+    <link>https://libertas.fgu.tech/posts/california-s-a-b-1043-age-verification-law-creates-censorshi</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/california-s-a-b-1043-age-verification-law-creates-censorshi</guid>
+    <pubDate>Thu, 12 Mar 2026 22:00:24 GMT</pubDate>
+    <description>EFF warns California&apos;s A.B. 1043, effective 2027, will force age bracketing that leads to over-censorship and particularly harms open-source developers through compliance burdens.</description>
+    <category>privacy</category>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+  </item>
+  <item>
     <title>EU Mandates Crypto Platform Reporting Starting 2026</title>
     <link>https://libertas.fgu.tech/posts/eu-mandates-crypto-platform-reporting-starting-2026</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/eu-mandates-crypto-platform-reporting-starting-2026</guid>
@@ -838,6 +858,17 @@
     <category>comms</category>
     <category>surveillance</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Citizen Lab: States Using Zero-Click Spyware for Gendered Digital Repression</title>
+    <link>https://libertas.fgu.tech/posts/citizen-lab-states-using-zero-click-spyware-for-gendered-dig</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/citizen-lab-states-using-zero-click-spyware-for-gendered-dig</guid>
+    <pubDate>Thu, 12 Mar 2026 22:01:57 GMT</pubDate>
+    <description>Citizen Lab research reveals how authoritarian states are using zero-click spyware and data brokers to target women activists across borders with gender-specific harassment tactics.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
+    <category>censorship-resistance</category>
   </item>
   <item>
     <title>Lao Government Critic Found Dead After Arrest, Highlighting Digital Activist Risks</title>
@@ -880,6 +911,17 @@
     <category>privacy</category>
     <category>surveillance</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>OpenAI Claims Pentagon Contract Bars Mass Surveillance, Refuses to Release Proof</title>
+    <link>https://libertas.fgu.tech/posts/openai-claims-pentagon-contract-bars-mass-surveillance-refus</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/openai-claims-pentagon-contract-bars-mass-surveillance-refus</guid>
+    <pubDate>Thu, 12 Mar 2026 22:03:08 GMT</pubDate>
+    <description>OpenAI secured a Pentagon AI contract after rival Anthropic was booted for refusing surveillance terms, but won&apos;t release contract details to verify claims about domestic spying prohibitions.</description>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>surveillance</category>
+    <category>privacy</category>
   </item>
   <item>
     <title>EFF Fights Copyright Abuse to Protect Anonymous Religious Dissent</title>
@@ -1058,6 +1100,15 @@
     <category>censorship-resistance</category>
     <category>activism</category>
     <category>surveillance</category>
+  </item>
+  <item>
+    <title>OpenAI Pentagon Deal Raises Mass Surveillance Concerns Despite CEO Denials</title>
+    <link>https://libertas.fgu.tech/posts/openai-pentagon-deal-raises-mass-surveillance-concerns-despi</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/openai-pentagon-deal-raises-mass-surveillance-concerns-despi</guid>
+    <pubDate>Thu, 12 Mar 2026 22:01:57 GMT</pubDate>
+    <description>OpenAI&apos;s new Pentagon contract permits bulk data collection from users, with experts warning about AI-amplified surveillance risks despite CEO Sam Altman&apos;s claims otherwise.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
   </item>
   <item>
     <title>Anonymous Credentials: Privacy-Preserving Auth Against Age Verification Laws</title>

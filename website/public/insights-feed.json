@@ -290,27 +290,6 @@
       }
     },
     {
-      "id": "2cd04f00-b7ca-4c33-a48a-1e4774b04dc0",
-      "url": "https://libertas.fgu.tech/posts/israel-bans-five-palestinian-news-outlets-as-terrorist-organ",
-      "title": "Israel Bans Five Palestinian News Outlets as 'Terrorist Organizations'",
-      "summary": "Israel designated five Palestinian news outlets as terrorist organizations, forcing suspensions and journalist arrests. No evidence provided for Hamas links allegations.",
-      "content_text": "Israeli Defence Minister Israel Katz banned Al-Asima News, Quds Plus, Maydan Al-Quds, Al-Quds Albawsala, and Maraj outlets\n• Outlets designated as 'terrorist organizations' allegedly linked to Hamas without evidence presented\n• Al-Asima News suspended operations to protect journalists; others continue reporting on social platforms\n• Palestinian journalist Nisreen Salem arrested, charged with dealing with 'banned' outlet\n• Salem placed under house arrest with 180-day Al-Aqsa Mosque ban and complete communication restrictions\n• Follows 2024 law allowing shutdown of foreign broadcasters deemed 'security threats'\n• Previously banned Al Jazeera and Al Mayadeen under same legal framework\n• Committee to Protect Journalists calls it part of broader pattern to silence independent journalism",
-      "date_published": "2026-02-26T17:02:44.526Z",
-      "date_modified": "2026-02-26T17:02:44.640Z",
-      "tags": [
-        "censorship-resistance",
-        "surveillance",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 85,
-        "credibility_score": 88,
-        "citations": [
-          "https://cpj.org/2026/02/israel-designates-5-palestinian-news-sites-terrorist-groups/"
-        ]
-      }
-    },
-    {
       "id": "32e60e78-c2bf-492a-897b-2f48a7c9a9a0",
       "url": "https://libertas.fgu.tech/posts/civil-rights-groups-challenge-surveillance-firm-s-rebrand-fr",
       "title": "Civil Rights Groups Challenge Surveillance Firm's Rebrand from Sandvine to AppLogic Networks",
@@ -767,6 +746,28 @@
       }
     },
     {
+      "id": "6987bdd6-fe21-4ef6-91c8-27d3dc633714",
+      "url": "https://libertas.fgu.tech/posts/eff-age-verification-laws-enable-government-control-over-onl",
+      "title": "EFF: Age Verification Laws Enable Government Control Over Online Speech",
+      "summary": "EFF defends Minnesota lawmaker who warned that age verification mandates are being used to restrict LGBTQ+ youth access to information, demonstrating broader government control over online speech.",
+      "content_text": "Rep. Leigh Finke testified against Minnesota HF1434, a broad age verification bill requiring ID/biometric verification\n• Bill's 'harmful to minors' definition sweeps in lawful speech about sexual orientation, health, and gender identity\n• Finke faced media attacks for noting these laws already block LGBTQ+ youth from accessing educational content\n• Supreme Court's FSC v. Paxton case enables states to mandate age verification with broad definitions\n• Anti-LGBTQ groups filed amicus briefs supporting Texas age verification law, revealing underlying agenda\n• Minnesota bill goes further than Texas law by expanding 'harmful' content to include sex education and health info\n• Age verification creates surveillance infrastructure while restricting First Amendment rights of all users\n• EFF argues young people have constitutional right to access information about bodies, sexuality, and health",
+      "date_published": "2026-03-12T22:00:24.099Z",
+      "date_modified": "2026-03-12T22:00:24.164Z",
+      "tags": [
+        "censorship-resistance",
+        "privacy",
+        "surveillance",
+        "identity"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/03/rep-finke-was-right-age-gating-isnt-about-kids-its-about-control"
+        ]
+      }
+    },
+    {
       "id": "6eebc736-7b90-4c2a-9ca6-c8b31c3a8b0e",
       "url": "https://libertas.fgu.tech/posts/pentagon-rejects-ai-ethics-constraints-enables-autonomous-we",
       "title": "Pentagon Rejects AI Ethics Constraints, Enables Autonomous Weapons Development",
@@ -850,6 +851,26 @@
         "credibility_score": 95,
         "citations": [
           "https://cpj.org/2026/03/kenya-court-strikes-down-fake-news-sections-of-cyber-law-upholds-other-problematic-provisions/"
+        ]
+      }
+    },
+    {
+      "id": "74c86fe4-2840-43c3-baa8-5118ea3586cc",
+      "url": "https://libertas.fgu.tech/posts/bipartisan-bill-targets-fbi-warrantless-surveillance-and-com",
+      "title": "Bipartisan Bill Targets FBI Warrantless Surveillance and Commercial Data Purchases",
+      "summary": "US lawmakers introduce bipartisan legislation requiring FBI warrants for reading Americans' messages and banning federal purchase of commercial data on US residents before critical April deadline.",
+      "content_text": "Bipartisan congressional bill targets FBI warrantless surveillance practices\n• Would require warrants for FBI to read Americans' digital messages\n• Proposes ban on federal government purchasing commercial data on US residents\n• Timing tied to critical April deadline (likely FISA Section 702 reauthorization)\n• Addresses two major surveillance overreach vectors: direct access and data broker purchases\n• Bipartisan support suggests potential for actual legislative progress\n• Could significantly limit government end-runs around Fourth Amendment protections",
+      "date_published": "2026-03-12T22:01:24.442Z",
+      "date_modified": "2026-03-12T22:01:24.524Z",
+      "tags": [
+        "surveillance",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 90,
+        "citations": [
+          "https://www.wired.com/story/us-lawmakers-move-to-kill-the-fbis-warrantless-wiretap-access/"
         ]
       }
     },
@@ -1670,6 +1691,27 @@
       }
     },
     {
+      "id": "b9771b7e-e720-472b-baf1-18946864e1b9",
+      "url": "https://libertas.fgu.tech/posts/california-s-a-b-1043-age-verification-law-creates-censorshi",
+      "title": "California's A.B. 1043 Age Verification Law Creates Censorship Trap for Open-Source Developers",
+      "summary": "EFF warns California's A.B. 1043, effective 2027, will force age bracketing that leads to over-censorship and particularly harms open-source developers through compliance burdens.",
+      "content_text": "A.B. 1043 requires operating systems and apps to create age bracketing systems for all users\n• Users must provide birth date/age data to access software and applications\n• Age bracket data treated as 'actual knowledge' triggering liability under other laws\n• Creates incentive for developers to exclude minors entirely to avoid legal risk\n• Broad language covers virtually any digital device that runs software\n• Small and open-source developers face disproportionate compliance burdens\n• Law entrenches dominance of major tech companies who can afford compliance\n• EFF advocates for comprehensive privacy laws instead of age verification mandates",
+      "date_published": "2026-03-12T22:00:24.099Z",
+      "date_modified": "2026-03-12T22:00:24.164Z",
+      "tags": [
+        "privacy",
+        "censorship-resistance",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/03/ab-1043s-internet-age-gates-hurt-everyone"
+        ]
+      }
+    },
+    {
       "id": "bcf93c2f-e983-4223-ad07-125f7ae244ad",
       "url": "https://libertas.fgu.tech/posts/eu-mandates-crypto-platform-reporting-starting-2026",
       "title": "EU Mandates Crypto Platform Reporting Starting 2026",
@@ -1709,6 +1751,28 @@
         "credibility_score": 85,
         "citations": [
           "https://www.wired.com/story/how-journalists-are-reporting-from-iran-with-no-internet/"
+        ]
+      }
+    },
+    {
+      "id": "bf303233-77f3-44fc-90f2-e4051f04f30f",
+      "url": "https://libertas.fgu.tech/posts/citizen-lab-states-using-zero-click-spyware-for-gendered-dig",
+      "title": "Citizen Lab: States Using Zero-Click Spyware for Gendered Digital Repression",
+      "summary": "Citizen Lab research reveals how authoritarian states are using zero-click spyware and data brokers to target women activists across borders with gender-specific harassment tactics.",
+      "content_text": "Citizen Lab published report on gendered dimensions of digital transnational repression in late 2024\n• States use zero-click spyware and data broker information to target women human rights defenders abroad\n• Attacks exploit patriarchal norms, using threats about women's bodies/sexuality to silence activists\n• Digital repression causes psychological distress, leading to self-censorship and withdrawal from public life\n• Autocrats can target women activists 'without deploying a lot of resources' through commercial spyware\n• Researcher Noura Aljizawi, herself a victim, emphasizes community support as key to building resilience\n• Report calls for better support systems for victims of gendered digital repression",
+      "date_published": "2026-03-12T22:01:57.650Z",
+      "date_modified": "2026-03-12T22:01:57.747Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://citizenlab.ca/the-market-for-spyware-is-growing-its-used-differently-against-women/"
         ]
       }
     },
@@ -1795,6 +1859,29 @@
         "credibility_score": 95,
         "citations": [
           "https://www.eff.org/press/releases/national-book-tour-cindy-cohns-memoir-privacys-defender"
+        ]
+      }
+    },
+    {
+      "id": "cbd6a972-f0eb-4834-8e4e-be81a5ce543d",
+      "url": "https://libertas.fgu.tech/posts/openai-claims-pentagon-contract-bars-mass-surveillance-refus",
+      "title": "OpenAI Claims Pentagon Contract Bars Mass Surveillance, Refuses to Release Proof",
+      "summary": "OpenAI secured a Pentagon AI contract after rival Anthropic was booted for refusing surveillance terms, but won't release contract details to verify claims about domestic spying prohibitions.",
+      "content_text": "OpenAI announced Pentagon contract after Anthropic talks collapsed over surveillance/weapons restrictions\n• Anthropic was ordered to phase out government tools within 6 months for refusing mass surveillance terms\n• OpenAI claims contract prohibits domestic mass surveillance and autonomous weapons use\n• Company refuses to release actual contract language despite public scrutiny\n• CEO Sam Altman says deal includes stricter protections and bars NSA collaboration\n• Former Pentagon officials express skepticism about claimed restrictions\n• OpenAI spokesperson made false claims about Pentagon's legal authority for data collection\n• Contract language reportedly includes vague caveats around 'intentional' surveillance",
+      "date_published": "2026-03-12T22:03:08.593Z",
+      "date_modified": "2026-03-12T22:03:08.713Z",
+      "tags": [
+        "censorship-resistance",
+        "activism",
+        "surveillance",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 88,
+        "credibility_score": 85,
+        "citations": [
+          "https://theintercept.com/2026/03/08/openai-anthropic-military-contract-ethics-surveillance/",
+          "https://theintercept.com/2026/03/12/antifa-ice-protest-texas-trial-terrorism/"
         ]
       }
     },
@@ -2161,6 +2248,26 @@
         "credibility_score": 85,
         "citations": [
           "https://freedomhouse.org/article/political-prisoners-watch-artists-behind-bars"
+        ]
+      }
+    },
+    {
+      "id": "fd83b981-1e32-4d3b-b5c3-07ac948123cc",
+      "url": "https://libertas.fgu.tech/posts/openai-pentagon-deal-raises-mass-surveillance-concerns-despi",
+      "title": "OpenAI Pentagon Deal Raises Mass Surveillance Concerns Despite CEO Denials",
+      "summary": "OpenAI's new Pentagon contract permits bulk data collection from users, with experts warning about AI-amplified surveillance risks despite CEO Sam Altman's claims otherwise.",
+      "content_text": "OpenAI signed Pentagon contract allowing bulk user data collection [Citizen Lab]\n• CEO Sam Altman denies deal enables mass surveillance capabilities\n• Senior researcher Wolfie Christl and other experts express skepticism about Altman's claims\n• Government can already purchase personal data for warrantless surveillance operations\n• AI systems amplify surveillance risks through 'errors, bias, and lack of accountability'\n• Represents potential policy shift in OpenAI's previous surveillance red lines\n• Opaque AI processing makes harm from surveillance data more difficult to detect",
+      "date_published": "2026-03-12T22:01:57.649Z",
+      "date_modified": "2026-03-12T22:01:57.747Z",
+      "tags": [
+        "surveillance",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 88,
+        "citations": [
+          "https://citizenlab.ca/openai-blurs-its-mass-surveillance-red-line-with-new-pentagon-contract/"
         ]
       }
     },
