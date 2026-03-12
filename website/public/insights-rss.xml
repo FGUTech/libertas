@@ -5,20 +5,9 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 12 Mar 2026 04:01:22 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 12 Mar 2026 16:01:47 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
-  <item>
-    <title>Iran Arrests Japanese NHK Bureau Chief Amid Systematic Press Crackdown</title>
-    <link>https://libertas.fgu.tech/posts/iran-arrests-japanese-nhk-bureau-chief-amid-systematic-press</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/iran-arrests-japanese-nhk-bureau-chief-amid-systematic-press</guid>
-    <pubDate>Thu, 26 Feb 2026 11:01:49 GMT</pubDate>
-    <description>Iranian authorities arrested Japanese journalist Shinnosuke Kawashima and implemented comprehensive surveillance tactics including device confiscation and internet shutdowns during recent protest crackdown.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>privacy</category>
-  </item>
   <item>
     <title>Nawat Indigenous Language Gets Official Wikipedia After 16-Year Incubation</title>
     <link>https://libertas.fgu.tech/posts/nawat-indigenous-language-gets-official-wikipedia-after-16-y</link>
@@ -28,6 +17,18 @@
     <category>sovereignty</category>
     <category>identity</category>
     <category>censorship-resistance</category>
+  </item>
+  <item>
+    <title>Iran War Triggers Massive Internet Blackout, Regional Press Censorship Crackdown</title>
+    <link>https://libertas.fgu.tech/posts/iran-war-triggers-massive-internet-blackout-regional-press-c</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/iran-war-triggers-massive-internet-blackout-regional-press-c</guid>
+    <pubDate>Thu, 12 Mar 2026 16:01:47 GMT</pubDate>
+    <description>Iran imposed nationwide internet blackout dropping connectivity to 1% during U.S.-Israel strikes, while regional governments implemented sweeping media restrictions and detained journalists across Middle East.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>comms</category>
+    <category>privacy</category>
   </item>
   <item>
     <title>Rights Groups Demand Transparency from AppLogic Networks Over Egypt Censorship Tech</title>
@@ -326,16 +327,6 @@
     <category>surveillance</category>
   </item>
   <item>
-    <title>Wisconsin Removes VPN Ban from Age Verification Bill After Pushback</title>
-    <link>https://libertas.fgu.tech/posts/wisconsin-removes-vpn-ban-from-age-verification-bill-after-p</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/wisconsin-removes-vpn-ban-from-age-verification-bill-after-p</guid>
-    <pubDate>Thu, 26 Feb 2026 05:01:30 GMT</pubDate>
-    <description>Wisconsin lawmakers removed VPN bans from age verification bill S.B. 130/A.B. 105 after widespread opposition, though EFF still opposes the bill awaiting Governor Evers&apos; signature.</description>
-    <category>privacy</category>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-  </item>
-  <item>
     <title>Access Now Launches Spear Phishing Defense Webinar Series for Civil Society</title>
     <link>https://libertas.fgu.tech/posts/access-now-launches-spear-phishing-defense-webinar-series-fo</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/access-now-launches-spear-phishing-defense-webinar-series-fo</guid>
@@ -345,16 +336,6 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>censorship-resistance</category>
-  </item>
-  <item>
-    <title>Florida Proposes State Spy Unit to &apos;Neutralize&apos; People Based on Views and Opinions</title>
-    <link>https://libertas.fgu.tech/posts/florida-proposes-state-spy-unit-to-neutralize-people-based-o</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/florida-proposes-state-spy-unit-to-neutralize-people-based-o</guid>
-    <pubDate>Thu, 26 Feb 2026 11:02:39 GMT</pubDate>
-    <description>Florida legislature advances bill creating state counterintelligence unit that could target individuals whose &apos;views or opinions are a threat&apos; to the state, raising COINTELPRO-style surveillance concerns.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
-    <category>activism</category>
   </item>
   <item>
     <title>Columbia University Failed to Protect Students from Warrantless ICE Raids Despite Clear Policies</title>
@@ -741,16 +722,6 @@
     <category>activism</category>
   </item>
   <item>
-    <title>EFF Releases Guide to Expose Police Surveillance Tech Sales Hype</title>
-    <link>https://libertas.fgu.tech/posts/eff-releases-guide-to-expose-police-surveillance-tech-sales-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-releases-guide-to-expose-police-surveillance-tech-sales-</guid>
-    <pubDate>Thu, 26 Feb 2026 05:01:30 GMT</pubDate>
-    <description>EFF, CJJ, and IPVM released &apos;Selling Safety&apos; report helping journalists critically examine police surveillance technology claims and expose industry tactics that exploit taxpayers while eroding civil liberties.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
-    <category>activism</category>
-  </item>
-  <item>
     <title>Building Self-Hosted Communities: Taiwan&apos;s Response to Platform Censorship</title>
     <link>https://libertas.fgu.tech/posts/building-self-hosted-communities-taiwan-s-response-to-platfo</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/building-self-hosted-communities-taiwan-s-response-to-platfo</guid>
@@ -1063,16 +1034,6 @@
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-analysis-safe-act-proposes-major-section-702-surveillanc</guid>
     <pubDate>Mon, 09 Mar 2026 22:00:53 GMT</pubDate>
     <description>The bipartisan SAFE Act would require FBI warrants for accessing Americans&apos; communications collected via Section 702, address parallel construction, and partially close data broker loopholes.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
-    <category>activism</category>
-  </item>
-  <item>
-    <title>Coalition Demands California Revoke Federal ALPR Surveillance Permits on Border Highways</title>
-    <link>https://libertas.fgu.tech/posts/coalition-demands-california-revoke-federal-alpr-surveillanc</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/coalition-demands-california-revoke-federal-alpr-surveillanc</guid>
-    <pubDate>Thu, 26 Feb 2026 05:01:30 GMT</pubDate>
-    <description>EFF-led coalition demands California revoke permits allowing CBP and DEA to deploy automated license plate readers disguised as traffic barrels on border highways, citing mass surveillance risks.</description>
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>

@@ -7,28 +7,6 @@
   "language": "en-US",
   "items": [
     {
-      "id": "05d6e3ff-1b69-4f77-ba81-0182b1a391e6",
-      "url": "https://libertas.fgu.tech/posts/iran-arrests-japanese-nhk-bureau-chief-amid-systematic-press",
-      "title": "Iran Arrests Japanese NHK Bureau Chief Amid Systematic Press Crackdown",
-      "summary": "Iranian authorities arrested Japanese journalist Shinnosuke Kawashima and implemented comprehensive surveillance tactics including device confiscation and internet shutdowns during recent protest crackdown.",
-      "content_text": "IRGC arrested NHK Tehran bureau chief Shinnosuke Kawashima on January 20, transferred to Evin Prison February 23\n• Authorities confiscated videographer Mehdi Mohammedi's passport, phone, laptop, camera, and his wife's cell phone\n• One NHK staff member fled Iran in early February after repeated summons following bureau chief's arrest\n• Part of broader crackdown: 12 journalists arrested since late December protests, 7 remain detained\n• Iranian authorities enforced near-total internet shutdown during crackdown period\n• Systematic tactics include home raids, bank account blocking, SIM card deactivation, and reporter interrogations\n• HRANA reports 7,000+ confirmed killed, 53,000+ arrested in January crackdown alone\n• Japanese government demanding early release through diplomatic channels",
-      "date_published": "2026-02-26T11:01:49.376Z",
-      "date_modified": "2026-02-26T11:01:49.492Z",
-      "tags": [
-        "censorship-resistance",
-        "surveillance",
-        "activism",
-        "privacy"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 85,
-        "citations": [
-          "https://cpj.org/2026/02/iranian-authorities-arrest-japanese-journalist-shinnosuke-kawashima/"
-        ]
-      }
-    },
-    {
       "id": "07c71dad-4216-446c-92f8-505f74e73717",
       "url": "https://libertas.fgu.tech/posts/nawat-indigenous-language-gets-official-wikipedia-after-16-y",
       "title": "Nawat Indigenous Language Gets Official Wikipedia After 16-Year Incubation",
@@ -46,6 +24,29 @@
         "credibility_score": 85,
         "citations": [
           "https://globalvoices.org/2026/03/06/nawat-language-now-has-its-own-wikipedia/"
+        ]
+      }
+    },
+    {
+      "id": "0b5abf04-c961-42ce-8633-50d6e4166743",
+      "url": "https://libertas.fgu.tech/posts/iran-war-triggers-massive-internet-blackout-regional-press-c",
+      "title": "Iran War Triggers Massive Internet Blackout, Regional Press Censorship Crackdown",
+      "summary": "Iran imposed nationwide internet blackout dropping connectivity to 1% during U.S.-Israel strikes, while regional governments implemented sweeping media restrictions and detained journalists across Middle East.",
+      "content_text": "Iran shut down internet nationwide within hours of conflict start, connectivity dropped to 1% of normal levels per NetBlocks\n• Only government-linked media retained limited access through restricted 'white internet'\n• Multiple airstrikes targeted media infrastructure including Radio Dezful, IRIB broadcaster, and Kurdish TV stations\n• At least 6 journalists detained/questioned including CNN Türk crew broadcasting live from Tel Aviv\n• UAE blocked X accounts of journalists and Saudi media outlets via prosecutor decree\n• Jordan, Saudi Arabia, Kuwait banned publishing content on defensive operations, limiting reporting to official updates\n• 15+ journalists remain jailed in Iran's Evin Prison amid evacuation orders for surrounding areas\n• Physical assaults reported against international journalists in Lebanon and Israel",
+      "date_published": "2026-03-12T16:01:47.405Z",
+      "date_modified": "2026-03-12T16:01:47.506Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "comms",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://cpj.org/2026/03/press-freedom-violations-in-the-middle-east-during-the-iran-war/"
         ]
       }
     },
@@ -656,27 +657,6 @@
       }
     },
     {
-      "id": "5c5bb25a-9ac1-4945-85d1-861e4587f556",
-      "url": "https://libertas.fgu.tech/posts/wisconsin-removes-vpn-ban-from-age-verification-bill-after-p",
-      "title": "Wisconsin Removes VPN Ban from Age Verification Bill After Pushback",
-      "summary": "Wisconsin lawmakers removed VPN bans from age verification bill S.B. 130/A.B. 105 after widespread opposition, though EFF still opposes the bill awaiting Governor Evers' signature.",
-      "content_text": "Wisconsin removed VPN ban provision from S.B. 130/A.B. 105 on February 25, 2026 after pushback\n• Bill still requires invasive age verification for websites with content deemed 'sexual'\n• EFF continues opposing the bill despite VPN provision removal\n• Original bill would have forced websites to block all VPN users to comply with Wisconsin law\n• Technical impossibility of geo-blocking VPN users would lead to over-blocking or nationwide restrictions\n• Bill expands definition of 'harmful to minors' beyond historically narrow court-recognized categories\n• Age verification requirements create privacy nightmare requiring government IDs and biometric data\n• Governor Tony Evers urged to veto the bill despite VPN provision removal",
-      "date_published": "2026-02-26T05:01:30.022Z",
-      "date_modified": "2026-02-26T05:01:30.064Z",
-      "tags": [
-        "privacy",
-        "censorship-resistance",
-        "surveillance"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 88,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/02/eff-wisconsin-legislature-vpn-bans-are-still-terrible-idea"
-        ]
-      }
-    },
-    {
       "id": "5dfa74d0-db36-4633-b44e-2e571a93879a",
       "url": "https://libertas.fgu.tech/posts/access-now-launches-spear-phishing-defense-webinar-series-fo",
       "title": "Access Now Launches Spear Phishing Defense Webinar Series for Civil Society",
@@ -695,27 +675,6 @@
         "credibility_score": 95,
         "citations": [
           "https://www.accessnow.org/event/digital-security-webinars/"
-        ]
-      }
-    },
-    {
-      "id": "603059e2-5466-4065-a478-1f3f5ecf8c50",
-      "url": "https://libertas.fgu.tech/posts/florida-proposes-state-spy-unit-to-neutralize-people-based-o",
-      "title": "Florida Proposes State Spy Unit to 'Neutralize' People Based on Views and Opinions",
-      "summary": "Florida legislature advances bill creating state counterintelligence unit that could target individuals whose 'views or opinions are a threat' to the state, raising COINTELPRO-style surveillance concerns.",
-      "content_text": "Florida Rep. Danny Alvarez (R) sponsors bill creating state counterintelligence unit within Florida Department of Law Enforcement\n• Unit empowered to 'neutralize' people whose 'demonstrated actions, views, or opinions are a threat' to Florida\n• Bill passed three House committees with Senate companion pending, making passage likely\n• Israeli spyware company Cellebrite tracking bill through registered lobbyist [Source]\n• No explicit protections for U.S. citizens; language allows targeting based on views deemed 'inimical' to state interests\n• CAIR-Florida expects Muslims to be primary targets, citing recent DeSantis designation of CAIR as 'foreign terrorist organization'\n• Civil rights advocates compare to FBI's COINTELPRO program that illegally surveilled activists\n• Bill includes vague 'tradecraft' language and broad definition of adversary entities including 'any person' with threatening views",
-      "date_published": "2026-02-26T11:02:39.058Z",
-      "date_modified": "2026-02-26T11:02:39.229Z",
-      "tags": [
-        "surveillance",
-        "privacy",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 85,
-        "credibility_score": 88,
-        "citations": [
-          "https://theintercept.com/2026/02/26/florida-spy-counterterrorism-muslims/"
         ]
       }
     },
@@ -1514,27 +1473,6 @@
       }
     },
     {
-      "id": "a67ac71b-291c-4eb8-b4f8-276f3273c96f",
-      "url": "https://libertas.fgu.tech/posts/eff-releases-guide-to-expose-police-surveillance-tech-sales-",
-      "title": "EFF Releases Guide to Expose Police Surveillance Tech Sales Hype",
-      "summary": "EFF, CJJ, and IPVM released 'Selling Safety' report helping journalists critically examine police surveillance technology claims and expose industry tactics that exploit taxpayers while eroding civil liberties.",
-      "content_text": "EFF, Center for Just Journalism, and IPVM released joint 'Selling Safety' report for journalists\n• Guide helps cut through surveillance tech marketing claims that are 'often misleading'\n• Police tech industry described as 'unregulated, unexamined, and consequential' with billion-dollar profit motives\n• Companies manufacture appearance of effectiveness rather than measuring actual results\n• Report provides tools for better questions, understanding incentives, and finding accountability stories\n• Surveillance technologies spreading faster than public understanding or oversight\n• EFF maintains Street-Level Surveillance hub and Atlas of Surveillance mapping tools\n• Resource aims to protect taxpayer dollars and civil liberties through critical journalism",
-      "date_published": "2026-02-26T05:01:30.023Z",
-      "date_modified": "2026-02-26T05:01:30.064Z",
-      "tags": [
-        "surveillance",
-        "privacy",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/press/releases/new-report-helps-journalists-dig-deeper-police-surveillance-technology"
-        ]
-      }
-    },
-    {
       "id": "ae0fa6a2-a16f-49fc-935c-60b6a091cb98",
       "url": "https://libertas.fgu.tech/posts/building-self-hosted-communities-taiwan-s-response-to-platfo",
       "title": "Building Self-Hosted Communities: Taiwan's Response to Platform Censorship",
@@ -2180,27 +2118,6 @@
         "credibility_score": 95,
         "citations": [
           "https://www.eff.org/deeplinks/2026/03/safe-act-imperfect-vehicle-real-section-702-reform"
-        ]
-      }
-    },
-    {
-      "id": "f31a2603-2370-49be-bf77-11371f976b38",
-      "url": "https://libertas.fgu.tech/posts/coalition-demands-california-revoke-federal-alpr-surveillanc",
-      "title": "Coalition Demands California Revoke Federal ALPR Surveillance Permits on Border Highways",
-      "summary": "EFF-led coalition demands California revoke permits allowing CBP and DEA to deploy automated license plate readers disguised as traffic barrels on border highways, citing mass surveillance risks.",
-      "content_text": "Coalition of 25+ orgs led by EFF and Imperial Valley Equity & Justice sent letter to Gov. Newsom and Caltrans\n• Federal agencies CBP and DEA have permits to deploy ALPRs along California border highways\n• Surveillance devices often disguised as traffic barrels to avoid detection\n• Coalition argues ALPRs put residents and migrants at risk of harassment, detention, and deportation\n• Letter references return of USBP Chief Greg Bovino who led 'brutal campaigns' in other cities\n• Demands immediate revocation of permits and removal of existing surveillance infrastructure\n• Broad coalition includes nurses, teachers, ACLU, privacy groups, and immigrant rights organizations",
-      "date_published": "2026-02-26T05:01:30.023Z",
-      "date_modified": "2026-02-26T05:01:30.064Z",
-      "tags": [
-        "surveillance",
-        "privacy",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/press/releases/coalition-urges-california-revoke-permits-federal-license-plate-reader-surveillance"
         ]
       }
     },
