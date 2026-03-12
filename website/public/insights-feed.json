@@ -246,6 +246,27 @@
       }
     },
     {
+      "id": "1e7f596f-99f6-486f-8473-dc461e9e51f6",
+      "url": "https://libertas.fgu.tech/posts/iraqi-women-s-rights-leader-yanar-mohammed-assassinated-in-b",
+      "title": "Iraqi Women's Rights Leader Yanar Mohammed Assassinated in Baghdad",
+      "summary": "Prominent Iraqi women's rights activist Yanar Mohammed was gunned down by motorcycle assassins in Baghdad, highlighting the deadly environment for freedom advocates in Iraq.",
+      "content_text": "Yanar Mohammed, 65, founder of Organization of Women's Freedom in Iraq, killed by two men on motorcycles March 2, 2026\n• Mohammed built network of women's shelters serving 1,300+ women fleeing violence since 2003\n• Published feminist newspaper Al-Mousawat and trained women's rights activists\n• No group claimed responsibility; latest in decade-long pattern of activist assassinations in Iraq\n• Killing follows backlash against women's rights groups opposing abusive Personal Status Law amendments\n• Iraqi authorities have failed to deliver justice for assassinated activists, enabling culture of impunity\n• Attack represents direct targeting of feminist movement and freedom advocacy infrastructure",
+      "date_published": "2026-03-12T04:01:22.824Z",
+      "date_modified": "2026-03-12T04:01:22.960Z",
+      "tags": [
+        "activism",
+        "censorship-resistance",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.hrw.org/news/2026/03/12/iraq-prominent-womens-rights-activist-assassinated"
+        ]
+      }
+    },
+    {
       "id": "209fc223-b4da-4c5d-9d5b-ab2393bb7119",
       "url": "https://libertas.fgu.tech/posts/federal-agents-arrest-independent-photographer-seize-equipme",
       "title": "Federal Agents Arrest Independent Photographer, Seize Equipment Over ICE Protest Coverage",
@@ -716,28 +737,6 @@
         "credibility_score": 85,
         "citations": [
           "https://theintercept.com/2026/03/08/columbia-ice-raids-warrant-khalil/"
-        ]
-      }
-    },
-    {
-      "id": "637adfc0-a7c0-48f4-aaef-fc610874cae8",
-      "url": "https://libertas.fgu.tech/posts/eff-warns-of-growing-age-verification-mandates-and-facial-re",
-      "title": "EFF Warns of Growing Age Verification Mandates and Facial Recognition Surveillance",
-      "summary": "EFF highlights escalating threats to online privacy including Discord's mandatory age verification, Meta's face-scanning smart glasses, and surveillance tech normalization.",
-      "content_text": "Discord implements mandatory age verification despite recent data breach [EFF]\n• Leaked Meta memo reveals plans for face-scanning smart glasses technology\n• Ring's Super Bowl ad openly promoted surveillance capabilities to consumers\n• Age verification laws increasingly require ID presentation to access online content\n• EFF warns these measures threaten privacy and free speech for all users, not just minors\n• Pattern shows normalization of invasive identity verification across platforms\n• Technical implementation creates honeypots of sensitive personal data",
-      "date_published": "2026-02-25T23:01:27.449Z",
-      "date_modified": "2026-02-25T23:01:27.505Z",
-      "tags": [
-        "privacy",
-        "surveillance",
-        "censorship-resistance",
-        "identity"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 85,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/02/trust-us-your-face-effector-384"
         ]
       }
     },
@@ -1237,28 +1236,6 @@
       }
     },
     {
-      "id": "86acad04-4118-45ef-8846-55665fc149d8",
-      "url": "https://libertas.fgu.tech/posts/40-uyghurs-forcibly-returned-to-china-by-thailand-remain-mis",
-      "title": "40 Uyghurs Forcibly Returned to China by Thailand Remain Missing After One Year",
-      "summary": "Thailand deported 40 Uyghur men to China in February 2025 despite torture risks. Their whereabouts remain unknown, constituting forced disappearances under international law.",
-      "content_text": "Thai authorities forcibly returned 40 Uyghur men to China in February 2025 after decade in detention\n• Men had fled systematic persecution in Xinjiang and faced grave risks of torture upon return\n• Deportation violated international nonrefoulement principle prohibiting return to persecution\n• Family members abroad have received no contact since deportation occurred\n• Chinese government's refusal to report their fate constitutes forced disappearances under international law\n• UNHCR was denied access to assess refugee status before deportation\n• Pattern of Uyghur deportations documented across multiple countries under Chinese pressure\n• Highlights critical need for secure communications and identity protection tools for at-risk populations",
-      "date_published": "2026-02-25T23:02:43.782Z",
-      "date_modified": "2026-02-25T23:02:43.918Z",
-      "tags": [
-        "surveillance",
-        "activism",
-        "sovereignty",
-        "identity"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 75,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.hrw.org/news/2026/02/26/unknown-fate-for-uyghurs-deported-from-thailand-to-china"
-        ]
-      }
-    },
-    {
       "id": "882da34b-713c-4c5c-97bd-925485ec32c9",
       "url": "https://libertas.fgu.tech/posts/tibet-45-detained-for-digital-communications-as-china-intens",
       "title": "Tibet: 45 Detained for Digital Communications as China Intensifies Phone Surveillance",
@@ -1342,29 +1319,6 @@
         "citations": [
           "https://restofworld.org/2026/iran-internet-shutdown-diaspora-family/",
           "https://restofworld.org/2026/iran-internet-shutdown-diaspora-family/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=feeds"
-        ]
-      }
-    },
-    {
-      "id": "996cde50-7806-4934-95e2-eeb7f4806f59",
-      "url": "https://libertas.fgu.tech/posts/trump-admin-cuts-freedom-tech-funding-while-launching-anti-c",
-      "title": "Trump Admin Cuts Freedom Tech Funding While Launching 'Anti-Censorship' Portal",
-      "summary": "Trump administration launches freedom.gov to bypass European regulations while simultaneously cutting funding to organizations that build censorship circumvention tools and support at-risk activists globally.",
-      "content_text": "Trump administration launching freedom.gov portal to help users bypass European content restrictions\n• US foreign aid cuts eliminated funding for organizations developing censorship circumvention tools\n• Open Observatory of Network Interference reports reduced ability to monitor internet censorship\n• South Asian digital rights org lost 45% of budget, threatens rapid response helpline for at-risk users\n• State Department threatening visa denials for researchers and fact-checkers over 'censorship' claims\n• Five Europeans already banned for allegedly pressuring tech firms to 'censor American viewpoints'\n• Policy contradicts stated goal of supporting free expression and anti-censorship efforts\n• Funding cuts particularly impact organizations supporting journalists and dissidents in repressive environments",
-      "date_published": "2026-02-25T23:02:43.782Z",
-      "date_modified": "2026-02-25T23:02:43.918Z",
-      "tags": [
-        "censorship-resistance",
-        "privacy",
-        "surveillance",
-        "activism",
-        "comms"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 85,
-        "credibility_score": 90,
-        "citations": [
-          "https://www.hrw.org/news/2026/02/25/trumps-selective-war-on-censorship"
         ]
       }
     },
@@ -2230,27 +2184,6 @@
       }
     },
     {
-      "id": "f25eb9a7-06a5-498c-8859-3e4b2eb73856",
-      "url": "https://libertas.fgu.tech/posts/ethiopia-shutters-independent-media-outlets-ahead-of-nationa",
-      "title": "Ethiopia Shutters Independent Media Outlets Ahead of National Elections",
-      "summary": "Ethiopian authorities revoked the license of Addis Standard, one of the country's last independent news outlets, three months before national elections, escalating systematic media suppression.",
-      "content_text": "Ethiopia's Media Authority revoked operating license of Addis Standard on February 24, 2026\n• Action taken 3 months before scheduled national elections\n• Addis Standard was one of Ethiopia's last remaining independent media outlets since 2011\n• Government cited unspecified violations of laws and media ethics, endangering national interests\n• Editor-in-chief Yonas Kedir denied allegations, said no formal prior violations were communicated\n• Part of escalating crackdown: Deutsche Welle journalists suspended, Wazema Radio license revoked, Reuters accreditation declined\n• Pattern follows government raids, detentions, and harassment of independent journalists throughout 2025-2026\n• Demonstrates urgent need for censorship-resistant communication infrastructure in authoritarian contexts",
-      "date_published": "2026-02-25T23:02:43.783Z",
-      "date_modified": "2026-02-25T23:02:43.918Z",
-      "tags": [
-        "censorship-resistance",
-        "surveillance",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 75,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.hrw.org/news/2026/02/25/ethiopia-shutters-key-news-outlet"
-        ]
-      }
-    },
-    {
       "id": "f31a2603-2370-49be-bf77-11371f976b38",
       "url": "https://libertas.fgu.tech/posts/coalition-demands-california-revoke-federal-alpr-surveillanc",
       "title": "Coalition Demands California Revoke Federal ALPR Surveillance Permits on Border Highways",
@@ -2290,28 +2223,6 @@
         "credibility_score": 85,
         "citations": [
           "https://cpj.org/2026/02/cpj-calls-on-swiss-authorities-to-protect-azerbaijani-journalist-emin-huseynov/"
-        ]
-      }
-    },
-    {
-      "id": "f51103ab-bcb2-41cd-a52a-7353aaaa993c",
-      "url": "https://libertas.fgu.tech/posts/access-now-launches-digital-security-webinar-series-targetin",
-      "title": "Access Now Launches Digital Security Webinar Series Targeting Civil Society Spear-Phishing Threats",
-      "summary": "Access Now's Digital Security Helpline launches webinar series starting March 2026, focusing on spear-phishing defense for activists and civil society with expert speakers from Citizen Lab and security industry.",
-      "content_text": "Access Now announces 'Safe and Strong' webinar series on digital security starting March 10, 2026\n• First session focuses on spear-phishing attacks targeting activists, journalists, and civil society\n• Expert speakers include Citizen Lab's Rebekah Brown and threat researchers from Lookout\n• Training draws from documented attack cases in Eastern Europe and Middle East regions\n• Series aims to share actionable threat prevention and response insights\n• Initiative brings together civil society, private sector, and support organizations\n• Content specifically addresses increasingly sophisticated social engineering techniques",
-      "date_published": "2026-02-25T23:02:15.180Z",
-      "date_modified": "2026-02-25T23:02:15.288Z",
-      "tags": [
-        "privacy",
-        "surveillance",
-        "activism",
-        "comms"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.accessnow.org/event/digital-security-webinars/"
         ]
       }
     },
