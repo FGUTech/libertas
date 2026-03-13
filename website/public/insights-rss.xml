@@ -5,9 +5,19 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 13 Mar 2026 04:01:03 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 13 Mar 2026 10:01:36 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
+  <item>
+    <title>Vietnam Re-Arrests Independent Journalist Le Anh Hung on State Propaganda Charges</title>
+    <link>https://libertas.fgu.tech/posts/vietnam-re-arrests-independent-journalist-le-anh-hung-on-sta</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/vietnam-re-arrests-independent-journalist-le-anh-hung-on-sta</guid>
+    <pubDate>Fri, 13 Mar 2026 10:01:19 GMT</pubDate>
+    <description>Vietnamese authorities arrested independent journalist Le Anh Hung on March 9, charging him under Article 117 for &apos;propagandizing against the state&apos; - his second arrest for online commentary critical of the government.</description>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>surveillance</category>
+  </item>
   <item>
     <title>Nawat Indigenous Language Gets Official Wikipedia After 16-Year Incubation</title>
     <link>https://libertas.fgu.tech/posts/nawat-indigenous-language-gets-official-wikipedia-after-16-y</link>
@@ -564,17 +574,6 @@
     <category>identity</category>
   </item>
   <item>
-    <title>Pakistani Academic Sentenced to Death for Facebook Posts Spends 13 Years in Solitary</title>
-    <link>https://libertas.fgu.tech/posts/pakistani-academic-sentenced-to-death-for-facebook-posts-spe</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/pakistani-academic-sentenced-to-death-for-facebook-posts-spe</guid>
-    <pubDate>Fri, 27 Feb 2026 05:01:26 GMT</pubDate>
-    <description>Junaid Hafeez has been imprisoned for 13 years, mostly in solitary confinement, after being sentenced to death for alleged blasphemous Facebook posts, highlighting Pakistan&apos;s systematic suppression of online speech.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>privacy</category>
-  </item>
-  <item>
     <title>Tibet: 45 Detained for Digital Communications as China Intensifies Phone Surveillance</title>
     <link>https://libertas.fgu.tech/posts/tibet-45-detained-for-digital-communications-as-china-intens</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/tibet-45-detained-for-digital-communications-as-china-intens</guid>
@@ -645,18 +644,6 @@
     <category>censorship-resistance</category>
     <category>comms</category>
     <category>surveillance</category>
-  </item>
-  <item>
-    <title>Iran&apos;s DPI-Powered Internet Whitelisting System Built with Russian Tech Support</title>
-    <link>https://libertas.fgu.tech/posts/iran-s-dpi-powered-internet-whitelisting-system-built-with-r</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/iran-s-dpi-powered-internet-whitelisting-system-built-with-r</guid>
-    <pubDate>Fri, 27 Feb 2026 05:02:09 GMT</pubDate>
-    <description>Iran deployed infrastructure-level internet whitelisting using Deep Packet Inspection during 2025-26 protests, with Russian company Protei providing DPI systems to major Iranian telecoms, enabling granular traffic control beyond previous shutdowns.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>comms</category>
-    <category>privacy</category>
   </item>
   <item>
     <title>Anthropic Sues Pentagon Over AI Surveillance Mandate, EFF Backs First Amendment Defense</title>
@@ -1009,6 +996,17 @@
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/zimbabwe-escalates-crackdown-on-opposition-to-presidential-t</guid>
     <pubDate>Tue, 10 Mar 2026 10:02:42 GMT</pubDate>
     <description>Zimbabwean authorities are using violence, intimidation, and surveillance against civil society groups opposing a constitutional amendment that would extend President Mnangagwa&apos;s rule until 2030.</description>
+    <category>activism</category>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>sovereignty</category>
+  </item>
+  <item>
+    <title>Iranian Women Footballers Granted Asylum After Protest, Facing State Surveillance</title>
+    <link>https://libertas.fgu.tech/posts/iranian-women-footballers-granted-asylum-after-protest-facin</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/iranian-women-footballers-granted-asylum-after-protest-facin</guid>
+    <pubDate>Fri, 13 Mar 2026 10:01:36 GMT</pubDate>
+    <description>Australia granted asylum to 5 Iranian women&apos;s football players and 1 official who protested by refusing to sing national anthem, amid reports of Iranian security following them and ongoing internet shutdowns in Iran.</description>
     <category>activism</category>
     <category>surveillance</category>
     <category>censorship-resistance</category>

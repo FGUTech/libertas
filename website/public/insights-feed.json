@@ -7,6 +7,27 @@
   "language": "en-US",
   "items": [
     {
+      "id": "01f2ba4f-9cc3-4564-bd01-c673007be5e6",
+      "url": "https://libertas.fgu.tech/posts/vietnam-re-arrests-independent-journalist-le-anh-hung-on-sta",
+      "title": "Vietnam Re-Arrests Independent Journalist Le Anh Hung on State Propaganda Charges",
+      "summary": "Vietnamese authorities arrested independent journalist Le Anh Hung on March 9, charging him under Article 117 for 'propagandizing against the state' - his second arrest for online commentary critical of the government.",
+      "content_text": "Le Anh Hung arrested March 9 in Dak Lak province, charged under Article 117 carrying up to 20 years prison\n• Hung contributes to independent outlets including Thien Dan and maintains personal blog\n• Previously served 5-year sentence (2018-2023) under Article 331 for 'abuse of democratic freedoms'\n• Endured torture including beatings and forced drug injections in psychiatric hospital [Radio Free Asia]\n• Member of Independent Journalists Association of Vietnam, several members imprisoned\n• Vietnam holds 17 journalists behind bars, among world's worst for press freedom [CPJ data]\n• Case demonstrates state crackdown on independent online commentary and digital expression",
+      "date_published": "2026-03-13T10:01:19.676Z",
+      "date_modified": "2026-03-13T10:01:19.771Z",
+      "tags": [
+        "censorship-resistance",
+        "activism",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 90,
+        "citations": [
+          "https://cpj.org/2026/03/vietnam-arrests-journalist-le-anh-hung-on-propaganda-charge/"
+        ]
+      }
+    },
+    {
       "id": "07c71dad-4216-446c-92f8-505f74e73717",
       "url": "https://libertas.fgu.tech/posts/nawat-indigenous-language-gets-official-wikipedia-after-16-y",
       "title": "Nawat Indigenous Language Gets Official Wikipedia After 16-Year Incubation",
@@ -1149,28 +1170,6 @@
       }
     },
     {
-      "id": "861fb090-5eb8-4b6d-9d40-7c046aaf7db0",
-      "url": "https://libertas.fgu.tech/posts/pakistani-academic-sentenced-to-death-for-facebook-posts-spe",
-      "title": "Pakistani Academic Sentenced to Death for Facebook Posts Spends 13 Years in Solitary",
-      "summary": "Junaid Hafeez has been imprisoned for 13 years, mostly in solitary confinement, after being sentenced to death for alleged blasphemous Facebook posts, highlighting Pakistan's systematic suppression of online speech.",
-      "content_text": "Junaid Hafeez arrested in 2013 for alleged blasphemous Facebook comments, sentenced to death in 2019\n• Held in solitary confinement since June 2014, appeal still pending after 13 years\n• His defense lawyer Rashid Rehman was assassinated in 2014 after receiving threats\n• Pakistan's blasphemy laws carry mandatory death sentences and increasingly target social media posts\n• Laws routinely used against minorities and for personal vendettas with little evidence required\n• Government announced procedural safeguards in October 2025 but implementation unclear\n• Case demonstrates extreme risks of unprotected social media usage in authoritarian contexts",
-      "date_published": "2026-02-27T05:01:26.317Z",
-      "date_modified": "2026-02-27T05:01:26.497Z",
-      "tags": [
-        "censorship-resistance",
-        "surveillance",
-        "activism",
-        "privacy"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 72,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.hrw.org/news/2026/02/26/pakistan-quash-longstanding-blasphemy-case"
-        ]
-      }
-    },
-    {
       "id": "882da34b-713c-4c5c-97bd-925485ec32c9",
       "url": "https://libertas.fgu.tech/posts/tibet-45-detained-for-digital-communications-as-china-intens",
       "title": "Tibet: 45 Detained for Digital Communications as China Intensifies Phone Surveillance",
@@ -1317,29 +1316,6 @@
         "credibility_score": 90,
         "citations": [
           "https://www.wired.com/story/the-future-of-irans-internet-is-more-uncertain-than-ever/"
-        ]
-      }
-    },
-    {
-      "id": "9fd89635-2e33-4ecc-a2f9-4a447fd62cfe",
-      "url": "https://libertas.fgu.tech/posts/iran-s-dpi-powered-internet-whitelisting-system-built-with-r",
-      "title": "Iran's DPI-Powered Internet Whitelisting System Built with Russian Tech Support",
-      "summary": "Iran deployed infrastructure-level internet whitelisting using Deep Packet Inspection during 2025-26 protests, with Russian company Protei providing DPI systems to major Iranian telecoms, enabling granular traffic control beyond previous shutdowns.",
-      "content_text": "Iran imposed 15-day total internet shutdown (Jan 8-23, 2026) during protests with 5,000-20,000 casualties reported\n• Authorities switched from service-level to infrastructure-level whitelisting using Deep Packet Inspection (DPI)\n• Russian-origin company Protei supplied DPI systems to MTN Irancell and Ariantel, Iran's largest mobile providers\n• New system enables blocking by traffic type (all messengers, video streaming) rather than just specific apps\n• Protei operates from Estonia and Jordan, selling surveillance tech to telecoms across multiple authoritarian states\n• DPI platform provides URL/domain blacklisting, DNS filtering, and scheduled blocking capabilities\n• Citizen Lab previously documented Protei building mobile surveillance systems for Iranian authorities\n• Technology represents evolution from Russia's own DPI deployment starting 2020 after Sandvine blacklisting",
-      "date_published": "2026-02-27T05:02:09.246Z",
-      "date_modified": "2026-02-27T05:02:09.424Z",
-      "tags": [
-        "censorship-resistance",
-        "surveillance",
-        "activism",
-        "comms",
-        "privacy"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 95,
-        "credibility_score": 85,
-        "citations": [
-          "https://globalvoices.org/2026/02/27/irans-digital-prison-was-built-with-the-help-of-russians/"
         ]
       }
     },
@@ -2072,6 +2048,28 @@
         "credibility_score": 90,
         "citations": [
           "https://www.hrw.org/news/2026/03/10/zimbabwe-violence-and-intimidation-against-opponents-of-presidential-term-extension"
+        ]
+      }
+    },
+    {
+      "id": "ecc13e42-ac51-4ea2-bd8a-fbf5d9338b44",
+      "url": "https://libertas.fgu.tech/posts/iranian-women-footballers-granted-asylum-after-protest-facin",
+      "title": "Iranian Women Footballers Granted Asylum After Protest, Facing State Surveillance",
+      "summary": "Australia granted asylum to 5 Iranian women's football players and 1 official who protested by refusing to sing national anthem, amid reports of Iranian security following them and ongoing internet shutdowns in Iran.",
+      "content_text": "Five Iranian women's football players and one official granted asylum by Australia after seeking protection following March 8 match\n• Players protested by refusing to sing national anthem during March 2 match against South Korea\n• Iran's state television labeled the squad 'wartime traitors' for their silent protest\n• Players reported being followed by Iranian security and handlers since arriving in Australia\n• Protest echoed Iranian men's team actions at 2022 Qatar World Cup during 'Woman, Life, Freedom' uprising\n• Timeline coincides with conflict in Iran starting February 28 and ongoing internet shutdowns\n• Human Rights Watch confirms Iranian government deploys political 'minders' to monitor national team athletes\n• FIFPRO criticizes FIFA and AFC for inadequate athlete protection protocols",
+      "date_published": "2026-03-13T10:01:36.208Z",
+      "date_modified": "2026-03-13T10:01:36.339Z",
+      "tags": [
+        "activism",
+        "surveillance",
+        "censorship-resistance",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.hrw.org/news/2026/03/13/iranian-footballers-gain-asylum-in-australia"
         ]
       }
     },
