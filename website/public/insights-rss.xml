@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 12 Mar 2026 22:03:08 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 13 Mar 2026 04:01:03 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -307,25 +307,14 @@
     <category>surveillance</category>
   </item>
   <item>
-    <title>Cambodia Sentences Two Journalists to 14 Years for Border Conflict Photography</title>
-    <link>https://libertas.fgu.tech/posts/cambodia-sentences-two-journalists-to-14-years-for-border-co</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/cambodia-sentences-two-journalists-to-14-years-for-border-co</guid>
-    <pubDate>Thu, 26 Feb 2026 23:01:58 GMT</pubDate>
-    <description>Cambodian court sentenced two journalists to 14 years for treason after photographing soldiers near disputed Thai border, part of broader press freedom crackdown targeting at least four journalists since July 2025.</description>
+    <title>Russia Bans Films Rejecting &apos;Traditional Values,&apos; Sparks Piracy Rise</title>
+    <link>https://libertas.fgu.tech/posts/russia-bans-films-rejecting-traditional-values-sparks-piracy</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/russia-bans-films-rejecting-traditional-values-sparks-piracy</guid>
+    <pubDate>Fri, 13 Mar 2026 04:01:03 GMT</pubDate>
+    <description>Russia&apos;s new law lets the Ministry of Culture ban films deemed contrary to &apos;traditional values,&apos; blocking Hollywood and indie films while driving increased piracy adoption.</description>
     <category>censorship-resistance</category>
-    <category>activism</category>
     <category>surveillance</category>
-  </item>
-  <item>
-    <title>Access Now Launches Spear Phishing Defense Webinar Series for Civil Society</title>
-    <link>https://libertas.fgu.tech/posts/access-now-launches-spear-phishing-defense-webinar-series-fo</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/access-now-launches-spear-phishing-defense-webinar-series-fo</guid>
-    <pubDate>Thu, 26 Feb 2026 23:01:37 GMT</pubDate>
-    <description>Access Now&apos;s Digital Security Helpline is launching a webinar series on March 10, 2026, starting with spear phishing defense training for activists, journalists, and civil society organizations.</description>
-    <category>privacy</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>censorship-resistance</category>
+    <category>sovereignty</category>
   </item>
   <item>
     <title>Columbia University Failed to Protect Students from Warrantless ICE Raids Despite Clear Policies</title>
@@ -563,18 +552,6 @@
     <category>censorship-resistance</category>
     <category>activism</category>
     <category>surveillance</category>
-  </item>
-  <item>
-    <title>Iran&apos;s Total Internet Shutdown Enables Mass State Violence During 2026 Uprising</title>
-    <link>https://libertas.fgu.tech/posts/iran-s-total-internet-shutdown-enables-mass-state-violence-d</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/iran-s-total-internet-shutdown-enables-mass-state-violence-d</guid>
-    <pubDate>Thu, 26 Feb 2026 23:02:59 GMT</pubDate>
-    <description>Iran imposed a 15-day total internet blackout during nationwide protests, enabling unprecedented state violence with 30,000+ deaths while regime-aligned voices abroad filled the information vacuum to shape international narratives.</description>
-    <category>censorship-resistance</category>
-    <category>comms</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>sovereignty</category>
   </item>
   <item>
     <title>LLMs Enable Large-Scale Deanonymization of Online Posts</title>
@@ -1036,16 +1013,6 @@
     <category>surveillance</category>
     <category>censorship-resistance</category>
     <category>sovereignty</category>
-  </item>
-  <item>
-    <title>Florida Bill Creates State Spy Unit to &apos;Neutralize&apos; Those with Threatening &apos;Views or Opinions&apos;</title>
-    <link>https://libertas.fgu.tech/posts/florida-bill-creates-state-spy-unit-to-neutralize-those-with</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/florida-bill-creates-state-spy-unit-to-neutralize-those-with</guid>
-    <pubDate>Thu, 26 Feb 2026 23:02:28 GMT</pubDate>
-    <description>Florida legislation would create a state counterintelligence unit empowered to track and &apos;neutralize&apos; people whose &apos;views or opinions&apos; threaten the state, raising COINTELPRO-style civil liberties concerns.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
   </item>
   <item>
     <title>US Treasury Acknowledges Legitimate Uses of Crypto Mixers in Congressional Report</title>
