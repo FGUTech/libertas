@@ -115,28 +115,6 @@
       }
     },
     {
-      "id": "137a37c5-ff8e-4649-b3a5-6cbcbd5499ca",
-      "url": "https://libertas.fgu.tech/posts/tenth-circuit-overturns-overbroad-digital-searches-of-protes",
-      "title": "Tenth Circuit Overturns Overbroad Digital Searches of Protesters",
-      "summary": "Federal appeals court ruled Colorado Springs police violated Fourth Amendment with sweeping device searches of housing protester, denying qualified immunity in rare victory for digital privacy rights.",
-      "content_text": "Tenth Circuit overturned dismissal of lawsuit challenging warrants to search protester's devices and nonprofit's social media\n• Police obtained warrants for two-month search of all photos, videos, emails, texts, and location data for simple assault allegation\n• Warrants included unlimited keyword searches for broad terms like 'bike,' 'assault,' 'celebration,' and 'right'\n• Court found warrants 'overbroad and lacking in particularity' regarding scope and duration\n• Officers denied qualified immunity protection - extremely rare outcome in search warrant cases\n• Police also searched Facebook page of Chinook Center nonprofit that organized protest despite no criminal allegations\n• Creates important precedent protecting protesters' digital privacy rights under Fourth Amendment",
-      "date_published": "2026-02-27T11:00:18.732Z",
-      "date_modified": "2026-02-27T11:00:18.780Z",
-      "tags": [
-        "privacy",
-        "surveillance",
-        "activism",
-        "censorship-resistance"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/02/victory-tenth-circuit-finds-fourth-amendment-doesnt-support-broad-search-0"
-        ]
-      }
-    },
-    {
       "id": "141f2ebe-223a-4af5-98f9-75ac6f564667",
       "url": "https://libertas.fgu.tech/posts/eff-challenges-warrantless-border-device-searches-in-third-c",
       "title": "EFF Challenges Warrantless Border Device Searches in Third Circuit Appeal",
@@ -2048,6 +2026,27 @@
         "credibility_score": 90,
         "citations": [
           "https://www.hrw.org/news/2026/03/10/zimbabwe-violence-and-intimidation-against-opponents-of-presidential-term-extension"
+        ]
+      }
+    },
+    {
+      "id": "eb88b518-a5cc-4bec-a032-3c8f05d0b04f",
+      "url": "https://libertas.fgu.tech/posts/fbi-uses-film-review-as-terror-evidence-against-anti-ice-pro",
+      "title": "FBI Uses Film Review as 'Terror Evidence' Against Anti-ICE Protesters",
+      "summary": "FBI seized a horror movie review from protester's home and prosecutors used it as evidence of 'ideologically driven intent' in terrorism case against alleged 'antifa cell.'",
+      "content_text": "FBI raided home of Daniel Sanchez Estrada, anti-ICE protester facing up to 20 years for 'transporting Antifa materials'\n• Prosecutors introduced feminist film review about horror movies as evidence of terrorism in federal trial\n• Review titled 'The Satanic Death-Cult Is Real' was seized alongside computers and weapons in itemized evidence list\n• Case stems from July 4 protest at ICE's Prairieland Detention Facility where police officer was shot\n• 18 people arrested in what prosecutors call first terrorism charges against alleged 'antifa cell'\n• Estrada not accused of shooting but charged with conspiracy to conceal zines - First Amendment protected materials\n• Trump administration designated 'antifa' as terrorist organization despite it being orientation, not formal group\n• Pattern shows government using 'guilt by literature' tactics to criminalize possession of political writings",
+      "date_published": "2026-03-13T16:02:12.606Z",
+      "date_modified": "2026-03-13T16:02:12.742Z",
+      "tags": [
+        "surveillance",
+        "censorship-resistance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://theintercept.com/2026/03/13/movie-review-antifa-prairieland-trial/"
         ]
       }
     },

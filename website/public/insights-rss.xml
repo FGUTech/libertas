@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 13 Mar 2026 10:01:36 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 13 Mar 2026 16:02:12 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -60,17 +60,6 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
-  </item>
-  <item>
-    <title>Tenth Circuit Overturns Overbroad Digital Searches of Protesters</title>
-    <link>https://libertas.fgu.tech/posts/tenth-circuit-overturns-overbroad-digital-searches-of-protes</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/tenth-circuit-overturns-overbroad-digital-searches-of-protes</guid>
-    <pubDate>Fri, 27 Feb 2026 11:00:18 GMT</pubDate>
-    <description>Federal appeals court ruled Colorado Springs police violated Fourth Amendment with sweeping device searches of housing protester, denying qualified immunity in rare victory for digital privacy rights.</description>
-    <category>privacy</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>censorship-resistance</category>
   </item>
   <item>
     <title>EFF Challenges Warrantless Border Device Searches in Third Circuit Appeal</title>
@@ -1000,6 +989,16 @@
     <category>surveillance</category>
     <category>censorship-resistance</category>
     <category>sovereignty</category>
+  </item>
+  <item>
+    <title>FBI Uses Film Review as &apos;Terror Evidence&apos; Against Anti-ICE Protesters</title>
+    <link>https://libertas.fgu.tech/posts/fbi-uses-film-review-as-terror-evidence-against-anti-ice-pro</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/fbi-uses-film-review-as-terror-evidence-against-anti-ice-pro</guid>
+    <pubDate>Fri, 13 Mar 2026 16:02:12 GMT</pubDate>
+    <description>FBI seized a horror movie review from protester&apos;s home and prosecutors used it as evidence of &apos;ideologically driven intent&apos; in terrorism case against alleged &apos;antifa cell.&apos;</description>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>activism</category>
   </item>
   <item>
     <title>Iranian Women Footballers Granted Asylum After Protest, Facing State Surveillance</title>
