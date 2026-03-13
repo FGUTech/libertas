@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 13 Mar 2026 16:02:12 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 13 Mar 2026 22:02:49 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -80,18 +80,6 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>identity</category>
-  </item>
-  <item>
-    <title>Iran Deploys Two-Tiered &apos;Digital Apartheid&apos; Internet During 2026 Protests</title>
-    <link>https://libertas.fgu.tech/posts/iran-deploys-two-tiered-digital-apartheid-internet-during-20</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/iran-deploys-two-tiered-digital-apartheid-internet-during-20</guid>
-    <pubDate>Fri, 27 Feb 2026 17:01:16 GMT</pubDate>
-    <description>Iran implemented its most severe internet shutdown ever in 2026, featuring a &apos;class-based&apos; system with privileged &apos;white SIM cards&apos; for loyalists while completely disconnecting ordinary citizens during protests.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>comms</category>
-    <category>sovereignty</category>
   </item>
   <item>
     <title>US Senate Bill Blocks Federal Reserve CBDC Issuance Until 2031</title>
@@ -263,17 +251,6 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>comms</category>
-  </item>
-  <item>
-    <title>Trump Admin Uses Federal Agencies to Target Critical Media and Anonymous Activists</title>
-    <link>https://libertas.fgu.tech/posts/trump-admin-uses-federal-agencies-to-target-critical-media-a</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/trump-admin-uses-federal-agencies-to-target-critical-media-a</guid>
-    <pubDate>Fri, 27 Feb 2026 17:02:08 GMT</pubDate>
-    <description>Federal agencies launch retaliatory investigations against Media Matters, journalists, and anonymous critics, including seizure of Signal account with 1,000+ sources and subpoenas to unmask anti-ICE activists.</description>
-    <category>censorship-resistance</category>
-    <category>privacy</category>
-    <category>surveillance</category>
-    <category>activism</category>
   </item>
   <item>
     <title>BIP-360 Proposes Quantum Defense Upgrades for Bitcoin</title>
@@ -574,6 +551,17 @@
     <category>comms</category>
   </item>
   <item>
+    <title>EFF Defends Anonymous JW Researcher Against Copyright-Based Doxing Attempt</title>
+    <link>https://libertas.fgu.tech/posts/eff-defends-anonymous-jw-researcher-against-copyright-based-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-defends-anonymous-jw-researcher-against-copyright-based-</guid>
+    <pubDate>Fri, 13 Mar 2026 22:00:56 GMT</pubDate>
+    <description>Watch Tower Bible and Tract Society is using DMCA subpoenas to unmask an anonymous Jehovah&apos;s Witness who created research tools exposing the organization&apos;s suppressed documents and failed prophecies.</description>
+    <category>censorship-resistance</category>
+    <category>privacy</category>
+    <category>identity</category>
+    <category>activism</category>
+  </item>
+  <item>
     <title>Vietnam Imprisons Women Activists for Digital Dissent and Rights Advocacy</title>
     <link>https://libertas.fgu.tech/posts/vietnam-imprisons-women-activists-for-digital-dissent-and-ri</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/vietnam-imprisons-women-activists-for-digital-dissent-and-ri</guid>
@@ -685,6 +673,27 @@
     <category>activism</category>
   </item>
   <item>
+    <title>EFF Sues to Free Safety Laws Locked Behind Copyright Claims</title>
+    <link>https://libertas.fgu.tech/posts/eff-sues-to-free-safety-laws-locked-behind-copyright-claims</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-sues-to-free-safety-laws-locked-behind-copyright-claims</guid>
+    <pubDate>Fri, 13 Mar 2026 22:00:56 GMT</pubDate>
+    <description>EFF filed suit against CPSC to release legally binding safety codes that private organizations claim copyright over even after incorporation into federal law.</description>
+    <category>censorship-resistance</category>
+    <category>sovereignty</category>
+    <category>activism</category>
+  </item>
+  <item>
+    <title>Instagram to Drop End-to-End Encryption for Messages by May 2026</title>
+    <link>https://libertas.fgu.tech/posts/instagram-to-drop-end-to-end-encryption-for-messages-by-may-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/instagram-to-drop-end-to-end-encryption-for-messages-by-may-</guid>
+    <pubDate>Fri, 13 Mar 2026 22:02:19 GMT</pubDate>
+    <description>Instagram will discontinue end-to-end encrypted messaging by May 8, 2026, marking a significant reversal of Meta&apos;s previous commitment to private communications.</description>
+    <category>privacy</category>
+    <category>comms</category>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+  </item>
+  <item>
     <title>Building Self-Hosted Communities: Taiwan&apos;s Response to Platform Censorship</title>
     <link>https://libertas.fgu.tech/posts/building-self-hosted-communities-taiwan-s-response-to-platfo</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/building-self-hosted-communities-taiwan-s-response-to-platfo</guid>
@@ -792,16 +801,6 @@
     <category>surveillance</category>
   </item>
   <item>
-    <title>EU Mandates Crypto Platform Reporting Starting 2026</title>
-    <link>https://libertas.fgu.tech/posts/eu-mandates-crypto-platform-reporting-starting-2026</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eu-mandates-crypto-platform-reporting-starting-2026</guid>
-    <pubDate>Fri, 27 Feb 2026 17:00:36 GMT</pubDate>
-    <description>EU implementing new crypto tax rules requiring platforms to report user data and transactions to authorities, significantly reducing financial privacy for digital assets starting 2026.</description>
-    <category>bitcoin</category>
-    <category>privacy</category>
-    <category>surveillance</category>
-  </item>
-  <item>
     <title>Journalists Use Satellite Links, Encrypted Apps to Report from Internet-Cut Iran</title>
     <link>https://libertas.fgu.tech/posts/journalists-use-satellite-links-encrypted-apps-to-report-fro</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/journalists-use-satellite-links-encrypted-apps-to-report-fro</guid>
@@ -854,6 +853,17 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>comms</category>
+  </item>
+  <item>
+    <title>Federal Jury Convicts Protesters on Terrorism Charges, Cites Signal Use as Evidence</title>
+    <link>https://libertas.fgu.tech/posts/federal-jury-convicts-protesters-on-terrorism-charges-cites-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/federal-jury-convicts-protesters-on-terrorism-charges-cites-</guid>
+    <pubDate>Fri, 13 Mar 2026 22:02:49 GMT</pubDate>
+    <description>Eight anti-ICE protesters convicted on terrorism charges in landmark case where prosecutors cited Signal messaging and &apos;black bloc&apos; clothing as evidence of terrorist material support.</description>
+    <category>comms</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>censorship-resistance</category>
   </item>
   <item>
     <title>EFF Executive Director Cindy Cohn Releases Memoir on 30-Year Digital Privacy Fight</title>

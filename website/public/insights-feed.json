@@ -157,29 +157,6 @@
       }
     },
     {
-      "id": "18ef0068-e432-4675-beef-c3144e862491",
-      "url": "https://libertas.fgu.tech/posts/iran-deploys-two-tiered-digital-apartheid-internet-during-20",
-      "title": "Iran Deploys Two-Tiered 'Digital Apartheid' Internet During 2026 Protests",
-      "summary": "Iran implemented its most severe internet shutdown ever in 2026, featuring a 'class-based' system with privileged 'white SIM cards' for loyalists while completely disconnecting ordinary citizens during protests.",
-      "content_text": "Iran conducted total communications blackout during January 2026 protests, shutting down mobile networks, SMS, landlines, and blocking Starlink\n• Regime implemented 'Internet-e-Tabaqati' (class-based internet) with formal two-tiered access system institutionalized in July 2025\n• 'White SIM cards' provide unrestricted internet access to government officials, security forces, and approved journalists while citizens face total blackout\n• System creates 'digital apartheid' through whitelisting at data center level, making shutdowns manageable for the state while isolating population\n• Model is more exportable than China's Great Firewall as it retrofits existing infrastructure rather than building from scratch\n• Afghanistan and other regimes already showing signs of 'authoritarian learning' from Iran's techniques\n• Schneier advocates for direct-to-cell satellite connectivity and mesh networks as technical countermeasures\n• Calls for policy changes including humanitarian access protocols for satellite providers and expanded technology sanctions exemptions",
-      "date_published": "2026-02-27T17:01:16.579Z",
-      "date_modified": "2026-02-27T17:01:16.693Z",
-      "tags": [
-        "censorship-resistance",
-        "surveillance",
-        "activism",
-        "comms",
-        "sovereignty"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 95,
-        "credibility_score": 90,
-        "citations": [
-          "https://www.schneier.com/blog/archives/2026/02/why-tehrans-two-tiered-internet-is-so-dangerous.html"
-        ]
-      }
-    },
-    {
       "id": "18fcb416-bdb0-419d-940d-a8ab23162b79",
       "url": "https://libertas.fgu.tech/posts/us-senate-bill-blocks-federal-reserve-cbdc-issuance-until-20",
       "title": "US Senate Bill Blocks Federal Reserve CBDC Issuance Until 2031",
@@ -524,28 +501,6 @@
         "credibility_score": 88,
         "citations": [
           "https://cpj.org/2026/03/journalists-in-eastern-drc-detained-over-war-coverage-broadcasters-occupied/"
-        ]
-      }
-    },
-    {
-      "id": "423c7dc2-e794-4df2-bfa1-778794bff325",
-      "url": "https://libertas.fgu.tech/posts/trump-admin-uses-federal-agencies-to-target-critical-media-a",
-      "title": "Trump Admin Uses Federal Agencies to Target Critical Media and Anonymous Activists",
-      "summary": "Federal agencies launch retaliatory investigations against Media Matters, journalists, and anonymous critics, including seizure of Signal account with 1,000+ sources and subpoenas to unmask anti-ICE activists.",
-      "content_text": "FTC investigating Media Matters for critical coverage of X/Elon Musk after White House pressure\n• DOJ prosecuting journalists Don Lemon and Georgia Fort under FACE Act for protest reporting\n• FBI raided Washington Post reporter Hannah Natanson, seizing Signal account with 1,000+ confidential sources from 120+ agencies\n• DHS using administrative subpoenas to unmask anonymous social media accounts critical of ICE\n• Federal judge ruled FTC investigation is 'straightforward First Amendment violation'\n• 17 nonprofits including EFF filed amicus brief supporting Media Matters injunction\n• Pattern shows coordinated government intimidation campaign targeting freedom tech tools and anonymous speech\n• Signal account seizure effectively halts investigative reporter's ability to work",
-      "date_published": "2026-02-27T17:02:08.339Z",
-      "date_modified": "2026-02-27T17:02:08.470Z",
-      "tags": [
-        "censorship-resistance",
-        "privacy",
-        "surveillance",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 85,
-        "credibility_score": 80,
-        "citations": [
-          "https://theintercept.com/2026/02/27/trump-media-matters-free-speech/"
         ]
       }
     },
@@ -1170,6 +1125,28 @@
       }
     },
     {
+      "id": "89091fdf-b35b-482e-a1fd-e729a2e9ef69",
+      "url": "https://libertas.fgu.tech/posts/eff-defends-anonymous-jw-researcher-against-copyright-based-",
+      "title": "EFF Defends Anonymous JW Researcher Against Copyright-Based Doxing Attempt",
+      "summary": "Watch Tower Bible and Tract Society is using DMCA subpoenas to unmask an anonymous Jehovah's Witness who created research tools exposing the organization's suppressed documents and failed prophecies.",
+      "content_text": "Watch Tower sent DMCA subpoenas to Google and Cloudflare seeking to identify anonymous researcher 'J. Doe'\n• Doe created JWS Library website with research tools analyzing Jehovah's Witnesses historical documents\n• Research revealed failed prophecies, erasure of leader disgrace, and suppressed church documents\n• Watch Tower claims copyright infringement; EFF argues research constitutes clear fair use\n• Doe remains anonymous to avoid 'disfellowshipping' retaliation that would sever family/social ties\n• EFF filed motions to quash subpoenas in Southern District of New York\n• Case demonstrates copyright law being weaponized to silence religious dissent and research\n• First Amendment protects anonymous speech, especially when speakers face retribution",
+      "date_published": "2026-03-13T22:00:56.004Z",
+      "date_modified": "2026-03-13T22:00:56.066Z",
+      "tags": [
+        "censorship-resistance",
+        "privacy",
+        "identity",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/03/copyright-bullying-vs-religious-freedom-0"
+        ]
+      }
+    },
+    {
       "id": "8ede8bd2-2f46-407a-b757-391bba8a007e",
       "url": "https://libertas.fgu.tech/posts/vietnam-imprisons-women-activists-for-digital-dissent-and-ri",
       "title": "Vietnam Imprisons Women Activists for Digital Dissent and Rights Advocacy",
@@ -1403,6 +1380,49 @@
       }
     },
     {
+      "id": "a80d07c3-9496-4e27-affb-e6425576ac48",
+      "url": "https://libertas.fgu.tech/posts/eff-sues-to-free-safety-laws-locked-behind-copyright-claims",
+      "title": "EFF Sues to Free Safety Laws Locked Behind Copyright Claims",
+      "summary": "EFF filed suit against CPSC to release legally binding safety codes that private organizations claim copyright over even after incorporation into federal law.",
+      "content_text": "EFF partnering with Harvard Cyberlaw Clinic to sue Consumer Product Safety Council (CPSC)\n• Client Public.Resource.Org seeking children's product safety codes via FOIA requests\n• CPSC refusing to release codes citing private organization copyright claims\n• Private standards groups retain copyright control over laws after government adoption\n• Fifth Circuit ruled safety codes lose copyright when incorporated into law\n• D.C. Circuit previously held that sharing incorporated standards constitutes fair use\n• Case challenges fundamental principle that copyright can restrict access to binding law\n• Part of broader 'Freeing the Law' campaign for government transparency",
+      "date_published": "2026-03-13T22:00:56.004Z",
+      "date_modified": "2026-03-13T22:00:56.066Z",
+      "tags": [
+        "censorship-resistance",
+        "sovereignty",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/03/eff-launches-new-fight-free-law"
+        ]
+      }
+    },
+    {
+      "id": "ac6660b8-93cd-4f37-91fd-76d5a4e69e61",
+      "url": "https://libertas.fgu.tech/posts/instagram-to-drop-end-to-end-encryption-for-messages-by-may-",
+      "title": "Instagram to Drop End-to-End Encryption for Messages by May 2026",
+      "summary": "Instagram will discontinue end-to-end encrypted messaging by May 8, 2026, marking a significant reversal of Meta's previous commitment to private communications.",
+      "content_text": "Instagram help pages confirm E2EE messaging support ends May 8, 2026\n• Users must download encrypted chats and media before deadline or lose access\n• Reversal contradicts Meta's 2019 strategy to expand encryption across all platforms\n• WhatsApp and Messenger E2EE status remains unclear from this announcement\n• No public explanation provided for why E2EE is being discontinued\n• Change occurs amid renewed policy debates over encryption vs. content moderation\n• TikTok also recently declined to implement E2EE citing safety concerns\n• Raises questions about future Instagram chat privacy and Meta's data access",
+      "date_published": "2026-03-13T22:02:19.978Z",
+      "date_modified": "2026-03-13T22:02:20.110Z",
+      "tags": [
+        "privacy",
+        "comms",
+        "censorship-resistance",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://proton.me/blog/instagram-end-to-end-encryption"
+        ]
+      }
+    },
+    {
       "id": "ae0fa6a2-a16f-49fc-935c-60b6a091cb98",
       "url": "https://libertas.fgu.tech/posts/building-self-hosted-communities-taiwan-s-response-to-platfo",
       "title": "Building Self-Hosted Communities: Taiwan's Response to Platform Censorship",
@@ -1621,27 +1641,6 @@
       }
     },
     {
-      "id": "bcf93c2f-e983-4223-ad07-125f7ae244ad",
-      "url": "https://libertas.fgu.tech/posts/eu-mandates-crypto-platform-reporting-starting-2026",
-      "title": "EU Mandates Crypto Platform Reporting Starting 2026",
-      "summary": "EU implementing new crypto tax rules requiring platforms to report user data and transactions to authorities, significantly reducing financial privacy for digital assets starting 2026.",
-      "content_text": "EU introducing mandatory crypto transaction reporting requirements for platforms\n• New rules take effect in 2026, targeting tax transparency for digital assets\n• Platforms will be required to report user data and transaction details to authorities\n• Represents major shift toward surveillance-based approach to crypto taxation\n• Affects all cryptocurrency users operating through regulated platforms in EU\n• Part of broader global trend toward crypto transaction monitoring\n• Could influence platform compliance costs and user privacy practices",
-      "date_published": "2026-02-27T17:00:36.106Z",
-      "date_modified": "2026-02-27T17:00:36.162Z",
-      "tags": [
-        "bitcoin",
-        "privacy",
-        "surveillance"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 72,
-        "credibility_score": 85,
-        "citations": [
-          "https://cointelegraph.com/news/how-the-eu-s-crypto-tax-rules-are-expected-to-work-for-users-and-platforms?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-        ]
-      }
-    },
-    {
       "id": "bd039b1f-b3fa-40f0-b600-96e0428cd1c5",
       "url": "https://libertas.fgu.tech/posts/journalists-use-satellite-links-encrypted-apps-to-report-fro",
       "title": "Journalists Use Satellite Links, Encrypted Apps to Report from Internet-Cut Iran",
@@ -1747,6 +1746,28 @@
         "credibility_score": 95,
         "citations": [
           "https://cpj.org/2026/03/press-freedom-violations-in-the-middle-east-during-the-iran-war/"
+        ]
+      }
+    },
+    {
+      "id": "c6927b24-d24a-49c7-b25c-8c5e593fb3bb",
+      "url": "https://libertas.fgu.tech/posts/federal-jury-convicts-protesters-on-terrorism-charges-cites-",
+      "title": "Federal Jury Convicts Protesters on Terrorism Charges, Cites Signal Use as Evidence",
+      "summary": "Eight anti-ICE protesters convicted on terrorism charges in landmark case where prosecutors cited Signal messaging and 'black bloc' clothing as evidence of terrorist material support.",
+      "content_text": "Federal jury convicted 8 of 9 protesters on terrorism charges related to July 4, 2025 ICE facility demonstration in Texas\n• Benjamin Song convicted of attempted murder for shooting police officer with modified AR-15\n• Prosecutors successfully argued wearing black clothing constituted 'material support for terrorism'\n• Signal encrypted messages obtained by government used as evidence against defendants\n• Right-wing think tank researcher testified that Signal use and black bloc tactics are 'typical of antifa'\n• First federal material support for terrorism charges against alleged antifa members\n• Case establishes precedent where privacy tools and clothing choices can support terrorism charges\n• Convictions could encourage similar prosecutions as Trump administration targets left-wing groups",
+      "date_published": "2026-03-13T22:02:49.064Z",
+      "date_modified": "2026-03-13T22:02:49.173Z",
+      "tags": [
+        "comms",
+        "surveillance",
+        "activism",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 88,
+        "citations": [
+          "https://theintercept.com/2026/03/13/ice-protesters-terrorism-prairieland-antifa/"
         ]
       }
     },
