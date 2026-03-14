@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 13 Mar 2026 22:02:49 GMT</lastBuildDate>
+  <lastBuildDate>Sat, 14 Mar 2026 04:02:13 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -135,6 +135,18 @@
     <category>privacy</category>
   </item>
   <item>
+    <title>Anti-ICE Protesters Convicted on Terrorism Charges for Encrypted Comms and Black Clothing</title>
+    <link>https://libertas.fgu.tech/posts/anti-ice-protesters-convicted-on-terrorism-charges-for-encry</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/anti-ice-protesters-convicted-on-terrorism-charges-for-encry</guid>
+    <pubDate>Sat, 14 Mar 2026 04:01:54 GMT</pubDate>
+    <description>Eight protesters convicted of terrorism charges for wearing black clothing and using Signal messaging during ICE facility demonstration, marking first federal material support charges against alleged antifa members.</description>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>comms</category>
+    <category>censorship-resistance</category>
+    <category>privacy</category>
+  </item>
+  <item>
     <title>Civil Rights Groups Challenge Surveillance Firm&apos;s Rebrand from Sandvine to AppLogic Networks</title>
     <link>https://libertas.fgu.tech/posts/civil-rights-groups-challenge-surveillance-firm-s-rebrand-fr</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/civil-rights-groups-challenge-surveillance-firm-s-rebrand-fr</guid>
@@ -253,6 +265,17 @@
     <category>comms</category>
   </item>
   <item>
+    <title>Pakistan Uses Colonial-Era Law to Suppress Women&apos;s Rights March, Detains 60+ Activists</title>
+    <link>https://libertas.fgu.tech/posts/pakistan-uses-colonial-era-law-to-suppress-women-s-rights-ma</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/pakistan-uses-colonial-era-law-to-suppress-women-s-rights-ma</guid>
+    <pubDate>Sat, 14 Mar 2026 04:02:13 GMT</pubDate>
+    <description>Pakistani authorities detained over 60 activists and journalists attempting to hold the annual Aurat March on International Women&apos;s Day, using Section 144 restrictions and confiscating phones.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>privacy</category>
+  </item>
+  <item>
     <title>BIP-360 Proposes Quantum Defense Upgrades for Bitcoin</title>
     <link>https://libertas.fgu.tech/posts/bip-360-proposes-quantum-defense-upgrades-for-bitcoin</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/bip-360-proposes-quantum-defense-upgrades-for-bitcoin</guid>
@@ -291,6 +314,16 @@
     <category>censorship-resistance</category>
     <category>surveillance</category>
     <category>sovereignty</category>
+  </item>
+  <item>
+    <title>EFF Sues to Free Safety Laws from Copyright Restrictions</title>
+    <link>https://libertas.fgu.tech/posts/eff-sues-to-free-safety-laws-from-copyright-restrictions</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-sues-to-free-safety-laws-from-copyright-restrictions</guid>
+    <pubDate>Sat, 14 Mar 2026 04:00:58 GMT</pubDate>
+    <description>EFF filed lawsuit against CPSC demanding public access to legally binding safety codes that private organizations claim copyright over even after incorporation into federal law.</description>
+    <category>censorship-resistance</category>
+    <category>sovereignty</category>
+    <category>activism</category>
   </item>
   <item>
     <title>Columbia University Failed to Protect Students from Warrantless ICE Raids Despite Clear Policies</title>
@@ -634,6 +667,17 @@
     <category>activism</category>
   </item>
   <item>
+    <title>EFF Backs Minnesota Lawmaker Against Internet Age Verification Mandate</title>
+    <link>https://libertas.fgu.tech/posts/eff-backs-minnesota-lawmaker-against-internet-age-verificati</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-backs-minnesota-lawmaker-against-internet-age-verificati</guid>
+    <pubDate>Sat, 14 Mar 2026 04:00:58 GMT</pubDate>
+    <description>EFF supports Rep. Leigh Finke&apos;s opposition to Minnesota&apos;s HF1434 age verification bill, which would require government ID/biometric verification for broad categories of online speech beyond explicit content.</description>
+    <category>censorship-resistance</category>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>identity</category>
+  </item>
+  <item>
     <title>Nawat Language Wikipedia Launches After 16-Year Journey to Digital Sovereignty</title>
     <link>https://libertas.fgu.tech/posts/nawat-language-wikipedia-launches-after-16-year-journey-to-d</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/nawat-language-wikipedia-launches-after-16-year-journey-to-d</guid>
@@ -650,16 +694,6 @@
     <pubDate>Mon, 09 Mar 2026 22:00:53 GMT</pubDate>
     <description>EFF&apos;s Cindy Cohn hosts livestream March 19th to discuss her new book &apos;Privacy&apos;s Defender&apos; covering three decades of legal battles against NSA, FBI, and Justice Department surveillance.</description>
     <category>privacy</category>
-    <category>surveillance</category>
-  </item>
-  <item>
-    <title>Pro-Palestine Student Activist Fights Deportation Despite Government Lacking Evidence</title>
-    <link>https://libertas.fgu.tech/posts/pro-palestine-student-activist-fights-deportation-despite-go</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/pro-palestine-student-activist-fights-deportation-despite-go</guid>
-    <pubDate>Fri, 27 Feb 2026 23:02:04 GMT</pubDate>
-    <description>Mahmoud Khalil faces deportation to Algeria for pro-Palestine activism at Columbia, with newly unsealed DHS memo showing government lacked evidence but proceeded anyway as retaliation for speech.</description>
-    <category>censorship-resistance</category>
-    <category>activism</category>
     <category>surveillance</category>
   </item>
   <item>
@@ -1053,27 +1087,6 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
-  </item>
-  <item>
-    <title>Azerbaijani Journalist Under Armed Surveillance in Switzerland</title>
-    <link>https://libertas.fgu.tech/posts/azerbaijani-journalist-under-armed-surveillance-in-switzerla</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/azerbaijani-journalist-under-armed-surveillance-in-switzerla</guid>
-    <pubDate>Fri, 27 Feb 2026 23:01:10 GMT</pubDate>
-    <description>Exiled Azerbaijani journalist Emin Huseynov reports being followed by armed men in Switzerland, highlighting transnational repression risks for freedom tech builders and activists.</description>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>privacy</category>
-    <category>censorship-resistance</category>
-  </item>
-  <item>
-    <title>Freedom House Documents Artists Imprisoned for Creative Dissent Across 7 Authoritarian States</title>
-    <link>https://libertas.fgu.tech/posts/freedom-house-documents-artists-imprisoned-for-creative-diss</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/freedom-house-documents-artists-imprisoned-for-creative-diss</guid>
-    <pubDate>Fri, 27 Feb 2026 23:01:25 GMT</pubDate>
-    <description>Freedom House catalogs political imprisonment of artists in Russia, Belarus, Cuba, Azerbaijan, Egypt, China, and Venezuela, highlighting systematic state repression of creative expression that challenges power.</description>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-    <category>surveillance</category>
   </item>
   <item>
     <title>OpenAI Pentagon Deal Raises Mass Surveillance Concerns Despite CEO Denials</title>
