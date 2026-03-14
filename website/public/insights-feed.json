@@ -1234,6 +1234,28 @@
       }
     },
     {
+      "id": "8f125d8f-2022-43c3-a41a-001d1a090120",
+      "url": "https://libertas.fgu.tech/posts/former-coinbase-cto-calls-for-crypto-tools-for-refugees-and-",
+      "title": "Former Coinbase CTO Calls for Crypto Tools for Refugees and Stateless People",
+      "summary": "Balaji Srinivasan advocates for crypto industry to build financial tools serving refugees and stateless populations amid rising global conflicts and migration.",
+      "content_text": "Former Coinbase CTO Balaji Srinivasan calls for crypto tools targeting refugees and stateless people\n• Proposal addresses financial exclusion of vulnerable populations lacking traditional banking access\n• Context of increasing global conflicts and migration creating larger refugee populations\n• Highlights potential for crypto to serve sovereignty and identity use cases\n• No specific technical implementations or projects mentioned\n• Represents high-level strategic vision rather than actionable development roadmap\n• Aligns with broader crypto narrative around financial inclusion and sovereignty",
+      "date_published": "2026-03-14T16:01:23.717Z",
+      "date_modified": "2026-03-14T16:01:23.771Z",
+      "tags": [
+        "bitcoin",
+        "payments",
+        "sovereignty",
+        "identity"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 80,
+        "citations": [
+          "https://cointelegraph.com/news/balaji-calls-for-crypto-tools-for-refugees-stateless-people?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+        ]
+      }
+    },
+    {
       "id": "94ddf7dd-c006-48ad-a1b1-0da47c7f4eaf",
       "url": "https://libertas.fgu.tech/posts/mexico-partially-unblocks-tor-access-after-years-of-governme",
       "title": "Mexico Partially Unblocks Tor Access After Years of Government Website Censorship",
