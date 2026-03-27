@@ -748,27 +748,6 @@
       }
     },
     {
-      "id": "eb88b518-a5cc-4bec-a032-3c8f05d0b04f",
-      "url": "https://libertas.fgu.tech/posts/fbi-uses-film-review-as-terror-evidence-against-anti-ice-pro",
-      "title": "FBI Uses Film Review as 'Terror Evidence' Against Anti-ICE Protesters",
-      "summary": "FBI seized a horror movie review from protester's home and prosecutors used it as evidence of 'ideologically driven intent' in terrorism case against alleged 'antifa cell.'",
-      "content_text": "FBI raided home of Daniel Sanchez Estrada, anti-ICE protester facing up to 20 years for 'transporting Antifa materials'\n• Prosecutors introduced feminist film review about horror movies as evidence of terrorism in federal trial\n• Review titled 'The Satanic Death-Cult Is Real' was seized alongside computers and weapons in itemized evidence list\n• Case stems from July 4 protest at ICE's Prairieland Detention Facility where police officer was shot\n• 18 people arrested in what prosecutors call first terrorism charges against alleged 'antifa cell'\n• Estrada not accused of shooting but charged with conspiracy to conceal zines - First Amendment protected materials\n• Trump administration designated 'antifa' as terrorist organization despite it being orientation, not formal group\n• Pattern shows government using 'guilt by literature' tactics to criminalize possession of political writings",
-      "date_published": "2026-03-13T16:02:12.606Z",
-      "date_modified": "2026-03-13T16:02:12.742Z",
-      "tags": [
-        "surveillance",
-        "censorship-resistance",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 85,
-        "citations": [
-          "https://theintercept.com/2026/03/13/movie-review-antifa-prairieland-trial/"
-        ]
-      }
-    },
-    {
       "id": "f0321d11-5d4a-475b-8abd-b5bd9afeedaf",
       "url": "https://libertas.fgu.tech/posts/nicole-ozer-named-new-eff-executive-director-bringing-anti-s",
       "title": "Nicole Ozer Named New EFF Executive Director, Bringing Anti-Surveillance Expertise",
@@ -786,6 +765,27 @@
         "credibility_score": 95,
         "citations": [
           "https://www.eff.org/press/releases/nicole-ozer-named-electronic-frontier-foundations-executive-director"
+        ]
+      }
+    },
+    {
+      "id": "fafbb0f9-73e4-4cc6-b9b5-ba52a739aa02",
+      "url": "https://libertas.fgu.tech/posts/judge-blocks-dod-blacklisting-of-anthropic-as-first-amendmen",
+      "title": "Judge Blocks DOD Blacklisting of Anthropic as First Amendment Retaliation",
+      "summary": "Federal judge granted preliminary injunction blocking Department of War's blacklisting of Anthropic, ruling it was unconstitutional retaliation for the company's critical press statements.",
+      "content_text": "US District Judge Rita Lin blocked Department of War's blacklisting of Anthropic AI company\n• Judge ruled the action constituted 'classic First Amendment retaliation'\n• DOD designated Anthropic as supply-chain risk due to 'hostile manner through the press'\n• Court found no evidence Anthropic posed urgent national security threat\n• Officials failed to consider less restrictive alternatives before extreme measures\n• Preliminary injunction granted, suggesting Anthropic likely to prevail on merits\n• Sets precedent against government retaliation targeting AI companies for speech",
+      "date_published": "2026-03-27T21:01:32.043Z",
+      "date_modified": "2026-03-27T21:01:32.130Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 85,
+        "citations": [
+          "https://arstechnica.com/tech-policy/2026/03/hegseth-trump-had-no-authority-to-order-anthropic-to-be-blacklisted-judge-says/"
         ]
       }
     }

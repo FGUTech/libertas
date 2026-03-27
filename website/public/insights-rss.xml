@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 27 Mar 2026 15:01:57 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 27 Mar 2026 21:01:32 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -369,22 +369,22 @@
     <category>identity</category>
   </item>
   <item>
-    <title>FBI Uses Film Review as &apos;Terror Evidence&apos; Against Anti-ICE Protesters</title>
-    <link>https://libertas.fgu.tech/posts/fbi-uses-film-review-as-terror-evidence-against-anti-ice-pro</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/fbi-uses-film-review-as-terror-evidence-against-anti-ice-pro</guid>
-    <pubDate>Fri, 13 Mar 2026 16:02:12 GMT</pubDate>
-    <description>FBI seized a horror movie review from protester&apos;s home and prosecutors used it as evidence of &apos;ideologically driven intent&apos; in terrorism case against alleged &apos;antifa cell.&apos;</description>
-    <category>surveillance</category>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-  </item>
-  <item>
     <title>Nicole Ozer Named New EFF Executive Director, Bringing Anti-Surveillance Expertise</title>
     <link>https://libertas.fgu.tech/posts/nicole-ozer-named-new-eff-executive-director-bringing-anti-s</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/nicole-ozer-named-new-eff-executive-director-bringing-anti-s</guid>
     <pubDate>Fri, 27 Mar 2026 10:01:00 GMT</pubDate>
     <description>Nicole Ozer, architect of California&apos;s strongest electronic surveillance laws, will lead EFF starting June 1, succeeding Cindy Cohn after 25+ years with the organization.</description>
     <category>privacy</category>
+    <category>surveillance</category>
+    <category>activism</category>
+  </item>
+  <item>
+    <title>Judge Blocks DOD Blacklisting of Anthropic as First Amendment Retaliation</title>
+    <link>https://libertas.fgu.tech/posts/judge-blocks-dod-blacklisting-of-anthropic-as-first-amendmen</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/judge-blocks-dod-blacklisting-of-anthropic-as-first-amendmen</guid>
+    <pubDate>Fri, 27 Mar 2026 21:01:32 GMT</pubDate>
+    <description>Federal judge granted preliminary injunction blocking Department of War&apos;s blacklisting of Anthropic, ruling it was unconstitutional retaliation for the company&apos;s critical press statements.</description>
+    <category>censorship-resistance</category>
     <category>surveillance</category>
     <category>activism</category>
   </item>
