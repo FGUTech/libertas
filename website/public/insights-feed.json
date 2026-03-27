@@ -93,6 +93,28 @@
       }
     },
     {
+      "id": "1d854c14-8392-464a-8591-d8ac105a47e4",
+      "url": "https://libertas.fgu.tech/posts/hungarian-journalist-faces-espionage-investigation-after-peg",
+      "title": "Hungarian Journalist Faces Espionage Investigation After Pegasus Spyware Targeting",
+      "summary": "Hungary orders espionage investigation of journalist Szabolcs Panyi following covert surveillance and Pegasus spyware targeting, escalating government crackdown on independent media.",
+      "content_text": "Hungarian journalist Szabolcs Panyi faces espionage investigation carrying up to 15 years in prison\n• Investigation based on covertly recorded conversation between Panyi and source, raising surveillance concerns\n• Panyi was previously targeted by Pegasus spyware, confirmed by 2023 European Parliament investigation\n• Allegations stem from his reporting on Hungarian-Russian government ties and embarrassing communications\n• Hungary controls ~80% of media through government-linked entities and economic pressure\n• Pattern shows systematic use of surveillance and legal intimidation against independent journalists\n• European Commission urged to monitor case under rule of law assessments and funding conditionality",
+      "date_published": "2026-03-27T15:01:57.707Z",
+      "date_modified": "2026-03-27T15:01:57.849Z",
+      "tags": [
+        "surveillance",
+        "censorship-resistance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 90,
+        "citations": [
+          "https://www.hrw.org/news/2026/03/27/hungary-orders-investigation-of-journalist-on-espionage-accusation"
+        ]
+      }
+    },
+    {
       "id": "1e70d645-2b8b-4999-a1a1-6ab3a1bd10ab",
       "url": "https://libertas.fgu.tech/posts/eff-s-cindy-cohn-releases-book-on-30-year-fight-against-digi",
       "title": "EFF's Cindy Cohn Releases Book on 30-Year Fight Against Digital Surveillance",

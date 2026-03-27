@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 27 Mar 2026 10:06:20 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 27 Mar 2026 15:01:57 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -49,6 +49,17 @@
     <category>censorship-resistance</category>
     <category>comms</category>
     <category>surveillance</category>
+  </item>
+  <item>
+    <title>Hungarian Journalist Faces Espionage Investigation After Pegasus Spyware Targeting</title>
+    <link>https://libertas.fgu.tech/posts/hungarian-journalist-faces-espionage-investigation-after-peg</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/hungarian-journalist-faces-espionage-investigation-after-peg</guid>
+    <pubDate>Fri, 27 Mar 2026 15:01:57 GMT</pubDate>
+    <description>Hungary orders espionage investigation of journalist Szabolcs Panyi following covert surveillance and Pegasus spyware targeting, escalating government crackdown on independent media.</description>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>privacy</category>
   </item>
   <item>
     <title>EFF&apos;s Cindy Cohn Releases Book on 30-Year Fight Against Digital Surveillance</title>
