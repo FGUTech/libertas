@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Sat, 28 Mar 2026 03:01:30 GMT</lastBuildDate>
+  <lastBuildDate>Sat, 28 Mar 2026 09:01:48 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -94,18 +94,6 @@
     <category>censorship-resistance</category>
   </item>
   <item>
-    <title>Anti-ICE Protesters Convicted on Terrorism Charges for Encrypted Comms and Black Clothing</title>
-    <link>https://libertas.fgu.tech/posts/anti-ice-protesters-convicted-on-terrorism-charges-for-encry</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/anti-ice-protesters-convicted-on-terrorism-charges-for-encry</guid>
-    <pubDate>Sat, 14 Mar 2026 04:01:54 GMT</pubDate>
-    <description>Eight protesters convicted of terrorism charges for wearing black clothing and using Signal messaging during ICE facility demonstration, marking first federal material support charges against alleged antifa members.</description>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>comms</category>
-    <category>censorship-resistance</category>
-    <category>privacy</category>
-  </item>
-  <item>
     <title>Italian Prosecutors Confirm Journalist Hacked with Paragon &apos;Ethical&apos; Spyware</title>
     <link>https://libertas.fgu.tech/posts/italian-prosecutors-confirm-journalist-hacked-with-paragon-e</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/italian-prosecutors-confirm-journalist-hacked-with-paragon-e</guid>
@@ -138,17 +126,6 @@
     <category>activism</category>
   </item>
   <item>
-    <title>Pakistan Uses Colonial-Era Law to Suppress Women&apos;s Rights March, Detains 60+ Activists</title>
-    <link>https://libertas.fgu.tech/posts/pakistan-uses-colonial-era-law-to-suppress-women-s-rights-ma</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/pakistan-uses-colonial-era-law-to-suppress-women-s-rights-ma</guid>
-    <pubDate>Sat, 14 Mar 2026 04:02:13 GMT</pubDate>
-    <description>Pakistani authorities detained over 60 activists and journalists attempting to hold the annual Aurat March on International Women&apos;s Day, using Section 144 restrictions and confiscating phones.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>privacy</category>
-  </item>
-  <item>
     <title>The Intercept Guide: Protecting Devices from ICE/CBP Searches at US Airports</title>
     <link>https://libertas.fgu.tech/posts/the-intercept-guide-protecting-devices-from-ice-cbp-searches</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/the-intercept-guide-protecting-devices-from-ice-cbp-searches</guid>
@@ -169,16 +146,6 @@
     <category>censorship-resistance</category>
     <category>surveillance</category>
     <category>privacy</category>
-  </item>
-  <item>
-    <title>EFF Sues to Free Safety Laws from Copyright Restrictions</title>
-    <link>https://libertas.fgu.tech/posts/eff-sues-to-free-safety-laws-from-copyright-restrictions</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-sues-to-free-safety-laws-from-copyright-restrictions</guid>
-    <pubDate>Sat, 14 Mar 2026 04:00:58 GMT</pubDate>
-    <description>EFF filed lawsuit against CPSC demanding public access to legally binding safety codes that private organizations claim copyright over even after incorporation into federal law.</description>
-    <category>censorship-resistance</category>
-    <category>sovereignty</category>
-    <category>activism</category>
   </item>
   <item>
     <title>EFF Challenges FCC Chair&apos;s Unconstitutional Threats Against Broadcasters</title>
@@ -267,15 +234,15 @@
     <category>sovereignty</category>
   </item>
   <item>
-    <title>EFF Backs Minnesota Lawmaker Against Internet Age Verification Mandate</title>
-    <link>https://libertas.fgu.tech/posts/eff-backs-minnesota-lawmaker-against-internet-age-verificati</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-backs-minnesota-lawmaker-against-internet-age-verificati</guid>
-    <pubDate>Sat, 14 Mar 2026 04:00:58 GMT</pubDate>
-    <description>EFF supports Rep. Leigh Finke&apos;s opposition to Minnesota&apos;s HF1434 age verification bill, which would require government ID/biometric verification for broad categories of online speech beyond explicit content.</description>
+    <title>Afghan Journalist&apos;s Letters Spark Cross-Border Solidarity in China Despite Censorship</title>
+    <link>https://libertas.fgu.tech/posts/afghan-journalist-s-letters-spark-cross-border-solidarity-in</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/afghan-journalist-s-letters-spark-cross-border-solidarity-in</guid>
+    <pubDate>Sat, 28 Mar 2026 09:01:48 GMT</pubDate>
+    <description>Afghan journalist Khadija Haidary&apos;s correspondence about Taliban oppression, translated and shared on Chinese social media, generated grassroots support that helped fund her family&apos;s resettlement in Canada.</description>
     <category>censorship-resistance</category>
-    <category>privacy</category>
+    <category>activism</category>
+    <category>comms</category>
     <category>surveillance</category>
-    <category>identity</category>
   </item>
   <item>
     <title>Sen. Wyden Warns of Classified Section 702 Surveillance Abuse</title>

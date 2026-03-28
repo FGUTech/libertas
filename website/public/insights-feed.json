@@ -180,29 +180,6 @@
       }
     },
     {
-      "id": "2b957580-32ce-497e-8059-e026436ced45",
-      "url": "https://libertas.fgu.tech/posts/anti-ice-protesters-convicted-on-terrorism-charges-for-encry",
-      "title": "Anti-ICE Protesters Convicted on Terrorism Charges for Encrypted Comms and Black Clothing",
-      "summary": "Eight protesters convicted of terrorism charges for wearing black clothing and using Signal messaging during ICE facility demonstration, marking first federal material support charges against alleged antifa members.",
-      "content_text": "Federal jury convicted 8 of 9 defendants on terrorism charges for July 4, 2025 protest at ICE detention facility\n• Prosecutors used encrypted Signal messages as evidence and cited 'black bloc' clothing as material support for terrorism\n• One protester convicted of attempted murder for shooting police officer, faces life in prison\n• First federal use of material support for terrorism charges against alleged antifa members\n• Government witness described Signal app usage as 'typical of antifa' tactics alongside black clothing\n• Convictions could encourage more terrorism prosecutions of activists using encrypted communications\n• Trump administration celebrating verdict as part of systematic crackdown on left-wing groups\n• Defendants face up to 15 years for material support charges, in addition to riot and explosives counts",
-      "date_published": "2026-03-14T04:01:54.859Z",
-      "date_modified": "2026-03-14T04:01:54.976Z",
-      "tags": [
-        "surveillance",
-        "activism",
-        "comms",
-        "censorship-resistance",
-        "privacy"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 85,
-        "citations": [
-          "https://theintercept.com/2026/03/13/ice-protesters-terrorism-prairieland-antifa/"
-        ]
-      }
-    },
-    {
       "id": "300326ee-cfc1-4808-b761-e609bc6910fb",
       "url": "https://libertas.fgu.tech/posts/italian-prosecutors-confirm-journalist-hacked-with-paragon-e",
       "title": "Italian Prosecutors Confirm Journalist Hacked with Paragon 'Ethical' Spyware",
@@ -270,28 +247,6 @@
       }
     },
     {
-      "id": "44f39d22-fdaa-484b-bd46-04c41f993712",
-      "url": "https://libertas.fgu.tech/posts/pakistan-uses-colonial-era-law-to-suppress-women-s-rights-ma",
-      "title": "Pakistan Uses Colonial-Era Law to Suppress Women's Rights March, Detains 60+ Activists",
-      "summary": "Pakistani authorities detained over 60 activists and journalists attempting to hold the annual Aurat March on International Women's Day, using Section 144 restrictions and confiscating phones.",
-      "content_text": "Police detained 35+ women activists and 27+ men during annual Aurat March in Islamabad on March 8\n• Authorities used Section 144 of Criminal Procedure Code (colonial-era law) to ban public assembly\n• Police confiscated mobile phones and held detainees for nearly 10 hours in cramped conditions\n• Journalists covering the event were also detained and threatened with arrest\n• Detainees forced to sign affidavits pledging not to participate in similar events again\n• Section 144 was imposed citing unrelated Iran-Israel conflict concerns\n• Represents escalation in state crackdown on women's rights activism in Pakistan\n• Constitutional lawyers cite violation of Articles 16 (assembly) and 19 (expression) rights",
-      "date_published": "2026-03-14T04:02:13.876Z",
-      "date_modified": "2026-03-14T04:02:14.077Z",
-      "tags": [
-        "censorship-resistance",
-        "surveillance",
-        "activism",
-        "privacy"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 75,
-        "credibility_score": 85,
-        "citations": [
-          "https://globalvoices.org/2026/03/14/authorities-push-back-against-international-womens-day-march-in-pakistan/"
-        ]
-      }
-    },
-    {
       "id": "46c553a9-7655-43bb-8149-2258299a04fd",
       "url": "https://libertas.fgu.tech/posts/the-intercept-guide-protecting-devices-from-ice-cbp-searches",
       "title": "The Intercept Guide: Protecting Devices from ICE/CBP Searches at US Airports",
@@ -333,27 +288,6 @@
         "credibility_score": 95,
         "citations": [
           "https://www.eff.org/deeplinks/2026/03/digital-hopes-real-power-reflecting-legacy-arab-spring-0"
-        ]
-      }
-    },
-    {
-      "id": "5ae2834d-e8da-4daa-914c-b84e3430b3e4",
-      "url": "https://libertas.fgu.tech/posts/eff-sues-to-free-safety-laws-from-copyright-restrictions",
-      "title": "EFF Sues to Free Safety Laws from Copyright Restrictions",
-      "summary": "EFF filed lawsuit against CPSC demanding public access to legally binding safety codes that private organizations claim copyright over even after incorporation into federal law.",
-      "content_text": "EFF and Harvard Cyberlaw Clinic sued Consumer Product Safety Commission over FOIA denial\n• CPSC refusing to release children's product safety codes citing copyright claims\n• Private standards organizations claim copyright retention after codes become federal law\n• Public.Resource.Org (Carl Malamud's nonprofit) seeking access to make laws publicly available\n• Circuit courts split on whether standards lose copyright when incorporated into law\n• Fifth Circuit ruled codes lose copyright protection once adopted as law\n• D.C. Circuit found publishing standards constitutes fair use even if copyright remains\n• Case challenges fundamental principle that private entities can gatekeep public law access",
-      "date_published": "2026-03-14T04:00:58.672Z",
-      "date_modified": "2026-03-14T04:00:58.719Z",
-      "tags": [
-        "censorship-resistance",
-        "sovereignty",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/03/eff-launches-new-fight-free-law"
         ]
       }
     },
@@ -535,24 +469,24 @@
       }
     },
     {
-      "id": "a2af66a6-c5ae-420a-ac13-cb09ff7a29a3",
-      "url": "https://libertas.fgu.tech/posts/eff-backs-minnesota-lawmaker-against-internet-age-verificati",
-      "title": "EFF Backs Minnesota Lawmaker Against Internet Age Verification Mandate",
-      "summary": "EFF supports Rep. Leigh Finke's opposition to Minnesota's HF1434 age verification bill, which would require government ID/biometric verification for broad categories of online speech beyond explicit content.",
-      "content_text": "Minnesota HF1434 mandates age verification via government IDs or biometrics for websites with speech deemed 'harmful to minors'\n• Bill's definition extends beyond explicit content to include lawful speech about sexual orientation, health, and gender identity\n• Rep. Leigh Finke (transgender lawmaker) testified that such laws are already blocking LGBTQ+ youth from educational resources\n• Supreme Court's Free Speech Coalition v. Paxton ruling enabled Texas-style age verification, supported by anti-LGBTQ groups\n• Minnesota bill goes further than Texas law by expanding 'harmful to minors' definition to broader categories of protected speech\n• EFF argues young people have First Amendment rights to access information about sexuality and reproductive health\n• Age verification creates surveillance infrastructure that undermines privacy and anonymous access for all users\n• Critics mischaracterized Finke's testimony, proving her point about using these laws to silence dissenting voices",
-      "date_published": "2026-03-14T04:00:58.672Z",
-      "date_modified": "2026-03-14T04:00:58.719Z",
+      "id": "a77a38b9-2798-46ed-a3be-d0690c93eee9",
+      "url": "https://libertas.fgu.tech/posts/afghan-journalist-s-letters-spark-cross-border-solidarity-in",
+      "title": "Afghan Journalist's Letters Spark Cross-Border Solidarity in China Despite Censorship",
+      "summary": "Afghan journalist Khadija Haidary's correspondence about Taliban oppression, translated and shared on Chinese social media, generated grassroots support that helped fund her family's resettlement in Canada.",
+      "content_text": "Afghan journalist Khadija Haidary's email correspondence about life under Taliban was translated by Chinese journalist Weilin Hong in October 2024\n• Letters published on WeChat account 'Positive Links' went viral among Chinese readers despite tight media controls\n• Chinese publisher offered book contract and advance royalties, enabling Haidary's family to resettle from Pakistan to Canada\n• Over 10,000 copies sold by August 2025, with readers promoting book through reviews on Xiaohongshu, Weibo, and other platforms\n• Cross-border solidarity emerged through individual acts rather than organized movement due to China's constrained civil society\n• Chinese readers drew parallels between Afghan women's experiences and their own restrictions on feminist expression\n• Support network utilized multiple platforms (WeChat, Telegram, Douban) to circumvent information controls\n• Demonstrates how personal narratives can bypass official media filters and generate meaningful activism under authoritarian constraints",
+      "date_published": "2026-03-28T09:01:48.649Z",
+      "date_modified": "2026-03-28T09:01:48.808Z",
       "tags": [
         "censorship-resistance",
-        "privacy",
-        "surveillance",
-        "identity"
+        "activism",
+        "comms",
+        "surveillance"
       ],
       "_libertas": {
-        "freedom_relevance_score": 78,
+        "freedom_relevance_score": 75,
         "credibility_score": 85,
         "citations": [
-          "https://www.eff.org/deeplinks/2026/03/rep-finke-was-right-age-gating-isnt-about-kids-its-about-control"
+          "https://globalvoices.org/2026/03/28/how-did-an-afghan-woman-journalists-writing-resonate-in-china/"
         ]
       }
     },
