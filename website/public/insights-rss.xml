@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 27 Mar 2026 21:01:32 GMT</lastBuildDate>
+  <lastBuildDate>Sat, 28 Mar 2026 03:01:30 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -223,17 +223,6 @@
     <category>sovereignty</category>
   </item>
   <item>
-    <title>EFF Defends Anonymous JW Researcher Against Copyright-Based Doxing Attempt</title>
-    <link>https://libertas.fgu.tech/posts/eff-defends-anonymous-jw-researcher-against-copyright-based-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-defends-anonymous-jw-researcher-against-copyright-based-</guid>
-    <pubDate>Fri, 13 Mar 2026 22:00:56 GMT</pubDate>
-    <description>Watch Tower Bible and Tract Society is using DMCA subpoenas to unmask an anonymous Jehovah&apos;s Witness who created research tools exposing the organization&apos;s suppressed documents and failed prophecies.</description>
-    <category>censorship-resistance</category>
-    <category>privacy</category>
-    <category>identity</category>
-    <category>activism</category>
-  </item>
-  <item>
     <title>EFF&apos;s 2026 Foilies Expose Government Transparency Failures</title>
     <link>https://libertas.fgu.tech/posts/eff-s-2026-foilies-expose-government-transparency-failures</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-s-2026-foilies-expose-government-transparency-failures</guid>
@@ -267,6 +256,17 @@
     <category>activism</category>
   </item>
   <item>
+    <title>EFF Urges Supreme Court to Hold Cisco Liable for Torture-Enabling Surveillance System</title>
+    <link>https://libertas.fgu.tech/posts/eff-urges-supreme-court-to-hold-cisco-liable-for-torture-ena</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-urges-supreme-court-to-hold-cisco-liable-for-torture-ena</guid>
+    <pubDate>Sat, 28 Mar 2026 03:01:30 GMT</pubDate>
+    <description>EFF filed Supreme Court brief arguing Cisco should face liability for custom-building China&apos;s &apos;Golden Shield&apos; surveillance system used to persecute, torture Falun Gong practitioners.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
+    <category>sovereignty</category>
+  </item>
+  <item>
     <title>EFF Backs Minnesota Lawmaker Against Internet Age Verification Mandate</title>
     <link>https://libertas.fgu.tech/posts/eff-backs-minnesota-lawmaker-against-internet-age-verificati</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-backs-minnesota-lawmaker-against-internet-age-verificati</guid>
@@ -278,16 +278,6 @@
     <category>identity</category>
   </item>
   <item>
-    <title>EFF Sues to Free Safety Laws Locked Behind Copyright Claims</title>
-    <link>https://libertas.fgu.tech/posts/eff-sues-to-free-safety-laws-locked-behind-copyright-claims</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-sues-to-free-safety-laws-locked-behind-copyright-claims</guid>
-    <pubDate>Fri, 13 Mar 2026 22:00:56 GMT</pubDate>
-    <description>EFF filed suit against CPSC to release legally binding safety codes that private organizations claim copyright over even after incorporation into federal law.</description>
-    <category>censorship-resistance</category>
-    <category>sovereignty</category>
-    <category>activism</category>
-  </item>
-  <item>
     <title>Sen. Wyden Warns of Classified Section 702 Surveillance Abuse</title>
     <link>https://libertas.fgu.tech/posts/sen-wyden-warns-of-classified-section-702-surveillance-abuse</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/sen-wyden-warns-of-classified-section-702-surveillance-abuse</guid>
@@ -295,17 +285,6 @@
     <description>Sen. Ron Wyden revealed existence of classified Section 702 surveillance abuse that affects Americans&apos; privacy rights, warning Congress is debating reauthorization without full information.</description>
     <category>surveillance</category>
     <category>privacy</category>
-  </item>
-  <item>
-    <title>Instagram to Drop End-to-End Encryption for Messages by May 2026</title>
-    <link>https://libertas.fgu.tech/posts/instagram-to-drop-end-to-end-encryption-for-messages-by-may-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/instagram-to-drop-end-to-end-encryption-for-messages-by-may-</guid>
-    <pubDate>Fri, 13 Mar 2026 22:02:19 GMT</pubDate>
-    <description>Instagram will discontinue end-to-end encrypted messaging by May 8, 2026, marking a significant reversal of Meta&apos;s previous commitment to private communications.</description>
-    <category>privacy</category>
-    <category>comms</category>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
   </item>
   <item>
     <title>Iran Targets Amazon Data Centers in First Military Strike on Commercial Cloud Infrastructure</title>
@@ -335,17 +314,6 @@
     <description>EFF highlights serious privacy concerns as Meta&apos;s Ray-Ban smart glasses go mainstream, including human review of footage and covert recording capabilities that threaten bystander privacy.</description>
     <category>privacy</category>
     <category>surveillance</category>
-  </item>
-  <item>
-    <title>Federal Jury Convicts Protesters on Terrorism Charges, Cites Signal Use as Evidence</title>
-    <link>https://libertas.fgu.tech/posts/federal-jury-convicts-protesters-on-terrorism-charges-cites-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/federal-jury-convicts-protesters-on-terrorism-charges-cites-</guid>
-    <pubDate>Fri, 13 Mar 2026 22:02:49 GMT</pubDate>
-    <description>Eight anti-ICE protesters convicted on terrorism charges in landmark case where prosecutors cited Signal messaging and &apos;black bloc&apos; clothing as evidence of terrorist material support.</description>
-    <category>comms</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>censorship-resistance</category>
   </item>
   <item>
     <title>Court Blocks Pentagon Retaliation Against AI Company Refusing Surveillance Role</title>

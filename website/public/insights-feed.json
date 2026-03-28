@@ -447,28 +447,6 @@
       }
     },
     {
-      "id": "89091fdf-b35b-482e-a1fd-e729a2e9ef69",
-      "url": "https://libertas.fgu.tech/posts/eff-defends-anonymous-jw-researcher-against-copyright-based-",
-      "title": "EFF Defends Anonymous JW Researcher Against Copyright-Based Doxing Attempt",
-      "summary": "Watch Tower Bible and Tract Society is using DMCA subpoenas to unmask an anonymous Jehovah's Witness who created research tools exposing the organization's suppressed documents and failed prophecies.",
-      "content_text": "Watch Tower sent DMCA subpoenas to Google and Cloudflare seeking to identify anonymous researcher 'J. Doe'\n• Doe created JWS Library website with research tools analyzing Jehovah's Witnesses historical documents\n• Research revealed failed prophecies, erasure of leader disgrace, and suppressed church documents\n• Watch Tower claims copyright infringement; EFF argues research constitutes clear fair use\n• Doe remains anonymous to avoid 'disfellowshipping' retaliation that would sever family/social ties\n• EFF filed motions to quash subpoenas in Southern District of New York\n• Case demonstrates copyright law being weaponized to silence religious dissent and research\n• First Amendment protects anonymous speech, especially when speakers face retribution",
-      "date_published": "2026-03-13T22:00:56.004Z",
-      "date_modified": "2026-03-13T22:00:56.066Z",
-      "tags": [
-        "censorship-resistance",
-        "privacy",
-        "identity",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/03/copyright-bullying-vs-religious-freedom-0"
-        ]
-      }
-    },
-    {
       "id": "8c882462-27fe-4a1c-9861-0cdaf6b6d106",
       "url": "https://libertas.fgu.tech/posts/eff-s-2026-foilies-expose-government-transparency-failures",
       "title": "EFF's 2026 Foilies Expose Government Transparency Failures",
@@ -535,6 +513,28 @@
       }
     },
     {
+      "id": "95d87512-5de1-4e91-9f97-ea3d9a63c400",
+      "url": "https://libertas.fgu.tech/posts/eff-urges-supreme-court-to-hold-cisco-liable-for-torture-ena",
+      "title": "EFF Urges Supreme Court to Hold Cisco Liable for Torture-Enabling Surveillance System",
+      "summary": "EFF filed Supreme Court brief arguing Cisco should face liability for custom-building China's 'Golden Shield' surveillance system used to persecute, torture Falun Gong practitioners.",
+      "content_text": "EFF filed amicus brief in Cisco Systems v. Doe I case before U.S. Supreme Court\n• Cisco custom-built 'Golden Shield' surveillance system for Chinese government targeting Falun Gong\n• System enabled tracking, detention, and torture - intercepted communications used during torture sessions\n• 9th Circuit ruled U.S. companies can be liable under Alien Tort Statute for aiding human rights abuses\n• Court held companies need only 'knowledge' not 'purpose' that assistance enables abuse\n• Supreme Court oral arguments scheduled for April 28, 2025\n• Case could set precedent for accountability of surveillance tech companies globally\n• EFF argues this goes beyond general-purpose tech to purposeful persecution assistance",
+      "date_published": "2026-03-28T03:01:30.765Z",
+      "date_modified": "2026-03-28T03:01:30.811Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/press/releases/us-tech-companies-must-be-accountable-us-courts-facilitating-persecution-and-torture"
+        ]
+      }
+    },
+    {
       "id": "a2af66a6-c5ae-420a-ac13-cb09ff7a29a3",
       "url": "https://libertas.fgu.tech/posts/eff-backs-minnesota-lawmaker-against-internet-age-verificati",
       "title": "EFF Backs Minnesota Lawmaker Against Internet Age Verification Mandate",
@@ -557,27 +557,6 @@
       }
     },
     {
-      "id": "a80d07c3-9496-4e27-affb-e6425576ac48",
-      "url": "https://libertas.fgu.tech/posts/eff-sues-to-free-safety-laws-locked-behind-copyright-claims",
-      "title": "EFF Sues to Free Safety Laws Locked Behind Copyright Claims",
-      "summary": "EFF filed suit against CPSC to release legally binding safety codes that private organizations claim copyright over even after incorporation into federal law.",
-      "content_text": "EFF partnering with Harvard Cyberlaw Clinic to sue Consumer Product Safety Council (CPSC)\n• Client Public.Resource.Org seeking children's product safety codes via FOIA requests\n• CPSC refusing to release codes citing private organization copyright claims\n• Private standards groups retain copyright control over laws after government adoption\n• Fifth Circuit ruled safety codes lose copyright when incorporated into law\n• D.C. Circuit previously held that sharing incorporated standards constitutes fair use\n• Case challenges fundamental principle that copyright can restrict access to binding law\n• Part of broader 'Freeing the Law' campaign for government transparency",
-      "date_published": "2026-03-13T22:00:56.004Z",
-      "date_modified": "2026-03-13T22:00:56.066Z",
-      "tags": [
-        "censorship-resistance",
-        "sovereignty",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/03/eff-launches-new-fight-free-law"
-        ]
-      }
-    },
-    {
       "id": "ab5a64d7-34ac-44fa-86d8-8b8affbf1640",
       "url": "https://libertas.fgu.tech/posts/sen-wyden-warns-of-classified-section-702-surveillance-abuse",
       "title": "Sen. Wyden Warns of Classified Section 702 Surveillance Abuse",
@@ -594,28 +573,6 @@
         "credibility_score": 95,
         "citations": [
           "https://www.schneier.com/blog/archives/2026/03/sen-wyden-warns-of-another-section-702-abuse.html"
-        ]
-      }
-    },
-    {
-      "id": "ac6660b8-93cd-4f37-91fd-76d5a4e69e61",
-      "url": "https://libertas.fgu.tech/posts/instagram-to-drop-end-to-end-encryption-for-messages-by-may-",
-      "title": "Instagram to Drop End-to-End Encryption for Messages by May 2026",
-      "summary": "Instagram will discontinue end-to-end encrypted messaging by May 8, 2026, marking a significant reversal of Meta's previous commitment to private communications.",
-      "content_text": "Instagram help pages confirm E2EE messaging support ends May 8, 2026\n• Users must download encrypted chats and media before deadline or lose access\n• Reversal contradicts Meta's 2019 strategy to expand encryption across all platforms\n• WhatsApp and Messenger E2EE status remains unclear from this announcement\n• No public explanation provided for why E2EE is being discontinued\n• Change occurs amid renewed policy debates over encryption vs. content moderation\n• TikTok also recently declined to implement E2EE citing safety concerns\n• Raises questions about future Instagram chat privacy and Meta's data access",
-      "date_published": "2026-03-13T22:02:19.978Z",
-      "date_modified": "2026-03-13T22:02:20.110Z",
-      "tags": [
-        "privacy",
-        "comms",
-        "censorship-resistance",
-        "surveillance"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 85,
-        "citations": [
-          "https://proton.me/blog/instagram-end-to-end-encryption"
         ]
       }
     },
@@ -679,28 +636,6 @@
         "credibility_score": 95,
         "citations": [
           "https://www.eff.org/deeplinks/2026/03/think-twice-buying-or-using-metas-ray-bans"
-        ]
-      }
-    },
-    {
-      "id": "c6927b24-d24a-49c7-b25c-8c5e593fb3bb",
-      "url": "https://libertas.fgu.tech/posts/federal-jury-convicts-protesters-on-terrorism-charges-cites-",
-      "title": "Federal Jury Convicts Protesters on Terrorism Charges, Cites Signal Use as Evidence",
-      "summary": "Eight anti-ICE protesters convicted on terrorism charges in landmark case where prosecutors cited Signal messaging and 'black bloc' clothing as evidence of terrorist material support.",
-      "content_text": "Federal jury convicted 8 of 9 protesters on terrorism charges related to July 4, 2025 ICE facility demonstration in Texas\n• Benjamin Song convicted of attempted murder for shooting police officer with modified AR-15\n• Prosecutors successfully argued wearing black clothing constituted 'material support for terrorism'\n• Signal encrypted messages obtained by government used as evidence against defendants\n• Right-wing think tank researcher testified that Signal use and black bloc tactics are 'typical of antifa'\n• First federal material support for terrorism charges against alleged antifa members\n• Case establishes precedent where privacy tools and clothing choices can support terrorism charges\n• Convictions could encourage similar prosecutions as Trump administration targets left-wing groups",
-      "date_published": "2026-03-13T22:02:49.064Z",
-      "date_modified": "2026-03-13T22:02:49.173Z",
-      "tags": [
-        "comms",
-        "surveillance",
-        "activism",
-        "censorship-resistance"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 85,
-        "credibility_score": 88,
-        "citations": [
-          "https://theintercept.com/2026/03/13/ice-protesters-terrorism-prairieland-antifa/"
         ]
       }
     },
