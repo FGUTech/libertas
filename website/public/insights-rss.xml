@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Sat, 28 Mar 2026 09:01:48 GMT</lastBuildDate>
+  <lastBuildDate>Sat, 28 Mar 2026 15:02:00 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -302,6 +302,17 @@
     <category>privacy</category>
     <category>surveillance</category>
     <category>identity</category>
+  </item>
+  <item>
+    <title>ICE Agents Now Checking IDs at TSA Checkpoints, Targeting Latinos</title>
+    <link>https://libertas.fgu.tech/posts/ice-agents-now-checking-ids-at-tsa-checkpoints-targeting-lat</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/ice-agents-now-checking-ids-at-tsa-checkpoints-targeting-lat</guid>
+    <pubDate>Sat, 28 Mar 2026 15:02:00 GMT</pubDate>
+    <description>Trump deployed ICE agents to TSA checkpoints at US airports, where they&apos;re requesting additional ID from Latino passengers, potentially as a &apos;test run&apos; for expanded surveillance operations.</description>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>identity</category>
+    <category>sovereignty</category>
   </item>
   <item>
     <title>Nicole Ozer Named New EFF Executive Director, Bringing Anti-Surveillance Expertise</title>
