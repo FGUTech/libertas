@@ -137,6 +137,28 @@
       }
     },
     {
+      "id": "1da1a67b-2ba0-4ded-ac3b-96bc79e8e0be",
+      "url": "https://libertas.fgu.tech/posts/afghan-women-use-underground-online-education-networks-to-re",
+      "title": "Afghan Women Use Underground Online Education Networks to Resist Taliban Restrictions",
+      "summary": "First-person account reveals how Afghan women are creating underground online education networks and digital resistance methods to circumvent Taliban's education bans since 2021.",
+      "content_text": "Personal testimony from Fareshtah, an Afghan law student whose education was cut short by Taliban takeover in August 2021\n• Student prevented from defending thesis at gunpoint when universities banned women in December 2022\n• Underground resistance includes online schools for girls, women's reading groups, and virtual courses\n• Taliban has repeatedly reversed promises to allow women's education, forcing shift to covert online methods\n• Author now teaches in clandestine online schools and university courses for women denied formal education\n• Demonstrates pattern of digital education networks emerging under authoritarian censorship\n• Shows evolution from formal to informal resistance education infrastructure over 3+ years",
+      "date_published": "2026-03-30T21:03:28.456Z",
+      "date_modified": "2026-03-30T21:03:28.609Z",
+      "tags": [
+        "censorship-resistance",
+        "activism",
+        "surveillance",
+        "comms"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://globalvoices.org/2026/03/30/our-generation-will-continue-resisting-the-talibans-restrictions-on-women-and-girls/"
+        ]
+      }
+    },
+    {
       "id": "1e70d645-2b8b-4999-a1a1-6ab3a1bd10ab",
       "url": "https://libertas.fgu.tech/posts/eff-s-cindy-cohn-releases-book-on-30-year-fight-against-digi",
       "title": "EFF's Cindy Cohn Releases Book on 30-Year Fight Against Digital Surveillance",
@@ -198,6 +220,27 @@
         "credibility_score": 90,
         "citations": [
           "https://proton.me/blog/apple-uk-age-verification-iphone"
+        ]
+      }
+    },
+    {
+      "id": "2d13f9f6-7033-4b3b-981b-7313649c1e4f",
+      "url": "https://libertas.fgu.tech/posts/eff-s-cindy-cohn-on-daily-show-to-discuss-30-years-of-privac",
+      "title": "EFF's Cindy Cohn on Daily Show to Discuss 30 Years of Privacy Advocacy",
+      "summary": "EFF Executive Director Cindy Cohn appears on The Daily Show to discuss her new book covering three decades fighting surveillance, from the Crypto Wars to NSA dragnet spying.",
+      "content_text": "Cindy Cohn, EFF Executive Director, featured on The Daily Show March 30\n• Promoting new book 'Privacy's Defender: My Thirty-Year Fight Against Digital Surveillance' (MIT Press)\n• Book covers her role in major digital rights battles including 1990s Crypto Wars\n• Details resistance to NSA's dragnet internet surveillance programs revealed in 2000s\n• Describes fights against FBI gag orders and support for whistleblowers\n• Represents broader EFF work defending technologists, innovators, and researchers\n• Mainstream media platform amplifies decades of freedom tech advocacy work",
+      "date_published": "2026-03-30T21:01:14.070Z",
+      "date_modified": "2026-03-30T21:01:14.115Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/03/effs-cindy-cohn-daily-show-tonight-monday-march-30"
         ]
       }
     },

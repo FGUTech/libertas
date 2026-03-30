@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Mon, 30 Mar 2026 15:02:27 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 30 Mar 2026 21:03:28 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -73,6 +73,17 @@
     <category>privacy</category>
   </item>
   <item>
+    <title>Afghan Women Use Underground Online Education Networks to Resist Taliban Restrictions</title>
+    <link>https://libertas.fgu.tech/posts/afghan-women-use-underground-online-education-networks-to-re</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/afghan-women-use-underground-online-education-networks-to-re</guid>
+    <pubDate>Mon, 30 Mar 2026 21:03:28 GMT</pubDate>
+    <description>First-person account reveals how Afghan women are creating underground online education networks and digital resistance methods to circumvent Taliban&apos;s education bans since 2021.</description>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>surveillance</category>
+    <category>comms</category>
+  </item>
+  <item>
     <title>EFF&apos;s Cindy Cohn Releases Book on 30-Year Fight Against Digital Surveillance</title>
     <link>https://libertas.fgu.tech/posts/eff-s-cindy-cohn-releases-book-on-30-year-fight-against-digi</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-s-cindy-cohn-releases-book-on-30-year-fight-against-digi</guid>
@@ -103,6 +114,16 @@
     <category>surveillance</category>
     <category>identity</category>
     <category>censorship-resistance</category>
+  </item>
+  <item>
+    <title>EFF&apos;s Cindy Cohn on Daily Show to Discuss 30 Years of Privacy Advocacy</title>
+    <link>https://libertas.fgu.tech/posts/eff-s-cindy-cohn-on-daily-show-to-discuss-30-years-of-privac</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-s-cindy-cohn-on-daily-show-to-discuss-30-years-of-privac</guid>
+    <pubDate>Mon, 30 Mar 2026 21:01:14 GMT</pubDate>
+    <description>EFF Executive Director Cindy Cohn appears on The Daily Show to discuss her new book covering three decades fighting surveillance, from the Crypto Wars to NSA dragnet spying.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>activism</category>
   </item>
   <item>
     <title>Italian Prosecutors Confirm Journalist Hacked with Paragon &apos;Ethical&apos; Spyware</title>
