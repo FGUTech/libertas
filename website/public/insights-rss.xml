@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Sat, 28 Mar 2026 15:02:00 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 30 Mar 2026 15:02:27 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -19,6 +19,17 @@
     <category>comms</category>
     <category>activism</category>
     <category>sovereignty</category>
+  </item>
+  <item>
+    <title>Citizen Lab Warns of Digital Transnational Repression &apos;Tsunami&apos; Facing Canadians</title>
+    <link>https://libertas.fgu.tech/posts/citizen-lab-warns-of-digital-transnational-repression-tsunam</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/citizen-lab-warns-of-digital-transnational-repression-tsunam</guid>
+    <pubDate>Mon, 30 Mar 2026 15:02:27 GMT</pubDate>
+    <description>Citizen Lab director testified to Parliament that digital transnational repression will intensify due to U.S. authoritarianism, AI expansion, and Canada&apos;s failure to regulate mercenary spyware as promised.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>censorship-resistance</category>
+    <category>activism</category>
   </item>
   <item>
     <title>Congress Plans Clean FISA 702 Extension Despite Mass Surveillance Abuses</title>
@@ -199,17 +210,6 @@
     <category>privacy</category>
     <category>censorship-resistance</category>
     <category>activism</category>
-  </item>
-  <item>
-    <title>Former Coinbase CTO Calls for Crypto Tools for Refugees and Stateless People</title>
-    <link>https://libertas.fgu.tech/posts/former-coinbase-cto-calls-for-crypto-tools-for-refugees-and-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/former-coinbase-cto-calls-for-crypto-tools-for-refugees-and-</guid>
-    <pubDate>Sat, 14 Mar 2026 16:01:23 GMT</pubDate>
-    <description>Balaji Srinivasan advocates for crypto industry to build financial tools serving refugees and stateless populations amid rising global conflicts and migration.</description>
-    <category>bitcoin</category>
-    <category>payments</category>
-    <category>sovereignty</category>
-    <category>identity</category>
   </item>
   <item>
     <title>Major Publishers Block Internet Archive Over AI Concerns, Threatening Historical Web Record</title>

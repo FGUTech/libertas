@@ -30,6 +30,28 @@
       }
     },
     {
+      "id": "0c3d4549-3fa6-4cbd-8d9e-0a4b3ad3c68a",
+      "url": "https://libertas.fgu.tech/posts/citizen-lab-warns-of-digital-transnational-repression-tsunam",
+      "title": "Citizen Lab Warns of Digital Transnational Repression 'Tsunami' Facing Canadians",
+      "summary": "Citizen Lab director testified to Parliament that digital transnational repression will intensify due to U.S. authoritarianism, AI expansion, and Canada's failure to regulate mercenary spyware as promised.",
+      "content_text": "Ron Deibert testified to House of Commons subcommittee on March 23 about transnational repression threats\n• Digital transnational repression uses surveillance tech to harass and intimidate victims across borders\n• Creates 'major chilling effects' through paranoia, isolation, and self-censorship in civil society\n• Three factors accelerating threat: U.S. authoritarianism, rapid AI spread, Canada's realist foreign policy shift\n• Canada pledged to regulate mercenary spyware industry but has failed to follow through\n• Recommends deep engagement with affected diaspora communities to tailor responses\n• Calls for review of Canada-US Safe Third Country Agreement that blocks refugee claims",
+      "date_published": "2026-03-30T15:02:27.304Z",
+      "date_modified": "2026-03-30T15:02:27.445Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "censorship-resistance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://citizenlab.ca/canadians-face-tsunami-of-transnational-repression-in-coming-years/"
+        ]
+      }
+    },
+    {
       "id": "17908c74-c986-441a-b767-b235d140418c",
       "url": "https://libertas.fgu.tech/posts/congress-plans-clean-fisa-702-extension-despite-mass-surveil",
       "title": "Congress Plans Clean FISA 702 Extension Despite Mass Surveillance Abuses",
@@ -399,28 +421,6 @@
         "credibility_score": 95,
         "citations": [
           "https://www.eff.org/deeplinks/2026/03/foilies-2026"
-        ]
-      }
-    },
-    {
-      "id": "8f125d8f-2022-43c3-a41a-001d1a090120",
-      "url": "https://libertas.fgu.tech/posts/former-coinbase-cto-calls-for-crypto-tools-for-refugees-and-",
-      "title": "Former Coinbase CTO Calls for Crypto Tools for Refugees and Stateless People",
-      "summary": "Balaji Srinivasan advocates for crypto industry to build financial tools serving refugees and stateless populations amid rising global conflicts and migration.",
-      "content_text": "Former Coinbase CTO Balaji Srinivasan calls for crypto tools targeting refugees and stateless people\n• Proposal addresses financial exclusion of vulnerable populations lacking traditional banking access\n• Context of increasing global conflicts and migration creating larger refugee populations\n• Highlights potential for crypto to serve sovereignty and identity use cases\n• No specific technical implementations or projects mentioned\n• Represents high-level strategic vision rather than actionable development roadmap\n• Aligns with broader crypto narrative around financial inclusion and sovereignty",
-      "date_published": "2026-03-14T16:01:23.717Z",
-      "date_modified": "2026-03-14T16:01:23.771Z",
-      "tags": [
-        "bitcoin",
-        "payments",
-        "sovereignty",
-        "identity"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 80,
-        "citations": [
-          "https://cointelegraph.com/news/balaji-calls-for-crypto-tools-for-refugees-stateless-people?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
         ]
       }
     },
