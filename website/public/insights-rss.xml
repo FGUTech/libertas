@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Tue, 31 Mar 2026 09:02:43 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 31 Mar 2026 15:03:49 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -41,6 +41,17 @@
     <category>privacy</category>
     <category>censorship-resistance</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Ugandan Journalist Disappeared After Discussing Struck-Down Surveillance Laws</title>
+    <link>https://libertas.fgu.tech/posts/ugandan-journalist-disappeared-after-discussing-struck-down-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/ugandan-journalist-disappeared-after-discussing-struck-down-</guid>
+    <pubDate>Tue, 31 Mar 2026 15:02:38 GMT</pubDate>
+    <description>Journalist Mukose Arnold Anthony was forcibly disappeared by plainclothes security after discussing Constitutional Court ruling that nullified Computer Misuse Act sections used to target activists.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>privacy</category>
   </item>
   <item>
     <title>Congress Plans Clean FISA 702 Extension Despite Mass Surveillance Abuses</title>
@@ -262,6 +273,16 @@
     <category>censorship-resistance</category>
     <category>privacy</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Proton Meet Launches with MLS Encryption to Counter AI Video Surveillance</title>
+    <link>https://libertas.fgu.tech/posts/proton-meet-launches-with-mls-encryption-to-counter-ai-video</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/proton-meet-launches-with-mls-encryption-to-counter-ai-video</guid>
+    <pubDate>Tue, 31 Mar 2026 15:03:49 GMT</pubDate>
+    <description>Proton launched Meet, an end-to-end encrypted video conferencing service using MLS protocol, addressing AI-powered surveillance risks in mainstream platforms like Zoom and Google Meet.</description>
+    <category>comms</category>
+    <category>privacy</category>
+    <category>surveillance</category>
   </item>
   <item>
     <title>NYC Ends $4M Palantir Hospital Contract After Activist Pressure</title>

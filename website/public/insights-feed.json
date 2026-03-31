@@ -74,6 +74,28 @@
       }
     },
     {
+      "id": "0f6feaaf-1ec1-4fcd-8b71-2e9c1845d73e",
+      "url": "https://libertas.fgu.tech/posts/ugandan-journalist-disappeared-after-discussing-struck-down-",
+      "title": "Ugandan Journalist Disappeared After Discussing Struck-Down Surveillance Laws",
+      "summary": "Journalist Mukose Arnold Anthony was forcibly disappeared by plainclothes security after discussing Constitutional Court ruling that nullified Computer Misuse Act sections used to target activists.",
+      "content_text": "Mukose Arnold Anthony of Alternative Digitalk forcibly taken by plainclothes men after radio broadcast on March 22\n• Had just discussed Constitutional Court's March 17 ruling nullifying Computer Misuse Act sections targeting journalists\n• Joint Anti-Terrorism Task Force reportedly involved, searched his home and seized electronic devices\n• Police seized ID, passport, modem, laptop, and smartwatches from his residence\n• Part of pattern: JATF accused of illegally detaining 100+ people, some tortured to death\n• Alternative Digitalk previously raided in 2022 under now-annulled Computer Misuse Act provisions\n• Police confirmed holding Mukose in custody, will arraign in court 'in due course'",
+      "date_published": "2026-03-31T15:02:38.376Z",
+      "date_modified": "2026-03-31T15:02:38.497Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://cpj.org/2026/03/ugandan-journalist-missing-forced-into-van-after-radio-show/"
+        ]
+      }
+    },
+    {
       "id": "17908c74-c986-441a-b767-b235d140418c",
       "url": "https://libertas.fgu.tech/posts/congress-plans-clean-fisa-702-extension-despite-mass-surveil",
       "title": "Congress Plans Clean FISA 702 Extension Despite Mass Surveillance Abuses",
@@ -527,6 +549,27 @@
         "credibility_score": 85,
         "citations": [
           "https://www.schneier.com/blog/archives/2026/03/team-mirai-and-democracy.html"
+        ]
+      }
+    },
+    {
+      "id": "78966589-4cea-41fb-8988-d99f3f10d6d6",
+      "url": "https://libertas.fgu.tech/posts/proton-meet-launches-with-mls-encryption-to-counter-ai-video",
+      "title": "Proton Meet Launches with MLS Encryption to Counter AI Video Surveillance",
+      "summary": "Proton launched Meet, an end-to-end encrypted video conferencing service using MLS protocol, addressing AI-powered surveillance risks in mainstream platforms like Zoom and Google Meet.",
+      "content_text": "Proton Meet launched as encrypted alternative to Zoom, Google Meet, and Microsoft Teams\n• Uses Messaging Layer Security (MLS) protocol for end-to-end encryption at enterprise scale\n• Built on WebRTC with Selective Forwarding Units (SFU) for scalability without P2P IP exposure\n• Addresses AI surveillance threat from Big Tech companies recording/analyzing meeting data\n• Features zero-knowledge meeting authentication via SRP - Proton cannot access meetings\n• Offers web browser access without account required, plus dedicated mobile/desktop apps\n• Free tier available with enterprise-grade features and admin controls\n• Distributed global server network for low-latency, high-reliability communications",
+      "date_published": "2026-03-31T15:03:49.707Z",
+      "date_modified": "2026-03-31T15:03:49.833Z",
+      "tags": [
+        "comms",
+        "privacy",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 72,
+        "credibility_score": 95,
+        "citations": [
+          "https://proton.me/blog/meet-security-model"
         ]
       }
     },
