@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Mon, 30 Mar 2026 21:03:28 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 31 Mar 2026 03:02:57 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -180,6 +180,17 @@
     <category>privacy</category>
   </item>
   <item>
+    <title>EFF Promotes Digital Rights Advocacy and Privacy Education to Daily Show Viewers</title>
+    <link>https://libertas.fgu.tech/posts/eff-promotes-digital-rights-advocacy-and-privacy-education-t</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-promotes-digital-rights-advocacy-and-privacy-education-t</guid>
+    <pubDate>Tue, 31 Mar 2026 03:01:26 GMT</pubDate>
+    <description>EFF&apos;s outreach page highlights 35 years of defending digital rights, from crypto wars to NSA surveillance battles, showcasing their role as infrastructure defenders for online rebellion.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+  </item>
+  <item>
     <title>EFF Challenges FCC Chair&apos;s Unconstitutional Threats Against Broadcasters</title>
     <link>https://libertas.fgu.tech/posts/eff-challenges-fcc-chair-s-unconstitutional-threats-against-</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-challenges-fcc-chair-s-unconstitutional-threats-against-</guid>
@@ -313,6 +324,17 @@
     <category>privacy</category>
     <category>censorship-resistance</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Ugandan Journalist Disappeared After Discussing Censorship Law Ruling</title>
+    <link>https://libertas.fgu.tech/posts/ugandan-journalist-disappeared-after-discussing-censorship-l</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/ugandan-journalist-disappeared-after-discussing-censorship-l</guid>
+    <pubDate>Tue, 31 Mar 2026 03:02:57 GMT</pubDate>
+    <description>Ugandan security forces forcibly disappeared journalist Mukose Arnold Anthony after he discussed a court ruling that struck down sections of the Computer Misuse Act used to target journalists and activists.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>privacy</category>
   </item>
   <item>
     <title>EFF Warns of Privacy Risks in Mainstream Smartglasses Adoption</title>
