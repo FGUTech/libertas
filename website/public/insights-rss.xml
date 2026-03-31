@@ -5,9 +5,20 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Tue, 31 Mar 2026 03:02:57 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 31 Mar 2026 09:02:43 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
+  <item>
+    <title>Access Now: 2025 Saw Record Internet Shutdowns, 30 in 15 African Countries</title>
+    <link>https://libertas.fgu.tech/posts/access-now-2025-saw-record-internet-shutdowns-30-in-15-afric</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/access-now-2025-saw-record-internet-shutdowns-30-in-15-afric</guid>
+    <pubDate>Tue, 31 Mar 2026 09:02:43 GMT</pubDate>
+    <description>Access Now&apos;s #KeepItOn coalition documented 313 internet shutdowns globally in 2025, including 30 shutdowns across 15 African countries, with protests and elections as primary triggers.</description>
+    <category>censorship-resistance</category>
+    <category>comms</category>
+    <category>activism</category>
+    <category>surveillance</category>
+  </item>
   <item>
     <title>Iran Deploys Internet Blackout During Military Conflict; Starlink Terminals Targeted</title>
     <link>https://libertas.fgu.tech/posts/iran-deploys-internet-blackout-during-military-conflict-star</link>
@@ -95,6 +106,16 @@
     <category>activism</category>
   </item>
   <item>
+    <title>Access Now Releases 2025 Internet Shutdowns Report</title>
+    <link>https://libertas.fgu.tech/posts/access-now-releases-2025-internet-shutdowns-report</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/access-now-releases-2025-internet-shutdowns-report</guid>
+    <pubDate>Tue, 31 Mar 2026 09:02:43 GMT</pubDate>
+    <description>Access Now published their annual KeepItOn report documenting global internet shutdowns in 2025, highlighting rising government repression and citizen resistance.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+  </item>
+  <item>
     <title>Supreme Court Limits ISP Copyright Liability, Protects General-Purpose Internet Services</title>
     <link>https://libertas.fgu.tech/posts/supreme-court-limits-isp-copyright-liability-protects-genera</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/supreme-court-limits-isp-copyright-liability-protects-genera</guid>
@@ -103,6 +124,18 @@
     <category>censorship-resistance</category>
     <category>privacy</category>
     <category>surveillance</category>
+  </item>
+  <item>
+    <title>EFF Welcomes Daily Show Viewers, Highlights 35-Year Fight Against Digital Surveillance</title>
+    <link>https://libertas.fgu.tech/posts/eff-welcomes-daily-show-viewers-highlights-35-year-fight-aga</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-welcomes-daily-show-viewers-highlights-35-year-fight-aga</guid>
+    <pubDate>Tue, 31 Mar 2026 09:01:32 GMT</pubDate>
+    <description>The Electronic Frontier Foundation showcases its three-decade battle against government surveillance, from the Crypto Wars to NSA dragnet spying, while promoting Executive Director Cindy Cohn&apos;s new book.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>sovereignty</category>
   </item>
   <item>
     <title>Apple Introduces OS-Level Age Verification in UK, Creating Identity-Based Access Infrastructure</title>
@@ -167,6 +200,15 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>EFF Director Cindy Cohn Discusses Privacy Book on The Daily Show</title>
+    <link>https://libertas.fgu.tech/posts/eff-director-cindy-cohn-discusses-privacy-book-on-the-daily-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-director-cindy-cohn-discusses-privacy-book-on-the-daily-</guid>
+    <pubDate>Tue, 31 Mar 2026 09:01:32 GMT</pubDate>
+    <description>EFF Executive Director Cindy Cohn appeared on The Daily Show to discuss her new book covering 30 years of digital privacy battles including the Crypto Wars and NSA surveillance.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
   </item>
   <item>
     <title>EFF Analyzes Digital Legacy of Arab Spring: From Liberation Tool to Repression Infrastructure</title>
@@ -244,6 +286,17 @@
     <category>activism</category>
   </item>
   <item>
+    <title>2025 Broke Records: 313 Internet Shutdowns Across 52 Countries, Zero Days Without Blackouts</title>
+    <link>https://libertas.fgu.tech/posts/2025-broke-records-313-internet-shutdowns-across-52-countrie</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/2025-broke-records-313-internet-shutdowns-across-52-countrie</guid>
+    <pubDate>Tue, 31 Mar 2026 09:02:43 GMT</pubDate>
+    <description>Access Now reports 2025 had 313 internet shutdowns in 52 countries with no single day free of blackouts. Latin America saw Venezuela continue pattern plus Panama&apos;s first shutdowns during social security protests.</description>
+    <category>censorship-resistance</category>
+    <category>comms</category>
+    <category>surveillance</category>
+    <category>activism</category>
+  </item>
+  <item>
     <title>Major Publishers Block Internet Archive Over AI Concerns, Threatening Historical Web Record</title>
     <link>https://libertas.fgu.tech/posts/major-publishers-block-internet-archive-over-ai-concerns-thr</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/major-publishers-block-internet-archive-over-ai-concerns-thr</guid>
@@ -284,6 +337,30 @@
     <description>Sen. Ron Wyden revealed existence of classified Section 702 surveillance abuse that affects Americans&apos; privacy rights, warning Congress is debating reauthorization without full information.</description>
     <category>surveillance</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>Internet Shutdowns Hit Record High: 313 Documented in 2025 Across 52 Countries</title>
+    <link>https://libertas.fgu.tech/posts/internet-shutdowns-hit-record-high-313-documented-in-2025-ac</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/internet-shutdowns-hit-record-high-313-documented-in-2025-ac</guid>
+    <pubDate>Tue, 31 Mar 2026 09:02:43 GMT</pubDate>
+    <description>Access Now documents 313 internet shutdowns in 52 countries during 2025, increasingly used to conceal war crimes and human rights abuses, with growing attacks on satellite internet systems.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>comms</category>
+    <category>privacy</category>
+  </item>
+  <item>
+    <title>Record 313 Internet Shutdowns in 2025, Eastern Europe/Central Asia Hit 29 Times</title>
+    <link>https://libertas.fgu.tech/posts/record-313-internet-shutdowns-in-2025-eastern-europe-central</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/record-313-internet-shutdowns-in-2025-eastern-europe-central</guid>
+    <pubDate>Tue, 31 Mar 2026 09:02:43 GMT</pubDate>
+    <description>Access Now reports 2025 saw the highest number of internet shutdowns ever recorded globally (313 across 52 countries), with Eastern Europe and Central Asia experiencing 29 shutdowns across 7 countries.</description>
+    <category>censorship-resistance</category>
+    <category>comms</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>sovereignty</category>
   </item>
   <item>
     <title>Iran Targets Amazon Data Centers in First Military Strike on Commercial Cloud Infrastructure</title>
@@ -335,6 +412,30 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>MENA Region Hit by 52 Internet Shutdowns Across 15 Countries in 2025</title>
+    <link>https://libertas.fgu.tech/posts/mena-region-hit-by-52-internet-shutdowns-across-15-countries</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/mena-region-hit-by-52-internet-shutdowns-across-15-countries</guid>
+    <pubDate>Tue, 31 Mar 2026 09:02:43 GMT</pubDate>
+    <description>Access Now reports 313 global internet shutdowns in 2025, with MENA experiencing 52 shutdowns across 15 countries. Authorities increasingly target satellite internet alternatives.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>comms</category>
+    <category>sovereignty</category>
+  </item>
+  <item>
+    <title>Global Internet Shutdowns Hit Record High: 313 Blackouts Across 52 Countries in 2025</title>
+    <link>https://libertas.fgu.tech/posts/global-internet-shutdowns-hit-record-high-313-blackouts-acro</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/global-internet-shutdowns-hit-record-high-313-blackouts-acro</guid>
+    <pubDate>Tue, 31 Mar 2026 09:02:43 GMT</pubDate>
+    <description>Access Now reports 2025 saw 313 internet shutdowns across 52 countries—a record high with no shutdown-free days. Myanmar led with 95 shutdowns, while authorities increasingly target satellite internet systems.</description>
+    <category>censorship-resistance</category>
+    <category>comms</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>sovereignty</category>
   </item>
   <item>
     <title>EFF Warns of Privacy Risks in Mainstream Smartglasses Adoption</title>
