@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Tue, 31 Mar 2026 15:03:49 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 31 Mar 2026 21:03:45 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -40,6 +40,16 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>censorship-resistance</category>
+    <category>activism</category>
+  </item>
+  <item>
+    <title>FCC Chair Uses License Threats to Enforce Pro-Trump Editorial Control Over Broadcasters</title>
+    <link>https://libertas.fgu.tech/posts/fcc-chair-uses-license-threats-to-enforce-pro-trump-editoria</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/fcc-chair-uses-license-threats-to-enforce-pro-trump-editoria</guid>
+    <pubDate>Tue, 31 Mar 2026 21:03:45 GMT</pubDate>
+    <description>FCC Chair Brendan Carr systematically threatens broadcast licenses to suppress coverage critical of Trump, targeting national stories while claiming to protect local interests.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
     <category>activism</category>
   </item>
   <item>
@@ -199,6 +209,17 @@
     <category>censorship-resistance</category>
     <category>privacy</category>
     <category>surveillance</category>
+    <category>activism</category>
+  </item>
+  <item>
+    <title>EFF Promotes New Book on 30 Years of Digital Surveillance Resistance</title>
+    <link>https://libertas.fgu.tech/posts/eff-promotes-new-book-on-30-years-of-digital-surveillance-re</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-promotes-new-book-on-30-years-of-digital-surveillance-re</guid>
+    <pubDate>Tue, 31 Mar 2026 21:01:18 GMT</pubDate>
+    <description>Electronic Frontier Foundation&apos;s Executive Director Cindy Cohn published &apos;Privacy&apos;s Defender,&apos; chronicling three decades of legal battles against government surveillance from the Crypto Wars to NSA dragnet spying.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
     <category>activism</category>
   </item>
   <item>

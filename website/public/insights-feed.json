@@ -74,6 +74,27 @@
       }
     },
     {
+      "id": "0ebb9c50-f56a-44bd-8b86-6adea7019cf9",
+      "url": "https://libertas.fgu.tech/posts/fcc-chair-uses-license-threats-to-enforce-pro-trump-editoria",
+      "title": "FCC Chair Uses License Threats to Enforce Pro-Trump Editorial Control Over Broadcasters",
+      "summary": "FCC Chair Brendan Carr systematically threatens broadcast licenses to suppress coverage critical of Trump, targeting national stories while claiming to protect local interests.",
+      "content_text": "FCC Chair Brendan Carr threatens broadcast license revocations over coverage critical of Trump administration\n• Targeted stations over Iranian missile strike coverage, immigration enforcement reporting, and Harris interview\n• Used 'localism' rhetoric while actually policing national/international news content\n• Delayed Paramount-Skydance merger approval until Trump received settlement payment from lawsuit\n• Demanded transcripts from PBS/NPR over BBC documentary about January 6\n• Threatened ABC over Jimmy Kimmel's commentary, using mafia-style language\n• Launched 'Pledge America Campaign' demanding 'patriotic, pro-America content'\n• Approved media consolidation deals with Trump-aligned conglomerates Nexstar and Sinclair\n• Created chilling effect leading to 'rampant self-censorship' at targeted stations",
+      "date_published": "2026-03-31T21:03:45.015Z",
+      "date_modified": "2026-03-31T21:03:45.125Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 82,
+        "citations": [
+          "https://theintercept.com/2026/03/31/brendan-carr-fcc-censorship-localism-cpac/"
+        ]
+      }
+    },
+    {
       "id": "0f6feaaf-1ec1-4fcd-8b71-2e9c1845d73e",
       "url": "https://libertas.fgu.tech/posts/ugandan-journalist-disappeared-after-discussing-struck-down-",
       "title": "Ugandan Journalist Disappeared After Discussing Struck-Down Surveillance Laws",
@@ -396,6 +417,28 @@
         "credibility_score": 90,
         "citations": [
           "https://www.eff.org/deeplinks/2026/03/uk-politicians-continue-miss-point-latest-social-media-ban-proposal"
+        ]
+      }
+    },
+    {
+      "id": "44a37d44-2844-4633-b5ad-5614962de44b",
+      "url": "https://libertas.fgu.tech/posts/eff-promotes-new-book-on-30-years-of-digital-surveillance-re",
+      "title": "EFF Promotes New Book on 30 Years of Digital Surveillance Resistance",
+      "summary": "Electronic Frontier Foundation's Executive Director Cindy Cohn published 'Privacy's Defender,' chronicling three decades of legal battles against government surveillance from the Crypto Wars to NSA dragnet spying.",
+      "content_text": "EFF Executive Director Cindy Cohn published 'Privacy's Defender: My Thirty-Year Fight Against Digital Surveillance' (MIT Press)\n• Book covers legal battles from 1990s Crypto Wars, NSA internet spying revelations, and FBI gag order resistance\n• EFF founded in 1990 after Steve Jackson Games case established email deserves same protection as telephone calls\n• Organization has 30,000+ members and 35+ years defending digital civil liberties\n• EFF promotes 'Privacy First' approach to addressing online harms through limiting corporate surveillance\n• Bernstein v. DOJ case mentioned as precedent-setting encryption publication rights case\n• Content serves as recruitment tool following Daily Show interview appearance",
+      "date_published": "2026-03-31T21:01:18.394Z",
+      "date_modified": "2026-03-31T21:01:18.454Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "censorship-resistance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/03/welcome-daily-show-viewers-learn-more-about-eff-and-privacys-defender"
         ]
       }
     },
