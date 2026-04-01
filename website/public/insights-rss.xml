@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Tue, 31 Mar 2026 21:03:45 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 01 Apr 2026 15:03:36 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -212,6 +212,16 @@
     <category>activism</category>
   </item>
   <item>
+    <title>Nigerian Press Freedom Groups Document 231+ Journalist Attacks Under Tinubu Administration</title>
+    <link>https://libertas.fgu.tech/posts/nigerian-press-freedom-groups-document-231-journalist-attack</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/nigerian-press-freedom-groups-document-231-journalist-attack</guid>
+    <pubDate>Wed, 01 Apr 2026 15:02:30 GMT</pubDate>
+    <description>Press freedom organizations formally challenge VP Shettima&apos;s claim of no journalist harassment in Nigeria, documenting 231 verified attacks since 2023 including detentions, assaults, and killings.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+  </item>
+  <item>
     <title>EFF Promotes New Book on 30 Years of Digital Surveillance Resistance</title>
     <link>https://libertas.fgu.tech/posts/eff-promotes-new-book-on-30-years-of-digital-surveillance-re</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-promotes-new-book-on-30-years-of-digital-surveillance-re</guid>
@@ -361,6 +371,17 @@
     <category>sovereignty</category>
   </item>
   <item>
+    <title>Hungary Files Espionage Charges Against Journalist Who Exposed Russian Influence Operations</title>
+    <link>https://libertas.fgu.tech/posts/hungary-files-espionage-charges-against-journalist-who-expos</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/hungary-files-espionage-charges-against-journalist-who-expos</guid>
+    <pubDate>Wed, 01 Apr 2026 15:02:30 GMT</pubDate>
+    <description>Hungarian government charged investigative journalist Szabolcs Panyi with espionage after he reported on Russian influence operations, escalating press freedom attacks ahead of elections.</description>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>censorship-resistance</category>
+    <category>privacy</category>
+  </item>
+  <item>
     <title>Afghan Journalist&apos;s Letters Spark Cross-Border Solidarity in China Despite Censorship</title>
     <link>https://libertas.fgu.tech/posts/afghan-journalist-s-letters-spark-cross-border-solidarity-in</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/afghan-journalist-s-letters-spark-cross-border-solidarity-in</guid>
@@ -403,6 +424,17 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>sovereignty</category>
+  </item>
+  <item>
+    <title>Bangladesh&apos;s 2026 Election: 72 Cases of AI-Generated Disinformation Documented</title>
+    <link>https://libertas.fgu.tech/posts/bangladesh-s-2026-election-72-cases-of-ai-generated-disinfor</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/bangladesh-s-2026-election-72-cases-of-ai-generated-disinfor</guid>
+    <pubDate>Wed, 01 Apr 2026 15:03:36 GMT</pubDate>
+    <description>Study identifies 72 cases of AI-manipulated content during Bangladesh&apos;s February 2026 election, including deepfakes of political figures and fabricated media photocards designed to shape electoral outcomes.</description>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>privacy</category>
   </item>
   <item>
     <title>Iran Targets Amazon Data Centers in First Military Strike on Commercial Cloud Infrastructure</title>

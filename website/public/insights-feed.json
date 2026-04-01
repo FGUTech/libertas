@@ -421,6 +421,28 @@
       }
     },
     {
+      "id": "3aca9707-a775-4f64-86d2-55bbac5109af",
+      "url": "https://libertas.fgu.tech/posts/nigerian-press-freedom-groups-document-231-journalist-attack",
+      "title": "Nigerian Press Freedom Groups Document 231+ Journalist Attacks Under Tinubu Administration",
+      "summary": "Press freedom organizations formally challenge VP Shettima's claim of no journalist harassment in Nigeria, documenting 231 verified attacks since 2023 including detentions, assaults, and killings.",
+      "content_text": "Joint letter from 6 major press freedom organizations to President Tinubu disputes VP's claims\n• Centre for Journalism Innovation documented 231 verified attacks on press since Tinubu took office in 2023\n• At least 56 journalists assaulted during #EndBadGovernance protests, 18 had bullets/tear gas fired at them\n• Onifade Emmanuel Pelumi killed in police custody 2020, body still not returned to family after 5 years\n• Pattern of impunity: CPJ documented 23 journalist killings in Nigeria since 1992, 13 work-related\n• Organizations warn of expected spike in attacks during 2027 election period\n• Government sought to appeal court judgment ordering improved press freedom protections\n• Signatories include CPJ, Media Rights Agenda, International Press Centre, and other established groups",
+      "date_published": "2026-04-01T15:02:30.432Z",
+      "date_modified": "2026-04-01T15:02:30.557Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://cpj.org/2026/04/577475/",
+          "https://cpj.org/2026/04/cpj-endorses-updated-reporter-privacy-protection-bill-against-unreasonable-government-searches-and-seizures/"
+        ]
+      }
+    },
+    {
       "id": "44a37d44-2844-4633-b5ad-5614962de44b",
       "url": "https://libertas.fgu.tech/posts/eff-promotes-new-book-on-30-years-of-digital-surveillance-re",
       "title": "EFF Promotes New Book on 30 Years of Digital Surveillance Resistance",
@@ -728,6 +750,28 @@
       }
     },
     {
+      "id": "a2cd7f2b-a2bf-4e23-b4e1-ab412638cc84",
+      "url": "https://libertas.fgu.tech/posts/hungary-files-espionage-charges-against-journalist-who-expos",
+      "title": "Hungary Files Espionage Charges Against Journalist Who Exposed Russian Influence Operations",
+      "summary": "Hungarian government charged investigative journalist Szabolcs Panyi with espionage after he reported on Russian influence operations, escalating press freedom attacks ahead of elections.",
+      "content_text": "Hungary filed espionage charges against Direkt36/VSquare journalist Szabolcs Panyi on March 26, 2026\n• Charges followed Panyi's reporting on Russian influence operations ahead of April 12 parliamentary elections\n• Government alleges Panyi spied 'in coordination with a foreign country' and intercepted communications between Hungarian Foreign Minister and Russian officials\n• Panyi was previously surveilled with Pegasus spyware in 2021, indicating sustained government targeting\n• Espionage conviction carries 8-15 year prison sentence depending on classification level\n• State Sovereignty Protection Office labeled Panyi as 'financed and directed by European Commission and U.S. Democratic-party linked backers'\n• Committee to Protect Journalists calls tactics 'straight out of Putin's playbook' and unprecedented attack on EU press freedom\n• Pattern demonstrates escalating authoritarian tactics to silence independent media before elections",
+      "date_published": "2026-04-01T15:02:30.432Z",
+      "date_modified": "2026-04-01T15:02:30.557Z",
+      "tags": [
+        "surveillance",
+        "activism",
+        "censorship-resistance",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 88,
+        "citations": [
+          "https://cpj.org/2026/04/hungary-files-espionage-charges-against-investigative-journalist-szabolcs-panyi/"
+        ]
+      }
+    },
+    {
       "id": "a77a38b9-2798-46ed-a3be-d0690c93eee9",
       "url": "https://libertas.fgu.tech/posts/afghan-journalist-s-letters-spark-cross-border-solidarity-in",
       "title": "Afghan Journalist's Letters Spark Cross-Border Solidarity in China Despite Censorship",
@@ -812,6 +856,28 @@
         "credibility_score": 88,
         "citations": [
           "https://www.accessnow.org/press-release/breaking-records-breaking-connections-internet-shutdowns-in-eeca-in-2025/"
+        ]
+      }
+    },
+    {
+      "id": "b99ad886-93ce-48da-acb6-54ab26fa2be3",
+      "url": "https://libertas.fgu.tech/posts/bangladesh-s-2026-election-72-cases-of-ai-generated-disinfor",
+      "title": "Bangladesh's 2026 Election: 72 Cases of AI-Generated Disinformation Documented",
+      "summary": "Study identifies 72 cases of AI-manipulated content during Bangladesh's February 2026 election, including deepfakes of political figures and fabricated media photocards designed to shape electoral outcomes.",
+      "content_text": "First comprehensive study of AI disinformation in Bangladesh's post-uprising election identified 72 manipulation cases\n• 49% of AI content created entirely fictional realities about political leaders' activities and statements\n• 28% involved fake statement attributions using AI-edited photocards mimicking trusted media outlets\n• Deepfakes targeted all major parties: fabricated videos of exiled PM Sheikh Hasina and fake endorsement from Malaysian PM Mahathir\n• AI-generated images showed new PM Tarique Rahman at events he never attended\n• Synthetic content exploited shooting of activist Osman Hadi, spreading false recovery images\n• Fabricated photocards from established outlets like Somoy TV and Channel i amplified false quotes\n• Study demonstrates systematic weaponization of AI across multiple political factions",
+      "date_published": "2026-04-01T15:03:36.463Z",
+      "date_modified": "2026-04-01T15:03:36.642Z",
+      "tags": [
+        "surveillance",
+        "censorship-resistance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://globalvoices.org/2026/04/01/how-artificial-intelligence-and-synthetic-reality-shaped-bangladeshs-2026-election/"
         ]
       }
     },
