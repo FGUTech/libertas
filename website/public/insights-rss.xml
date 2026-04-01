@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Wed, 01 Apr 2026 15:03:36 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 01 Apr 2026 21:03:13 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -306,6 +306,27 @@
     <category>activism</category>
   </item>
   <item>
+    <title>FISA 702 Renewal Could Strip VPN Users of Constitutional Protections</title>
+    <link>https://libertas.fgu.tech/posts/fisa-702-renewal-could-strip-vpn-users-of-constitutional-pro</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/fisa-702-renewal-could-strip-vpn-users-of-constitutional-pro</guid>
+    <pubDate>Wed, 01 Apr 2026 21:03:13 GMT</pubDate>
+    <description>US surveillance law renewal may classify VPN traffic as &apos;foreign&apos; by default, potentially subjecting American VPN users to warrantless surveillance under Section 702.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+  </item>
+  <item>
+    <title>Ugandan Journalist Disappeared After Discussing Struck-Down Digital Censorship Laws</title>
+    <link>https://libertas.fgu.tech/posts/ugandan-journalist-disappeared-after-discussing-struck-down-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/ugandan-journalist-disappeared-after-discussing-struck-down-</guid>
+    <pubDate>Wed, 01 Apr 2026 21:02:22 GMT</pubDate>
+    <description>Arnold Anthony Mukose, journalist and program director at Alternative Digitalk, was forcibly seized by security operatives after broadcasting about a court ruling that nullified Uganda&apos;s Computer Misuse Act.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>comms</category>
+  </item>
+  <item>
     <title>Proton Meet Launches with MLS Encryption to Counter AI Video Surveillance</title>
     <link>https://libertas.fgu.tech/posts/proton-meet-launches-with-mls-encryption-to-counter-ai-video</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/proton-meet-launches-with-mls-encryption-to-counter-ai-video</guid>
@@ -380,6 +401,16 @@
     <category>activism</category>
     <category>censorship-resistance</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>Expert Warns of Privatized Offensive Cyber Operations Under Trump Admin</title>
+    <link>https://libertas.fgu.tech/posts/expert-warns-of-privatized-offensive-cyber-operations-under-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/expert-warns-of-privatized-offensive-cyber-operations-under-</guid>
+    <pubDate>Wed, 01 Apr 2026 21:01:50 GMT</pubDate>
+    <description>Citizen Lab director warns Trump administration may authorize private firms to conduct offensive cyber operations, creating unprecedented risks for oversight, civil liberties, and global cyber security.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
   </item>
   <item>
     <title>Afghan Journalist&apos;s Letters Spark Cross-Border Solidarity in China Despite Censorship</title>

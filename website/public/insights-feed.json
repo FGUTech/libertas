@@ -618,6 +618,50 @@
       }
     },
     {
+      "id": "74d6d819-bdc9-436c-be0d-6b5be563eded",
+      "url": "https://libertas.fgu.tech/posts/fisa-702-renewal-could-strip-vpn-users-of-constitutional-pro",
+      "title": "FISA 702 Renewal Could Strip VPN Users of Constitutional Protections",
+      "summary": "US surveillance law renewal may classify VPN traffic as 'foreign' by default, potentially subjecting American VPN users to warrantless surveillance under Section 702.",
+      "content_text": "Section 702 of FISA allows warrantless surveillance of 'foreign' communications, routinely capturing Americans' data\n• VPN traffic routing through foreign servers may be classified as 'foreign' under current surveillance rules\n• Classification could strip VPN users of constitutional protections and place them in Section 702 pipeline\n• Expanded definition of 'electronic communication service providers' now includes cloud services, WiFi networks\n• Senators Ron Wyden and Mike Lee propose Government Surveillance Reform Act requiring warrants for Americans' data\n• Bill would close loophole allowing government to buy personal data from brokers without court oversight\n• Bipartisan opposition includes protests at House Intelligence Committee Democrat Jim Himes' town halls\n• April deadline approaching for Section 702 renewal with minimal proposed changes",
+      "date_published": "2026-04-01T21:03:13.889Z",
+      "date_modified": "2026-04-01T21:03:14.005Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 90,
+        "citations": [
+          "https://proton.me/blog/fisa-702-vpn-surveillance-risk"
+        ]
+      }
+    },
+    {
+      "id": "750318a0-c004-4cc1-afa1-7e3a0686b957",
+      "url": "https://libertas.fgu.tech/posts/ugandan-journalist-disappeared-after-discussing-struck-down-",
+      "title": "Ugandan Journalist Disappeared After Discussing Struck-Down Digital Censorship Laws",
+      "summary": "Arnold Anthony Mukose, journalist and program director at Alternative Digitalk, was forcibly seized by security operatives after broadcasting about a court ruling that nullified Uganda's Computer Misuse Act.",
+      "content_text": "Arnold Anthony Mukose forcibly taken by plainclothes security officers outside Metro FM on March 22, 2026\n• Seizure occurred after live broadcast discussing Constitutional Court ruling that struck down Computer Misuse Act sections\n• Joint Anti-Terrorism Task Force conducted house search, seizing electronic devices including laptop, modem, and smart watches\n• Computer Misuse Act had been frequently used to target journalists and digital rights activists\n• Police confirmed custody but timeline for court appearance unclear\n• Pattern matches Uganda's documented history of enforced disappearances targeting media and opposition\n• Alternative Digitalk previously raided in 2022, staff charged under now-annulled Computer Misuse Act provisions",
+      "date_published": "2026-04-01T21:02:22.636Z",
+      "date_modified": "2026-04-01T21:02:22.741Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "comms"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 88,
+        "citations": [
+          "https://cpj.org/2026/03/ugandan-journalist-missing-forced-into-van-after-radio-show/",
+          "https://cpj.org/2026/04/m23-rebels-detain-drc-journalist-espoir-mbata-over-whatsapp-post/"
+        ]
+      }
+    },
+    {
       "id": "78966589-4cea-41fb-8988-d99f3f10d6d6",
       "url": "https://libertas.fgu.tech/posts/proton-meet-launches-with-mls-encryption-to-counter-ai-video",
       "title": "Proton Meet Launches with MLS Encryption to Counter AI Video Surveillance",
@@ -768,6 +812,27 @@
         "credibility_score": 88,
         "citations": [
           "https://cpj.org/2026/04/hungary-files-espionage-charges-against-investigative-journalist-szabolcs-panyi/"
+        ]
+      }
+    },
+    {
+      "id": "a692e001-4238-4e9b-b4be-5dbdaf024006",
+      "url": "https://libertas.fgu.tech/posts/expert-warns-of-privatized-offensive-cyber-operations-under-",
+      "title": "Expert Warns of Privatized Offensive Cyber Operations Under Trump Admin",
+      "summary": "Citizen Lab director warns Trump administration may authorize private firms to conduct offensive cyber operations, creating unprecedented risks for oversight, civil liberties, and global cyber security.",
+      "content_text": "Citizen Lab director Ron Deibert published warning in Lawfare about potential policy shift\n• Trump administration may authorize private companies to conduct offensive cyber operations (OCOs)\n• OCOs aim to disrupt and destroy adversary systems, unlike espionage which gathers information\n• Would represent unprecedented departure from U.S. military convention and international norms\n• Risks include compromised oversight, counterintelligence vulnerabilities, and empowering corrupt industry\n• Could accelerate global cyber arms race and increase risks for civilians and states\n• Deibert recommends international coalition against these developments\n• Calls for increased resources for civil society watchdog organizations",
+      "date_published": "2026-04-01T21:01:50.320Z",
+      "date_modified": "2026-04-01T21:01:50.419Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://citizenlab.ca/the-perils-of-privatized-cyberwarfare/"
         ]
       }
     },
