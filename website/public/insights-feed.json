@@ -574,6 +574,28 @@
       }
     },
     {
+      "id": "6d679907-33a1-4047-806b-8325cb893e70",
+      "url": "https://libertas.fgu.tech/posts/vietnamese-journalist-gets-8-5-years-for-social-media-posts-",
+      "title": "Vietnamese Journalist Gets 8.5 Years for Social Media Posts Critical of State",
+      "summary": "Vietnam sentenced journalist Huynh Ngoc Tuan to 8.5 years in prison for Facebook posts and videos deemed anti-state propaganda, highlighting the need for censorship-resistant publishing tools.",
+      "content_text": "Vietnamese court sentenced journalist Huynh Ngoc Tuan to 8 years, 6 months under anti-propaganda laws\n• Conviction based on 11 live videos and 21 Facebook posts about politics and human rights\n• Tuan held incommunicado for 6 months without lawyer access before closed one-day trial\n• Family subjected to ongoing harassment, surveillance, and equipment confiscation\n• Tuan previously served 10 years for critical writings; daughter served nearly 3 years for blogging\n• Vietnam currently imprisons 17 journalists, among world's worst for press freedom\n• Case demonstrates vulnerability of centralized platforms to state censorship and surveillance",
+      "date_published": "2026-04-02T15:02:35.427Z",
+      "date_modified": "2026-04-02T15:02:35.517Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://cpj.org/2026/04/vietnam-sentences-journalist-huynh-ngoc-tuan-to-8%c2%bd-years-for-anti-state-propaganda/"
+        ]
+      }
+    },
+    {
       "id": "70299734-da80-4978-b061-c91ebd804c94",
       "url": "https://libertas.fgu.tech/posts/citizen-lab-submits-digital-transnational-repression-framewo",
       "title": "Citizen Lab Submits Digital Transnational Repression Framework to UN",
@@ -702,6 +724,28 @@
         "citations": [
           "https://theintercept.com/2026/03/24/palantir-new-york-city-hospitals-contract/",
           "https://theintercept.com/2026/03/25/ice-airports-phone-security-privacy-safety/"
+        ]
+      }
+    },
+    {
+      "id": "898ffd56-061e-4efc-abc1-6d6b1710998e",
+      "url": "https://libertas.fgu.tech/posts/eff-warns-un-cybercrime-laws-and-surveillance-targeting-huma",
+      "title": "EFF Warns UN: Cybercrime Laws and Surveillance Targeting Human Rights Defenders",
+      "summary": "EFF submission to UN documents how cybercrime laws, digital surveillance, and platform policies are being weaponized against human rights defenders globally, with insufficient safeguards.",
+      "content_text": "EFF submitted analysis to UN Office of High Commissioner for Human Rights on threats to digital rights defenders\n• Cybercrime and national security laws increasingly used to prosecute lawful expression and expand surveillance\n• UK's Online Safety Act spreading 'duty of care' frameworks globally with weaker protections in some jurisdictions\n• Internet shutdowns, throttling, and geo-blocking disrupting HRDs' ability to communicate and document abuses\n• Cross-border spyware and biometric surveillance deployed against activists and journalists\n• Platform content moderation systems removing documentation of human rights violations through automated enforcement\n• EFF calls for narrowly tailored legal frameworks, independent oversight, and meaningful civil society engagement",
+      "date_published": "2026-04-02T15:00:47.707Z",
+      "date_modified": "2026-04-02T15:00:47.748Z",
+      "tags": [
+        "surveillance",
+        "censorship-resistance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/04/effs-submission-un-ohchr-protection-human-rights-defenders-digital-age"
         ]
       }
     },
@@ -837,6 +881,28 @@
       }
     },
     {
+      "id": "a76be6c9-c181-4e35-990f-93928ccbaa23",
+      "url": "https://libertas.fgu.tech/posts/eff-analysis-how-governments-evolved-from-crude-blocking-to-",
+      "title": "EFF Analysis: How Governments Evolved From Crude Blocking to Sophisticated Censorship Systems",
+      "summary": "EFF documents how government censorship evolved from simple website blocks that VPNs could bypass to sophisticated platform control systems, using Egypt's transformation from Arab Spring catalyst to digital dystopia as a case study.",
+      "content_text": "66% of internet users now live where political/social sites are blocked, up from crude blocking 15 years ago\n• 78% are in countries where people face arrest for online posts, with new social media regulations in dozens of countries\n• Egypt went from Facebook-sparked revolution in 2011 to imprisoning digital rights defenders under broad cybercrime laws\n• 2018 Egyptian Cybercrime Law allows website blocking for vague 'national security' threats, criminalizes accessing banned sites\n• Articles 25-26 used to prosecute social media users for 'violating family values' - many targets are young women\n• Governments shifted from reactive blocking to proactive platform pressure, making VPN circumvention less effective\n• Early 2000s government responses (Thailand blocking YouTube, Turkey takedown demands) were testing grounds for current systems",
+      "date_published": "2026-04-02T15:00:47.708Z",
+      "date_modified": "2026-04-02T15:00:47.748Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/03/digital-hopes-real-power-revolution-regulation"
+        ]
+      }
+    },
+    {
       "id": "a77a38b9-2798-46ed-a3be-d0690c93eee9",
       "url": "https://libertas.fgu.tech/posts/afghan-journalist-s-letters-spark-cross-border-solidarity-in",
       "title": "Afghan Journalist's Letters Spark Cross-Border Solidarity in China Despite Censorship",
@@ -965,6 +1031,27 @@
         "credibility_score": 85,
         "citations": [
           "https://globalvoices.org/2026/04/01/how-artificial-intelligence-and-synthetic-reality-shaped-bangladeshs-2026-election/"
+        ]
+      }
+    },
+    {
+      "id": "ba531bab-76fc-4a87-910d-0413c2486cff",
+      "url": "https://libertas.fgu.tech/posts/us-iphone-hacking-toolkit-coruna-leaked-to-russia-now-used-b",
+      "title": "US iPhone Hacking Toolkit 'Coruna' Leaked to Russia, Now Used by Adversaries",
+      "summary": "Google researchers exposed 'Coruna,' a sophisticated US government iPhone hacking toolkit that exploits 23 iOS vulnerabilities, reportedly leaked by L3Harris employee to Russia and now used by criminal groups.",
+      "content_text": "Google Project Zero identified 'Coruna,' an advanced iPhone exploitation toolkit using 23 iOS vulnerabilities\n• Tool enables silent malware installation via weaponized websites, bypassing all iPhone defenses\n• L3Harris contractor Trenchant division developed the toolkit for US government surveillance operations\n• Former L3Harris employees confirmed toolkit origins to TechCrunch on condition of anonymity\n• Toolkit reportedly sold to Russian government by L3Harris employee, marking major intelligence breach\n• Now being used by both state adversaries and cybercriminal groups beyond original US control\n• Represents first confirmed case of US government hacking tools 'spinning out of control'\n• Code analysis shows English-speaking developers and hallmarks matching previous US attribution",
+      "date_published": "2026-04-02T15:02:15.153Z",
+      "date_modified": "2026-04-02T15:02:15.255Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 88,
+        "citations": [
+          "https://www.schneier.com/blog/archives/2026/04/possible-us-government-iphone-hacking-tool-leaked.html"
         ]
       }
     },

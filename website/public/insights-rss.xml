@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 02 Apr 2026 09:00:48 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 02 Apr 2026 15:02:35 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -285,6 +285,17 @@
     <category>activism</category>
   </item>
   <item>
+    <title>Vietnamese Journalist Gets 8.5 Years for Social Media Posts Critical of State</title>
+    <link>https://libertas.fgu.tech/posts/vietnamese-journalist-gets-8-5-years-for-social-media-posts-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/vietnamese-journalist-gets-8-5-years-for-social-media-posts-</guid>
+    <pubDate>Thu, 02 Apr 2026 15:02:35 GMT</pubDate>
+    <description>Vietnam sentenced journalist Huynh Ngoc Tuan to 8.5 years in prison for Facebook posts and videos deemed anti-state propaganda, highlighting the need for censorship-resistant publishing tools.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>privacy</category>
+  </item>
+  <item>
     <title>Citizen Lab Submits Digital Transnational Repression Framework to UN</title>
     <link>https://libertas.fgu.tech/posts/citizen-lab-submits-digital-transnational-repression-framewo</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/citizen-lab-submits-digital-transnational-repression-framewo</guid>
@@ -346,6 +357,17 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>sovereignty</category>
+  </item>
+  <item>
+    <title>EFF Warns UN: Cybercrime Laws and Surveillance Targeting Human Rights Defenders</title>
+    <link>https://libertas.fgu.tech/posts/eff-warns-un-cybercrime-laws-and-surveillance-targeting-huma</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-warns-un-cybercrime-laws-and-surveillance-targeting-huma</guid>
+    <pubDate>Thu, 02 Apr 2026 15:00:47 GMT</pubDate>
+    <description>EFF submission to UN documents how cybercrime laws, digital surveillance, and platform policies are being weaponized against human rights defenders globally, with insufficient safeguards.</description>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>privacy</category>
   </item>
   <item>
     <title>EFF&apos;s 2026 Foilies Expose Government Transparency Failures</title>
@@ -413,6 +435,17 @@
     <category>activism</category>
   </item>
   <item>
+    <title>EFF Analysis: How Governments Evolved From Crude Blocking to Sophisticated Censorship Systems</title>
+    <link>https://libertas.fgu.tech/posts/eff-analysis-how-governments-evolved-from-crude-blocking-to-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-analysis-how-governments-evolved-from-crude-blocking-to-</guid>
+    <pubDate>Thu, 02 Apr 2026 15:00:47 GMT</pubDate>
+    <description>EFF documents how government censorship evolved from simple website blocks that VPNs could bypass to sophisticated platform control systems, using Egypt&apos;s transformation from Arab Spring catalyst to digital dystopia as a case study.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>privacy</category>
+  </item>
+  <item>
     <title>Afghan Journalist&apos;s Letters Spark Cross-Border Solidarity in China Despite Censorship</title>
     <link>https://libertas.fgu.tech/posts/afghan-journalist-s-letters-spark-cross-border-solidarity-in</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/afghan-journalist-s-letters-spark-cross-border-solidarity-in</guid>
@@ -477,6 +510,16 @@
     <category>censorship-resistance</category>
     <category>activism</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>US iPhone Hacking Toolkit &apos;Coruna&apos; Leaked to Russia, Now Used by Adversaries</title>
+    <link>https://libertas.fgu.tech/posts/us-iphone-hacking-toolkit-coruna-leaked-to-russia-now-used-b</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/us-iphone-hacking-toolkit-coruna-leaked-to-russia-now-used-b</guid>
+    <pubDate>Thu, 02 Apr 2026 15:02:15 GMT</pubDate>
+    <description>Google researchers exposed &apos;Coruna,&apos; a sophisticated US government iPhone hacking toolkit that exploits 23 iOS vulnerabilities, reportedly leaked by L3Harris employee to Russia and now used by criminal groups.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
   </item>
   <item>
     <title>Iran Targets Amazon Data Centers in First Military Strike on Commercial Cloud Infrastructure</title>
