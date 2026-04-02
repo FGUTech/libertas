@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Wed, 01 Apr 2026 21:03:13 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 02 Apr 2026 03:01:05 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -431,6 +431,17 @@
     <description>Sen. Ron Wyden revealed existence of classified Section 702 surveillance abuse that affects Americans&apos; privacy rights, warning Congress is debating reauthorization without full information.</description>
     <category>surveillance</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>Iran: Thousands of Prisoners at Risk Amid Escalating Conflict and Mass Executions</title>
+    <link>https://libertas.fgu.tech/posts/iran-thousands-of-prisoners-at-risk-amid-escalating-conflict</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/iran-thousands-of-prisoners-at-risk-amid-escalating-conflict</guid>
+    <pubDate>Thu, 02 Apr 2026 03:01:05 GMT</pubDate>
+    <description>Human Rights Watch reports thousands of Iranian detainees, including political prisoners and activists, face dual threats from US/Israeli strikes and mass executions by authorities who continue arresting dissidents for documenting attacks.</description>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>censorship-resistance</category>
+    <category>sovereignty</category>
   </item>
   <item>
     <title>Internet Shutdowns Hit Record High: 313 Documented in 2025 Across 52 Countries</title>
