@@ -1143,6 +1143,28 @@
       }
     },
     {
+      "id": "ea6ab7ca-c96a-4889-b424-12de722c1dcf",
+      "url": "https://libertas.fgu.tech/posts/eff-documents-evolution-of-digital-censorship-since-arab-spr",
+      "title": "EFF Documents Evolution of Digital Censorship Since Arab Spring",
+      "summary": "EFF analysis shows how governments transformed from crude internet blocks to sophisticated censorship systems targeting platforms directly, making simple circumvention tools less effective.",
+      "content_text": "EFF published second part of series examining digital legacy of 2011 Arab uprisings\n• 66% of internet users now live where political/social sites are blocked according to Freedom House\n• 78% are in countries where people have been arrested for online posts\n• Pre-2011: Governments used crude blocks that VPNs could easily bypass\n• Post-2011: Governments shifted to pressuring platforms into compliance and sophisticated control systems\n• Egypt exemplifies regression - went from Facebook-sparked revolution to comprehensive digital repression\n• Egypt's 2018 Cybercrime Law criminalizes accessing banned sites (up to 6 months imprisonment)\n• Vague 'national security' and 'public morals' provisions used to prosecute social media users\n• Pattern replicated across Russia, Nigeria, Turkey with platform-targeted regulations",
+      "date_published": "2026-04-02T09:00:48.820Z",
+      "date_modified": "2026-04-02T09:00:48.871Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/03/digital-hopes-real-power-revolution-regulation"
+        ]
+      }
+    },
+    {
       "id": "ebb01949-3696-4165-849f-ad62ab9e7eb1",
       "url": "https://libertas.fgu.tech/posts/ice-agents-now-checking-ids-at-tsa-checkpoints-targeting-lat",
       "title": "ICE Agents Now Checking IDs at TSA Checkpoints, Targeting Latinos",

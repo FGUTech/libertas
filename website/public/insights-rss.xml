@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 02 Apr 2026 03:01:05 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 02 Apr 2026 09:00:48 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -562,6 +562,17 @@
     <category>privacy</category>
     <category>surveillance</category>
     <category>identity</category>
+  </item>
+  <item>
+    <title>EFF Documents Evolution of Digital Censorship Since Arab Spring</title>
+    <link>https://libertas.fgu.tech/posts/eff-documents-evolution-of-digital-censorship-since-arab-spr</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-documents-evolution-of-digital-censorship-since-arab-spr</guid>
+    <pubDate>Thu, 02 Apr 2026 09:00:48 GMT</pubDate>
+    <description>EFF analysis shows how governments transformed from crude internet blocks to sophisticated censorship systems targeting platforms directly, making simple circumvention tools less effective.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>privacy</category>
   </item>
   <item>
     <title>ICE Agents Now Checking IDs at TSA Checkpoints, Targeting Latinos</title>
