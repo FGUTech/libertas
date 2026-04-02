@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 02 Apr 2026 15:02:35 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 02 Apr 2026 21:04:46 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -32,6 +32,16 @@
     <category>sovereignty</category>
   </item>
   <item>
+    <title>EFF: Google &amp; Amazon Ignore Human Rights Risks in Israeli Military AI Contract</title>
+    <link>https://libertas.fgu.tech/posts/eff-google-amazon-ignore-human-rights-risks-in-israeli-milit</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-google-amazon-ignore-human-rights-risks-in-israeli-milit</guid>
+    <pubDate>Thu, 02 Apr 2026 21:00:44 GMT</pubDate>
+    <description>EFF reports Google and Amazon continue Project Nimbus cloud/AI services to Israeli military despite internal warnings and documented human rights risks, while refusing transparency or meaningful action.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
+  </item>
+  <item>
     <title>Citizen Lab Warns of Digital Transnational Repression &apos;Tsunami&apos; Facing Canadians</title>
     <link>https://libertas.fgu.tech/posts/citizen-lab-warns-of-digital-transnational-repression-tsunam</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/citizen-lab-warns-of-digital-transnational-repression-tsunam</guid>
@@ -41,6 +51,16 @@
     <category>privacy</category>
     <category>censorship-resistance</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>US Bans All Foreign-Made Consumer Routers, Requires FCC Approval</title>
+    <link>https://libertas.fgu.tech/posts/us-bans-all-foreign-made-consumer-routers-requires-fcc-appro</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/us-bans-all-foreign-made-consumer-routers-requires-fcc-appro</guid>
+    <pubDate>Thu, 02 Apr 2026 21:02:27 GMT</pubDate>
+    <description>US now requires FCC approval for all foreign-made routers, citing supply chain vulnerabilities and cybersecurity risks. Companies must disclose foreign investors and plan US manufacturing to get approval.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>sovereignty</category>
   </item>
   <item>
     <title>FCC Chair Uses License Threats to Enforce Pro-Trump Editorial Control Over Broadcasters</title>
@@ -58,6 +78,17 @@
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/ugandan-journalist-disappeared-after-discussing-struck-down-</guid>
     <pubDate>Tue, 31 Mar 2026 15:02:38 GMT</pubDate>
     <description>Journalist Mukose Arnold Anthony was forcibly disappeared by plainclothes security after discussing Constitutional Court ruling that nullified Computer Misuse Act sections used to target activists.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>privacy</category>
+  </item>
+  <item>
+    <title>UAE Criminalizes Citizen Documentation of Drone Strikes, Arrests 135+ People</title>
+    <link>https://libertas.fgu.tech/posts/uae-criminalizes-citizen-documentation-of-drone-strikes-arre</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/uae-criminalizes-citizen-documentation-of-drone-strikes-arre</guid>
+    <pubDate>Thu, 02 Apr 2026 21:04:46 GMT</pubDate>
+    <description>UAE authorities arrested 135+ people for filming/sharing footage of Iranian drone strikes, threatening 2+ years imprisonment and $55K fines for contradicting official narratives.</description>
     <category>censorship-resistance</category>
     <category>surveillance</category>
     <category>activism</category>
@@ -92,6 +123,17 @@
     <category>censorship-resistance</category>
     <category>comms</category>
     <category>surveillance</category>
+  </item>
+  <item>
+    <title>FISA 702 Renewal Could Target VPN Users as &apos;Foreign&apos; for Warrantless Surveillance</title>
+    <link>https://libertas.fgu.tech/posts/fisa-702-renewal-could-target-vpn-users-as-foreign-for-warra</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/fisa-702-renewal-could-target-vpn-users-as-foreign-for-warra</guid>
+    <pubDate>Thu, 02 Apr 2026 21:03:56 GMT</pubDate>
+    <description>Section 702 renewal debate reveals VPN users may be classified as &apos;foreign&apos; targets, subjecting Americans to warrantless surveillance simply for using privacy tools.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>vpn</category>
+    <category>censorship-resistance</category>
   </item>
   <item>
     <title>Hungarian Journalist Faces Espionage Investigation After Pegasus Spyware Targeting</title>
@@ -403,6 +445,17 @@
     <category>activism</category>
   </item>
   <item>
+    <title>EFF Analysis: State-Mandated 3D Printer Censorship Will Fail but Harm Users</title>
+    <link>https://libertas.fgu.tech/posts/eff-analysis-state-mandated-3d-printer-censorship-will-fail-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-analysis-state-mandated-3d-printer-censorship-will-fail-</guid>
+    <pubDate>Thu, 02 Apr 2026 21:00:44 GMT</pubDate>
+    <description>EFF explains why proposed state laws requiring &quot;print blockers&quot; on 3D printers won&apos;t prevent firearm manufacturing but will create censorship infrastructure that harms legitimate users and manufacturers.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>sovereignty</category>
+  </item>
+  <item>
     <title>EFF Urges Supreme Court to Hold Cisco Liable for Torture-Enabling Surveillance System</title>
     <link>https://libertas.fgu.tech/posts/eff-urges-supreme-court-to-hold-cisco-liable-for-torture-ena</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-urges-supreme-court-to-hold-cisco-liable-for-torture-ena</guid>
@@ -423,6 +476,17 @@
     <category>activism</category>
     <category>censorship-resistance</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>EFF Warns Against 3D Printer DRM Laws in Three US States</title>
+    <link>https://libertas.fgu.tech/posts/eff-warns-against-3d-printer-drm-laws-in-three-us-states</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-warns-against-3d-printer-drm-laws-in-three-us-states</guid>
+    <pubDate>Thu, 02 Apr 2026 21:00:44 GMT</pubDate>
+    <description>Three US states propose laws requiring 3D printer manufacturers to install &apos;print-blocking&apos; software to detect gun-like shapes, effectively mandating DRM that would restrict open-source software and enable vendor surveillance.</description>
+    <category>censorship-resistance</category>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>sovereignty</category>
   </item>
   <item>
     <title>Expert Warns of Privatized Offensive Cyber Operations Under Trump Admin</title>
@@ -637,6 +701,16 @@
     <category>privacy</category>
     <category>surveillance</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Press Freedom Coalition Challenges Trump&apos;s Executive Order Targeting Law Firms</title>
+    <link>https://libertas.fgu.tech/posts/press-freedom-coalition-challenges-trump-s-executive-order-t</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/press-freedom-coalition-challenges-trump-s-executive-order-t</guid>
+    <pubDate>Thu, 02 Apr 2026 21:04:16 GMT</pubDate>
+    <description>42 media organizations led by The Intercept filed amicus brief challenging Trump&apos;s executive order sanctioning law firms that represent his political opponents, arguing it undermines press freedom.</description>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>surveillance</category>
   </item>
   <item>
     <title>Judge Blocks DOD Blacklisting of Anthropic as First Amendment Retaliation</title>
