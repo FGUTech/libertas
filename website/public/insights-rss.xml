@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 02 Apr 2026 21:04:46 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 03 Apr 2026 03:02:04 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -212,6 +212,16 @@
     <category>censorship-resistance</category>
   </item>
   <item>
+    <title>EFF Defeats Copyright Troll Attack on Activist Hosting Provider May First</title>
+    <link>https://libertas.fgu.tech/posts/eff-defeats-copyright-troll-attack-on-activist-hosting-provi</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-defeats-copyright-troll-attack-on-activist-hosting-provi</guid>
+    <pubDate>Fri, 03 Apr 2026 03:00:36 GMT</pubDate>
+    <description>EFF successfully defended May First Movement Technology against baseless copyright demands from Higbee &amp; Associates, protecting critical hosting infrastructure for social justice groups worldwide.</description>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>sovereignty</category>
+  </item>
+  <item>
     <title>EFF&apos;s Cindy Cohn on Daily Show to Discuss 30 Years of Privacy Advocacy</title>
     <link>https://libertas.fgu.tech/posts/eff-s-cindy-cohn-on-daily-show-to-discuss-30-years-of-privac</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-s-cindy-cohn-on-daily-show-to-discuss-30-years-of-privac</guid>
@@ -262,6 +272,16 @@
     <category>privacy</category>
     <category>surveillance</category>
     <category>censorship-resistance</category>
+  </item>
+  <item>
+    <title>Russia Labels Press Freedom Org IWMF as &apos;Undesirable Organization&apos;</title>
+    <link>https://libertas.fgu.tech/posts/russia-labels-press-freedom-org-iwmf-as-undesirable-organiza</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/russia-labels-press-freedom-org-iwmf-as-undesirable-organiza</guid>
+    <pubDate>Fri, 03 Apr 2026 03:02:04 GMT</pubDate>
+    <description>Russia designated the International Women&apos;s Media Foundation as an &apos;undesirable organization,&apos; banning its operations and criminalizing support with up to 6 years prison.</description>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>surveillance</category>
   </item>
   <item>
     <title>EFF Promotes New Book on 30 Years of Digital Surveillance Resistance</title>
@@ -410,6 +430,16 @@
     <category>censorship-resistance</category>
     <category>activism</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>EFF: States Push DRM-Style &apos;Print Blocking&apos; Requirements for 3D Printers</title>
+    <link>https://libertas.fgu.tech/posts/eff-states-push-drm-style-print-blocking-requirements-for-3d</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-states-push-drm-style-print-blocking-requirements-for-3d</guid>
+    <pubDate>Fri, 03 Apr 2026 03:00:36 GMT</pubDate>
+    <description>Three U.S. states propose mandating 3D printer manufacturers install algorithmic censorship to block &apos;gun-like&apos; shapes, with criminal penalties for bypassing the restrictions.</description>
+    <category>censorship-resistance</category>
+    <category>privacy</category>
+    <category>sovereignty</category>
   </item>
   <item>
     <title>EFF&apos;s 2026 Foilies Expose Government Transparency Failures</title>

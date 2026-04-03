@@ -419,6 +419,27 @@
       }
     },
     {
+      "id": "2cfc47c4-f152-41b3-a6c4-c49de4ed5422",
+      "url": "https://libertas.fgu.tech/posts/eff-defeats-copyright-troll-attack-on-activist-hosting-provi",
+      "title": "EFF Defeats Copyright Troll Attack on Activist Hosting Provider May First",
+      "summary": "EFF successfully defended May First Movement Technology against baseless copyright demands from Higbee & Associates, protecting critical hosting infrastructure for social justice groups worldwide.",
+      "content_text": "Higbee & Associates targeted May First Movement Technology with copyright claim over photo posted by hosted human rights group\n• May First provides web hosting to social justice organizations globally but didn't post the allegedly infringing content\n• EFF represented May First, arguing hosting providers aren't liable for user-posted content under copyright law\n• Higbee backed down after EFF explained legal protections for service providers who promptly remove content\n• Case highlights how copyright trolling threatens infrastructure critical to activist organizations\n• Statutory damages up to $150,000 per work enable mass demand letter campaigns targeting innocent parties\n• Victory establishes precedent protecting hosting providers from liability for user content",
+      "date_published": "2026-04-03T03:00:36.301Z",
+      "date_modified": "2026-04-03T03:00:36.338Z",
+      "tags": [
+        "censorship-resistance",
+        "activism",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/03/baseless-copyright-claim-against-web-host-and-why-it-failed"
+        ]
+      }
+    },
+    {
       "id": "2d13f9f6-7033-4b3b-981b-7313649c1e4f",
       "url": "https://libertas.fgu.tech/posts/eff-s-cindy-cohn-on-daily-show-to-discuss-30-years-of-privac",
       "title": "EFF's Cindy Cohn on Daily Show to Discuss 30 Years of Privacy Advocacy",
@@ -525,6 +546,27 @@
         "citations": [
           "https://cpj.org/2026/04/577475/",
           "https://cpj.org/2026/04/cpj-endorses-updated-reporter-privacy-protection-bill-against-unreasonable-government-searches-and-seizures/"
+        ]
+      }
+    },
+    {
+      "id": "3ee1e66f-00f3-419d-b03c-d8a761bea2bd",
+      "url": "https://libertas.fgu.tech/posts/russia-labels-press-freedom-org-iwmf-as-undesirable-organiza",
+      "title": "Russia Labels Press Freedom Org IWMF as 'Undesirable Organization'",
+      "summary": "Russia designated the International Women's Media Foundation as an 'undesirable organization,' banning its operations and criminalizing support with up to 6 years prison.",
+      "content_text": "Russia labeled International Women's Media Foundation (IWMF) as 'undesirable organization' in January 2026\n• Designation bans IWMF from operating in Russia and criminalizes participation with up to 6 years prison\n• Distributing IWMF content or donating to the organization now carries administrative and criminal penalties\n• IWMF was not informed of reasons behind the classification [Source]\n• Committee to Protect Journalists and Journalist Assistance Network condemned the move\n• JAN includes CPJ, IWMF, Freedom of the Press Foundation, PEN America, and Reporters Committee for Freedom of the Press\n• Tactic aims to sever support networks that sustain independent journalists under threat\n• Pattern matches previous Russian use of 'undesirable' classification against press freedom organizations",
+      "date_published": "2026-04-03T03:02:04.104Z",
+      "date_modified": "2026-04-03T03:02:04.186Z",
+      "tags": [
+        "censorship-resistance",
+        "activism",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 72,
+        "credibility_score": 90,
+        "citations": [
+          "https://cpj.org/2026/04/cpj-partners-condemn-russias-labeling-of-iwmf-as-undesirable-organization/"
         ]
       }
     },
@@ -832,6 +874,27 @@
         "credibility_score": 95,
         "citations": [
           "https://www.eff.org/deeplinks/2026/04/effs-submission-un-ohchr-protection-human-rights-defenders-digital-age"
+        ]
+      }
+    },
+    {
+      "id": "8b9ceaf3-dcc7-4d06-b362-233e272e821c",
+      "url": "https://libertas.fgu.tech/posts/eff-states-push-drm-style-print-blocking-requirements-for-3d",
+      "title": "EFF: States Push DRM-Style 'Print Blocking' Requirements for 3D Printers",
+      "summary": "Three U.S. states propose mandating 3D printer manufacturers install algorithmic censorship to block 'gun-like' shapes, with criminal penalties for bypassing the restrictions.",
+      "content_text": "Three U.S. states proposed laws requiring 3D printer manufacturers to install 'print blocking' algorithms\n• Proposed systems would scan prints for 'forbidden shapes' deemed too gun-like by vendors\n• Criminal penalties proposed for bypassing restrictions or reselling unrestricted printers\n• EFF argues this creates DRM-style vendor lock-in similar to other anti-competitive practices\n• Laws would restrict printers to manufacturer-only software, blocking open source alternatives\n• Bambu Labs recently forced restrictive firmware updates limiting OrcaSlicer compatibility\n• Targeted 'ghost gun' production already illegal in proposing states\n• Technical implementation faces cat-and-mouse detection problems covered in EFF's part 2",
+      "date_published": "2026-04-03T03:00:36.301Z",
+      "date_modified": "2026-04-03T03:00:36.338Z",
+      "tags": [
+        "censorship-resistance",
+        "privacy",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/04/print-blocking-anti-consumer-permission-print-part-1"
         ]
       }
     },
