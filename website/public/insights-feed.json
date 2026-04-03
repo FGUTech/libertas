@@ -266,6 +266,28 @@
       }
     },
     {
+      "id": "1c2b3af6-3743-4d34-bfde-3ca1c5b6875f",
+      "url": "https://libertas.fgu.tech/posts/42-media-orgs-challenge-trump-s-executive-order-sanctioning-",
+      "title": "42 Media Orgs Challenge Trump's Executive Order Sanctioning Law Firms",
+      "summary": "The Intercept's Press Freedom Defense Fund leads 42 media organizations filing amicus brief to block Trump's executive order that sanctions law firms representing his political opponents.",
+      "content_text": "42 media organizations filed amicus brief in D.C. Circuit Court challenging Trump executive order\n• Executive order sanctions law firms for providing pro bono representation to Trump's political opponents\n• Four lower courts already ruled the executive order unconstitutional\n• Brief argues order restricts press organizations' access to legal counsel\n• Coalition includes news outlets, advocacy groups, and First Amendment attorneys\n• The Intercept's Press Freedom Defense Fund led the legal challenge\n• Order specifically threatens outlets relying on pro bono or reduced-fee legal representation\n• Legal team argues press requires oppositional relationship with government to function",
+      "date_published": "2026-04-03T21:01:49.175Z",
+      "date_modified": "2026-04-03T21:01:49.322Z",
+      "tags": [
+        "censorship-resistance",
+        "activism",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 88,
+        "citations": [
+          "https://theintercept.com/2026/04/02/press-freedom-defense-fund-law-firms-amicus-brief/",
+          "https://theintercept.com/2026/04/03/penis-costume-no-kings-protest-alabama-censorship/"
+        ]
+      }
+    },
+    {
       "id": "1d854c14-8392-464a-8591-d8ac105a47e4",
       "url": "https://libertas.fgu.tech/posts/hungarian-journalist-faces-espionage-investigation-after-peg",
       "title": "Hungarian Journalist Faces Espionage Investigation After Pegasus Spyware Targeting",
@@ -963,6 +985,27 @@
       }
     },
     {
+      "id": "92591894-ab39-4f0a-9550-64c7ec8d63dc",
+      "url": "https://libertas.fgu.tech/posts/us-government-proposes-rules-forcing-ai-companies-to-disable",
+      "title": "US Government Proposes Rules Forcing AI Companies to Disable Safety Features",
+      "summary": "General Services Administration proposes procurement rules requiring contractors to license AI systems for 'all lawful purposes' and disable safety guardrails that might refuse government requests.",
+      "content_text": "GSA proposes new federal procurement rules targeting AI contractors\n• Rules would require companies to license AI systems for 'all lawful purposes' to government\n• Companies must disable safety guardrails that might refuse government data requests\n• Follows ongoing dispute between Department of Defense and Anthropic over surveillance use\n• EFF, CDT, Protect Democracy Project, and EPIC filed joint opposition comments\n• Rules would become standard components of every federal contract if adopted\n• Government using procurement power to bypass companies' refusal to enable mass surveillance\n• Proposal includes 'technologically incoherent anti-Woke requirements' [Source]",
+      "date_published": "2026-04-03T21:00:34.477Z",
+      "date_modified": "2026-04-03T21:00:34.522Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 88,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/04/tech-nonprofits-feds-dont-weaponize-procurement-undermine-ai-trust-and-safety"
+        ]
+      }
+    },
+    {
       "id": "937af238-ea94-40a7-bdd6-05f9ee2806cd",
       "url": "https://libertas.fgu.tech/posts/major-publishers-block-internet-archive-over-ai-concerns-thr",
       "title": "Major Publishers Block Internet Archive Over AI Concerns, Threatening Historical Web Record",
@@ -1199,6 +1242,27 @@
         "credibility_score": 90,
         "citations": [
           "https://www.accessnow.org/internet-shutdowns-2025/?pk_campaign=feed&#038;pk_kwd=internet-shutdowns-2025"
+        ]
+      }
+    },
+    {
+      "id": "b3904fca-d146-4b04-aafa-a2dde6d96f08",
+      "url": "https://libertas.fgu.tech/posts/cbp-orders-50m-arsenal-of-chemical-weapons-for-crowd-control",
+      "title": "CBP Orders $50M Arsenal of Chemical Weapons for Crowd Control",
+      "summary": "U.S. Customs and Border Protection plans to purchase up to $50 million in tear gas, projectiles, and other 'less lethal' weapons, including 123 different munition types for potential use against protesters.",
+      "content_text": "CBP procurement documents reveal plans to buy 123 types of 'less lethal' munitions across 10 categories\n• Arsenal includes CS tear gas (banned for military use) and OC pepper spray in various delivery systems\n• Purchase quantities include 242,000+ pyrotechnic canisters and 100,000+ impact munition rounds\n• Weapons include 'ferret rounds' designed to penetrate barriers and 175-decibel sound grenades\n• Medical experts warn of reproductive health impacts from chemical exposure and permanent hearing damage\n• Procurement follows documented abuse of similar weapons against protesters during previous administration\n• Rubber-ball grenades and scattershot projectiles mirror weapons used by Chilean and Iranian forces against demonstrators",
+      "date_published": "2026-04-03T21:01:49.174Z",
+      "date_modified": "2026-04-03T21:01:49.322Z",
+      "tags": [
+        "surveillance",
+        "activism",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://theintercept.com/2026/04/03/less-lethal-chemical-weapons-tear-gas-protests/"
         ]
       }
     },
@@ -1483,6 +1547,27 @@
         "credibility_score": 85,
         "citations": [
           "https://theintercept.com/2026/03/28/ice-airports-tsa-fear/"
+        ]
+      }
+    },
+    {
+      "id": "ee4065df-d8ba-4507-9119-0bf230535063",
+      "url": "https://libertas.fgu.tech/posts/eff-s-cindy-cohn-promotes-privacy-book-at-dc-events",
+      "title": "EFF's Cindy Cohn Promotes Privacy Book at DC Events",
+      "summary": "EFF Executive Director Cindy Cohn is hosting two DC events to discuss her new book about 30 years of fighting digital surveillance, with proceeds benefiting EFF.",
+      "content_text": "EFF Executive Director Cindy Cohn promoting book 'Privacy's Defender: My Thirty-Year Fight Against Digital Surveillance'\n• Two Washington DC events scheduled for April 13-14, 2026\n• April 13 event features conversation with AAPB Executive Director Gigi Sohn at Busboys & Poets\n• April 14 event hosted with Women in Security and Privacy (WISP) featuring American University's Chelsea Horne\n• Book endorsed by Edward Snowden as 'compelling account' and 'inspiring call to action'\n• All book proceeds benefit EFF's digital rights advocacy work\n• Events focus on data security, federal data access, and digital rights",
+      "date_published": "2026-04-03T21:00:34.479Z",
+      "date_modified": "2026-04-03T21:00:34.522Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/04/double-shot-privacys-defender-dc"
         ]
       }
     },

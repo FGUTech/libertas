@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 03 Apr 2026 15:02:06 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 03 Apr 2026 21:01:49 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -134,6 +134,16 @@
     <category>surveillance</category>
     <category>vpn</category>
     <category>censorship-resistance</category>
+  </item>
+  <item>
+    <title>42 Media Orgs Challenge Trump&apos;s Executive Order Sanctioning Law Firms</title>
+    <link>https://libertas.fgu.tech/posts/42-media-orgs-challenge-trump-s-executive-order-sanctioning-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/42-media-orgs-challenge-trump-s-executive-order-sanctioning-</guid>
+    <pubDate>Fri, 03 Apr 2026 21:01:49 GMT</pubDate>
+    <description>The Intercept&apos;s Press Freedom Defense Fund leads 42 media organizations filing amicus brief to block Trump&apos;s executive order that sanctions law firms representing his political opponents.</description>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>surveillance</category>
   </item>
   <item>
     <title>Hungarian Journalist Faces Espionage Investigation After Pegasus Spyware Targeting</title>
@@ -473,6 +483,16 @@
     <category>activism</category>
   </item>
   <item>
+    <title>US Government Proposes Rules Forcing AI Companies to Disable Safety Features</title>
+    <link>https://libertas.fgu.tech/posts/us-government-proposes-rules-forcing-ai-companies-to-disable</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/us-government-proposes-rules-forcing-ai-companies-to-disable</guid>
+    <pubDate>Fri, 03 Apr 2026 21:00:34 GMT</pubDate>
+    <description>General Services Administration proposes procurement rules requiring contractors to license AI systems for &apos;all lawful purposes&apos; and disable safety guardrails that might refuse government requests.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>censorship-resistance</category>
+  </item>
+  <item>
     <title>Major Publishers Block Internet Archive Over AI Concerns, Threatening Historical Web Record</title>
     <link>https://libertas.fgu.tech/posts/major-publishers-block-internet-archive-over-ai-concerns-thr</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/major-publishers-block-internet-archive-over-ai-concerns-thr</guid>
@@ -590,6 +610,16 @@
     <category>activism</category>
     <category>comms</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>CBP Orders $50M Arsenal of Chemical Weapons for Crowd Control</title>
+    <link>https://libertas.fgu.tech/posts/cbp-orders-50m-arsenal-of-chemical-weapons-for-crowd-control</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/cbp-orders-50m-arsenal-of-chemical-weapons-for-crowd-control</guid>
+    <pubDate>Fri, 03 Apr 2026 21:01:49 GMT</pubDate>
+    <description>U.S. Customs and Border Protection plans to purchase up to $50 million in tear gas, projectiles, and other &apos;less lethal&apos; weapons, including 123 different munition types for potential use against protesters.</description>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>censorship-resistance</category>
   </item>
   <item>
     <title>Record 313 Internet Shutdowns in 2025, Eastern Europe/Central Asia Hit 29 Times</title>
@@ -730,6 +760,16 @@
     <category>activism</category>
     <category>identity</category>
     <category>sovereignty</category>
+  </item>
+  <item>
+    <title>EFF&apos;s Cindy Cohn Promotes Privacy Book at DC Events</title>
+    <link>https://libertas.fgu.tech/posts/eff-s-cindy-cohn-promotes-privacy-book-at-dc-events</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-s-cindy-cohn-promotes-privacy-book-at-dc-events</guid>
+    <pubDate>Fri, 03 Apr 2026 21:00:34 GMT</pubDate>
+    <description>EFF Executive Director Cindy Cohn is hosting two DC events to discuss her new book about 30 years of fighting digital surveillance, with proceeds benefiting EFF.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>activism</category>
   </item>
   <item>
     <title>Nicole Ozer Named New EFF Executive Director, Bringing Anti-Surveillance Expertise</title>
