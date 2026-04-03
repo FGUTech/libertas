@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 03 Apr 2026 03:02:04 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 03 Apr 2026 15:02:06 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -199,6 +199,15 @@
     <category>censorship-resistance</category>
     <category>activism</category>
     <category>sovereignty</category>
+  </item>
+  <item>
+    <title>Alabama City Prosecutes Protester for Penis Costume at Anti-Trump Rally</title>
+    <link>https://libertas.fgu.tech/posts/alabama-city-prosecutes-protester-for-penis-costume-at-anti-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/alabama-city-prosecutes-protester-for-penis-costume-at-anti-</guid>
+    <pubDate>Fri, 03 Apr 2026 15:02:06 GMT</pubDate>
+    <description>Fairhope, Alabama arrested and is prosecuting a 62-year-old protester for wearing an inflatable penis costume at a political rally, doubling down with additional charges despite viral backlash.</description>
+    <category>censorship-resistance</category>
+    <category>activism</category>
   </item>
   <item>
     <title>Apple Introduces OS-Level Age Verification in UK, Creating Identity-Based Access Infrastructure</title>
