@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Sat, 04 Apr 2026 03:00:50 GMT</lastBuildDate>
+  <lastBuildDate>Sat, 04 Apr 2026 21:01:20 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -301,6 +301,16 @@
     <category>censorship-resistance</category>
     <category>activism</category>
     <category>surveillance</category>
+  </item>
+  <item>
+    <title>US Rewrites Procurement Rules to Force AI Companies to Disable Safety Guardrails</title>
+    <link>https://libertas.fgu.tech/posts/us-rewrites-procurement-rules-to-force-ai-companies-to-disab</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/us-rewrites-procurement-rules-to-force-ai-companies-to-disab</guid>
+    <pubDate>Sat, 04 Apr 2026 21:00:59 GMT</pubDate>
+    <description>New GSA procurement rules would require AI contractors to license systems for &apos;all lawful purposes&apos; and disable safety guardrails that refuse government requests, effectively weaponizing procurement against AI safety measures.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
   </item>
   <item>
     <title>EFF Promotes New Book on 30 Years of Digital Surveillance Resistance</title>
@@ -802,6 +812,16 @@
     <category>privacy</category>
     <category>surveillance</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Durov: Thousands of Developers Building VPNs to Counter State Internet Control</title>
+    <link>https://libertas.fgu.tech/posts/durov-thousands-of-developers-building-vpns-to-counter-state</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/durov-thousands-of-developers-building-vpns-to-counter-state</guid>
+    <pubDate>Sat, 04 Apr 2026 21:01:20 GMT</pubDate>
+    <description>Telegram CEO Pavel Durov reports thousands of software developers are actively creating VPNs to circumvent government internet restrictions.</description>
+    <category>censorship-resistance</category>
+    <category>comms</category>
+    <category>privacy</category>
   </item>
   <item>
     <title>Press Freedom Coalition Challenges Trump&apos;s Executive Order Targeting Law Firms</title>

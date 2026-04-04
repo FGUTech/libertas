@@ -613,6 +613,27 @@
       }
     },
     {
+      "id": "43789d0f-f6c3-4502-8795-42df40bceb08",
+      "url": "https://libertas.fgu.tech/posts/us-rewrites-procurement-rules-to-force-ai-companies-to-disab",
+      "title": "US Rewrites Procurement Rules to Force AI Companies to Disable Safety Guardrails",
+      "summary": "New GSA procurement rules would require AI contractors to license systems for 'all lawful purposes' and disable safety guardrails that refuse government requests, effectively weaponizing procurement against AI safety measures.",
+      "content_text": "General Services Administration (GSA) proposing new federal procurement rules for AI systems\n• Rules would require contractors to license AI tools for 'all lawful purposes' to government\n• Companies must disable safety guardrails that might refuse government data requests\n• Move follows public dispute between Department of Defense and Anthropic over surveillance use\n• EFF and partners filed joint comments opposing the rules as threat to AI safety\n• Provisions would become standard in all federal contracts if adopted\n• Government using procurement power to override company resistance to surveillance applications\n• Rules include 'anti-woke' requirements that are 'technologically incoherent' [EFF]",
+      "date_published": "2026-04-04T21:00:59.878Z",
+      "date_modified": "2026-04-04T21:00:59.929Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/04/tech-nonprofits-feds-dont-weaponize-procurement-undermine-ai-trust-and-safety"
+        ]
+      }
+    },
+    {
       "id": "44a37d44-2844-4633-b5ad-5614962de44b",
       "url": "https://libertas.fgu.tech/posts/eff-promotes-new-book-on-30-years-of-digital-surveillance-re",
       "title": "EFF Promotes New Book on 30 Years of Digital Surveillance Resistance",
@@ -1633,6 +1654,27 @@
         "credibility_score": 95,
         "citations": [
           "https://www.eff.org/press/releases/nicole-ozer-named-electronic-frontier-foundations-executive-director"
+        ]
+      }
+    },
+    {
+      "id": "f54975d4-b676-4003-b75a-821e99e640a9",
+      "url": "https://libertas.fgu.tech/posts/durov-thousands-of-developers-building-vpns-to-counter-state",
+      "title": "Durov: Thousands of Developers Building VPNs to Counter State Internet Control",
+      "summary": "Telegram CEO Pavel Durov reports thousands of software developers are actively creating VPNs to circumvent government internet restrictions.",
+      "content_text": "Pavel Durov states thousands of developers building VPNs for censorship circumvention\n• Development activity appears to be response to state internet control measures\n• Iran context suggests connection to recent internet restrictions and protests\n• Represents distributed effort rather than centralized anti-censorship development\n• Indicates growing technical resistance to government internet controls\n• Durov's platform gives him visibility into global circumvention tool usage",
+      "date_published": "2026-04-04T21:01:20.224Z",
+      "date_modified": "2026-04-04T21:01:20.309Z",
+      "tags": [
+        "censorship-resistance",
+        "comms",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 80,
+        "citations": [
+          "https://cointelegraph.com/news/telegram-durov-iran-ban-backfire?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
         ]
       }
     },
