@@ -1290,6 +1290,28 @@
       }
     },
     {
+      "id": "b952e85c-6bc4-4fa1-81e2-8963768b4dc9",
+      "url": "https://libertas.fgu.tech/posts/faa-issues-nationwide-21-month-drone-ban-near-ice-vehicles-e",
+      "title": "FAA Issues Nationwide 21-Month Drone Ban Near ICE Vehicles, EFF Challenges",
+      "summary": "Trump administration issued unprecedented nationwide flight restriction banning drones within half-mile of ICE/CBP vehicles for 21 months, effectively criminalizing accountability journalism.",
+      "content_text": "FAA issued TFR FDC 6/4375 on January 16, 2026, lasting until October 29, 2027 - 21 months total\n• Restriction covers entire US, bans drones within 3000 feet of any DHS/DOJ/DOD/DOE vehicles including ICE/CBP\n• Violators face criminal charges, civil penalties, and drone seizure/destruction\n• EFF and major news organizations demanded FAA lift restriction in January, no response after 2+ months\n• ICE often uses unmarked rental cars and swaps license plates, making compliance impossible\n• Timing coincides with Minneapolis anti-ICE protests and killings of Renée Good and Alex Pretti\n• EFF argues violation of First Amendment right to record police and Fifth Amendment due process\n• FAA failed to specify hazard justification or provide media contact as required by own regulations",
+      "date_published": "2026-04-04T03:00:50.130Z",
+      "date_modified": "2026-04-04T03:00:50.181Z",
+      "tags": [
+        "surveillance",
+        "censorship-resistance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/04/faas-temporary-flight-restriction-drones-blatant-attempt-criminalize-filming-ice"
+        ]
+      }
+    },
+    {
       "id": "b99ad886-93ce-48da-acb6-54ab26fa2be3",
       "url": "https://libertas.fgu.tech/posts/bangladesh-s-2026-election-72-cases-of-ai-generated-disinfor",
       "title": "Bangladesh's 2026 Election: 72 Cases of AI-Generated Disinformation Documented",
@@ -1568,6 +1590,28 @@
         "credibility_score": 95,
         "citations": [
           "https://www.eff.org/deeplinks/2026/04/double-shot-privacys-defender-dc"
+        ]
+      }
+    },
+    {
+      "id": "ef57c4a2-0089-4360-8d30-2536079e83fb",
+      "url": "https://libertas.fgu.tech/posts/us-govt-rewrites-procurement-rules-to-force-ai-companies-to-",
+      "title": "US Govt Rewrites Procurement Rules to Force AI Companies to Disable Safety Guardrails",
+      "summary": "GSA proposes procurement rules requiring AI contractors to license systems for 'all lawful purposes' and disable safety guardrails that might refuse government requests, effectively weaponizing contracts against AI safety.",
+      "content_text": "General Services Administration proposes new procurement rules targeting AI contractors\n• Requirements include licensing AI systems to government for 'all lawful purposes'\n• Companies must disable safety guardrails that could refuse government requests\n• Rules emerge amid DOD-Anthropic dispute over AI use for mass surveillance\n• EFF and coalition filed comments opposing rules as threat to AI safety\n• Proposal includes 'anti-Woke' requirements described as technologically incoherent\n• Rules would become standard components of every federal contract if adopted\n• Government using procurement power to circumvent direct regulatory resistance",
+      "date_published": "2026-04-04T03:00:50.131Z",
+      "date_modified": "2026-04-04T03:00:50.181Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "censorship-resistance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/04/tech-nonprofits-feds-dont-weaponize-procurement-undermine-ai-trust-and-safety"
         ]
       }
     },

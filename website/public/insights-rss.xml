@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 03 Apr 2026 21:01:49 GMT</lastBuildDate>
+  <lastBuildDate>Sat, 04 Apr 2026 03:00:50 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -634,6 +634,17 @@
     <category>sovereignty</category>
   </item>
   <item>
+    <title>FAA Issues Nationwide 21-Month Drone Ban Near ICE Vehicles, EFF Challenges</title>
+    <link>https://libertas.fgu.tech/posts/faa-issues-nationwide-21-month-drone-ban-near-ice-vehicles-e</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/faa-issues-nationwide-21-month-drone-ban-near-ice-vehicles-e</guid>
+    <pubDate>Sat, 04 Apr 2026 03:00:50 GMT</pubDate>
+    <description>Trump administration issued unprecedented nationwide flight restriction banning drones within half-mile of ICE/CBP vehicles for 21 months, effectively criminalizing accountability journalism.</description>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>privacy</category>
+  </item>
+  <item>
     <title>Bangladesh&apos;s 2026 Election: 72 Cases of AI-Generated Disinformation Documented</title>
     <link>https://libertas.fgu.tech/posts/bangladesh-s-2026-election-72-cases-of-ai-generated-disinfor</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/bangladesh-s-2026-election-72-cases-of-ai-generated-disinfor</guid>
@@ -769,6 +780,17 @@
     <description>EFF Executive Director Cindy Cohn is hosting two DC events to discuss her new book about 30 years of fighting digital surveillance, with proceeds benefiting EFF.</description>
     <category>privacy</category>
     <category>surveillance</category>
+    <category>activism</category>
+  </item>
+  <item>
+    <title>US Govt Rewrites Procurement Rules to Force AI Companies to Disable Safety Guardrails</title>
+    <link>https://libertas.fgu.tech/posts/us-govt-rewrites-procurement-rules-to-force-ai-companies-to-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/us-govt-rewrites-procurement-rules-to-force-ai-companies-to-</guid>
+    <pubDate>Sat, 04 Apr 2026 03:00:50 GMT</pubDate>
+    <description>GSA proposes procurement rules requiring AI contractors to license systems for &apos;all lawful purposes&apos; and disable safety guardrails that might refuse government requests, effectively weaponizing contracts against AI safety.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>censorship-resistance</category>
     <category>activism</category>
   </item>
   <item>
