@@ -7,9 +7,25 @@
   "language": "en-US",
   "items": [
     {
+      "id": "0e0f4723-47fb-49b1-8076-d3cfc25ea58c",
+      "url": "https://libertas.fgu.tech/digests/weekly-2026-04-03",
+      "title": "Weekly Digest: 2026-03-28 to 2026-04-03",
+      "summary": "2025 shattered records with 313 internet shutdowns across 52 countries—zero days without blackouts. Governments evolved from crude blocking to sophisticated platform control, while new surveillance tools target VPN users and AI safety guardrails. Two project ideas emerged for identity compartmentalization and surveillance accountability.",
+      "content_text": "2025 shattered records with 313 internet shutdowns across 52 countries—zero days without blackouts. Governments evolved from crude blocking to sophisticated platform control, while new surveillance tools target VPN users and AI safety guardrails. Two project ideas emerged for identity compartmentalization and surveillance accountability.",
+      "date_published": "2026-04-05T00:00:59.171Z",
+      "tags": [
+        "weekly-digest"
+      ],
+      "_libertas": {
+        "insight_count": 49,
+        "period_start": "2026-03-28",
+        "period_end": "2026-04-03"
+      }
+    },
+    {
       "id": "3696c31d-aa45-4a56-a02b-72d1756e0415",
-      "url": "https://libertas.fgu.tech/digests/weekly-2026-02-07",
-      "title": "Weekly Digest: 2026-02-01 to 2026-02-07",
+      "url": "https://libertas.fgu.tech/digests/weekly-2026-02-06",
+      "title": "Weekly Digest: 2026-01-31 to 2026-02-06",
       "summary": "This week highlighted the escalating tension between surveillance states and digital freedom advocates, with governments from Gabon to Russia demonstrating sophisticated censorship capabilities while researchers advance anonymous measurement systems. Four new project ideas emerged focusing on blackout-resistant communications and adaptive circumvention tools.",
       "content_text": "This week highlighted the escalating tension between surveillance states and digital freedom advocates, with governments from Gabon to Russia demonstrating sophisticated censorship capabilities while researchers advance anonymous measurement systems. Four new project ideas emerged focusing on blackout-resistant communications and adaptive circumvention tools.",
       "date_published": "2026-02-08T14:00:33.327Z",
@@ -18,30 +34,14 @@
       ],
       "_libertas": {
         "insight_count": 10,
-        "period_start": "2026-02-01",
-        "period_end": "2026-02-07"
-      }
-    },
-    {
-      "id": "6048573e-c799-45c9-95da-e313292e6ebf",
-      "url": "https://libertas.fgu.tech/digests/weekly-2026-01-21",
-      "title": "Weekly Digest: 2026-01-15 to 2026-01-21",
-      "summary": "Iran's complete internet blackout during deadly protests demonstrates the urgent need for censorship-resistant communication tools, while copyright law's structural incentives continue driving platform over-censorship. Meanwhile, nation-state blockchain adoption expands with Bhutan's validator operations.",
-      "content_text": "Iran's complete internet blackout during deadly protests demonstrates the urgent need for censorship-resistant communication tools, while copyright law's structural incentives continue driving platform over-censorship. Meanwhile, nation-state blockchain adoption expands with Bhutan's validator operations.",
-      "date_published": "2026-01-22T00:45:55.297Z",
-      "tags": [
-        "weekly-digest"
-      ],
-      "_libertas": {
-        "insight_count": 3,
-        "period_start": "2026-01-15",
-        "period_end": "2026-01-21"
+        "period_start": "2026-01-31",
+        "period_end": "2026-02-06"
       }
     },
     {
       "id": "64ddd560-69a9-48c8-a4f5-b8538b88b46d",
-      "url": "https://libertas.fgu.tech/digests/weekly-2026-02-28",
-      "title": "Weekly Digest: 2026-02-22 to 2026-02-28",
+      "url": "https://libertas.fgu.tech/digests/weekly-2026-02-27",
+      "title": "Weekly Digest: 2026-02-21 to 2026-02-27",
       "summary": "Authoritarian regimes deployed unprecedented digital repression techniques this week, with Iran implementing 'digital apartheid' internet systems during deadly protests while governments globally escalated surveillance and censorship tactics. The Trump administration's contradictory approach—launching 'anti-censorship' portals while cutting freedom tech funding—highlights the selective nature of digital rights advocacy.",
       "content_text": "Authoritarian regimes deployed unprecedented digital repression techniques this week, with Iran implementing 'digital apartheid' internet systems during deadly protests while governments globally escalated surveillance and censorship tactics. The Trump administration's contradictory approach—launching 'anti-censorship' portals while cutting freedom tech funding—highlights the selective nature of digital rights advocacy.",
       "date_published": "2026-03-01T14:01:00.195Z",
@@ -50,14 +50,14 @@
       ],
       "_libertas": {
         "insight_count": 47,
-        "period_start": "2026-02-22",
-        "period_end": "2026-02-28"
+        "period_start": "2026-02-21",
+        "period_end": "2026-02-27"
       }
     },
     {
       "id": "a5e07001-2658-41ee-9625-165184380f7b",
-      "url": "https://libertas.fgu.tech/digests/weekly-2026-02-14",
-      "title": "Weekly Digest: 2026-02-08 to 2026-02-14",
+      "url": "https://libertas.fgu.tech/digests/weekly-2026-02-13",
+      "title": "Weekly Digest: 2026-02-07 to 2026-02-13",
       "summary": "This week revealed critical vulnerabilities in freedom tech infrastructure: a massive botnet accidentally crippled I2P's anonymity network, while New York proposed mandatory surveillance for 3D printers. However, Silent.Link demonstrated how Bitcoin-native services can bypass both SIM-swap attacks and state censorship.",
       "content_text": "This week revealed critical vulnerabilities in freedom tech infrastructure: a massive botnet accidentally crippled I2P's anonymity network, while New York proposed mandatory surveillance for 3D printers. However, Silent.Link demonstrated how Bitcoin-native services can bypass both SIM-swap attacks and state censorship.",
       "date_published": "2026-02-15T14:00:23.902Z",
@@ -66,8 +66,8 @@
       ],
       "_libertas": {
         "insight_count": 3,
-        "period_start": "2026-02-08",
-        "period_end": "2026-02-14"
+        "period_start": "2026-02-07",
+        "period_end": "2026-02-13"
       }
     }
   ]
