@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Sat, 04 Apr 2026 21:01:20 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 06 Apr 2026 21:02:47 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -251,6 +251,16 @@
     <category>activism</category>
   </item>
   <item>
+    <title>Citizen Lab Submits Anti-Spyware Recommendations to Canadian Parliament Committee</title>
+    <link>https://libertas.fgu.tech/posts/citizen-lab-submits-anti-spyware-recommendations-to-canadian</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/citizen-lab-submits-anti-spyware-recommendations-to-canadian</guid>
+    <pubDate>Mon, 06 Apr 2026 21:02:47 GMT</pubDate>
+    <description>Citizen Lab recommended comprehensive spyware regulations to Canada&apos;s intelligence oversight committee, arguing government spyware use creates human rights and national security risks.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>sovereignty</category>
+  </item>
+  <item>
     <title>Italian Prosecutors Confirm Journalist Hacked with Paragon &apos;Ethical&apos; Spyware</title>
     <link>https://libertas.fgu.tech/posts/italian-prosecutors-confirm-journalist-hacked-with-paragon-e</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/italian-prosecutors-confirm-journalist-hacked-with-paragon-e</guid>
@@ -437,6 +447,17 @@
     <category>comms</category>
     <category>privacy</category>
     <category>surveillance</category>
+  </item>
+  <item>
+    <title>Rwanda Reaffirms Crypto Ban After Bybit Adds Rwandan Franc Support</title>
+    <link>https://libertas.fgu.tech/posts/rwanda-reaffirms-crypto-ban-after-bybit-adds-rwandan-franc-s</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/rwanda-reaffirms-crypto-ban-after-bybit-adds-rwandan-franc-s</guid>
+    <pubDate>Mon, 06 Apr 2026 21:01:21 GMT</pubDate>
+    <description>Rwanda&apos;s central bank swiftly reaffirmed its cryptocurrency ban after Bybit enabled Rwandan franc trading on its P2P platform, highlighting ongoing state resistance to monetary sovereignty bypass attempts.</description>
+    <category>bitcoin</category>
+    <category>payments</category>
+    <category>sovereignty</category>
+    <category>censorship-resistance</category>
   </item>
   <item>
     <title>NYC Ends $4M Palantir Hospital Contract After Activist Pressure</title>
@@ -703,6 +724,17 @@
     <description>EFF highlights serious privacy concerns as Meta&apos;s Ray-Ban smart glasses go mainstream, including human review of footage and covert recording capabilities that threaten bystander privacy.</description>
     <category>privacy</category>
     <category>surveillance</category>
+  </item>
+  <item>
+    <title>New Mexico Court Ruling Uses E2E Encryption Implementation as Evidence Against Meta</title>
+    <link>https://libertas.fgu.tech/posts/new-mexico-court-ruling-uses-e2e-encryption-implementation-a</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/new-mexico-court-ruling-uses-e2e-encryption-implementation-a</guid>
+    <pubDate>Mon, 06 Apr 2026 21:02:32 GMT</pubDate>
+    <description>New Mexico court ruling against Meta cited the company&apos;s 2023 addition of end-to-end encryption to Messenger as evidence of negligent design, potentially setting precedent that could discourage encryption deployment.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>comms</category>
   </item>
   <item>
     <title>Court Blocks Pentagon Retaliation Against AI Company Refusing Surveillance Role</title>

@@ -503,6 +503,27 @@
       }
     },
     {
+      "id": "2fd454e7-b74f-48af-95f7-640b1c8d4792",
+      "url": "https://libertas.fgu.tech/posts/citizen-lab-submits-anti-spyware-recommendations-to-canadian",
+      "title": "Citizen Lab Submits Anti-Spyware Recommendations to Canadian Parliament Committee",
+      "summary": "Citizen Lab recommended comprehensive spyware regulations to Canada's intelligence oversight committee, arguing government spyware use creates human rights and national security risks.",
+      "content_text": "Citizen Lab submitted anti-spyware recommendations to National Security and Intelligence Committee of Parliamentarians (NSICOP) in June 2023\n• Submission argues Canadian government spyware use introduces human rights and national security risks\n• Recommends comprehensive regulations and oversight mechanisms for mercenary spyware\n• NSICOP report and submissions were published publicly earlier in 2024\n• Highlights growing policy debate over state use of commercial surveillance tools\n• Represents push for legislative guardrails on government surveillance capabilities\n• Part of broader international movement to regulate mercenary spyware market",
+      "date_published": "2026-04-06T21:02:47.772Z",
+      "date_modified": "2026-04-06T21:02:47.851Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://citizenlab.ca/submission-to-the-national-security-and-intelligence-committee-of-parliamentarians/"
+        ]
+      }
+    },
+    {
       "id": "300326ee-cfc1-4808-b761-e609bc6910fb",
       "url": "https://libertas.fgu.tech/posts/italian-prosecutors-confirm-journalist-hacked-with-paragon-e",
       "title": "Italian Prosecutors Confirm Journalist Hacked with Paragon 'Ethical' Spyware",
@@ -892,6 +913,28 @@
         "credibility_score": 95,
         "citations": [
           "https://proton.me/blog/meet-security-model"
+        ]
+      }
+    },
+    {
+      "id": "7e680783-dd75-441b-bedb-195c66a3cb6b",
+      "url": "https://libertas.fgu.tech/posts/rwanda-reaffirms-crypto-ban-after-bybit-adds-rwandan-franc-s",
+      "title": "Rwanda Reaffirms Crypto Ban After Bybit Adds Rwandan Franc Support",
+      "summary": "Rwanda's central bank swiftly reaffirmed its cryptocurrency ban after Bybit enabled Rwandan franc trading on its P2P platform, highlighting ongoing state resistance to monetary sovereignty bypass attempts.",
+      "content_text": "Central Bank of Rwanda restated crypto prohibition after Bybit added Rwandan franc to P2P marketplace\n• Bank warned against crypto-franc conversions, citing financial risks and lack of legal protection\n• Bybit did not indicate whether it secured regulatory approval before enabling the feature\n• Rwanda has maintained restrictive crypto stance since 2018 to protect financial stability\n• Country is developing state-controlled e-franc digital currency in proof-of-concept phase\n• Draft framework from March would license crypto service providers with strict limitations\n• Chainalysis data shows Rwanda ranks among lower crypto adoption markets in region",
+      "date_published": "2026-04-06T21:01:21.147Z",
+      "date_modified": "2026-04-06T21:01:21.209Z",
+      "tags": [
+        "bitcoin",
+        "payments",
+        "sovereignty",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 85,
+        "citations": [
+          "https://bitcoinmagazine.com/news/rwanda-reaffirms-crypto-ban"
         ]
       }
     },
@@ -1435,6 +1478,28 @@
         "credibility_score": 95,
         "citations": [
           "https://www.eff.org/deeplinks/2026/03/think-twice-buying-or-using-metas-ray-bans"
+        ]
+      }
+    },
+    {
+      "id": "c5673b00-31fa-4ea2-a1fd-1664bcc25072",
+      "url": "https://libertas.fgu.tech/posts/new-mexico-court-ruling-uses-e2e-encryption-implementation-a",
+      "title": "New Mexico Court Ruling Uses E2E Encryption Implementation as Evidence Against Meta",
+      "summary": "New Mexico court ruling against Meta cited the company's 2023 addition of end-to-end encryption to Messenger as evidence of negligent design, potentially setting precedent that could discourage encryption deployment.",
+      "content_text": "New Mexico AG used Meta's 2023 E2E encryption rollout for Messenger as key evidence of negligent design\n• State argued encryption 'shielded bad actors' and hampered law enforcement access to evidence\n• Court may order Meta to weaken encryption protections under 'design liability' theory\n• Ruling creates dangerous precedent where privacy-protective features become litigation evidence\n• Internal company safety discussions also used as 'smoking gun' evidence against Meta\n• Legal framework incentivizes companies to avoid deploying security improvements\n• Schneier warns this could discourage internal risk assessments and safety deliberations",
+      "date_published": "2026-04-06T21:02:32.901Z",
+      "date_modified": "2026-04-06T21:02:33.014Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "censorship-resistance",
+        "comms"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.schneier.com/blog/archives/2026/04/new-mexicos-meta-ruling-and-encryption.html"
         ]
       }
     },
