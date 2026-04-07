@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Tue, 07 Apr 2026 15:03:04 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 07 Apr 2026 21:03:12 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -220,6 +220,16 @@
     <category>activism</category>
   </item>
   <item>
+    <title>Iranian-American Women Officials Condemn Trump&apos;s War Threats Against Iran</title>
+    <link>https://libertas.fgu.tech/posts/iranian-american-women-officials-condemn-trump-s-war-threats</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/iranian-american-women-officials-condemn-trump-s-war-threats</guid>
+    <pubDate>Tue, 07 Apr 2026 21:03:12 GMT</pubDate>
+    <description>Iranian-American women in elected office reject Trump&apos;s threats against Iran, arguing war undermines the &apos;Woman, Life, Freedom&apos; movement and Iranian self-determination.</description>
+    <category>activism</category>
+    <category>sovereignty</category>
+    <category>censorship-resistance</category>
+  </item>
+  <item>
     <title>Apple Introduces OS-Level Age Verification in UK, Creating Identity-Based Access Infrastructure</title>
     <link>https://libertas.fgu.tech/posts/apple-introduces-os-level-age-verification-in-uk-creating-id</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/apple-introduces-os-level-age-verification-in-uk-creating-id</guid>
@@ -229,6 +239,16 @@
     <category>surveillance</category>
     <category>identity</category>
     <category>censorship-resistance</category>
+  </item>
+  <item>
+    <title>Somalia&apos;s New Northeastern State Detains Journalist for Criticizing President</title>
+    <link>https://libertas.fgu.tech/posts/somalia-s-new-northeastern-state-detains-journalist-for-crit</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/somalia-s-new-northeastern-state-detains-journalist-for-crit</guid>
+    <pubDate>Tue, 07 Apr 2026 21:02:45 GMT</pubDate>
+    <description>Journalist Abdiqani Abdirahman Mohamed detained without charge since March 26 by Northeastern State authorities over video criticizing President Abdiqadir Ahmed Aw-Ali.</description>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>surveillance</category>
   </item>
   <item>
     <title>EFF Defeats Copyright Troll Attack on Activist Hosting Provider May First</title>
@@ -343,6 +363,17 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>EU Parliament Blocks Mass Chat Scanning, But &apos;Chat Control&apos; Proposal Still Alive</title>
+    <link>https://libertas.fgu.tech/posts/eu-parliament-blocks-mass-chat-scanning-but-chat-control-pro</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eu-parliament-blocks-mass-chat-scanning-but-chat-control-pro</guid>
+    <pubDate>Tue, 07 Apr 2026 21:00:59 GMT</pubDate>
+    <description>EU Parliament voted to end temporary derogation allowing voluntary mass scanning of private messages, but the broader Chat Control proposal for mandatory CSAM detection continues negotiations with focus on age verification.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>comms</category>
   </item>
   <item>
     <title>EFF Director Cindy Cohn Discusses Privacy Book on The Daily Show</title>
@@ -628,6 +659,16 @@
     <description>Sen. Ron Wyden revealed existence of classified Section 702 surveillance abuse that affects Americans&apos; privacy rights, warning Congress is debating reauthorization without full information.</description>
     <category>surveillance</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>US Media Consolidation Creates Centralized Censorship Infrastructure</title>
+    <link>https://libertas.fgu.tech/posts/us-media-consolidation-creates-centralized-censorship-infras</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/us-media-consolidation-creates-centralized-censorship-infras</guid>
+    <pubDate>Tue, 07 Apr 2026 21:02:45 GMT</pubDate>
+    <description>Six corporations now control almost all US media, with the FCC enabling consolidation that creates centralized points for government censorship pressure, illustrated by recent Trump administration editorial compliance.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>sovereignty</category>
   </item>
   <item>
     <title>Iran: Thousands of Prisoners at Risk Amid Escalating Conflict and Mass Executions</title>

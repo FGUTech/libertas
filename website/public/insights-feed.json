@@ -439,6 +439,27 @@
       }
     },
     {
+      "id": "265eecc3-f548-458a-adba-efbd46386150",
+      "url": "https://libertas.fgu.tech/posts/iranian-american-women-officials-condemn-trump-s-war-threats",
+      "title": "Iranian-American Women Officials Condemn Trump's War Threats Against Iran",
+      "summary": "Iranian-American women in elected office reject Trump's threats against Iran, arguing war undermines the 'Woman, Life, Freedom' movement and Iranian self-determination.",
+      "content_text": "Group of Iranian-American women officials released letter opposing U.S.-Israeli war on Iran\n• Led by Rep. Yassamin Ansari (D-AZ), first Iranian-American Democrat in Congress\n• Letter rejects 'false choice between repression at home and devastation from abroad'\n• Trump threatened to kill 'whole civilization' if Iran doesn't reopen Strait of Hormuz\n• References 'Woman, Life, Freedom' protests sparked by Mahsa Amini's killing in 2022\n• Ansari plans impeachment articles against Defense Secretary Pete Hegseth for war crimes\n• Iranian diaspora reportedly divided but polling shows growing opposition to war\n• Signers argue war encourages further government crackdowns against Iranian protesters",
+      "date_published": "2026-04-07T21:03:12.785Z",
+      "date_modified": "2026-04-07T21:03:12.881Z",
+      "tags": [
+        "activism",
+        "sovereignty",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 72,
+        "credibility_score": 85,
+        "citations": [
+          "https://theintercept.com/2026/04/07/iranian-american-women-trump-letter/"
+        ]
+      }
+    },
+    {
       "id": "27036086-bea2-4c84-a08e-ae06c4bd15d2",
       "url": "https://libertas.fgu.tech/posts/apple-introduces-os-level-age-verification-in-uk-creating-id",
       "title": "Apple Introduces OS-Level Age Verification in UK, Creating Identity-Based Access Infrastructure",
@@ -457,6 +478,27 @@
         "credibility_score": 90,
         "citations": [
           "https://proton.me/blog/apple-uk-age-verification-iphone"
+        ]
+      }
+    },
+    {
+      "id": "27de829a-3188-45b5-8c34-8d135f22ac00",
+      "url": "https://libertas.fgu.tech/posts/somalia-s-new-northeastern-state-detains-journalist-for-crit",
+      "title": "Somalia's New Northeastern State Detains Journalist for Criticizing President",
+      "summary": "Journalist Abdiqani Abdirahman Mohamed detained without charge since March 26 by Northeastern State authorities over video criticizing President Abdiqadir Ahmed Aw-Ali.",
+      "content_text": "Armed police arrested Abdiqani Abdirahman Mohamed (Dhulmar Media founder) in Las-Anod on March 26\n• Arrest followed publication of video interview criticizing Northeastern State President Abdiqadir Ahmed Aw-Ali\n• Interview featured former presidential adviser accusing president of being ineffective and failing to pay security forces\n• Police also arrested interviewee Abdirisak Mohamed Warsame on suspicion of spreading fake news and libel\n• Court remanded journalist for seven days pending investigation as of March 27\n• Committee to Protect Journalists calls detention a worrying sign of intolerance to criticism\n• Northeastern State declared Somalia's sixth federal member state in January 2026, with disputed territorial control",
+      "date_published": "2026-04-07T21:02:45.921Z",
+      "date_modified": "2026-04-07T21:02:46.035Z",
+      "tags": [
+        "censorship-resistance",
+        "activism",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 95,
+        "citations": [
+          "https://cpj.org/2026/04/somalias-new-northeastern-state-detains-journalist-for-report-criticizing-president/"
         ]
       }
     },
@@ -696,6 +738,28 @@
         "citations": [
           "https://theintercept.com/2026/03/25/ice-airports-phone-security-privacy-safety/",
           "https://theintercept.com/2026/03/26/pentagon-reporters-first-amendment/"
+        ]
+      }
+    },
+    {
+      "id": "48f81839-a30c-4e44-a08c-cb9419cd96b0",
+      "url": "https://libertas.fgu.tech/posts/eu-parliament-blocks-mass-chat-scanning-but-chat-control-pro",
+      "title": "EU Parliament Blocks Mass Chat Scanning, But 'Chat Control' Proposal Still Alive",
+      "summary": "EU Parliament voted to end temporary derogation allowing voluntary mass scanning of private messages, but the broader Chat Control proposal for mandatory CSAM detection continues negotiations with focus on age verification.",
+      "content_text": "EU Parliament voted against extending interim derogation from e-Privacy rules that allowed voluntary chat scanning\n• Major tech companies (Google, Meta, Microsoft, Snap) signal intent to continue voluntary scanning despite legal uncertainty\n• EU member states previously abandoned forced scanning of encrypted messages from Chat Control proposal\n• Current Chat Control negotiations focus on 'risk mitigation' including problematic age verification requirements\n• Mass scanning now risks breaching EU law without specific legal basis, unlike in US where no comprehensive privacy law exists\n• Big tech has history of non-compliance with EU privacy rules, making enforcement uncertain\n• EFF warns proposal could return through backdoor via 'voluntary' activities becoming compliance expectations",
+      "date_published": "2026-04-07T21:00:59.959Z",
+      "date_modified": "2026-04-07T21:01:00.012Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "censorship-resistance",
+        "comms"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 88,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/04/eu-parliament-blocks-mass-scanning-our-chats-whats-next"
         ]
       }
     },
@@ -1282,6 +1346,27 @@
         "credibility_score": 95,
         "citations": [
           "https://www.schneier.com/blog/archives/2026/03/sen-wyden-warns-of-another-section-702-abuse.html"
+        ]
+      }
+    },
+    {
+      "id": "aba61531-1de3-42b6-9458-851d7d9cbbf0",
+      "url": "https://libertas.fgu.tech/posts/us-media-consolidation-creates-centralized-censorship-infras",
+      "title": "US Media Consolidation Creates Centralized Censorship Infrastructure",
+      "summary": "Six corporations now control almost all US media, with the FCC enabling consolidation that creates centralized points for government censorship pressure, illustrated by recent Trump administration editorial compliance.",
+      "content_text": "Media ownership consolidated from 50 companies (1983) to 6 corporations controlling nearly all US media today\n• Latest Tegna-Nexstar merger gives one company reach to 80% of US TV households despite antitrust concerns\n• FCC Chairman Brendan Carr accused of politicizing agency to enable consolidation rather than prevent it\n• Documented censorship: Nexstar blocked Jimmy Kimmel show across affiliates after Trump administration criticism\n• CBS settled $16M Trump lawsuit before parent company merger approval, demonstrating compliance pressure\n• Consolidation eliminates local news sources, creating 'news deserts' and reducing information diversity\n• Pattern mirrors authoritarian consolidation documented in Hungary, India, Malaysia, and Venezuela",
+      "date_published": "2026-04-07T21:02:45.921Z",
+      "date_modified": "2026-04-07T21:02:46.035Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 85,
+        "citations": [
+          "https://cpj.org/2026/04/how-us-media-consolidation-endangers-press-freedom/"
         ]
       }
     },
