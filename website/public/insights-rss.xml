@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Mon, 06 Apr 2026 21:02:47 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 07 Apr 2026 15:03:04 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -535,6 +535,16 @@
     <category>activism</category>
   </item>
   <item>
+    <title>Bellingcat Releases Open-Source Satellite Tool to Counter Iran Internet Blackout</title>
+    <link>https://libertas.fgu.tech/posts/bellingcat-releases-open-source-satellite-tool-to-counter-ir</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/bellingcat-releases-open-source-satellite-tool-to-counter-ir</guid>
+    <pubDate>Tue, 07 Apr 2026 15:03:04 GMT</pubDate>
+    <description>Bellingcat launched a free damage assessment tool using ESA satellite data to monitor Iran conflict destruction, bypassing commercial imagery restrictions and internet blackouts that limit information flow.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+  </item>
+  <item>
     <title>EFF Analysis: State-Mandated 3D Printer Censorship Will Fail but Harm Users</title>
     <link>https://libertas.fgu.tech/posts/eff-analysis-state-mandated-3d-printer-censorship-will-fail-</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-analysis-state-mandated-3d-printer-censorship-will-fail-</guid>
@@ -864,6 +874,17 @@
     <category>censorship-resistance</category>
     <category>activism</category>
     <category>surveillance</category>
+  </item>
+  <item>
+    <title>Hong Kong Police Can Now Force Encryption Key Disclosure at Borders</title>
+    <link>https://libertas.fgu.tech/posts/hong-kong-police-can-now-force-encryption-key-disclosure-at-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/hong-kong-police-can-now-force-encryption-key-disclosure-at-</guid>
+    <pubDate>Tue, 07 Apr 2026 15:01:52 GMT</pubDate>
+    <description>New Hong Kong law allows police to demand encryption keys for devices, even from airport transit passengers. Refusal is now criminal offense under expanded National Security Law.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>activism</category>
   </item>
   <item>
     <title>Judge Blocks DOD Blacklisting of Anthropic as First Amendment Retaliation</title>
