@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Wed, 08 Apr 2026 03:01:50 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 08 Apr 2026 09:02:24 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -798,6 +798,17 @@
     <category>comms</category>
   </item>
   <item>
+    <title>Hack-for-Hire Campaign Targets Egyptian Journalists with Persistent Spear-Phishing</title>
+    <link>https://libertas.fgu.tech/posts/hack-for-hire-campaign-targets-egyptian-journalists-with-per</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/hack-for-hire-campaign-targets-egyptian-journalists-with-per</guid>
+    <pubDate>Wed, 08 Apr 2026 09:02:24 GMT</pubDate>
+    <description>Access Now exposes sophisticated hack-for-hire campaign targeting Egyptian journalists Mostafa Al-A&apos;sar and Ahmed Eltantawy through persistent spear-phishing attacks from 2023-2024, likely linked to Asian threat actors.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
+    <category>censorship-resistance</category>
+  </item>
+  <item>
     <title>Court Blocks Pentagon Retaliation Against AI Company Refusing Surveillance Role</title>
     <link>https://libertas.fgu.tech/posts/court-blocks-pentagon-retaliation-against-ai-company-refusin</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/court-blocks-pentagon-retaliation-against-ai-company-refusin</guid>
@@ -852,6 +863,17 @@
     <category>privacy</category>
     <category>surveillance</category>
     <category>identity</category>
+  </item>
+  <item>
+    <title>How Arab Spring Protests Fueled Global Surveillance Infrastructure Boom</title>
+    <link>https://libertas.fgu.tech/posts/how-arab-spring-protests-fueled-global-surveillance-infrastr</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/how-arab-spring-protests-fueled-global-surveillance-infrastr</guid>
+    <pubDate>Wed, 08 Apr 2026 09:01:15 GMT</pubDate>
+    <description>EFF analysis shows how governments turned digital tools that empowered 2011 Arab Spring activists into backbone of global surveillance apparatus, creating permanent monitoring infrastructure now used worldwide.</description>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>privacy</category>
+    <category>censorship-resistance</category>
   </item>
   <item>
     <title>EFF Documents Evolution of Digital Censorship Since Arab Spring</title>
@@ -936,6 +958,17 @@
     <category>surveillance</category>
     <category>censorship-resistance</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Hack-for-Hire Group Targets Egyptian Journalists with Spear-Phishing Campaign</title>
+    <link>https://libertas.fgu.tech/posts/hack-for-hire-group-targets-egyptian-journalists-with-spear-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/hack-for-hire-group-targets-egyptian-journalists-with-spear-</guid>
+    <pubDate>Wed, 08 Apr 2026 09:02:24 GMT</pubDate>
+    <description>Access Now investigation reveals sophisticated spear-phishing attacks targeting Egyptian journalists and government critics, using fake Signal pages and Apple impersonation to deliver Android spyware.</description>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>privacy</category>
+    <category>censorship-resistance</category>
   </item>
   <item>
     <title>Judge Blocks DOD Blacklisting of Anthropic as First Amendment Retaliation</title>
