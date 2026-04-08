@@ -5,9 +5,20 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Wed, 08 Apr 2026 09:02:24 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 08 Apr 2026 15:04:11 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
+  <item>
+    <title>Age Verification Systems Create Privacy and Surveillance Risks as Regulations Spread</title>
+    <link>https://libertas.fgu.tech/posts/age-verification-systems-create-privacy-and-surveillance-ris</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/age-verification-systems-create-privacy-and-surveillance-ris</guid>
+    <pubDate>Wed, 08 Apr 2026 15:04:11 GMT</pubDate>
+    <description>New age verification laws worldwide are forcing platforms to implement identity-linked systems that threaten anonymous internet access and create surveillance infrastructure.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>identity</category>
+    <category>censorship-resistance</category>
+  </item>
   <item>
     <title>Access Now: 2025 Saw Record Internet Shutdowns, 30 in 15 African Countries</title>
     <link>https://libertas.fgu.tech/posts/access-now-2025-saw-record-internet-shutdowns-30-in-15-afric</link>
@@ -32,6 +43,17 @@
     <category>sovereignty</category>
   </item>
   <item>
+    <title>Age Verification Laws Fragment Internet Access Across US, UK Implementation Models</title>
+    <link>https://libertas.fgu.tech/posts/age-verification-laws-fragment-internet-access-across-us-uk-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/age-verification-laws-fragment-internet-access-across-us-uk-</guid>
+    <pubDate>Wed, 08 Apr 2026 15:04:11 GMT</pubDate>
+    <description>Age verification laws are creating fragmented internet access as platforms withdraw from states with requirements, while different enforcement models emerge globally with significant privacy implications.</description>
+    <category>privacy</category>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>sovereignty</category>
+  </item>
+  <item>
     <title>EFF: Google &amp; Amazon Ignore Human Rights Risks in Israeli Military AI Contract</title>
     <link>https://libertas.fgu.tech/posts/eff-google-amazon-ignore-human-rights-risks-in-israeli-milit</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-google-amazon-ignore-human-rights-risks-in-israeli-milit</guid>
@@ -40,6 +62,17 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Iran Reportedly Accepts Bitcoin for Strait of Hormuz Transit Tolls</title>
+    <link>https://libertas.fgu.tech/posts/iran-reportedly-accepts-bitcoin-for-strait-of-hormuz-transit</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/iran-reportedly-accepts-bitcoin-for-strait-of-hormuz-transit</guid>
+    <pubDate>Wed, 08 Apr 2026 15:01:29 GMT</pubDate>
+    <description>Iran is reportedly allowing ships to pay transit tolls through the Strait of Hormuz using Bitcoin and cryptocurrency, potentially bypassing traditional financial sanctions.</description>
+    <category>bitcoin</category>
+    <category>payments</category>
+    <category>sanctions-resistance</category>
+    <category>sovereignty</category>
   </item>
   <item>
     <title>Citizen Lab Warns of Digital Transnational Repression &apos;Tsunami&apos; Facing Canadians</title>
@@ -417,6 +450,16 @@
     <category>activism</category>
   </item>
   <item>
+    <title>Citizen Lab Urges UN to Address Mercenary Spyware Proliferation</title>
+    <link>https://libertas.fgu.tech/posts/citizen-lab-urges-un-to-address-mercenary-spyware-proliferat</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/citizen-lab-urges-un-to-address-mercenary-spyware-proliferat</guid>
+    <pubDate>Wed, 08 Apr 2026 15:02:43 GMT</pubDate>
+    <description>Citizen Lab submitted UN recommendations calling for states to stop outsourcing digital surveillance operations, warning that mercenary spyware threatens democracy and human rights.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
+  </item>
+  <item>
     <title>Vietnamese Journalist Gets 8.5 Years for Social Media Posts Critical of State</title>
     <link>https://libertas.fgu.tech/posts/vietnamese-journalist-gets-8-5-years-for-social-media-posts-</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/vietnamese-journalist-gets-8-5-years-for-social-media-posts-</guid>
@@ -787,6 +830,17 @@
     <category>surveillance</category>
   </item>
   <item>
+    <title>Russians Navigate State Censorship vs Security Trade-offs During Internet Restrictions</title>
+    <link>https://libertas.fgu.tech/posts/russians-navigate-state-censorship-vs-security-trade-offs-du</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/russians-navigate-state-censorship-vs-security-trade-offs-du</guid>
+    <pubDate>Wed, 08 Apr 2026 15:02:43 GMT</pubDate>
+    <description>Citizen Lab researcher warns Russians are accepting state-controlled apps over secure alternatives during internet shutdowns, prioritizing immediate access over privacy when seeking critical information.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>privacy</category>
+  </item>
+  <item>
     <title>New Mexico Court Ruling Uses E2E Encryption Implementation as Evidence Against Meta</title>
     <link>https://libertas.fgu.tech/posts/new-mexico-court-ruling-uses-e2e-encryption-implementation-a</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/new-mexico-court-ruling-uses-e2e-encryption-implementation-a</guid>
@@ -807,6 +861,17 @@
     <category>privacy</category>
     <category>activism</category>
     <category>censorship-resistance</category>
+  </item>
+  <item>
+    <title>Egyptian &amp; Lebanese Journalists Hit by State-Linked Spear-Phishing Campaign</title>
+    <link>https://libertas.fgu.tech/posts/egyptian-lebanese-journalists-hit-by-state-linked-spear-phis</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/egyptian-lebanese-journalists-hit-by-state-linked-spear-phis</guid>
+    <pubDate>Wed, 08 Apr 2026 15:03:18 GMT</pubDate>
+    <description>South Asia-based cyber espionage group targeted prominent Egyptian and Lebanese journalists with coordinated spear-phishing attacks against their Apple, Microsoft, and Google accounts, likely commissioned by governments.</description>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>privacy</category>
+    <category>activism</category>
   </item>
   <item>
     <title>Court Blocks Pentagon Retaliation Against AI Company Refusing Surveillance Role</title>
@@ -853,6 +918,15 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>sovereignty</category>
+  </item>
+  <item>
+    <title>Mexico Deploys &apos;Seguritech&apos; Surveillance System in Ciudad Juárez</title>
+    <link>https://libertas.fgu.tech/posts/mexico-deploys-seguritech-surveillance-system-in-ciudad-ju-r</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/mexico-deploys-seguritech-surveillance-system-in-ciudad-ju-r</guid>
+    <pubDate>Wed, 08 Apr 2026 15:02:19 GMT</pubDate>
+    <description>Mexican law enforcement is using a surveillance system called &apos;Seguritech&apos; in Ciudad Juárez, involving map-based tracking interfaces accessed by police officers.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
   </item>
   <item>
     <title>EFF Warns of Privacy Risks in Mainstream Smartglasses Adoption</title>
