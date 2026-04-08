@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Wed, 08 Apr 2026 15:04:11 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 08 Apr 2026 21:03:38 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -212,6 +212,17 @@
     <category>activism</category>
   </item>
   <item>
+    <title>EFF Highlights Police Surveillance Mission Creep in Latest Newsletter</title>
+    <link>https://libertas.fgu.tech/posts/eff-highlights-police-surveillance-mission-creep-in-latest-n</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-highlights-police-surveillance-mission-creep-in-latest-n</guid>
+    <pubDate>Wed, 08 Apr 2026 21:01:00 GMT</pubDate>
+    <description>EFF&apos;s latest newsletter examines how police surveillance tech sold for serious crimes gets repurposed for traffic enforcement and protest monitoring, plus NSA reform updates.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
+    <category>censorship-resistance</category>
+  </item>
+  <item>
     <title>Access Now Releases 2025 Internet Shutdowns Report</title>
     <link>https://libertas.fgu.tech/posts/access-now-releases-2025-internet-shutdowns-report</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/access-now-releases-2025-internet-shutdowns-report</guid>
@@ -366,6 +377,17 @@
     <category>surveillance</category>
   </item>
   <item>
+    <title>CPJ Issues 10-Point Plan to Restore Press Freedom in Hungary Ahead of Election</title>
+    <link>https://libertas.fgu.tech/posts/cpj-issues-10-point-plan-to-restore-press-freedom-in-hungary</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/cpj-issues-10-point-plan-to-restore-press-freedom-in-hungary</guid>
+    <pubDate>Wed, 08 Apr 2026 21:03:01 GMT</pubDate>
+    <description>Committee to Protect Journalists outlines steps to dismantle Hungary&apos;s sophisticated media capture system, including ending Pegasus surveillance of reporters and abolishing Russia-style &apos;foreign agent&apos; laws.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>privacy</category>
+  </item>
+  <item>
     <title>US Rewrites Procurement Rules to Force AI Companies to Disable Safety Guardrails</title>
     <link>https://libertas.fgu.tech/posts/us-rewrites-procurement-rules-to-force-ai-companies-to-disab</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/us-rewrites-procurement-rules-to-force-ai-companies-to-disab</guid>
@@ -438,6 +460,18 @@
     <category>surveillance</category>
     <category>censorship-resistance</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>How Arab Spring Backlash Created Global Surveillance Infrastructure</title>
+    <link>https://libertas.fgu.tech/posts/how-arab-spring-backlash-created-global-surveillance-infrast</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/how-arab-spring-backlash-created-global-surveillance-infrast</guid>
+    <pubDate>Wed, 08 Apr 2026 21:01:00 GMT</pubDate>
+    <description>EFF analysis shows how governments turned 2011 Arab Spring organizing tools into surveillance infrastructure, creating cybercrime laws and monitoring systems now used globally to suppress dissent.</description>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>censorship-resistance</category>
+    <category>privacy</category>
+    <category>sovereignty</category>
   </item>
   <item>
     <title>EFF Challenges FCC Chair&apos;s Unconstitutional Threats Against Broadcasters</title>
@@ -553,6 +587,16 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>sovereignty</category>
+  </item>
+  <item>
+    <title>Unverified: Iran Allegedly Using Bitcoin for Strait of Hormuz Transit Fees</title>
+    <link>https://libertas.fgu.tech/posts/unverified-iran-allegedly-using-bitcoin-for-strait-of-hormuz</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/unverified-iran-allegedly-using-bitcoin-for-strait-of-hormuz</guid>
+    <pubDate>Wed, 08 Apr 2026 21:01:53 GMT</pubDate>
+    <description>Unverified reports claim Iran is charging $1/barrel in Bitcoin for certain ships transiting Strait of Hormuz under supposed US-Iran deal. Lacks credible sourcing.</description>
+    <category>payments</category>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
   </item>
   <item>
     <title>EFF Warns UN: Cybercrime Laws and Surveillance Targeting Human Rights Defenders</title>
@@ -863,6 +907,16 @@
     <category>censorship-resistance</category>
   </item>
   <item>
+    <title>Hack-for-Hire Phishing Campaign Targets MENA Civil Society</title>
+    <link>https://libertas.fgu.tech/posts/hack-for-hire-phishing-campaign-targets-mena-civil-society</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/hack-for-hire-phishing-campaign-targets-mena-civil-society</guid>
+    <pubDate>Wed, 08 Apr 2026 21:02:27 GMT</pubDate>
+    <description>Access Now reports a sophisticated phishing campaign targeting civil society activists across the MENA region, part of broader espionage efforts against human rights organizations.</description>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>privacy</category>
+  </item>
+  <item>
     <title>Egyptian &amp; Lebanese Journalists Hit by State-Linked Spear-Phishing Campaign</title>
     <link>https://libertas.fgu.tech/posts/egyptian-lebanese-journalists-hit-by-state-linked-spear-phis</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/egyptian-lebanese-journalists-hit-by-state-linked-spear-phis</guid>
@@ -872,6 +926,17 @@
     <category>censorship-resistance</category>
     <category>privacy</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Azerbaijan Supreme Court Upholds 7-9 Year Sentences for Independent Journalists</title>
+    <link>https://libertas.fgu.tech/posts/azerbaijan-supreme-court-upholds-7-9-year-sentences-for-inde</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/azerbaijan-supreme-court-upholds-7-9-year-sentences-for-inde</guid>
+    <pubDate>Wed, 08 Apr 2026 21:03:01 GMT</pubDate>
+    <description>Azerbaijan&apos;s Supreme Court rejected appeals for 7 journalists from Abzas Media and RFE/RL, upholding lengthy prison sentences for alleged illegal foreign funding in escalating press freedom crackdown.</description>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>surveillance</category>
+    <category>sovereignty</category>
   </item>
   <item>
     <title>Court Blocks Pentagon Retaliation Against AI Company Refusing Surveillance Role</title>
@@ -959,6 +1024,17 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>Age Verification Systems Show Mixed Results, Raise Privacy Concerns for All Users</title>
+    <link>https://libertas.fgu.tech/posts/age-verification-systems-show-mixed-results-raise-privacy-co</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/age-verification-systems-show-mixed-results-raise-privacy-co</guid>
+    <pubDate>Wed, 08 Apr 2026 21:03:38 GMT</pubDate>
+    <description>New research on UK and Australia&apos;s age verification laws shows limited effectiveness while creating privacy risks for all internet users, with children easily bypassing restrictions.</description>
+    <category>privacy</category>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>identity</category>
   </item>
   <item>
     <title>ICE Agents Now Checking IDs at TSA Checkpoints, Targeting Latinos</title>

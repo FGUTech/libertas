@@ -421,6 +421,28 @@
       }
     },
     {
+      "id": "1e768a60-1b21-4270-ad04-a5f2dc2966e5",
+      "url": "https://libertas.fgu.tech/posts/eff-highlights-police-surveillance-mission-creep-in-latest-n",
+      "title": "EFF Highlights Police Surveillance Mission Creep in Latest Newsletter",
+      "summary": "EFF's latest newsletter examines how police surveillance tech sold for serious crimes gets repurposed for traffic enforcement and protest monitoring, plus NSA reform updates.",
+      "content_text": "EFF newsletter focuses on surveillance 'mission creep' - technology marketed for preventing serious crimes being used for routine enforcement\n• Covers license plate readers normalizing mass surveillance through expanded use cases\n• Discusses urgent need for NSA spying reforms and FISA extension issues\n• Reports Supreme Court victory for internet access regarding ISP copyright enforcement requirements\n• Features interview with EFF Privacy Litigation Director Adam Schwartz on mission creep examples\n• Newsletter now available as podcast on major platforms with news quiz format\n• Pattern demonstrates how surveillance tools consistently expand beyond original stated purposes",
+      "date_published": "2026-04-08T21:01:00.812Z",
+      "date_modified": "2026-04-08T21:01:00.895Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/04/selling-mass-surveillance-effector-387"
+        ]
+      }
+    },
+    {
       "id": "1ecbc953-f6a1-493d-9e1e-0cf10e37c9e1",
       "url": "https://libertas.fgu.tech/posts/access-now-releases-2025-internet-shutdowns-report",
       "title": "Access Now Releases 2025 Internet Shutdowns Report",
@@ -743,6 +765,28 @@
       }
     },
     {
+      "id": "42d0b473-fc53-4d61-8aa3-e725f220ad85",
+      "url": "https://libertas.fgu.tech/posts/cpj-issues-10-point-plan-to-restore-press-freedom-in-hungary",
+      "title": "CPJ Issues 10-Point Plan to Restore Press Freedom in Hungary Ahead of Election",
+      "summary": "Committee to Protect Journalists outlines steps to dismantle Hungary's sophisticated media capture system, including ending Pegasus surveillance of reporters and abolishing Russia-style 'foreign agent' laws.",
+      "content_text": "CPJ calls on Hungarian election candidates to commit to 10-point press freedom restoration plan ahead of April 12 elections\n• Orbán's Fidesz party controls ~80% of Hungary's media market through direct and indirect mechanisms\n• Plan includes abolishing Sovereignty Protection Office and shelving Russia-style 'foreign agent' bill targeting independent media\n• Demands end to state-sponsored smear campaigns labeling journalists as 'foreign agents' and 'traitors'\n• Calls for protection from unlawful surveillance, specifically addressing 2019 Pegasus spyware deployment against journalists\n• Requires reform of public service media receiving 415 million euros annually without independent oversight\n• Addresses systematic barriers to information access through weakened FOIA and denied press conference access\n• Notes Hungary's failure to adopt GDPR Article 85 journalistic exemptions, treating reporters as standard data controllers\n• European Court of Human Rights has repeatedly condemned Hungary's lack of surveillance safeguards for journalists\n• Tisza party under Péter Magyar poses serious electoral challenge to ruling Fidesz party",
+      "date_published": "2026-04-08T21:03:01.400Z",
+      "date_modified": "2026-04-08T21:03:01.512Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 88,
+        "citations": [
+          "https://cpj.org/2026/04/hungarian-elections-cpj-calls-on-all-candidates-to-commit-to-10-key-steps-to-restore-press-freedom/"
+        ]
+      }
+    },
+    {
       "id": "43789d0f-f6c3-4502-8795-42df40bceb08",
       "url": "https://libertas.fgu.tech/posts/us-rewrites-procurement-rules-to-force-ai-companies-to-disab",
       "title": "US Rewrites Procurement Rules to Force AI Companies to Disable Safety Guardrails",
@@ -891,6 +935,29 @@
         "credibility_score": 95,
         "citations": [
           "https://www.eff.org/deeplinks/2026/03/welcome-daily-show-viewers-learn-more-about-eff-and-privacys-defender"
+        ]
+      }
+    },
+    {
+      "id": "5c2a43c0-056f-45a6-9f8c-0b9b6ad0f272",
+      "url": "https://libertas.fgu.tech/posts/how-arab-spring-backlash-created-global-surveillance-infrast",
+      "title": "How Arab Spring Backlash Created Global Surveillance Infrastructure",
+      "summary": "EFF analysis shows how governments turned 2011 Arab Spring organizing tools into surveillance infrastructure, creating cybercrime laws and monitoring systems now used globally to suppress dissent.",
+      "content_text": "MENA governments upgraded from physical surveillance to digital monitoring infrastructure after 2011 uprisings\n• Foreign vendors built monitoring centers enabling mass social media surveillance and real-time activist tracking\n• Cybercrime laws in Saudi Arabia, Tunisia, Jordan, and Egypt criminalize online dissent and target LGBTQ+ people\n• Deep packet inspection and interception systems now block tens of thousands of sites across region\n• UN cybercrime convention adopted in 2024 despite EFF warnings about legitimizing surveillance powers\n• Biometrics, facial recognition, and 'smart city' projects create AI-driven surveillance infrastructure\n• Tactics refined in MENA region now shape digital authoritarianism worldwide\n• Security agencies embedded themselves in communication networks after seeing their power during protests",
+      "date_published": "2026-04-08T21:01:00.816Z",
+      "date_modified": "2026-04-08T21:01:00.895Z",
+      "tags": [
+        "surveillance",
+        "activism",
+        "censorship-resistance",
+        "privacy",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 88,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/04/digital-hopes-real-power-how-arab-spring-fueled-global-surveillance-boom"
         ]
       }
     },
@@ -1131,6 +1198,28 @@
         "citations": [
           "https://theintercept.com/2026/03/24/palantir-new-york-city-hospitals-contract/",
           "https://theintercept.com/2026/03/25/ice-airports-phone-security-privacy-safety/"
+        ]
+      }
+    },
+    {
+      "id": "887e383d-cb67-4501-be69-66f9db872840",
+      "url": "https://libertas.fgu.tech/posts/unverified-iran-allegedly-using-bitcoin-for-strait-of-hormuz",
+      "title": "Unverified: Iran Allegedly Using Bitcoin for Strait of Hormuz Transit Fees",
+      "summary": "Unverified reports claim Iran is charging $1/barrel in Bitcoin for certain ships transiting Strait of Hormuz under supposed US-Iran deal. Lacks credible sourcing.",
+      "content_text": "Claims suggest Iran charging Bitcoin-denominated transit fees through Strait of Hormuz\n• Alleged $1 per barrel tariff to be paid in Bitcoin for certain vessels\n• Reports mention unspecified 'US-Iran deal' allowing empty tankers free passage\n• Story lacks verification from credible diplomatic or maritime sources\n• Strait of Hormuz handles ~20% of global oil transit, making this geopolitically significant if true\n• Would represent novel use of Bitcoin for sovereign maritime taxation\n• Extraordinary claims require verification - major geopolitical developments typically have multiple primary sources",
+      "date_published": "2026-04-08T21:01:53.668Z",
+      "date_modified": "2026-04-08T21:01:53.731Z",
+      "tags": [
+        "payments",
+        "surveillance",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://cointelegraph.com/news/iran-crypto-ships-strait-hormuz",
+          "https://cointelegraph.com/news/treasury-genius-act-rule-illicit-finance?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
         ]
       }
     },
@@ -1763,6 +1852,27 @@
       }
     },
     {
+      "id": "c755b23a-46a1-4ffd-8024-072c4a59fb2a",
+      "url": "https://libertas.fgu.tech/posts/hack-for-hire-phishing-campaign-targets-mena-civil-society",
+      "title": "Hack-for-Hire Phishing Campaign Targets MENA Civil Society",
+      "summary": "Access Now reports a sophisticated phishing campaign targeting civil society activists across the MENA region, part of broader espionage efforts against human rights organizations.",
+      "content_text": "Access Now documented hack-for-hire phishing campaign in MENA region\n• Campaign specifically targets civil society organizations and activists\n• Attacks described as 'espionage for repression' indicating state-level threat actors\n• Part of broader pattern of digital surveillance against human rights defenders\n• Access Now Helpline Team involved in documenting and responding to incidents\n• Highlights ongoing digital security threats facing freedom tech users in authoritarian contexts",
+      "date_published": "2026-04-08T21:02:27.778Z",
+      "date_modified": "2026-04-08T21:02:27.845Z",
+      "tags": [
+        "surveillance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 85,
+        "citations": [
+          "https://www.accessnow.org/publication/mena-phishing-2026-tech/"
+        ]
+      }
+    },
+    {
       "id": "d0462dba-6ade-4a39-b05f-b2778fa3e45c",
       "url": "https://libertas.fgu.tech/posts/egyptian-lebanese-journalists-hit-by-state-linked-spear-phis",
       "title": "Egyptian & Lebanese Journalists Hit by State-Linked Spear-Phishing Campaign",
@@ -1781,6 +1891,28 @@
         "credibility_score": 90,
         "citations": [
           "https://cpj.org/2026/04/egyptian-lebanese-journalists-targeted-in-cyber-attacks/"
+        ]
+      }
+    },
+    {
+      "id": "d063f2c7-bf10-4a89-af52-0a077301d88c",
+      "url": "https://libertas.fgu.tech/posts/azerbaijan-supreme-court-upholds-7-9-year-sentences-for-inde",
+      "title": "Azerbaijan Supreme Court Upholds 7-9 Year Sentences for Independent Journalists",
+      "summary": "Azerbaijan's Supreme Court rejected appeals for 7 journalists from Abzas Media and RFE/RL, upholding lengthy prison sentences for alleged illegal foreign funding in escalating press freedom crackdown.",
+      "content_text": "Azerbaijani Supreme Court upheld prison sentences of 7-9 years for journalists from Abzas Media and RFE/RL\n• Six Abzas Media journalists and one RFE/RL correspondent convicted on charges of receiving illegal Western donor funding\n• Abzas Media is Azerbaijan's most prominent anti-corruption investigative outlet\n• Charges include currency smuggling, money laundering, and tax evasion related to alleged foreign funding\n• Police reportedly found 40,000 euros during 2023 office raid, accusing US, French, and German embassies of illegal funding\n• At least 24 journalists currently jailed in Azerbaijan, most detained since late 2023 on foreign funding charges\n• European Court of Human Rights previously ruled that funding registration violations warrant fines, not criminal sanctions\n• Independent experts report authorities refuse to register organizations seeking foreign grants, making legal funding impossible\n• Journalists plan to file complaint with European Court of Human Rights",
+      "date_published": "2026-04-08T21:03:01.400Z",
+      "date_modified": "2026-04-08T21:03:01.512Z",
+      "tags": [
+        "censorship-resistance",
+        "activism",
+        "surveillance",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://cpj.org/2026/04/azerbaijan-supreme-court-rejects-appeal-of-7-abzas-media-rfe-rl-imprisoned-journalists/"
         ]
       }
     },
@@ -1957,6 +2089,32 @@
         "credibility_score": 95,
         "citations": [
           "https://www.eff.org/deeplinks/2026/03/digital-hopes-real-power-revolution-regulation"
+        ]
+      }
+    },
+    {
+      "id": "ea9bfa4b-843d-4826-b795-6718bc4c883f",
+      "url": "https://libertas.fgu.tech/posts/age-verification-systems-show-mixed-results-raise-privacy-co",
+      "title": "Age Verification Systems Show Mixed Results, Raise Privacy Concerns for All Users",
+      "summary": "New research on UK and Australia's age verification laws shows limited effectiveness while creating privacy risks for all internet users, with children easily bypassing restrictions.",
+      "content_text": "UK's Online Safety Act led to one-third decline in pornography site visits but caused over-moderation of safe content\n• Australia's social media ban for under-16s resulted in removal of 4.7 million accounts\n• Research shows children routinely circumvent age restrictions at account creation stage\n• Age verification systems create privacy risks for all users, not just children\n• Systems block access to legitimate educational content including sexual health information\n• Global deployment has resulted in 'privacy-invasive or ineffective methods' according to 2024 study\n• Effectiveness remains unclear with regulators acknowledging need for more long-term data",
+      "date_published": "2026-04-08T21:03:38.326Z",
+      "date_modified": "2026-04-08T21:03:38.445Z",
+      "tags": [
+        "privacy",
+        "censorship-resistance",
+        "surveillance",
+        "identity"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://proton.me/blog/online-age-verification-child-safety",
+          "https://www.scitepress.org/Papers/2025/132483/132483.pdf",
+          "https://cdt.org/wp-content/uploads/2025/08/2025-08-22-CDT-Research-Brief-on-Age-Verification-1.pdf",
+          "https://www.ofcom.org.uk/siteassets/resources/documents/online-safety/research-statistics-and-data/os-standards/online-safety-in-2025-summary-of-the-technology-sectors-response-to-our-rules.pdf",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC11429505/"
         ]
       }
     },
