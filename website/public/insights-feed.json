@@ -981,6 +981,27 @@
       }
     },
     {
+      "id": "7ca61b8c-6c8f-43f7-88b7-d231de860f4c",
+      "url": "https://libertas.fgu.tech/posts/russian-gru-compromised-18-000-routers-for-mass-token-harves",
+      "title": "Russian GRU Compromised 18,000+ Routers for Mass Token Harvesting",
+      "summary": "Russian military intelligence (GRU/APT28) hijacked DNS settings on 18,000+ vulnerable routers to intercept Microsoft OAuth tokens from 200+ orgs, bypassing MFA without malware.",
+      "content_text": "Forest Blizzard (APT28/Fancy Bear) compromised 18,000+ end-of-life SOHO routers at peak activity\n• Attackers modified DNS settings to redirect traffic through GRU-controlled servers\n• Campaign harvested OAuth authentication tokens from 200+ organizations and 5,000+ consumer devices\n• Technique bypassed multi-factor authentication by intercepting post-login tokens\n• Primarily targeted government agencies, foreign affairs ministries, and law enforcement\n• Used known vulnerabilities in older Mikrotik and TP-Link routers without deploying malware\n• Group adapted tactics after August 2025 NCSC report, scaling from targeted to mass compromise\n• FCC responded by banning certification of foreign-made consumer routers citing national security",
+      "date_published": "2026-04-08T03:01:50.890Z",
+      "date_modified": "2026-04-08T03:01:51.017Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 72,
+        "credibility_score": 88,
+        "citations": [
+          "https://krebsonsecurity.com/2026/04/russia-hacked-routers-to-steal-microsoft-office-tokens/"
+        ]
+      }
+    },
+    {
       "id": "7e680783-dd75-441b-bedb-195c66a3cb6b",
       "url": "https://libertas.fgu.tech/posts/rwanda-reaffirms-crypto-ban-after-bybit-adds-rwandan-franc-s",
       "title": "Rwanda Reaffirms Crypto Ban After Bybit Adds Rwandan Franc Support",

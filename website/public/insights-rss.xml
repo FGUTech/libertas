@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Tue, 07 Apr 2026 21:03:12 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 08 Apr 2026 03:01:50 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -478,6 +478,16 @@
     <category>comms</category>
     <category>privacy</category>
     <category>surveillance</category>
+  </item>
+  <item>
+    <title>Russian GRU Compromised 18,000+ Routers for Mass Token Harvesting</title>
+    <link>https://libertas.fgu.tech/posts/russian-gru-compromised-18-000-routers-for-mass-token-harves</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/russian-gru-compromised-18-000-routers-for-mass-token-harves</guid>
+    <pubDate>Wed, 08 Apr 2026 03:01:50 GMT</pubDate>
+    <description>Russian military intelligence (GRU/APT28) hijacked DNS settings on 18,000+ vulnerable routers to intercept Microsoft OAuth tokens from 200+ orgs, bypassing MFA without malware.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>censorship-resistance</category>
   </item>
   <item>
     <title>Rwanda Reaffirms Crypto Ban After Bybit Adds Rwandan Franc Support</title>
