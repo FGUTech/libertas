@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 09 Apr 2026 03:01:12 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 09 Apr 2026 09:01:23 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -72,6 +72,17 @@
     <category>bitcoin</category>
     <category>payments</category>
     <category>sanctions-resistance</category>
+    <category>sovereignty</category>
+  </item>
+  <item>
+    <title>China Human Rights Lawyer Yu Wensheng Expected Release After 3-Year Detention</title>
+    <link>https://libertas.fgu.tech/posts/china-human-rights-lawyer-yu-wensheng-expected-release-after</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/china-human-rights-lawyer-yu-wensheng-expected-release-after</guid>
+    <pubDate>Thu, 09 Apr 2026 09:01:23 GMT</pubDate>
+    <description>Human rights lawyer Yu Wensheng faces release April 13 after serving 3 years for &apos;inciting subversion&apos; - part of systematic targeting of legal advocates challenging state power.</description>
+    <category>activism</category>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
     <category>sovereignty</category>
   </item>
   <item>
