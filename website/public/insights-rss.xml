@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 09 Apr 2026 09:01:23 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 09 Apr 2026 21:02:43 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -147,6 +147,16 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Amazon Uses Computer Crime Laws to Block AI Price Comparison Tool</title>
+    <link>https://libertas.fgu.tech/posts/amazon-uses-computer-crime-laws-to-block-ai-price-comparison</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/amazon-uses-computer-crime-laws-to-block-ai-price-comparison</guid>
+    <pubDate>Thu, 09 Apr 2026 21:01:09 GMT</pubDate>
+    <description>Amazon successfully sued Perplexity&apos;s AI browser Comet under CFAA for helping users compare prices, setting dangerous precedent that could criminalize research and competition.</description>
+    <category>censorship-resistance</category>
+    <category>privacy</category>
+    <category>surveillance</category>
   </item>
   <item>
     <title>Flock ALPR Cameras Used for Traffic Enforcement Despite Company Claims Otherwise</title>
@@ -368,6 +378,16 @@
     <category>activism</category>
   </item>
   <item>
+    <title>Treasury Secretary, SEC Chair Push Congress for Crypto Market Structure Bill</title>
+    <link>https://libertas.fgu.tech/posts/treasury-secretary-sec-chair-push-congress-for-crypto-market</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/treasury-secretary-sec-chair-push-congress-for-crypto-market</guid>
+    <pubDate>Thu, 09 Apr 2026 21:01:26 GMT</pubDate>
+    <description>Treasury Secretary Bessent, SEC Chair Atkins, and former Crypto Czar Sacks urge immediate Senate passage of the Clarity Act to establish clear regulatory boundaries for crypto and prevent innovation flight overseas.</description>
+    <category>bitcoin</category>
+    <category>payments</category>
+    <category>sovereignty</category>
+  </item>
+  <item>
     <title>Nigerian Press Freedom Groups Document 231+ Journalist Attacks Under Tinubu Administration</title>
     <link>https://libertas.fgu.tech/posts/nigerian-press-freedom-groups-document-231-journalist-attack</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/nigerian-press-freedom-groups-document-231-journalist-attack</guid>
@@ -451,6 +471,17 @@
     <category>surveillance</category>
   </item>
   <item>
+    <title>EFF Leaves X Platform After 20 Years, Cites Massive Engagement Drop and Policy Failures</title>
+    <link>https://libertas.fgu.tech/posts/eff-leaves-x-platform-after-20-years-cites-massive-engagemen</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-leaves-x-platform-after-20-years-cites-massive-engagemen</guid>
+    <pubDate>Thu, 09 Apr 2026 21:01:09 GMT</pubDate>
+    <description>Electronic Frontier Foundation exits X after engagement plummeted 97% since 2018, while staying on other platforms to reach vulnerable communities needing digital rights advocacy.</description>
+    <category>censorship-resistance</category>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>activism</category>
+  </item>
+  <item>
     <title>EFF Analyzes Digital Legacy of Arab Spring: From Liberation Tool to Repression Infrastructure</title>
     <link>https://libertas.fgu.tech/posts/eff-analyzes-digital-legacy-of-arab-spring-from-liberation-t</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-analyzes-digital-legacy-of-arab-spring-from-liberation-t</guid>
@@ -514,6 +545,17 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>Israeli Pressure Forces Closure of Palestinian Children&apos;s Rights Group DCIP</title>
+    <link>https://libertas.fgu.tech/posts/israeli-pressure-forces-closure-of-palestinian-children-s-ri</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/israeli-pressure-forces-closure-of-palestinian-children-s-ri</guid>
+    <pubDate>Thu, 09 Apr 2026 21:02:43 GMT</pubDate>
+    <description>Defense for Children International-Palestine (DCIP) shut down operations after Israeli military designated it a &apos;terrorist organization&apos; using secret evidence, raided offices, and confiscated equipment.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>sovereignty</category>
   </item>
   <item>
     <title>Citizen Lab Submits Digital Transnational Repression Framework to UN</title>
@@ -712,6 +754,16 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
+    <category>sovereignty</category>
+  </item>
+  <item>
+    <title>New Proposal Claims Bitcoin Can Be Quantum-Safe Without Protocol Changes</title>
+    <link>https://libertas.fgu.tech/posts/new-proposal-claims-bitcoin-can-be-quantum-safe-without-prot</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/new-proposal-claims-bitcoin-can-be-quantum-safe-without-prot</guid>
+    <pubDate>Thu, 09 Apr 2026 21:01:26 GMT</pubDate>
+    <description>Researcher proposes Quantum Safe Bitcoin (QSB) scheme that uses hash-based security instead of elliptic curves to protect against quantum computer attacks without requiring Bitcoin soft forks.</description>
+    <category>bitcoin</category>
+    <category>privacy</category>
     <category>sovereignty</category>
   </item>
   <item>

@@ -291,6 +291,27 @@
       }
     },
     {
+      "id": "1a880709-8a38-4a47-8a5c-b6f288986afe",
+      "url": "https://libertas.fgu.tech/posts/amazon-uses-computer-crime-laws-to-block-ai-price-comparison",
+      "title": "Amazon Uses Computer Crime Laws to Block AI Price Comparison Tool",
+      "summary": "Amazon successfully sued Perplexity's AI browser Comet under CFAA for helping users compare prices, setting dangerous precedent that could criminalize research and competition.",
+      "content_text": "Amazon sued Perplexity over Comet, an AI browser that helps users find best prices and make purchases\n• Federal district court ruled Perplexity violated Computer Fraud and Abuse Act (CFAA) by accessing Amazon's public website\n• Court relied on problematic Facebook v Power Ventures precedent rather than better hiQ Labs reasoning\n• EFF filed amicus brief supporting Perplexity's Ninth Circuit appeal, warning of broad consequences\n• Ruling could criminalize legitimate research by allowing companies to ban researchers via simple notification\n• Decision enables anti-competitive behavior by letting companies block price comparison and data scraping tools\n• Case represents corporate weaponization of computer crime laws against consumer choice tools",
+      "date_published": "2026-04-09T21:01:09.688Z",
+      "date_modified": "2026-04-09T21:01:09.736Z",
+      "tags": [
+        "censorship-resistance",
+        "privacy",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 72,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/04/comparison-shopping-not-computer-crime"
+        ]
+      }
+    },
+    {
       "id": "1ae77139-96c5-4b1a-b47d-48ff1412d53a",
       "url": "https://libertas.fgu.tech/posts/flock-alpr-cameras-used-for-traffic-enforcement-despite-comp",
       "title": "Flock ALPR Cameras Used for Traffic Enforcement Despite Company Claims Otherwise",
@@ -744,6 +765,28 @@
       }
     },
     {
+      "id": "35c9f953-bc26-49fa-96da-e3ecd4d2ddac",
+      "url": "https://libertas.fgu.tech/posts/treasury-secretary-sec-chair-push-congress-for-crypto-market",
+      "title": "Treasury Secretary, SEC Chair Push Congress for Crypto Market Structure Bill",
+      "summary": "Treasury Secretary Bessent, SEC Chair Atkins, and former Crypto Czar Sacks urge immediate Senate passage of the Clarity Act to establish clear regulatory boundaries for crypto and prevent innovation flight overseas.",
+      "content_text": "Treasury Secretary Scott Bessent calls for Senate Banking Committee to advance Clarity Act to Trump's desk\n• SEC Chair Paul Atkins and former White House Crypto Czar David Sacks endorse immediate action\n• Clarity Act would establish regulatory boundaries between SEC and CFTC for digital assets\n• Bill defines token security status, trading platform pathways, and anti-fraud measures\n• Companion legislation to Genius Act (stablecoin framework) signed by Trump last year\n• Bessent warns crypto innovation moving to Abu Dhabi and Singapore due to regulatory uncertainty\n• Supporters argue bill would keep blockchain innovation and tax revenue in U.S.",
+      "date_published": "2026-04-09T21:01:26.268Z",
+      "date_modified": "2026-04-09T21:01:26.334Z",
+      "tags": [
+        "bitcoin",
+        "payments",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 72,
+        "credibility_score": 85,
+        "citations": [
+          "https://bitcoinmagazine.com/news/congress-crypto-market-structure-bill",
+          "https://bitcoinmagazine.com/business/stacked-formerly-lightning-pay-launches-self-custodial-lightning-wallet-as-new-zealands-last-major-non-custodial-bitcoin-exchange"
+        ]
+      }
+    },
+    {
       "id": "3aca9707-a775-4f64-86d2-55bbac5109af",
       "url": "https://libertas.fgu.tech/posts/nigerian-press-freedom-groups-document-231-journalist-attack",
       "title": "Nigerian Press Freedom Groups Document 231+ Journalist Attacks Under Tinubu Administration",
@@ -917,6 +960,28 @@
       }
     },
     {
+      "id": "53716011-0df5-4348-81ed-9332b25113d6",
+      "url": "https://libertas.fgu.tech/posts/eff-leaves-x-platform-after-20-years-cites-massive-engagemen",
+      "title": "EFF Leaves X Platform After 20 Years, Cites Massive Engagement Drop and Policy Failures",
+      "summary": "Electronic Frontier Foundation exits X after engagement plummeted 97% since 2018, while staying on other platforms to reach vulnerable communities needing digital rights advocacy.",
+      "content_text": "EFF logging off X after nearly 20 years due to dramatic engagement decline\n• X posts now receive less than 3% of views compared to 2018 Twitter posts\n• Monthly impressions dropped from 50-100 million (2018) to 2 million (2024)\n• Musk fired entire human rights team and staff fighting censorship in repressive regimes\n• EFF demanded transparent moderation, E2E encryption for DMs, and user control improvements\n• Staying on Facebook, Instagram, TikTok, YouTube to reach marginalized communities\n• Platform choice reflects strategic resource allocation for maximum digital rights impact\n• Moving focus to Bluesky, Mastodon, LinkedIn and other platforms",
+      "date_published": "2026-04-09T21:01:09.689Z",
+      "date_modified": "2026-04-09T21:01:09.736Z",
+      "tags": [
+        "censorship-resistance",
+        "privacy",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/04/eff-leaving-x"
+        ]
+      }
+    },
+    {
       "id": "554694f6-910d-4235-8d6e-3114c3ba247e",
       "url": "https://libertas.fgu.tech/posts/eff-analyzes-digital-legacy-of-arab-spring-from-liberation-t",
       "title": "EFF Analyzes Digital Legacy of Arab Spring: From Liberation Tool to Repression Infrastructure",
@@ -1045,6 +1110,28 @@
         "credibility_score": 95,
         "citations": [
           "https://cpj.org/2026/04/vietnam-sentences-journalist-huynh-ngoc-tuan-to-8%c2%bd-years-for-anti-state-propaganda/"
+        ]
+      }
+    },
+    {
+      "id": "6eaaaa19-a778-408e-95bb-dcd350f9d720",
+      "url": "https://libertas.fgu.tech/posts/israeli-pressure-forces-closure-of-palestinian-children-s-ri",
+      "title": "Israeli Pressure Forces Closure of Palestinian Children's Rights Group DCIP",
+      "summary": "Defense for Children International-Palestine (DCIP) shut down operations after Israeli military designated it a 'terrorist organization' using secret evidence, raided offices, and confiscated equipment.",
+      "content_text": "DCIP, a Palestinian children's rights group operating since 1991, ceased operations on April 7\n• Israeli military designated DCIP and 5 other Palestinian rights groups as 'terrorist organizations' in 2021 using classified evidence\n• European funders suspended support pending investigation, later concluded Israeli accusations were baseless\n• Israeli forces raided DCIP offices in Ramallah, confiscated equipment and files, welded doors shut\n• Group documented decades of Israeli military abuses: arbitrary arrests, torture, unfair trials, lethal force against children\n• DCIP's work informed 2013 UNICEF report finding 'widespread, systematic' ill-treatment of Palestinian children in Israeli detention\n• Closure eliminates key documentation source amid escalating rates of child displacement, detention, and killings in Gaza and West Bank\n• Demonstrates how states use 'terrorism' designations and secret evidence to silence civil society documentation",
+      "date_published": "2026-04-09T21:02:43.795Z",
+      "date_modified": "2026-04-09T21:02:43.900Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 85,
+        "citations": [
+          "https://www.hrw.org/news/2026/04/09/israeli-pressure-silences-a-key-group-defending-palestinian-children"
         ]
       }
     },
@@ -1457,6 +1544,27 @@
         "credibility_score": 95,
         "citations": [
           "https://www.eff.org/press/releases/us-tech-companies-must-be-accountable-us-courts-facilitating-persecution-and-torture"
+        ]
+      }
+    },
+    {
+      "id": "9bd146f4-3144-4da1-ac3d-e77ab826f478",
+      "url": "https://libertas.fgu.tech/posts/new-proposal-claims-bitcoin-can-be-quantum-safe-without-prot",
+      "title": "New Proposal Claims Bitcoin Can Be Quantum-Safe Without Protocol Changes",
+      "summary": "Researcher proposes Quantum Safe Bitcoin (QSB) scheme that uses hash-based security instead of elliptic curves to protect against quantum computer attacks without requiring Bitcoin soft forks.",
+      "content_text": "Avihu Levy of StarkWare published 'Quantum-Safe Bitcoin Transactions Without Softforks' proposal on April 9\n• QSB scheme replaces ECDSA elliptic curve reliance with hash-based security assumptions\n• Addresses vulnerability where quantum computers running Shor's algorithm could break secp256k1 signatures\n• Uses 'hash-to-signature' puzzle requiring ~70.4 trillion attempts on average to solve\n• Maintains resistance to quantum attacks with estimated 118-bit second pre-image resistance\n• Works within existing Bitcoin scripting limits without consensus changes\n• Transactions cost $75-150 in cloud GPU compute but exceed standard relay limits\n• Requires direct miner submission via services like Slipstream due to size constraints\n• Project incomplete - transaction assembly and on-chain broadcast not yet demonstrated",
+      "date_published": "2026-04-09T21:01:26.267Z",
+      "date_modified": "2026-04-09T21:01:26.334Z",
+      "tags": [
+        "bitcoin",
+        "privacy",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 72,
+        "credibility_score": 85,
+        "citations": [
+          "https://bitcoinmagazine.com/news/bitcoin-could-be-quantum-safe"
         ]
       }
     },
