@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Wed, 08 Apr 2026 21:03:38 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 09 Apr 2026 03:01:12 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -524,6 +524,15 @@
     <category>censorship-resistance</category>
     <category>privacy</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Trump Admin Seeks Medical Records of 8M Federal Workers Through Insurance Companies</title>
+    <link>https://libertas.fgu.tech/posts/trump-admin-seeks-medical-records-of-8m-federal-workers-thro</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/trump-admin-seeks-medical-records-of-8m-federal-workers-thro</guid>
+    <pubDate>Thu, 09 Apr 2026 03:01:12 GMT</pubDate>
+    <description>Trump administration quietly proposed requiring insurance companies to hand over detailed medical records of 8+ million federal workers, raising major surveillance and privacy concerns among experts.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
   </item>
   <item>
     <title>FISA 702 Renewal Could Strip VPN Users of Constitutional Protections</title>

@@ -1071,6 +1071,26 @@
       }
     },
     {
+      "id": "748fc51c-ecd2-4b08-9708-893489a6d14f",
+      "url": "https://libertas.fgu.tech/posts/trump-admin-seeks-medical-records-of-8m-federal-workers-thro",
+      "title": "Trump Admin Seeks Medical Records of 8M Federal Workers Through Insurance Companies",
+      "summary": "Trump administration quietly proposed requiring insurance companies to hand over detailed medical records of 8+ million federal workers, raising major surveillance and privacy concerns among experts.",
+      "content_text": "Office of Personnel Management seeks 'service use and cost data' from 65 insurance companies\n• Data collection would include medical claims, pharmacy records, diagnoses, and provider information\n• Affects 8+ million federal workers, retirees, and their families\n• Proposal was quietly revealed in December notice with vague justification\n• Legal and health policy experts raising immediate privacy concerns\n• Unprecedented scope of government medical surveillance of its own workforce\n• Demonstrates expansion of surveillance capabilities beyond traditional targets",
+      "date_published": "2026-04-09T03:01:12.454Z",
+      "date_modified": "2026-04-09T03:01:12.535Z",
+      "tags": [
+        "surveillance",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 85,
+        "citations": [
+          "https://arstechnica.com/health/2026/04/trump-admin-seeks-medical-records-of-federal-workers-for-vague-reasons/"
+        ]
+      }
+    },
+    {
       "id": "74d6d819-bdc9-436c-be0d-6b5be563eded",
       "url": "https://libertas.fgu.tech/posts/fisa-702-renewal-could-strip-vpn-users-of-constitutional-pro",
       "title": "FISA 702 Renewal Could Strip VPN Users of Constitutional Protections",
