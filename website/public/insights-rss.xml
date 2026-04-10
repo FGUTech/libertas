@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 10 Apr 2026 15:03:41 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 10 Apr 2026 21:04:25 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -136,6 +136,17 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>Proton Warns Age Verification Laws Create New Privacy Risks for Children</title>
+    <link>https://libertas.fgu.tech/posts/proton-warns-age-verification-laws-create-new-privacy-risks-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/proton-warns-age-verification-laws-create-new-privacy-risks-</guid>
+    <pubDate>Fri, 10 Apr 2026 21:04:04 GMT</pubDate>
+    <description>Proton argues that government age verification laws are creating dangerous privacy vulnerabilities, citing Discord&apos;s recent breach of 70K government IDs collected under UK regulations.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>identity</category>
+    <category>censorship-resistance</category>
   </item>
   <item>
     <title>UAE Criminalizes Citizen Documentation of Drone Strikes, Arrests 135+ People</title>
@@ -491,6 +502,16 @@
     <category>comms</category>
     <category>privacy</category>
     <category>surveillance</category>
+  </item>
+  <item>
+    <title>US to Begin Automatic Draft Registration, Citing Surveillance Goals</title>
+    <link>https://libertas.fgu.tech/posts/us-to-begin-automatic-draft-registration-citing-surveillance</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/us-to-begin-automatic-draft-registration-citing-surveillance</guid>
+    <pubDate>Fri, 10 Apr 2026 21:04:25 GMT</pubDate>
+    <description>The Selective Service System will automatically register draft-eligible men starting late 2026, abandoning self-registration in favor of federal database integration for &apos;surveillance&apos; purposes.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>sovereignty</category>
   </item>
   <item>
     <title>Russian GRU Compromised 18,000+ Routers for Mass Token Harvesting</title>
@@ -954,6 +975,16 @@
     <category>sovereignty</category>
   </item>
   <item>
+    <title>Quantum Computing Advances Compress Bitcoin Security Upgrade Timeline</title>
+    <link>https://libertas.fgu.tech/posts/quantum-computing-advances-compress-bitcoin-security-upgrade</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/quantum-computing-advances-compress-bitcoin-security-upgrade</guid>
+    <pubDate>Fri, 10 Apr 2026 21:01:31 GMT</pubDate>
+    <description>New research shows quantum computers may need only 10,000-500,000 qubits to break Bitcoin&apos;s encryption (down from 10M), accelerating development of quantum-resistant upgrades like BIP-360.</description>
+    <category>bitcoin</category>
+    <category>privacy</category>
+    <category>sovereignty</category>
+  </item>
+  <item>
     <title>Durov: Thousands of Developers Building VPNs to Counter State Internet Control</title>
     <link>https://libertas.fgu.tech/posts/durov-thousands-of-developers-building-vpns-to-counter-state</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/durov-thousands-of-developers-building-vpns-to-counter-state</guid>
@@ -994,16 +1025,6 @@
     <category>activism</category>
     <category>privacy</category>
     <category>censorship-resistance</category>
-  </item>
-  <item>
-    <title>Judge Blocks DOD Blacklisting of Anthropic as First Amendment Retaliation</title>
-    <link>https://libertas.fgu.tech/posts/judge-blocks-dod-blacklisting-of-anthropic-as-first-amendmen</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/judge-blocks-dod-blacklisting-of-anthropic-as-first-amendmen</guid>
-    <pubDate>Fri, 27 Mar 2026 21:01:32 GMT</pubDate>
-    <description>Federal judge granted preliminary injunction blocking Department of War&apos;s blacklisting of Anthropic, ruling it was unconstitutional retaliation for the company&apos;s critical press statements.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
   </item>
   <item>
     <title>US Issues Nationwide Drone Ban Near ICE Vehicles to Block Documentation</title>

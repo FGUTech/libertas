@@ -269,6 +269,28 @@
       }
     },
     {
+      "id": "10e6b144-ca66-47f0-b8f8-8b1036fd0569",
+      "url": "https://libertas.fgu.tech/posts/proton-warns-age-verification-laws-create-new-privacy-risks-",
+      "title": "Proton Warns Age Verification Laws Create New Privacy Risks for Children",
+      "summary": "Proton argues that government age verification laws are creating dangerous privacy vulnerabilities, citing Discord's recent breach of 70K government IDs collected under UK regulations.",
+      "content_text": "Age verification laws requiring government IDs, biometrics, and selfies create new privacy risks for children\n• Discord breach in September exposed 70,000+ government ID images collected under UK age verification law\n• Most companies outsource verification to third-party vendors, creating centralized data targets\n• UK's Office of Communications reports inconsistent record-keeping compliance among platforms\n• Proton advocates for decentralized verification solutions that preserve anonymity\n• Privacy-focused company warns these laws trade one risk (harmful content) for another (data breaches)\n• Demonstrates how well-intentioned child safety laws can create surveillance infrastructure",
+      "date_published": "2026-04-10T21:04:04.437Z",
+      "date_modified": "2026-04-10T21:04:04.552Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "identity",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://proton.me/blog/is-age-verification-safe"
+        ]
+      }
+    },
+    {
       "id": "157c01b7-5b60-4e71-b5ab-a1a37a0dcf30",
       "url": "https://libertas.fgu.tech/posts/uae-criminalizes-citizen-documentation-of-drone-strikes-arre",
       "title": "UAE Criminalizes Citizen Documentation of Drone Strikes, Arrests 135+ People",
@@ -998,6 +1020,27 @@
         "credibility_score": 95,
         "citations": [
           "https://proton.me/blog/meet-security-model"
+        ]
+      }
+    },
+    {
+      "id": "7a7a2425-f808-4c8e-a2c4-03f7bc4d2cde",
+      "url": "https://libertas.fgu.tech/posts/us-to-begin-automatic-draft-registration-citing-surveillance",
+      "title": "US to Begin Automatic Draft Registration, Citing Surveillance Goals",
+      "summary": "The Selective Service System will automatically register draft-eligible men starting late 2026, abandoning self-registration in favor of federal database integration for 'surveillance' purposes.",
+      "content_text": "Selective Service System switching to automatic registration by December 2026 after decades of self-registration\n• Change driven by declining registration rates (81% in 2024, down 3% from prior year) and potential China conflict\n• System will integrate with Social Security Administration and Census Bureau databases\n• Government official explicitly cited 'surveillance' as a goal alongside 'manpower generation and management'\n• Trump administration described as having 'obsession' with creating 'comprehensive federal databases'\n• Failure to register remains felony with 5-year prison sentence, bars federal jobs and student loans\n• Represents expansion of government surveillance infrastructure using military conscription authority",
+      "date_published": "2026-04-10T21:04:25.806Z",
+      "date_modified": "2026-04-10T21:04:25.898Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://theintercept.com/2026/04/10/military-draft-automatic-registration-selective-service/"
         ]
       }
     },
@@ -1942,6 +1985,27 @@
       }
     },
     {
+      "id": "efc7f769-dee5-4a3f-81be-eef0fb6f98ab",
+      "url": "https://libertas.fgu.tech/posts/quantum-computing-advances-compress-bitcoin-security-upgrade",
+      "title": "Quantum Computing Advances Compress Bitcoin Security Upgrade Timeline",
+      "summary": "New research shows quantum computers may need only 10,000-500,000 qubits to break Bitcoin's encryption (down from 10M), accelerating development of quantum-resistant upgrades like BIP-360.",
+      "content_text": "Google and Caltech papers show quantum attack requirements dropped from 10M qubits to potentially 10,000-500,000 qubits\n• Current quantum computers still far below threat levels (Google's Willow has ~100 qubits)\n• BIP-360 proposal introduces new address format preventing public key exposure during transactions\n• Bitcoin testnet for quantum resistance has attracted 50+ miners and 100+ cryptographers\n• StarkWare's new 'Quantum Safe Bitcoin' (QSB) scheme proposed as protocol-compatible solution\n• Existing Taproot upgrade provides foundation for quantum-resistant verification methods\n• NIST finalized post-quantum crypto standards in 2024, federal agencies have 2035 deadline\n• Bitcoin's decentralized nature requires consensus-based upgrades rather than mandated transitions",
+      "date_published": "2026-04-10T21:01:31.632Z",
+      "date_modified": "2026-04-10T21:01:31.716Z",
+      "tags": [
+        "bitcoin",
+        "privacy",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://bitcoinmagazine.com/news/bitcoin-policy-institute-warns-of-quantum"
+        ]
+      }
+    },
+    {
       "id": "f54975d4-b676-4003-b75a-821e99e640a9",
       "url": "https://libertas.fgu.tech/posts/durov-thousands-of-developers-building-vpns-to-counter-state",
       "title": "Durov: Thousands of Developers Building VPNs to Counter State Internet Control",
@@ -2024,27 +2088,6 @@
         "credibility_score": 92,
         "citations": [
           "https://www.accessnow.org/mena-phishing-2026/?pk_campaign=feed&#038;pk_kwd=mena-phishing-2026"
-        ]
-      }
-    },
-    {
-      "id": "fafbb0f9-73e4-4cc6-b9b5-ba52a739aa02",
-      "url": "https://libertas.fgu.tech/posts/judge-blocks-dod-blacklisting-of-anthropic-as-first-amendmen",
-      "title": "Judge Blocks DOD Blacklisting of Anthropic as First Amendment Retaliation",
-      "summary": "Federal judge granted preliminary injunction blocking Department of War's blacklisting of Anthropic, ruling it was unconstitutional retaliation for the company's critical press statements.",
-      "content_text": "US District Judge Rita Lin blocked Department of War's blacklisting of Anthropic AI company\n• Judge ruled the action constituted 'classic First Amendment retaliation'\n• DOD designated Anthropic as supply-chain risk due to 'hostile manner through the press'\n• Court found no evidence Anthropic posed urgent national security threat\n• Officials failed to consider less restrictive alternatives before extreme measures\n• Preliminary injunction granted, suggesting Anthropic likely to prevail on merits\n• Sets precedent against government retaliation targeting AI companies for speech",
-      "date_published": "2026-03-27T21:01:32.043Z",
-      "date_modified": "2026-03-27T21:01:32.130Z",
-      "tags": [
-        "censorship-resistance",
-        "surveillance",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 75,
-        "credibility_score": 85,
-        "citations": [
-          "https://arstechnica.com/tech-policy/2026/03/hegseth-trump-had-no-authority-to-order-anthropic-to-be-blacklisted-judge-says/"
         ]
       }
     },
