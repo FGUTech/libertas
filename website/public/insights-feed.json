@@ -830,6 +830,28 @@
       }
     },
     {
+      "id": "3f69e974-f181-4bd1-86ba-e8e2ab5a8ca7",
+      "url": "https://libertas.fgu.tech/posts/russian-police-raid-novaya-gazeta-detain-journalist-on-data-",
+      "title": "Russian Police Raid Novaya Gazeta, Detain Journalist on Data Privacy Charges",
+      "summary": "Russian authorities raided independent newspaper Novaya Gazeta's Moscow office and detained journalist Oleg Roldugin under criminal charges for allegedly misusing personal data in reporting.",
+      "content_text": "Moscow police conducted 12-hour search of Novaya Gazeta office on April 9, 2026\n• Journalist Oleg Roldugin detained for 48+ hours on charges of illegal use/transfer of personal data\n• Criminal case filed under Article 272.1 alleging use of personal data to create 'negative content about Russian citizens'\n• Authorities investigating potential ties to Latvia-based Novaya Gazeta Europe (banned as 'undesirable' in 2023)\n• Over 10 staff held inside building during search; lawyers denied access for 7+ hours\n• Charges carry up to 6 years prison under 'group activity causing significant damage' provision\n• Escalation against outlet already stripped of print/online licenses in September 2022\n• Pattern continues targeting of Nobel Prize winner Dmitry Muratov's publication with 6 journalists killed since 1993",
+      "date_published": "2026-04-10T03:02:14.395Z",
+      "date_modified": "2026-04-10T03:02:14.482Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 95,
+        "citations": [
+          "https://cpj.org/2026/04/moscow-police-raid-novaya-gazeta-detain-journalist-oleg-roldugin/"
+        ]
+      }
+    },
+    {
       "id": "42d0b473-fc53-4d61-8aa3-e725f220ad85",
       "url": "https://libertas.fgu.tech/posts/cpj-issues-10-point-plan-to-restore-press-freedom-in-hungary",
       "title": "CPJ Issues 10-Point Plan to Restore Press Freedom in Hungary Ahead of Election",
@@ -2111,6 +2133,27 @@
       }
     },
     {
+      "id": "d5e67fef-114c-456b-8aaa-2fa7ba8d9a7a",
+      "url": "https://libertas.fgu.tech/posts/google-moves-quantum-cryptography-deadline-to-2029-eff-warns",
+      "title": "Google Moves Quantum Cryptography Deadline to 2029, EFF Warns of Encryption 'Y2K Moment'",
+      "summary": "Google accelerated post-quantum cryptography deadline to 2029 due to breakthrough research. Current encryption protecting Signal, websites, and secure communications will be vulnerable to quantum attacks.",
+      "content_text": "Google moved quantum preparedness deadline from 2030s to 2029 (33 months away) based on new research papers\n• Quantum computers will break current public key cryptography used in HTTPS, Signal, iMessage authentication\n• 'Store-now-decrypt-later' attacks already possible - quantum computers will decrypt years of captured traffic\n• Symmetric encryption (disk encryption) remains quantum-resistant, but key exchange and authentication are vulnerable\n• Signal and iMessage have announced post-quantum implementations, other platforms may be behind schedule\n• Hardware deployments like Trusted Execution Environments (TEEs) won't upgrade in time\n• Users should avoid AI features in encrypted chats that could leak content to vulnerable cloud processing\n• NGINX released post-quantum support in version 26.04, Ubuntu rolling out updates",
+      "date_published": "2026-04-10T03:01:25.174Z",
+      "date_modified": "2026-04-10T03:01:25.227Z",
+      "tags": [
+        "privacy",
+        "comms",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/04/yikes-encryptions-y2k-moment-coming-years-early"
+        ]
+      }
+    },
+    {
       "id": "d7aa81bf-27ff-4ee7-a817-dd919bcdd5bd",
       "url": "https://libertas.fgu.tech/posts/mena-region-hit-by-52-internet-shutdowns-across-15-countries",
       "title": "MENA Region Hit by 52 Internet Shutdowns Across 15 Countries in 2025",
@@ -2458,6 +2501,28 @@
         "credibility_score": 85,
         "citations": [
           "https://arstechnica.com/tech-policy/2026/03/hegseth-trump-had-no-authority-to-order-anthropic-to-be-blacklisted-judge-says/"
+        ]
+      }
+    },
+    {
+      "id": "fc68df21-18de-45bf-bc73-f26a34049a76",
+      "url": "https://libertas.fgu.tech/posts/us-issues-nationwide-drone-ban-near-ice-vehicles-to-block-do",
+      "title": "US Issues Nationwide Drone Ban Near ICE Vehicles to Block Documentation",
+      "summary": "The FAA issued a 21-month nationwide restriction criminalizing drone flights within half a mile of any ICE/CBP vehicle, effectively blocking citizen and journalist documentation of immigration enforcement.",
+      "content_text": "FAA issued unprecedented nationwide temporary flight restriction (TFR FDC 6/4375) lasting 21 months until October 2027\n• Restricts any drone operation within 3000 feet of DHS vehicles including ICE/CBP cars\n• Violators face criminal charges, civil penalties, and drone seizure/destruction\n• ICE agents often use unmarked rental cars and switch license plates, making compliance impossible\n• EFF and major media organizations demanded rescission citing First Amendment violations\n• TFR violates constitutional recording rights and FAA's own regulations requiring hazard justification\n• Timing coincides with Minneapolis anti-ICE protests and controversial police shootings\n• Reporters Committee for Freedom of the Press filed federal court challenge",
+      "date_published": "2026-04-10T03:01:25.174Z",
+      "date_modified": "2026-04-10T03:01:25.227Z",
+      "tags": [
+        "surveillance",
+        "censorship-resistance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 88,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/04/faas-temporary-flight-restriction-drones-blatant-attempt-criminalize-filming-ice"
         ]
       }
     }

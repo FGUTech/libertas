@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 09 Apr 2026 21:02:43 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 10 Apr 2026 03:02:14 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -406,6 +406,17 @@
     <category>censorship-resistance</category>
     <category>activism</category>
     <category>surveillance</category>
+  </item>
+  <item>
+    <title>Russian Police Raid Novaya Gazeta, Detain Journalist on Data Privacy Charges</title>
+    <link>https://libertas.fgu.tech/posts/russian-police-raid-novaya-gazeta-detain-journalist-on-data-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/russian-police-raid-novaya-gazeta-detain-journalist-on-data-</guid>
+    <pubDate>Fri, 10 Apr 2026 03:02:14 GMT</pubDate>
+    <description>Russian authorities raided independent newspaper Novaya Gazeta&apos;s Moscow office and detained journalist Oleg Roldugin under criminal charges for allegedly misusing personal data in reporting.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>privacy</category>
   </item>
   <item>
     <title>CPJ Issues 10-Point Plan to Restore Press Freedom in Hungary Ahead of Election</title>
@@ -1033,6 +1044,16 @@
     <category>privacy</category>
   </item>
   <item>
+    <title>Google Moves Quantum Cryptography Deadline to 2029, EFF Warns of Encryption &apos;Y2K Moment&apos;</title>
+    <link>https://libertas.fgu.tech/posts/google-moves-quantum-cryptography-deadline-to-2029-eff-warns</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/google-moves-quantum-cryptography-deadline-to-2029-eff-warns</guid>
+    <pubDate>Fri, 10 Apr 2026 03:01:25 GMT</pubDate>
+    <description>Google accelerated post-quantum cryptography deadline to 2029 due to breakthrough research. Current encryption protecting Signal, websites, and secure communications will be vulnerable to quantum attacks.</description>
+    <category>privacy</category>
+    <category>comms</category>
+    <category>censorship-resistance</category>
+  </item>
+  <item>
     <title>MENA Region Hit by 52 Internet Shutdowns Across 15 Countries in 2025</title>
     <link>https://libertas.fgu.tech/posts/mena-region-hit-by-52-internet-shutdowns-across-15-countries</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/mena-region-hit-by-52-internet-shutdowns-across-15-countries</guid>
@@ -1201,6 +1222,17 @@
     <category>censorship-resistance</category>
     <category>surveillance</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>US Issues Nationwide Drone Ban Near ICE Vehicles to Block Documentation</title>
+    <link>https://libertas.fgu.tech/posts/us-issues-nationwide-drone-ban-near-ice-vehicles-to-block-do</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/us-issues-nationwide-drone-ban-near-ice-vehicles-to-block-do</guid>
+    <pubDate>Fri, 10 Apr 2026 03:01:25 GMT</pubDate>
+    <description>The FAA issued a 21-month nationwide restriction criminalizing drone flights within half a mile of any ICE/CBP vehicle, effectively blocking citizen and journalist documentation of immigration enforcement.</description>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>privacy</category>
   </item>
 </channel>
 </rss>
