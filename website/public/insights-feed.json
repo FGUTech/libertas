@@ -51,29 +51,6 @@
       }
     },
     {
-      "id": "012aaa68-c04c-4117-aeac-dd4d2daa8802",
-      "url": "https://libertas.fgu.tech/posts/iran-deploys-internet-blackout-during-military-conflict-star",
-      "title": "Iran Deploys Internet Blackout During Military Conflict; Starlink Terminals Targeted",
-      "summary": "Iran shut down internet access during Operation Epic Fury military strikes, while regime reportedly targets Iranians using smuggled Starlink terminals for circumvention.",
-      "content_text": "Iranian authorities implemented internet shutdown as military strikes began during Operation Epic Fury\n• Trump administration reportedly smuggled thousands of Starlink terminals into Iran prior to conflict\n• Iranian regime targeting citizens using Starlink terminals, making satellite internet use punishable by prison\n• Freedom House analysis compares to Putin's playbook of information control during Ukraine invasion\n• US government VPN programs for circumvention were previously terminated under foreign aid cuts\n• Current satellite internet requires trackable receivers that security services can disrupt\n• Next-generation direct-to-phone satellite technology exists but remains undeployed at scale\n• Pattern shows authoritarian regimes have mastered internet control despite early democratizing expectations",
-      "date_published": "2026-03-27T10:04:36.442Z",
-      "date_modified": "2026-03-27T10:04:36.545Z",
-      "tags": [
-        "censorship-resistance",
-        "surveillance",
-        "comms",
-        "activism",
-        "sovereignty"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 88,
-        "credibility_score": 85,
-        "citations": [
-          "https://freedomhouse.org/article/irans-internet-blackout-and-authoritarian-playbook"
-        ]
-      }
-    },
-    {
       "id": "02f2b5b8-2d7d-4661-9341-96d7ca105f38",
       "url": "https://libertas.fgu.tech/posts/age-verification-laws-fragment-internet-access-across-us-uk-",
       "title": "Age Verification Laws Fragment Internet Access Across US, UK Implementation Models",
@@ -113,6 +90,27 @@
         "credibility_score": 88,
         "citations": [
           "https://www.eff.org/deeplinks/2026/04/google-and-amazon-acknowledged-risks-and-ignored-responsibilities"
+        ]
+      }
+    },
+    {
+      "id": "06455983-cca1-4c11-a6e2-a107ff6aaf0e",
+      "url": "https://libertas.fgu.tech/posts/eff-calls-for-action-against-clean-fisa-section-702-reauthor",
+      "title": "EFF Calls for Action Against Clean FISA Section 702 Reauthorization",
+      "summary": "EFF is mobilizing opposition to a 'clean' reauthorization of FISA Section 702, which allows warrantless surveillance of Americans' communications with foreign persons overseas.",
+      "content_text": "FISA Section 702 is up for congressional reauthorization with April 20 deadline\n• Current law allows NSA to collect Americans' communications with foreign persons without warrants\n• FBI operates in 'finders keepers' mode, querying stored communications without warrants\n• Surveillance targets have no notification and limited ways to discover they've been spied on\n• EFF opposes any 'clean' reauthorization without substantial privacy reforms\n• Intelligence community prioritizes surveillance access over privacy protections\n• Civil liberties groups have fought for years to expose secretive court rulings on 702 usage",
+      "date_published": "2026-04-10T15:01:20.622Z",
+      "date_modified": "2026-04-10T15:01:20.666Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/04/we-need-you-our-privacy-cannot-afford-clean-extension-section-702"
         ]
       }
     },
@@ -293,27 +291,6 @@
       }
     },
     {
-      "id": "17908c74-c986-441a-b767-b235d140418c",
-      "url": "https://libertas.fgu.tech/posts/congress-plans-clean-fisa-702-extension-despite-mass-surveil",
-      "title": "Congress Plans Clean FISA 702 Extension Despite Mass Surveillance Abuses",
-      "summary": "Congress is moving toward an 18-month clean extension of FISA Section 702 mass surveillance powers without warrant requirements or other reforms, despite documented abuses against activists, journalists, and lawmakers.",
-      "content_text": "House Speaker Mike Johnson confirms plan for clean FISA Section 702 extension for at least 18 months\n• House Judiciary Chair Jim Jordan now supports clean extension, abandoning previous reform positions\n• 2024 RISAA reauthorization expanded surveillance powers while adding only nominal reforms\n• Section 702 previously abused to spy on protesters, lawmakers, journalists, campaign donors, and judges\n• Three reform bills (SAFE, PLEWSA, GSRA) available but Congress not considering them\n• No warrant requirement being implemented despite House previously voting for it\n• Clean extension means continued warrantless collection and querying of Americans' communications\n• EFF warns mass surveillance program operates without adequate safeguards or oversight",
-      "date_published": "2026-03-27T10:01:00.830Z",
-      "date_modified": "2026-03-27T10:01:00.882Z",
-      "tags": [
-        "surveillance",
-        "privacy",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 85,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/03/congress-dropping-ball-clean-extension-fisa"
-        ]
-      }
-    },
-    {
       "id": "1a880709-8a38-4a47-8a5c-b6f288986afe",
       "url": "https://libertas.fgu.tech/posts/amazon-uses-computer-crime-laws-to-block-ai-price-comparison",
       "title": "Amazon Uses Computer Crime Laws to Block AI Price Comparison Tool",
@@ -331,48 +308,6 @@
         "credibility_score": 95,
         "citations": [
           "https://www.eff.org/deeplinks/2026/04/comparison-shopping-not-computer-crime"
-        ]
-      }
-    },
-    {
-      "id": "1ae77139-96c5-4b1a-b47d-48ff1412d53a",
-      "url": "https://libertas.fgu.tech/posts/flock-alpr-cameras-used-for-traffic-enforcement-despite-comp",
-      "title": "Flock ALPR Cameras Used for Traffic Enforcement Despite Company Claims Otherwise",
-      "summary": "Georgia police used Flock Safety's license plate readers to ticket a motorcyclist for holding a phone, contradicting the company's public claims that ALPRs aren't used for traffic violations.",
-      "content_text": "Georgia State Patrol issued traffic ticket based on Flock camera footage showing motorcyclist holding phone\n• Ticket explicitly stated 'CAPTURED ON FLOCK CAMERA 31 MM 1 HOLDING PHONE IN LEFT HAND'\n• Flock Safety previously claimed their ALPRs are 'not used to enforce traffic violations'\n• Company now lists six traffic enforcement partners on their website, contradicting earlier statements\n• Public records show speed enforcement cameras connected to Flock's ALPR network\n• EFF warns this demonstrates classic surveillance mission creep pattern\n• Case highlights gap between vendor marketing claims and actual deployment practices",
-      "date_published": "2026-03-27T10:01:00.828Z",
-      "date_modified": "2026-03-27T10:01:00.882Z",
-      "tags": [
-        "surveillance",
-        "privacy"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/03/traffic-violation-license-plate-reader-mission-creep-already-here"
-        ]
-      }
-    },
-    {
-      "id": "1b51b25e-5ea6-49df-8358-952ffe801707",
-      "url": "https://libertas.fgu.tech/posts/tails-7-6-adds-automatic-tor-bridge-discovery-for-censorship",
-      "title": "Tails 7.6 Adds Automatic Tor Bridge Discovery for Censorship Circumvention",
-      "summary": "Tails 7.6 introduces automatic Tor bridge configuration based on user region, making censorship circumvention easier for activists and journalists in restrictive networks.",
-      "content_text": "Tails 7.6 adds automatic Tor bridge discovery through 'Connect to Tor automatically' feature\n• New 'Ask for a Tor bridge based on your region' option helps users in censorship-heavy areas\n• Uses same technology as Tor Browser 11.5's connection assistant from July 2022\n• Bridge discovery uses Tor Project's Moat API with domain fronting to disguise connections\n• Replaces KeePassXC password manager with GNOME Secrets for better desktop integration\n• Updates include Electrum 4.7.0, Tor Browser 15.0.8, and Thunderbird 140.8.0\n• Improved firmware packages enhance support for newer hardware including Wi-Fi and graphics\n• Automatic upgrades available from Tails 7.0+ with manual upgrade fallback option",
-      "date_published": "2026-03-27T10:05:40.701Z",
-      "date_modified": "2026-03-27T10:05:40.782Z",
-      "tags": [
-        "privacy",
-        "censorship-resistance",
-        "comms",
-        "surveillance"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 95,
-        "citations": [
-          "https://tails.net/news/version_7.6/"
         ]
       }
     },
@@ -421,28 +356,6 @@
       }
     },
     {
-      "id": "1d854c14-8392-464a-8591-d8ac105a47e4",
-      "url": "https://libertas.fgu.tech/posts/hungarian-journalist-faces-espionage-investigation-after-peg",
-      "title": "Hungarian Journalist Faces Espionage Investigation After Pegasus Spyware Targeting",
-      "summary": "Hungary orders espionage investigation of journalist Szabolcs Panyi following covert surveillance and Pegasus spyware targeting, escalating government crackdown on independent media.",
-      "content_text": "Hungarian journalist Szabolcs Panyi faces espionage investigation carrying up to 15 years in prison\n• Investigation based on covertly recorded conversation between Panyi and source, raising surveillance concerns\n• Panyi was previously targeted by Pegasus spyware, confirmed by 2023 European Parliament investigation\n• Allegations stem from his reporting on Hungarian-Russian government ties and embarrassing communications\n• Hungary controls ~80% of media through government-linked entities and economic pressure\n• Pattern shows systematic use of surveillance and legal intimidation against independent journalists\n• European Commission urged to monitor case under rule of law assessments and funding conditionality",
-      "date_published": "2026-03-27T15:01:57.707Z",
-      "date_modified": "2026-03-27T15:01:57.849Z",
-      "tags": [
-        "surveillance",
-        "censorship-resistance",
-        "activism",
-        "privacy"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 85,
-        "credibility_score": 90,
-        "citations": [
-          "https://www.hrw.org/news/2026/03/27/hungary-orders-investigation-of-journalist-on-espionage-accusation"
-        ]
-      }
-    },
-    {
       "id": "1da1a67b-2ba0-4ded-ac3b-96bc79e8e0be",
       "url": "https://libertas.fgu.tech/posts/afghan-women-use-underground-online-education-networks-to-re",
       "title": "Afghan Women Use Underground Online Education Networks to Resist Taliban Restrictions",
@@ -461,28 +374,6 @@
         "credibility_score": 85,
         "citations": [
           "https://globalvoices.org/2026/03/30/our-generation-will-continue-resisting-the-talibans-restrictions-on-women-and-girls/"
-        ]
-      }
-    },
-    {
-      "id": "1e70d645-2b8b-4999-a1a1-6ab3a1bd10ab",
-      "url": "https://libertas.fgu.tech/posts/eff-s-cindy-cohn-releases-book-on-30-year-fight-against-digi",
-      "title": "EFF's Cindy Cohn Releases Book on 30-Year Fight Against Digital Surveillance",
-      "summary": "EFF Executive Director Cindy Cohn published 'Privacy's Defender,' documenting three decades of legal battles against government surveillance including the Crypto Wars and NSA dragnet programs.",
-      "content_text": "Cindy Cohn published 'Privacy's Defender: My Thirty-Year Fight Against Digital Surveillance' through MIT Press\n• Book covers foundational privacy battles including Crypto Wars, NSA surveillance, and FBI gag orders\n• Describes legal fights that shaped internet freedom, free speech, and privacy rights\n• Featured in conversation with Cory Doctorow at San Francisco's City Lights Bookstore\n• National book tour planned with stops in major US cities\n• EFF developing special podcast series featuring key players and moments from the book\n• References landmark cases including Bernstein v. DOJ, Hepting v. AT&T, and Jewel v. NSA",
-      "date_published": "2026-03-27T10:01:00.831Z",
-      "date_modified": "2026-03-27T10:01:00.882Z",
-      "tags": [
-        "privacy",
-        "surveillance",
-        "censorship-resistance",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 75,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/03/bonus-podcast-episode-privacys-defender-cindy-cohn-conversation-cory-doctorow"
         ]
       }
     },
@@ -526,27 +417,6 @@
         "credibility_score": 85,
         "citations": [
           "https://www.accessnow.org/publication/keepiton-2025-report/"
-        ]
-      }
-    },
-    {
-      "id": "1f296d54-87f5-4d48-8022-c7573b190f00",
-      "url": "https://libertas.fgu.tech/posts/supreme-court-limits-isp-copyright-liability-protects-genera",
-      "title": "Supreme Court Limits ISP Copyright Liability, Protects General-Purpose Internet Services",
-      "summary": "Supreme Court reversed billion-dollar verdict against Cox Communications, ruling ISPs can't be liable for customer copyright infringement unless they actively induce it or provide services tailored for infringement.",
-      "content_text": "Supreme Court reversed Fourth Circuit decision upholding $1B verdict against Cox Communications\n• Court established contributory liability requires either active inducement or providing service tailored for infringement\n• Mere knowledge that some customers may infringe is insufficient for liability\n• Cox demonstrated good faith efforts including warnings, suspensions, and account terminations\n• General-purpose internet connectivity has substantial lawful uses and can't be treated as contributory infringement\n• Decision protects ISPs from pressure to over-police user activity or withdraw services\n• Ruling prevents expansion of secondary liability that could chill innovation and smaller tech companies\n• EFF's amicus brief arguments about patent law framework were adopted by the Court",
-      "date_published": "2026-03-27T10:01:00.829Z",
-      "date_modified": "2026-03-27T10:01:00.882Z",
-      "tags": [
-        "censorship-resistance",
-        "privacy",
-        "surveillance"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/03/supreme-court-agrees-eff-isps-dont-have-be-copyright-enforcers"
         ]
       }
     },
@@ -611,28 +481,6 @@
         "credibility_score": 85,
         "citations": [
           "https://theintercept.com/2026/04/07/iranian-american-women-trump-letter/"
-        ]
-      }
-    },
-    {
-      "id": "27036086-bea2-4c84-a08e-ae06c4bd15d2",
-      "url": "https://libertas.fgu.tech/posts/apple-introduces-os-level-age-verification-in-uk-creating-id",
-      "title": "Apple Introduces OS-Level Age Verification in UK, Creating Identity-Based Access Infrastructure",
-      "summary": "Apple now requires credit card or government ID verification for UK iPhone users to access certain features, moving age checks from apps into the operating system itself and creating infrastructure for broader identity-based restrictions.",
-      "content_text": "Apple implemented OS-level age verification for UK iPhones requiring credit card or government ID\n• Change follows UK Online Safety Act pressure, though Apple wasn't required to implement at OS level\n• Verification happens at device level before users reach apps, unlike bypassable website checks\n• Creates durable link between user identity and device that persists across all apps\n• Same infrastructure can enforce restrictions based on location, nationality, or other identity attributes\n• California passed similar law requiring OS-level age collection; other US states considering comparable measures\n• Identity-based access controls make circumvention tools and privacy apps easier to regulate\n• Controls embedded in device are not easily bypassed and travel with the system",
-      "date_published": "2026-03-27T10:05:26.018Z",
-      "date_modified": "2026-03-27T10:05:26.117Z",
-      "tags": [
-        "privacy",
-        "surveillance",
-        "identity",
-        "censorship-resistance"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 85,
-        "credibility_score": 90,
-        "citations": [
-          "https://proton.me/blog/apple-uk-age-verification-iphone"
         ]
       }
     },
@@ -717,73 +565,6 @@
         "credibility_score": 95,
         "citations": [
           "https://citizenlab.ca/submission-to-the-national-security-and-intelligence-committee-of-parliamentarians/"
-        ]
-      }
-    },
-    {
-      "id": "300326ee-cfc1-4808-b761-e609bc6910fb",
-      "url": "https://libertas.fgu.tech/posts/italian-prosecutors-confirm-journalist-hacked-with-paragon-e",
-      "title": "Italian Prosecutors Confirm Journalist Hacked with Paragon 'Ethical' Spyware",
-      "summary": "Italian prosecutors validated Citizen Lab's forensics showing journalist Francesco Cancellato was targeted by Paragon's Graphite spyware, undermining claims of 'ethical' commercial surveillance tools.",
-      "content_text": "Italian prosecutors officially confirmed journalist Francesco Cancellato was hacked with spyware\n• Citizen Lab's forensic analysis identified Paragon's Graphite spyware as the attack vector\n• WhatsApp initially alerted Cancellato to the suspected spyware infection\n• Case challenges Paragon's marketing claims about 'ethical' surveillance technology use\n• Prosecution validation raises questions about prior Italian investigations that found nothing\n• Demonstrates continued targeting of journalists with commercial spyware tools\n• Adds to growing evidence of mercenary spyware industry's threat to press freedom",
-      "date_published": "2026-03-27T10:03:43.708Z",
-      "date_modified": "2026-03-27T10:03:43.781Z",
-      "tags": [
-        "surveillance",
-        "privacy",
-        "censorship-resistance",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 95,
-        "citations": [
-          "https://citizenlab.ca/italian-prosecutors-confirm-journalist-was-hacked-with-paragon-spyware/",
-          "https://citizenlab.ca/canadians-face-tsunami-of-transnational-repression-in-coming-years/"
-        ]
-      }
-    },
-    {
-      "id": "315651d2-3e96-48c7-b884-200bc5c605cd",
-      "url": "https://libertas.fgu.tech/posts/survey-78-of-us-parents-concerned-about-children-s-digital-p",
-      "title": "Survey: 78% of US Parents Concerned About Children's Digital Privacy",
-      "summary": "Proton survey reveals widespread parental anxiety about children's online privacy, with 58% fearing identity theft before age 18 and concerns about data collection by apps and schools.",
-      "content_text": "78% of US parents concerned about child's online privacy, with 56% 'very concerned'\n• 58% of parents worry about identity theft occurring before child reaches 18\n• 76% of children already own smartphones/tablets, with age 10 being biggest jump in device ownership\n• 44% of children have email addresses, 42% have social media accounts\n• Top platforms used by children: TikTok (63%), Facebook (53%), Instagram (50%), Snapchat (45%)\n• 65% of parents worried educational platforms collect excessive data about children\n• One-third of parents discovered apps collected more child data than expected in past year\n• Parents fear digital footprints could affect future employment (55%), education (56%), and safety (70%)",
-      "date_published": "2026-03-27T10:05:26.019Z",
-      "date_modified": "2026-03-27T10:05:26.117Z",
-      "tags": [
-        "surveillance",
-        "privacy",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 85,
-        "credibility_score": 88,
-        "citations": [
-          "https://proton.me/blog/born-private-survey",
-          "https://proton.me/blog/fbi-location-data"
-        ]
-      }
-    },
-    {
-      "id": "31be4686-5234-42c7-b401-aea249fd28b7",
-      "url": "https://libertas.fgu.tech/posts/uk-advances-social-media-ban-with-ministerial-powers-to-rest",
-      "title": "UK Advances Social Media Ban with Ministerial Powers to Restrict Internet Access for Under-18s",
-      "summary": "UK Parliament is progressing legislation that would give ministers sweeping powers to ban social media for under-18s and restrict VPN use without accountability mechanisms or evidence requirements.",
-      "content_text": "House of Commons defeated Lords' amendment to ban under-16s from social media by 307 to 173 votes\n• Commons proposed alternative giving Secretary of State power to restrict internet access for under-18s\n• New powers include ability to limit VPN use and restrict 'addictive features' without evidence requirements\n• Authority shifts from independent regulator Ofcom to political ministers with no accountability mechanisms\n• Broad definitions could target LGBTQ+ content and sex education behind age gates\n• 107 Labour MPs abstained, showing party split on the issue\n• Amendment modifies existing Online Safety Act enforcement framework",
-      "date_published": "2026-03-27T10:01:00.830Z",
-      "date_modified": "2026-03-27T10:01:00.882Z",
-      "tags": [
-        "censorship-resistance",
-        "privacy",
-        "surveillance",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 90,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/03/uk-politicians-continue-miss-point-latest-social-media-ban-proposal"
         ]
       }
     },
@@ -940,29 +721,6 @@
       }
     },
     {
-      "id": "46c553a9-7655-43bb-8149-2258299a04fd",
-      "url": "https://libertas.fgu.tech/posts/the-intercept-guide-protecting-devices-from-ice-cbp-searches",
-      "title": "The Intercept Guide: Protecting Devices from ICE/CBP Searches at US Airports",
-      "summary": "Comprehensive security guide for protecting digital devices from Immigration and Customs Enforcement and border agents at US airports, covering throwaway devices, encryption, and operational security practices.",
-      "content_text": "ICE agents now deployed to dozens of US airports with expanded device search authority\n• CBP can examine traveler devices without warrant, recent cases include Norwegian tourist denied entry over phone content\n• Best practice: Use throwaway travel devices with clean accounts instead of personal devices\n• Disable biometrics, use strong alphanumeric passcodes, power devices completely off at checkpoints\n• Enable password manager travel modes and delete sensitive apps/contacts before travel\n• Travelers can refuse to unlock devices but face delays, harassment, and indefinite confiscation\n• Use tools like Cryptomator to encrypt sensitive files in cloud storage, delete local copies\n• Defense-in-depth approach assumes device compromise and minimizes stored sensitive data",
-      "date_published": "2026-03-27T10:06:20.742Z",
-      "date_modified": "2026-03-27T10:06:20.860Z",
-      "tags": [
-        "censorship-resistance",
-        "surveillance",
-        "activism",
-        "privacy"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 85,
-        "credibility_score": 88,
-        "citations": [
-          "https://theintercept.com/2026/03/25/ice-airports-phone-security-privacy-safety/",
-          "https://theintercept.com/2026/03/26/pentagon-reporters-first-amendment/"
-        ]
-      }
-    },
-    {
       "id": "48f81839-a30c-4e44-a08c-cb9419cd96b0",
       "url": "https://libertas.fgu.tech/posts/eu-parliament-blocks-mass-chat-scanning-but-chat-control-pro",
       "title": "EU Parliament Blocks Mass Chat Scanning, But 'Chat Control' Proposal Still Alive",
@@ -1027,28 +785,6 @@
       }
     },
     {
-      "id": "554694f6-910d-4235-8d6e-3114c3ba247e",
-      "url": "https://libertas.fgu.tech/posts/eff-analyzes-digital-legacy-of-arab-spring-from-liberation-t",
-      "title": "EFF Analyzes Digital Legacy of Arab Spring: From Liberation Tool to Repression Infrastructure",
-      "summary": "EFF launches series examining how 2011 Arab uprisings transformed digital resistance tactics and government countermeasures, showing how liberation tools became surveillance infrastructure.",
-      "content_text": "EFF begins series analyzing 15-year digital legacy of 2011 Arab Spring uprisings\n• Documents how same tools used for organizing became instruments for tracking and prosecuting dissidents\n• Tunisia had sophisticated filtering regime: DNS tampering, URL blocking, IP filtering, keyword censorship\n• Tunisian bloggers built resilient culture using circumvention tools to push information beyond borders\n• Egypt's government blocked Twitter/Facebook, then implemented near-total internet shutdown\n• Governments learned from each other, developing playbook to disrupt networks and identify organizers\n• Internet blackouts evolved from rare occurrence to normalized crisis response tool\n• Series will examine how states consolidated online control and platforms narrowed dissent space",
-      "date_published": "2026-03-27T10:01:00.829Z",
-      "date_modified": "2026-03-27T10:01:00.882Z",
-      "tags": [
-        "activism",
-        "censorship-resistance",
-        "surveillance",
-        "privacy"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 88,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/03/digital-hopes-real-power-reflecting-legacy-arab-spring-0"
-        ]
-      }
-    },
-    {
       "id": "55a88540-0bd7-4ea3-9ad4-53046d772353",
       "url": "https://libertas.fgu.tech/posts/eff-promotes-digital-rights-advocacy-and-privacy-education-t",
       "title": "EFF Promotes Digital Rights Advocacy and Privacy Education to Daily Show Viewers",
@@ -1094,24 +830,24 @@
       }
     },
     {
-      "id": "67d7fd51-b45f-4ec5-9289-86d1248548af",
-      "url": "https://libertas.fgu.tech/posts/eff-challenges-fcc-chair-s-unconstitutional-threats-against-",
-      "title": "EFF Challenges FCC Chair's Unconstitutional Threats Against Broadcasters",
-      "summary": "EFF and civil liberties groups condemn FCC Chair Brendan Carr's threats to revoke broadcast licenses for unfavorable coverage of Trump, calling them unconstitutional censorship attempts.",
-      "content_text": "EFF joined coalition opposing FCC Chair Brendan Carr's threats against broadcasters\n• Carr threatened license revocation for stations airing content critical of Trump administration\n• Civil liberties groups argue threats violate First Amendment protections\n• Carr claims 'public interest' standard justifies punishing unfavorable news coverage\n• Coalition argues 'public interest' has never permitted viewpoint-based punishment\n• Carr's 'falsity' allegations target policy disagreements and criticism, not accuracy\n• Groups specifically cite Iran War coverage as example of prohibited government line enforcement\n• Coalition demands Carr withdraw unconstitutional threats",
-      "date_published": "2026-03-27T10:01:00.830Z",
-      "date_modified": "2026-03-27T10:01:00.882Z",
+      "id": "62b02881-1d9c-45aa-afa0-213ca6c7d754",
+      "url": "https://libertas.fgu.tech/posts/south-sudan-s-new-cybercrime-law-criminalizes-digital-speech",
+      "title": "South Sudan's New Cybercrime Law Criminalizes Digital Speech with 10-Year Prison Terms",
+      "summary": "South Sudan's 2026 Cybercrimes Act criminalizes 'false information' and 'undesirable content' with up to 10 years prison, grants authorities broad surveillance powers, and threatens encrypted communications and journalism.",
+      "content_text": "President Salva Kiir signed the Cybercrimes and Computer Misuse Act 2026 on February 18, replacing 2021 provisional order\n• Law punishes defamation with up to 5 years prison, increasing from previous 2-year maximum under penal code\n• Vague definitions of 'false or misleading information' and 'undesirable content' enable subjective interpretation by authorities\n• Section 6(3) grants National Communication Authority power to access 'any' data from ISPs without judicial oversight\n• Section 33 criminalizes unauthorized data transmission with 5-year penalty, no exemptions for whistleblowing or investigative journalism\n• Platform administrators face 5 years prison for failing to remove broadly-defined 'unlawful content'\n• 'Cyberbullying' carries up to 10-year prison sentence under expansive definition covering digital harassment\n• Committee to Protect Journalists calls for urgent reform, citing threats to press freedom and legitimate online activity\n• Pattern matches regional trend of cybercrime laws being used to suppress journalism across Africa",
+      "date_published": "2026-04-10T15:02:55.011Z",
+      "date_modified": "2026-04-10T15:02:55.146Z",
       "tags": [
         "censorship-resistance",
         "surveillance",
-        "activism"
+        "activism",
+        "privacy"
       ],
       "_libertas": {
         "freedom_relevance_score": 85,
         "credibility_score": 95,
         "citations": [
-          "https://www.eff.org/deeplinks/2026/03/fcc-chair-carrs-threats-punish-broadcasters-are-unconstitutional",
-          "https://techfreedom.org/wp-content/uploads/2026/03/Response-to-FCC-Chair-Brendan-Carr-March-2026.pdf"
+          "https://cpj.org/2026/04/south-sudans-new-cybercrime-law-ramps-up-threat-of-jail-for-journalists/"
         ]
       }
     },
@@ -1177,50 +913,6 @@
         "credibility_score": 85,
         "citations": [
           "https://www.hrw.org/news/2026/04/09/israeli-pressure-silences-a-key-group-defending-palestinian-children"
-        ]
-      }
-    },
-    {
-      "id": "70299734-da80-4978-b061-c91ebd804c94",
-      "url": "https://libertas.fgu.tech/posts/citizen-lab-submits-digital-transnational-repression-framewo",
-      "title": "Citizen Lab Submits Digital Transnational Repression Framework to UN",
-      "summary": "Citizen Lab submitted recommendations to the UN on digital transnational repression - governments using digital tools to surveil and silence human rights defenders across borders.",
-      "content_text": "Citizen Lab submitted formal input to UN High Commissioner on Human Rights on digital transnational repression\n• Digital transnational repression defined as governments using digital tools to surveil, intimidate, and silence diaspora activists\n• Submission calls for UN to identify, document, and characterize these acts as human rights violations\n• Recommendations target three actors: UN bodies, host countries, and technology companies\n• Built on extensive Citizen Lab research documenting repression methods and victim impacts\n• Aims to establish formal UN framework for addressing cross-border digital surveillance\n• Could influence international policy on state surveillance of diaspora communities",
-      "date_published": "2026-03-27T10:03:43.708Z",
-      "date_modified": "2026-03-27T10:03:43.781Z",
-      "tags": [
-        "surveillance",
-        "privacy",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 85,
-        "credibility_score": 95,
-        "citations": [
-          "https://citizenlab.ca/submission-to-the-ohchr-on-protecting-human-rights-defenders-in-the-digital-age/",
-          "https://citizenlab.ca/italian-prosecutors-confirm-journalist-was-hacked-with-paragon-spyware/"
-        ]
-      }
-    },
-    {
-      "id": "72166fd1-8237-4934-91f7-93f85f8fb4cd",
-      "url": "https://libertas.fgu.tech/posts/japan-s-team-mirai-uses-open-source-ai-tools-to-reshape-demo",
-      "title": "Japan's Team Mirai Uses Open-Source AI Tools to Reshape Democratic Participation",
-      "summary": "Japan's Team Mirai party won 11 seats using open-source AI tools for direct voter engagement, policy formation, and transparency - demonstrating scalable digital democracy infrastructure.",
-      "content_text": "Team Mirai won nearly 4 million votes and 11 seats in Japan's House of Representatives using AI-driven voter engagement\n• Party's AI Interviewer facilitated 8,000+ hours of direct voter policy input since 2025\n• Action Board app captured 100,000 organizer actions daily during election runup\n• All software tools (Gikai assembly app, Mirumae transparency tool) are open-source and freely available\n• Party formed policy platform from 38,000+ online questions and 6,000+ policy suggestions via AI Policy app\n• Secured agreement with Japan's ruling LDP party to adopt Team Mirai's transparency tools\n• Founded by software engineer Takahiro Anno, party positions itself as 'utility infrastructure' for democracy\n• Demonstrates technology enhancing rather than undermining democratic processes through direct participation",
-      "date_published": "2026-03-27T10:03:20.366Z",
-      "date_modified": "2026-03-27T10:03:20.433Z",
-      "tags": [
-        "sovereignty",
-        "censorship-resistance",
-        "privacy",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 75,
-        "credibility_score": 85,
-        "citations": [
-          "https://www.schneier.com/blog/archives/2026/03/team-mirai-and-democracy.html"
         ]
       }
     },
@@ -1353,29 +1045,6 @@
       }
     },
     {
-      "id": "82d4a1c9-edaa-4f30-9d57-5cc42c6b6772",
-      "url": "https://libertas.fgu.tech/posts/nyc-ends-4m-palantir-hospital-contract-after-activist-pressu",
-      "title": "NYC Ends $4M Palantir Hospital Contract After Activist Pressure",
-      "summary": "New York City's public hospital system will not renew its $4 million Palantir contract in October after sustained activist pressure against the surveillance company's presence in healthcare.",
-      "content_text": "NYC Health + Hospitals paid Palantir ~$4 million since 2023 for data analysis services including automated scanning of patient health notes\n• Contract enabled Palantir to help with Medicaid billing efficiency through patient data analysis\n• Activists protested the deal citing Palantir's role in lethal airstrikes, mass surveillance, and ICE deportation raids\n• CEO Mitchell Katz announced at March 16 city council meeting that contract expires in October and won't be renewed\n• Hospital system claims 'absolute firewall' prevented patient data sharing with Palantir's government clients like ICE\n• Data analysis functions will be brought in-house after contract expiration\n• American Friends Service Committee led campaign that successfully pressured the hospital system\n• Activists vow to continue targeting Palantir contracts with other institutions globally",
-      "date_published": "2026-03-27T10:06:20.742Z",
-      "date_modified": "2026-03-27T10:06:20.860Z",
-      "tags": [
-        "privacy",
-        "surveillance",
-        "activism",
-        "sovereignty"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 85,
-        "credibility_score": 88,
-        "citations": [
-          "https://theintercept.com/2026/03/24/palantir-new-york-city-hospitals-contract/",
-          "https://theintercept.com/2026/03/25/ice-airports-phone-security-privacy-safety/"
-        ]
-      }
-    },
-    {
       "id": "887e383d-cb67-4501-be69-66f9db872840",
       "url": "https://libertas.fgu.tech/posts/unverified-iran-allegedly-using-bitcoin-for-strait-of-hormuz",
       "title": "Unverified: Iran Allegedly Using Bitcoin for Strait of Hormuz Transit Fees",
@@ -1441,28 +1110,6 @@
       }
     },
     {
-      "id": "8c882462-27fe-4a1c-9861-0cdaf6b6d106",
-      "url": "https://libertas.fgu.tech/posts/eff-s-2026-foilies-expose-government-transparency-failures",
-      "title": "EFF's 2026 Foilies Expose Government Transparency Failures",
-      "summary": "EFF and MuckRock's annual \"Foilies\" highlight worst government transparency violations, including Texas hiding Abbott-Musk communications and DHS abandoning text message archiving.",
-      "content_text": "EFF and MuckRock released 2026 Foilies recognizing worst government transparency failures during Sunshine Week\n• Texas Gov. Greg Abbott's office released 1,400 pages of Abbott-Musk communications with 1,200 pages fully redacted\n• Department of Homeland Security stopped automatically archiving official text messages, now relies on manual screenshots\n• Vancouver, B.C. imposed $10 CAD fee for non-personal public records requests despite tax funding\n• FCC delayed student FOIA requests for 7+ months after previously responding within days/weeks\n• Awards highlight systematic erosion of transparency rights across multiple jurisdictions\n• Positive example: Northern Nevada Public Health delivers restaurant inspection records within 20 minutes\n• Federal Records Act requires agencies to retain all official communications, making DHS policy potentially illegal",
-      "date_published": "2026-03-27T10:01:00.831Z",
-      "date_modified": "2026-03-27T10:01:00.882Z",
-      "tags": [
-        "surveillance",
-        "privacy",
-        "censorship-resistance",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 75,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/03/foilies-2026"
-        ]
-      }
-    },
-    {
       "id": "90c38308-f7d6-400c-8c2f-8143c10c25ec",
       "url": "https://libertas.fgu.tech/posts/2025-broke-records-313-internet-shutdowns-across-52-countrie",
       "title": "2025 Broke Records: 313 Internet Shutdowns Across 52 Countries, Zero Days Without Blackouts",
@@ -1502,28 +1149,6 @@
         "credibility_score": 88,
         "citations": [
           "https://www.eff.org/deeplinks/2026/04/tech-nonprofits-feds-dont-weaponize-procurement-undermine-ai-trust-and-safety"
-        ]
-      }
-    },
-    {
-      "id": "937af238-ea94-40a7-bdd6-05f9ee2806cd",
-      "url": "https://libertas.fgu.tech/posts/major-publishers-block-internet-archive-over-ai-concerns-thr",
-      "title": "Major Publishers Block Internet Archive Over AI Concerns, Threatening Historical Web Record",
-      "summary": "The New York Times and other publishers are blocking Internet Archive crawlers due to AI scraping fears, potentially erasing decades of preserved web history that researchers and journalists depend on.",
-      "content_text": "New York Times began blocking Internet Archive crawlers using technical measures beyond robots.txt\n• The Guardian and other major publishers reportedly following similar blocking practices\n• Publishers cite concerns about AI companies scraping news content as primary motivation\n• Internet Archive preserves over 1 trillion web pages used daily by journalists, researchers, and courts\n• Wikipedia alone links to 2.6 million news articles preserved at the Archive across 249 languages\n• EFF argues archiving qualifies as fair use, similar to search engine protections\n• Blocking threatens historical record that often shows original versions of edited or removed articles\n• Risk of irreversible loss of three decades of preserved web content",
-      "date_published": "2026-03-27T10:01:00.831Z",
-      "date_modified": "2026-03-27T10:01:00.882Z",
-      "tags": [
-        "censorship-resistance",
-        "privacy",
-        "surveillance",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 88,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/03/blocking-internet-archive-wont-stop-ai-it-will-erase-webs-historical-record"
         ]
       }
     },
@@ -1744,26 +1369,6 @@
       }
     },
     {
-      "id": "ab5a64d7-34ac-44fa-86d8-8b8affbf1640",
-      "url": "https://libertas.fgu.tech/posts/sen-wyden-warns-of-classified-section-702-surveillance-abuse",
-      "title": "Sen. Wyden Warns of Classified Section 702 Surveillance Abuse",
-      "summary": "Sen. Ron Wyden revealed existence of classified Section 702 surveillance abuse that affects Americans' privacy rights, warning Congress is debating reauthorization without full information.",
-      "content_text": "Sen. Wyden disclosed existence of classified Section 702 surveillance abuse during Senate floor speech\n• Abuse 'directly affects the privacy rights of Americans' according to Wyden\n• Multiple administrations have refused declassification requests for years\n• Wyden warns Congress is debating Section 702 reauthorization 'with insufficient information'\n• Speech delivered during protest of Joshua Rudd's NSA nomination over constitutional concerns\n• Wyden predicts Americans will be 'stunned' when abuse is eventually declassified\n• Section 702 reauthorization deadline approaching, creating legislative pressure point",
-      "date_published": "2026-03-27T10:03:20.366Z",
-      "date_modified": "2026-03-27T10:03:20.433Z",
-      "tags": [
-        "surveillance",
-        "privacy"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.schneier.com/blog/archives/2026/03/sen-wyden-warns-of-another-section-702-abuse.html"
-        ]
-      }
-    },
-    {
       "id": "aba61531-1de3-42b6-9458-851d7d9cbbf0",
       "url": "https://libertas.fgu.tech/posts/us-media-consolidation-creates-centralized-censorship-infras",
       "title": "US Media Consolidation Creates Centralized Censorship Infrastructure",
@@ -1939,69 +1544,6 @@
       }
     },
     {
-      "id": "c0d1cdfb-c518-4a1c-b5f8-aafc54ef5b59",
-      "url": "https://libertas.fgu.tech/posts/iran-targets-amazon-data-centers-in-first-military-strike-on",
-      "title": "Iran Targets Amazon Data Centers in First Military Strike on Commercial Cloud Infrastructure",
-      "summary": "Iran's Revolutionary Guard struck Amazon data centers in UAE and Bahrain, marking first military attack on commercial cloud infrastructure due to its dual military-civilian use supporting Pentagon operations.",
-      "content_text": "Islamic Revolutionary Guard Corps launched drone strikes on Amazon data centers in UAE and Bahrain during U.S.-Israeli conflict\n• First documented military attack specifically targeting private sector data centers in warfare\n• Iran cited these facilities' role in 'supporting enemy military and intelligence activities' as justification\n• Amazon, Google, Microsoft provide cloud services to Pentagon through programs like Joint Warfighter Cloud Capability\n• Legal experts say dual-use cloud infrastructure becomes legitimate military target when supporting warfare\n• Iranian media listed dozens of regional facilities including Google and Microsoft as 'Enemy Technology Infrastructure'\n• Attacks caused structural damage, power disruption, and regional service outages across Middle East\n• Blurred civilian-military boundaries in cloud computing complicate international law and targeting decisions\n• Pentagon's AI integration under Defense Secretary Pete Hegseth expands potential military targets across U.S.\n• Commercial cloud providers often cannot distinguish between civilian and military data processing",
-      "date_published": "2026-03-27T10:06:20.743Z",
-      "date_modified": "2026-03-27T10:06:20.860Z",
-      "tags": [
-        "surveillance",
-        "privacy",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 85,
-        "citations": [
-          "https://theintercept.com/2026/03/20/ai-data-centers-military-targets-iran-war/",
-          "https://theintercept.com/2026/03/24/palantir-new-york-city-hospitals-contract/"
-        ]
-      }
-    },
-    {
-      "id": "c0d27753-b02a-496d-94f2-3f86f9753fd2",
-      "url": "https://libertas.fgu.tech/posts/eff-sues-medicare-for-records-on-ai-system-evaluating-patien",
-      "title": "EFF Sues Medicare for Records on AI System Evaluating Patient Care Requests",
-      "summary": "EFF filed FOIA lawsuit against CMS seeking transparency on WISeR program that uses AI to evaluate Medicare prior authorizations, affecting 6.4M seniors with potential bias and denial risks.",
-      "content_text": "EFF filed FOIA lawsuit against Centers for Medicare & Medicaid Services over WISeR AI program\n• WISeR uses AI algorithms to assess prior authorization requests for Medicare beneficiaries\n• Program launched in January 2025 in six states, potentially affecting 6.4 million seniors\n• Vendors compensated up to 20% of savings from denied healthcare services, creating perverse incentives\n• No public information about AI training data, bias testing, or algorithmic safeguards\n• Healthcare providers report delays in care approval and administrative strain since launch\n• CMS has not responded to EFF's earlier FOIA request for vendor agreements and testing records\n• Lawsuit seeks immediate processing of records about accuracy tests, bias audits, and vendor oversight",
-      "date_published": "2026-03-27T10:01:00.829Z",
-      "date_modified": "2026-03-27T10:01:00.882Z",
-      "tags": [
-        "privacy",
-        "surveillance",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 72,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/press/releases/eff-sues-answers-about-medicares-ai-experiment"
-        ]
-      }
-    },
-    {
-      "id": "c146a1e3-3438-4859-ad74-7ea0aaf4f727",
-      "url": "https://libertas.fgu.tech/posts/eff-warns-of-privacy-risks-in-meta-s-smart-glasses-surge",
-      "title": "EFF Warns of Privacy Risks in Meta's Smart Glasses Surge",
-      "summary": "EFF highlights serious privacy concerns as Meta's Ray-Ban smart glasses go mainstream, including human review of footage and covert recording capabilities that threaten bystander privacy.",
-      "content_text": "Meta's Ray-Ban smart glasses have moved from niche to mainstream adoption\n• Footage automatically uploads to Meta AI app and undergoes human review for AI training\n• Swedish investigation found Meta contractors reviewing sensitive footage including nudity\n• Glasses designed to be indistinguishable from regular eyewear, making covert recording easy\n• Small recording indicator light can be disabled with cheap modifications\n• Constant recording creates new privacy risks like capturing passwords and bank details\n• Google partnering with Warby Parker, Apple rumored to enter market\n• Bystanders have limited recourse when recorded without consent",
-      "date_published": "2026-03-27T10:01:00.831Z",
-      "date_modified": "2026-03-27T10:01:00.882Z",
-      "tags": [
-        "privacy",
-        "surveillance"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 75,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/03/think-twice-buying-or-using-metas-ray-bans"
-        ]
-      }
-    },
-    {
       "id": "c1977ecd-4e52-4a9b-b32d-a3d2ed458117",
       "url": "https://libertas.fgu.tech/posts/russians-navigate-state-censorship-vs-security-trade-offs-du",
       "title": "Russians Navigate State Censorship vs Security Trade-offs During Internet Restrictions",
@@ -2133,28 +1675,6 @@
       }
     },
     {
-      "id": "d1cf3154-974b-4501-b999-68507a6327c8",
-      "url": "https://libertas.fgu.tech/posts/court-blocks-pentagon-retaliation-against-ai-company-refusin",
-      "title": "Court Blocks Pentagon Retaliation Against AI Company Refusing Surveillance Role",
-      "summary": "Federal court granted preliminary injunction protecting Anthropic from Pentagon retaliation after company refused to remove AI guardrails for government surveillance operations.",
-      "content_text": "Northern District of California ruled Pentagon's 'supply chain risk' designation of Anthropic was First Amendment retaliation\n• Anthropic refused Pentagon request to modify AI systems by removing surveillance guardrails\n• Court found government actions were punitive rather than legitimate national security measures\n• Pentagon reportedly wanted AI capabilities to analyze vast personal data troves including location, social media, and browsing data\n• EFF and civil liberties groups filed amicus brief supporting Anthropic's constitutional challenge\n• Case establishes precedent that companies cannot be compelled to rewrite code for government surveillance\n• Highlights AI's capability to deanonymize speech and construct comprehensive personal profiles from aggregated data\n• Decision reinforces that private sector guardrails are necessary absent congressional privacy protections",
-      "date_published": "2026-03-27T10:01:00.831Z",
-      "date_modified": "2026-03-27T10:01:00.882Z",
-      "tags": [
-        "surveillance",
-        "privacy",
-        "censorship-resistance",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 85,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/03/government-must-not-force-companies-participate-ai-powered-surveillance"
-        ]
-      }
-    },
-    {
       "id": "d4c342fd-dd93-4f46-9dcd-c9d8333374da",
       "url": "https://libertas.fgu.tech/posts/ugandan-journalist-disappeared-after-discussing-censorship-l",
       "title": "Ugandan Journalist Disappeared After Discussing Censorship Law Ruling",
@@ -2261,27 +1781,6 @@
         "citations": [
           "https://restofworld.org/2026/mexico-seguritech-government-surveillance-profile/?utm_source=rss&utm_medium=rss&utm_campaign=feeds",
           "https://restofworld.org/2026/mexico-seguritech-government-surveillance-profile/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=feeds"
-        ]
-      }
-    },
-    {
-      "id": "db5bbf5e-be59-404f-85af-b4e49e04b45e",
-      "url": "https://libertas.fgu.tech/posts/eff-warns-of-privacy-risks-in-mainstream-smartglasses-adopti",
-      "title": "EFF Warns of Privacy Risks in Mainstream Smartglasses Adoption",
-      "summary": "EFF highlights privacy concerns with Meta Ray-Bans and other mainstream smartglasses, warning that third parties may access recorded content beyond just device owners.",
-      "content_text": "Smartglasses with embedded cameras and microphones have reached mainstream adoption\n• EFF warns that Meta Ray-Bans raise significant privacy concerns for users and bystanders\n• Third parties can potentially access recorded content, not just device owners\n• EFF recommends users 'think twice' before purchasing or using Meta's Ray-Bans\n• Privacy implications extend beyond individual users to broader surveillance concerns\n• EFF covering this in newsletter alongside Internet Archive blocking and new leadership\n• Represents shift toward ubiquitous recording devices in public spaces",
-      "date_published": "2026-03-27T10:01:00.829Z",
-      "date_modified": "2026-03-27T10:01:00.882Z",
-      "tags": [
-        "privacy",
-        "surveillance",
-        "identity"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 75,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/03/whos-really-watching-what-smartglasses-see-effector-385"
         ]
       }
     },
@@ -2443,27 +1942,6 @@
       }
     },
     {
-      "id": "f0321d11-5d4a-475b-8abd-b5bd9afeedaf",
-      "url": "https://libertas.fgu.tech/posts/nicole-ozer-named-new-eff-executive-director-bringing-anti-s",
-      "title": "Nicole Ozer Named New EFF Executive Director, Bringing Anti-Surveillance Expertise",
-      "summary": "Nicole Ozer, architect of California's strongest electronic surveillance laws, will lead EFF starting June 1, succeeding Cindy Cohn after 25+ years with the organization.",
-      "content_text": "Nicole Ozer appointed as EFF's new executive director effective June 1, 2025\n• Succeeds Cindy Cohn, who led EFF for nearly a decade and worked there 25+ years\n• Ozer previously founding director of ACLU Northern California's Technology and Civil Liberties Program (2004-2025)\n• Led passage of California Electronic Communications Privacy Act - nation's strongest warrant requirement for electronic data\n• Created model surveillance oversight law adopted in 25+ jurisdictions protecting 17+ million people\n• Developed campaigns against social media surveillance and facial recognition at major tech companies\n• Brings two decades of litigation experience including Supreme Court cases\n• Transition comes as EFF celebrates 35th anniversary and faces 'critical times' for digital rights",
-      "date_published": "2026-03-27T10:01:00.830Z",
-      "date_modified": "2026-03-27T10:01:00.882Z",
-      "tags": [
-        "privacy",
-        "surveillance",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 75,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/press/releases/nicole-ozer-named-electronic-frontier-foundations-executive-director"
-        ]
-      }
-    },
-    {
       "id": "f54975d4-b676-4003-b75a-821e99e640a9",
       "url": "https://libertas.fgu.tech/posts/durov-thousands-of-developers-building-vpns-to-counter-state",
       "title": "Durov: Thousands of Developers Building VPNs to Counter State Internet Control",
@@ -2589,6 +2067,28 @@
         "credibility_score": 95,
         "citations": [
           "https://www.eff.org/deeplinks/2026/04/faas-temporary-flight-restriction-drones-blatant-attempt-criminalize-filming-ice"
+        ]
+      }
+    },
+    {
+      "id": "fed2788f-5bda-470a-aee1-97c7516a2792",
+      "url": "https://libertas.fgu.tech/posts/ai-tool-grok-amplifies-online-violence-against-nigerian-wome",
+      "title": "AI Tool Grok Amplifies Online Violence Against Nigerian Women",
+      "summary": "X's AI assistant Grok is being weaponized to generate non-consensual sexualized images, systematizing online abuse that already disproportionately targets Nigerian women with weak regulatory oversight.",
+      "content_text": "Grok AI tool integrated into X platform being used to create non-consensual sexualized images of women and minors\n• 58% of online abuse cases in Nigeria target women, with X being primary platform (34% of cases) [Gatefield 2024 report]\n• Only 24% of Nigerians find X responsive to complaints about online harm\n• 45% of Nigerian women have experienced cyberstalking according to ActionAid Nigeria\n• Gatefield projects 70 million Nigerian women could face AI-facilitated abuse annually by 2030\n• X's monetization system allows perpetrators to earn money from viral abusive content\n• Nigeria's fragmented AI regulatory environment creates enforcement gaps across multiple agencies\n• Tool transforms existing human-driven harassment into systematized, scalable abuse",
+      "date_published": "2026-04-10T15:03:41.127Z",
+      "date_modified": "2026-04-10T15:03:41.249Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "censorship-resistance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 80,
+        "citations": [
+          "https://globalvoices.org/2026/04/10/when-technology-fails-women-online-abuse-and-nigerias-digital-weak-points/"
         ]
       }
     }
