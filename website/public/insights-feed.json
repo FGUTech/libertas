@@ -226,6 +226,29 @@
       }
     },
     {
+      "id": "0f64d8bb-0fdf-499b-89de-df34669643cb",
+      "url": "https://libertas.fgu.tech/posts/reddit-subpoenaed-by-grand-jury-to-unmask-anonymous-anti-ice",
+      "title": "Reddit Subpoenaed by Grand Jury to Unmask Anonymous Anti-ICE User",
+      "summary": "Federal prosecutors are using a grand jury to force Reddit to reveal personal data of an anonymous user who criticized Trump's immigration crackdown, marking dangerous escalation in government attacks on anonymous speech.",
+      "content_text": "Reddit ordered to appear before D.C. grand jury by April 14 to provide user data on anonymous anti-ICE critic\n• Escalation from failed administrative subpoena in Northern California federal court\n• User's posts included biographical details about ICE officer who killed civilian, anti-ICE protest suggestions\n• ICE cited 1930 Smoot-Hawley Tariff Act as basis despite user having no import/trade activities\n• EFF warns grand jury proceedings offer weakest free speech protections, signal potential major criminal case\n• Part of broader Trump administration campaign targeting anonymous accounts critical of immigration enforcement\n• Reddit reports highest-ever volume of government data requests (1,179) in first half of 2025\n• Civil Liberties Defense Center representing user, arguing First Amendment protections",
+      "date_published": "2026-04-10T09:02:43.514Z",
+      "date_modified": "2026-04-10T09:02:43.662Z",
+      "tags": [
+        "censorship-resistance",
+        "privacy",
+        "surveillance",
+        "activism",
+        "identity"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 88,
+        "credibility_score": 85,
+        "citations": [
+          "https://theintercept.com/2026/04/10/reddit-ice-protest-grand-jury/"
+        ]
+      }
+    },
+    {
       "id": "0f6feaaf-1ec1-4fcd-8b71-2e9c1845d73e",
       "url": "https://libertas.fgu.tech/posts/ugandan-journalist-disappeared-after-discussing-struck-down-",
       "title": "Ugandan Journalist Disappeared After Discussing Struck-Down Surveillance Laws",
@@ -1591,6 +1614,27 @@
       }
     },
     {
+      "id": "9bebfafa-8b53-44b2-953f-06922f416533",
+      "url": "https://libertas.fgu.tech/posts/georgia-deports-azerbaijani-journalist-despite-eu-court-orde",
+      "title": "Georgia Deports Azerbaijani Journalist Despite EU Court Order, Exposes Cross-Border Collusion",
+      "summary": "Georgian authorities forcibly deported exiled Azerbaijani journalist Afgan Sadigov in defiance of European Court interim protections, using fabricated charges to circumvent extradition restrictions.",
+      "content_text": "Georgia deported Azel.tv editor Afgan Sadigov to Azerbaijan despite European Court of Human Rights interim measure prohibiting transfer\n• Sadigov faces persecution for reporting on government corruption; previously sentenced to 7 years on dubious extortion charges\n• Georgian court convicted him at 4am on social media 'insult' charges, ordered immediate expulsion with 3-year entry ban\n• Azerbaijani authorities strategically dropped criminal charges, then Georgia used administrative pretext to bypass extradition protections\n• Pattern suggests coordinated effort between governments to circumvent international human rights obligations\n• Demonstrates vulnerability of journalists relying on traditional asylum processes against state-level cooperation\n• Case exposes how administrative charges can be weaponized to bypass judicial protections for press freedom",
+      "date_published": "2026-04-10T09:01:57.186Z",
+      "date_modified": "2026-04-10T09:01:57.284Z",
+      "tags": [
+        "censorship-resistance",
+        "activism",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.hrw.org/news/2026/04/10/georgia-deported-azerbaijani-journalist-at-risk"
+        ]
+      }
+    },
+    {
       "id": "a2cd7f2b-a2bf-4e23-b4e1-ab412638cc84",
       "url": "https://libertas.fgu.tech/posts/hungary-files-espionage-charges-against-journalist-who-expos",
       "title": "Hungary Files Espionage Charges Against Journalist Who Exposed Russian Influence Operations",
@@ -2373,6 +2417,28 @@
         "credibility_score": 95,
         "citations": [
           "https://www.eff.org/deeplinks/2026/04/tech-nonprofits-feds-dont-weaponize-procurement-undermine-ai-trust-and-safety"
+        ]
+      }
+    },
+    {
+      "id": "efa20d1b-835f-4d4d-b85f-f94337171047",
+      "url": "https://libertas.fgu.tech/posts/belarus-adopts-vague-propaganda-ban-expanding-censorship-pow",
+      "title": "Belarus Adopts Vague 'Propaganda' Ban Expanding Censorship Powers",
+      "summary": "Belarus parliament passed sweeping law banning 'propaganda' of LGBT relationships and childlessness with deliberately vague definitions, mirroring Russia's playbook for suppressing dissent and controlling discourse.",
+      "content_text": "Belarus parliament adopted law on April 2 banning 'propaganda' of same-sex relationships, gender reassignment, and childlessness\n• 'Propaganda' vaguely defined as disseminating 'appealing' information 'intended to influence citizens' perceptions'\n• Penalties include fines up to $310 for individuals, $2,320 for organizations, plus community service and detention for content accessible to minors\n• Law intentionally conflates LGBT content with pedophilia to stigmatize and enable broader suppression\n• Builds on 2024 measures classifying LGBT depictions as 'pornography' and banning related advertising\n• Mirrors Russia's 'LGBT extremism' laws that enabled arrests, fines, and civil society organization closures\n• Vague definitions give authorities sweeping discretion to silence journalists, educators, health professionals, and activists\n• Represents broader assault on independent thought and civil society under guise of 'traditional values'",
+      "date_published": "2026-04-10T09:01:57.186Z",
+      "date_modified": "2026-04-10T09:01:57.284Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.hrw.org/news/2026/04/10/belarus-imports-russias-propaganda-playbook"
         ]
       }
     },

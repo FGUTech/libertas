@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 10 Apr 2026 03:02:14 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 10 Apr 2026 09:02:43 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -115,6 +115,18 @@
     <category>censorship-resistance</category>
     <category>surveillance</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Reddit Subpoenaed by Grand Jury to Unmask Anonymous Anti-ICE User</title>
+    <link>https://libertas.fgu.tech/posts/reddit-subpoenaed-by-grand-jury-to-unmask-anonymous-anti-ice</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/reddit-subpoenaed-by-grand-jury-to-unmask-anonymous-anti-ice</guid>
+    <pubDate>Fri, 10 Apr 2026 09:02:43 GMT</pubDate>
+    <description>Federal prosecutors are using a grand jury to force Reddit to reveal personal data of an anonymous user who criticized Trump&apos;s immigration crackdown, marking dangerous escalation in government attacks on anonymous speech.</description>
+    <category>censorship-resistance</category>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>identity</category>
   </item>
   <item>
     <title>Ugandan Journalist Disappeared After Discussing Struck-Down Surveillance Laws</title>
@@ -778,6 +790,16 @@
     <category>sovereignty</category>
   </item>
   <item>
+    <title>Georgia Deports Azerbaijani Journalist Despite EU Court Order, Exposes Cross-Border Collusion</title>
+    <link>https://libertas.fgu.tech/posts/georgia-deports-azerbaijani-journalist-despite-eu-court-orde</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/georgia-deports-azerbaijani-journalist-despite-eu-court-orde</guid>
+    <pubDate>Fri, 10 Apr 2026 09:01:57 GMT</pubDate>
+    <description>Georgian authorities forcibly deported exiled Azerbaijani journalist Afgan Sadigov in defiance of European Court interim protections, using fabricated charges to circumvent extradition restrictions.</description>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>surveillance</category>
+  </item>
+  <item>
     <title>Hungary Files Espionage Charges Against Journalist Who Exposed Russian Influence Operations</title>
     <link>https://libertas.fgu.tech/posts/hungary-files-espionage-charges-against-journalist-who-expos</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/hungary-files-espionage-charges-against-journalist-who-expos</guid>
@@ -1160,6 +1182,17 @@
     <category>privacy</category>
     <category>censorship-resistance</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Belarus Adopts Vague &apos;Propaganda&apos; Ban Expanding Censorship Powers</title>
+    <link>https://libertas.fgu.tech/posts/belarus-adopts-vague-propaganda-ban-expanding-censorship-pow</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/belarus-adopts-vague-propaganda-ban-expanding-censorship-pow</guid>
+    <pubDate>Fri, 10 Apr 2026 09:01:57 GMT</pubDate>
+    <description>Belarus parliament passed sweeping law banning &apos;propaganda&apos; of LGBT relationships and childlessness with deliberately vague definitions, mirroring Russia&apos;s playbook for suppressing dissent and controlling discourse.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>sovereignty</category>
   </item>
   <item>
     <title>Nicole Ozer Named New EFF Executive Director, Bringing Anti-Surveillance Expertise</title>
