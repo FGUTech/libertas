@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 10 Apr 2026 21:04:25 GMT</lastBuildDate>
+  <lastBuildDate>Sat, 11 Apr 2026 03:02:12 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -483,6 +483,16 @@
     <category>censorship-resistance</category>
   </item>
   <item>
+    <title>Hong Kong Democracy Activist Koo Sze-yiu Dies After Decades of Resistance</title>
+    <link>https://libertas.fgu.tech/posts/hong-kong-democracy-activist-koo-sze-yiu-dies-after-decades-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/hong-kong-democracy-activist-koo-sze-yiu-dies-after-decades-</guid>
+    <pubDate>Sat, 11 Apr 2026 03:02:12 GMT</pubDate>
+    <description>Veteran Hong Kong activist Koo Sze-yiu, who protested for over 50 years against both British colonial and Chinese Communist rule, died after continuing resistance despite terminal cancer and Beijing&apos;s National Security Law.</description>
+    <category>activism</category>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+  </item>
+  <item>
     <title>Ugandan Journalist Disappeared After Discussing Struck-Down Digital Censorship Laws</title>
     <link>https://libertas.fgu.tech/posts/ugandan-journalist-disappeared-after-discussing-struck-down-</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/ugandan-journalist-disappeared-after-discussing-struck-down-</guid>
@@ -492,6 +502,16 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>comms</category>
+  </item>
+  <item>
+    <title>Galaxy Monitors Bitcoin Network for Iran Oil Tanker Payment Signs</title>
+    <link>https://libertas.fgu.tech/posts/galaxy-monitors-bitcoin-network-for-iran-oil-tanker-payment-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/galaxy-monitors-bitcoin-network-for-iran-oil-tanker-payment-</guid>
+    <pubDate>Sat, 11 Apr 2026 03:01:13 GMT</pubDate>
+    <description>Galaxy executive Alex Thorn says firm is watching Bitcoin blockchain for evidence of oil tanker fees paid in BTC, potentially indicating sanctions evasion.</description>
+    <category>bitcoin</category>
+    <category>payments</category>
+    <category>censorship-resistance</category>
   </item>
   <item>
     <title>Proton Meet Launches with MLS Encryption to Counter AI Video Surveillance</title>
@@ -605,17 +625,6 @@
     <category>censorship-resistance</category>
     <category>surveillance</category>
     <category>privacy</category>
-    <category>sovereignty</category>
-  </item>
-  <item>
-    <title>EFF Urges Supreme Court to Hold Cisco Liable for Torture-Enabling Surveillance System</title>
-    <link>https://libertas.fgu.tech/posts/eff-urges-supreme-court-to-hold-cisco-liable-for-torture-ena</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-urges-supreme-court-to-hold-cisco-liable-for-torture-ena</guid>
-    <pubDate>Sat, 28 Mar 2026 03:01:30 GMT</pubDate>
-    <description>EFF filed Supreme Court brief arguing Cisco should face liability for custom-building China&apos;s &apos;Golden Shield&apos; surveillance system used to persecute, torture Falun Gong practitioners.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
-    <category>activism</category>
     <category>sovereignty</category>
   </item>
   <item>

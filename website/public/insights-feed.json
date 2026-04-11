@@ -980,6 +980,27 @@
       }
     },
     {
+      "id": "74d92f22-1ac7-47b2-92b3-44242cfa1d71",
+      "url": "https://libertas.fgu.tech/posts/hong-kong-democracy-activist-koo-sze-yiu-dies-after-decades-",
+      "title": "Hong Kong Democracy Activist Koo Sze-yiu Dies After Decades of Resistance",
+      "summary": "Veteran Hong Kong activist Koo Sze-yiu, who protested for over 50 years against both British colonial and Chinese Communist rule, died after continuing resistance despite terminal cancer and Beijing's National Security Law.",
+      "content_text": "Koo Sze-yiu was a founding member of League of Social Democrats, active in Hong Kong protests since the 1960s\n• Known for carrying coffins as protest props to commemorate Tiananmen Massacre victims and shame Chinese government\n• Convicted over 13 times and imprisoned 10 times for activism spanning decades\n• Continued protesting after Beijing imposed National Security Law in 2020 making dissent punishable by life imprisonment\n• Last arrested in December 2023 for 'attempted sedition' after planning to protest Hong Kong elections\n• Maintained activism despite terminal cancer diagnosis in 2020 until his death\n• His persistence demonstrates individual resistance tactics under extreme state repression\n• Case illustrates the personal costs of sustained civil disobedience in authoritarian contexts",
+      "date_published": "2026-04-11T03:02:12.018Z",
+      "date_modified": "2026-04-11T03:02:12.163Z",
+      "tags": [
+        "activism",
+        "censorship-resistance",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.hrw.org/news/2026/04/10/remembering-a-steadfast-hong-kong-democracy-activist"
+        ]
+      }
+    },
+    {
       "id": "750318a0-c004-4cc1-afa1-7e3a0686b957",
       "url": "https://libertas.fgu.tech/posts/ugandan-journalist-disappeared-after-discussing-struck-down-",
       "title": "Ugandan Journalist Disappeared After Discussing Struck-Down Digital Censorship Laws",
@@ -999,6 +1020,27 @@
         "citations": [
           "https://cpj.org/2026/03/ugandan-journalist-missing-forced-into-van-after-radio-show/",
           "https://cpj.org/2026/04/m23-rebels-detain-drc-journalist-espoir-mbata-over-whatsapp-post/"
+        ]
+      }
+    },
+    {
+      "id": "753c4eda-1131-4b3d-b9d2-b7c3753bf108",
+      "url": "https://libertas.fgu.tech/posts/galaxy-monitors-bitcoin-network-for-iran-oil-tanker-payment-",
+      "title": "Galaxy Monitors Bitcoin Network for Iran Oil Tanker Payment Signs",
+      "summary": "Galaxy executive Alex Thorn says firm is watching Bitcoin blockchain for evidence of oil tanker fees paid in BTC, potentially indicating sanctions evasion.",
+      "content_text": "Galaxy investment firm monitoring Bitcoin blockchain for oil tanker payment signatures\n• Alex Thorn (Galaxy executive) made statement about tracking onchain activity\n• Potential connection to Iranian oil trade and sanctions circumvention\n• No confirmed transactions reported, only monitoring activity\n• Demonstrates Bitcoin's transparency despite censorship-resistant properties\n• Highlights ongoing cat-and-mouse between surveillance and financial sovereignty\n• Single source claim without verification of actual BTC oil payments",
+      "date_published": "2026-04-11T03:01:13.696Z",
+      "date_modified": "2026-04-11T03:01:13.755Z",
+      "tags": [
+        "bitcoin",
+        "payments",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 60,
+        "citations": [
+          "https://cointelegraph.com/news/bitcoin-community-iran-crypto-toll-oil?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
         ]
       }
     },
@@ -1235,28 +1277,6 @@
         "credibility_score": 92,
         "citations": [
           "https://www.eff.org/deeplinks/2026/04/print-blocking-wont-work-permission-print-part-2"
-        ]
-      }
-    },
-    {
-      "id": "95d87512-5de1-4e91-9f97-ea3d9a63c400",
-      "url": "https://libertas.fgu.tech/posts/eff-urges-supreme-court-to-hold-cisco-liable-for-torture-ena",
-      "title": "EFF Urges Supreme Court to Hold Cisco Liable for Torture-Enabling Surveillance System",
-      "summary": "EFF filed Supreme Court brief arguing Cisco should face liability for custom-building China's 'Golden Shield' surveillance system used to persecute, torture Falun Gong practitioners.",
-      "content_text": "EFF filed amicus brief in Cisco Systems v. Doe I case before U.S. Supreme Court\n• Cisco custom-built 'Golden Shield' surveillance system for Chinese government targeting Falun Gong\n• System enabled tracking, detention, and torture - intercepted communications used during torture sessions\n• 9th Circuit ruled U.S. companies can be liable under Alien Tort Statute for aiding human rights abuses\n• Court held companies need only 'knowledge' not 'purpose' that assistance enables abuse\n• Supreme Court oral arguments scheduled for April 28, 2025\n• Case could set precedent for accountability of surveillance tech companies globally\n• EFF argues this goes beyond general-purpose tech to purposeful persecution assistance",
-      "date_published": "2026-03-28T03:01:30.765Z",
-      "date_modified": "2026-03-28T03:01:30.811Z",
-      "tags": [
-        "surveillance",
-        "privacy",
-        "activism",
-        "sovereignty"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 85,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/press/releases/us-tech-companies-must-be-accountable-us-courts-facilitating-persecution-and-torture"
         ]
       }
     },
