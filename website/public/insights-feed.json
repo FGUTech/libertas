@@ -1410,24 +1410,24 @@
       }
     },
     {
-      "id": "a77a38b9-2798-46ed-a3be-d0690c93eee9",
-      "url": "https://libertas.fgu.tech/posts/afghan-journalist-s-letters-spark-cross-border-solidarity-in",
-      "title": "Afghan Journalist's Letters Spark Cross-Border Solidarity in China Despite Censorship",
-      "summary": "Afghan journalist Khadija Haidary's correspondence about Taliban oppression, translated and shared on Chinese social media, generated grassroots support that helped fund her family's resettlement in Canada.",
-      "content_text": "Afghan journalist Khadija Haidary's email correspondence about life under Taliban was translated by Chinese journalist Weilin Hong in October 2024\n• Letters published on WeChat account 'Positive Links' went viral among Chinese readers despite tight media controls\n• Chinese publisher offered book contract and advance royalties, enabling Haidary's family to resettle from Pakistan to Canada\n• Over 10,000 copies sold by August 2025, with readers promoting book through reviews on Xiaohongshu, Weibo, and other platforms\n• Cross-border solidarity emerged through individual acts rather than organized movement due to China's constrained civil society\n• Chinese readers drew parallels between Afghan women's experiences and their own restrictions on feminist expression\n• Support network utilized multiple platforms (WeChat, Telegram, Douban) to circumvent information controls\n• Demonstrates how personal narratives can bypass official media filters and generate meaningful activism under authoritarian constraints",
-      "date_published": "2026-03-28T09:01:48.649Z",
-      "date_modified": "2026-03-28T09:01:48.808Z",
+      "id": "aa8471b3-2268-4e73-8810-a0f29fa00eec",
+      "url": "https://libertas.fgu.tech/posts/street-artist-mear-one-connects-bitcoin-to-decades-of-anti-s",
+      "title": "Street Artist Mear One Connects Bitcoin to Decades of Anti-System Protest Culture",
+      "summary": "Veteran LA street artist Mear One discusses parallels between Bitcoin's monetary revolution and four decades of anti-war, anti-financial system graffiti activism in interview ahead of Bitcoin 2026.",
+      "content_text": "Mear One pioneered Melrose graffiti movement, has created anti-system street art since 1980s\n• Artist participated in Be the Revolution tour (2004) and Occupy Wall Street protest art\n• Views Bitcoin as continuation of permissionless, anonymous resistance culture from graffiti/punk scenes\n• Connects Bitcoin's Genesis Block bank bailout message to decades of anti-banker war messaging\n• 2008 financial crash shifted his focus to understanding monetary system mechanics\n• Street art served as pre-internet tool for reaching masses with anti-establishment messaging\n• Work being displayed at Bitcoin 2026 Conference as 'Relics of a Revolution' exhibition",
+      "date_published": "2026-04-12T15:00:53.672Z",
+      "date_modified": "2026-04-12T15:00:53.719Z",
       "tags": [
+        "bitcoin",
         "censorship-resistance",
         "activism",
-        "comms",
-        "surveillance"
+        "sovereignty"
       ],
       "_libertas": {
-        "freedom_relevance_score": 75,
+        "freedom_relevance_score": 78,
         "credibility_score": 85,
         "citations": [
-          "https://globalvoices.org/2026/03/28/how-did-an-afghan-woman-journalists-writing-resonate-in-china/"
+          "https://bitcoinmagazine.com/culture/relics-of-a-revolution-part-ii-false-profits-and-freedom"
         ]
       }
     },
@@ -1914,28 +1914,6 @@
           "https://cdt.org/wp-content/uploads/2025/08/2025-08-22-CDT-Research-Brief-on-Age-Verification-1.pdf",
           "https://www.ofcom.org.uk/siteassets/resources/documents/online-safety/research-statistics-and-data/os-standards/online-safety-in-2025-summary-of-the-technology-sectors-response-to-our-rules.pdf",
           "https://pmc.ncbi.nlm.nih.gov/articles/PMC11429505/"
-        ]
-      }
-    },
-    {
-      "id": "ebb01949-3696-4165-849f-ad62ab9e7eb1",
-      "url": "https://libertas.fgu.tech/posts/ice-agents-now-checking-ids-at-tsa-checkpoints-targeting-lat",
-      "title": "ICE Agents Now Checking IDs at TSA Checkpoints, Targeting Latinos",
-      "summary": "Trump deployed ICE agents to TSA checkpoints at US airports, where they're requesting additional ID from Latino passengers, potentially as a 'test run' for expanded surveillance operations.",
-      "content_text": "ICE agents have replaced TSA staff at JFK Airport security checkpoints for ID verification\n• Agents selectively requesting second form of ID from Latino passengers while letting white passengers pass normally\n• Steve Bannon suggested on his podcast this may be a 'test run' ahead of November midterms [The Intercept]\n• TSA agents training ICE personnel on checkpoint procedures while working unpaid [The Intercept]\n• First-hand account documents differential treatment based on apparent ethnicity/surname\n• Pattern suggests normalization strategy for expanded federal agent presence in daily life\n• Deployment represents escalation from immigration enforcement to broader population control",
-      "date_published": "2026-03-28T15:02:00.119Z",
-      "date_modified": "2026-03-28T15:02:00.262Z",
-      "tags": [
-        "surveillance",
-        "activism",
-        "identity",
-        "sovereignty"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 85,
-        "citations": [
-          "https://theintercept.com/2026/03/28/ice-airports-tsa-fear/"
         ]
       }
     },
