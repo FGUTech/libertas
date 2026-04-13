@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Sun, 12 Apr 2026 15:00:53 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 13 Apr 2026 03:01:02 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -595,6 +595,16 @@
     <category>comms</category>
     <category>surveillance</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Bahraini Activist Dies in Custody After Enforced Disappearance, Digital Surveillance Exposed</title>
+    <link>https://libertas.fgu.tech/posts/bahraini-activist-dies-in-custody-after-enforced-disappearan</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/bahraini-activist-dies-in-custody-after-enforced-disappearan</guid>
+    <pubDate>Mon, 13 Apr 2026 03:01:02 GMT</pubDate>
+    <description>Sayed Mohamed Almosawi died in Bahraini custody with torture signs after 9-day enforced disappearance. Authorities accessed his WhatsApp and tracked location data during detention.</description>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>censorship-resistance</category>
   </item>
   <item>
     <title>US Government Proposes Rules Forcing AI Companies to Disable Safety Features</title>

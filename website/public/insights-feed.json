@@ -1217,6 +1217,27 @@
       }
     },
     {
+      "id": "9245c273-5e9a-49d1-8d64-6176d782ef7a",
+      "url": "https://libertas.fgu.tech/posts/bahraini-activist-dies-in-custody-after-enforced-disappearan",
+      "title": "Bahraini Activist Dies in Custody After Enforced Disappearance, Digital Surveillance Exposed",
+      "summary": "Sayed Mohamed Almosawi died in Bahraini custody with torture signs after 9-day enforced disappearance. Authorities accessed his WhatsApp and tracked location data during detention.",
+      "content_text": "Sayed Mohamed Almosawi, 32, forcibly disappeared March 19, 2026, found dead March 27 with torture signs\n• Medical expert confirmed injuries consistent with repeated blunt force trauma and systematic torture\n• Authorities accessed victim's WhatsApp account and location data during disappearance\n• National Intelligence Agency detained him on unsubstantiated espionage charges\n• Family denied custody when contacted, constituting enforced disappearance under international law\n• Part of broader crackdown: 286+ detained since regional war began for social media posts and protests\n• Case demonstrates how digital surveillance enables state repression and enforced disappearance\n• WhatsApp messages marked as read near police station, showing real-time digital access by authorities",
+      "date_published": "2026-04-13T03:01:02.618Z",
+      "date_modified": "2026-04-13T03:01:02.759Z",
+      "tags": [
+        "surveillance",
+        "activism",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 90,
+        "citations": [
+          "https://www.hrw.org/news/2026/04/12/bahrain-sayed-mohamed-almosawi-dies-in-custody"
+        ]
+      }
+    },
+    {
       "id": "92591894-ab39-4f0a-9550-64c7ec8d63dc",
       "url": "https://libertas.fgu.tech/posts/us-government-proposes-rules-forcing-ai-companies-to-disable",
       "title": "US Government Proposes Rules Forcing AI Companies to Disable Safety Features",
