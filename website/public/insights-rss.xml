@@ -5,1067 +5,490 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Mon, 13 Apr 2026 09:00:57 GMT</lastBuildDate>
+  <lastBuildDate>Sat, 02 May 2026 09:08:30 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
-    <title>Age Verification Systems Create Privacy and Surveillance Risks as Regulations Spread</title>
-    <link>https://libertas.fgu.tech/posts/age-verification-systems-create-privacy-and-surveillance-ris</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/age-verification-systems-create-privacy-and-surveillance-ris</guid>
-    <pubDate>Wed, 08 Apr 2026 15:04:11 GMT</pubDate>
-    <description>New age verification laws worldwide are forcing platforms to implement identity-linked systems that threaten anonymous internet access and create surveillance infrastructure.</description>
-    <category>privacy</category>
+    <title>OONI Releases 2025 Year in Review: Major Platform Updates and Censorship Measurement Advances</title>
+    <link>https://libertas.fgu.tech/posts/ooni-releases-2025-year-in-review-major-platform-updates-and</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/ooni-releases-2025-year-in-review-major-platform-updates-and</guid>
+    <pubDate>Sat, 02 May 2026 09:03:42 GMT</pubDate>
+    <description>OONI launched multiplatform mobile apps, thematic censorship pages, and anonymous credential systems in 2025, significantly enhancing global internet censorship measurement capabilities.</description>
+    <category>censorship-resistance</category>
     <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
+  </item>
+  <item>
+    <title>Big Tech&apos;s Data Center &apos;Colonialism&apos; Sparks Community Resistance in Latin America</title>
+    <link>https://libertas.fgu.tech/posts/big-tech-s-data-center-colonialism-sparks-community-resistan</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/big-tech-s-data-center-colonialism-sparks-community-resistan</guid>
+    <pubDate>Sat, 02 May 2026 09:07:59 GMT</pubDate>
+    <description>Major tech companies are rapidly expanding AI data centers across Latin America, creating water shortages and energy price hikes while governments fast-track approvals without community consultation.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>sovereignty</category>
+  </item>
+  <item>
+    <title>EFF Challenges Court Secrecy in Wi-Fi Patent Case Affecting Billions</title>
+    <link>https://libertas.fgu.tech/posts/eff-challenges-court-secrecy-in-wi-fi-patent-case-affecting-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-challenges-court-secrecy-in-wi-fi-patent-case-affecting-</guid>
+    <pubDate>Sat, 02 May 2026 09:00:54 GMT</pubDate>
+    <description>EFF forced disclosure of sealed court filings in Eastern District of Texas patent case involving Wi-Fi 6 technology, exposing widespread over-sealing that hides critical information about standard-essential patents from public view.</description>
+    <category>privacy</category>
+    <category>censorship-resistance</category>
     <category>identity</category>
-    <category>censorship-resistance</category>
-  </item>
-  <item>
-    <title>Access Now: 2025 Saw Record Internet Shutdowns, 30 in 15 African Countries</title>
-    <link>https://libertas.fgu.tech/posts/access-now-2025-saw-record-internet-shutdowns-30-in-15-afric</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/access-now-2025-saw-record-internet-shutdowns-30-in-15-afric</guid>
-    <pubDate>Tue, 31 Mar 2026 09:02:43 GMT</pubDate>
-    <description>Access Now&apos;s #KeepItOn coalition documented 313 internet shutdowns globally in 2025, including 30 shutdowns across 15 African countries, with protests and elections as primary triggers.</description>
-    <category>censorship-resistance</category>
-    <category>comms</category>
-    <category>activism</category>
     <category>surveillance</category>
   </item>
   <item>
-    <title>Ghana&apos;s Anti-LGBTQ+ Bill Threatens Digital Rights and Online Privacy</title>
-    <link>https://libertas.fgu.tech/posts/ghana-s-anti-lgbtq-bill-threatens-digital-rights-and-online-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/ghana-s-anti-lgbtq-bill-threatens-digital-rights-and-online-</guid>
-    <pubDate>Mon, 13 Apr 2026 09:00:57 GMT</pubDate>
-    <description>Ghana&apos;s proposed Human Sexual Rights and Family Values Bill 2025 would force social media censorship, mandate public reporting of suspected LGBTQ+ individuals, and criminalize online advocacy with up to 10 years prison.</description>
+    <title>India Uses Anti-Terror Law to Unmask Anonymous Journalist on X</title>
+    <link>https://libertas.fgu.tech/posts/india-uses-anti-terror-law-to-unmask-anonymous-journalist-on</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/india-uses-anti-terror-law-to-unmask-anonymous-journalist-on</guid>
+    <pubDate>Sat, 02 May 2026 09:05:02 GMT</pubDate>
+    <description>Indian police invoked anti-terrorism legislation to force X to reveal identity data of @TeluguScribe, an anonymous news outlet critical of the Telangana state government.</description>
     <category>censorship-resistance</category>
-    <category>privacy</category>
-    <category>surveillance</category>
     <category>activism</category>
-  </item>
-  <item>
-    <title>Age Verification Laws Fragment Internet Access Across US, UK Implementation Models</title>
-    <link>https://libertas.fgu.tech/posts/age-verification-laws-fragment-internet-access-across-us-uk-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/age-verification-laws-fragment-internet-access-across-us-uk-</guid>
-    <pubDate>Wed, 08 Apr 2026 15:04:11 GMT</pubDate>
-    <description>Age verification laws are creating fragmented internet access as platforms withdraw from states with requirements, while different enforcement models emerge globally with significant privacy implications.</description>
-    <category>privacy</category>
-    <category>censorship-resistance</category>
     <category>surveillance</category>
     <category>sovereignty</category>
   </item>
   <item>
-    <title>EFF: Google &amp; Amazon Ignore Human Rights Risks in Israeli Military AI Contract</title>
-    <link>https://libertas.fgu.tech/posts/eff-google-amazon-ignore-human-rights-risks-in-israeli-milit</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-google-amazon-ignore-human-rights-risks-in-israeli-milit</guid>
-    <pubDate>Thu, 02 Apr 2026 21:00:44 GMT</pubDate>
-    <description>EFF reports Google and Amazon continue Project Nimbus cloud/AI services to Israeli military despite internal warnings and documented human rights risks, while refusing transparency or meaningful action.</description>
+    <title>EFF Sues DHS/ICE Over Admin Subpoenas Targeting Online Critics</title>
+    <link>https://libertas.fgu.tech/posts/eff-sues-dhs-ice-over-admin-subpoenas-targeting-online-criti</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-sues-dhs-ice-over-admin-subpoenas-targeting-online-criti</guid>
+    <pubDate>Sat, 02 May 2026 09:00:54 GMT</pubDate>
+    <description>EFF sued DHS and ICE for using administrative subpoenas to unmask online critics and protest attendees, demanding transparency about these judge-free surveillance tools that target First Amendment activity.</description>
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
   </item>
   <item>
-    <title>EFF Calls for Action Against Clean FISA Section 702 Reauthorization</title>
-    <link>https://libertas.fgu.tech/posts/eff-calls-for-action-against-clean-fisa-section-702-reauthor</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-calls-for-action-against-clean-fisa-section-702-reauthor</guid>
-    <pubDate>Fri, 10 Apr 2026 15:01:20 GMT</pubDate>
-    <description>EFF is mobilizing opposition to a &apos;clean&apos; reauthorization of FISA Section 702, which allows warrantless surveillance of Americans&apos; communications with foreign persons overseas.</description>
+    <title>Palantir&apos;s $130M IRS Contract Enables Mass Financial Surveillance Including Crypto Tracking</title>
+    <link>https://libertas.fgu.tech/posts/palantir-s-130m-irs-contract-enables-mass-financial-surveill</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/palantir-s-130m-irs-contract-enables-mass-financial-surveill</guid>
+    <pubDate>Sat, 02 May 2026 09:07:25 GMT</pubDate>
+    <description>IRS has paid Palantir $130M since 2018 for data mining platform that aggregates federal databases, tracks crypto transactions, and maps social networks for financial investigations under Trump administration direction.</description>
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
   </item>
   <item>
-    <title>Iran Reportedly Accepts Bitcoin for Strait of Hormuz Transit Tolls</title>
-    <link>https://libertas.fgu.tech/posts/iran-reportedly-accepts-bitcoin-for-strait-of-hormuz-transit</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/iran-reportedly-accepts-bitcoin-for-strait-of-hormuz-transit</guid>
-    <pubDate>Wed, 08 Apr 2026 15:01:29 GMT</pubDate>
-    <description>Iran is reportedly allowing ships to pay transit tolls through the Strait of Hormuz using Bitcoin and cryptocurrency, potentially bypassing traditional financial sanctions.</description>
-    <category>bitcoin</category>
-    <category>payments</category>
-    <category>sanctions-resistance</category>
-    <category>sovereignty</category>
-  </item>
-  <item>
-    <title>China Human Rights Lawyer Yu Wensheng Expected Release After 3-Year Detention</title>
-    <link>https://libertas.fgu.tech/posts/china-human-rights-lawyer-yu-wensheng-expected-release-after</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/china-human-rights-lawyer-yu-wensheng-expected-release-after</guid>
-    <pubDate>Thu, 09 Apr 2026 09:01:23 GMT</pubDate>
-    <description>Human rights lawyer Yu Wensheng faces release April 13 after serving 3 years for &apos;inciting subversion&apos; - part of systematic targeting of legal advocates challenging state power.</description>
-    <category>activism</category>
-    <category>surveillance</category>
-    <category>censorship-resistance</category>
-    <category>sovereignty</category>
-  </item>
-  <item>
-    <title>Citizen Lab Warns of Digital Transnational Repression &apos;Tsunami&apos; Facing Canadians</title>
-    <link>https://libertas.fgu.tech/posts/citizen-lab-warns-of-digital-transnational-repression-tsunam</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/citizen-lab-warns-of-digital-transnational-repression-tsunam</guid>
-    <pubDate>Mon, 30 Mar 2026 15:02:27 GMT</pubDate>
-    <description>Citizen Lab director testified to Parliament that digital transnational repression will intensify due to U.S. authoritarianism, AI expansion, and Canada&apos;s failure to regulate mercenary spyware as promised.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-  </item>
-  <item>
-    <title>US Bans All Foreign-Made Consumer Routers, Requires FCC Approval</title>
-    <link>https://libertas.fgu.tech/posts/us-bans-all-foreign-made-consumer-routers-requires-fcc-appro</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/us-bans-all-foreign-made-consumer-routers-requires-fcc-appro</guid>
-    <pubDate>Thu, 02 Apr 2026 21:02:27 GMT</pubDate>
-    <description>US now requires FCC approval for all foreign-made routers, citing supply chain vulnerabilities and cybersecurity risks. Companies must disclose foreign investors and plan US manufacturing to get approval.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>sovereignty</category>
-  </item>
-  <item>
-    <title>FCC Chair Uses License Threats to Enforce Pro-Trump Editorial Control Over Broadcasters</title>
-    <link>https://libertas.fgu.tech/posts/fcc-chair-uses-license-threats-to-enforce-pro-trump-editoria</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/fcc-chair-uses-license-threats-to-enforce-pro-trump-editoria</guid>
-    <pubDate>Tue, 31 Mar 2026 21:03:45 GMT</pubDate>
-    <description>FCC Chair Brendan Carr systematically threatens broadcast licenses to suppress coverage critical of Trump, targeting national stories while claiming to protect local interests.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
-  </item>
-  <item>
-    <title>Reddit Subpoenaed by Grand Jury to Unmask Anonymous Anti-ICE User</title>
-    <link>https://libertas.fgu.tech/posts/reddit-subpoenaed-by-grand-jury-to-unmask-anonymous-anti-ice</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/reddit-subpoenaed-by-grand-jury-to-unmask-anonymous-anti-ice</guid>
-    <pubDate>Fri, 10 Apr 2026 09:02:43 GMT</pubDate>
-    <description>Federal prosecutors are using a grand jury to force Reddit to reveal personal data of an anonymous user who criticized Trump&apos;s immigration crackdown, marking dangerous escalation in government attacks on anonymous speech.</description>
-    <category>censorship-resistance</category>
+    <title>EFF Publishes DMCA Compliance Guide for Decentralized Social Platform Operators</title>
+    <link>https://libertas.fgu.tech/posts/eff-publishes-dmca-compliance-guide-for-decentralized-social</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-publishes-dmca-compliance-guide-for-decentralized-social</guid>
+    <pubDate>Sat, 02 May 2026 09:00:54 GMT</pubDate>
+    <description>EFF released comprehensive guidance on copyright law compliance for Mastodon, Bluesky, and other decentralized social platform operators to protect against legal liability while maintaining user protections.</description>
     <category>privacy</category>
     <category>surveillance</category>
+    <category>censorship-resistance</category>
     <category>activism</category>
     <category>identity</category>
   </item>
   <item>
-    <title>Ugandan Journalist Disappeared After Discussing Struck-Down Surveillance Laws</title>
-    <link>https://libertas.fgu.tech/posts/ugandan-journalist-disappeared-after-discussing-struck-down-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/ugandan-journalist-disappeared-after-discussing-struck-down-</guid>
-    <pubDate>Tue, 31 Mar 2026 15:02:38 GMT</pubDate>
-    <description>Journalist Mukose Arnold Anthony was forcibly disappeared by plainclothes security after discussing Constitutional Court ruling that nullified Computer Misuse Act sections used to target activists.</description>
+    <title>Canadian Civil Society Coalition Calls for Full Withdrawal of Surveillance Bill C-22</title>
+    <link>https://libertas.fgu.tech/posts/canadian-civil-society-coalition-calls-for-full-withdrawal-o</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/canadian-civil-society-coalition-calls-for-full-withdrawal-o</guid>
+    <pubDate>Sat, 02 May 2026 09:04:33 GMT</pubDate>
+    <description>25 rights organizations led by Citizen Lab demand Canada withdraw Bill C-22, which would mandate year-long metadata retention and force providers to build surveillance backdoors.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>censorship-resistance</category>
+  </item>
+  <item>
+    <title>Press Freedom Groups Call for Repeal of Turkey&apos;s Disinformation Law Used Against Journalists</title>
+    <link>https://libertas.fgu.tech/posts/press-freedom-groups-call-for-repeal-of-turkey-s-disinformat</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/press-freedom-groups-call-for-repeal-of-turkey-s-disinformat</guid>
+    <pubDate>Sat, 02 May 2026 09:05:02 GMT</pubDate>
+    <description>CPJ and 22 organizations condemned Turkey&apos;s disinformation law for prosecuting journalists, calling for imprisoned reporters&apos; release and law&apos;s repeal due to vague definitions.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+  </item>
+  <item>
+    <title>New Book Documents Financial Censorship by Payment Platforms</title>
+    <link>https://libertas.fgu.tech/posts/new-book-documents-financial-censorship-by-payment-platforms</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/new-book-documents-financial-censorship-by-payment-platforms</guid>
+    <pubDate>Sat, 02 May 2026 09:00:54 GMT</pubDate>
+    <description>Former EFF director&apos;s book &apos;Transaction Denied&apos; exposes systematic financial censorship by PayPal, Venmo, and other platforms blocking accounts based on speech, with documented cases and successful resistance campaigns.</description>
+    <category>payments</category>
+    <category>censorship-resistance</category>
+    <category>sovereignty</category>
+    <category>activism</category>
+  </item>
+  <item>
+    <title>Infrastructure Barriers Block AI Adoption Across Sub-Saharan Africa</title>
+    <link>https://libertas.fgu.tech/posts/infrastructure-barriers-block-ai-adoption-across-sub-saharan</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/infrastructure-barriers-block-ai-adoption-across-sub-saharan</guid>
+    <pubDate>Sat, 02 May 2026 09:07:59 GMT</pubDate>
+    <description>Poor electricity access affecting 600M Africans and expensive internet connectivity costing 25% of monthly salary create fundamental barriers to AI adoption in Sub-Saharan Africa, widening global tech inequality.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>identity</category>
+    <category>sovereignty</category>
+  </item>
+  <item>
+    <title>Access Now: Privacy Laws Key to Fighting Disinformation in Latin America Elections</title>
+    <link>https://libertas.fgu.tech/posts/access-now-privacy-laws-key-to-fighting-disinformation-in-la</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/access-now-privacy-laws-key-to-fighting-disinformation-in-la</guid>
+    <pubDate>Sat, 02 May 2026 09:03:07 GMT</pubDate>
+    <description>Access Now argues that strict data protection laws are essential to combat personalized disinformation campaigns targeting voters across upcoming Latin American elections.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>sovereignty</category>
+  </item>
+  <item>
+    <title>Kuwait Revokes Journalist&apos;s Citizenship After 2-Month Detention, Part of 71K Mass Revocations</title>
+    <link>https://libertas.fgu.tech/posts/kuwait-revokes-journalist-s-citizenship-after-2-month-detent</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/kuwait-revokes-journalist-s-citizenship-after-2-month-detent</guid>
+    <pubDate>Sat, 02 May 2026 09:05:02 GMT</pubDate>
+    <description>Kuwait revoked citizenship of U.S.-Kuwaiti journalist Ahmed Shihab-Eldin after detaining him for journalism, part of 71,000 citizenship revocations since Oct 2024—4.6% of Kuwait&apos;s population.</description>
+    <category>censorship-resistance</category>
+    <category>comms</category>
+    <category>surveillance</category>
+    <category>activism</category>
+  </item>
+  <item>
+    <title>Bellingcat Guide: Using China&apos;s Xiaohongshu for Open-Source Research Under Digital Oppression</title>
+    <link>https://libertas.fgu.tech/posts/bellingcat-guide-using-china-s-xiaohongshu-for-open-source-r</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/bellingcat-guide-using-china-s-xiaohongshu-for-open-source-r</guid>
+    <pubDate>Sat, 02 May 2026 09:08:30 GMT</pubDate>
+    <description>Bellingcat releases comprehensive guide for investigating Chinese social platform Xiaohongshu, revealing how researchers circumvent AI surveillance and real-time censorship to track diaspora activism and expose wrongdoing.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
+  </item>
+  <item>
+    <title>EFF: Section 230 Critical for Open Social Web to Challenge Big Tech</title>
+    <link>https://libertas.fgu.tech/posts/eff-section-230-critical-for-open-social-web-to-challenge-bi</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-section-230-critical-for-open-social-web-to-challenge-bi</guid>
+    <pubDate>Sat, 02 May 2026 09:00:54 GMT</pubDate>
+    <description>EFF argues Section 230 protections are essential for decentralized social platforms like Mastodon and Bluesky to survive and compete with Big Tech monopolies.</description>
+    <category>censorship-resistance</category>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>sovereignty</category>
+  </item>
+  <item>
+    <title>Hack-for-Hire Campaign Targets Egyptian Journalists with Spear-Phishing Attacks</title>
+    <link>https://libertas.fgu.tech/posts/hack-for-hire-campaign-targets-egyptian-journalists-with-spe</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/hack-for-hire-campaign-targets-egyptian-journalists-with-spe</guid>
+    <pubDate>Sat, 02 May 2026 09:03:07 GMT</pubDate>
+    <description>Access Now investigation exposes Asian hack-for-hire group targeting prominent Egyptian journalists and critics Mostafa Al-A&apos;sar and Ahmed Eltantawy through sophisticated spear-phishing attacks attempting to compromise Apple and Google accounts.</description>
     <category>censorship-resistance</category>
     <category>surveillance</category>
     <category>activism</category>
     <category>privacy</category>
   </item>
   <item>
-    <title>Proton Warns Age Verification Laws Create New Privacy Risks for Children</title>
-    <link>https://libertas.fgu.tech/posts/proton-warns-age-verification-laws-create-new-privacy-risks-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/proton-warns-age-verification-laws-create-new-privacy-risks-</guid>
-    <pubDate>Fri, 10 Apr 2026 21:04:04 GMT</pubDate>
-    <description>Proton argues that government age verification laws are creating dangerous privacy vulnerabilities, citing Discord&apos;s recent breach of 70K government IDs collected under UK regulations.</description>
+    <title>Global Civil Society Adapts to AI-Driven Authoritarianism with New Tactics</title>
+    <link>https://libertas.fgu.tech/posts/global-civil-society-adapts-to-ai-driven-authoritarianism-wi</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/global-civil-society-adapts-to-ai-driven-authoritarianism-wi</guid>
+    <pubDate>Sat, 02 May 2026 09:07:59 GMT</pubDate>
+    <description>Study of 10 global case studies reveals civil society using three key tactics against AI surveillance: co-opting tech for their purposes, countering digital repression, and innovating new resistance forms.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>sovereignty</category>
+    <category>activism</category>
+  </item>
+  <item>
+    <title>US-Israel War Strategy Targets Iran&apos;s Police Infrastructure to &apos;Make Iran Ungovernable&apos;</title>
+    <link>https://libertas.fgu.tech/posts/us-israel-war-strategy-targets-iran-s-police-infrastructure-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/us-israel-war-strategy-targets-iran-s-police-infrastructure-</guid>
+    <pubDate>Sat, 02 May 2026 09:08:30 GMT</pubDate>
+    <description>Bellingcat investigation reveals systematic targeting of 80+ Iranian police stations and Basij paramilitary sites, part of strategy to degrade regime&apos;s &apos;repressive capacity&apos; and enable civilian uprising.</description>
+    <category>activism</category>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>sovereignty</category>
+  </item>
+  <item>
+    <title>GUARD Act Would Mandate ID Checks, End Anonymous Internet Use</title>
+    <link>https://libertas.fgu.tech/posts/guard-act-would-mandate-id-checks-end-anonymous-internet-use</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/guard-act-would-mandate-id-checks-end-anonymous-internet-use</guid>
+    <pubDate>Sat, 02 May 2026 09:00:54 GMT</pubDate>
+    <description>The GUARD Act, framed as AI safety for kids, would require age verification for all users of AI-powered tools, effectively ending anonymous internet use and creating mass surveillance infrastructure.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>identity</category>
+  </item>
+  <item>
+    <title>Brazil Considers AI Deepfakes &apos;Excessive Risk&apos; as Gender Violence Rises</title>
+    <link>https://libertas.fgu.tech/posts/brazil-considers-ai-deepfakes-excessive-risk-as-gender-viole</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/brazil-considers-ai-deepfakes-excessive-risk-as-gender-viole</guid>
+    <pubDate>Sat, 02 May 2026 09:07:59 GMT</pubDate>
+    <description>Brazilian research center Internetlab calls for classifying non-consensual deepfakes as &apos;excessive risk&apos; after surge in AI-generated sexual content targeting women and girls in schools.</description>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>privacy</category>
+  </item>
+  <item>
+    <title>Myanmar Junta Revokes Licenses of 3 Media Outlets Under Martial Law</title>
+    <link>https://libertas.fgu.tech/posts/myanmar-junta-revokes-licenses-of-3-media-outlets-under-mart</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/myanmar-junta-revokes-licenses-of-3-media-outlets-under-mart</guid>
+    <pubDate>Sat, 02 May 2026 09:05:02 GMT</pubDate>
+    <description>Myanmar&apos;s military junta revoked licenses of three news outlets serving conflict-affected Chin state under martial law, forcing journalists underground and into exile operations.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>privacy</category>
+  </item>
+  <item>
+    <title>WIRED Reports on Internal Conflict Within GrapheneOS Project Leadership</title>
+    <link>https://libertas.fgu.tech/posts/wired-reports-on-internal-conflict-within-grapheneos-project</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/wired-reports-on-internal-conflict-within-grapheneos-project</guid>
+    <pubDate>Sat, 02 May 2026 09:02:32 GMT</pubDate>
+    <description>WIRED published an investigation into personal conflicts between key figures in GrapheneOS development, the privacy-focused Android distribution.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+  </item>
+  <item>
+    <title>Mercenary Hackers Target Egyptian Opposition Journalists with Spear-Phishing Campaign</title>
+    <link>https://libertas.fgu.tech/posts/mercenary-hackers-target-egyptian-opposition-journalists-wit</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/mercenary-hackers-target-egyptian-opposition-journalists-wit</guid>
+    <pubDate>Sat, 02 May 2026 09:03:07 GMT</pubDate>
+    <description>Access Now investigation reveals Asia-linked mercenary hackers targeted prominent Egyptian opposition journalists Mustafa Al-Aasar and Ahmed Al-Tantawi with sophisticated spear-phishing attacks in 2023-2024.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+  </item>
+  <item>
+    <title>Reddit CLO: Section 230 Protects Decentralized Community Moderation, Not Just Big Tech</title>
+    <link>https://libertas.fgu.tech/posts/reddit-clo-section-230-protects-decentralized-community-mode</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/reddit-clo-section-230-protects-decentralized-community-mode</guid>
+    <pubDate>Sat, 02 May 2026 09:00:54 GMT</pubDate>
+    <description>Reddit&apos;s Chief Legal Officer argues Section 230 protects volunteer moderators and community self-governance, with weakening it benefiting Big Tech while harming smaller platforms and individual users.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
+  </item>
+  <item>
+    <title>Ghana&apos;s Anti-LGBTQ+ Bill Would Force Social Media Censorship, Mandate Public Surveillance</title>
+    <link>https://libertas.fgu.tech/posts/ghana-s-anti-lgbtq-bill-would-force-social-media-censorship-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/ghana-s-anti-lgbtq-bill-would-force-social-media-censorship-</guid>
+    <pubDate>Sat, 02 May 2026 09:03:07 GMT</pubDate>
+    <description>Ghana&apos;s proposed Human Sexual Rights and Family Values Bill 2025 would force social media platforms to censor LGBTQ+ content and require citizens to report suspected LGBTQ+ people to authorities, creating surveillance infrastructure that threatens digital rights.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
+  </item>
+  <item>
+    <title>30 Governments Used Transnational Repression in 2025, Freedom House Reports</title>
+    <link>https://libertas.fgu.tech/posts/30-governments-used-transnational-repression-in-2025-freedom</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/30-governments-used-transnational-repression-in-2025-freedom</guid>
+    <pubDate>Sat, 02 May 2026 09:05:25 GMT</pubDate>
+    <description>Freedom House documented 126 new incidents of transnational repression in 2025, with 30 governments targeting critics abroad through detention, deportation, and violence.</description>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>censorship-resistance</category>
+    <category>privacy</category>
+  </item>
+  <item>
+    <title>EFF Exposes ICE Data Access After Google Broke Privacy Promise to Client</title>
+    <link>https://libertas.fgu.tech/posts/eff-exposes-ice-data-access-after-google-broke-privacy-promi</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-exposes-ice-data-access-after-google-broke-privacy-promi</guid>
+    <pubDate>Sat, 02 May 2026 09:00:54 GMT</pubDate>
+    <description>EFF reveals case where Google handed client data to ICE despite privacy promises, highlighting corporate failure to protect users from government surveillance overreach.</description>
+    <category>censorship-resistance</category>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>sovereignty</category>
+  </item>
+  <item>
+    <title>EFF Defends Section 230 Immunity for App Store Payment Processing</title>
+    <link>https://libertas.fgu.tech/posts/eff-defends-section-230-immunity-for-app-store-payment-proce</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-defends-section-230-immunity-for-app-store-payment-proce</guid>
+    <pubDate>Sat, 02 May 2026 09:00:54 GMT</pubDate>
+    <description>EFF argues to 9th Circuit that app stores shouldn&apos;t lose Section 230 immunity for processing payments, warning this could force widespread content censorship across platforms.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
+  </item>
+  <item>
+    <title>Chinese Authorities Force Malaysia to Detain and Deport Uyghur Scholar</title>
+    <link>https://libertas.fgu.tech/posts/chinese-authorities-force-malaysia-to-detain-and-deport-uygh</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/chinese-authorities-force-malaysia-to-detain-and-deport-uygh</guid>
+    <pubDate>Sat, 02 May 2026 09:05:25 GMT</pubDate>
+    <description>Malaysia detained and expelled Uyghur scholar Abdulhakim Idris at China&apos;s request, preventing him from launching a book about Chinese pressure on Muslim nations to stay silent on Uyghur persecution.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>comms</category>
+    <category>privacy</category>
+  </item>
+  <item>
+    <title>Edmonton Police Deploy AI Facial Recognition on Bodycams for &apos;High-Risk Offenders&apos;</title>
+    <link>https://libertas.fgu.tech/posts/edmonton-police-deploy-ai-facial-recognition-on-bodycams-for</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/edmonton-police-deploy-ai-facial-recognition-on-bodycams-for</guid>
+    <pubDate>Sat, 02 May 2026 09:04:33 GMT</pubDate>
+    <description>Edmonton Police Service is trialing bodycam facial recognition technology targeting &apos;high-risk offenders,&apos; with experts calling it Canada&apos;s most dangerous algorithmic surveillance program to date.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+  </item>
+  <item>
+    <title>Nigerian Cybercrime Law Used to Target 24+ Journalists and Activists</title>
+    <link>https://libertas.fgu.tech/posts/nigerian-cybercrime-law-used-to-target-24-journalists-and-ac</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/nigerian-cybercrime-law-used-to-target-24-journalists-and-ac</guid>
+    <pubDate>Sat, 02 May 2026 09:03:07 GMT</pubDate>
+    <description>Nigeria&apos;s 2015 Cybercrimes Act has been weaponized against 24+ journalists and activists through overbroad &apos;cyberstalking&apos; provisions that criminalize critical speech.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
+    <category>identity</category>
+  </item>
+  <item>
+    <title>EFF Documents Censorship and Digital Isolation of Palestinians in UN Submission</title>
+    <link>https://libertas.fgu.tech/posts/eff-documents-censorship-and-digital-isolation-of-palestinia</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-documents-censorship-and-digital-isolation-of-palestinia</guid>
+    <pubDate>Sat, 02 May 2026 09:00:54 GMT</pubDate>
+    <description>EFF submitted evidence to UN Special Rapporteur documenting increased censorship, surveillance, and attacks on Palestinian media infrastructure since October 2023.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>privacy</category>
+  </item>
+  <item>
+    <title>EFF Guide: Bridge Social Media Accounts Across Mastodon, Bluesky, and Threads</title>
+    <link>https://libertas.fgu.tech/posts/eff-guide-bridge-social-media-accounts-across-mastodon-blues</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-guide-bridge-social-media-accounts-across-mastodon-blues</guid>
+    <pubDate>Sat, 02 May 2026 09:00:54 GMT</pubDate>
+    <description>EFF published a comprehensive guide on using bridging tools like Bridgy Fed to connect accounts across federated social platforms, enabling cross-platform posting and reducing platform lock-in.</description>
+    <category>censorship-resistance</category>
+    <category>privacy</category>
+    <category>sovereignty</category>
+  </item>
+  <item>
+    <title>Citizen Lab Research Quantifies Digital Surveillance Chilling Effects Post-Snowden</title>
+    <link>https://libertas.fgu.tech/posts/citizen-lab-research-quantifies-digital-surveillance-chillin</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/citizen-lab-research-quantifies-digital-surveillance-chillin</guid>
+    <pubDate>Sat, 02 May 2026 09:04:33 GMT</pubDate>
+    <description>New research by Jon Penney documents measurable self-censorship behavior following Snowden revelations, showing how surveillance awareness directly reduces access to sensitive content.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+  </item>
+  <item>
+    <title>Zimbabwe Targets Student Leaders Opposing Constitutional Amendment</title>
+    <link>https://libertas.fgu.tech/posts/zimbabwe-targets-student-leaders-opposing-constitutional-ame</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/zimbabwe-targets-student-leaders-opposing-constitutional-ame</guid>
+    <pubDate>Sat, 02 May 2026 09:05:47 GMT</pubDate>
+    <description>Zimbabwean authorities are systematically abducting, torturing, and arresting student leaders protesting a constitutional amendment that would extend presidential terms from 5 to 7 years.</description>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>sovereignty</category>
+  </item>
+  <item>
+    <title>States Block Public Oversight of License Plate Surveillance After Abuse Revelations</title>
+    <link>https://libertas.fgu.tech/posts/states-block-public-oversight-of-license-plate-surveillance-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/states-block-public-oversight-of-license-plate-surveillance-</guid>
+    <pubDate>Sat, 02 May 2026 09:00:54 GMT</pubDate>
+    <description>Multiple US states are passing laws to block public access to ALPR surveillance data after transparency advocates used records requests to expose tracking of protesters, racist policing, and abortion seekers.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
+  </item>
+  <item>
+    <title>Zambia Cancels Major Digital Rights Summit RightsCon 2026 Amid Foreign Pressure</title>
+    <link>https://libertas.fgu.tech/posts/zambia-cancels-major-digital-rights-summit-rightscon-2026-am</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/zambia-cancels-major-digital-rights-summit-rightscon-2026-am</guid>
+    <pubDate>Sat, 02 May 2026 09:05:47 GMT</pubDate>
+    <description>Zambia effectively canceled RightsCon 2026, a leading human rights and technology summit, citing vague administrative concerns, with reports suggesting Chinese government displeasure over Taiwanese participants influenced the decision.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>privacy</category>
+  </item>
+  <item>
+    <title>EFF Opposes Insufficient FISA 702 Reauthorization Bill Lacking Warrant Requirements</title>
+    <link>https://libertas.fgu.tech/posts/eff-opposes-insufficient-fisa-702-reauthorization-bill-lacki</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-opposes-insufficient-fisa-702-reauthorization-bill-lacki</guid>
+    <pubDate>Sat, 02 May 2026 09:00:54 GMT</pubDate>
+    <description>EFF condemns Speaker Johnson&apos;s Foreign Intelligence Accountability Act as inadequate reform that fails to require warrants for FBI searches of Americans&apos; communications collected under Section 702 surveillance.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
+  </item>
+  <item>
+    <title>Freedom House: Dictators Increasingly Collaborate on Cross-Border Dissident Hunting</title>
+    <link>https://libertas.fgu.tech/posts/freedom-house-dictators-increasingly-collaborate-on-cross-bo</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/freedom-house-dictators-increasingly-collaborate-on-cross-bo</guid>
+    <pubDate>Sat, 02 May 2026 09:05:25 GMT</pubDate>
+    <description>Freedom House reports growing collaboration between authoritarian regimes to track and suppress dissidents across borders, escalating the threat environment for activists worldwide.</description>
+    <category>censorship-resistance</category>
+    <category>comms</category>
+    <category>activism</category>
+    <category>surveillance</category>
+    <category>privacy</category>
+  </item>
+  <item>
+    <title>Digital Rights Movement Evolution Post-Arab Spring: From Tech Optimism to Sovereignty Focus</title>
+    <link>https://libertas.fgu.tech/posts/digital-rights-movement-evolution-post-arab-spring-from-tech</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/digital-rights-movement-evolution-post-arab-spring-from-tech</guid>
+    <pubDate>Sat, 02 May 2026 09:00:54 GMT</pubDate>
+    <description>EFF analysis shows Middle East digital rights movement evolved from 2011 tech optimism to sophisticated focus on digital sovereignty, with organizations shifting from platform accountability to open source alternatives.</description>
+    <category>privacy</category>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>sovereignty</category>
+  </item>
+  <item>
+    <title>Nordic Countries Show Strongest European Resistance to US Tech Surveillance</title>
+    <link>https://libertas.fgu.tech/posts/nordic-countries-show-strongest-european-resistance-to-us-te</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/nordic-countries-show-strongest-european-resistance-to-us-te</guid>
+    <pubDate>Sat, 02 May 2026 09:06:17 GMT</pubDate>
+    <description>85% of Nordic citizens find Europe&apos;s reliance on US tech concerning, with geopolitical tensions driving preference for European alternatives to avoid NSA surveillance and FISA data collection.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+  </item>
+  <item>
+    <title>Age Verification Expanding Across Platforms, OS, and Government Digital ID Systems</title>
+    <link>https://libertas.fgu.tech/posts/age-verification-expanding-across-platforms-os-and-governmen</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/age-verification-expanding-across-platforms-os-and-governmen</guid>
+    <pubDate>Sat, 02 May 2026 09:06:17 GMT</pubDate>
+    <description>Age verification is rapidly expanding from individual platforms to operating systems and national digital ID frameworks, creating pervasive identity-linked access control that threatens online anonymity and privacy.</description>
     <category>privacy</category>
     <category>surveillance</category>
     <category>identity</category>
     <category>censorship-resistance</category>
+    <category>activism</category>
   </item>
   <item>
-    <title>UAE Criminalizes Citizen Documentation of Drone Strikes, Arrests 135+ People</title>
-    <link>https://libertas.fgu.tech/posts/uae-criminalizes-citizen-documentation-of-drone-strikes-arre</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/uae-criminalizes-citizen-documentation-of-drone-strikes-arre</guid>
-    <pubDate>Thu, 02 Apr 2026 21:04:46 GMT</pubDate>
-    <description>UAE authorities arrested 135+ people for filming/sharing footage of Iranian drone strikes, threatening 2+ years imprisonment and $55K fines for contradicting official narratives.</description>
+    <title>Framework for Human Rights-Based AI Governance Proposed</title>
+    <link>https://libertas.fgu.tech/posts/framework-for-human-rights-based-ai-governance-proposed</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/framework-for-human-rights-based-ai-governance-proposed</guid>
+    <pubDate>Sat, 02 May 2026 09:07:59 GMT</pubDate>
+    <description>Feminist technologist Rebecca Ryakitimbo proposes five non-negotiable rights for human-centered AI: life/liberty, equality, free speech, access to essentials, and privacy/data sovereignty.</description>
     <category>censorship-resistance</category>
     <category>surveillance</category>
     <category>activism</category>
     <category>privacy</category>
   </item>
   <item>
-    <title>Amazon Uses Computer Crime Laws to Block AI Price Comparison Tool</title>
-    <link>https://libertas.fgu.tech/posts/amazon-uses-computer-crime-laws-to-block-ai-price-comparison</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/amazon-uses-computer-crime-laws-to-block-ai-price-comparison</guid>
-    <pubDate>Thu, 09 Apr 2026 21:01:09 GMT</pubDate>
-    <description>Amazon successfully sued Perplexity&apos;s AI browser Comet under CFAA for helping users compare prices, setting dangerous precedent that could criminalize research and competition.</description>
-    <category>censorship-resistance</category>
-    <category>privacy</category>
-    <category>surveillance</category>
-  </item>
-  <item>
-    <title>FISA 702 Renewal Could Target VPN Users as &apos;Foreign&apos; for Warrantless Surveillance</title>
-    <link>https://libertas.fgu.tech/posts/fisa-702-renewal-could-target-vpn-users-as-foreign-for-warra</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/fisa-702-renewal-could-target-vpn-users-as-foreign-for-warra</guid>
-    <pubDate>Thu, 02 Apr 2026 21:03:56 GMT</pubDate>
-    <description>Section 702 renewal debate reveals VPN users may be classified as &apos;foreign&apos; targets, subjecting Americans to warrantless surveillance simply for using privacy tools.</description>
-    <category>privacy</category>
-    <category>surveillance</category>
-    <category>vpn</category>
-    <category>censorship-resistance</category>
-  </item>
-  <item>
-    <title>42 Media Orgs Challenge Trump&apos;s Executive Order Sanctioning Law Firms</title>
-    <link>https://libertas.fgu.tech/posts/42-media-orgs-challenge-trump-s-executive-order-sanctioning-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/42-media-orgs-challenge-trump-s-executive-order-sanctioning-</guid>
-    <pubDate>Fri, 03 Apr 2026 21:01:49 GMT</pubDate>
-    <description>The Intercept&apos;s Press Freedom Defense Fund leads 42 media organizations filing amicus brief to block Trump&apos;s executive order that sanctions law firms representing his political opponents.</description>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-    <category>surveillance</category>
-  </item>
-  <item>
-    <title>Afghan Women Use Underground Online Education Networks to Resist Taliban Restrictions</title>
-    <link>https://libertas.fgu.tech/posts/afghan-women-use-underground-online-education-networks-to-re</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/afghan-women-use-underground-online-education-networks-to-re</guid>
-    <pubDate>Mon, 30 Mar 2026 21:03:28 GMT</pubDate>
-    <description>First-person account reveals how Afghan women are creating underground online education networks and digital resistance methods to circumvent Taliban&apos;s education bans since 2021.</description>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-    <category>surveillance</category>
-    <category>comms</category>
-  </item>
-  <item>
-    <title>EFF Highlights Police Surveillance Mission Creep in Latest Newsletter</title>
-    <link>https://libertas.fgu.tech/posts/eff-highlights-police-surveillance-mission-creep-in-latest-n</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-highlights-police-surveillance-mission-creep-in-latest-n</guid>
-    <pubDate>Wed, 08 Apr 2026 21:01:00 GMT</pubDate>
-    <description>EFF&apos;s latest newsletter examines how police surveillance tech sold for serious crimes gets repurposed for traffic enforcement and protest monitoring, plus NSA reform updates.</description>
+    <title>Citizen Lab Exposes How Ad-Tech Data Enables Government Location Surveillance</title>
+    <link>https://libertas.fgu.tech/posts/citizen-lab-exposes-how-ad-tech-data-enables-government-loca</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/citizen-lab-exposes-how-ad-tech-data-enables-government-loca</guid>
+    <pubDate>Sat, 02 May 2026 09:04:33 GMT</pubDate>
+    <description>New Citizen Lab investigation reveals how Webloc surveillance system leverages ad-tech data to enable government tracking, with ICE using it to circumvent legal protections.</description>
     <category>surveillance</category>
     <category>privacy</category>
-    <category>activism</category>
-    <category>censorship-resistance</category>
   </item>
   <item>
-    <title>Access Now Releases 2025 Internet Shutdowns Report</title>
-    <link>https://libertas.fgu.tech/posts/access-now-releases-2025-internet-shutdowns-report</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/access-now-releases-2025-internet-shutdowns-report</guid>
-    <pubDate>Tue, 31 Mar 2026 09:02:43 GMT</pubDate>
-    <description>Access Now published their annual KeepItOn report documenting global internet shutdowns in 2025, highlighting rising government repression and citizen resistance.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
-  </item>
-  <item>
-    <title>EFF Welcomes Daily Show Viewers, Highlights 35-Year Fight Against Digital Surveillance</title>
-    <link>https://libertas.fgu.tech/posts/eff-welcomes-daily-show-viewers-highlights-35-year-fight-aga</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-welcomes-daily-show-viewers-highlights-35-year-fight-aga</guid>
-    <pubDate>Tue, 31 Mar 2026 09:01:32 GMT</pubDate>
-    <description>The Electronic Frontier Foundation showcases its three-decade battle against government surveillance, from the Crypto Wars to NSA dragnet spying, while promoting Executive Director Cindy Cohn&apos;s new book.</description>
-    <category>privacy</category>
-    <category>surveillance</category>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-    <category>sovereignty</category>
-  </item>
-  <item>
-    <title>Alabama City Prosecutes Protester for Penis Costume at Anti-Trump Rally</title>
-    <link>https://libertas.fgu.tech/posts/alabama-city-prosecutes-protester-for-penis-costume-at-anti-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/alabama-city-prosecutes-protester-for-penis-costume-at-anti-</guid>
-    <pubDate>Fri, 03 Apr 2026 15:02:06 GMT</pubDate>
-    <description>Fairhope, Alabama arrested and is prosecuting a 62-year-old protester for wearing an inflatable penis costume at a political rally, doubling down with additional charges despite viral backlash.</description>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-  </item>
-  <item>
-    <title>Iranian-American Women Officials Condemn Trump&apos;s War Threats Against Iran</title>
-    <link>https://libertas.fgu.tech/posts/iranian-american-women-officials-condemn-trump-s-war-threats</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/iranian-american-women-officials-condemn-trump-s-war-threats</guid>
-    <pubDate>Tue, 07 Apr 2026 21:03:12 GMT</pubDate>
-    <description>Iranian-American women in elected office reject Trump&apos;s threats against Iran, arguing war undermines the &apos;Woman, Life, Freedom&apos; movement and Iranian self-determination.</description>
-    <category>activism</category>
-    <category>sovereignty</category>
-    <category>censorship-resistance</category>
-  </item>
-  <item>
-    <title>Somalia&apos;s New Northeastern State Detains Journalist for Criticizing President</title>
-    <link>https://libertas.fgu.tech/posts/somalia-s-new-northeastern-state-detains-journalist-for-crit</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/somalia-s-new-northeastern-state-detains-journalist-for-crit</guid>
-    <pubDate>Tue, 07 Apr 2026 21:02:45 GMT</pubDate>
-    <description>Journalist Abdiqani Abdirahman Mohamed detained without charge since March 26 by Northeastern State authorities over video criticizing President Abdiqadir Ahmed Aw-Ali.</description>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-    <category>surveillance</category>
-  </item>
-  <item>
-    <title>EFF Defeats Copyright Troll Attack on Activist Hosting Provider May First</title>
-    <link>https://libertas.fgu.tech/posts/eff-defeats-copyright-troll-attack-on-activist-hosting-provi</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-defeats-copyright-troll-attack-on-activist-hosting-provi</guid>
-    <pubDate>Fri, 03 Apr 2026 03:00:36 GMT</pubDate>
-    <description>EFF successfully defended May First Movement Technology against baseless copyright demands from Higbee &amp; Associates, protecting critical hosting infrastructure for social justice groups worldwide.</description>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-    <category>sovereignty</category>
-  </item>
-  <item>
-    <title>EFF&apos;s Cindy Cohn on Daily Show to Discuss 30 Years of Privacy Advocacy</title>
-    <link>https://libertas.fgu.tech/posts/eff-s-cindy-cohn-on-daily-show-to-discuss-30-years-of-privac</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-s-cindy-cohn-on-daily-show-to-discuss-30-years-of-privac</guid>
-    <pubDate>Mon, 30 Mar 2026 21:01:14 GMT</pubDate>
-    <description>EFF Executive Director Cindy Cohn appears on The Daily Show to discuss her new book covering three decades fighting surveillance, from the Crypto Wars to NSA dragnet spying.</description>
-    <category>privacy</category>
-    <category>surveillance</category>
-    <category>activism</category>
-  </item>
-  <item>
-    <title>Citizen Lab Submits Anti-Spyware Recommendations to Canadian Parliament Committee</title>
-    <link>https://libertas.fgu.tech/posts/citizen-lab-submits-anti-spyware-recommendations-to-canadian</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/citizen-lab-submits-anti-spyware-recommendations-to-canadian</guid>
-    <pubDate>Mon, 06 Apr 2026 21:02:47 GMT</pubDate>
-    <description>Citizen Lab recommended comprehensive spyware regulations to Canada&apos;s intelligence oversight committee, arguing government spyware use creates human rights and national security risks.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
-    <category>sovereignty</category>
-  </item>
-  <item>
-    <title>Treasury Secretary, SEC Chair Push Congress for Crypto Market Structure Bill</title>
-    <link>https://libertas.fgu.tech/posts/treasury-secretary-sec-chair-push-congress-for-crypto-market</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/treasury-secretary-sec-chair-push-congress-for-crypto-market</guid>
-    <pubDate>Thu, 09 Apr 2026 21:01:26 GMT</pubDate>
-    <description>Treasury Secretary Bessent, SEC Chair Atkins, and former Crypto Czar Sacks urge immediate Senate passage of the Clarity Act to establish clear regulatory boundaries for crypto and prevent innovation flight overseas.</description>
-    <category>bitcoin</category>
-    <category>payments</category>
-    <category>sovereignty</category>
-  </item>
-  <item>
-    <title>Nigerian Press Freedom Groups Document 231+ Journalist Attacks Under Tinubu Administration</title>
-    <link>https://libertas.fgu.tech/posts/nigerian-press-freedom-groups-document-231-journalist-attack</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/nigerian-press-freedom-groups-document-231-journalist-attack</guid>
-    <pubDate>Wed, 01 Apr 2026 15:02:30 GMT</pubDate>
-    <description>Press freedom organizations formally challenge VP Shettima&apos;s claim of no journalist harassment in Nigeria, documenting 231 verified attacks since 2023 including detentions, assaults, and killings.</description>
-    <category>privacy</category>
-    <category>surveillance</category>
-    <category>censorship-resistance</category>
-  </item>
-  <item>
-    <title>Russia Labels Press Freedom Org IWMF as &apos;Undesirable Organization&apos;</title>
-    <link>https://libertas.fgu.tech/posts/russia-labels-press-freedom-org-iwmf-as-undesirable-organiza</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/russia-labels-press-freedom-org-iwmf-as-undesirable-organiza</guid>
-    <pubDate>Fri, 03 Apr 2026 03:02:04 GMT</pubDate>
-    <description>Russia designated the International Women&apos;s Media Foundation as an &apos;undesirable organization,&apos; banning its operations and criminalizing support with up to 6 years prison.</description>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-    <category>surveillance</category>
-  </item>
-  <item>
-    <title>Russian Police Raid Novaya Gazeta, Detain Journalist on Data Privacy Charges</title>
-    <link>https://libertas.fgu.tech/posts/russian-police-raid-novaya-gazeta-detain-journalist-on-data-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/russian-police-raid-novaya-gazeta-detain-journalist-on-data-</guid>
-    <pubDate>Fri, 10 Apr 2026 03:02:14 GMT</pubDate>
-    <description>Russian authorities raided independent newspaper Novaya Gazeta&apos;s Moscow office and detained journalist Oleg Roldugin under criminal charges for allegedly misusing personal data in reporting.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>privacy</category>
-  </item>
-  <item>
-    <title>CPJ Issues 10-Point Plan to Restore Press Freedom in Hungary Ahead of Election</title>
-    <link>https://libertas.fgu.tech/posts/cpj-issues-10-point-plan-to-restore-press-freedom-in-hungary</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/cpj-issues-10-point-plan-to-restore-press-freedom-in-hungary</guid>
-    <pubDate>Wed, 08 Apr 2026 21:03:01 GMT</pubDate>
-    <description>Committee to Protect Journalists outlines steps to dismantle Hungary&apos;s sophisticated media capture system, including ending Pegasus surveillance of reporters and abolishing Russia-style &apos;foreign agent&apos; laws.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>privacy</category>
-  </item>
-  <item>
-    <title>US Rewrites Procurement Rules to Force AI Companies to Disable Safety Guardrails</title>
-    <link>https://libertas.fgu.tech/posts/us-rewrites-procurement-rules-to-force-ai-companies-to-disab</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/us-rewrites-procurement-rules-to-force-ai-companies-to-disab</guid>
-    <pubDate>Sat, 04 Apr 2026 21:00:59 GMT</pubDate>
-    <description>New GSA procurement rules would require AI contractors to license systems for &apos;all lawful purposes&apos; and disable safety guardrails that refuse government requests, effectively weaponizing procurement against AI safety measures.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
-    <category>activism</category>
-  </item>
-  <item>
-    <title>EFF Promotes New Book on 30 Years of Digital Surveillance Resistance</title>
-    <link>https://libertas.fgu.tech/posts/eff-promotes-new-book-on-30-years-of-digital-surveillance-re</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-promotes-new-book-on-30-years-of-digital-surveillance-re</guid>
-    <pubDate>Tue, 31 Mar 2026 21:01:18 GMT</pubDate>
-    <description>Electronic Frontier Foundation&apos;s Executive Director Cindy Cohn published &apos;Privacy&apos;s Defender,&apos; chronicling three decades of legal battles against government surveillance from the Crypto Wars to NSA dragnet spying.</description>
-    <category>privacy</category>
-    <category>surveillance</category>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-  </item>
-  <item>
-    <title>EU Parliament Blocks Mass Chat Scanning, But &apos;Chat Control&apos; Proposal Still Alive</title>
-    <link>https://libertas.fgu.tech/posts/eu-parliament-blocks-mass-chat-scanning-but-chat-control-pro</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eu-parliament-blocks-mass-chat-scanning-but-chat-control-pro</guid>
-    <pubDate>Tue, 07 Apr 2026 21:00:59 GMT</pubDate>
-    <description>EU Parliament voted to end temporary derogation allowing voluntary mass scanning of private messages, but the broader Chat Control proposal for mandatory CSAM detection continues negotiations with focus on age verification.</description>
-    <category>privacy</category>
-    <category>surveillance</category>
-    <category>censorship-resistance</category>
-    <category>comms</category>
-  </item>
-  <item>
-    <title>EFF Director Cindy Cohn Discusses Privacy Book on The Daily Show</title>
-    <link>https://libertas.fgu.tech/posts/eff-director-cindy-cohn-discusses-privacy-book-on-the-daily-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-director-cindy-cohn-discusses-privacy-book-on-the-daily-</guid>
-    <pubDate>Tue, 31 Mar 2026 09:01:32 GMT</pubDate>
-    <description>EFF Executive Director Cindy Cohn appeared on The Daily Show to discuss her new book covering 30 years of digital privacy battles including the Crypto Wars and NSA surveillance.</description>
-    <category>privacy</category>
-    <category>surveillance</category>
-  </item>
-  <item>
-    <title>EFF Leaves X Platform After 20 Years, Cites Massive Engagement Drop and Policy Failures</title>
-    <link>https://libertas.fgu.tech/posts/eff-leaves-x-platform-after-20-years-cites-massive-engagemen</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-leaves-x-platform-after-20-years-cites-massive-engagemen</guid>
-    <pubDate>Thu, 09 Apr 2026 21:01:09 GMT</pubDate>
-    <description>Electronic Frontier Foundation exits X after engagement plummeted 97% since 2018, while staying on other platforms to reach vulnerable communities needing digital rights advocacy.</description>
-    <category>censorship-resistance</category>
-    <category>privacy</category>
-    <category>surveillance</category>
-    <category>activism</category>
-  </item>
-  <item>
-    <title>EFF Promotes Digital Rights Advocacy and Privacy Education to Daily Show Viewers</title>
-    <link>https://libertas.fgu.tech/posts/eff-promotes-digital-rights-advocacy-and-privacy-education-t</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-promotes-digital-rights-advocacy-and-privacy-education-t</guid>
-    <pubDate>Tue, 31 Mar 2026 03:01:26 GMT</pubDate>
-    <description>EFF&apos;s outreach page highlights 35 years of defending digital rights, from crypto wars to NSA surveillance battles, showcasing their role as infrastructure defenders for online rebellion.</description>
-    <category>privacy</category>
-    <category>surveillance</category>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-  </item>
-  <item>
-    <title>How Arab Spring Backlash Created Global Surveillance Infrastructure</title>
-    <link>https://libertas.fgu.tech/posts/how-arab-spring-backlash-created-global-surveillance-infrast</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/how-arab-spring-backlash-created-global-surveillance-infrast</guid>
-    <pubDate>Wed, 08 Apr 2026 21:01:00 GMT</pubDate>
-    <description>EFF analysis shows how governments turned 2011 Arab Spring organizing tools into surveillance infrastructure, creating cybercrime laws and monitoring systems now used globally to suppress dissent.</description>
-    <category>surveillance</category>
-    <category>activism</category>
+    <title>Australian Digital Rights Leader on Social Media Bans and Post-Pandemic Institutional Distrust</title>
+    <link>https://libertas.fgu.tech/posts/australian-digital-rights-leader-on-social-media-bans-and-po</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/australian-digital-rights-leader-on-social-media-bans-and-po</guid>
+    <pubDate>Sat, 02 May 2026 09:00:54 GMT</pubDate>
+    <description>Digital Rights Watch founder Lizzie O&apos;Shea discusses Australia&apos;s strict under-16 social media ban and how post-pandemic institutional distrust complicates balancing corporate power with democratic oversight.</description>
     <category>censorship-resistance</category>
     <category>privacy</category>
     <category>sovereignty</category>
-  </item>
-  <item>
-    <title>South Sudan&apos;s New Cybercrime Law Criminalizes Digital Speech with 10-Year Prison Terms</title>
-    <link>https://libertas.fgu.tech/posts/south-sudan-s-new-cybercrime-law-criminalizes-digital-speech</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/south-sudan-s-new-cybercrime-law-criminalizes-digital-speech</guid>
-    <pubDate>Fri, 10 Apr 2026 15:02:55 GMT</pubDate>
-    <description>South Sudan&apos;s 2026 Cybercrimes Act criminalizes &apos;false information&apos; and &apos;undesirable content&apos; with up to 10 years prison, grants authorities broad surveillance powers, and threatens encrypted communications and journalism.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>privacy</category>
-  </item>
-  <item>
-    <title>Citizen Lab Urges UN to Address Mercenary Spyware Proliferation</title>
-    <link>https://libertas.fgu.tech/posts/citizen-lab-urges-un-to-address-mercenary-spyware-proliferat</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/citizen-lab-urges-un-to-address-mercenary-spyware-proliferat</guid>
-    <pubDate>Wed, 08 Apr 2026 15:02:43 GMT</pubDate>
-    <description>Citizen Lab submitted UN recommendations calling for states to stop outsourcing digital surveillance operations, warning that mercenary spyware threatens democracy and human rights.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
-    <category>activism</category>
-  </item>
-  <item>
-    <title>Vietnamese Journalist Gets 8.5 Years for Social Media Posts Critical of State</title>
-    <link>https://libertas.fgu.tech/posts/vietnamese-journalist-gets-8-5-years-for-social-media-posts-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/vietnamese-journalist-gets-8-5-years-for-social-media-posts-</guid>
-    <pubDate>Thu, 02 Apr 2026 15:02:35 GMT</pubDate>
-    <description>Vietnam sentenced journalist Huynh Ngoc Tuan to 8.5 years in prison for Facebook posts and videos deemed anti-state propaganda, highlighting the need for censorship-resistant publishing tools.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>privacy</category>
-  </item>
-  <item>
-    <title>Israeli Pressure Forces Closure of Palestinian Children&apos;s Rights Group DCIP</title>
-    <link>https://libertas.fgu.tech/posts/israeli-pressure-forces-closure-of-palestinian-children-s-ri</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/israeli-pressure-forces-closure-of-palestinian-children-s-ri</guid>
-    <pubDate>Thu, 09 Apr 2026 21:02:43 GMT</pubDate>
-    <description>Defense for Children International-Palestine (DCIP) shut down operations after Israeli military designated it a &apos;terrorist organization&apos; using secret evidence, raided offices, and confiscated equipment.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>sovereignty</category>
-  </item>
-  <item>
-    <title>Trump Admin Seeks Medical Records of 8M Federal Workers Through Insurance Companies</title>
-    <link>https://libertas.fgu.tech/posts/trump-admin-seeks-medical-records-of-8m-federal-workers-thro</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/trump-admin-seeks-medical-records-of-8m-federal-workers-thro</guid>
-    <pubDate>Thu, 09 Apr 2026 03:01:12 GMT</pubDate>
-    <description>Trump administration quietly proposed requiring insurance companies to hand over detailed medical records of 8+ million federal workers, raising major surveillance and privacy concerns among experts.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
-  </item>
-  <item>
-    <title>FISA 702 Renewal Could Strip VPN Users of Constitutional Protections</title>
-    <link>https://libertas.fgu.tech/posts/fisa-702-renewal-could-strip-vpn-users-of-constitutional-pro</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/fisa-702-renewal-could-strip-vpn-users-of-constitutional-pro</guid>
-    <pubDate>Wed, 01 Apr 2026 21:03:13 GMT</pubDate>
-    <description>US surveillance law renewal may classify VPN traffic as &apos;foreign&apos; by default, potentially subjecting American VPN users to warrantless surveillance under Section 702.</description>
-    <category>privacy</category>
-    <category>surveillance</category>
-    <category>censorship-resistance</category>
-  </item>
-  <item>
-    <title>Hong Kong Democracy Activist Koo Sze-yiu Dies After Decades of Resistance</title>
-    <link>https://libertas.fgu.tech/posts/hong-kong-democracy-activist-koo-sze-yiu-dies-after-decades-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/hong-kong-democracy-activist-koo-sze-yiu-dies-after-decades-</guid>
-    <pubDate>Sat, 11 Apr 2026 03:02:12 GMT</pubDate>
-    <description>Veteran Hong Kong activist Koo Sze-yiu, who protested for over 50 years against both British colonial and Chinese Communist rule, died after continuing resistance despite terminal cancer and Beijing&apos;s National Security Law.</description>
-    <category>activism</category>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-  </item>
-  <item>
-    <title>Ugandan Journalist Disappeared After Discussing Struck-Down Digital Censorship Laws</title>
-    <link>https://libertas.fgu.tech/posts/ugandan-journalist-disappeared-after-discussing-struck-down-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/ugandan-journalist-disappeared-after-discussing-struck-down-</guid>
-    <pubDate>Wed, 01 Apr 2026 21:02:22 GMT</pubDate>
-    <description>Arnold Anthony Mukose, journalist and program director at Alternative Digitalk, was forcibly seized by security operatives after broadcasting about a court ruling that nullified Uganda&apos;s Computer Misuse Act.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>comms</category>
-  </item>
-  <item>
-    <title>Galaxy Monitors Bitcoin Network for Iran Oil Tanker Payment Signs</title>
-    <link>https://libertas.fgu.tech/posts/galaxy-monitors-bitcoin-network-for-iran-oil-tanker-payment-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/galaxy-monitors-bitcoin-network-for-iran-oil-tanker-payment-</guid>
-    <pubDate>Sat, 11 Apr 2026 03:01:13 GMT</pubDate>
-    <description>Galaxy executive Alex Thorn says firm is watching Bitcoin blockchain for evidence of oil tanker fees paid in BTC, potentially indicating sanctions evasion.</description>
-    <category>bitcoin</category>
-    <category>payments</category>
-    <category>censorship-resistance</category>
-  </item>
-  <item>
-    <title>Proton Meet Launches with MLS Encryption to Counter AI Video Surveillance</title>
-    <link>https://libertas.fgu.tech/posts/proton-meet-launches-with-mls-encryption-to-counter-ai-video</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/proton-meet-launches-with-mls-encryption-to-counter-ai-video</guid>
-    <pubDate>Tue, 31 Mar 2026 15:03:49 GMT</pubDate>
-    <description>Proton launched Meet, an end-to-end encrypted video conferencing service using MLS protocol, addressing AI-powered surveillance risks in mainstream platforms like Zoom and Google Meet.</description>
-    <category>comms</category>
-    <category>privacy</category>
-    <category>surveillance</category>
-  </item>
-  <item>
-    <title>US to Begin Automatic Draft Registration, Citing Surveillance Goals</title>
-    <link>https://libertas.fgu.tech/posts/us-to-begin-automatic-draft-registration-citing-surveillance</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/us-to-begin-automatic-draft-registration-citing-surveillance</guid>
-    <pubDate>Fri, 10 Apr 2026 21:04:25 GMT</pubDate>
-    <description>The Selective Service System will automatically register draft-eligible men starting late 2026, abandoning self-registration in favor of federal database integration for &apos;surveillance&apos; purposes.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
-    <category>sovereignty</category>
-  </item>
-  <item>
-    <title>Russian GRU Compromised 18,000+ Routers for Mass Token Harvesting</title>
-    <link>https://libertas.fgu.tech/posts/russian-gru-compromised-18-000-routers-for-mass-token-harves</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/russian-gru-compromised-18-000-routers-for-mass-token-harves</guid>
-    <pubDate>Wed, 08 Apr 2026 03:01:50 GMT</pubDate>
-    <description>Russian military intelligence (GRU/APT28) hijacked DNS settings on 18,000+ vulnerable routers to intercept Microsoft OAuth tokens from 200+ orgs, bypassing MFA without malware.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
-    <category>censorship-resistance</category>
-  </item>
-  <item>
-    <title>Rwanda Reaffirms Crypto Ban After Bybit Adds Rwandan Franc Support</title>
-    <link>https://libertas.fgu.tech/posts/rwanda-reaffirms-crypto-ban-after-bybit-adds-rwandan-franc-s</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/rwanda-reaffirms-crypto-ban-after-bybit-adds-rwandan-franc-s</guid>
-    <pubDate>Mon, 06 Apr 2026 21:01:21 GMT</pubDate>
-    <description>Rwanda&apos;s central bank swiftly reaffirmed its cryptocurrency ban after Bybit enabled Rwandan franc trading on its P2P platform, highlighting ongoing state resistance to monetary sovereignty bypass attempts.</description>
-    <category>bitcoin</category>
-    <category>payments</category>
-    <category>sovereignty</category>
-    <category>censorship-resistance</category>
-  </item>
-  <item>
-    <title>Unverified: Iran Allegedly Using Bitcoin for Strait of Hormuz Transit Fees</title>
-    <link>https://libertas.fgu.tech/posts/unverified-iran-allegedly-using-bitcoin-for-strait-of-hormuz</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/unverified-iran-allegedly-using-bitcoin-for-strait-of-hormuz</guid>
-    <pubDate>Wed, 08 Apr 2026 21:01:53 GMT</pubDate>
-    <description>Unverified reports claim Iran is charging $1/barrel in Bitcoin for certain ships transiting Strait of Hormuz under supposed US-Iran deal. Lacks credible sourcing.</description>
-    <category>payments</category>
-    <category>surveillance</category>
-    <category>censorship-resistance</category>
-  </item>
-  <item>
-    <title>EFF Warns UN: Cybercrime Laws and Surveillance Targeting Human Rights Defenders</title>
-    <link>https://libertas.fgu.tech/posts/eff-warns-un-cybercrime-laws-and-surveillance-targeting-huma</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-warns-un-cybercrime-laws-and-surveillance-targeting-huma</guid>
-    <pubDate>Thu, 02 Apr 2026 15:00:47 GMT</pubDate>
-    <description>EFF submission to UN documents how cybercrime laws, digital surveillance, and platform policies are being weaponized against human rights defenders globally, with insufficient safeguards.</description>
-    <category>surveillance</category>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-    <category>privacy</category>
-  </item>
-  <item>
-    <title>EFF: States Push DRM-Style &apos;Print Blocking&apos; Requirements for 3D Printers</title>
-    <link>https://libertas.fgu.tech/posts/eff-states-push-drm-style-print-blocking-requirements-for-3d</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-states-push-drm-style-print-blocking-requirements-for-3d</guid>
-    <pubDate>Fri, 03 Apr 2026 03:00:36 GMT</pubDate>
-    <description>Three U.S. states propose mandating 3D printer manufacturers install algorithmic censorship to block &apos;gun-like&apos; shapes, with criminal penalties for bypassing the restrictions.</description>
-    <category>censorship-resistance</category>
-    <category>privacy</category>
-    <category>sovereignty</category>
-  </item>
-  <item>
-    <title>2025 Broke Records: 313 Internet Shutdowns Across 52 Countries, Zero Days Without Blackouts</title>
-    <link>https://libertas.fgu.tech/posts/2025-broke-records-313-internet-shutdowns-across-52-countrie</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/2025-broke-records-313-internet-shutdowns-across-52-countrie</guid>
-    <pubDate>Tue, 31 Mar 2026 09:02:43 GMT</pubDate>
-    <description>Access Now reports 2025 had 313 internet shutdowns in 52 countries with no single day free of blackouts. Latin America saw Venezuela continue pattern plus Panama&apos;s first shutdowns during social security protests.</description>
-    <category>censorship-resistance</category>
-    <category>comms</category>
-    <category>surveillance</category>
-    <category>activism</category>
-  </item>
-  <item>
-    <title>Bahraini Activist Dies in Custody After Enforced Disappearance, Digital Surveillance Exposed</title>
-    <link>https://libertas.fgu.tech/posts/bahraini-activist-dies-in-custody-after-enforced-disappearan</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/bahraini-activist-dies-in-custody-after-enforced-disappearan</guid>
-    <pubDate>Mon, 13 Apr 2026 03:01:02 GMT</pubDate>
-    <description>Sayed Mohamed Almosawi died in Bahraini custody with torture signs after 9-day enforced disappearance. Authorities accessed his WhatsApp and tracked location data during detention.</description>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>censorship-resistance</category>
-  </item>
-  <item>
-    <title>US Government Proposes Rules Forcing AI Companies to Disable Safety Features</title>
-    <link>https://libertas.fgu.tech/posts/us-government-proposes-rules-forcing-ai-companies-to-disable</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/us-government-proposes-rules-forcing-ai-companies-to-disable</guid>
-    <pubDate>Fri, 03 Apr 2026 21:00:34 GMT</pubDate>
-    <description>General Services Administration proposes procurement rules requiring contractors to license AI systems for &apos;all lawful purposes&apos; and disable safety guardrails that might refuse government requests.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
-    <category>censorship-resistance</category>
-  </item>
-  <item>
-    <title>Bellingcat Releases Open-Source Satellite Tool to Counter Iran Internet Blackout</title>
-    <link>https://libertas.fgu.tech/posts/bellingcat-releases-open-source-satellite-tool-to-counter-ir</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/bellingcat-releases-open-source-satellite-tool-to-counter-ir</guid>
-    <pubDate>Tue, 07 Apr 2026 15:03:04 GMT</pubDate>
-    <description>Bellingcat launched a free damage assessment tool using ESA satellite data to monitor Iran conflict destruction, bypassing commercial imagery restrictions and internet blackouts that limit information flow.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
-  </item>
-  <item>
-    <title>EFF Analysis: State-Mandated 3D Printer Censorship Will Fail but Harm Users</title>
-    <link>https://libertas.fgu.tech/posts/eff-analysis-state-mandated-3d-printer-censorship-will-fail-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-analysis-state-mandated-3d-printer-censorship-will-fail-</guid>
-    <pubDate>Thu, 02 Apr 2026 21:00:44 GMT</pubDate>
-    <description>EFF explains why proposed state laws requiring &quot;print blockers&quot; on 3D printers won&apos;t prevent firearm manufacturing but will create censorship infrastructure that harms legitimate users and manufacturers.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>privacy</category>
-    <category>sovereignty</category>
-  </item>
-  <item>
-    <title>New Proposal Claims Bitcoin Can Be Quantum-Safe Without Protocol Changes</title>
-    <link>https://libertas.fgu.tech/posts/new-proposal-claims-bitcoin-can-be-quantum-safe-without-prot</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/new-proposal-claims-bitcoin-can-be-quantum-safe-without-prot</guid>
-    <pubDate>Thu, 09 Apr 2026 21:01:26 GMT</pubDate>
-    <description>Researcher proposes Quantum Safe Bitcoin (QSB) scheme that uses hash-based security instead of elliptic curves to protect against quantum computer attacks without requiring Bitcoin soft forks.</description>
-    <category>bitcoin</category>
-    <category>privacy</category>
-    <category>sovereignty</category>
-  </item>
-  <item>
-    <title>Georgia Deports Azerbaijani Journalist Despite EU Court Order, Exposes Cross-Border Collusion</title>
-    <link>https://libertas.fgu.tech/posts/georgia-deports-azerbaijani-journalist-despite-eu-court-orde</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/georgia-deports-azerbaijani-journalist-despite-eu-court-orde</guid>
-    <pubDate>Fri, 10 Apr 2026 09:01:57 GMT</pubDate>
-    <description>Georgian authorities forcibly deported exiled Azerbaijani journalist Afgan Sadigov in defiance of European Court interim protections, using fabricated charges to circumvent extradition restrictions.</description>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-    <category>surveillance</category>
-  </item>
-  <item>
-    <title>Hungary Files Espionage Charges Against Journalist Who Exposed Russian Influence Operations</title>
-    <link>https://libertas.fgu.tech/posts/hungary-files-espionage-charges-against-journalist-who-expos</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/hungary-files-espionage-charges-against-journalist-who-expos</guid>
-    <pubDate>Wed, 01 Apr 2026 15:02:30 GMT</pubDate>
-    <description>Hungarian government charged investigative journalist Szabolcs Panyi with espionage after he reported on Russian influence operations, escalating press freedom attacks ahead of elections.</description>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>censorship-resistance</category>
-    <category>privacy</category>
-  </item>
-  <item>
-    <title>EFF Warns Against 3D Printer DRM Laws in Three US States</title>
-    <link>https://libertas.fgu.tech/posts/eff-warns-against-3d-printer-drm-laws-in-three-us-states</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-warns-against-3d-printer-drm-laws-in-three-us-states</guid>
-    <pubDate>Thu, 02 Apr 2026 21:00:44 GMT</pubDate>
-    <description>Three US states propose laws requiring 3D printer manufacturers to install &apos;print-blocking&apos; software to detect gun-like shapes, effectively mandating DRM that would restrict open-source software and enable vendor surveillance.</description>
-    <category>censorship-resistance</category>
-    <category>privacy</category>
-    <category>surveillance</category>
-    <category>sovereignty</category>
-  </item>
-  <item>
-    <title>Expert Warns of Privatized Offensive Cyber Operations Under Trump Admin</title>
-    <link>https://libertas.fgu.tech/posts/expert-warns-of-privatized-offensive-cyber-operations-under-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/expert-warns-of-privatized-offensive-cyber-operations-under-</guid>
-    <pubDate>Wed, 01 Apr 2026 21:01:50 GMT</pubDate>
-    <description>Citizen Lab director warns Trump administration may authorize private firms to conduct offensive cyber operations, creating unprecedented risks for oversight, civil liberties, and global cyber security.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
-    <category>activism</category>
-  </item>
-  <item>
-    <title>EFF Analysis: How Governments Evolved From Crude Blocking to Sophisticated Censorship Systems</title>
-    <link>https://libertas.fgu.tech/posts/eff-analysis-how-governments-evolved-from-crude-blocking-to-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-analysis-how-governments-evolved-from-crude-blocking-to-</guid>
-    <pubDate>Thu, 02 Apr 2026 15:00:47 GMT</pubDate>
-    <description>EFF documents how government censorship evolved from simple website blocks that VPNs could bypass to sophisticated platform control systems, using Egypt&apos;s transformation from Arab Spring catalyst to digital dystopia as a case study.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>privacy</category>
-  </item>
-  <item>
-    <title>Street Artist Mear One Connects Bitcoin to Decades of Anti-System Protest Culture</title>
-    <link>https://libertas.fgu.tech/posts/street-artist-mear-one-connects-bitcoin-to-decades-of-anti-s</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/street-artist-mear-one-connects-bitcoin-to-decades-of-anti-s</guid>
-    <pubDate>Sun, 12 Apr 2026 15:00:53 GMT</pubDate>
-    <description>Veteran LA street artist Mear One discusses parallels between Bitcoin&apos;s monetary revolution and four decades of anti-war, anti-financial system graffiti activism in interview ahead of Bitcoin 2026.</description>
-    <category>bitcoin</category>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-    <category>sovereignty</category>
-  </item>
-  <item>
-    <title>US Media Consolidation Creates Centralized Censorship Infrastructure</title>
-    <link>https://libertas.fgu.tech/posts/us-media-consolidation-creates-centralized-censorship-infras</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/us-media-consolidation-creates-centralized-censorship-infras</guid>
-    <pubDate>Tue, 07 Apr 2026 21:02:45 GMT</pubDate>
-    <description>Six corporations now control almost all US media, with the FCC enabling consolidation that creates centralized points for government censorship pressure, illustrated by recent Trump administration editorial compliance.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>sovereignty</category>
-  </item>
-  <item>
-    <title>Iran: Thousands of Prisoners at Risk Amid Escalating Conflict and Mass Executions</title>
-    <link>https://libertas.fgu.tech/posts/iran-thousands-of-prisoners-at-risk-amid-escalating-conflict</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/iran-thousands-of-prisoners-at-risk-amid-escalating-conflict</guid>
-    <pubDate>Thu, 02 Apr 2026 03:01:05 GMT</pubDate>
-    <description>Human Rights Watch reports thousands of Iranian detainees, including political prisoners and activists, face dual threats from US/Israeli strikes and mass executions by authorities who continue arresting dissidents for documenting attacks.</description>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>censorship-resistance</category>
-    <category>sovereignty</category>
-  </item>
-  <item>
-    <title>Internet Shutdowns Hit Record High: 313 Documented in 2025 Across 52 Countries</title>
-    <link>https://libertas.fgu.tech/posts/internet-shutdowns-hit-record-high-313-documented-in-2025-ac</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/internet-shutdowns-hit-record-high-313-documented-in-2025-ac</guid>
-    <pubDate>Tue, 31 Mar 2026 09:02:43 GMT</pubDate>
-    <description>Access Now documents 313 internet shutdowns in 52 countries during 2025, increasingly used to conceal war crimes and human rights abuses, with growing attacks on satellite internet systems.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>comms</category>
-    <category>privacy</category>
-  </item>
-  <item>
-    <title>CBP Orders $50M Arsenal of Chemical Weapons for Crowd Control</title>
-    <link>https://libertas.fgu.tech/posts/cbp-orders-50m-arsenal-of-chemical-weapons-for-crowd-control</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/cbp-orders-50m-arsenal-of-chemical-weapons-for-crowd-control</guid>
-    <pubDate>Fri, 03 Apr 2026 21:01:49 GMT</pubDate>
-    <description>U.S. Customs and Border Protection plans to purchase up to $50 million in tear gas, projectiles, and other &apos;less lethal&apos; weapons, including 123 different munition types for potential use against protesters.</description>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>censorship-resistance</category>
-  </item>
-  <item>
-    <title>Record 313 Internet Shutdowns in 2025, Eastern Europe/Central Asia Hit 29 Times</title>
-    <link>https://libertas.fgu.tech/posts/record-313-internet-shutdowns-in-2025-eastern-europe-central</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/record-313-internet-shutdowns-in-2025-eastern-europe-central</guid>
-    <pubDate>Tue, 31 Mar 2026 09:02:43 GMT</pubDate>
-    <description>Access Now reports 2025 saw the highest number of internet shutdowns ever recorded globally (313 across 52 countries), with Eastern Europe and Central Asia experiencing 29 shutdowns across 7 countries.</description>
-    <category>censorship-resistance</category>
-    <category>comms</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>sovereignty</category>
-  </item>
-  <item>
-    <title>FAA Issues Nationwide 21-Month Drone Ban Near ICE Vehicles, EFF Challenges</title>
-    <link>https://libertas.fgu.tech/posts/faa-issues-nationwide-21-month-drone-ban-near-ice-vehicles-e</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/faa-issues-nationwide-21-month-drone-ban-near-ice-vehicles-e</guid>
-    <pubDate>Sat, 04 Apr 2026 03:00:50 GMT</pubDate>
-    <description>Trump administration issued unprecedented nationwide flight restriction banning drones within half-mile of ICE/CBP vehicles for 21 months, effectively criminalizing accountability journalism.</description>
-    <category>surveillance</category>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-    <category>privacy</category>
-  </item>
-  <item>
-    <title>Bangladesh&apos;s 2026 Election: 72 Cases of AI-Generated Disinformation Documented</title>
-    <link>https://libertas.fgu.tech/posts/bangladesh-s-2026-election-72-cases-of-ai-generated-disinfor</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/bangladesh-s-2026-election-72-cases-of-ai-generated-disinfor</guid>
-    <pubDate>Wed, 01 Apr 2026 15:03:36 GMT</pubDate>
-    <description>Study identifies 72 cases of AI-manipulated content during Bangladesh&apos;s February 2026 election, including deepfakes of political figures and fabricated media photocards designed to shape electoral outcomes.</description>
-    <category>surveillance</category>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-    <category>privacy</category>
-  </item>
-  <item>
-    <title>US iPhone Hacking Toolkit &apos;Coruna&apos; Leaked to Russia, Now Used by Adversaries</title>
-    <link>https://libertas.fgu.tech/posts/us-iphone-hacking-toolkit-coruna-leaked-to-russia-now-used-b</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/us-iphone-hacking-toolkit-coruna-leaked-to-russia-now-used-b</guid>
-    <pubDate>Thu, 02 Apr 2026 15:02:15 GMT</pubDate>
-    <description>Google researchers exposed &apos;Coruna,&apos; a sophisticated US government iPhone hacking toolkit that exploits 23 iOS vulnerabilities, reportedly leaked by L3Harris employee to Russia and now used by criminal groups.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
-    <category>activism</category>
-  </item>
-  <item>
-    <title>Russians Navigate State Censorship vs Security Trade-offs During Internet Restrictions</title>
-    <link>https://libertas.fgu.tech/posts/russians-navigate-state-censorship-vs-security-trade-offs-du</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/russians-navigate-state-censorship-vs-security-trade-offs-du</guid>
-    <pubDate>Wed, 08 Apr 2026 15:02:43 GMT</pubDate>
-    <description>Citizen Lab researcher warns Russians are accepting state-controlled apps over secure alternatives during internet shutdowns, prioritizing immediate access over privacy when seeking critical information.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>privacy</category>
-  </item>
-  <item>
-    <title>New Mexico Court Ruling Uses E2E Encryption Implementation as Evidence Against Meta</title>
-    <link>https://libertas.fgu.tech/posts/new-mexico-court-ruling-uses-e2e-encryption-implementation-a</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/new-mexico-court-ruling-uses-e2e-encryption-implementation-a</guid>
-    <pubDate>Mon, 06 Apr 2026 21:02:32 GMT</pubDate>
-    <description>New Mexico court ruling against Meta cited the company&apos;s 2023 addition of end-to-end encryption to Messenger as evidence of negligent design, potentially setting precedent that could discourage encryption deployment.</description>
-    <category>privacy</category>
-    <category>surveillance</category>
-    <category>censorship-resistance</category>
-    <category>comms</category>
-  </item>
-  <item>
-    <title>Hack-for-Hire Campaign Targets Egyptian Journalists with Persistent Spear-Phishing</title>
-    <link>https://libertas.fgu.tech/posts/hack-for-hire-campaign-targets-egyptian-journalists-with-per</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/hack-for-hire-campaign-targets-egyptian-journalists-with-per</guid>
-    <pubDate>Wed, 08 Apr 2026 09:02:24 GMT</pubDate>
-    <description>Access Now exposes sophisticated hack-for-hire campaign targeting Egyptian journalists Mostafa Al-A&apos;sar and Ahmed Eltantawy through persistent spear-phishing attacks from 2023-2024, likely linked to Asian threat actors.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
-    <category>activism</category>
-    <category>censorship-resistance</category>
-  </item>
-  <item>
-    <title>Hack-for-Hire Phishing Campaign Targets MENA Civil Society</title>
-    <link>https://libertas.fgu.tech/posts/hack-for-hire-phishing-campaign-targets-mena-civil-society</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/hack-for-hire-phishing-campaign-targets-mena-civil-society</guid>
-    <pubDate>Wed, 08 Apr 2026 21:02:27 GMT</pubDate>
-    <description>Access Now reports a sophisticated phishing campaign targeting civil society activists across the MENA region, part of broader espionage efforts against human rights organizations.</description>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>privacy</category>
-  </item>
-  <item>
-    <title>Egyptian &amp; Lebanese Journalists Hit by State-Linked Spear-Phishing Campaign</title>
-    <link>https://libertas.fgu.tech/posts/egyptian-lebanese-journalists-hit-by-state-linked-spear-phis</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/egyptian-lebanese-journalists-hit-by-state-linked-spear-phis</guid>
-    <pubDate>Wed, 08 Apr 2026 15:03:18 GMT</pubDate>
-    <description>South Asia-based cyber espionage group targeted prominent Egyptian and Lebanese journalists with coordinated spear-phishing attacks against their Apple, Microsoft, and Google accounts, likely commissioned by governments.</description>
-    <category>surveillance</category>
-    <category>censorship-resistance</category>
-    <category>privacy</category>
-    <category>activism</category>
-  </item>
-  <item>
-    <title>Azerbaijan Supreme Court Upholds 7-9 Year Sentences for Independent Journalists</title>
-    <link>https://libertas.fgu.tech/posts/azerbaijan-supreme-court-upholds-7-9-year-sentences-for-inde</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/azerbaijan-supreme-court-upholds-7-9-year-sentences-for-inde</guid>
-    <pubDate>Wed, 08 Apr 2026 21:03:01 GMT</pubDate>
-    <description>Azerbaijan&apos;s Supreme Court rejected appeals for 7 journalists from Abzas Media and RFE/RL, upholding lengthy prison sentences for alleged illegal foreign funding in escalating press freedom crackdown.</description>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-    <category>surveillance</category>
-    <category>sovereignty</category>
-  </item>
-  <item>
-    <title>Ugandan Journalist Disappeared After Discussing Censorship Law Ruling</title>
-    <link>https://libertas.fgu.tech/posts/ugandan-journalist-disappeared-after-discussing-censorship-l</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/ugandan-journalist-disappeared-after-discussing-censorship-l</guid>
-    <pubDate>Tue, 31 Mar 2026 03:02:57 GMT</pubDate>
-    <description>Ugandan security forces forcibly disappeared journalist Mukose Arnold Anthony after he discussed a court ruling that struck down sections of the Computer Misuse Act used to target journalists and activists.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>privacy</category>
-  </item>
-  <item>
-    <title>Google Moves Quantum Cryptography Deadline to 2029, EFF Warns of Encryption &apos;Y2K Moment&apos;</title>
-    <link>https://libertas.fgu.tech/posts/google-moves-quantum-cryptography-deadline-to-2029-eff-warns</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/google-moves-quantum-cryptography-deadline-to-2029-eff-warns</guid>
-    <pubDate>Fri, 10 Apr 2026 03:01:25 GMT</pubDate>
-    <description>Google accelerated post-quantum cryptography deadline to 2029 due to breakthrough research. Current encryption protecting Signal, websites, and secure communications will be vulnerable to quantum attacks.</description>
-    <category>privacy</category>
-    <category>comms</category>
-    <category>censorship-resistance</category>
-  </item>
-  <item>
-    <title>MENA Region Hit by 52 Internet Shutdowns Across 15 Countries in 2025</title>
-    <link>https://libertas.fgu.tech/posts/mena-region-hit-by-52-internet-shutdowns-across-15-countries</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/mena-region-hit-by-52-internet-shutdowns-across-15-countries</guid>
-    <pubDate>Tue, 31 Mar 2026 09:02:43 GMT</pubDate>
-    <description>Access Now reports 313 global internet shutdowns in 2025, with MENA experiencing 52 shutdowns across 15 countries. Authorities increasingly target satellite internet alternatives.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>comms</category>
-    <category>sovereignty</category>
-  </item>
-  <item>
-    <title>Global Internet Shutdowns Hit Record High: 313 Blackouts Across 52 Countries in 2025</title>
-    <link>https://libertas.fgu.tech/posts/global-internet-shutdowns-hit-record-high-313-blackouts-acro</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/global-internet-shutdowns-hit-record-high-313-blackouts-acro</guid>
-    <pubDate>Tue, 31 Mar 2026 09:02:43 GMT</pubDate>
-    <description>Access Now reports 2025 saw 313 internet shutdowns across 52 countries—a record high with no shutdown-free days. Myanmar led with 95 shutdowns, while authorities increasingly target satellite internet systems.</description>
-    <category>censorship-resistance</category>
-    <category>comms</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>sovereignty</category>
-  </item>
-  <item>
-    <title>Mexico Deploys &apos;Seguritech&apos; Surveillance System in Ciudad Juárez</title>
-    <link>https://libertas.fgu.tech/posts/mexico-deploys-seguritech-surveillance-system-in-ciudad-ju-r</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/mexico-deploys-seguritech-surveillance-system-in-ciudad-ju-r</guid>
-    <pubDate>Wed, 08 Apr 2026 15:02:19 GMT</pubDate>
-    <description>Mexican law enforcement is using a surveillance system called &apos;Seguritech&apos; in Ciudad Juárez, involving map-based tracking interfaces accessed by police officers.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
-  </item>
-  <item>
-    <title>How Arab Spring Protests Fueled Global Surveillance Infrastructure Boom</title>
-    <link>https://libertas.fgu.tech/posts/how-arab-spring-protests-fueled-global-surveillance-infrastr</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/how-arab-spring-protests-fueled-global-surveillance-infrastr</guid>
-    <pubDate>Wed, 08 Apr 2026 09:01:15 GMT</pubDate>
-    <description>EFF analysis shows how governments turned digital tools that empowered 2011 Arab Spring activists into backbone of global surveillance apparatus, creating permanent monitoring infrastructure now used worldwide.</description>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>privacy</category>
-    <category>censorship-resistance</category>
-  </item>
-  <item>
-    <title>EFF Documents Evolution of Digital Censorship Since Arab Spring</title>
-    <link>https://libertas.fgu.tech/posts/eff-documents-evolution-of-digital-censorship-since-arab-spr</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-documents-evolution-of-digital-censorship-since-arab-spr</guid>
-    <pubDate>Thu, 02 Apr 2026 09:00:48 GMT</pubDate>
-    <description>EFF analysis shows how governments transformed from crude internet blocks to sophisticated censorship systems targeting platforms directly, making simple circumvention tools less effective.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>privacy</category>
-  </item>
-  <item>
-    <title>Age Verification Systems Show Mixed Results, Raise Privacy Concerns for All Users</title>
-    <link>https://libertas.fgu.tech/posts/age-verification-systems-show-mixed-results-raise-privacy-co</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/age-verification-systems-show-mixed-results-raise-privacy-co</guid>
-    <pubDate>Wed, 08 Apr 2026 21:03:38 GMT</pubDate>
-    <description>New research on UK and Australia&apos;s age verification laws shows limited effectiveness while creating privacy risks for all internet users, with children easily bypassing restrictions.</description>
-    <category>privacy</category>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>identity</category>
-  </item>
-  <item>
-    <title>EFF&apos;s Cindy Cohn Promotes Privacy Book at DC Events</title>
-    <link>https://libertas.fgu.tech/posts/eff-s-cindy-cohn-promotes-privacy-book-at-dc-events</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-s-cindy-cohn-promotes-privacy-book-at-dc-events</guid>
-    <pubDate>Fri, 03 Apr 2026 21:00:34 GMT</pubDate>
-    <description>EFF Executive Director Cindy Cohn is hosting two DC events to discuss her new book about 30 years of fighting digital surveillance, with proceeds benefiting EFF.</description>
-    <category>privacy</category>
-    <category>surveillance</category>
-    <category>activism</category>
-  </item>
-  <item>
-    <title>US Govt Rewrites Procurement Rules to Force AI Companies to Disable Safety Guardrails</title>
-    <link>https://libertas.fgu.tech/posts/us-govt-rewrites-procurement-rules-to-force-ai-companies-to-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/us-govt-rewrites-procurement-rules-to-force-ai-companies-to-</guid>
-    <pubDate>Sat, 04 Apr 2026 03:00:50 GMT</pubDate>
-    <description>GSA proposes procurement rules requiring AI contractors to license systems for &apos;all lawful purposes&apos; and disable safety guardrails that might refuse government requests, effectively weaponizing contracts against AI safety.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-  </item>
-  <item>
-    <title>Belarus Adopts Vague &apos;Propaganda&apos; Ban Expanding Censorship Powers</title>
-    <link>https://libertas.fgu.tech/posts/belarus-adopts-vague-propaganda-ban-expanding-censorship-pow</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/belarus-adopts-vague-propaganda-ban-expanding-censorship-pow</guid>
-    <pubDate>Fri, 10 Apr 2026 09:01:57 GMT</pubDate>
-    <description>Belarus parliament passed sweeping law banning &apos;propaganda&apos; of LGBT relationships and childlessness with deliberately vague definitions, mirroring Russia&apos;s playbook for suppressing dissent and controlling discourse.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>sovereignty</category>
-  </item>
-  <item>
-    <title>Quantum Computing Advances Compress Bitcoin Security Upgrade Timeline</title>
-    <link>https://libertas.fgu.tech/posts/quantum-computing-advances-compress-bitcoin-security-upgrade</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/quantum-computing-advances-compress-bitcoin-security-upgrade</guid>
-    <pubDate>Fri, 10 Apr 2026 21:01:31 GMT</pubDate>
-    <description>New research shows quantum computers may need only 10,000-500,000 qubits to break Bitcoin&apos;s encryption (down from 10M), accelerating development of quantum-resistant upgrades like BIP-360.</description>
-    <category>bitcoin</category>
-    <category>privacy</category>
-    <category>sovereignty</category>
-  </item>
-  <item>
-    <title>Durov: Thousands of Developers Building VPNs to Counter State Internet Control</title>
-    <link>https://libertas.fgu.tech/posts/durov-thousands-of-developers-building-vpns-to-counter-state</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/durov-thousands-of-developers-building-vpns-to-counter-state</guid>
-    <pubDate>Sat, 04 Apr 2026 21:01:20 GMT</pubDate>
-    <description>Telegram CEO Pavel Durov reports thousands of software developers are actively creating VPNs to circumvent government internet restrictions.</description>
-    <category>censorship-resistance</category>
-    <category>comms</category>
-    <category>privacy</category>
-  </item>
-  <item>
-    <title>Press Freedom Coalition Challenges Trump&apos;s Executive Order Targeting Law Firms</title>
-    <link>https://libertas.fgu.tech/posts/press-freedom-coalition-challenges-trump-s-executive-order-t</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/press-freedom-coalition-challenges-trump-s-executive-order-t</guid>
-    <pubDate>Thu, 02 Apr 2026 21:04:16 GMT</pubDate>
-    <description>42 media organizations led by The Intercept filed amicus brief challenging Trump&apos;s executive order sanctioning law firms that represent his political opponents, arguing it undermines press freedom.</description>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-    <category>surveillance</category>
-  </item>
-  <item>
-    <title>Hong Kong Police Can Now Force Encryption Key Disclosure at Borders</title>
-    <link>https://libertas.fgu.tech/posts/hong-kong-police-can-now-force-encryption-key-disclosure-at-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/hong-kong-police-can-now-force-encryption-key-disclosure-at-</guid>
-    <pubDate>Tue, 07 Apr 2026 15:01:52 GMT</pubDate>
-    <description>New Hong Kong law allows police to demand encryption keys for devices, even from airport transit passengers. Refusal is now criminal offense under expanded National Security Law.</description>
-    <category>privacy</category>
-    <category>surveillance</category>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-  </item>
-  <item>
-    <title>Hack-for-Hire Group Targets Egyptian Journalists with Spear-Phishing Campaign</title>
-    <link>https://libertas.fgu.tech/posts/hack-for-hire-group-targets-egyptian-journalists-with-spear-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/hack-for-hire-group-targets-egyptian-journalists-with-spear-</guid>
-    <pubDate>Wed, 08 Apr 2026 09:02:24 GMT</pubDate>
-    <description>Access Now investigation reveals sophisticated spear-phishing attacks targeting Egyptian journalists and government critics, using fake Signal pages and Apple impersonation to deliver Android spyware.</description>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>privacy</category>
-    <category>censorship-resistance</category>
-  </item>
-  <item>
-    <title>US Issues Nationwide Drone Ban Near ICE Vehicles to Block Documentation</title>
-    <link>https://libertas.fgu.tech/posts/us-issues-nationwide-drone-ban-near-ice-vehicles-to-block-do</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/us-issues-nationwide-drone-ban-near-ice-vehicles-to-block-do</guid>
-    <pubDate>Fri, 10 Apr 2026 03:01:25 GMT</pubDate>
-    <description>The FAA issued a 21-month nationwide restriction criminalizing drone flights within half a mile of any ICE/CBP vehicle, effectively blocking citizen and journalist documentation of immigration enforcement.</description>
-    <category>surveillance</category>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-    <category>privacy</category>
-  </item>
-  <item>
-    <title>AI Tool Grok Amplifies Online Violence Against Nigerian Women</title>
-    <link>https://libertas.fgu.tech/posts/ai-tool-grok-amplifies-online-violence-against-nigerian-wome</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/ai-tool-grok-amplifies-online-violence-against-nigerian-wome</guid>
-    <pubDate>Fri, 10 Apr 2026 15:03:41 GMT</pubDate>
-    <description>X&apos;s AI assistant Grok is being weaponized to generate non-consensual sexualized images, systematizing online abuse that already disproportionately targets Nigerian women with weak regulatory oversight.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
-    <category>censorship-resistance</category>
-    <category>activism</category>
   </item>
 </channel>
 </rss>
