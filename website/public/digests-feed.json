@@ -23,51 +23,19 @@
       }
     },
     {
-      "id": "3696c31d-aa45-4a56-a02b-72d1756e0415",
-      "url": "https://libertas.fgu.tech/digests/weekly-2026-02-06",
-      "title": "Weekly Digest: 2026-01-31 to 2026-02-06",
-      "summary": "This week highlighted the escalating tension between surveillance states and digital freedom advocates, with governments from Gabon to Russia demonstrating sophisticated censorship capabilities while researchers advance anonymous measurement systems. Four new project ideas emerged focusing on blackout-resistant communications and adaptive circumvention tools.",
-      "content_text": "This week highlighted the escalating tension between surveillance states and digital freedom advocates, with governments from Gabon to Russia demonstrating sophisticated censorship capabilities while researchers advance anonymous measurement systems. Four new project ideas emerged focusing on blackout-resistant communications and adaptive circumvention tools.",
-      "date_published": "2026-02-08T14:00:33.327Z",
+      "id": "c1b6524c-b9e6-4b6e-b094-36f9d04026bf",
+      "url": "https://libertas.fgu.tech/digests/weekly-2026-05-01",
+      "title": "Weekly Digest: 2026-04-25 to 2026-05-01",
+      "summary": "This week revealed a coordinated global assault on digital freedom: age verification laws expanding across platforms and governments threaten to end anonymous internet use, while 30 governments deployed transnational repression and systematic financial censorship by payment platforms documented new forms of control. Freedom tech organizations pushed back with enhanced censorship measurement tools and legal challenges.",
+      "content_text": "This week revealed a coordinated global assault on digital freedom: age verification laws expanding across platforms and governments threaten to end anonymous internet use, while 30 governments deployed transnational repression and systematic financial censorship by payment platforms documented new forms of control. Freedom tech organizations pushed back with enhanced censorship measurement tools and legal challenges.",
+      "date_published": "2026-05-03T00:00:55.522Z",
       "tags": [
         "weekly-digest"
       ],
       "_libertas": {
-        "insight_count": 10,
-        "period_start": "2026-01-31",
-        "period_end": "2026-02-06"
-      }
-    },
-    {
-      "id": "64ddd560-69a9-48c8-a4f5-b8538b88b46d",
-      "url": "https://libertas.fgu.tech/digests/weekly-2026-02-27",
-      "title": "Weekly Digest: 2026-02-21 to 2026-02-27",
-      "summary": "Authoritarian regimes deployed unprecedented digital repression techniques this week, with Iran implementing 'digital apartheid' internet systems during deadly protests while governments globally escalated surveillance and censorship tactics. The Trump administration's contradictory approach—launching 'anti-censorship' portals while cutting freedom tech funding—highlights the selective nature of digital rights advocacy.",
-      "content_text": "Authoritarian regimes deployed unprecedented digital repression techniques this week, with Iran implementing 'digital apartheid' internet systems during deadly protests while governments globally escalated surveillance and censorship tactics. The Trump administration's contradictory approach—launching 'anti-censorship' portals while cutting freedom tech funding—highlights the selective nature of digital rights advocacy.",
-      "date_published": "2026-03-01T14:01:00.195Z",
-      "tags": [
-        "weekly-digest"
-      ],
-      "_libertas": {
-        "insight_count": 47,
-        "period_start": "2026-02-21",
-        "period_end": "2026-02-27"
-      }
-    },
-    {
-      "id": "a5e07001-2658-41ee-9625-165184380f7b",
-      "url": "https://libertas.fgu.tech/digests/weekly-2026-02-13",
-      "title": "Weekly Digest: 2026-02-07 to 2026-02-13",
-      "summary": "This week revealed critical vulnerabilities in freedom tech infrastructure: a massive botnet accidentally crippled I2P's anonymity network, while New York proposed mandatory surveillance for 3D printers. However, Silent.Link demonstrated how Bitcoin-native services can bypass both SIM-swap attacks and state censorship.",
-      "content_text": "This week revealed critical vulnerabilities in freedom tech infrastructure: a massive botnet accidentally crippled I2P's anonymity network, while New York proposed mandatory surveillance for 3D printers. However, Silent.Link demonstrated how Bitcoin-native services can bypass both SIM-swap attacks and state censorship.",
-      "date_published": "2026-02-15T14:00:23.902Z",
-      "tags": [
-        "weekly-digest"
-      ],
-      "_libertas": {
-        "insight_count": 3,
-        "period_start": "2026-02-07",
-        "period_end": "2026-02-13"
+        "insight_count": 45,
+        "period_start": "2026-04-25",
+        "period_end": "2026-05-01"
       }
     }
   ]

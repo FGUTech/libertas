@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Weekly summaries of freedom technology developments</description>
   <language>en-us</language>
-  <lastBuildDate>Sun, 05 Apr 2026 00:00:59 GMT</lastBuildDate>
+  <lastBuildDate>Sun, 03 May 2026 00:00:55 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/digests-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -17,27 +17,11 @@
     <category>weekly-digest</category>
   </item>
   <item>
-    <title>Weekly Digest: 2026-01-31 to 2026-02-06</title>
-    <link>https://libertas.fgu.tech/digests/weekly-2026-02-06</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/digests/weekly-2026-02-06</guid>
-    <pubDate>Sun, 08 Feb 2026 14:00:33 GMT</pubDate>
-    <description>This week highlighted the escalating tension between surveillance states and digital freedom advocates, with governments from Gabon to Russia demonstrating sophisticated censorship capabilities while researchers advance anonymous measurement systems. Four new project ideas emerged focusing on blackout-resistant communications and adaptive circumvention tools.</description>
-    <category>weekly-digest</category>
-  </item>
-  <item>
-    <title>Weekly Digest: 2026-02-21 to 2026-02-27</title>
-    <link>https://libertas.fgu.tech/digests/weekly-2026-02-27</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/digests/weekly-2026-02-27</guid>
-    <pubDate>Sun, 01 Mar 2026 14:01:00 GMT</pubDate>
-    <description>Authoritarian regimes deployed unprecedented digital repression techniques this week, with Iran implementing &apos;digital apartheid&apos; internet systems during deadly protests while governments globally escalated surveillance and censorship tactics. The Trump administration&apos;s contradictory approach—launching &apos;anti-censorship&apos; portals while cutting freedom tech funding—highlights the selective nature of digital rights advocacy.</description>
-    <category>weekly-digest</category>
-  </item>
-  <item>
-    <title>Weekly Digest: 2026-02-07 to 2026-02-13</title>
-    <link>https://libertas.fgu.tech/digests/weekly-2026-02-13</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/digests/weekly-2026-02-13</guid>
-    <pubDate>Sun, 15 Feb 2026 14:00:23 GMT</pubDate>
-    <description>This week revealed critical vulnerabilities in freedom tech infrastructure: a massive botnet accidentally crippled I2P&apos;s anonymity network, while New York proposed mandatory surveillance for 3D printers. However, Silent.Link demonstrated how Bitcoin-native services can bypass both SIM-swap attacks and state censorship.</description>
+    <title>Weekly Digest: 2026-04-25 to 2026-05-01</title>
+    <link>https://libertas.fgu.tech/digests/weekly-2026-05-01</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/digests/weekly-2026-05-01</guid>
+    <pubDate>Sun, 03 May 2026 00:00:55 GMT</pubDate>
+    <description>This week revealed a coordinated global assault on digital freedom: age verification laws expanding across platforms and governments threaten to end anonymous internet use, while 30 governments deployed transnational repression and systematic financial censorship by payment platforms documented new forms of control. Freedom tech organizations pushed back with enhanced censorship measurement tools and legal challenges.</description>
     <category>weekly-digest</category>
   </item>
 </channel>
