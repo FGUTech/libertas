@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Sat, 02 May 2026 09:08:30 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 04 May 2026 03:01:19 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -447,6 +447,18 @@
     <description>85% of Nordic citizens find Europe&apos;s reliance on US tech concerning, with geopolitical tensions driving preference for European alternatives to avoid NSA surveillance and FISA data collection.</description>
     <category>surveillance</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>China&apos;s AI Surveillance Model Goes Global Despite Security Flaws</title>
+    <link>https://libertas.fgu.tech/posts/china-s-ai-surveillance-model-goes-global-despite-security-f</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/china-s-ai-surveillance-model-goes-global-despite-security-f</guid>
+    <pubDate>Mon, 04 May 2026 03:01:19 GMT</pubDate>
+    <description>China&apos;s AI surveillance infrastructure serves as both blueprint and warning for global authoritarianism, with similar facial recognition and monitoring tools now deployed by democratic states despite ongoing security vulnerabilities.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>sovereignty</category>
   </item>
   <item>
     <title>Age Verification Expanding Across Platforms, OS, and Government Digital ID Systems</title>
