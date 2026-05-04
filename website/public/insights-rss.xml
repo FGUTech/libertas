@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Mon, 04 May 2026 03:01:19 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 04 May 2026 09:01:04 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -72,6 +72,17 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Tails 7.7.2 Emergency Release Fixes Critical Privilege Escalation Vulnerability</title>
+    <link>https://libertas.fgu.tech/posts/tails-7-7-2-emergency-release-fixes-critical-privilege-escal</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/tails-7-7-2-emergency-release-fixes-critical-privilege-escal</guid>
+    <pubDate>Mon, 04 May 2026 09:01:04 GMT</pubDate>
+    <description>Tails released emergency update to patch Copy Fail vulnerability in Linux kernel that could allow attackers to gain admin privileges and potentially deanonymize users.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>identity</category>
   </item>
   <item>
     <title>EFF Publishes DMCA Compliance Guide for Decentralized Social Platform Operators</title>

@@ -143,6 +143,29 @@
       }
     },
     {
+      "id": "1e75ea09-3bca-4c8a-b6d6-2fe3638b4b57",
+      "url": "https://libertas.fgu.tech/posts/tails-7-7-2-emergency-release-fixes-critical-privilege-escal",
+      "title": "Tails 7.7.2 Emergency Release Fixes Critical Privilege Escalation Vulnerability",
+      "summary": "Tails released emergency update to patch Copy Fail vulnerability in Linux kernel that could allow attackers to gain admin privileges and potentially deanonymize users.",
+      "content_text": "Emergency Tails 7.7.2 release fixes critical Linux kernel vulnerability\n• Copy Fail (CVE in kernel 6.12.85) enables privilege escalation attacks\n• Vulnerability could allow applications to gain administration privileges\n• Potential attack chain: exploit app vulnerability + Copy Fail = full system control\n• Successful exploitation could lead to user deanonymization\n• Tails team reports no known real-world exploitation yet\n• Automatic upgrades available from Tails 7.0+, manual upgrade option provided",
+      "date_published": "2026-05-04T09:01:04.773Z",
+      "date_modified": "2026-05-04T09:01:04.880Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "censorship-resistance",
+        "identity"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 95,
+        "citations": [
+          "https://tails.net/news/version_7.7.2/",
+          "https://copy.fail/"
+        ]
+      }
+    },
+    {
       "id": "21ed7a8c-a146-4bc0-9a46-df26f1efc881",
       "url": "https://libertas.fgu.tech/posts/eff-publishes-dmca-compliance-guide-for-decentralized-social",
       "title": "EFF Publishes DMCA Compliance Guide for Decentralized Social Platform Operators",
