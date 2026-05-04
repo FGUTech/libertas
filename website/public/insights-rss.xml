@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Mon, 04 May 2026 09:01:04 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 04 May 2026 15:01:44 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -214,6 +214,17 @@
     <category>surveillance</category>
     <category>censorship-resistance</category>
     <category>sovereignty</category>
+  </item>
+  <item>
+    <title>DHS Used 1930s Trade Law to Demand Google Data on Canadian&apos;s Anti-ICE Posts</title>
+    <link>https://libertas.fgu.tech/posts/dhs-used-1930s-trade-law-to-demand-google-data-on-canadian-s</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/dhs-used-1930s-trade-law-to-demand-google-data-on-canadian-s</guid>
+    <pubDate>Mon, 04 May 2026 15:01:44 GMT</pubDate>
+    <description>US Homeland Security used a 1930s trade law to force Google to surrender data on a Canadian citizen who posted anti-ICE content on X, despite the person not entering the US in over a decade.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>censorship-resistance</category>
+    <category>activism</category>
   </item>
   <item>
     <title>GUARD Act Would Mandate ID Checks, End Anonymous Internet Use</title>
@@ -493,6 +504,17 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>EFF Calls for Privacy-First Approach to EU&apos;s Digital Fairness Act</title>
+    <link>https://libertas.fgu.tech/posts/eff-calls-for-privacy-first-approach-to-eu-s-digital-fairnes</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-calls-for-privacy-first-approach-to-eu-s-digital-fairnes</guid>
+    <pubDate>Mon, 04 May 2026 15:00:38 GMT</pubDate>
+    <description>EFF recommends EU&apos;s Digital Fairness Act prioritize banning surveillance-based business models and strengthening user sovereignty over more invasive regulatory measures like age verification.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>sovereignty</category>
+    <category>censorship-resistance</category>
   </item>
   <item>
     <title>Citizen Lab Exposes How Ad-Tech Data Enables Government Location Surveillance</title>

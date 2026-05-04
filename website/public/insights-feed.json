@@ -436,6 +436,28 @@
       }
     },
     {
+      "id": "6ab6d2b8-f1a2-41e1-af24-139d24e130f8",
+      "url": "https://libertas.fgu.tech/posts/dhs-used-1930s-trade-law-to-demand-google-data-on-canadian-s",
+      "title": "DHS Used 1930s Trade Law to Demand Google Data on Canadian's Anti-ICE Posts",
+      "summary": "US Homeland Security used a 1930s trade law to force Google to surrender data on a Canadian citizen who posted anti-ICE content on X, despite the person not entering the US in over a decade.",
+      "content_text": "DHS targeted Canadian citizen for posts on X condemning killings of Renee Good and Alex Pretti\n• Used obscure 1930s trade law as legal mechanism to compel data disclosure\n• Google was forced to surrender user data including activity and location information\n• Target hasn't entered US territory in more than 10 years\n• Demonstrates cross-border surveillance reach targeting political speech\n• Shows creative use of old legal authorities to circumvent modern privacy protections\n• Sets precedent for extraterritorial enforcement against foreign critics",
+      "date_published": "2026-05-04T15:01:44.381Z",
+      "date_modified": "2026-05-04T15:01:44.479Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "censorship-resistance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 90,
+        "citations": [
+          "https://www.wired.com/story/dhs-demanded-google-surrender-data-on-canadians-activity-location-over-anti-ice-posts/"
+        ]
+      }
+    },
+    {
       "id": "6ccf30a5-74a3-475f-9da6-11c5cc519af5",
       "url": "https://libertas.fgu.tech/posts/guard-act-would-mandate-id-checks-end-anonymous-internet-use",
       "title": "GUARD Act Would Mandate ID Checks, End Anonymous Internet Use",
@@ -1014,6 +1036,28 @@
         "citations": [
           "https://globalvoices.org/2026/04/29/the-digital-crown-reclaiming-human-dignity-in-the-age-of-ai/",
           "https://globalvoices.org/2026/04/30/before-the-algorithm-decides-queer-storytelling-as-resistance-in-nigeria/"
+        ]
+      }
+    },
+    {
+      "id": "db5c5038-2509-4e76-af04-c820a685873f",
+      "url": "https://libertas.fgu.tech/posts/eff-calls-for-privacy-first-approach-to-eu-s-digital-fairnes",
+      "title": "EFF Calls for Privacy-First Approach to EU's Digital Fairness Act",
+      "summary": "EFF recommends EU's Digital Fairness Act prioritize banning surveillance-based business models and strengthening user sovereignty over more invasive regulatory measures like age verification.",
+      "content_text": "EFF released recommendations for EU's proposed Digital Fairness Act targeting dark patterns and exploitative personalization\n• Advocates banning surveillance-based business models rather than expanding platform control over users\n• Calls for explicit dark pattern prohibitions that manipulate user choices and data sharing\n• Opposes pay-for-privacy schemes - users shouldn't trade data or pay extra to avoid tracking\n• Supports automated privacy signals recognition by browsers and OS to reject tracking\n• Addresses user sovereignty by limiting post-sale restrictions and technical lock-ins\n• Proposes alternative to invasive age verification by limiting data collection by default",
+      "date_published": "2026-05-04T15:00:38.131Z",
+      "date_modified": "2026-05-04T15:00:38.171Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "sovereignty",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/04/dos-and-donts-eus-digital-fairness-act-effs-recommendation-regulating-digital"
         ]
       }
     },
