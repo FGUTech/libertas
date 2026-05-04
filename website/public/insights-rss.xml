@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Mon, 04 May 2026 15:01:44 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 04 May 2026 21:01:38 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -62,6 +62,17 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>EFF Issues EU Digital Fairness Act Recommendations Against Surveillance-Based Solutions</title>
+    <link>https://libertas.fgu.tech/posts/eff-issues-eu-digital-fairness-act-recommendations-against-s</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-issues-eu-digital-fairness-act-recommendations-against-s</guid>
+    <pubDate>Mon, 04 May 2026 21:00:46 GMT</pubDate>
+    <description>EFF advocates for EU Digital Fairness Act to ban dark patterns, tackle commercial surveillance, and strengthen user sovereignty rather than expanding platform control through age verification mandates.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>sovereignty</category>
+    <category>censorship-resistance</category>
   </item>
   <item>
     <title>Palantir&apos;s $130M IRS Contract Enables Mass Financial Surveillance Including Crypto Tracking</title>
@@ -270,6 +281,16 @@
     <category>activism</category>
   </item>
   <item>
+    <title>DHS Used 1930s Trade Law to Force Google Data on Canadian Over Anti-ICE Posts</title>
+    <link>https://libertas.fgu.tech/posts/dhs-used-1930s-trade-law-to-force-google-data-on-canadian-ov</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/dhs-used-1930s-trade-law-to-force-google-data-on-canadian-ov</guid>
+    <pubDate>Mon, 04 May 2026 21:01:38 GMT</pubDate>
+    <description>DHS leveraged an obscure 1930s trade law to compel Google to surrender data on a Canadian citizen who criticized ICE killings on social media, despite him not entering the US in over a decade.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>censorship-resistance</category>
+  </item>
+  <item>
     <title>Mercenary Hackers Target Egyptian Opposition Journalists with Spear-Phishing Campaign</title>
     <link>https://libertas.fgu.tech/posts/mercenary-hackers-target-egyptian-opposition-journalists-wit</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/mercenary-hackers-target-egyptian-opposition-journalists-wit</guid>
@@ -386,6 +407,17 @@
     <category>sovereignty</category>
   </item>
   <item>
+    <title>GUARD Act Would Mandate ID Checks for Basic Internet Use, EFF Warns</title>
+    <link>https://libertas.fgu.tech/posts/guard-act-would-mandate-id-checks-for-basic-internet-use-eff</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/guard-act-would-mandate-id-checks-for-basic-internet-use-eff</guid>
+    <pubDate>Mon, 04 May 2026 21:00:46 GMT</pubDate>
+    <description>The GUARD Act, moving quickly through Congress, would require age verification for AI-powered tools, effectively mandating ID checks for search engines, homework help, and customer service—eliminating anonymous internet use.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>identity</category>
+  </item>
+  <item>
     <title>Citizen Lab Research Quantifies Digital Surveillance Chilling Effects Post-Snowden</title>
     <link>https://libertas.fgu.tech/posts/citizen-lab-research-quantifies-digital-surveillance-chillin</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/citizen-lab-research-quantifies-digital-surveillance-chillin</guid>
@@ -492,6 +524,17 @@
     <category>surveillance</category>
     <category>identity</category>
     <category>censorship-resistance</category>
+    <category>activism</category>
+  </item>
+  <item>
+    <title>EFF Opposes UK Digital ID Scheme, Cites Privacy and Coercion Concerns</title>
+    <link>https://libertas.fgu.tech/posts/eff-opposes-uk-digital-id-scheme-cites-privacy-and-coercion-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-opposes-uk-digital-id-scheme-cites-privacy-and-coercion-</guid>
+    <pubDate>Mon, 04 May 2026 21:00:46 GMT</pubDate>
+    <description>EFF submitted formal opposition to UK&apos;s proposed national digital ID system, highlighting mission creep, privacy violations, and coercive digital participation risks.</description>
+    <category>identity</category>
+    <category>privacy</category>
+    <category>surveillance</category>
     <category>activism</category>
   </item>
   <item>
