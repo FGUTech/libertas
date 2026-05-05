@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Tue, 05 May 2026 15:02:35 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 05 May 2026 21:01:18 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -382,6 +382,16 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Utah Becomes First State to Regulate VPN Use for Age Verification Bypass</title>
+    <link>https://libertas.fgu.tech/posts/utah-becomes-first-state-to-regulate-vpn-use-for-age-verific</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/utah-becomes-first-state-to-regulate-vpn-use-for-age-verific</guid>
+    <pubDate>Tue, 05 May 2026 21:01:18 GMT</pubDate>
+    <description>Utah&apos;s new law, effective May 6, 2026, targets VPN usage to circumvent age verification, requiring companies to verify ages based on physical location regardless of VPN use and banning instruction sharing.</description>
+    <category>privacy</category>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
   </item>
   <item>
     <title>30 Governments Used Transnational Repression in 2025, Freedom House Reports</title>

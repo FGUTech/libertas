@@ -786,6 +786,27 @@
       }
     },
     {
+      "id": "859f586e-99c7-40cd-a0d1-5dce868e5727",
+      "url": "https://libertas.fgu.tech/posts/utah-becomes-first-state-to-regulate-vpn-use-for-age-verific",
+      "title": "Utah Becomes First State to Regulate VPN Use for Age Verification Bypass",
+      "summary": "Utah's new law, effective May 6, 2026, targets VPN usage to circumvent age verification, requiring companies to verify ages based on physical location regardless of VPN use and banning instruction sharing.",
+      "content_text": "Utah Senate Bill 73 goes into effect May 6, 2026, first state law targeting VPN use for age-verification bypass\n• Law deems users in Utah subject to verification regardless of VPN/proxy use to mask location\n• Prohibits adult content sites from providing VPN instructions or circumvention methods\n• Creates 'liability trap' forcing sites to either ban VPN IPs globally or implement universal age verification\n• Raises First Amendment concerns by restricting truthful information about lawful privacy tools\n• Technical implementation deemed impossible due to constantly changing VPN IP addresses\n• Sets dangerous precedent after similar provisions removed from Wisconsin bill due to advocacy\n• Part of broader 2% tax on adult content revenues, with VPN provisions taking immediate effect",
+      "date_published": "2026-05-05T21:01:18.331Z",
+      "date_modified": "2026-05-05T21:01:18.381Z",
+      "tags": [
+        "privacy",
+        "censorship-resistance",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/04/utahs-new-law-regulating-vpns-goes-effect-next-week"
+        ]
+      }
+    },
+    {
       "id": "8dd60559-169e-4842-bd43-b1fa172cff87",
       "url": "https://libertas.fgu.tech/posts/30-governments-used-transnational-repression-in-2025-freedom",
       "title": "30 Governments Used Transnational Repression in 2025, Freedom House Reports",
