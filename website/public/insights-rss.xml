@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Tue, 05 May 2026 03:01:27 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 05 May 2026 09:01:49 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -227,6 +227,16 @@
     <category>sovereignty</category>
   </item>
   <item>
+    <title>Portland AI Drone Targeting Firm Ships Hardware to Israeli Military Contractor</title>
+    <link>https://libertas.fgu.tech/posts/portland-ai-drone-targeting-firm-ships-hardware-to-israeli-m</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/portland-ai-drone-targeting-firm-ships-hardware-to-israeli-m</guid>
+    <pubDate>Tue, 05 May 2026 09:01:49 GMT</pubDate>
+    <description>Sightline Intelligence, a Portland-based AI targeting company, shipped surveillance hardware to Israeli weapons manufacturer Elbit Systems, sparking local protests over autonomous targeting technology.</description>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>privacy</category>
+  </item>
+  <item>
     <title>DHS Used 1930s Trade Law to Demand Google Data on Canadian&apos;s Anti-ICE Posts</title>
     <link>https://libertas.fgu.tech/posts/dhs-used-1930s-trade-law-to-demand-google-data-on-canadian-s</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/dhs-used-1930s-trade-law-to-demand-google-data-on-canadian-s</guid>
@@ -406,6 +416,17 @@
     <category>censorship-resistance</category>
     <category>surveillance</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>EFF Launches &apos;Claw Back&apos; Campaign Against Mass Surveillance as Section 702 Renewal Looms</title>
+    <link>https://libertas.fgu.tech/posts/eff-launches-claw-back-campaign-against-mass-surveillance-as</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-launches-claw-back-campaign-against-mass-surveillance-as</guid>
+    <pubDate>Tue, 05 May 2026 09:00:42 GMT</pubDate>
+    <description>EFF launches new fundraising campaign to fight mass surveillance, highlighting recent wins including Rayhunter open-source cell-site simulator detection tool and lawsuits against warrantless ALPR searches as Congress considers Section 702 renewal.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
+    <category>censorship-resistance</category>
   </item>
   <item>
     <title>EFF Guide: Bridge Social Media Accounts Across Mastodon, Bluesky, and Threads</title>

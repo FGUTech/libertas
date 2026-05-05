@@ -458,6 +458,27 @@
       }
     },
     {
+      "id": "66d2236c-9eff-4e72-ad11-16d5abd1cfc4",
+      "url": "https://libertas.fgu.tech/posts/portland-ai-drone-targeting-firm-ships-hardware-to-israeli-m",
+      "title": "Portland AI Drone Targeting Firm Ships Hardware to Israeli Military Contractor",
+      "summary": "Sightline Intelligence, a Portland-based AI targeting company, shipped surveillance hardware to Israeli weapons manufacturer Elbit Systems, sparking local protests over autonomous targeting technology.",
+      "content_text": "Sightline Intelligence made 10+ hardware shipments to Elbit Systems since 2024, according to cargo manifest data\n• Company's AI system classifies people as 'civilians, military targets, armed targets' with confidence percentages\n• Hardware includes SLA-3000-OEM video processing boards for real-time target recognition in drones\n• Movement Research Unit exposed shipments through cargo manifest analysis techniques\n• Portland activists organized protests demanding city council investigate local surveillance tech exports\n• Possible evidence of Israeli military testing Sightline software found in hacked general's phone images\n• Company promotional materials reportedly showed surveillance footage of Portland public transit without consent\n• Elbit Systems is major target of global BDS movement for weapons manufacturing",
+      "date_published": "2026-05-05T09:01:49.489Z",
+      "date_modified": "2026-05-05T09:01:49.621Z",
+      "tags": [
+        "surveillance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://theintercept.com/2026/05/05/portland-sightline-ai-surveillance-drones-israel/"
+        ]
+      }
+    },
+    {
       "id": "6ab6d2b8-f1a2-41e1-af24-139d24e130f8",
       "url": "https://libertas.fgu.tech/posts/dhs-used-1930s-trade-law-to-demand-google-data-on-canadian-s",
       "title": "DHS Used 1930s Trade Law to Demand Google Data on Canadian's Anti-ICE Posts",
@@ -833,6 +854,28 @@
         "credibility_score": 88,
         "citations": [
           "https://www.eff.org/deeplinks/2026/04/eff-submission-un-report-role-media-context-israels-policies-toward-palestinians"
+        ]
+      }
+    },
+    {
+      "id": "9f478032-eab5-4ba8-9e32-31bfc164f4d4",
+      "url": "https://libertas.fgu.tech/posts/eff-launches-claw-back-campaign-against-mass-surveillance-as",
+      "title": "EFF Launches 'Claw Back' Campaign Against Mass Surveillance as Section 702 Renewal Looms",
+      "summary": "EFF launches new fundraising campaign to fight mass surveillance, highlighting recent wins including Rayhunter open-source cell-site simulator detection tool and lawsuits against warrantless ALPR searches as Congress considers Section 702 renewal.",
+      "content_text": "EFF launches 'Claw Back' campaign to dismantle government surveillance infrastructure\n• Released Rayhunter open-source tool for detecting cell-site simulators used to track activists and journalists\n• Filed lawsuits challenging warrantless Automated License Plate Reader (ALPR) database searches\n• Published 'Selling Safety' report exposing misleading claims by police surveillance technology vendors\n• Congress currently considering renewal of Section 702 international mass spying program\n• Privacy Badger browser extension continues protecting millions from tracking scripts and cookies\n• Campaign references NSA whistleblower William Binney's warnings about 'turnkey totalitarian state'",
+      "date_published": "2026-05-05T09:00:42.893Z",
+      "date_modified": "2026-05-05T09:00:42.944Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/04/claw-back"
         ]
       }
     },
