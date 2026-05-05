@@ -1,17 +1,18 @@
 ---
 title: "Portland AI Drone Targeting Firm Ships Hardware to Israeli Military Contractor"
 slug: "portland-ai-drone-targeting-firm-ships-hardware-to-israeli-m"
-published_at: "2026-05-05T09:01:49.489Z"
+published_at: "2026-05-05T15:02:35.178Z"
 status: "published"
 topics:
   - "surveillance"
-  - "activism"
   - "privacy"
+  - "activism"
 freedom_relevance_score: 78
-credibility_score: 85
+credibility_score: 82
 geo:
-  - "Portland"
+  - "United States"
   - "Oregon"
+  - "Portland"
   - "Israel"
   - "Gaza"
   - "Lebanon"
@@ -22,18 +23,18 @@ citations:
 
 # Portland AI Drone Targeting Firm Ships Hardware to Israeli Military Contractor
 
-**TL;DR:** Sightline Intelligence, a Portland-based AI targeting company, shipped surveillance hardware to Israeli weapons manufacturer Elbit Systems, sparking local protests over autonomous targeting technology.
+**TL;DR:** Sightline Intelligence, a Portland-based AI targeting company, made 10+ shipments of surveillance hardware to Israeli weapons giant Elbit Systems, sparking local activist protests.
 
 ## Key Points
 
-- Sightline Intelligence made 10+ hardware shipments to Elbit Systems since 2024, according to cargo manifest data
-- Company's AI system classifies people as 'civilians, military targets, armed targets' with confidence percentages
-- Hardware includes SLA-3000-OEM video processing boards for real-time target recognition in drones
-- Movement Research Unit exposed shipments through cargo manifest analysis techniques
-- Portland activists organized protests demanding city council investigate local surveillance tech exports
-- Possible evidence of Israeli military testing Sightline software found in hacked general's phone images
-- Company promotional materials reportedly showed surveillance footage of Portland public transit without consent
-- Elbit Systems is major target of global BDS movement for weapons manufacturing
+- Sightline Intelligence shipped SLA-3000-OEM video processing boards to Elbit Systems facilities across Israel since 2024
+- Hardware enables real-time AI classification of people as 'civilian,' 'military target,' or 'armed' with confidence percentages
+- Movement Research Unit investigators used cargo manifest data to identify shipments through JFK and Newark airports
+- Portland activists organized protests and city council testimony demanding investigation into local surveillance tech exports
+- Leaked photo allegedly shows Israeli General Herzi Halevi with laptop displaying interface similar to Sightline's targeting software
+- Company's promotional materials included surveillance footage of Portland's OHSU aerial tram, later edited out
+- Sightline was recently sold from Boston private equity firm Artemis to Acron Technologies
+- Activists concerned about dual-use surveillance technology being tested locally then exported for military targeting
 
 ## Sources
 

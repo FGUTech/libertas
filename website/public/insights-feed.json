@@ -76,6 +76,27 @@
       }
     },
     {
+      "id": "0b358e7c-c685-4c2e-aaf1-491991838d3f",
+      "url": "https://libertas.fgu.tech/posts/proton-mail-adds-post-quantum-encryption-to-protect-against-",
+      "title": "Proton Mail Adds Post-Quantum Encryption to Protect Against Future Threats",
+      "summary": "Proton Mail launches optional post-quantum encryption for all users to protect encrypted emails against future quantum computer attacks that could break current cryptography.",
+      "content_text": "Proton Mail introduces post-quantum cryptography (PQC) as optional upgrade for all plans including free\n• New feature protects against future quantum computers using Shor's algorithm to break RSA/ECC encryption\n• Implementation uses OpenPGP v6 framework to enable modern quantum-resistant algorithms\n• PQC protection applies to new emails going forward, does not retroactively encrypt existing messages\n• Proton working with Thunderbird and other providers to standardize quantum-safe email across ecosystem\n• Users can generate and manage PQC keys similar to existing RSA/ECC key management\n• Addresses 'harvest now, decrypt later' threat where attackers collect encrypted data for future quantum decryption",
+      "date_published": "2026-05-05T15:02:06.637Z",
+      "date_modified": "2026-05-05T15:02:06.751Z",
+      "tags": [
+        "privacy",
+        "comms",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://proton.me/blog/introducing-post-quantum-encryption"
+        ]
+      }
+    },
+    {
       "id": "0de13d8b-d87f-4f9a-b6a7-b6be6ce2c520",
       "url": "https://libertas.fgu.tech/posts/india-uses-anti-terror-law-to-unmask-anonymous-journalist-on",
       "title": "India Uses Anti-Terror Law to Unmask Anonymous Journalist on X",
@@ -390,6 +411,27 @@
       }
     },
     {
+      "id": "46584fe7-e465-4058-ac30-b27ebc52292f",
+      "url": "https://libertas.fgu.tech/posts/portland-ai-drone-targeting-firm-ships-hardware-to-israeli-m",
+      "title": "Portland AI Drone Targeting Firm Ships Hardware to Israeli Military Contractor",
+      "summary": "Sightline Intelligence, a Portland-based AI targeting company, made 10+ shipments of surveillance hardware to Israeli weapons giant Elbit Systems, sparking local activist protests.",
+      "content_text": "Sightline Intelligence shipped SLA-3000-OEM video processing boards to Elbit Systems facilities across Israel since 2024\n• Hardware enables real-time AI classification of people as 'civilian,' 'military target,' or 'armed' with confidence percentages\n• Movement Research Unit investigators used cargo manifest data to identify shipments through JFK and Newark airports\n• Portland activists organized protests and city council testimony demanding investigation into local surveillance tech exports\n• Leaked photo allegedly shows Israeli General Herzi Halevi with laptop displaying interface similar to Sightline's targeting software\n• Company's promotional materials included surveillance footage of Portland's OHSU aerial tram, later edited out\n• Sightline was recently sold from Boston private equity firm Artemis to Acron Technologies\n• Activists concerned about dual-use surveillance technology being tested locally then exported for military targeting",
+      "date_published": "2026-05-05T15:02:35.178Z",
+      "date_modified": "2026-05-05T15:02:35.314Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 82,
+        "citations": [
+          "https://theintercept.com/2026/05/05/portland-sightline-ai-surveillance-drones-israel/"
+        ]
+      }
+    },
+    {
       "id": "47c3ddc0-c49c-4751-9f95-3964fd83400e",
       "url": "https://libertas.fgu.tech/posts/hack-for-hire-campaign-targets-egyptian-journalists-with-spe",
       "title": "Hack-for-Hire Campaign Targets Egyptian Journalists with Spear-Phishing Attacks",
@@ -409,6 +451,28 @@
         "citations": [
           "https://www.accessnow.org/mena-phishing-2026/?pk_campaign=feed&#038;pk_kwd=mena-phishing-2026",
           "https://www.accessnow.org/event/advancing-rights-centered-reporting-on-nigerias-cybercrimes-act/"
+        ]
+      }
+    },
+    {
+      "id": "48a9d419-455b-4c5b-a219-754beb31e9a1",
+      "url": "https://libertas.fgu.tech/posts/eff-coalition-opposes-uk-age-gating-requirements-that-threat",
+      "title": "EFF Coalition Opposes UK Age-Gating Requirements That Threaten Web Anonymity",
+      "summary": "EFF and 18 organizations warn UK policymakers that proposed age verification requirements would undermine internet privacy and anonymity while fragmenting the open web into restricted jurisdictions.",
+      "content_text": "Coalition of 19 organizations including EFF, Mozilla, and Tor Project oppose UK age-gating proposals\n• Children's Wellbeing and Schools Bill could mandate age verification across social media, VPNs, and basic websites\n• Age assurance technologies are either inaccurate, privacy-invasive, or both according to coalition\n• Proposals would force identity verification for web access, expanding surveillance and data breach risks\n• Coalition warns of internet fragmentation into restricted jurisdictions and gatekeeper dominance\n• Letter argues current approach ignores root causes: engagement-maximizing business models and data collection\n• Organizations call for targeting platform design and business models rather than access restrictions\n• Policy could cut off vital information access and support networks for young people",
+      "date_published": "2026-05-05T15:00:33.411Z",
+      "date_modified": "2026-05-05T15:00:33.455Z",
+      "tags": [
+        "privacy",
+        "censorship-resistance",
+        "surveillance",
+        "identity"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/05/eff-and-18-organizations-urge-uk-policymakers-prioritize-addressing-roots-online"
         ]
       }
     },
@@ -519,6 +583,27 @@
         "credibility_score": 95,
         "citations": [
           "https://www.eff.org/deeplinks/2026/04/guard-act-isnt-targeting-dangerous-ai-its-blocking-everyday-internet-use"
+        ]
+      }
+    },
+    {
+      "id": "6d6c0d02-4605-4470-ad25-c5fd2d4d03dd",
+      "url": "https://libertas.fgu.tech/posts/doj-pursues-rare-federal-felony-charges-against-journalists-",
+      "title": "DOJ Pursues Rare Federal Felony Charges Against Journalists Covering Minnesota Protest",
+      "summary": "Committee to Protect Journalists and 16 civil society groups urge DOJ to drop federal charges, including felony conspiracy, against four journalists arrested while covering immigration enforcement protest.",
+      "content_text": "Four journalists face federal charges for covering immigration enforcement protest at Minnesota church\n• Georgia Fort and Don Lemon arrested in January, Michael Walker Beute and Junn Bollmann indicted in February\n• Charges include felony 'conspiring to deprive others of their civil rights' and FACE Act violations\n• Federal felony charges against journalists described as 'extremely rare' by CPJ\n• DOJ pursued grand jury indictment after federal magistrate and appeals court rejected initial arrests\n• 17 civil society organizations led by Amnesty International calling for charges to be dropped\n• Case represents potential escalation in federal prosecution of press covering protests",
+      "date_published": "2026-05-05T15:01:39.389Z",
+      "date_modified": "2026-05-05T15:01:39.477Z",
+      "tags": [
+        "censorship-resistance",
+        "activism",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 95,
+        "citations": [
+          "https://cpj.org/2026/05/cpj-partners-urge-doj-to-drop-charges-against-journalists-in-minnesota-protest-case/"
         ]
       }
     },
@@ -945,6 +1030,28 @@
       }
     },
     {
+      "id": "b338d8d3-0760-4a34-b8ac-91f28fdea582",
+      "url": "https://libertas.fgu.tech/posts/eff-urges-eu-to-prioritize-privacy-and-user-sovereignty-in-d",
+      "title": "EFF Urges EU to Prioritize Privacy and User Sovereignty in Digital Fairness Act",
+      "summary": "EFF calls for EU's proposed Digital Fairness Act to ban dark patterns, tackle surveillance-based business models, and strengthen user control rather than expanding platform surveillance powers.",
+      "content_text": "EFF provides recommendations for EU's proposed Digital Fairness Act (DFA)\n• Calls for explicit prohibition of dark patterns that manipulate user choices\n• Advocates tackling surveillance advertising and banning pay-for-privacy schemes\n• Proposes supporting automated privacy signals from browsers and OS\n• Emphasizes strengthening user sovereignty over digital goods and services\n• Warns against age verification mandates that expand surveillance\n• Addresses post-sale restrictions and technical lock-ins that limit user control\n• Part of broader EU enforcement era following DSA, DMA, and AI Act implementation",
+      "date_published": "2026-05-05T15:00:33.412Z",
+      "date_modified": "2026-05-05T15:00:33.455Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "sovereignty",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/04/dos-and-donts-eus-digital-fairness-act-effs-recommendation-regulating-digital"
+        ]
+      }
+    },
+    {
       "id": "b412cf5b-2785-4614-a487-606c10b46b54",
       "url": "https://libertas.fgu.tech/posts/zimbabwe-targets-student-leaders-opposing-constitutional-ame",
       "title": "Zimbabwe Targets Student Leaders Opposing Constitutional Amendment",
@@ -1049,6 +1156,27 @@
         "credibility_score": 95,
         "citations": [
           "https://www.eff.org/deeplinks/2026/04/congress-must-reject-new-insufficient-702-reauthorization-bill"
+        ]
+      }
+    },
+    {
+      "id": "cb9232ac-415c-448f-8245-bd2f8c75ec7a",
+      "url": "https://libertas.fgu.tech/posts/press-freedom-orgs-document-federal-targeting-of-independent",
+      "title": "Press Freedom Orgs Document Federal Targeting of Independent Journalists Under Trump",
+      "summary": "CPJ and Amnesty International highlight arrests of multiple independent journalists covering immigration enforcement protests, warning of systematic targeting by federal government.",
+      "content_text": "Committee to Protect Journalists and Amnesty International USA issued joint warning on World Press Freedom Day\n• Independent journalist Georgia Fort arrested in January while covering immigration enforcement protest at Minnesota church\n• Additional journalists Don Lemon, Michael Walker Beute, and Junn Bollmann also arrested covering same protest and face federal charges\n• Organizations characterize arrests as part of 'larger pattern of targeting journalists by the federal government'\n• CPJ draws parallels to repressive government tactics documented internationally\n• Press freedom advocates warn continued targeting will lead to unreported injustices\n• Cases involve coverage of immigration enforcement, a politically sensitive topic",
+      "date_published": "2026-05-05T15:01:39.389Z",
+      "date_modified": "2026-05-05T15:01:39.477Z",
+      "tags": [
+        "censorship-resistance",
+        "activism",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://cpj.org/2026/05/cpj-amnesty-international-usa-on-world-press-freedom-day-warn-of-increased-pressure-threats-under-trump-administration/"
         ]
       }
     },
