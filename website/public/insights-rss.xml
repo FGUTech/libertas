@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Mon, 04 May 2026 21:01:38 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 05 May 2026 03:01:27 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -291,6 +291,17 @@
     <category>censorship-resistance</category>
   </item>
   <item>
+    <title>China Mandates Chinese-Only Education in Tibetan Kindergartens to Erase Native Language</title>
+    <link>https://libertas.fgu.tech/posts/china-mandates-chinese-only-education-in-tibetan-kindergarte</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/china-mandates-chinese-only-education-in-tibetan-kindergarte</guid>
+    <pubDate>Tue, 05 May 2026 03:01:27 GMT</pubDate>
+    <description>China&apos;s 2021 &apos;Harmonization Plan&apos; mandates Mandarin-only instruction in Tibetan preschools, with surveillance of home language use, effectively erasing Tibetan language and culture starting at age 3-5.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>sovereignty</category>
+    <category>activism</category>
+  </item>
+  <item>
     <title>Mercenary Hackers Target Egyptian Opposition Journalists with Spear-Phishing Campaign</title>
     <link>https://libertas.fgu.tech/posts/mercenary-hackers-target-egyptian-opposition-journalists-wit</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/mercenary-hackers-target-egyptian-opposition-journalists-wit</guid>
@@ -449,6 +460,17 @@
     <category>activism</category>
   </item>
   <item>
+    <title>Utah Becomes First State to Target VPN Use for Age Verification Bypass</title>
+    <link>https://libertas.fgu.tech/posts/utah-becomes-first-state-to-target-vpn-use-for-age-verificat</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/utah-becomes-first-state-to-target-vpn-use-for-age-verificat</guid>
+    <pubDate>Tue, 05 May 2026 03:00:42 GMT</pubDate>
+    <description>Utah&apos;s new law, effective May 6, 2026, holds companies liable for age verification of users physically in Utah regardless of VPN use, and bans sharing VPN circumvention instructions.</description>
+    <category>privacy</category>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+  </item>
+  <item>
     <title>Zambia Cancels Major Digital Rights Summit RightsCon 2026 Amid Foreign Pressure</title>
     <link>https://libertas.fgu.tech/posts/zambia-cancels-major-digital-rights-summit-rightscon-2026-am</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/zambia-cancels-major-digital-rights-summit-rightscon-2026-am</guid>
@@ -577,6 +599,17 @@
     <category>censorship-resistance</category>
     <category>privacy</category>
     <category>sovereignty</category>
+  </item>
+  <item>
+    <title>Malaysia Launches Biometric Refugee Registration System Raising Surveillance Concerns</title>
+    <link>https://libertas.fgu.tech/posts/malaysia-launches-biometric-refugee-registration-system-rais</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/malaysia-launches-biometric-refugee-registration-system-rais</guid>
+    <pubDate>Tue, 05 May 2026 03:01:27 GMT</pubDate>
+    <description>Malaysia&apos;s new biometric refugee registration system lacks privacy safeguards and enables increased surveillance of 210,000+ refugees, replacing UN oversight with government control.</description>
+    <category>surveillance</category>
+    <category>identity</category>
+    <category>privacy</category>
+    <category>activism</category>
   </item>
 </channel>
 </rss>
