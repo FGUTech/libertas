@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Tue, 05 May 2026 21:01:18 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 06 May 2026 15:01:52 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -247,6 +247,16 @@
     <category>activism</category>
   </item>
   <item>
+    <title>EFF Warns Federal SECURE Data Act Would Weaken Existing State Privacy Protections</title>
+    <link>https://libertas.fgu.tech/posts/eff-warns-federal-secure-data-act-would-weaken-existing-stat</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-warns-federal-secure-data-act-would-weaken-existing-stat</guid>
+    <pubDate>Wed, 06 May 2026 15:00:55 GMT</pubDate>
+    <description>EFF says the Republican-backed SECURE Data Act would preempt dozens of state privacy laws while offering weaker consumer protections and no private enforcement rights.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>activism</category>
+  </item>
+  <item>
     <title>US-Israel War Strategy Targets Iran&apos;s Police Infrastructure to &apos;Make Iran Ungovernable&apos;</title>
     <link>https://libertas.fgu.tech/posts/us-israel-war-strategy-targets-iran-s-police-infrastructure-</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/us-israel-war-strategy-targets-iran-s-police-infrastructure-</guid>
@@ -330,6 +340,17 @@
     <category>censorship-resistance</category>
     <category>surveillance</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Access Now Hosts Digital Security Webinar Series for Civil Society in Conflict Zones</title>
+    <link>https://libertas.fgu.tech/posts/access-now-hosts-digital-security-webinar-series-for-civil-s</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/access-now-hosts-digital-security-webinar-series-for-civil-s</guid>
+    <pubDate>Wed, 06 May 2026 15:01:52 GMT</pubDate>
+    <description>Access Now&apos;s Digital Security Helpline is running a webinar series focusing on protecting civil society and human rights defenders from digital threats during armed conflicts and humanitarian crises.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>censorship-resistance</category>
   </item>
   <item>
     <title>DHS Used 1930s Trade Law to Force Google Data on Canadian Over Anti-ICE Posts</title>

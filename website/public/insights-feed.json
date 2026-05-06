@@ -500,6 +500,27 @@
       }
     },
     {
+      "id": "5d623dbe-e96c-4b7f-8694-12df5a393c02",
+      "url": "https://libertas.fgu.tech/posts/eff-warns-federal-secure-data-act-would-weaken-existing-stat",
+      "title": "EFF Warns Federal SECURE Data Act Would Weaken Existing State Privacy Protections",
+      "summary": "EFF says the Republican-backed SECURE Data Act would preempt dozens of state privacy laws while offering weaker consumer protections and no private enforcement rights.",
+      "content_text": "House Republicans released SECURE Data Act draft without bipartisan support\n• Bill would preempt 21 existing state consumer privacy laws and potentially hundreds of related protections\n• No private right of action - only FTC and state AGs can enforce violations\n• Companies get 45-day 'cure period' with no penalties after being caught violating law\n• Requires opt-out rather than opt-in for invasive practices like targeted advertising\n• Would eliminate California's data broker deletion tool and automatic opt-out signals\n• Bill includes vague Commerce Secretary powers over 'international flow of personal data'\n• EFF assessment: weaker than previous federal proposals and most state laws",
+      "date_published": "2026-05-06T15:00:55.316Z",
+      "date_modified": "2026-05-06T15:00:55.380Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/05/secure-data-act-not-serious-piece-privacy-legislation"
+        ]
+      }
+    },
+    {
       "id": "5e5407b4-f9c6-4b03-a702-2cc8fad0cc96",
       "url": "https://libertas.fgu.tech/posts/us-israel-war-strategy-targets-iran-s-police-infrastructure-",
       "title": "US-Israel War Strategy Targets Iran's Police Infrastructure to 'Make Iran Ungovernable'",
@@ -672,6 +693,28 @@
         "citations": [
           "https://www.wired.com/story/they-built-privacy-tool-grapheneos-now-sworn-enemies/",
           "https://www.wired.com/story/why-sharing-a-screenshot-can-get-you-jailed-in-the-uae/"
+        ]
+      }
+    },
+    {
+      "id": "74ee2ae6-c096-4e89-af06-3765bdfebdcc",
+      "url": "https://libertas.fgu.tech/posts/access-now-hosts-digital-security-webinar-series-for-civil-s",
+      "title": "Access Now Hosts Digital Security Webinar Series for Civil Society in Conflict Zones",
+      "summary": "Access Now's Digital Security Helpline is running a webinar series focusing on protecting civil society and human rights defenders from digital threats during armed conflicts and humanitarian crises.",
+      "content_text": "Access Now hosting 'Safe and Strong' webinar series on digital security for civil society\n• May 19, 2026 session focuses on digital threats during armed conflict and humanitarian crises\n• Speakers include experts from WITNESS, Cloudflare, Oxfam, and Access Now's Digital Security Helpline\n• Series addresses spear-phishing attacks and advanced persistent threats against activists\n• Previous session covered spear-phishing prevention with Citizen Lab and Lookout researchers\n• Targets humanitarian organizations, human rights defenders, and support organizations\n• Recognizes digital harms as component of modern warfare and conflict",
+      "date_published": "2026-05-06T15:01:52.825Z",
+      "date_modified": "2026-05-06T15:01:52.888Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "activism",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.accessnow.org/event/digital-security-webinars/"
         ]
       }
     },
