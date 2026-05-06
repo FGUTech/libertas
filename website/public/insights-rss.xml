@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Wed, 06 May 2026 15:01:52 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 06 May 2026 21:04:11 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -278,6 +278,16 @@
     <category>privacy</category>
   </item>
   <item>
+    <title>OONI Report: Internet Censorship Becoming More Sophisticated and Targeted</title>
+    <link>https://libertas.fgu.tech/posts/ooni-report-internet-censorship-becoming-more-sophisticated-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/ooni-report-internet-censorship-becoming-more-sophisticated-</guid>
+    <pubDate>Wed, 06 May 2026 21:02:57 GMT</pubDate>
+    <description>OONI&apos;s network measurement data reveals internet censorship is evolving toward more sophisticated, targeted, and intermittent blocks that are harder to detect globally.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>privacy</category>
+  </item>
+  <item>
     <title>DHS Used 1930s Trade Law to Demand Google Data on Canadian&apos;s Anti-ICE Posts</title>
     <link>https://libertas.fgu.tech/posts/dhs-used-1930s-trade-law-to-demand-google-data-on-canadian-s</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/dhs-used-1930s-trade-law-to-demand-google-data-on-canadian-s</guid>
@@ -337,6 +347,16 @@
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/wired-reports-on-internal-conflict-within-grapheneos-project</guid>
     <pubDate>Sat, 02 May 2026 09:02:32 GMT</pubDate>
     <description>WIRED published an investigation into personal conflicts between key figures in GrapheneOS development, the privacy-focused Android distribution.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+  </item>
+  <item>
+    <title>Burkina Faso Junta Bans TV5Monde, Escalates Information Control Campaign</title>
+    <link>https://libertas.fgu.tech/posts/burkina-faso-junta-bans-tv5monde-escalates-information-contr</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/burkina-faso-junta-bans-tv5monde-escalates-information-contr</guid>
+    <pubDate>Wed, 06 May 2026 21:03:20 GMT</pubDate>
+    <description>Burkina Faso&apos;s military government suspended French broadcaster TV5Monde for &apos;disinformation,&apos; continuing systematic media crackdown since 2022 coup including journalist disappearances and coordinated online propaganda.</description>
     <category>censorship-resistance</category>
     <category>surveillance</category>
     <category>activism</category>
@@ -436,6 +456,16 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>sovereignty</category>
+  </item>
+  <item>
+    <title>EFF Warns of Government Censorship Disguised as Online Safety Measures</title>
+    <link>https://libertas.fgu.tech/posts/eff-warns-of-government-censorship-disguised-as-online-safet</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-warns-of-government-censorship-disguised-as-online-safet</guid>
+    <pubDate>Wed, 06 May 2026 21:01:20 GMT</pubDate>
+    <description>EFF&apos;s latest analysis reveals how governments are using &apos;child safety&apos; as pretext to implement dangerous censorship systems, including social media bans and VPN restrictions.</description>
+    <category>censorship-resistance</category>
+    <category>privacy</category>
+    <category>surveillance</category>
   </item>
   <item>
     <title>EFF Defends Section 230 Immunity for App Store Payment Processing</title>
@@ -705,6 +735,17 @@
     <category>privacy</category>
   </item>
   <item>
+    <title>Meta Enables Coordinated Attacks on Bangladeshi Protest Archivists Through False Copyright Claims</title>
+    <link>https://libertas.fgu.tech/posts/meta-enables-coordinated-attacks-on-bangladeshi-protest-arch</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/meta-enables-coordinated-attacks-on-bangladeshi-protest-arch</guid>
+    <pubDate>Wed, 06 May 2026 21:04:11 GMT</pubDate>
+    <description>Coordinated attackers are exploiting Meta&apos;s copyright system with fake claims to remove Facebook pages documenting human rights violations from Bangladesh&apos;s July 2024 uprising, destroying evidence used in war crimes tribunals.</description>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>surveillance</category>
+    <category>sovereignty</category>
+  </item>
+  <item>
     <title>Australian Digital Rights Leader on Social Media Bans and Post-Pandemic Institutional Distrust</title>
     <link>https://libertas.fgu.tech/posts/australian-digital-rights-leader-on-social-media-bans-and-po</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/australian-digital-rights-leader-on-social-media-bans-and-po</guid>
@@ -724,6 +765,17 @@
     <category>identity</category>
     <category>privacy</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>California Fast-Tracks Social Media Ban Requiring ID Verification for All Users</title>
+    <link>https://libertas.fgu.tech/posts/california-fast-tracks-social-media-ban-requiring-id-verific</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/california-fast-tracks-social-media-ban-requiring-id-verific</guid>
+    <pubDate>Wed, 06 May 2026 21:01:20 GMT</pubDate>
+    <description>California&apos;s A.B. 1709 would ban under-16s from social media and force all users to submit government IDs or biometrics for age verification, destroying online anonymity.</description>
+    <category>privacy</category>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>identity</category>
   </item>
 </channel>
 </rss>
