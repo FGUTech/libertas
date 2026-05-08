@@ -564,6 +564,28 @@
       }
     },
     {
+      "id": "669ea1f2-da7e-4770-9d6e-0079abfdb0c2",
+      "url": "https://libertas.fgu.tech/posts/maldives-government-raids-independent-news-outlet-seizes-dig",
+      "title": "Maldives Government Raids Independent News Outlet, Seizes Digital Equipment",
+      "summary": "Maldives police raided Adhadhu News office, seizing laptops and hard drives over documentary alleging presidential misconduct, while imposing travel bans on journalists.",
+      "content_text": "Police raided Adhadhu News office in Malé on April 27, seizing journalists' laptops and hard drives\n• Raid connected to documentary 'Aisha' that allegedly documented presidential misconduct\n• Travel bans imposed on Adhadhu CEO Hussain Fiyaz Moosa and Managing Editor Hassan Mohamed\n• Authorities summoned senior staff for questioning following equipment seizure\n• Media regulator ordered Channel 13 to halt live broadcast of opposition protests\n• Committee to Protect Journalists and 6 other organizations called for return of seized materials\n• Case demonstrates real-world threats journalists face: equipment seizure, travel restrictions, censorship",
+      "date_published": "2026-05-08T09:01:09.447Z",
+      "date_modified": "2026-05-08T09:01:09.529Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://cpj.org/2026/05/cpj-partners-urge-maldives-president-to-end-legal-action-against-adhadhu-news/"
+        ]
+      }
+    },
+    {
       "id": "66d2236c-9eff-4e72-ad11-16d5abd1cfc4",
       "url": "https://libertas.fgu.tech/posts/portland-ai-drone-targeting-firm-ships-hardware-to-israeli-m",
       "title": "Portland AI Drone Targeting Firm Ships Hardware to Israeli Military Contractor",

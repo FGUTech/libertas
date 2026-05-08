@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 08 May 2026 03:00:38 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 08 May 2026 09:01:09 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -276,6 +276,17 @@
     <category>surveillance</category>
     <category>censorship-resistance</category>
     <category>sovereignty</category>
+  </item>
+  <item>
+    <title>Maldives Government Raids Independent News Outlet, Seizes Digital Equipment</title>
+    <link>https://libertas.fgu.tech/posts/maldives-government-raids-independent-news-outlet-seizes-dig</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/maldives-government-raids-independent-news-outlet-seizes-dig</guid>
+    <pubDate>Fri, 08 May 2026 09:01:09 GMT</pubDate>
+    <description>Maldives police raided Adhadhu News office, seizing laptops and hard drives over documentary alleging presidential misconduct, while imposing travel bans on journalists.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>privacy</category>
   </item>
   <item>
     <title>Portland AI Drone Targeting Firm Ships Hardware to Israeli Military Contractor</title>
