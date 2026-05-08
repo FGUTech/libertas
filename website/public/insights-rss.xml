@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 07 May 2026 15:03:21 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 08 May 2026 03:00:38 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -158,6 +158,16 @@
     <category>surveillance</category>
     <category>identity</category>
     <category>sovereignty</category>
+  </item>
+  <item>
+    <title>ICE Protesters Sue DHS/FBI Over Forced DNA Collection During Arrests</title>
+    <link>https://libertas.fgu.tech/posts/ice-protesters-sue-dhs-fbi-over-forced-dna-collection-during</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/ice-protesters-sue-dhs-fbi-over-forced-dna-collection-during</guid>
+    <pubDate>Fri, 08 May 2026 03:00:38 GMT</pubDate>
+    <description>Four protesters filed suit against DHS and FBI for allegedly collecting DNA samples from Americans arrested during peaceful ICE protests in Chicago, claiming permanent storage in federal databases violates constitutional rights.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
   </item>
   <item>
     <title>Access Now: Privacy Laws Key to Fighting Disinformation in Latin America Elections</title>
