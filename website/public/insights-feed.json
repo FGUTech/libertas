@@ -276,6 +276,27 @@
       }
     },
     {
+      "id": "2cea799a-0864-4356-a139-16af8708f74e",
+      "url": "https://libertas.fgu.tech/posts/why-anonymized-data-isn-t-really-anonymous-15-data-points-id",
+      "title": "Why 'Anonymized' Data Isn't Really Anonymous: 15 Data Points ID 99.98% of People",
+      "summary": "Proton explains how anonymized data can still identify individuals with just 15 data points achieving 99.98% identification rates, and how AI is making re-identification faster and cheaper.",
+      "content_text": "Anonymization removes obvious identifiers (names, addresses) but leaves behavioral patterns that can re-identify users\n• Research shows only 15 data points needed to identify 99.98% of people in datasets of millions [Nature study]\n• AI and interconnected databases make re-identification increasingly feasible and automated\n• GDPR sets high bar: data only truly anonymous if re-identification not 'reasonably possible'\n• Pseudonymization (reversible coding) still considered personal data under GDPR, unlike true anonymization\n• Companies use anonymized data without consent for analytics, advertising, and data broker sales\n• Common techniques include data masking, generalization, swapping, perturbation, and synthetic data generation\n• Biometric data especially difficult to anonymize due to unchangeable nature",
+      "date_published": "2026-05-08T15:01:58.924Z",
+      "date_modified": "2026-05-08T15:01:59.066Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "identity"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 72,
+        "credibility_score": 88,
+        "citations": [
+          "https://proton.me/blog/data-anonymization"
+        ]
+      }
+    },
+    {
       "id": "2e0ad692-c57d-429c-afb0-3b3c223dd604",
       "url": "https://libertas.fgu.tech/posts/new-book-documents-financial-censorship-by-payment-platforms",
       "title": "New Book Documents Financial Censorship by Payment Platforms",
@@ -560,6 +581,28 @@
         "credibility_score": 90,
         "citations": [
           "https://www.bellingcat.com/news/2026/04/24/make-iran-ungovernable-tracking-efforts-to-destroy-irans-police-infrastructure/"
+        ]
+      }
+    },
+    {
+      "id": "60b50e4d-c715-4eb5-b4d5-ad712df917a5",
+      "url": "https://libertas.fgu.tech/posts/rwandan-youtuber-dies-in-prison-hours-before-release-after-5",
+      "title": "Rwandan YouTuber Dies in Prison Hours Before Release After 5-Year Sentence",
+      "summary": "Aimable Karasira Uzaramba, a Rwandan YouTube commentator who criticized the government, died of alleged overdose in state custody on his scheduled release day after 5 years imprisonment.",
+      "content_text": "Aimable Karasira Uzaramba died May 8, 2026 at Nyarugenge hospital on his scheduled prison release day\n• Rwanda Correctional Service claims 48-year-old died from overdosing on prescribed medication\n• Karasira served 5-year sentence for 'inciting divisions' related to YouTube commentary criticizing government\n• Operated YouTube channel 'Ukuri Mbona' (The Truth as I See it) covering genocide narratives and government criticism\n• Previously alleged torture, assault, and denial of medical treatment during detention\n• CPJ calls for independent investigation given suspicious timing and past torture allegations\n• Rwanda ranks as second-worst jailer of journalists in sub-Saharan Africa with 5 currently imprisoned\n• Pattern echoes 2020 death of gospel musician Kizito Mihigo in police custody, also ruled suicide",
+      "date_published": "2026-05-08T15:01:23.642Z",
+      "date_modified": "2026-05-08T15:01:23.765Z",
+      "tags": [
+        "censorship-resistance",
+        "activism",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 88,
+        "citations": [
+          "https://cpj.org/2026/05/rwandan-youtuber-dies-of-alleged-overdose-on-day-of-release-from-prison/",
+          "https://cpj.org/2026/05/daughter-of-murdered-serbian-journalist-slavko-curuvija-on-her-27-year-fight-for-justice/"
         ]
       }
     },

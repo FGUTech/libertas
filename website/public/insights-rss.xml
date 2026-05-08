@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 08 May 2026 09:01:09 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 08 May 2026 15:01:58 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -136,6 +136,16 @@
     <category>censorship-resistance</category>
     <category>surveillance</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Why &apos;Anonymized&apos; Data Isn&apos;t Really Anonymous: 15 Data Points ID 99.98% of People</title>
+    <link>https://libertas.fgu.tech/posts/why-anonymized-data-isn-t-really-anonymous-15-data-points-id</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/why-anonymized-data-isn-t-really-anonymous-15-data-points-id</guid>
+    <pubDate>Fri, 08 May 2026 15:01:58 GMT</pubDate>
+    <description>Proton explains how anonymized data can still identify individuals with just 15 data points achieving 99.98% identification rates, and how AI is making re-identification faster and cheaper.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>identity</category>
   </item>
   <item>
     <title>New Book Documents Financial Censorship by Payment Platforms</title>
@@ -276,6 +286,16 @@
     <category>surveillance</category>
     <category>censorship-resistance</category>
     <category>sovereignty</category>
+  </item>
+  <item>
+    <title>Rwandan YouTuber Dies in Prison Hours Before Release After 5-Year Sentence</title>
+    <link>https://libertas.fgu.tech/posts/rwandan-youtuber-dies-in-prison-hours-before-release-after-5</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/rwandan-youtuber-dies-in-prison-hours-before-release-after-5</guid>
+    <pubDate>Fri, 08 May 2026 15:01:23 GMT</pubDate>
+    <description>Aimable Karasira Uzaramba, a Rwandan YouTube commentator who criticized the government, died of alleged overdose in state custody on his scheduled release day after 5 years imprisonment.</description>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>surveillance</category>
   </item>
   <item>
     <title>Maldives Government Raids Independent News Outlet, Seizes Digital Equipment</title>
