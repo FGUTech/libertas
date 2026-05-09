@@ -53,6 +53,28 @@
       }
     },
     {
+      "id": "059f7194-9b1c-4894-8ed0-cc87cca0b086",
+      "url": "https://libertas.fgu.tech/posts/bukele-admin-escalates-financial-censorship-against-el-faro-",
+      "title": "Bukele Admin Escalates Financial Censorship Against El Faro, Freezes Personal Assets",
+      "summary": "El Salvador's government froze personal bank accounts and property of El Faro shareholders, escalating financial warfare against independent media that previously faced Pegasus surveillance.",
+      "content_text": "Salvadoran government placed 'preventative annotations' on El Faro shareholders' personal assets Feb-Apr 2026\n• Measures target bank accounts and real estate of Trípode S.A. de C.V. partners under alleged tax debt claims\n• Escalation follows years of harassment including Pegasus spyware surveillance and forced operational exile\n• El Faro relocated administrative operations to Costa Rica in 2023 citing lack of judicial independence\n• Asset freezes coincide with release of 'The Deal' documentary exposing alleged govt-gang pacts\n• Timing also follows deputy editor's testimony before U.S. Congress Human Rights Commission\n• Demonstrates evolution from digital surveillance to financial censorship targeting media ownership structures",
+      "date_published": "2026-05-09T03:02:44.710Z",
+      "date_modified": "2026-05-09T03:02:44.834Z",
+      "tags": [
+        "surveillance",
+        "censorship-resistance",
+        "activism",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 88,
+        "citations": [
+          "https://cpj.org/2026/05/bukele-administration-freezes-salvadoran-news-outlets-assets-in-latest-act-of-retaliation/"
+        ]
+      }
+    },
+    {
       "id": "06da9819-c1f8-4a83-8777-8d1945e679c3",
       "url": "https://libertas.fgu.tech/posts/eff-challenges-court-secrecy-in-wi-fi-patent-case-affecting-",
       "title": "EFF Challenges Court Secrecy in Wi-Fi Patent Case Affecting Billions",
@@ -1678,6 +1700,27 @@
         "citations": [
           "https://globalvoices.org/2026/04/29/the-digital-crown-reclaiming-human-dignity-in-the-age-of-ai/",
           "https://globalvoices.org/2026/04/30/before-the-algorithm-decides-queer-storytelling-as-resistance-in-nigeria/"
+        ]
+      }
+    },
+    {
+      "id": "d78b7215-5f52-4fb2-adaf-3efc7c38e210",
+      "url": "https://libertas.fgu.tech/posts/eff-revised-guard-act-still-threatens-privacy-despite-narrow",
+      "title": "EFF: Revised GUARD Act Still Threatens Privacy Despite Narrowed Scope",
+      "summary": "Congress narrowed the GUARD Act to focus on AI companions rather than all AI systems, but EFF warns mandatory age verification still creates serious privacy, speech, and access concerns.",
+      "content_text": "GUARD Act revised to target 'AI companions' instead of broadly applying to all AI-powered tools\n• Bill still requires identity-linked age verification for AI companion services\n• Penalties increased dramatically from $100K to $250K per violation\n• Age verification systems exclude millions without government ID or bank accounts\n• Vague definitions could still capture customer service chatbots and other conversational AI\n• Creates incentives for developers to over-restrict access or avoid building certain tools\n• EFF maintains opposition, citing ongoing privacy, speech, and security concerns",
+      "date_published": "2026-05-09T03:01:14.991Z",
+      "date_modified": "2026-05-09T03:01:15.035Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/05/congress-narrowed-guard-act-serious-problems-remain"
         ]
       }
     },

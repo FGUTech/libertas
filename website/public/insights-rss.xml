@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 08 May 2026 21:03:26 GMT</lastBuildDate>
+  <lastBuildDate>Sat, 09 May 2026 03:02:44 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -27,6 +27,17 @@
     <description>Major tech companies are rapidly expanding AI data centers across Latin America, creating water shortages and energy price hikes while governments fast-track approvals without community consultation.</description>
     <category>surveillance</category>
     <category>privacy</category>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>sovereignty</category>
+  </item>
+  <item>
+    <title>Bukele Admin Escalates Financial Censorship Against El Faro, Freezes Personal Assets</title>
+    <link>https://libertas.fgu.tech/posts/bukele-admin-escalates-financial-censorship-against-el-faro-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/bukele-admin-escalates-financial-censorship-against-el-faro-</guid>
+    <pubDate>Sat, 09 May 2026 03:02:44 GMT</pubDate>
+    <description>El Salvador&apos;s government froze personal bank accounts and property of El Faro shareholders, escalating financial warfare against independent media that previously faced Pegasus surveillance.</description>
+    <category>surveillance</category>
     <category>censorship-resistance</category>
     <category>activism</category>
     <category>sovereignty</category>
@@ -815,6 +826,16 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>EFF: Revised GUARD Act Still Threatens Privacy Despite Narrowed Scope</title>
+    <link>https://libertas.fgu.tech/posts/eff-revised-guard-act-still-threatens-privacy-despite-narrow</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-revised-guard-act-still-threatens-privacy-despite-narrow</guid>
+    <pubDate>Sat, 09 May 2026 03:01:14 GMT</pubDate>
+    <description>Congress narrowed the GUARD Act to focus on AI companions rather than all AI systems, but EFF warns mandatory age verification still creates serious privacy, speech, and access concerns.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
   </item>
   <item>
     <title>EFF Calls for Privacy-First Approach to EU&apos;s Digital Fairness Act</title>
