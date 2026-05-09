@@ -208,6 +208,27 @@
       }
     },
     {
+      "id": "16936a1a-c084-4192-a2dc-dd02c5371a8f",
+      "url": "https://libertas.fgu.tech/posts/doj-criminalizes-foia-evasion-in-first-ever-case-against-ret",
+      "title": "DOJ Criminalizes FOIA Evasion in First-Ever Case Against Retired NIH Scientist",
+      "summary": "Trump DOJ charged retired NIH scientist David Morens with felony crimes for using personal email to evade FOIA requests, marking unprecedented criminalization of transparency law violations.",
+      "content_text": "David Morens, 78, arrested and charged with up to 45 years in prison for allegedly evading FOIA using personal Gmail accounts\n• Former NIAID senior adviser reportedly deleted emails and wrote about making records 'disappear' before FOIA searches\n• Justice Department historically treated FOIA violations as civil matters, not criminal - this represents major precedent shift\n• Requests came from Heritage Foundation, Judicial Watch, and U.S. Right to Know regarding Covid research communications\n• Selective enforcement concern: unclear if same charges would apply to violations involving progressive requesters\n• Broader context: Trump admin has gutted FOIA offices, removed public health data from websites, fired FOIA officials\n• HHS Secretary RFK Jr. has hollowed out department FOIA offices, with 1,100+ backlogged requests at Morens' former bureau\n• Creates dangerous precedent where FOIA compliance may depend on political alignment of requesters",
+      "date_published": "2026-05-09T15:02:00.819Z",
+      "date_modified": "2026-05-09T15:02:01.017Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://theintercept.com/2026/05/09/david-morens-foia-arrest-trump/"
+        ]
+      }
+    },
+    {
       "id": "1e75ea09-3bca-4c8a-b6d6-2fe3638b4b57",
       "url": "https://libertas.fgu.tech/posts/tails-7-7-2-emergency-release-fixes-critical-privilege-escal",
       "title": "Tails 7.7.2 Emergency Release Fixes Critical Privilege Escalation Vulnerability",

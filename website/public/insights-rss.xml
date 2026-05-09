@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Sat, 09 May 2026 03:02:44 GMT</lastBuildDate>
+  <lastBuildDate>Sat, 09 May 2026 15:02:00 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -101,6 +101,16 @@
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/palantir-s-130m-irs-contract-enables-mass-financial-surveill</guid>
     <pubDate>Sat, 02 May 2026 09:07:25 GMT</pubDate>
     <description>IRS has paid Palantir $130M since 2018 for data mining platform that aggregates federal databases, tracks crypto transactions, and maps social networks for financial investigations under Trump administration direction.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
+  </item>
+  <item>
+    <title>DOJ Criminalizes FOIA Evasion in First-Ever Case Against Retired NIH Scientist</title>
+    <link>https://libertas.fgu.tech/posts/doj-criminalizes-foia-evasion-in-first-ever-case-against-ret</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/doj-criminalizes-foia-evasion-in-first-ever-case-against-ret</guid>
+    <pubDate>Sat, 09 May 2026 15:02:00 GMT</pubDate>
+    <description>Trump DOJ charged retired NIH scientist David Morens with felony crimes for using personal email to evade FOIA requests, marking unprecedented criminalization of transparency law violations.</description>
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
