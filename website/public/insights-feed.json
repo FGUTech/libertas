@@ -185,6 +185,28 @@
       }
     },
     {
+      "id": "1398a318-c1b1-45db-96a2-fcf410756abb",
+      "url": "https://libertas.fgu.tech/posts/rightscon-2026-canceled-after-chinese-government-pressure-on",
+      "title": "RightsCon 2026 Canceled After Chinese Government Pressure on Zambia",
+      "summary": "The world's largest digital rights conference was abruptly canceled in Zambia after Chinese government pressure to exclude Taiwanese participants and moderate discussions, reflecting growing transnational repression of civil society.",
+      "content_text": "RightsCon 2026 canceled days before start after mounting political pressure on Zambian government\n• Chinese government reportedly demanded exclusion of Taiwanese participants and topic moderation\n• Conference serves as critical global convening for digital rights advocates, technologists, and policymakers\n• Cancellation particularly impacts Global South advocates who rely on RightsCon for cross-border solidarity\n• UN World Press Freedom Day ceremony also postponed due to political pressure\n• Digital rights organizations condemn move as evidence of transnational repression targeting civil society\n• Community adapting with alternative gatherings like Global Gathering and FIFAfrica conferences",
+      "date_published": "2026-05-11T21:01:18.374Z",
+      "date_modified": "2026-05-11T21:01:18.440Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/05/eff-stands-solidarity-rightscon-and-global-digital-rights-community"
+        ]
+      }
+    },
+    {
       "id": "15133f3d-a4ad-413d-abca-5cd5e2656b10",
       "url": "https://libertas.fgu.tech/posts/eff-issues-eu-digital-fairness-act-recommendations-against-s",
       "title": "EFF Issues EU Digital Fairness Act Recommendations Against Surveillance-Based Solutions",
@@ -692,6 +714,27 @@
       }
     },
     {
+      "id": "604c27a6-3b2a-49e7-87ef-c053525962c9",
+      "url": "https://libertas.fgu.tech/posts/eff-challenges-warrantless-border-device-searches-in-fourth-",
+      "title": "EFF Challenges Warrantless Border Device Searches in Fourth Circuit",
+      "summary": "EFF filed amicus brief in U.S. v. Belmonte Cardozo urging Fourth Circuit to require warrants for all electronic device searches at borders, as CBP conducted 55,318 warrantless device searches in FY2025.",
+      "content_text": "EFF, ACLU, and NACDL filed amicus brief in Fourth Circuit case U.S. v. Belmonte Cardozo\n• Case involves warrantless manual search of U.S. citizen's phone at Dulles airport after Bolivia trip\n• CBP conducted 55,318 device searches (manual and forensic) in FY2025 without warrants\n• EFF argues both manual and forensic searches should require probable cause warrants\n• Current Fourth Circuit precedent requires individualized suspicion only for forensic searches\n• Manual searches involve officers browsing devices; forensic searches use extraction tools\n• Both methods access highly personal data including political, religious, health information\n• Fourth Circuit heard oral arguments May 8, could be first circuit to fully protect border device privacy",
+      "date_published": "2026-05-11T21:01:18.373Z",
+      "date_modified": "2026-05-11T21:01:18.440Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/05/eff-fourth-circuit-electronic-device-searches-border-require-warrant"
+        ]
+      }
+    },
+    {
       "id": "60b50e4d-c715-4eb5-b4d5-ad712df917a5",
       "url": "https://libertas.fgu.tech/posts/rwandan-youtuber-dies-in-prison-hours-before-release-after-5",
       "title": "Rwandan YouTuber Dies in Prison Hours Before Release After 5-Year Sentence",
@@ -993,6 +1036,28 @@
         "credibility_score": 85,
         "citations": [
           "https://www.hrw.org/news/2026/05/04/china-harmonization-plan-erasing-tibetan-language"
+        ]
+      }
+    },
+    {
+      "id": "788337bf-024e-4f15-b5a5-bc36aa3e9ed2",
+      "url": "https://libertas.fgu.tech/posts/canada-s-bill-c-22-mandates-surveillance-backdoors-threatens",
+      "title": "Canada's Bill C-22 Mandates Surveillance Backdoors, Threatens Encryption",
+      "summary": "Canada's Bill C-22 would force tech companies to build surveillance backdoors, retain metadata for a year, and could ban strong encryption despite vague 'systemic vulnerability' exceptions.",
+      "content_text": "Bill C-22 (Lawful Access Act) is repackaged version of failed Bill C-2 surveillance legislation\n• Mandates digital services retain user metadata for full year, including telecoms and messaging apps\n• Allows Minister of Public Safety to demand backdoors as long as they don't create 'systemic vulnerabilities'\n• Definitions of 'systemic vulnerabilities' and 'encryption' are deliberately vague, creating regulatory loopholes\n• Companies would be banned from publicly disclosing existence of backdoor orders\n• Apple and Meta have publicly opposed the bill, citing encryption concerns\n• Mirrors UK's successful pressure campaign that forced Apple to disable Advanced Data Protection\n• US House committees sent joint letter warning Canada about backdoor dangers",
+      "date_published": "2026-05-11T21:01:18.371Z",
+      "date_modified": "2026-05-11T21:01:18.440Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "censorship-resistance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 88,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/05/canadas-bill-c-22-repackaged-version-last-years-surveillance-nightmare"
         ]
       }
     },
@@ -1701,6 +1766,28 @@
       }
     },
     {
+      "id": "d290a6f8-1993-4ede-bf98-2ec3f531cecc",
+      "url": "https://libertas.fgu.tech/posts/tails-7-7-3-emergency-release-fixes-critical-kernel-vulnerab",
+      "title": "Tails 7.7.3 Emergency Release Fixes Critical Kernel Vulnerability",
+      "summary": "Tails released emergency update fixing 'Dirty Frag' kernel vulnerability that could allow privilege escalation and user deanonymization, plus Tor Browser and client security patches.",
+      "content_text": "Emergency Tails 7.7.3 release addresses critical security vulnerabilities\n• Linux kernel updated to 6.12.86 to fix 'Dirty Frag' vulnerability\n• Dirty Frag could allow applications to gain admin privileges in Tails\n• If exploited with other vulnerabilities, could lead to full system compromise and deanonymization\n• Tor Browser updated to version 15.0.12 with security fixes\n• Tor client updated to 0.4.9.8 addressing additional vulnerabilities\n• Tails team reports no known exploitation of vulnerability in practice\n• Automatic upgrades available from Tails 7.0 or later",
+      "date_published": "2026-05-11T21:02:52.003Z",
+      "date_modified": "2026-05-11T21:02:52.118Z",
+      "tags": [
+        "privacy",
+        "censorship-resistance",
+        "comms",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 95,
+        "citations": [
+          "https://tails.net/news/version_7.7.3/"
+        ]
+      }
+    },
+    {
       "id": "d4268995-b473-4883-8264-beb71689be93",
       "url": "https://libertas.fgu.tech/posts/eff-opposes-uk-digital-id-scheme-cites-privacy-and-coercion-",
       "title": "EFF Opposes UK Digital ID Scheme, Cites Privacy and Coercion Concerns",
@@ -1831,6 +1918,27 @@
       }
     },
     {
+      "id": "e3ae5f89-9dd0-43f3-abf1-89f0f5b428c0",
+      "url": "https://libertas.fgu.tech/posts/us-senate-banking-committee-to-vote-on-crypto-clarity-act-de",
+      "title": "US Senate Banking Committee to Vote on Crypto Clarity Act Despite Opposition",
+      "summary": "Senate Banking Committee will vote Thursday on crypto regulation bill facing pushback from banks and Democrats, potentially impacting financial sovereignty landscape.",
+      "content_text": "Senate Banking Committee scheduled to vote on crypto Clarity Act this Thursday\n• Bill faces opposition from traditional banking sector\n• Democratic party members reportedly objecting to the legislation\n• Vote proceeding despite stated objections from key stakeholders\n• Regulatory clarity could significantly impact crypto adoption and compliance\n• Outcome may set precedent for broader US crypto regulatory framework\n• Timeline suggests urgency despite controversy around the bill",
+      "date_published": "2026-05-11T21:01:50.533Z",
+      "date_modified": "2026-05-11T21:01:50.581Z",
+      "tags": [
+        "bitcoin",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 85,
+        "citations": [
+          "https://www.theblock.co/post/400812/crypto-bill-vote-major-obstacles-td-cowen",
+          "https://www.theblock.co/post/400812/crypto-bill-vote-major-obstacles-td-cowen?utm_source=rss&amp;utm_medium=rss"
+        ]
+      }
+    },
+    {
       "id": "ee092268-db95-416b-967b-35efabe59529",
       "url": "https://libertas.fgu.tech/posts/meta-enables-coordinated-attacks-on-bangladeshi-protest-arch",
       "title": "Meta Enables Coordinated Attacks on Bangladeshi Protest Archivists Through False Copyright Claims",
@@ -1936,6 +2044,28 @@
         "credibility_score": 95,
         "citations": [
           "https://www.eff.org/deeplinks/2026/04/act-now-stop-californias-paternalistic-and-privacy-destroying-social-media-ban"
+        ]
+      }
+    },
+    {
+      "id": "ffec851e-7600-45d9-a621-21acee2d1624",
+      "url": "https://libertas.fgu.tech/posts/congress-narrows-guard-act-but-privacy-invasive-age-verifica",
+      "title": "Congress Narrows GUARD Act, But Privacy-Invasive Age Verification Requirements Remain",
+      "summary": "Congress revised the GUARD Act to target AI companions rather than all AI systems, but still mandates identity-linked age verification and increases penalties to $250K per violation.",
+      "content_text": "Congress narrowed GUARD Act scope from all AI systems to focus on 'AI companions' - conversational systems simulating emotional interactions\n• Bill still requires companies to implement age verification tied to users' real-world identities (financial records, government ID, etc.)\n• Penalties increased from $100K to $250K per violation, enforceable by federal and state officials\n• EFF warns requirements create privacy risks and barriers for millions without stable digital identity access\n• Vague definition of 'AI companion' could still capture customer service chatbots and other conversational tools\n• Over-restriction incentives: smaller developers may block minors entirely or disable features to avoid penalties\n• Parents wanting teens to use AI companions for legitimate purposes (social practice, storytelling) still face verification hurdles\n• EFF maintains opposition despite improvements, citing core speech, privacy, and security concerns",
+      "date_published": "2026-05-11T21:01:18.374Z",
+      "date_modified": "2026-05-11T21:01:18.440Z",
+      "tags": [
+        "privacy",
+        "censorship-resistance",
+        "identity",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/05/congress-narrowed-guard-act-serious-problems-remain"
         ]
       }
     }
