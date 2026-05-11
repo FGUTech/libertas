@@ -98,6 +98,27 @@
       }
     },
     {
+      "id": "074ccd11-dbd4-4b96-8680-ef1d020aa155",
+      "url": "https://libertas.fgu.tech/posts/tunisia-prosecutes-refugee-aid-workers-under-travel-document",
+      "title": "Tunisia Prosecutes Refugee Aid Workers Under Travel Document Laws",
+      "summary": "Tunisia sentenced two refugee aid workers to 2 years prison for providing accommodation to asylum seekers, part of broader crackdown shutting down civil society groups.",
+      "content_text": "Tunisian Council for Refugees director Mustapha Djemali and manager Abderrazek Krimi sentenced to 2 years prison (6 months suspended)\n• Convicted under 1975 passport law for 'harboring persons entering illegally' despite working with UNHCR-registered asylum seekers\n• Authorities shut down the refugee council in May 2024, froze bank accounts, and arrested leadership\n• Part of broader pattern: at least 9 civil society workers sentenced to prison since January 2026 for legitimate work\n• Government suspended UNHCR asylum processing in June 2024, leaving asylum seekers in legal limbo\n• Creates chilling effect on humanitarian organizations and demonstrates need for secure coordination tools\n• Shows how governments weaponize immigration laws to suppress civil society operations",
+      "date_published": "2026-05-11T15:01:53.224Z",
+      "date_modified": "2026-05-11T15:01:53.414Z",
+      "tags": [
+        "activism",
+        "surveillance",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.hrw.org/news/2026/05/11/tunisia-end-abusive-prosecution-of-refugee-aid-workers"
+        ]
+      }
+    },
+    {
       "id": "0b358e7c-c685-4c2e-aaf1-491991838d3f",
       "url": "https://libertas.fgu.tech/posts/proton-mail-adds-post-quantum-encryption-to-protect-against-",
       "title": "Proton Mail Adds Post-Quantum Encryption to Protect Against Future Threats",

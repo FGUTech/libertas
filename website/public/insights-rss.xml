@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Sat, 09 May 2026 15:02:00 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 11 May 2026 15:01:53 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -52,6 +52,16 @@
     <category>censorship-resistance</category>
     <category>identity</category>
     <category>surveillance</category>
+  </item>
+  <item>
+    <title>Tunisia Prosecutes Refugee Aid Workers Under Travel Document Laws</title>
+    <link>https://libertas.fgu.tech/posts/tunisia-prosecutes-refugee-aid-workers-under-travel-document</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/tunisia-prosecutes-refugee-aid-workers-under-travel-document</guid>
+    <pubDate>Mon, 11 May 2026 15:01:53 GMT</pubDate>
+    <description>Tunisia sentenced two refugee aid workers to 2 years prison for providing accommodation to asylum seekers, part of broader crackdown shutting down civil society groups.</description>
+    <category>activism</category>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
   </item>
   <item>
     <title>Proton Mail Adds Post-Quantum Encryption to Protect Against Future Threats</title>
