@@ -1083,6 +1083,28 @@
       }
     },
     {
+      "id": "7f752a7c-a68f-4579-8d22-492cece2404f",
+      "url": "https://libertas.fgu.tech/posts/human-rights-watch-eu-surveillance-tech-exports-enable-globa",
+      "title": "Human Rights Watch: EU Surveillance Tech Exports Enable Global Rights Violations",
+      "summary": "Human Rights Watch report reveals EU's 2021 Dual-Use Regulation is failing to prevent surveillance technology exports to governments that use them to spy on activists and journalists.",
+      "content_text": "54-page HRW report documents EU failure to control surveillance technology exports to rights violators\n• EU's 2021 Dual-Use Regulation intended to prevent exports to governments likely to violate human rights\n• Bulgaria exported intrusion software and telecom interception to Azerbaijan (2022), Poland to Rwanda (2023)\n• European Commission weakened transparency requirements, obfuscating export destinations and technologies\n• EU hosts major surveillance tech developers but individual export decisions left to member states\n• Commission claims limited companies justify hiding details due to 'commercial confidentiality'\n• HRW obtained data from nearly half of EU countries through freedom of information requests\n• Report recommends stronger due diligence requirements and meaningful transparency for surveillance exports",
+      "date_published": "2026-05-12T09:02:18.958Z",
+      "date_modified": "2026-05-12T09:02:19.168Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.hrw.org/news/2026/05/12/european-union-surveillance-technology-sold-to-rights-violators"
+        ]
+      }
+    },
+    {
       "id": "80b24754-d160-4294-9eaa-23ccdef621a8",
       "url": "https://libertas.fgu.tech/posts/mercenary-hackers-target-egyptian-opposition-journalists-wit",
       "title": "Mercenary Hackers Target Egyptian Opposition Journalists with Spear-Phishing Campaign",
@@ -1543,6 +1565,27 @@
       }
     },
     {
+      "id": "b4220af4-9cad-42f2-8fce-aa44702b9d88",
+      "url": "https://libertas.fgu.tech/posts/dr-congo-escalates-repression-of-journalists-activists-amid-",
+      "title": "DR Congo Escalates Repression of Journalists, Activists Amid Constitutional Crisis",
+      "summary": "Congo authorities increasingly detaining journalists, activists, and opposition members amid constitutional amendment tensions and M23 conflict, with intelligence agencies conducting enforced disappearances and arbitrary arrests.",
+      "content_text": "Human Rights Watch documents systematic harassment and arbitrary detention of journalists and activists in DR Congo between January-May 2026\n• Repression escalating amid President Tshisekedi's proposed constitutional amendment to extend presidential term limits beyond two terms\n• National Intelligence Agency and National Cyber Defense Council conducting enforced disappearances - 17 documented cases with 8 still detained\n• Two journalists forced into hiding after intelligence agents searched their apartments following government criticism\n• Military courts convicting activists of 'threatening state security' for organizing peaceful protests about basic services\n• Police using tear gas and violence against peaceful protesters demonstrating against constitutional changes\n• Authorities targeting individuals claiming they have ties to M23 armed group as pretext for broader crackdown\n• Pattern shows government creating legal justifications for surveillance and detention of dissenting voices",
+      "date_published": "2026-05-12T09:02:18.957Z",
+      "date_modified": "2026-05-12T09:02:19.168Z",
+      "tags": [
+        "censorship-resistance",
+        "activism",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.hrw.org/news/2026/05/12/dr-congo-increasing-repression-of-critical-expression"
+        ]
+      }
+    },
+    {
       "id": "b8e861fb-74ef-4fc5-b6b1-d128e7d3f1b5",
       "url": "https://libertas.fgu.tech/posts/states-block-public-oversight-of-license-plate-surveillance-",
       "title": "States Block Public Oversight of License Plate Surveillance After Abuse Revelations",
@@ -1935,6 +1978,28 @@
         "citations": [
           "https://www.theblock.co/post/400812/crypto-bill-vote-major-obstacles-td-cowen",
           "https://www.theblock.co/post/400812/crypto-bill-vote-major-obstacles-td-cowen?utm_source=rss&amp;utm_medium=rss"
+        ]
+      }
+    },
+    {
+      "id": "e68ca109-81ca-4365-92f5-ba71d985921f",
+      "url": "https://libertas.fgu.tech/posts/cpj-urges-trump-to-secure-jimmy-lai-s-release-in-xi-meeting",
+      "title": "CPJ Urges Trump to Secure Jimmy Lai's Release in Xi Meeting",
+      "summary": "Committee to Protect Journalists calls on Trump to prioritize jailed Hong Kong publisher Jimmy Lai's release during diplomatic talks with Xi Jinping, highlighting broader press freedom concerns.",
+      "content_text": "CPJ urges Trump to demand Jimmy Lai's immediate release during May 14-15 Beijing meeting with Xi Jinping\n• Lai, 78, sentenced to 20 years for 'collusion with foreign forces' - effectively a life sentence\n• Apple Daily founder has been jailed since 2020, much in solitary confinement with declining health\n• Case emblematic of Hong Kong press freedom crackdown since National Security Law imposed in 2020\n• Over 100 US lawmakers sent letter urging Trump to prioritize Lai's release due to health concerns\n• CPJ calls for conditioning trade talks on concrete human rights commitments from Beijing\n• Trump previously raised Lai's case with Xi in October 2025, promised to 'save' him during trial\n• Situation impacts US interests: Hong Kong hosts 60,000+ US citizens and 1,400+ US companies",
+      "date_published": "2026-05-12T09:01:47.519Z",
+      "date_modified": "2026-05-12T09:01:47.781Z",
+      "tags": [
+        "censorship-resistance",
+        "activism",
+        "surveillance",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://cpj.org/2026/05/cpj-urges-trump-to-prioritize-jimmy-lais-release-in-meeting-with-xi-jinping/"
         ]
       }
     },

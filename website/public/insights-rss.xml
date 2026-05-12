@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Mon, 11 May 2026 21:02:52 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 12 May 2026 09:02:18 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -529,6 +529,17 @@
     <category>sovereignty</category>
   </item>
   <item>
+    <title>Human Rights Watch: EU Surveillance Tech Exports Enable Global Rights Violations</title>
+    <link>https://libertas.fgu.tech/posts/human-rights-watch-eu-surveillance-tech-exports-enable-globa</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/human-rights-watch-eu-surveillance-tech-exports-enable-globa</guid>
+    <pubDate>Tue, 12 May 2026 09:02:18 GMT</pubDate>
+    <description>Human Rights Watch report reveals EU&apos;s 2021 Dual-Use Regulation is failing to prevent surveillance technology exports to governments that use them to spy on activists and journalists.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
+    <category>censorship-resistance</category>
+  </item>
+  <item>
     <title>Mercenary Hackers Target Egyptian Opposition Journalists with Spear-Phishing Campaign</title>
     <link>https://libertas.fgu.tech/posts/mercenary-hackers-target-egyptian-opposition-journalists-wit</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/mercenary-hackers-target-egyptian-opposition-journalists-wit</guid>
@@ -749,6 +760,16 @@
     <category>sovereignty</category>
   </item>
   <item>
+    <title>DR Congo Escalates Repression of Journalists, Activists Amid Constitutional Crisis</title>
+    <link>https://libertas.fgu.tech/posts/dr-congo-escalates-repression-of-journalists-activists-amid-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/dr-congo-escalates-repression-of-journalists-activists-amid-</guid>
+    <pubDate>Tue, 12 May 2026 09:02:18 GMT</pubDate>
+    <description>Congo authorities increasingly detaining journalists, activists, and opposition members amid constitutional amendment tensions and M23 conflict, with intelligence agencies conducting enforced disappearances and arbitrary arrests.</description>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>surveillance</category>
+  </item>
+  <item>
     <title>States Block Public Oversight of License Plate Surveillance After Abuse Revelations</title>
     <link>https://libertas.fgu.tech/posts/states-block-public-oversight-of-license-plate-surveillance-</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/states-block-public-oversight-of-license-plate-surveillance-</guid>
@@ -938,6 +959,17 @@
     <pubDate>Mon, 11 May 2026 21:01:50 GMT</pubDate>
     <description>Senate Banking Committee will vote Thursday on crypto regulation bill facing pushback from banks and Democrats, potentially impacting financial sovereignty landscape.</description>
     <category>bitcoin</category>
+    <category>sovereignty</category>
+  </item>
+  <item>
+    <title>CPJ Urges Trump to Secure Jimmy Lai&apos;s Release in Xi Meeting</title>
+    <link>https://libertas.fgu.tech/posts/cpj-urges-trump-to-secure-jimmy-lai-s-release-in-xi-meeting</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/cpj-urges-trump-to-secure-jimmy-lai-s-release-in-xi-meeting</guid>
+    <pubDate>Tue, 12 May 2026 09:01:47 GMT</pubDate>
+    <description>Committee to Protect Journalists calls on Trump to prioritize jailed Hong Kong publisher Jimmy Lai&apos;s release during diplomatic talks with Xi Jinping, highlighting broader press freedom concerns.</description>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>surveillance</category>
     <category>sovereignty</category>
   </item>
   <item>
