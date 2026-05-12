@@ -163,6 +163,29 @@
       }
     },
     {
+      "id": "0f435e84-3430-48d5-ab79-73f44297703b",
+      "url": "https://libertas.fgu.tech/posts/myanmar-journalists-use-encrypted-networks-to-bypass-junta-c",
+      "title": "Myanmar Journalists Use Encrypted Networks to Bypass Junta Censorship",
+      "summary": "Myanmar journalists in exile and inside the country use encrypted communications and underground networks to continue reporting despite systematic media crackdowns, forming a distributed newsroom across borders.",
+      "content_text": "Myanmar journalists operate distributed newsroom across borders following 2021 coup\n• Reporters rely on encrypted communication and underground networks for story verification\n• Myanmar remains among world's leading jailers of journalists according to CPJ\n• Exiled journalists face disconnection challenges while frontline reporters risk imprisonment or death\n• Inside reporters provide firsthand accounts; exiled journalists amplify and verify for global reach\n• Financial instability and uncertain legal status compound operational security challenges\n• Exile Hub's 'Only My Voice Left' campaign documents resistance through journalist testimonies\n• Shows real-world application of freedom tech tools under extreme authoritarian pressure",
+      "date_published": "2026-05-12T21:03:53.242Z",
+      "date_modified": "2026-05-12T21:03:53.377Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "comms",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 88,
+        "citations": [
+          "https://globalvoices.org/2026/05/12/only-our-voices-left-myanmar-journalists-across-borders-speak-for-truth/"
+        ]
+      }
+    },
+    {
       "id": "11193c80-8710-4cdc-9ad8-1b0c6e356e04",
       "url": "https://libertas.fgu.tech/posts/eff-sues-dhs-ice-over-admin-subpoenas-targeting-online-criti",
       "title": "EFF Sues DHS/ICE Over Admin Subpoenas Targeting Online Critics",
@@ -268,6 +291,29 @@
         "credibility_score": 85,
         "citations": [
           "https://theintercept.com/2026/05/09/david-morens-foia-arrest-trump/"
+        ]
+      }
+    },
+    {
+      "id": "1de9ba94-a7c7-4be0-ae79-2342fc39af5a",
+      "url": "https://libertas.fgu.tech/posts/tunisia-expands-press-crackdown-beyond-criminal-charges-to-f",
+      "title": "Tunisia Expands Press Crackdown Beyond Criminal Charges to Financial Warfare",
+      "summary": "Tunisia's government is systematically dismantling independent media through financial crime charges, banking freezes, and dissolution proceedings against outlets like Inkyfada, beyond traditional prosecutions.",
+      "content_text": "Tunisian authorities expanding beyond Decree-Law 54 prosecutions to target media infrastructure directly\n• Financial crime charges now used to extend journalist detention periods (Zghidi, Bsaies sentenced 3.5 years)\n• Banking restrictions blocking funds for months without explanation at outlets like Al Khatt/Inkyfada\n• Government pursuing dissolution of Al Khatt, the association behind investigative outlet Inkyfada\n• Tunisian League for Human Rights suspended one month, signaling broader civil society crackdown\n• Pattern shows coordinated strategy to dismantle conditions allowing independent journalism\n• Demonstrates financial chokepoints as effective censorship tools beyond direct prosecution",
+      "date_published": "2026-05-12T21:02:51.387Z",
+      "date_modified": "2026-05-12T21:02:51.496Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://cpj.org/2026/05/beyond-decree-54-tunisias-latest-measures-to-silence-the-press/",
+          "https://cpj.org/2026/05/cpj-condemns-trumps-order-for-doj-to-subpoena-journalists/"
         ]
       }
     },
@@ -560,6 +606,28 @@
       }
     },
     {
+      "id": "427105fd-bfef-4d38-92bb-3ed167f5488d",
+      "url": "https://libertas.fgu.tech/posts/eff-campaigns-for-saudi-wikipedian-imprisoned-14-years-for-h",
+      "title": "EFF Campaigns for Saudi Wikipedian Imprisoned 14 Years for Human Rights Edits",
+      "summary": "Saudi authorities imprisoned Wikipedia contributor Osama Khalid for 14 years after he documented human rights abuses and criticized government surveillance on encrypted platforms.",
+      "content_text": "Osama Khalid imprisoned in July 2020 for Wikipedia contributions and blogging about Saudi human rights issues\n• Original 5-year sentence increased to 32 years, then reduced multiple times to current 14-year term\n• His Wikipedia edits covered women's rights activist Loujain al-Hathloul and al-Ha'ir prison conditions\n• Blog included criticism of government plans for surveillance of encrypted platforms\n• Contributed translations to EFF's HTTPS Everywhere project and advocated for internet freedom\n• EFF launches new Offline campaign highlighting his case alongside Ola Bini and Alaa Abd El Fattah\n• Demonstrates escalating crackdown on digital rights advocates in Saudi Arabia",
+      "date_published": "2026-05-12T21:01:10.716Z",
+      "date_modified": "2026-05-12T21:01:10.774Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/05/eff-launches-new-offline-campaign-saudi-wikipedian-osama-khalid"
+        ]
+      }
+    },
+    {
       "id": "445275b7-a849-4028-9d39-364265330999",
       "url": "https://libertas.fgu.tech/posts/eff-section-230-critical-for-open-social-web-to-challenge-bi",
       "title": "EFF: Section 230 Critical for Open Social Web to Challenge Big Tech",
@@ -644,6 +712,29 @@
         "credibility_score": 95,
         "citations": [
           "https://www.eff.org/deeplinks/2026/05/eff-and-18-organizations-urge-uk-policymakers-prioritize-addressing-roots-online"
+        ]
+      }
+    },
+    {
+      "id": "521299c5-2d8f-4206-a587-963f35b1eb6f",
+      "url": "https://libertas.fgu.tech/posts/eff-publishes-comprehensive-guide-to-circumventing-internet-",
+      "title": "EFF Publishes Comprehensive Guide to Circumventing Internet Shutdowns",
+      "summary": "EFF released a practical guide covering mesh networks, peer-to-peer messaging, ham radio, and satellite internet for maintaining communications during government shutdowns and disasters.",
+      "content_text": "EFF published comprehensive guide on circumventing internet shutdowns using multiple technologies\n• Covers Meshtastic mesh networking ($20 devices for local peer-to-peer messaging via LoRA)\n• Reviews peer-to-peer apps: Briar (Bluetooth mesh), Bitchat (Nostr/Tor/Bluetooth), Delta Chat (PGP over email)\n• Discusses ham radio for long-distance communications and satellite internet for shutdown circumvention\n• Highlights recent real-world usage: Bitchat in Iran 2026 shutdown, satellite internet sharing\n• Emphasizes pre-deployment necessity - tools must be installed before shutdowns occur\n• Notes 14 ongoing internet shutdowns worldwide as of publication\n• Cites recent shutdowns in Iran (656+ executions following), Venezuela (US military operation), and others",
+      "date_published": "2026-05-12T21:01:10.717Z",
+      "date_modified": "2026-05-12T21:01:10.774Z",
+      "tags": [
+        "censorship-resistance",
+        "comms",
+        "surveillance",
+        "activism",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 95,
+        "credibility_score": 88,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/05/hackers-guide-circumventing-internet-shutdowns"
         ]
       }
     },
@@ -843,6 +934,28 @@
       }
     },
     {
+      "id": "6bae4f55-066d-4b9b-a071-2637637514c3",
+      "url": "https://libertas.fgu.tech/posts/us-congress-threatens-to-criminalize-crypto-developers-under",
+      "title": "US Congress Threatens to Criminalize Crypto Developers, Undermine Freedom Tech",
+      "summary": "Critical developer protections in the BRCA could be stripped from market structure legislation, leaving non-custodial software creators facing criminal prosecution like Tornado Cash and Samourai Wallet developers.",
+      "content_text": "Section 604 (BRCA) of Senate draft would protect non-custodial software developers from money transmitter liability\n• Without BRCA, developers face criminal prosecution under Section 1960 for publishing code\n• Tornado Cash developers Roman Storm faces century+ in prison; Samourai's Rodriguez and Hill already convicted\n• BRCA introduced by Senators Lummis (R-WY) and Wyden (D-OR) with bipartisan support\n• Provision clarifies writing code ≠ transmitting money, doesn't weaken AML statutes\n• CLARITY Act without BRCA protections would accelerate developer exodus to Singapore, Switzerland, UAE\n• Threatens emerging AI agent economy requiring permissionless financial infrastructure\n• Current prosecutions violate 'toolmaker principle' - holding developers liable for user actions",
+      "date_published": "2026-05-12T21:01:41.130Z",
+      "date_modified": "2026-05-12T21:01:41.187Z",
+      "tags": [
+        "privacy",
+        "bitcoin",
+        "sovereignty",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 88,
+        "credibility_score": 85,
+        "citations": [
+          "https://bitcoinmagazine.com/legal/whats-really-at-stake-in-the-market-structure-debate-the-brca"
+        ]
+      }
+    },
+    {
       "id": "6ccf30a5-74a3-475f-9da6-11c5cc519af5",
       "url": "https://libertas.fgu.tech/posts/guard-act-would-mandate-id-checks-end-anonymous-internet-use",
       "title": "GUARD Act Would Mandate ID Checks, End Anonymous Internet Use",
@@ -905,6 +1018,28 @@
         "citations": [
           "https://globalvoices.org/2026/04/28/brazil-a-warning-on-how-ai-and-deepfakes-can-become-an-excessive-risk-to-women-and-girls/",
           "https://globalvoices.org/2026/04/29/new-tech-new-rules-narrative-and-civil-society-in-the-age-of-ai-and-algorithms/"
+        ]
+      }
+    },
+    {
+      "id": "6f9bc2bc-6672-4555-af3f-8f63c71c90ec",
+      "url": "https://libertas.fgu.tech/posts/fbi-closed-investigation-into-student-activist-while-ice-con",
+      "title": "FBI Closed Investigation Into Student Activist While ICE Continued Detention",
+      "summary": "FBI documents reveal the agency closed investigation into Palestinian activist Mahmoud Khalil after determining he posed no threat, yet ICE continued detention based on anonymous tip claiming Hamas support.",
+      "content_text": "FBI received anonymous tip March 6, 2025 claiming Columbia student Mahmoud Khalil called for 'violence on behalf of Hamas'\n• FBI closed investigation March 19, 2025 determining Khalil 'does not warrant further FBI investigation'\n• ICE arrested Khalil March 8, 2025 and detained him in Louisiana despite FBI findings\n• Trump administration continued labeling Khalil as 'Hamas supporter' after FBI cleared him\n• Documents obtained through FOIA lawsuit by Center for Constitutional Rights\n• Case demonstrates how anonymous tips can trigger multi-agency targeting of activists\n• Part of broader Trump administration crackdown on pro-Palestine student speech\n• Shows disconnect between surveillance findings and immigration enforcement actions",
+      "date_published": "2026-05-12T21:03:20.978Z",
+      "date_modified": "2026-05-12T21:03:21.104Z",
+      "tags": [
+        "surveillance",
+        "activism",
+        "censorship-resistance",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://theintercept.com/2026/05/12/mahmoud-khalil-fbi-tip-ice-arrest/"
         ]
       }
     },
@@ -1168,6 +1303,28 @@
         "citations": [
           "https://www.accessnow.org/press-release/ghanaian-mps-must-reject-anti-lgbtq-bill/",
           "https://www.accessnow.org/publication/amicus-brief-on-spyware-and-surveillance-in-azerbaijan/"
+        ]
+      }
+    },
+    {
+      "id": "855bf345-40d6-4080-8832-2575e60de1a2",
+      "url": "https://libertas.fgu.tech/posts/venezuelan-journalist-still-faces-charges-despite-post-madur",
+      "title": "Venezuelan Journalist Still Faces Charges Despite Post-Maduro Amnesty Law",
+      "summary": "Venezuelan journalist Rory Branker was released after Maduro's ouster but denied amnesty, highlighting inconsistent application of freedom protections and ongoing press censorship via website blocking requiring VPNs.",
+      "content_text": "Rory Branker, chief content officer of La Patilla, was released from prison after U.S. military ousted Maduro in January\n• Despite new amnesty law, Branker was denied amnesty and still faces terrorism, treason, and conspiracy charges\n• Eight of 28 released journalists still face criminal charges due to inconsistent amnesty application\n• La Patilla remains blocked in Venezuela, accessible only via VPN despite government change\n• At least 65 media outlet websites still blocked by government according to SNTP and Safe and Free Connection\n• Branker was tortured and held in isolation for seven months after being detained in February 2025\n• Interior Minister Diosdado Cabello, who previously sued La Patilla, remains in new government\n• 29 journalists detained this year though quickly released, indicating continued press freedom threats",
+      "date_published": "2026-05-12T21:02:51.386Z",
+      "date_modified": "2026-05-12T21:02:51.496Z",
+      "tags": [
+        "censorship-resistance",
+        "activism",
+        "privacy",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://cpj.org/2026/05/venezuelan-journalist-details-complicated-fight-for-amnesty-post-maduro/"
         ]
       }
     },
@@ -1961,6 +2118,27 @@
       }
     },
     {
+      "id": "e3762de1-4af5-4fa7-a1a1-5e0b370b612f",
+      "url": "https://libertas.fgu.tech/posts/senate-confirms-bitcoin-friendly-kevin-warsh-to-fed-board",
+      "title": "Senate Confirms Bitcoin-Friendly Kevin Warsh to Fed Board",
+      "summary": "Senate confirmed Kevin Warsh to Fed Board 51-45, clearing path to replace Jerome Powell as Fed Chair. Warsh calls bitcoin 'important asset' and 'good policeman for policy.'",
+      "content_text": "Senate confirmed Kevin Warsh to Federal Reserve Board of Governors in 51-45 party-line vote\n• Confirmation clears path for final vote on Fed chairmanship to replace Jerome Powell\n• Warsh publicly supports bitcoin, calling it 'an important asset' and 'very good policeman for policy'\n• Financial disclosures show equity stake in Flashnet, a Bitcoin Lightning payments startup\n• Has advisory/investment ties to crypto firms including Bitwise and stablecoin project Basis\n• Unlike previous Fed leaders, views bitcoin as monetary policy signal rather than dollar threat\n• Known as inflation hawk from previous 2006-2011 Fed tenure\n• Potential shift from institutional skepticism to acceptance of bitcoin at highest monetary policy level",
+      "date_published": "2026-05-12T21:01:41.131Z",
+      "date_modified": "2026-05-12T21:01:41.187Z",
+      "tags": [
+        "bitcoin",
+        "payments",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 85,
+        "citations": [
+          "https://bitcoinmagazine.com/news/senate-confirms-bitcoin-kevin-warsh"
+        ]
+      }
+    },
+    {
       "id": "e3ae5f89-9dd0-43f3-abf1-89f0f5b428c0",
       "url": "https://libertas.fgu.tech/posts/us-senate-banking-committee-to-vote-on-crypto-clarity-act-de",
       "title": "US Senate Banking Committee to Vote on Crypto Clarity Act Despite Opposition",
@@ -2000,6 +2178,26 @@
         "credibility_score": 95,
         "citations": [
           "https://cpj.org/2026/05/cpj-urges-trump-to-prioritize-jimmy-lais-release-in-meeting-with-xi-jinping/"
+        ]
+      }
+    },
+    {
+      "id": "ede19537-0c92-4209-b44b-446e233f5246",
+      "url": "https://libertas.fgu.tech/posts/apple-google-deploy-e2e-encrypted-cross-platform-messaging-v",
+      "title": "Apple & Google Deploy E2E Encrypted Cross-Platform Messaging via RCS",
+      "summary": "Apple's iOS 26.5 enables end-to-end encryption for RCS messages between iPhone and Android, making encrypted cross-platform messaging the default for billions of users.",
+      "content_text": "Apple released iOS 26.5 with end-to-end encrypted RCS messaging support\n• Cross-platform messages between iPhone Messages app and Google Messages now encrypted by default\n• Feature requires carrier support for both RCS and encrypted messaging\n• Implementation uses GSMA RCS Universal Profile 3.0 with Messaging Layer Security protocol\n• Neither Google, Apple, nor carriers can access message contents with this update\n• Metadata collection likely continues, making Signal still preferable for high-risk conversations\n• Cloud backups may remain unencrypted unless Advanced Data Protection enabled\n• Feature currently in beta on Apple devices due to carrier rollout dependencies",
+      "date_published": "2026-05-12T21:01:10.709Z",
+      "date_modified": "2026-05-12T21:01:10.774Z",
+      "tags": [
+        "privacy",
+        "comms"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/05/victory-end-end-encrypted-rcs-comes-apple-and-android-chats"
         ]
       }
     },

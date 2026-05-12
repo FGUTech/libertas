@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Tue, 12 May 2026 09:02:18 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 12 May 2026 21:03:53 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -85,6 +85,18 @@
     <category>sovereignty</category>
   </item>
   <item>
+    <title>Myanmar Journalists Use Encrypted Networks to Bypass Junta Censorship</title>
+    <link>https://libertas.fgu.tech/posts/myanmar-journalists-use-encrypted-networks-to-bypass-junta-c</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/myanmar-journalists-use-encrypted-networks-to-bypass-junta-c</guid>
+    <pubDate>Tue, 12 May 2026 21:03:53 GMT</pubDate>
+    <description>Myanmar journalists in exile and inside the country use encrypted communications and underground networks to continue reporting despite systematic media crackdowns, forming a distributed newsroom across borders.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>comms</category>
+    <category>privacy</category>
+  </item>
+  <item>
     <title>EFF Sues DHS/ICE Over Admin Subpoenas Targeting Online Critics</title>
     <link>https://libertas.fgu.tech/posts/eff-sues-dhs-ice-over-admin-subpoenas-targeting-online-criti</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-sues-dhs-ice-over-admin-subpoenas-targeting-online-criti</guid>
@@ -132,6 +144,17 @@
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/doj-criminalizes-foia-evasion-in-first-ever-case-against-ret</guid>
     <pubDate>Sat, 09 May 2026 15:02:00 GMT</pubDate>
     <description>Trump DOJ charged retired NIH scientist David Morens with felony crimes for using personal email to evade FOIA requests, marking unprecedented criminalization of transparency law violations.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
+  </item>
+  <item>
+    <title>Tunisia Expands Press Crackdown Beyond Criminal Charges to Financial Warfare</title>
+    <link>https://libertas.fgu.tech/posts/tunisia-expands-press-crackdown-beyond-criminal-charges-to-f</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/tunisia-expands-press-crackdown-beyond-criminal-charges-to-f</guid>
+    <pubDate>Tue, 12 May 2026 21:02:51 GMT</pubDate>
+    <description>Tunisia&apos;s government is systematically dismantling independent media through financial crime charges, banking freezes, and dissolution proceedings against outlets like Inkyfada, beyond traditional prosecutions.</description>
+    <category>censorship-resistance</category>
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
@@ -276,6 +299,17 @@
     <category>activism</category>
   </item>
   <item>
+    <title>EFF Campaigns for Saudi Wikipedian Imprisoned 14 Years for Human Rights Edits</title>
+    <link>https://libertas.fgu.tech/posts/eff-campaigns-for-saudi-wikipedian-imprisoned-14-years-for-h</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-campaigns-for-saudi-wikipedian-imprisoned-14-years-for-h</guid>
+    <pubDate>Tue, 12 May 2026 21:01:10 GMT</pubDate>
+    <description>Saudi authorities imprisoned Wikipedia contributor Osama Khalid for 14 years after he documented human rights abuses and criticized government surveillance on encrypted platforms.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>privacy</category>
+  </item>
+  <item>
     <title>EFF: Section 230 Critical for Open Social Web to Challenge Big Tech</title>
     <link>https://libertas.fgu.tech/posts/eff-section-230-critical-for-open-social-web-to-challenge-bi</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-section-230-critical-for-open-social-web-to-challenge-bi</guid>
@@ -317,6 +351,18 @@
     <category>censorship-resistance</category>
     <category>surveillance</category>
     <category>identity</category>
+  </item>
+  <item>
+    <title>EFF Publishes Comprehensive Guide to Circumventing Internet Shutdowns</title>
+    <link>https://libertas.fgu.tech/posts/eff-publishes-comprehensive-guide-to-circumventing-internet-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-publishes-comprehensive-guide-to-circumventing-internet-</guid>
+    <pubDate>Tue, 12 May 2026 21:01:10 GMT</pubDate>
+    <description>EFF released a practical guide covering mesh networks, peer-to-peer messaging, ham radio, and satellite internet for maintaining communications during government shutdowns and disasters.</description>
+    <category>censorship-resistance</category>
+    <category>comms</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>sovereignty</category>
   </item>
   <item>
     <title>Global Civil Society Adapts to AI-Driven Authoritarianism with New Tactics</title>
@@ -413,6 +459,17 @@
     <category>activism</category>
   </item>
   <item>
+    <title>US Congress Threatens to Criminalize Crypto Developers, Undermine Freedom Tech</title>
+    <link>https://libertas.fgu.tech/posts/us-congress-threatens-to-criminalize-crypto-developers-under</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/us-congress-threatens-to-criminalize-crypto-developers-under</guid>
+    <pubDate>Tue, 12 May 2026 21:01:41 GMT</pubDate>
+    <description>Critical developer protections in the BRCA could be stripped from market structure legislation, leaving non-custodial software creators facing criminal prosecution like Tornado Cash and Samourai Wallet developers.</description>
+    <category>privacy</category>
+    <category>bitcoin</category>
+    <category>sovereignty</category>
+    <category>censorship-resistance</category>
+  </item>
+  <item>
     <title>GUARD Act Would Mandate ID Checks, End Anonymous Internet Use</title>
     <link>https://libertas.fgu.tech/posts/guard-act-would-mandate-id-checks-end-anonymous-internet-use</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/guard-act-would-mandate-id-checks-end-anonymous-internet-use</guid>
@@ -442,6 +499,17 @@
     <category>surveillance</category>
     <category>censorship-resistance</category>
     <category>activism</category>
+    <category>privacy</category>
+  </item>
+  <item>
+    <title>FBI Closed Investigation Into Student Activist While ICE Continued Detention</title>
+    <link>https://libertas.fgu.tech/posts/fbi-closed-investigation-into-student-activist-while-ice-con</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/fbi-closed-investigation-into-student-activist-while-ice-con</guid>
+    <pubDate>Tue, 12 May 2026 21:03:20 GMT</pubDate>
+    <description>FBI documents reveal the agency closed investigation into Palestinian activist Mahmoud Khalil after determining he posed no threat, yet ICE continued detention based on anonymous tip claiming Hamas support.</description>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>censorship-resistance</category>
     <category>privacy</category>
   </item>
   <item>
@@ -569,6 +637,17 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Venezuelan Journalist Still Faces Charges Despite Post-Maduro Amnesty Law</title>
+    <link>https://libertas.fgu.tech/posts/venezuelan-journalist-still-faces-charges-despite-post-madur</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/venezuelan-journalist-still-faces-charges-despite-post-madur</guid>
+    <pubDate>Tue, 12 May 2026 21:02:51 GMT</pubDate>
+    <description>Venezuelan journalist Rory Branker was released after Maduro&apos;s ouster but denied amnesty, highlighting inconsistent application of freedom protections and ongoing press censorship via website blocking requiring VPNs.</description>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>privacy</category>
+    <category>surveillance</category>
   </item>
   <item>
     <title>Utah Becomes First State to Regulate VPN Use for Age Verification Bypass</title>
@@ -953,6 +1032,16 @@
     <category>sovereignty</category>
   </item>
   <item>
+    <title>Senate Confirms Bitcoin-Friendly Kevin Warsh to Fed Board</title>
+    <link>https://libertas.fgu.tech/posts/senate-confirms-bitcoin-friendly-kevin-warsh-to-fed-board</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/senate-confirms-bitcoin-friendly-kevin-warsh-to-fed-board</guid>
+    <pubDate>Tue, 12 May 2026 21:01:41 GMT</pubDate>
+    <description>Senate confirmed Kevin Warsh to Fed Board 51-45, clearing path to replace Jerome Powell as Fed Chair. Warsh calls bitcoin &apos;important asset&apos; and &apos;good policeman for policy.&apos;</description>
+    <category>bitcoin</category>
+    <category>payments</category>
+    <category>sovereignty</category>
+  </item>
+  <item>
     <title>US Senate Banking Committee to Vote on Crypto Clarity Act Despite Opposition</title>
     <link>https://libertas.fgu.tech/posts/us-senate-banking-committee-to-vote-on-crypto-clarity-act-de</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/us-senate-banking-committee-to-vote-on-crypto-clarity-act-de</guid>
@@ -971,6 +1060,15 @@
     <category>activism</category>
     <category>surveillance</category>
     <category>sovereignty</category>
+  </item>
+  <item>
+    <title>Apple &amp; Google Deploy E2E Encrypted Cross-Platform Messaging via RCS</title>
+    <link>https://libertas.fgu.tech/posts/apple-google-deploy-e2e-encrypted-cross-platform-messaging-v</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/apple-google-deploy-e2e-encrypted-cross-platform-messaging-v</guid>
+    <pubDate>Tue, 12 May 2026 21:01:10 GMT</pubDate>
+    <description>Apple&apos;s iOS 26.5 enables end-to-end encryption for RCS messages between iPhone and Android, making encrypted cross-platform messaging the default for billions of users.</description>
+    <category>privacy</category>
+    <category>comms</category>
   </item>
   <item>
     <title>Meta Enables Coordinated Attacks on Bangladeshi Protest Archivists Through False Copyright Claims</title>
