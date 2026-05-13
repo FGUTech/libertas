@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Wed, 13 May 2026 03:00:56 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 13 May 2026 09:01:54 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -1120,6 +1120,16 @@
     <category>surveillance</category>
     <category>identity</category>
     <category>privacy</category>
+    <category>activism</category>
+  </item>
+  <item>
+    <title>Tunisia Escalates Media Crackdown Beyond Individual Prosecutions to Target Infrastructure</title>
+    <link>https://libertas.fgu.tech/posts/tunisia-escalates-media-crackdown-beyond-individual-prosecut</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/tunisia-escalates-media-crackdown-beyond-individual-prosecut</guid>
+    <pubDate>Wed, 13 May 2026 09:01:54 GMT</pubDate>
+    <description>Tunisia is dismantling independent media infrastructure through banking freezes, dissolution proceedings, and financial crime charges while continuing to jail journalists under Decree-Law 54.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
     <category>activism</category>
   </item>
   <item>
