@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Wed, 13 May 2026 09:01:54 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 13 May 2026 21:02:52 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -183,6 +183,16 @@
     <category>identity</category>
   </item>
   <item>
+    <title>Citizen Lab Director Warns OSCE About Unregulated Surveillance Marketplace</title>
+    <link>https://libertas.fgu.tech/posts/citizen-lab-director-warns-osce-about-unregulated-surveillan</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/citizen-lab-director-warns-osce-about-unregulated-surveillan</guid>
+    <pubDate>Wed, 13 May 2026 21:02:52 GMT</pubDate>
+    <description>Ron Deibert told OSCE that mercenary spyware is just the tip of a massive, unregulated surveillance economy targeting civil society.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
+  </item>
+  <item>
     <title>EFF Launches Anti-Surveillance Campaign, Releases Rayhunter IMSI Catcher Detection Tool</title>
     <link>https://libertas.fgu.tech/posts/eff-launches-anti-surveillance-campaign-releases-rayhunter-i</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-launches-anti-surveillance-campaign-releases-rayhunter-i</guid>
@@ -297,6 +307,16 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>EFF Challenges Weak Science Behind State Social Media Bans for Youth</title>
+    <link>https://libertas.fgu.tech/posts/eff-challenges-weak-science-behind-state-social-media-bans-f</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-challenges-weak-science-behind-state-social-media-bans-f</guid>
+    <pubDate>Wed, 13 May 2026 21:01:27 GMT</pubDate>
+    <description>EFF argues that state legislatures are rushing to ban youth social media access based on flawed research and &apos;pop psychology&apos; rather than settled science, threatening constitutional rights.</description>
+    <category>censorship-resistance</category>
+    <category>privacy</category>
+    <category>surveillance</category>
   </item>
   <item>
     <title>EFF Campaigns for Saudi Wikipedian Imprisoned 14 Years for Human Rights Edits</title>
@@ -629,6 +649,15 @@
     <category>activism</category>
   </item>
   <item>
+    <title>DHS Testing Autonomous Surveillance Drones on US-Canada Border</title>
+    <link>https://libertas.fgu.tech/posts/dhs-testing-autonomous-surveillance-drones-on-us-canada-bord</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/dhs-testing-autonomous-surveillance-drones-on-us-canada-bord</guid>
+    <pubDate>Wed, 13 May 2026 21:02:35 GMT</pubDate>
+    <description>DHS will deploy autonomous drones and ground vehicles streaming battlefield intelligence over 5G networks along the US-Canada border in a bilateral experiment this fall.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+  </item>
+  <item>
     <title>Ghana&apos;s Anti-LGBTQ+ Bill Would Force Social Media Censorship, Mandate Public Surveillance</title>
     <link>https://libertas.fgu.tech/posts/ghana-s-anti-lgbtq-bill-would-force-social-media-censorship-</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/ghana-s-anti-lgbtq-bill-would-force-social-media-censorship-</guid>
@@ -889,6 +918,16 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>EFF Highlights How Commercial Tracking Feeds Government Mass Surveillance</title>
+    <link>https://libertas.fgu.tech/posts/eff-highlights-how-commercial-tracking-feeds-government-mass</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-highlights-how-commercial-tracking-feeds-government-mass</guid>
+    <pubDate>Wed, 13 May 2026 21:01:27 GMT</pubDate>
+    <description>EFF details how widespread commercial tracking enables government surveillance, with data brokers selling personal info to FBI/CBP/ICE to bypass warrant requirements.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>activism</category>
   </item>
   <item>
     <title>EFF Opposes Insufficient FISA 702 Reauthorization Bill Lacking Warrant Requirements</title>
