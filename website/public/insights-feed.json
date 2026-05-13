@@ -1786,6 +1786,27 @@
       }
     },
     {
+      "id": "bb3b99af-8f59-4812-8127-ff990d265b06",
+      "url": "https://libertas.fgu.tech/posts/meta-removes-instagram-s-end-to-end-encryption-feature-cites",
+      "title": "Meta Removes Instagram's End-to-End Encryption Feature, Cites Low Adoption",
+      "summary": "Instagram ended its opt-in end-to-end encryption feature, breaking Meta's promise to encrypt DMs by default and eliminating privacy protections on a major platform.",
+      "content_text": "Instagram discontinued its end-to-end encryption feature for direct messages [EFF]\n• Meta broke 2022-2023 public promises to implement E2EE by default across platforms\n• Company blamed low adoption rates, ignoring that feature required 4-step opt-in process\n• Meta directs users to WhatsApp for encrypted messaging instead of fixing Instagram\n• Removal comes as competitors like Google/Apple advance E2EE implementation in RCS\n• Facebook Messenger group chat encryption promises also remain undelivered\n• Demonstrates how opt-in privacy features fail without default implementation",
+      "date_published": "2026-05-13T03:00:56.571Z",
+      "date_modified": "2026-05-13T03:00:56.614Z",
+      "tags": [
+        "privacy",
+        "comms",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/05/broken-promises-rip-instagrams-end-end-encrypted-dms"
+        ]
+      }
+    },
+    {
       "id": "bba50541-bf3e-4a95-b9f6-6db1136bc1f8",
       "url": "https://libertas.fgu.tech/posts/zambia-cancels-major-digital-rights-summit-rightscon-2026-am",
       "title": "Zambia Cancels Major Digital Rights Summit RightsCon 2026 Amid Foreign Pressure",
