@@ -1762,6 +1762,28 @@
       }
     },
     {
+      "id": "b07e87dd-9799-4c60-a2f7-f0103e9180f6",
+      "url": "https://libertas.fgu.tech/posts/samourai-wallet-developer-seeks-presidential-pardon-amid-tru",
+      "title": "Samourai Wallet Developer Seeks Presidential Pardon Amid Trump Clemency Considerations",
+      "summary": "Developer behind privacy-focused Samourai Wallet crypto mixer seeks presidential pardon as Trump weighs 250 clemency decisions, highlighting legal pressure on Bitcoin privacy tools.",
+      "content_text": "Samourai Wallet developer publicly seeking presidential pardon from Trump\n• Trump reportedly considering up to 250 pardons before leaving office\n• Samourai Wallet is a Bitcoin mixing protocol for transaction privacy\n• Request highlights ongoing legal pressure on financial privacy tools\n• FTX founder Sam Bankman-Fried also reportedly seeking clemency\n• Outcome could set precedent for how privacy-enhancing crypto tools are treated legally\n• Demonstrates intersection of political transitions and crypto regulatory enforcement",
+      "date_published": "2026-05-14T09:01:25.488Z",
+      "date_modified": "2026-05-14T09:01:25.542Z",
+      "tags": [
+        "privacy",
+        "sovereignty",
+        "bitcoin"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 72,
+        "citations": [
+          "https://cointelegraph.com/news/trump-weighs-250-pardons-as-crypto-founders-seek-clemency",
+          "https://cointelegraph.com/news/trump-weighs-250-pardons-as-crypto-founders-seek-clemency?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+        ]
+      }
+    },
+    {
       "id": "b338d8d3-0760-4a34-b8ac-91f28fdea582",
       "url": "https://libertas.fgu.tech/posts/eff-urges-eu-to-prioritize-privacy-and-user-sovereignty-in-d",
       "title": "EFF Urges EU to Prioritize Privacy and User Sovereignty in Digital Fairness Act",

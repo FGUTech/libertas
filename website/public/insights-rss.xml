@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 14 May 2026 03:01:45 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 14 May 2026 09:01:25 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -856,6 +856,16 @@
     <category>privacy</category>
     <category>censorship-resistance</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Samourai Wallet Developer Seeks Presidential Pardon Amid Trump Clemency Considerations</title>
+    <link>https://libertas.fgu.tech/posts/samourai-wallet-developer-seeks-presidential-pardon-amid-tru</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/samourai-wallet-developer-seeks-presidential-pardon-amid-tru</guid>
+    <pubDate>Thu, 14 May 2026 09:01:25 GMT</pubDate>
+    <description>Developer behind privacy-focused Samourai Wallet crypto mixer seeks presidential pardon as Trump weighs 250 clemency decisions, highlighting legal pressure on Bitcoin privacy tools.</description>
+    <category>privacy</category>
+    <category>sovereignty</category>
+    <category>bitcoin</category>
   </item>
   <item>
     <title>EFF Urges EU to Prioritize Privacy and User Sovereignty in Digital Fairness Act</title>
