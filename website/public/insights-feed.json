@@ -140,6 +140,28 @@
       }
     },
     {
+      "id": "0bcb64b2-64b5-4dde-b337-fc7d19a26917",
+      "url": "https://libertas.fgu.tech/posts/access-now-report-data-privacy-as-defense-against-electoral-",
+      "title": "Access Now Report: Data Privacy as Defense Against Electoral Disinformation in Latin America",
+      "summary": "Access Now analysis shows personal data collection fuels political microtargeting and disinformation, recommending strict data protection enforcement during elections across Latin America.",
+      "content_text": "Access Now published analysis linking data collection to disinformation campaigns targeting Latin American elections\n• Report identifies microtargeting as key threat: using personal data to deliver manipulative political content\n• Generative AI has reduced costs and technical barriers for creating deepfakes and bot networks\n• Social media algorithms use personal data profiles to enable political manipulation and voter suppression\n• Recommends data protection authorities collaborate with electoral authorities to combat coordinated disinformation\n• Proposes disabling microtargeting tools for political content during election periods\n• Calls for algorithmic impact laboratories to monitor platform compliance with recommendations",
+      "date_published": "2026-05-14T03:01:45.143Z",
+      "date_modified": "2026-05-14T03:01:45.228Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "censorship-resistance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 85,
+        "citations": [
+          "https://www.accessnow.org/publication/vinculo-entre-desinformacion-y-privacidad/"
+        ]
+      }
+    },
+    {
       "id": "0de13d8b-d87f-4f9a-b6a7-b6be6ce2c520",
       "url": "https://libertas.fgu.tech/posts/india-uses-anti-terror-law-to-unmask-anonymous-journalist-on",
       "title": "India Uses Anti-Terror Law to Unmask Anonymous Journalist on X",

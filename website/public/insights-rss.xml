@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Wed, 13 May 2026 21:02:52 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 14 May 2026 03:01:45 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -72,6 +72,17 @@
     <category>privacy</category>
     <category>comms</category>
     <category>censorship-resistance</category>
+  </item>
+  <item>
+    <title>Access Now Report: Data Privacy as Defense Against Electoral Disinformation in Latin America</title>
+    <link>https://libertas.fgu.tech/posts/access-now-report-data-privacy-as-defense-against-electoral-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/access-now-report-data-privacy-as-defense-against-electoral-</guid>
+    <pubDate>Thu, 14 May 2026 03:01:45 GMT</pubDate>
+    <description>Access Now analysis shows personal data collection fuels political microtargeting and disinformation, recommending strict data protection enforcement during elections across Latin America.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>activism</category>
   </item>
   <item>
     <title>India Uses Anti-Terror Law to Unmask Anonymous Journalist on X</title>
