@@ -2330,6 +2330,27 @@
       }
     },
     {
+      "id": "ea38d942-ae40-4dbf-adbc-d133d363756f",
+      "url": "https://libertas.fgu.tech/posts/doj-launches-criminal-investigation-into-trans-youth-healthc",
+      "title": "DOJ Launches Criminal Investigation Into Trans Youth Healthcare Providers",
+      "summary": "Trump DOJ issued criminal grand jury subpoenas to hospitals including NYU Langone demanding records of trans youth patients and medical staff, escalating from previous civil investigations.",
+      "content_text": "NYU Langone received criminal grand jury subpoena from Northern District of Texas demanding trans youth patient records and provider information\n• Subpoena covers patients under 18 who received gender-affirming care between 2020-2026, including medical records and provider details\n• Escalation from previous administrative subpoenas to criminal investigation targeting healthcare providers\n• Multiple hospitals reportedly received similar subpoenas, with case strategically filed in conservative Texas district\n• NYU Langone already shuttered its trans youth program due to federal funding threats, proving compliance doesn't prevent prosecution\n• New York Shield Law designed to protect from out-of-state prosecution, but untested against federal criminal cases\n• Previous administrative subpoenas have been successfully challenged - Children's Hospital LA reached settlement withdrawing patient-identifying information demands\n• Rhode Island Hospital ordered to comply with similar DOJ subpoena, but state advocates filed emergency motion to quash",
+      "date_published": "2026-05-14T21:02:45.754Z",
+      "date_modified": "2026-05-14T21:02:45.945Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://theintercept.com/2026/05/14/nyu-langone-subpoena-transgender-health-care/"
+        ]
+      }
+    },
+    {
       "id": "ede19537-0c92-4209-b44b-446e233f5246",
       "url": "https://libertas.fgu.tech/posts/apple-google-deploy-e2e-encrypted-cross-platform-messaging-v",
       "title": "Apple & Google Deploy E2E Encrypted Cross-Platform Messaging via RCS",
@@ -2477,6 +2498,29 @@
         "credibility_score": 95,
         "citations": [
           "https://www.eff.org/deeplinks/2026/04/act-now-stop-californias-paternalistic-and-privacy-destroying-social-media-ban"
+        ]
+      }
+    },
+    {
+      "id": "fc4e6849-8e0d-4bfd-b511-ccd00b1df2a2",
+      "url": "https://libertas.fgu.tech/posts/signal-threatens-canada-exit-over-lawful-access-bill-c-22",
+      "title": "Signal Threatens Canada Exit Over Lawful Access Bill C-22",
+      "summary": "Signal and Meta oppose Canada's Bill C-22, which could mandate metadata collection for messaging apps. Signal threatens to pull out of Canada if forced to comply with the surveillance requirements.",
+      "content_text": "Canada's proposed Bill C-22 targets encrypted messaging apps with lawful access requirements\n• Signal explicitly threatens to exit Canadian market rather than comply\n• Meta also expressing opposition to the proposed legislation\n• Bill could mandate forced metadata collection from messaging platforms\n• Government officials reportedly avoiding commitments to protect encryption\n• Citizen Lab researcher Kate Robertson warns of threats to encrypted communications\n• Stakes involve global precedent for government pressure on encrypted messaging\n• Pattern matches Signal's previous exit threats in other jurisdictions",
+      "date_published": "2026-05-14T21:01:54.738Z",
+      "date_modified": "2026-05-14T21:01:54.847Z",
+      "tags": [
+        "privacy",
+        "censorship-resistance",
+        "comms",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://citizenlab.ca/signal-warns-it-would-pull-out-of-canada-if-made-to-comply-with-lawful-access-bill/"
         ]
       }
     },
