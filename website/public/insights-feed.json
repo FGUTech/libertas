@@ -780,6 +780,28 @@
       }
     },
     {
+      "id": "4a519c45-da7a-4937-ba37-a973845f2bc5",
+      "url": "https://libertas.fgu.tech/posts/trump-admin-targets-anti-fascists-as-terrorists-in-2026-coun",
+      "title": "Trump Admin Targets 'Anti-Fascists' as Terrorists in 2026 Counterterrorism Strategy",
+      "summary": "Trump's new counterterrorism strategy formally classifies 'Violent Left-Wing Extremists, including Anti-Fascists' as major terror threats alongside ISIS and cartels, while omitting right-wing groups.",
+      "content_text": "Trump administration released '2026 Counterterrorism Strategy' authored by NSC official Sebastian Gorka\n• Document defines three major terror threats: 'Legacy Islamist Terrorists,' 'Narcoterrorists,' and 'Violent Left-Wing Extremists'\n• Anti-fascists labeled as 'anti-American, radically pro-transgender, and anarchist' terror threat\n• Strategy makes no mention of right-wing extremist groups despite data showing they're responsible for majority of recent violent attacks\n• NSPM-7 memo targets Americans with 'anti-American, anti-capitalist, anti-Christian' views as terror threats\n• Document concludes with Trump quote: 'We Will Find You and We Will Kill You'\n• Rep. Valerie Foushee calls it 'a plan on how they're going to attack people on the left'\n• Formalizes shift of counterterror apparatus from foreign to domestic political targets",
+      "date_published": "2026-05-15T15:03:20.756Z",
+      "date_modified": "2026-05-15T15:03:20.981Z",
+      "tags": [
+        "surveillance",
+        "activism",
+        "censorship-resistance",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 85,
+        "citations": [
+          "https://theintercept.com/2026/05/15/trump-terrorism-left-groups-antifa-christian-gorka/"
+        ]
+      }
+    },
+    {
       "id": "521299c5-2d8f-4206-a587-963f35b1eb6f",
       "url": "https://libertas.fgu.tech/posts/eff-publishes-comprehensive-guide-to-circumventing-internet-",
       "title": "EFF Publishes Comprehensive Guide to Circumventing Internet Shutdowns",
@@ -1677,6 +1699,27 @@
       }
     },
     {
+      "id": "a3772463-46e1-4fd0-bd33-8736d88fb8e5",
+      "url": "https://libertas.fgu.tech/posts/trump-admin-counterterrorism-strategy-targets-anti-fascist-a",
+      "title": "Trump Admin Counterterrorism Strategy Targets Anti-Fascist Activists, Domestic Dissent",
+      "summary": "New 16-page Trump counterterrorism strategy explicitly targets anti-fascist activists alongside ISIS, with 'find you and kill you' language, expanding surveillance powers against domestic dissent.",
+      "content_text": "Trump administration released new counterterrorism strategy targeting anti-fascist activists, ISIS, and 'narco-terrorists'\n• Document contains explicit threat: 'We will find you, and we will kill you' [Source]\n• Strategy combines foreign interventions with domestic 'war on dissent' that has proven lethal [Source]\n• Administration conducting boat strikes in Caribbean/Pacific that killed nearly 200 people as of early May [Source]\n• Legal justification for strikes remains secret, described as 'fake war' where targets don't know they're in conflict [Source]\n• Policy built on 25 years of executive overreach and targeted killings via drone warfare [Source]\n• Expands post-9/11 legal framework from Afghanistan/Pakistan to Caribbean/Pacific operations\n• Intercept reporters describe document as 'list of administration's enemies and promise of what they'll do to them' [Source]",
+      "date_published": "2026-05-15T15:03:20.755Z",
+      "date_modified": "2026-05-15T15:03:20.981Z",
+      "tags": [
+        "surveillance",
+        "activism",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://theintercept.com/2026/05/15/podcast-trump-counterterrorism-strategy/"
+        ]
+      }
+    },
+    {
       "id": "a88965d2-a1fe-4232-b11d-aad98509805b",
       "url": "https://libertas.fgu.tech/posts/ice-developing-smart-glasses-with-facial-recognition-databas",
       "title": "ICE Developing Smart Glasses with Facial Recognition Database Integration",
@@ -2200,6 +2243,28 @@
         "citations": [
           "https://globalvoices.org/2026/04/29/the-digital-crown-reclaiming-human-dignity-in-the-age-of-ai/",
           "https://globalvoices.org/2026/04/30/before-the-algorithm-decides-queer-storytelling-as-resistance-in-nigeria/"
+        ]
+      }
+    },
+    {
+      "id": "d6ded661-31f2-4d3e-9d02-4ceff3f0391a",
+      "url": "https://libertas.fgu.tech/posts/tunisia-prosecutes-refugee-aid-workers-shuts-down-civil-soci",
+      "title": "Tunisia Prosecutes Refugee Aid Workers, Shuts Down Civil Society Organizations",
+      "summary": "Tunisia sentenced two refugee aid workers to prison for humanitarian work, shut down their organization, and froze accounts as part of broader crackdown on civil society groups.",
+      "content_text": "Tunisian Council for Refugees shut down in May 2024, founder and program manager sentenced to 2 years prison (6 months suspended)\n• Workers prosecuted under 1975 passport law for 'harboring' asylum seekers and facilitating illegal entry/exit\n• Organization provided UNHCR-funded accommodation and assistance to registered refugees and asylum seekers\n• Authorities froze bank accounts of organization and individuals, preventing operations and creating economic hardship\n• Part of systematic crackdown - at least 9 civil society workers sentenced to prison since January 2026\n• Tunisia suspended UNHCR asylum processing in June 2024, leaving asylum seekers in legal limbo\n• Pattern demonstrates criminalization of humanitarian work and erosion of freedom of association\n• Appeals trial scheduled for May 13, 2026 after both defendants and prosecution appealed initial sentences",
+      "date_published": "2026-05-15T15:02:23.511Z",
+      "date_modified": "2026-05-15T15:02:23.682Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.hrw.org/news/2026/05/11/tunisia-end-abusive-prosecution-of-refugee-aid-workers"
         ]
       }
     },

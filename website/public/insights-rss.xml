@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 15 May 2026 09:00:40 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 15 May 2026 15:03:20 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -382,6 +382,17 @@
     <category>censorship-resistance</category>
     <category>surveillance</category>
     <category>identity</category>
+  </item>
+  <item>
+    <title>Trump Admin Targets &apos;Anti-Fascists&apos; as Terrorists in 2026 Counterterrorism Strategy</title>
+    <link>https://libertas.fgu.tech/posts/trump-admin-targets-anti-fascists-as-terrorists-in-2026-coun</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/trump-admin-targets-anti-fascists-as-terrorists-in-2026-coun</guid>
+    <pubDate>Fri, 15 May 2026 15:03:20 GMT</pubDate>
+    <description>Trump&apos;s new counterterrorism strategy formally classifies &apos;Violent Left-Wing Extremists, including Anti-Fascists&apos; as major terror threats alongside ISIS and cartels, while omitting right-wing groups.</description>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>censorship-resistance</category>
+    <category>sovereignty</category>
   </item>
   <item>
     <title>EFF Publishes Comprehensive Guide to Circumventing Internet Shutdowns</title>
@@ -817,6 +828,16 @@
     <category>censorship-resistance</category>
   </item>
   <item>
+    <title>Trump Admin Counterterrorism Strategy Targets Anti-Fascist Activists, Domestic Dissent</title>
+    <link>https://libertas.fgu.tech/posts/trump-admin-counterterrorism-strategy-targets-anti-fascist-a</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/trump-admin-counterterrorism-strategy-targets-anti-fascist-a</guid>
+    <pubDate>Fri, 15 May 2026 15:03:20 GMT</pubDate>
+    <description>New 16-page Trump counterterrorism strategy explicitly targets anti-fascist activists alongside ISIS, with &apos;find you and kill you&apos; language, expanding surveillance powers against domestic dissent.</description>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>censorship-resistance</category>
+  </item>
+  <item>
     <title>ICE Developing Smart Glasses with Facial Recognition Database Integration</title>
     <link>https://libertas.fgu.tech/posts/ice-developing-smart-glasses-with-facial-recognition-databas</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/ice-developing-smart-glasses-with-facial-recognition-databas</guid>
@@ -1070,6 +1091,17 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>Tunisia Prosecutes Refugee Aid Workers, Shuts Down Civil Society Organizations</title>
+    <link>https://libertas.fgu.tech/posts/tunisia-prosecutes-refugee-aid-workers-shuts-down-civil-soci</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/tunisia-prosecutes-refugee-aid-workers-shuts-down-civil-soci</guid>
+    <pubDate>Fri, 15 May 2026 15:02:23 GMT</pubDate>
+    <description>Tunisia sentenced two refugee aid workers to prison for humanitarian work, shut down their organization, and froze accounts as part of broader crackdown on civil society groups.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>sovereignty</category>
   </item>
   <item>
     <title>EFF: Revised GUARD Act Still Threatens Privacy Despite Narrowed Scope</title>
