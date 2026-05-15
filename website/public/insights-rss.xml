@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 14 May 2026 21:02:45 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 15 May 2026 09:00:40 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -959,6 +959,17 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Signal Threatens to Exit Canada Over Encryption-Breaking Bill C-22</title>
+    <link>https://libertas.fgu.tech/posts/signal-threatens-to-exit-canada-over-encryption-breaking-bil</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/signal-threatens-to-exit-canada-over-encryption-breaking-bil</guid>
+    <pubDate>Fri, 15 May 2026 09:00:40 GMT</pubDate>
+    <description>Signal&apos;s VP of Strategy says the encrypted messaging app would rather leave Canada than comply with Bill C-22, which could force backdoors into end-to-end encryption.</description>
+    <category>privacy</category>
+    <category>comms</category>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
   </item>
   <item>
     <title>Press Freedom Orgs Document Federal Targeting of Independent Journalists Under Trump</title>

@@ -1977,6 +1977,29 @@
       }
     },
     {
+      "id": "c468ebea-d026-429e-83e7-3a7e4712700a",
+      "url": "https://libertas.fgu.tech/posts/signal-threatens-to-exit-canada-over-encryption-breaking-bil",
+      "title": "Signal Threatens to Exit Canada Over Encryption-Breaking Bill C-22",
+      "summary": "Signal's VP of Strategy says the encrypted messaging app would rather leave Canada than comply with Bill C-22, which could force backdoors into end-to-end encryption.",
+      "content_text": "Signal VP of Strategy states company would exit Canada rather than comply with Bill C-22\n• Bill C-22 is Canada's proposed 'lawful access' legislation targeting encrypted communications\n• Legislation could force messaging platforms to implement backdoors or weaken encryption\n• Signal's position follows pattern of principled resistance to encryption-breaking laws\n• Move would impact Canadian users' access to Signal's secure messaging platform\n• Sets precedent for how privacy-focused companies respond to government overreach\n• Demonstrates tension between state surveillance goals and encryption integrity",
+      "date_published": "2026-05-15T09:00:40.252Z",
+      "date_modified": "2026-05-15T09:00:40.331Z",
+      "tags": [
+        "privacy",
+        "comms",
+        "censorship-resistance",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 88,
+        "credibility_score": 80,
+        "citations": [
+          "https://cointelegraph.com/news/signal-says-it-leave-canada-if-forced-to-comply-with-lawful-access-bill",
+          "https://cointelegraph.com/news/signal-says-it-leave-canada-if-forced-to-comply-with-lawful-access-bill?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+        ]
+      }
+    },
+    {
       "id": "cb9232ac-415c-448f-8245-bd2f8c75ec7a",
       "url": "https://libertas.fgu.tech/posts/press-freedom-orgs-document-federal-targeting-of-independent",
       "title": "Press Freedom Orgs Document Federal Targeting of Independent Journalists Under Trump",
