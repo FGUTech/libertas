@@ -7,52 +7,6 @@
   "language": "en-US",
   "items": [
     {
-      "id": "03f6d52d-f8c2-4b96-b2ee-5e17c01498ac",
-      "url": "https://libertas.fgu.tech/posts/ooni-releases-2025-year-in-review-major-platform-updates-and",
-      "title": "OONI Releases 2025 Year in Review: Major Platform Updates and Censorship Measurement Advances",
-      "summary": "OONI launched multiplatform mobile apps, thematic censorship pages, and anonymous credential systems in 2025, significantly enhancing global internet censorship measurement capabilities.",
-      "content_text": "OONI launched unified multiplatform mobile app for Android and iOS in March 2025\n• New app architecture enables feature parity and faster deployment across platforms\n• Launched OONI Explorer thematic censorship pages for better data visualization\n• Developed anonymous credential system to enhance user privacy protection\n• Conducted security audits to strengthen platform security\n• Published multiple research reports documenting global censorship findings\n• Joined Global Network Initiative (GNI) expanding institutional partnerships\n• Held Open Measurement Gatherings (OMG) to engage researcher community",
-      "date_published": "2026-05-02T09:03:42.458Z",
-      "date_modified": "2026-05-02T09:03:42.541Z",
-      "tags": [
-        "censorship-resistance",
-        "surveillance",
-        "privacy",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 85,
-        "credibility_score": 95,
-        "citations": [
-          "https://ooni.org/post/2025-year-in-review/"
-        ]
-      }
-    },
-    {
-      "id": "042ff6e5-fb65-409d-ada0-52f704dcc6e0",
-      "url": "https://libertas.fgu.tech/posts/big-tech-s-data-center-colonialism-sparks-community-resistan",
-      "title": "Big Tech's Data Center 'Colonialism' Sparks Community Resistance in Latin America",
-      "summary": "Major tech companies are rapidly expanding AI data centers across Latin America, creating water shortages and energy price hikes while governments fast-track approvals without community consultation.",
-      "content_text": "Data center demand projected to rise 20% annually until 2030 driven by AI boom\n• Tech executives held thousands of meetings with Latin American officials (2012-2025) lobbying for favorable policies [CLIP investigation]\n• Brazil leads region with 206 data centers, plans $3 trillion investment over 5 years with special tax incentives\n• Scala's 'AI City' in flood-devastated Eldorado do Sul will be largest Latin American data center (7M sq meters, $50B)\n• Brazilian government simplified environmental licensing, waiving Environmental Impact Studies and public hearings\n• Facilities require massive resources: Scala facility alone needs 1.8 GW power (equivalent to 6M person city)\n• Communities face water shortages, higher electricity bills, and exclusion from approval processes\n• Researcher calls expansion 'terraforming' and 'new colonialism' concentrating benefits in Global North\n• Chile's data centers increased from 6 (2017) to 66 (2026); Argentina has 42, Uruguay has 10\n• IDEC study warns of 'communities running out of water' and projects approved without population consultation",
-      "date_published": "2026-05-02T09:07:59.474Z",
-      "date_modified": "2026-05-02T09:07:59.572Z",
-      "tags": [
-        "surveillance",
-        "privacy",
-        "censorship-resistance",
-        "activism",
-        "sovereignty"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 85,
-        "credibility_score": 80,
-        "citations": [
-          "https://globalvoices.org/2026/04/29/the-human-cost-of-the-data-center-push-in-latin-america/",
-          "https://globalvoices.org/2026/04/30/the-chinese-lesson-on-the-human-rights-approach-to-ai/"
-        ]
-      }
-    },
-    {
       "id": "059f7194-9b1c-4894-8ed0-cc87cca0b086",
       "url": "https://libertas.fgu.tech/posts/bukele-admin-escalates-financial-censorship-against-el-faro-",
       "title": "Bukele Admin Escalates Financial Censorship Against El Faro, Freezes Personal Assets",
@@ -71,29 +25,6 @@
         "credibility_score": 88,
         "citations": [
           "https://cpj.org/2026/05/bukele-administration-freezes-salvadoran-news-outlets-assets-in-latest-act-of-retaliation/"
-        ]
-      }
-    },
-    {
-      "id": "06da9819-c1f8-4a83-8777-8d1945e679c3",
-      "url": "https://libertas.fgu.tech/posts/eff-challenges-court-secrecy-in-wi-fi-patent-case-affecting-",
-      "title": "EFF Challenges Court Secrecy in Wi-Fi Patent Case Affecting Billions",
-      "summary": "EFF forced disclosure of sealed court filings in Eastern District of Texas patent case involving Wi-Fi 6 technology, exposing widespread over-sealing that hides critical information about standard-essential patents from public view.",
-      "content_text": "Wilus Institute sued Samsung and HP over Wi-Fi 6 standard-essential patents (SEPs)\n• Eastern District of Texas allowed wholesale sealing of filings without specific justification\n• Key documents about patent ownership and FRAND licensing obligations completely hidden\n• EFF intervention led to partial disclosure of redacted versions of three documents\n• Court allowed 'boilerplate' protective orders instead of requiring document-by-document justification\n• Pattern of excessive secrecy affects public understanding of essential technology licensing\n• Northern District of California cited as example of proper transparency enforcement",
-      "date_published": "2026-05-02T09:00:54.069Z",
-      "date_modified": "2026-05-02T09:00:54.154Z",
-      "tags": [
-        "privacy",
-        "censorship-resistance",
-        "identity",
-        "surveillance"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 85,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/04/eff-challenges-secrecy-eastern-district-texas-patent-case",
-          "https://www.eff.org/deeplinks/2026/04/act-now-stop-californias-paternalistic-and-privacy-destroying-social-media-ban"
         ]
       }
     },
@@ -162,29 +93,6 @@
       }
     },
     {
-      "id": "0de13d8b-d87f-4f9a-b6a7-b6be6ce2c520",
-      "url": "https://libertas.fgu.tech/posts/india-uses-anti-terror-law-to-unmask-anonymous-journalist-on",
-      "title": "India Uses Anti-Terror Law to Unmask Anonymous Journalist on X",
-      "summary": "Indian police invoked anti-terrorism legislation to force X to reveal identity data of @TeluguScribe, an anonymous news outlet critical of the Telangana state government.",
-      "content_text": "Telangana Police issued formal notice to X demanding registration details and activity data for @TeluguScribe account\n• Notice cites Section 43F of India's Unlawful Activities Prevention Act (UAPA), carrying 3-year prison penalty for non-compliance\n• TeluguScribe provides anonymous political coverage critical of Indian National Congress government in Telangana\n• Police allege account contains 'derogatory content' that could incite hatred and public unrest\n• Committee to Protect Journalists calls this 'gross overreach' threatening press freedom\n• TeluguScribe reports 70 police cases filed against it in past 2.5 years\n• Case demonstrates use of counterterrorism laws to break anonymity protections\n• Sets precedent for compelling platform data disclosure under terrorism statutes",
-      "date_published": "2026-05-02T09:05:02.133Z",
-      "date_modified": "2026-05-02T09:05:02.243Z",
-      "tags": [
-        "censorship-resistance",
-        "activism",
-        "surveillance",
-        "sovereignty"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 75,
-        "credibility_score": 90,
-        "citations": [
-          "https://cpj.org/2026/04/indian-police-invoke-anti-terror-law-to-unmask-anonymous-news-handle-teluguscribe/",
-          "https://cpj.org/2026/04/ahmed-shihab-eldin-subjected-to-grave-violations-of-fundamental-rights-has-kuwaiti-citizenship-revoked/"
-        ]
-      }
-    },
-    {
       "id": "0f435e84-3430-48d5-ab79-73f44297703b",
       "url": "https://libertas.fgu.tech/posts/myanmar-journalists-use-encrypted-networks-to-bypass-junta-c",
       "title": "Myanmar Journalists Use Encrypted Networks to Bypass Junta Censorship",
@@ -204,28 +112,6 @@
         "credibility_score": 88,
         "citations": [
           "https://globalvoices.org/2026/05/12/only-our-voices-left-myanmar-journalists-across-borders-speak-for-truth/"
-        ]
-      }
-    },
-    {
-      "id": "11193c80-8710-4cdc-9ad8-1b0c6e356e04",
-      "url": "https://libertas.fgu.tech/posts/eff-sues-dhs-ice-over-admin-subpoenas-targeting-online-criti",
-      "title": "EFF Sues DHS/ICE Over Admin Subpoenas Targeting Online Critics",
-      "summary": "EFF sued DHS and ICE for using administrative subpoenas to unmask online critics and protest attendees, demanding transparency about these judge-free surveillance tools that target First Amendment activity.",
-      "content_text": "EFF filed lawsuit against DHS and ICE in DC District Court demanding records about administrative subpoenas\n• Agencies using subpoenas to identify people who criticized government or attended protests online\n• Administrative subpoenas bypass judicial oversight - no judge approval required\n• Subpoenas target subscriber info: names, addresses, IP addresses, session times from tech companies\n• DHS withdrew subpoenas when challenged in court by ACLU rather than defend legality\n• Agencies ignored EFF's FOIA requests for policies and procedures behind subpoena program\n• EFF previously urged major tech companies to resist compliance and notify targeted users\n• Google specifically called out for breaking promise to notify users before data handover",
-      "date_published": "2026-05-02T09:00:54.070Z",
-      "date_modified": "2026-05-02T09:00:54.154Z",
-      "tags": [
-        "surveillance",
-        "privacy",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/press/releases/eff-sues-dhs-and-ice-records-subpoenas-seeking-unmask-online-critics-0",
-          "https://www.eff.org/deeplinks/2026/04/how-ice-got-my-data-effector-388"
         ]
       }
     },
@@ -274,28 +160,6 @@
       }
     },
     {
-      "id": "15caa76f-eb24-4e72-9f8d-2154c946ee8a",
-      "url": "https://libertas.fgu.tech/posts/palantir-s-130m-irs-contract-enables-mass-financial-surveill",
-      "title": "Palantir's $130M IRS Contract Enables Mass Financial Surveillance Including Crypto Tracking",
-      "summary": "IRS has paid Palantir $130M since 2018 for data mining platform that aggregates federal databases, tracks crypto transactions, and maps social networks for financial investigations under Trump administration direction.",
-      "content_text": "IRS Criminal Investigation division uses Palantir's Lead and Case Analytics platform to analyze dozens of federal databases\n• System aggregates tax returns, bank statements, FinCEN data, and cryptocurrency transaction records from Bitcoin, Ethereum, Litecoin, and Ripple\n• Platform maps social relationships through calls, texts, emails, and IP address analysis to 'identify suspects more easily'\n• Contract worth over $130 million uses both Palantir Gotham and Foundry applications for 'massive-scale data' analysis\n• Includes 'all available' seized crypto wallet data from dark web investigations and exchanges like Coinbase\n• IRS Criminal Investigations has pivoted under Trump to target 'left-leaning groups' while scaling back tax cheat pursuit\n• System allows rapid visualization of 'connections from millions of records with thousands of links' across agencies\n• American Oversight obtained contract documents showing minimal transparency and weak oversight of surveillance capabilities",
-      "date_published": "2026-05-02T09:07:25.850Z",
-      "date_modified": "2026-05-02T09:07:25.939Z",
-      "tags": [
-        "surveillance",
-        "privacy",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 88,
-        "citations": [
-          "https://theintercept.com/2026/04/24/palantir-irs-contract-data/",
-          "https://theintercept.com/2026/04/30/wyden-cotton-nsa-surveillance-fisa-702/"
-        ]
-      }
-    },
-    {
       "id": "16936a1a-c084-4192-a2dc-dd02c5371a8f",
       "url": "https://libertas.fgu.tech/posts/doj-criminalizes-foia-evasion-in-first-ever-case-against-ret",
       "title": "DOJ Criminalizes FOIA Evasion in First-Ever Case Against Retired NIH Scientist",
@@ -336,53 +200,6 @@
         "citations": [
           "https://cpj.org/2026/05/beyond-decree-54-tunisias-latest-measures-to-silence-the-press/",
           "https://cpj.org/2026/05/cpj-condemns-trumps-order-for-doj-to-subpoena-journalists/"
-        ]
-      }
-    },
-    {
-      "id": "1e75ea09-3bca-4c8a-b6d6-2fe3638b4b57",
-      "url": "https://libertas.fgu.tech/posts/tails-7-7-2-emergency-release-fixes-critical-privilege-escal",
-      "title": "Tails 7.7.2 Emergency Release Fixes Critical Privilege Escalation Vulnerability",
-      "summary": "Tails released emergency update to patch Copy Fail vulnerability in Linux kernel that could allow attackers to gain admin privileges and potentially deanonymize users.",
-      "content_text": "Emergency Tails 7.7.2 release fixes critical Linux kernel vulnerability\n• Copy Fail (CVE in kernel 6.12.85) enables privilege escalation attacks\n• Vulnerability could allow applications to gain administration privileges\n• Potential attack chain: exploit app vulnerability + Copy Fail = full system control\n• Successful exploitation could lead to user deanonymization\n• Tails team reports no known real-world exploitation yet\n• Automatic upgrades available from Tails 7.0+, manual upgrade option provided",
-      "date_published": "2026-05-04T09:01:04.773Z",
-      "date_modified": "2026-05-04T09:01:04.880Z",
-      "tags": [
-        "privacy",
-        "surveillance",
-        "censorship-resistance",
-        "identity"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 75,
-        "credibility_score": 95,
-        "citations": [
-          "https://tails.net/news/version_7.7.2/",
-          "https://copy.fail/"
-        ]
-      }
-    },
-    {
-      "id": "21ed7a8c-a146-4bc0-9a46-df26f1efc881",
-      "url": "https://libertas.fgu.tech/posts/eff-publishes-dmca-compliance-guide-for-decentralized-social",
-      "title": "EFF Publishes DMCA Compliance Guide for Decentralized Social Platform Operators",
-      "summary": "EFF released comprehensive guidance on copyright law compliance for Mastodon, Bluesky, and other decentralized social platform operators to protect against legal liability while maintaining user protections.",
-      "content_text": "EFF published DMCA best practices guide targeting decentralized social platform operators\n• Covers Mastodon, ActivityPub servers, Bluesky hosts, RSS mirrors, and similar protocols\n• Five key requirements: designate DMCA agent, respond to notices, have repeat infringer policy, address known infringement, avoid encouraging infringement\n• Must register designated agent with US Copyright Office directory and renew every 3 years\n• Operators can challenge invalid DMCA notices without losing safe harbor protections entirely\n• Counter-notification process allows users to restore wrongfully removed content\n• Emphasizes that hosts don't need to actively monitor for infringement, only respond when notified\n• Legal infrastructure guidance critical for sustainability of decentralized platforms",
-      "date_published": "2026-05-02T09:00:54.071Z",
-      "date_modified": "2026-05-02T09:00:54.154Z",
-      "tags": [
-        "privacy",
-        "surveillance",
-        "censorship-resistance",
-        "activism",
-        "identity"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 88,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/04/copyright-and-dmca-best-practices-fediverse-operators",
-          "https://www.eff.org/press/releases/eff-sues-dhs-and-ice-records-subpoenas-seeking-unmask-online-critics-0"
         ]
       }
     },
@@ -430,49 +247,6 @@
       }
     },
     {
-      "id": "24a9d649-47f6-42a6-975b-57f8a67e2076",
-      "url": "https://libertas.fgu.tech/posts/canadian-civil-society-coalition-calls-for-full-withdrawal-o",
-      "title": "Canadian Civil Society Coalition Calls for Full Withdrawal of Surveillance Bill C-22",
-      "summary": "25 rights organizations led by Citizen Lab demand Canada withdraw Bill C-22, which would mandate year-long metadata retention and force providers to build surveillance backdoors.",
-      "content_text": "Coalition of 25 rights organizations delivered open letter to PM Mark Carney and Parliament opposing Bill C-22 (Lawful Access Act)\n• Citizen Lab researchers Ron Deibert, Noura Aljizawi, Lex Gill, and Kate Robertson among signatories\n• Bill would force digital services to record and retain up to one year of detailed metadata on all users\n• Legislation would compel 'enormous and poorly defined' set of providers to build surveillance backdoors\n• Bill weakens existing rules governing police access to personal information\n• Metadata retention would affect both Canadian citizens and international users of Canadian services\n• Coalition calls for complete withdrawal rather than amendments to the legislation",
-      "date_published": "2026-05-02T09:04:33.769Z",
-      "date_modified": "2026-05-02T09:04:33.864Z",
-      "tags": [
-        "surveillance",
-        "privacy",
-        "censorship-resistance"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 85,
-        "credibility_score": 95,
-        "citations": [
-          "https://citizenlab.ca/kill-bill-c-22-says-civil-society-to-parliament/"
-        ]
-      }
-    },
-    {
-      "id": "289da732-2680-4bcb-953f-9b4506c37bbf",
-      "url": "https://libertas.fgu.tech/posts/press-freedom-groups-call-for-repeal-of-turkey-s-disinformat",
-      "title": "Press Freedom Groups Call for Repeal of Turkey's Disinformation Law Used Against Journalists",
-      "summary": "CPJ and 22 organizations condemned Turkey's disinformation law for prosecuting journalists, calling for imprisoned reporters' release and law's repeal due to vague definitions.",
-      "content_text": "Committee to Protect Journalists (CPJ) joined 22 press freedom organizations in condemning Turkey's disinformation law\n• Joint statement released April 28 targets frequent prosecution and imprisonment of journalists under the law\n• Organizations demand release of all journalists imprisoned under disinformation provisions\n• Law criticized as 'structurally incompatible with international press freedom standards'\n• Vague language fails to clearly define 'untrue information' or national security threats\n• Demonstrates broader pattern of governments using disinformation laws as censorship tools\n• Creates legal environment that increases demand for censorship-resistant communication platforms",
-      "date_published": "2026-05-02T09:05:02.134Z",
-      "date_modified": "2026-05-02T09:05:02.243Z",
-      "tags": [
-        "censorship-resistance",
-        "surveillance",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 88,
-        "citations": [
-          "https://cpj.org/2026/04/cpj-joins-call-for-turkey-to-repeal-disinformation-law-for-its-use-against-journalists/",
-          "https://cpj.org/2026/04/bahrain-sentences-photographer-sayed-baqer-al-kamel-to-10-years-in-prison/"
-        ]
-      }
-    },
-    {
       "id": "2cea799a-0864-4356-a139-16af8708f74e",
       "url": "https://libertas.fgu.tech/posts/why-anonymized-data-isn-t-really-anonymous-15-data-points-id",
       "title": "Why 'Anonymized' Data Isn't Really Anonymous: 15 Data Points ID 99.98% of People",
@@ -494,47 +268,24 @@
       }
     },
     {
-      "id": "2e0ad692-c57d-429c-afb0-3b3c223dd604",
-      "url": "https://libertas.fgu.tech/posts/new-book-documents-financial-censorship-by-payment-platforms",
-      "title": "New Book Documents Financial Censorship by Payment Platforms",
-      "summary": "Former EFF director's book 'Transaction Denied' exposes systematic financial censorship by PayPal, Venmo, and other platforms blocking accounts based on speech, with documented cases and successful resistance campaigns.",
-      "content_text": "Former EFF Activism Director Rainey Reitman published 'Transaction Denied' documenting financial censorship\n• Book reveals PayPal/Venmo systematically blocking accounts of teachers, activists, journalists, and politicians\n• Persian poetry teacher lost access to funds due to overly broad Iran sanctions interpretation\n• Muslim NYC councilwoman had payment blocked for using Bangladeshi restaurant name\n• Erotic storytelling platforms and drug legalization advocates repeatedly lose payment access\n• Book documents successful advocacy campaigns that restored accounts for Nifty Archive and Smashwords\n• Shows how EFF staff helped create Freedom of the Press Foundation to counter payment censorship\n• Demonstrates pattern of arbitrary corporate policy and misinterpretation of law driving account closures",
-      "date_published": "2026-05-02T09:00:54.068Z",
-      "date_modified": "2026-05-02T09:00:54.154Z",
+      "id": "30c2a417-bbf4-425e-a705-77f351a2b112",
+      "url": "https://libertas.fgu.tech/posts/china-s-new-xinjiang-secrecy-law-embeds-ai-surveillance-into",
+      "title": "China's New Xinjiang Secrecy Law Embeds AI Surveillance Into Social Governance",
+      "summary": "China's new state secrets regulation for Xinjiang uses AI monitoring and grassroots reporting to control information flows, making everyday communication subject to security evaluation and creating a 'structure of silence.'",
+      "content_text": "New Xinjiang regulation extends China's state secrecy framework with AI and big data monitoring systems (Article 10)\n• Introduces 'work secrets' concept requiring all organizations to create internal secrecy lists and reporting systems\n• Mandates grassroots organizations and community actors to monitor and report 'suspicious activities' including social media posts\n• Creates collaborative surveillance system between local government, military, and Xinjiang Production and Construction Corps\n• Expands 'state secrets' definition to cover cultural expression, religious practices, and communication patterns\n• Establishes 'prevention and control' system focusing on algorithmic risk assessment and predictive intervention\n• Results in self-censorship and 'structure of silence' where information becomes inaccessible by design\n• Complicates human rights documentation by restricting information access and verification capabilities",
+      "date_published": "2026-05-18T09:02:46.187Z",
+      "date_modified": "2026-05-18T09:02:46.318Z",
       "tags": [
-        "payments",
+        "surveillance",
         "censorship-resistance",
-        "sovereignty",
+        "privacy",
         "activism"
       ],
       "_libertas": {
-        "freedom_relevance_score": 85,
-        "credibility_score": 90,
+        "freedom_relevance_score": 88,
+        "credibility_score": 82,
         "citations": [
-          "https://www.eff.org/deeplinks/2026/04/former-eff-activism-directors-new-book-transaction-denied-explores-what-happens"
-        ]
-      }
-    },
-    {
-      "id": "2f056e7d-1207-40e6-b8ba-b44793307fba",
-      "url": "https://libertas.fgu.tech/posts/infrastructure-barriers-block-ai-adoption-across-sub-saharan",
-      "title": "Infrastructure Barriers Block AI Adoption Across Sub-Saharan Africa",
-      "summary": "Poor electricity access affecting 600M Africans and expensive internet connectivity costing 25% of monthly salary create fundamental barriers to AI adoption in Sub-Saharan Africa, widening global tech inequality.",
-      "content_text": "600 million Africans lack electricity access as of 2025, with 85% in Sub-Saharan Africa [International Energy Agency]\n• Mobile data costs 2-10% of average monthly income, making cloud-based AI applications unaffordable for most\n• Daily power outages affect even countries with better infrastructure like South Africa and Côte d'Ivoire\n• Rural areas have lowest global internet penetration rates despite 75% of world's mobile coverage expansion in 2024\n• High latency and unstable connections make AI tools unusable for professional applications\n• African governments announce AI strategies while basic infrastructure remains inadequate\n• Educational inequality likely to worsen as most schools lack internet connectivity [UNESCO]\n• Startups face competitive disadvantages with higher costs, VPN requirements, and limited tool access",
-      "date_published": "2026-05-02T09:07:59.474Z",
-      "date_modified": "2026-05-02T09:07:59.572Z",
-      "tags": [
-        "privacy",
-        "surveillance",
-        "identity",
-        "sovereignty"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 85,
-        "citations": [
-          "https://globalvoices.org/2026/04/28/a-lack-of-electricity-and-internet-access-hinders-ai-adoption-in-sub-saharan-africa/",
-          "https://globalvoices.org/2026/04/29/the-digital-crown-reclaiming-human-dignity-in-the-age-of-ai/"
+          "https://globalvoices.org/2026/05/18/human-rights-concerns-abound-over-chinas-state-secrets-regulation-in-the-uyghur-region/"
         ]
       }
     },
@@ -560,29 +311,6 @@
       }
     },
     {
-      "id": "3375e110-1a01-4211-b7b7-dffc28209771",
-      "url": "https://libertas.fgu.tech/posts/access-now-privacy-laws-key-to-fighting-disinformation-in-la",
-      "title": "Access Now: Privacy Laws Key to Fighting Disinformation in Latin America Elections",
-      "summary": "Access Now argues that strict data protection laws are essential to combat personalized disinformation campaigns targeting voters across upcoming Latin American elections.",
-      "content_text": "Access Now published analysis linking data collection practices to disinformation effectiveness\n• Microtargeting uses personal data to deliver personalized political propaganda and false information\n• AI-generated content (deepfakes) and bots amplify targeted disinformation campaigns\n• Social media platforms' business models enable data harvesting for political manipulation\n• Report focuses on upcoming elections in Argentina, Mexico, Brazil, Colombia, and Peru\n• Recommends banning sensitive data processing that reveals political preferences\n• Calls for cooperation between data protection and electoral authorities\n• Proposes disabling microtargeting tools during electoral periods",
-      "date_published": "2026-05-02T09:03:07.581Z",
-      "date_modified": "2026-05-02T09:03:07.666Z",
-      "tags": [
-        "censorship-resistance",
-        "surveillance",
-        "activism",
-        "sovereignty"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 85,
-        "credibility_score": 90,
-        "citations": [
-          "https://www.accessnow.org/publication/vinculo-entre-desinformacion-y-privacidad/",
-          "https://www.accessnow.org/campaign/no-exam-shutdown/"
-        ]
-      }
-    },
-    {
       "id": "33a23f28-b813-49aa-8580-915ec57327a7",
       "url": "https://libertas.fgu.tech/posts/microsoft-g42-data-center-in-kenya-raises-digital-sovereignt",
       "title": "Microsoft-G42 Data Center in Kenya Raises Digital Sovereignty Concerns",
@@ -604,38 +332,36 @@
       }
     },
     {
-      "id": "34c247b1-3d54-45cd-bf77-a5dc31be53c1",
-      "url": "https://libertas.fgu.tech/posts/kuwait-revokes-journalist-s-citizenship-after-2-month-detent",
-      "title": "Kuwait Revokes Journalist's Citizenship After 2-Month Detention, Part of 71K Mass Revocations",
-      "summary": "Kuwait revoked citizenship of U.S.-Kuwaiti journalist Ahmed Shihab-Eldin after detaining him for journalism, part of 71,000 citizenship revocations since Oct 2024—4.6% of Kuwait's population.",
-      "content_text": "Ahmed Shihab-Eldin detained for 52 days on charges of spreading false information and harming national security\n• Kuwait revoked citizenship of Shihab-Eldin and his two sisters days after his release\n• Part of mass citizenship revocation campaign: 71,000 people since October 2024\n• Revocations represent 4.6% of Kuwait's 1.5 million official population\n• Journalist was held incommunicado in interrogation facilities before transfer to prison\n• Charged for journalism activities including mobile phone use and expressing opinions\n• CPJ calls it 'weaponizing nationality to punish reporting' with regional implications\n• Demonstrates escalating state repression creating demand for censorship-resistant tools",
-      "date_published": "2026-05-02T09:05:02.133Z",
-      "date_modified": "2026-05-02T09:05:02.243Z",
+      "id": "35ed624c-8583-4afe-9245-da6a5c37ef87",
+      "url": "https://libertas.fgu.tech/posts/el-salvador-detains-anti-corruption-lawyer-for-one-year-trig",
+      "title": "El Salvador Detains Anti-Corruption Lawyer for One Year, Triggers Mass Exodus of Rights Groups",
+      "summary": "Salvadoran authorities have held prominent anti-corruption lawyer Ruth López in sealed pretrial detention for one year, sparking wider crackdown that forced 140+ activists and journalists into exile.",
+      "content_text": "Ruth López, head of Cristosal's Anti-Corruption Unit, detained May 18, 2025 on charges changed from embezzlement to illicit enrichment\n• Case remains under judicial seal with no public evidence presented after one year in pretrial detention\n• López investigated Bukele administration corruption and challenged removal of attorney general and Constitutional Chamber magistrates\n• Detention triggered broader crackdown: foreign agents law passed, constitutional lawyer Enrique Anaya arrested on money laundering charges\n• At least 140 human rights defenders and journalists fled El Salvador between May-September 2025\n• Cristosal suspended operations in El Salvador, relocated to Guatemala and Honduras citing choice between 'exile and prison'\n• Association of Journalists of El Salvador and three other civil society organizations closed Salvadoran offices\n• Pattern follows systematic dismantling of due process protections since 2022 state of emergency detaining 91,000+ people",
+      "date_published": "2026-05-18T09:02:04.970Z",
+      "date_modified": "2026-05-18T09:02:05.109Z",
       "tags": [
         "censorship-resistance",
-        "comms",
+        "activism",
         "surveillance",
-        "activism"
+        "sovereignty"
       ],
       "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 95,
+        "freedom_relevance_score": 75,
+        "credibility_score": 90,
         "citations": [
-          "https://cpj.org/2026/04/ahmed-shihab-eldin-subjected-to-grave-violations-of-fundamental-rights-has-kuwaiti-citizenship-revoked/",
-          "https://cpj.org/2026/04/myanmar-junta-revokes-licenses-of-3-media-outlets-in-martial-law-clampdown/"
+          "https://www.hrw.org/news/2026/05/18/el-salvador-human-rights-lawyer-still-in-jail-one-year-on"
         ]
       }
     },
     {
-      "id": "39762f22-a290-4c60-8984-f4f0709b34fe",
-      "url": "https://libertas.fgu.tech/posts/bellingcat-guide-using-china-s-xiaohongshu-for-open-source-r",
-      "title": "Bellingcat Guide: Using China's Xiaohongshu for Open-Source Research Under Digital Oppression",
-      "summary": "Bellingcat releases comprehensive guide for investigating Chinese social platform Xiaohongshu, revealing how researchers circumvent AI surveillance and real-time censorship to track diaspora activism and expose wrongdoing.",
-      "content_text": "Bellingcat publishes detailed guide for open-source research on Xiaohongshu (RedNote), China's Instagram-like platform with 300M users\n• Platform operates under strict AI surveillance and tens of thousands of 'internet police' monitoring in real-time\n• Leaked 143-page internal document shows how censors respond to government directives blocking politically sensitive content\n• Researchers use censorship patterns themselves as investigative leads, mapping detention camps through blanked areas on Baidu Maps\n• Chinese diaspora communities use platform to coordinate responses to discrimination and organize grassroots activism\n• App gained millions of Western users during TikTok ban fears, triggering AI-powered translation features\n• Guide provides specific search methods for tracking consumer fraud, women's rights discourse, and transnational advocacy networks\n• Platform's female-dominated userbase (70%) has developed algorithm-gaming techniques to create women-only discussion spaces",
-      "date_published": "2026-05-02T09:08:30.901Z",
-      "date_modified": "2026-05-02T09:08:30.995Z",
+      "id": "38a25489-b480-4432-9b7e-025ed99fc30c",
+      "url": "https://libertas.fgu.tech/posts/rights-groups-demand-microsoft-disclose-review-of-israeli-mi",
+      "title": "Rights Groups Demand Microsoft Disclose Review of Israeli Military AI/Cloud Services",
+      "summary": "Five major rights organizations are pressuring Microsoft to publish findings of its review into Israeli military use of Azure and AI services for surveillance and targeting of Palestinians.",
+      "content_text": "Access Now, Amnesty, EFF, and others issued joint letter demanding Microsoft transparency\n• Microsoft reportedly completed legal review of Israeli military's use of its technologies but hasn't released findings\n• Media investigations revealed Azure/AI services used by Israeli intelligence Unit 8200 for mass surveillance\n• Services allegedly processed intercepted Palestinian communications for lethal military operations in Gaza\n• Microsoft announced restrictions on Unit 8200 but didn't specify which services were suspended\n• Organizations warn of potential civil/criminal liability for complicity in international law violations\n• Microsoft transferred Israeli branch management to France amid scrutiny over defense dealings\n• Groups demand suspension of all contracts contributing to human rights abuses",
+      "date_published": "2026-05-18T09:01:39.504Z",
+      "date_modified": "2026-05-18T09:01:39.594Z",
       "tags": [
-        "censorship-resistance",
         "surveillance",
         "privacy",
         "activism"
@@ -644,7 +370,7 @@
         "freedom_relevance_score": 78,
         "credibility_score": 85,
         "citations": [
-          "https://www.bellingcat.com/resources/2026/04/20/xiaohongshu-rednote-open-source-guide/"
+          "https://www.accessnow.org/press-release/microsoft-come-clean-about-your-ties-to-the-israeli-military/"
         ]
       }
     },
@@ -692,28 +418,6 @@
       }
     },
     {
-      "id": "445275b7-a849-4028-9d39-364265330999",
-      "url": "https://libertas.fgu.tech/posts/eff-section-230-critical-for-open-social-web-to-challenge-bi",
-      "title": "EFF: Section 230 Critical for Open Social Web to Challenge Big Tech",
-      "summary": "EFF argues Section 230 protections are essential for decentralized social platforms like Mastodon and Bluesky to survive and compete with Big Tech monopolies.",
-      "content_text": "EFF warns that weakening Section 230 would benefit Big Tech at expense of open alternatives\n• Open Social Web (Fediverse, ATmosphere protocols) puts communities back in control via decentralization\n• Section 230 protects small hosts and users from liability for others' speech content\n• Without 230 protections, only well-resourced platforms could survive legal costs\n• Law enables diverse moderation approaches and community self-governance\n• Protections extend to users sharing/boosting content, not just platform operators\n• Big Tech can absorb multimillion-dollar lawsuits while small hosts would be 'picked off one by one'\n• Article positions decentralized protocols as superior alternative to corporate surveillance platforms",
-      "date_published": "2026-05-02T09:00:54.068Z",
-      "date_modified": "2026-05-02T09:00:54.154Z",
-      "tags": [
-        "censorship-resistance",
-        "privacy",
-        "surveillance",
-        "sovereignty"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/04/open-social-web-needs-section-230-survive"
-        ]
-      }
-    },
-    {
       "id": "46584fe7-e465-4058-ac30-b27ebc52292f",
       "url": "https://libertas.fgu.tech/posts/portland-ai-drone-targeting-firm-ships-hardware-to-israeli-m",
       "title": "Portland AI Drone Targeting Firm Ships Hardware to Israeli Military Contractor",
@@ -731,29 +435,6 @@
         "credibility_score": 82,
         "citations": [
           "https://theintercept.com/2026/05/05/portland-sightline-ai-surveillance-drones-israel/"
-        ]
-      }
-    },
-    {
-      "id": "47c3ddc0-c49c-4751-9f95-3964fd83400e",
-      "url": "https://libertas.fgu.tech/posts/hack-for-hire-campaign-targets-egyptian-journalists-with-spe",
-      "title": "Hack-for-Hire Campaign Targets Egyptian Journalists with Spear-Phishing Attacks",
-      "summary": "Access Now investigation exposes Asian hack-for-hire group targeting prominent Egyptian journalists and critics Mostafa Al-A'sar and Ahmed Eltantawy through sophisticated spear-phishing attacks attempting to compromise Apple and Google accounts.",
-      "content_text": "Spear-phishing campaign targeted Egyptian journalists Mostafa Al-A'sar and Ahmed Eltantawy from 2023-2024\n• Attackers impersonated trusted contacts and legitimate services including Apple and Signal\n• Lookout security firm attributes attacks to hack-for-hire group with ties to Asia\n• Infrastructure shows capability to deliver Android spyware with extensive surveillance features\n• Both primary targets avoided compromise, but similar attack successfully breached Lebanese journalist's Apple account\n• Persistent attack infrastructure uses overlapping domains and hosting for ongoing campaigns\n• Pattern connects to broader Egyptian government surveillance using Intellexa Predator spyware\n• Investigation collaboration between Access Now, Lookout, SMEX, and Citizen Lab provides comprehensive analysis",
-      "date_published": "2026-05-02T09:03:07.583Z",
-      "date_modified": "2026-05-02T09:03:07.666Z",
-      "tags": [
-        "censorship-resistance",
-        "surveillance",
-        "activism",
-        "privacy"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 85,
-        "citations": [
-          "https://www.accessnow.org/mena-phishing-2026/?pk_campaign=feed&#038;pk_kwd=mena-phishing-2026",
-          "https://www.accessnow.org/event/advancing-rights-centered-reporting-on-nigerias-cybercrimes-act/"
         ]
       }
     },
@@ -847,29 +528,6 @@
       }
     },
     {
-      "id": "5a81e493-d273-4c8a-9511-7d59a86fb841",
-      "url": "https://libertas.fgu.tech/posts/global-civil-society-adapts-to-ai-driven-authoritarianism-wi",
-      "title": "Global Civil Society Adapts to AI-Driven Authoritarianism with New Tactics",
-      "summary": "Study of 10 global case studies reveals civil society using three key tactics against AI surveillance: co-opting tech for their purposes, countering digital repression, and innovating new resistance forms.",
-      "content_text": "International Resource for Impact and Storytelling (IRIS) commissioned 10 case studies across Global Majority countries on civil society responses to AI/algorithmic authoritarianism\n• Three main tactical approaches identified: co-opting technology, countering surveillance, and innovating new forms of resistance\n• Fogo Cruzado (Brazil) using AI to test anti-police violence messaging; Derechos Digitales campaigning against facial recognition in Brazil/Chile\n• Hong Kong activists adapting to AI surveillance through humor, coded language, and ephemeral organizational structures\n• Shift toward hyperlocal organizing to avoid national-level scrutiny while building transnational solidarity networks\n• Flexibility and adaptability identified as essential strategies in fast-changing techno-authoritarian environment\n• Study emphasizes need for decentralized, collaborative networks and flexible funding models\n• Narrative work, technology adaptation, and political organizing viewed as inseparable elements of resistance",
-      "date_published": "2026-05-02T09:07:59.474Z",
-      "date_modified": "2026-05-02T09:07:59.572Z",
-      "tags": [
-        "surveillance",
-        "privacy",
-        "sovereignty",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 72,
-        "credibility_score": 85,
-        "citations": [
-          "https://globalvoices.org/2026/04/29/new-tech-new-rules-narrative-and-civil-society-in-the-age-of-ai-and-algorithms/",
-          "https://globalvoices.org/2026/04/29/the-human-cost-of-the-data-center-push-in-latin-america/"
-        ]
-      }
-    },
-    {
       "id": "5d623dbe-e96c-4b7f-8694-12df5a393c02",
       "url": "https://libertas.fgu.tech/posts/eff-warns-federal-secure-data-act-would-weaken-existing-stat",
       "title": "EFF Warns Federal SECURE Data Act Would Weaken Existing State Privacy Protections",
@@ -887,28 +545,6 @@
         "credibility_score": 95,
         "citations": [
           "https://www.eff.org/deeplinks/2026/05/secure-data-act-not-serious-piece-privacy-legislation"
-        ]
-      }
-    },
-    {
-      "id": "5e5407b4-f9c6-4b03-a702-2cc8fad0cc96",
-      "url": "https://libertas.fgu.tech/posts/us-israel-war-strategy-targets-iran-s-police-infrastructure-",
-      "title": "US-Israel War Strategy Targets Iran's Police Infrastructure to 'Make Iran Ungovernable'",
-      "summary": "Bellingcat investigation reveals systematic targeting of 80+ Iranian police stations and Basij paramilitary sites, part of strategy to degrade regime's 'repressive capacity' and enable civilian uprising.",
-      "content_text": "Bellingcat documented 80+ destroyed police stations and law enforcement facilities in first three weeks of US-Israel war against Iran\n• Targets include 30 police stations, 29 command centers, and 9 Basij paramilitary sites used in protest crackdowns\n• Israeli Foreign Ministry stated goal is providing 'brave people of Iran conditions to take their destiny into their own hands'\n• Expert analysis confirms strategy aims to degrade regime's 'repressive capacity' and 'make Iran ungovernable'\n• Police stations targeted beyond crowd control - broader goal to prevent regime maintaining internal control\n• Verification conducted using satellite imagery, videos, and open source mapping data\n• Civilian casualties documented with 1,700+ fatalities, including risks to detainees in targeted facilities\n• Strategy extends beyond policing to industrial targets as comprehensive governance disruption",
-      "date_published": "2026-05-02T09:08:30.901Z",
-      "date_modified": "2026-05-02T09:08:30.995Z",
-      "tags": [
-        "activism",
-        "surveillance",
-        "censorship-resistance",
-        "sovereignty"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 85,
-        "credibility_score": 90,
-        "citations": [
-          "https://www.bellingcat.com/news/2026/04/24/make-iran-ungovernable-tracking-efforts-to-destroy-irans-police-infrastructure/"
         ]
       }
     },
@@ -1064,28 +700,6 @@
       }
     },
     {
-      "id": "6ccf30a5-74a3-475f-9da6-11c5cc519af5",
-      "url": "https://libertas.fgu.tech/posts/guard-act-would-mandate-id-checks-end-anonymous-internet-use",
-      "title": "GUARD Act Would Mandate ID Checks, End Anonymous Internet Use",
-      "summary": "The GUARD Act, framed as AI safety for kids, would require age verification for all users of AI-powered tools, effectively ending anonymous internet use and creating mass surveillance infrastructure.",
-      "content_text": "Congress moving quickly on GUARD Act with key vote expected this week\n• Bill requires 'reasonable age verification' using government ID or biometric data for all users of AI-powered systems\n• Broad definitions would cover search engines, customer service chats, and homework help tools\n• Minors would be banned from 'AI companions' - any chatbot designed to facilitate 'interpersonal or emotional interaction'\n• Companies face $100,000 per violation penalties, incentivizing overblocking\n• Age verification must be ongoing, not one-time, creating persistent identity tracking\n• Would block anonymous/pseudonymous internet use and create surveillance infrastructure\n• Millions without current government ID would be shut out of basic online services",
-      "date_published": "2026-05-02T09:00:54.068Z",
-      "date_modified": "2026-05-02T09:00:54.154Z",
-      "tags": [
-        "privacy",
-        "surveillance",
-        "censorship-resistance",
-        "identity"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 85,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/04/guard-act-isnt-targeting-dangerous-ai-its-blocking-everyday-internet-use"
-        ]
-      }
-    },
-    {
       "id": "6d6c0d02-4605-4470-ad25-c5fd2d4d03dd",
       "url": "https://libertas.fgu.tech/posts/doj-pursues-rare-federal-felony-charges-against-journalists-",
       "title": "DOJ Pursues Rare Federal Felony Charges Against Journalists Covering Minnesota Protest",
@@ -1103,29 +717,6 @@
         "credibility_score": 95,
         "citations": [
           "https://cpj.org/2026/05/cpj-partners-urge-doj-to-drop-charges-against-journalists-in-minnesota-protest-case/"
-        ]
-      }
-    },
-    {
-      "id": "6f20c83b-a40d-437c-a439-f65a27307acc",
-      "url": "https://libertas.fgu.tech/posts/brazil-considers-ai-deepfakes-excessive-risk-as-gender-viole",
-      "title": "Brazil Considers AI Deepfakes 'Excessive Risk' as Gender Violence Rises",
-      "summary": "Brazilian research center Internetlab calls for classifying non-consensual deepfakes as 'excessive risk' after surge in AI-generated sexual content targeting women and girls in schools.",
-      "content_text": "Multiple cases reported of teens creating AI-generated nude images of classmates in Rio de Janeiro, Bahia, and Mato Grosso states\n• Internetlab research center published technical note recommending AI regulation to combat online gender violence\n• 98% of deepfake videos online are sexually explicit, 99% target women; 464% increase in sexual deepfakes 2022-2023 [Security Hero research]\n• Brazil's Supreme Court ruled Marco Civil da Internet's Article 19 partially unconstitutional, increasing platform content moderation obligations\n• Brazil recorded 1,568 femicides in 2025, a 4.7% increase and highest since law was enacted\n• Internetlab specifically calls out X's Grok AI as problematic example of embedded AI amplifying harmful content\n• Report recommends 'safety by design' for platforms and digital literacy curriculum guidelines\n• Concerns raised about AI-generated political violence content as Brazil approaches election season",
-      "date_published": "2026-05-02T09:07:59.474Z",
-      "date_modified": "2026-05-02T09:07:59.572Z",
-      "tags": [
-        "surveillance",
-        "censorship-resistance",
-        "activism",
-        "privacy"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 85,
-        "citations": [
-          "https://globalvoices.org/2026/04/28/brazil-a-warning-on-how-ai-and-deepfakes-can-become-an-excessive-risk-to-women-and-girls/",
-          "https://globalvoices.org/2026/04/29/new-tech-new-rules-narrative-and-civil-society-in-the-age-of-ai-and-algorithms/"
         ]
       }
     },
@@ -1148,51 +739,6 @@
         "credibility_score": 85,
         "citations": [
           "https://theintercept.com/2026/05/12/mahmoud-khalil-fbi-tip-ice-arrest/"
-        ]
-      }
-    },
-    {
-      "id": "70265e7a-d0ac-473d-9370-1f32a97fe25e",
-      "url": "https://libertas.fgu.tech/posts/myanmar-junta-revokes-licenses-of-3-media-outlets-under-mart",
-      "title": "Myanmar Junta Revokes Licenses of 3 Media Outlets Under Martial Law",
-      "summary": "Myanmar's military junta revoked licenses of three news outlets serving conflict-affected Chin state under martial law, forcing journalists underground and into exile operations.",
-      "content_text": "Myanmar junta revoked licenses of Khonumthung Media Group, Chin World, and Myatmaukkhit News Agency on April 9\n• Bans imposed under martial law across 60 townships for alleged violations of national security\n• Outlets prohibited from publishing on any media platform or technology\n• Several journalists from banned outlets have gone into hiding to avoid arrest\n• Independent Myanmar Journalists Association coordinating via messaging apps with press freedom groups\n• Part of broader crackdown since 2021 coup that has driven media operations into exile\n• Myanmar holds at least 18 journalists in prison, ranking second globally for journalist imprisonment\n• Demonstrates escalating information warfare in conflict zones",
-      "date_published": "2026-05-02T09:05:02.133Z",
-      "date_modified": "2026-05-02T09:05:02.243Z",
-      "tags": [
-        "censorship-resistance",
-        "surveillance",
-        "activism",
-        "privacy"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 85,
-        "citations": [
-          "https://cpj.org/2026/04/myanmar-junta-revokes-licenses-of-3-media-outlets-in-martial-law-clampdown/",
-          "https://cpj.org/2026/04/cpj-documentation-of-israeli-harm-against-palestinian-journalists-media-workers/"
-        ]
-      }
-    },
-    {
-      "id": "71b3a407-eaec-460e-9497-c4109b220636",
-      "url": "https://libertas.fgu.tech/posts/wired-reports-on-internal-conflict-within-grapheneos-project",
-      "title": "WIRED Reports on Internal Conflict Within GrapheneOS Project Leadership",
-      "summary": "WIRED published an investigation into personal conflicts between key figures in GrapheneOS development, the privacy-focused Android distribution.",
-      "content_text": "WIRED published article on interpersonal conflicts within GrapheneOS project\n• GrapheneOS described as 'gold standard of mobile security' by publication\n• Article focuses on relationship breakdown between two central project figures\n• Limited technical details available from extracted content\n• Internal drama could impact development of leading privacy mobile OS\n• GrapheneOS remains critical infrastructure for high-threat model users\n• Developer conflicts often affect open source project sustainability",
-      "date_published": "2026-05-02T09:02:32.775Z",
-      "date_modified": "2026-05-02T09:02:32.855Z",
-      "tags": [
-        "censorship-resistance",
-        "surveillance",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 75,
-        "credibility_score": 85,
-        "citations": [
-          "https://www.wired.com/story/they-built-privacy-tool-grapheneos-now-sworn-enemies/",
-          "https://www.wired.com/story/why-sharing-a-screenshot-can-get-you-jailed-in-the-uae/"
         ]
       }
     },
@@ -1348,51 +894,6 @@
       }
     },
     {
-      "id": "80b24754-d160-4294-9eaa-23ccdef621a8",
-      "url": "https://libertas.fgu.tech/posts/mercenary-hackers-target-egyptian-opposition-journalists-wit",
-      "title": "Mercenary Hackers Target Egyptian Opposition Journalists with Spear-Phishing Campaign",
-      "summary": "Access Now investigation reveals Asia-linked mercenary hackers targeted prominent Egyptian opposition journalists Mustafa Al-Aasar and Ahmed Al-Tantawi with sophisticated spear-phishing attacks in 2023-2024.",
-      "content_text": "Access Now documented spear-phishing campaign targeting Egyptian journalists Mustafa Al-Aasar and Ahmed Al-Tantawi between 2023-2024\n• Attackers used sophisticated social engineering impersonating trusted services like Apple and Signal\n• Lookout security firm independently attributed attacks to Asia-linked mercenary hacking group\n• Infrastructure capable of deploying Android spyware with full device access capabilities\n• Al-Tantawi previously targeted with Predator spyware in 2021 and 2023, per Citizen Lab research\n• Similar attack successfully compromised Lebanese journalist's Apple account in 2025 (SMEX investigation)\n• Attacks failed due to targets' digital security awareness and two-factor authentication\n• Campaign shows persistent infrastructure suggesting ongoing operations against MENA civil society",
-      "date_published": "2026-05-02T09:03:07.582Z",
-      "date_modified": "2026-05-02T09:03:07.666Z",
-      "tags": [
-        "privacy",
-        "surveillance",
-        "censorship-resistance",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 85,
-        "citations": [
-          "https://www.accessnow.org/mena-phishing-2026-ar/?pk_campaign=feed&#038;pk_kwd=mena-phishing-2026-ar",
-          "https://www.accessnow.org/publication/vinculo-entre-desinformacion-y-privacidad/"
-        ]
-      }
-    },
-    {
-      "id": "8172ea17-7c5c-4432-9d98-6a30aa0b1ac2",
-      "url": "https://libertas.fgu.tech/posts/reddit-clo-section-230-protects-decentralized-community-mode",
-      "title": "Reddit CLO: Section 230 Protects Decentralized Community Moderation, Not Just Big Tech",
-      "summary": "Reddit's Chief Legal Officer argues Section 230 protects volunteer moderators and community self-governance, with weakening it benefiting Big Tech while harming smaller platforms and individual users.",
-      "content_text": "EFF interviewed Reddit CLO Ben Lee on Section 230's 30th anniversary about platform moderation practices\n• Lee emphasizes Section 230 protects individual users and volunteer moderators, not just platforms\n• Reddit operates as 'federation of communities' where users participate in moderation through voting\n• Without Section 230, volunteer moderators face legal risks for basic community management decisions\n• Reddit has defended volunteer moderators in court, including 'soy boy' Star Trek comment case\n• Weakening Section 230 would entrench Big Tech by making legal compliance too expensive for smaller platforms\n• Community-driven moderation allows platforms to scale without centralized editorial control",
-      "date_published": "2026-05-02T09:00:54.071Z",
-      "date_modified": "2026-05-02T09:00:54.154Z",
-      "tags": [
-        "surveillance",
-        "privacy",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 85,
-        "credibility_score": 90,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/04/internet-still-works-reddit-empowers-community-moderation",
-          "https://www.eff.org/deeplinks/2026/04/palantir-has-human-rights-policy-its-ice-work-tells-different-story"
-        ]
-      }
-    },
-    {
       "id": "826595b9-761c-46ac-b331-dded4870953a",
       "url": "https://libertas.fgu.tech/posts/dhs-testing-autonomous-surveillance-drones-on-us-canada-bord",
       "title": "DHS Testing Autonomous Surveillance Drones on US-Canada Border",
@@ -1409,28 +910,6 @@
         "credibility_score": 85,
         "citations": [
           "https://www.wired.com/story/dhs-plans-experiment-running-reconnaissance-drones-along-the-us-canada-border/"
-        ]
-      }
-    },
-    {
-      "id": "8387f394-6569-4473-a980-ec40ff885b3f",
-      "url": "https://libertas.fgu.tech/posts/ghana-s-anti-lgbtq-bill-would-force-social-media-censorship-",
-      "title": "Ghana's Anti-LGBTQ+ Bill Would Force Social Media Censorship, Mandate Public Surveillance",
-      "summary": "Ghana's proposed Human Sexual Rights and Family Values Bill 2025 would force social media platforms to censor LGBTQ+ content and require citizens to report suspected LGBTQ+ people to authorities, creating surveillance infrastructure that threatens digital rights.",
-      "content_text": "Access Now and Rightify Ghana issued joint memo opposing Ghana's Human Sexual Rights and Family Values Bill 2025\n• Bill would force social media companies to censor LGBTQ+ content\n• Law would mandate public reporting of suspected LGBTQ+ people to police and religious leaders\n• Activists advocating for LGBTQ+ rights could face up to 10 years in prison\n• Creates surveillance infrastructure exposing private intimacy to state authorities\n• Rightify Ghana reports increased entrapment and blackmail on dating apps and messaging platforms\n• Bill violates constitutional rights to privacy and freedom of expression online\n• Would prevent human rights defenders from documenting discrimination and violence",
-      "date_published": "2026-05-02T09:03:07.582Z",
-      "date_modified": "2026-05-02T09:03:07.666Z",
-      "tags": [
-        "surveillance",
-        "privacy",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 75,
-        "credibility_score": 85,
-        "citations": [
-          "https://www.accessnow.org/press-release/ghanaian-mps-must-reject-anti-lgbtq-bill/",
-          "https://www.accessnow.org/publication/amicus-brief-on-spyware-and-surveillance-in-azerbaijan/"
         ]
       }
     },
@@ -1500,53 +979,6 @@
       }
     },
     {
-      "id": "8dd60559-169e-4842-bd43-b1fa172cff87",
-      "url": "https://libertas.fgu.tech/posts/30-governments-used-transnational-repression-in-2025-freedom",
-      "title": "30 Governments Used Transnational Repression in 2025, Freedom House Reports",
-      "summary": "Freedom House documented 126 new incidents of transnational repression in 2025, with 30 governments targeting critics abroad through detention, deportation, and violence.",
-      "content_text": "126 new incidents of physical transnational repression recorded in 2025 by Freedom House\n• 30 governments reached beyond borders to assassinate, assault, kidnap, detain, and threaten critics\n• China, Vietnam, and Russia were top perpetrators; 6 new countries identified as using these tactics\n• Over half of incidents (69 of 126) occurred in Southeast Asia and East Africa through authoritarian collaboration\n• Detention (49 incidents) and unlawful deportation (48 incidents) were most common tactics\n• At least 11 cases involved abuse of Interpol notices against exiled dissidents\n• Total of 1,375 incidents documented between 2014-2025 across 107 host countries\n• Authoritarian governments increasingly coordinate to circumvent democratic protections for dissidents",
-      "date_published": "2026-05-02T09:05:25.341Z",
-      "date_modified": "2026-05-02T09:05:25.441Z",
-      "tags": [
-        "surveillance",
-        "activism",
-        "censorship-resistance",
-        "privacy"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 85,
-        "credibility_score": 85,
-        "citations": [
-          "https://freedomhouse.org/article/authoritarian-collaboration-fueled-transnational-repression-2025",
-          "https://freedomhouse.org/article/dictators-increasingly-team-hunt-dissenters-abroad"
-        ]
-      }
-    },
-    {
-      "id": "8f7c962c-b62d-4c57-8128-dd973a9a1740",
-      "url": "https://libertas.fgu.tech/posts/eff-exposes-ice-data-access-after-google-broke-privacy-promi",
-      "title": "EFF Exposes ICE Data Access After Google Broke Privacy Promise to Client",
-      "summary": "EFF reveals case where Google handed client data to ICE despite privacy promises, highlighting corporate failure to protect users from government surveillance overreach.",
-      "content_text": "EFF client's data was given to ICE after Google broke its privacy promise [EFF]\n• Case featured in EFFector newsletter covering surveillance and corporate accountability\n• EFF Senior Staff Attorney F. Mario Trujillo discusses state attorneys general role in holding Google accountable\n• Newsletter also covers ongoing NSA Section 702 surveillance reform efforts\n• Highlights broader pattern of tech companies failing to protect users from government data requests\n• Demonstrates gap between corporate privacy promises and actual protection during government pressure\n• EFF pushing for stronger corporate accountability mechanisms through state-level enforcement",
-      "date_published": "2026-05-02T09:00:54.070Z",
-      "date_modified": "2026-05-02T09:00:54.154Z",
-      "tags": [
-        "censorship-resistance",
-        "privacy",
-        "surveillance",
-        "activism",
-        "sovereignty"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/04/how-ice-got-my-data-effector-388",
-          "https://www.eff.org/deeplinks/2026/04/speaking-freely-lizzie-oshea"
-        ]
-      }
-    },
-    {
       "id": "90a81648-7010-4167-8ba7-b4db2a8adce7",
       "url": "https://libertas.fgu.tech/posts/proton-mail-rolls-out-post-quantum-encryption-to-all-users",
       "title": "Proton Mail Rolls Out Post-Quantum Encryption to All Users",
@@ -1585,116 +1017,6 @@
         "credibility_score": 95,
         "citations": [
           "https://www.eff.org/deeplinks/2026/05/californias-terrible-no-good-very-bad-social-media-ban-effector-389"
-        ]
-      }
-    },
-    {
-      "id": "9b461b3a-f78b-4d6a-b8fb-80bde70f61ea",
-      "url": "https://libertas.fgu.tech/posts/eff-defends-section-230-immunity-for-app-store-payment-proce",
-      "title": "EFF Defends Section 230 Immunity for App Store Payment Processing",
-      "summary": "EFF argues to 9th Circuit that app stores shouldn't lose Section 230 immunity for processing payments, warning this could force widespread content censorship across platforms.",
-      "content_text": "EFF filed second amicus brief defending Apple, Google, Facebook app stores in social casino lawsuit\n• Lower court ruled platforms lose Section 230 immunity when processing payments for user content\n• Cases involve social casino apps where users buy virtual chips with real money\n• EFF warns ruling would expose all payment-facilitating platforms to liability\n• Platforms like Etsy, Patreon could be forced to censor content to avoid legal exposure\n• Brief argues no distinction should exist between hosting content and processing payments for same content\n• Stakes include foundational protections for internet intermediaries and user speech",
-      "date_published": "2026-05-02T09:00:54.070Z",
-      "date_modified": "2026-05-02T09:00:54.154Z",
-      "tags": [
-        "surveillance",
-        "privacy",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/04/eff-9th-circuit-again-app-stores-shouldnt-be-liable-processing-payments-user",
-          "https://www.eff.org/deeplinks/2026/04/california-coastal-community-must-reject-cbps-ai-powered-surveillance-tower"
-        ]
-      }
-    },
-    {
-      "id": "9c2992e0-126b-4fe4-8c93-6400da464d8a",
-      "url": "https://libertas.fgu.tech/posts/chinese-authorities-force-malaysia-to-detain-and-deport-uygh",
-      "title": "Chinese Authorities Force Malaysia to Detain and Deport Uyghur Scholar",
-      "summary": "Malaysia detained and expelled Uyghur scholar Abdulhakim Idris at China's request, preventing him from launching a book about Chinese pressure on Muslim nations to stay silent on Uyghur persecution.",
-      "content_text": "Abdulhakim Idris, head of Center for Uyghur Studies, was detained nearly a day and expelled from Malaysia\n• Chinese authorities reportedly pressured Malaysia to prevent his book launch on CCP influence in Islamic world\n• Book documents how China pressures Muslim governments to remain silent about Uyghur persecution\n• Idris has 24 missing family members, including mother, brother, and sister, since 2017\n• Uyghurs represent over 20% of incidents in Freedom House's transnational repression database (2014-2025)\n• China conducts world's most comprehensive transnational repression campaign targeting activists abroad\n• Incident sets precedent threatening American advocates, journalists, and researchers operating internationally",
-      "date_published": "2026-05-02T09:05:25.341Z",
-      "date_modified": "2026-05-02T09:05:25.441Z",
-      "tags": [
-        "censorship-resistance",
-        "surveillance",
-        "activism",
-        "comms",
-        "privacy"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 75,
-        "credibility_score": 95,
-        "citations": [
-          "https://freedomhouse.org/article/detained-denied-deported-how-chinese-authorities-attempted-silence-uyghur-scholar-and",
-          "https://freedomhouse.org/article/iranian-struggle-freedom-call-renewed-global-solidarity-support-people-iran"
-        ]
-      }
-    },
-    {
-      "id": "9d94d3e1-dabd-408e-8d5b-60ed40ff8ef5",
-      "url": "https://libertas.fgu.tech/posts/edmonton-police-deploy-ai-facial-recognition-on-bodycams-for",
-      "title": "Edmonton Police Deploy AI Facial Recognition on Bodycams for 'High-Risk Offenders'",
-      "summary": "Edmonton Police Service is trialing bodycam facial recognition technology targeting 'high-risk offenders,' with experts calling it Canada's most dangerous algorithmic surveillance program to date.",
-      "content_text": "Edmonton Police Service conducting trial of AI facial recognition integrated with bodycams\n• Technology targets individuals classified as 'high-risk offenders' by police\n• Expert Kate Robertson calls it 'most high risk algorithmic surveillance program' observed in Canada\n• Robertson is senior research associate with decade of experience studying algorithmic policing\n• Program represents significant escalation in real-time surveillance capabilities\n• Bodycam integration enables continuous facial recognition during police interactions\n• Sets precedent for widespread deployment of AI surveillance in Canadian policing",
-      "date_published": "2026-05-02T09:04:33.769Z",
-      "date_modified": "2026-05-02T09:04:33.864Z",
-      "tags": [
-        "surveillance",
-        "privacy"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 85,
-        "citations": [
-          "https://citizenlab.ca/edmonton-police-trial-ai-facial-recognition-bodycams/"
-        ]
-      }
-    },
-    {
-      "id": "9da3ba5d-0d40-46ad-9546-e37d79ec673a",
-      "url": "https://libertas.fgu.tech/posts/nigerian-cybercrime-law-used-to-target-24-journalists-and-ac",
-      "title": "Nigerian Cybercrime Law Used to Target 24+ Journalists and Activists",
-      "summary": "Nigeria's 2015 Cybercrimes Act has been weaponized against 24+ journalists and activists through overbroad 'cyberstalking' provisions that criminalize critical speech.",
-      "content_text": "More than 24 journalists, human rights defenders, and whistleblowers targeted since 2015\n• Authorities using overbroad 'cyberstalking' provisions to punish critical online speech\n• Law being weaponized to silence opposition voices and dissent\n• Access Now organizing April 21 webinar on human rights implications\n• Partners include Human Rights Journalists Network, SERAP, and Avocats Sans Frontiers Nigeria\n• Focus on rights-based reporting frameworks for cybercrime cases\n• Civil society pushing for reform efforts to address legislative overreach",
-      "date_published": "2026-05-02T09:03:07.582Z",
-      "date_modified": "2026-05-02T09:03:07.666Z",
-      "tags": [
-        "surveillance",
-        "privacy",
-        "activism",
-        "identity"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 85,
-        "credibility_score": 88,
-        "citations": [
-          "https://www.accessnow.org/event/advancing-rights-centered-reporting-on-nigerias-cybercrimes-act/",
-          "https://www.accessnow.org/mena-phishing-2026-ar/?pk_campaign=feed&#038;pk_kwd=mena-phishing-2026-ar"
-        ]
-      }
-    },
-    {
-      "id": "9ed90562-f42a-47ee-be43-001c4700530a",
-      "url": "https://libertas.fgu.tech/posts/eff-documents-censorship-and-digital-isolation-of-palestinia",
-      "title": "EFF Documents Censorship and Digital Isolation of Palestinians in UN Submission",
-      "summary": "EFF submitted evidence to UN Special Rapporteur documenting increased censorship, surveillance, and attacks on Palestinian media infrastructure since October 2023.",
-      "content_text": "EFF submitted formal evidence to UN Special Rapporteur investigating Palestinian media attacks\n• Documents significant deterioration of press freedom since October 2023\n• Identifies three key areas: government takedown requests, content moderation issues, and infrastructure attacks\n• Reports wave of journalist killings alongside increased digital censorship\n• Highlights systematic digital isolation of Palestinian people\n• Part of broader UN study on media role in Israel-Palestine context\n• Adds to existing documentation of pervasive surveillance regime for Palestinians",
-      "date_published": "2026-05-02T09:00:54.068Z",
-      "date_modified": "2026-05-02T09:00:54.154Z",
-      "tags": [
-        "censorship-resistance",
-        "surveillance",
-        "privacy"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 88,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/04/eff-submission-un-report-role-media-context-israels-policies-toward-palestinians"
         ]
       }
     },
@@ -1762,23 +1084,23 @@
       }
     },
     {
-      "id": "aa375403-df7c-45d2-a063-8a17a791f8ed",
-      "url": "https://libertas.fgu.tech/posts/eff-guide-bridge-social-media-accounts-across-mastodon-blues",
-      "title": "EFF Guide: Bridge Social Media Accounts Across Mastodon, Bluesky, and Threads",
-      "summary": "EFF published a comprehensive guide on using bridging tools like Bridgy Fed to connect accounts across federated social platforms, enabling cross-platform posting and reducing platform lock-in.",
-      "content_text": "EFF released tutorial on bridging Mastodon, Bluesky, and Threads accounts for cross-platform posting\n• Focuses on Bridgy Fed as primary bridging service, with alternatives like Fedisky and RSS Parrot mentioned\n• Implements POSSE philosophy (Post Own Site Syndicate Elsewhere) to reduce platform dependency\n• Mastodon users can bridge to Bluesky by following @bsky.brid.gy@bsky.brid.gy\n• Threads requires enabling Fediverse sharing in settings, with one-week delay for Bluesky bridging\n• Bluesky users bridge to Fediverse by following @ap.brid.gy account\n• Some instances may block bridging tools or Threads accounts entirely\n• Enables users to reach audiences across platforms without maintaining multiple accounts",
-      "date_published": "2026-05-02T09:00:54.066Z",
-      "date_modified": "2026-05-02T09:00:54.154Z",
+      "id": "a88c0f9a-4189-4cd1-825a-0546171f259f",
+      "url": "https://libertas.fgu.tech/posts/rights-groups-demand-microsoft-disclose-review-of-azure-serv",
+      "title": "Rights Groups Demand Microsoft Disclose Review of Azure Services to Israeli Military Surveillance",
+      "summary": "Access Now and coalition demand Microsoft publicly release findings of investigation into Azure cloud services used by Israeli military units for mass surveillance and AI-assisted targeting of Palestinians.",
+      "content_text": "Microsoft completed internal review of Azure services to Israeli military but hasn't released findings despite public promise\n• Unit 8200 used Azure to store 11,500+ terabytes of surveillance data including Palestinian phone intercepts\n• Israeli Ministry of Defense used Microsoft AI services for translation, transcription of intercepted communications\n• Multiple IDF units received Azure services including air force targeting databases and intelligence infrastructure\n• Microsoft provided ~19,000 hours of engineering support to customize Azure for Israeli military use\n• Services allegedly enabled mass surveillance and AI-assisted targeting systems in Gaza operations\n• Microsoft reportedly suspended some Unit 8200 services in Sept 2024 but scope of ongoing services unclear\n• Coalition cites potential corporate complicity in international law violations through surveillance infrastructure",
+      "date_published": "2026-05-18T09:01:39.504Z",
+      "date_modified": "2026-05-18T09:01:39.594Z",
       "tags": [
-        "censorship-resistance",
+        "surveillance",
         "privacy",
-        "sovereignty"
+        "activism"
       ],
       "_libertas": {
-        "freedom_relevance_score": 72,
-        "credibility_score": 95,
+        "freedom_relevance_score": 78,
+        "credibility_score": 82,
         "citations": [
-          "https://www.eff.org/deeplinks/2026/04/bridge-somewhere-how-link-your-mastodon-bluesky-or-other-federated-accounts"
+          "https://www.accessnow.org/press-release/joint-letter-to-microsoft-regarding-israeli-military-use-of-azure-cloud-and-ai-services/"
         ]
       }
     },
@@ -1801,28 +1123,6 @@
         "credibility_score": 95,
         "citations": [
           "https://www.eff.org/deeplinks/2026/04/guard-act-isnt-targeting-dangerous-ai-its-blocking-everyday-internet-use"
-        ]
-      }
-    },
-    {
-      "id": "adcb172f-8b4f-4dd6-9944-73b489817374",
-      "url": "https://libertas.fgu.tech/posts/citizen-lab-research-quantifies-digital-surveillance-chillin",
-      "title": "Citizen Lab Research Quantifies Digital Surveillance Chilling Effects Post-Snowden",
-      "summary": "New research by Jon Penney documents measurable self-censorship behavior following Snowden revelations, showing how surveillance awareness directly reduces access to sensitive content.",
-      "content_text": "Jon Penney's book 'Chilling Effects' examines self-censorship in digital surveillance environment\n• Post-Snowden research shows measurable drops in views of privacy-sensitive content\n• Chilling effects described as 'deeply ingrained' psychological responses to perceived threats\n• Both short-term and long-term behavioral changes documented following Five Eyes surveillance revelations\n• Study demonstrates how surveillance knowledge deters exercise of democratic rights\n• Research provides empirical evidence for theoretical concerns about surveillance impact\n• Findings suggest surveillance programs achieve compliance through behavioral modification, not just data collection",
-      "date_published": "2026-05-02T09:04:33.769Z",
-      "date_modified": "2026-05-02T09:04:33.864Z",
-      "tags": [
-        "surveillance",
-        "privacy",
-        "censorship-resistance",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 95,
-        "citations": [
-          "https://citizenlab.ca/chilling-effects-in-the-digital-age/"
         ]
       }
     },
@@ -1871,28 +1171,6 @@
       }
     },
     {
-      "id": "b412cf5b-2785-4614-a487-606c10b46b54",
-      "url": "https://libertas.fgu.tech/posts/zimbabwe-targets-student-leaders-opposing-constitutional-ame",
-      "title": "Zimbabwe Targets Student Leaders Opposing Constitutional Amendment",
-      "summary": "Zimbabwean authorities are systematically abducting, torturing, and arresting student leaders protesting a constitutional amendment that would extend presidential terms from 5 to 7 years.",
-      "content_text": "Constitutional Amendment No 3 would extend presidential and parliamentary terms from 5 to 7 years, delaying 2028 elections until 2030\n• Zimbabwe National Students Union (ZINASU) leaders mobilized opposition to the amendment during public consultations\n• Human Rights Watch documented 7 attacks including abductions by suspected Central Intelligence Organisation (CIO) agents\n• Student leader Denford Sithole was tortured for 6 hours, beaten with wine bottles, and forced to reveal bank records and contacts\n• Multiple students now in hiding after surveillance and death threats; some suspended studies and fled their cities\n• Police raided ZINASU offices in Harare as part of broader crackdown on amendment opponents\n• Pattern of systematic repression demonstrates conditions where freedom tech becomes essential for activist coordination\n• Cases span multiple cities showing coordinated state response to democratic opposition",
-      "date_published": "2026-05-02T09:05:47.072Z",
-      "date_modified": "2026-05-02T09:05:47.163Z",
-      "tags": [
-        "censorship-resistance",
-        "activism",
-        "sovereignty"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 75,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.hrw.org/news/2026/04/24/zimbabwe-crackdown-on-student-protesters-intensifies",
-          "https://www.hrw.org/news/2026/04/29/fifa-new-rule-recognizes-afghan-womens-team"
-        ]
-      }
-    },
-    {
       "id": "b4220af4-9cad-42f2-8fce-aa44702b9d88",
       "url": "https://libertas.fgu.tech/posts/dr-congo-escalates-repression-of-journalists-activists-amid-",
       "title": "DR Congo Escalates Repression of Journalists, Activists Amid Constitutional Crisis",
@@ -1910,27 +1188,6 @@
         "credibility_score": 95,
         "citations": [
           "https://www.hrw.org/news/2026/05/12/dr-congo-increasing-repression-of-critical-expression"
-        ]
-      }
-    },
-    {
-      "id": "b8e861fb-74ef-4fc5-b6b1-d128e7d3f1b5",
-      "url": "https://libertas.fgu.tech/posts/states-block-public-oversight-of-license-plate-surveillance-",
-      "title": "States Block Public Oversight of License Plate Surveillance After Abuse Revelations",
-      "summary": "Multiple US states are passing laws to block public access to ALPR surveillance data after transparency advocates used records requests to expose tracking of protesters, racist policing, and abortion seekers.",
-      "content_text": "States including Arizona and Connecticut introducing bills to exempt ALPR data from public records laws\n• EFF and others used FOIAs to expose ALPR abuses including tracking protesters and targeting Romani people\n• Public records revealed police falsely claimed abortion tracking was for 'missing person' case [Source]\n• Communities have successfully terminated ALPR contracts after seeing disclosed data-sharing reports\n• Proposed exemptions would block access to hit ratios, sharing agreements, and error analyses\n• EFF opposes blanket bans, advocates for case-by-case privacy vs transparency balancing\n• Pattern shows government limiting oversight after surveillance systems exposed",
-      "date_published": "2026-05-02T09:00:54.067Z",
-      "date_modified": "2026-05-02T09:00:54.154Z",
-      "tags": [
-        "surveillance",
-        "privacy",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/04/open-records-laws-reveal-alprs-sprawling-surveillance-now-states-want-block-what"
         ]
       }
     },
@@ -1978,28 +1235,6 @@
       }
     },
     {
-      "id": "bba50541-bf3e-4a95-b9f6-6db1136bc1f8",
-      "url": "https://libertas.fgu.tech/posts/zambia-cancels-major-digital-rights-summit-rightscon-2026-am",
-      "title": "Zambia Cancels Major Digital Rights Summit RightsCon 2026 Amid Foreign Pressure",
-      "summary": "Zambia effectively canceled RightsCon 2026, a leading human rights and technology summit, citing vague administrative concerns, with reports suggesting Chinese government displeasure over Taiwanese participants influenced the decision.",
-      "content_text": "Zambian government postponed RightsCon 2026 scheduled for May 5-8 in Lusaka, effectively canceling the event\n• Official reasons cited 'comprehensive disclosure' needs and 'pending administrative and security clearances' for speakers\n• Civil society sources report Chinese government expressed displeasure about invited Taiwanese participants\n• Summit venue Mulungushi Conference Center was refurbished with $60M Chinese government funding in 2020\n• Access Now, the organizers, advised registered participants not to travel to Lusaka\n• Over 130 digital rights stakeholders condemned the cancellation as closing civic space in Zambia\n• Timing coincides with new restrictive Cyber Security Act and Cyber Crimes Act enacted in April 2025\n• Cancellation occurs weeks before August 2026 general election campaign period begins\n• Pattern follows previous RightsCon access issues in Costa Rica (2023) and censorship concerns in Saudi Arabia (2024)",
-      "date_published": "2026-05-02T09:05:47.071Z",
-      "date_modified": "2026-05-02T09:05:47.163Z",
-      "tags": [
-        "censorship-resistance",
-        "surveillance",
-        "activism",
-        "privacy"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 92,
-        "citations": [
-          "https://www.hrw.org/news/2026/05/01/zambia-summit-on-human-rights-technology-effectively-canceled"
-        ]
-      }
-    },
-    {
       "id": "c00fac28-bbca-48f1-b299-a5530cfa88c4",
       "url": "https://libertas.fgu.tech/posts/eff-highlights-how-commercial-tracking-feeds-government-mass",
       "title": "EFF Highlights How Commercial Tracking Feeds Government Mass Surveillance",
@@ -2017,27 +1252,6 @@
         "credibility_score": 95,
         "citations": [
           "https://www.eff.org/deeplinks/2026/05/online-tracking-isnt-just-unethical-its-dangerous"
-        ]
-      }
-    },
-    {
-      "id": "c3520426-e268-4e06-85b6-10c3da985a86",
-      "url": "https://libertas.fgu.tech/posts/eff-opposes-insufficient-fisa-702-reauthorization-bill-lacki",
-      "title": "EFF Opposes Insufficient FISA 702 Reauthorization Bill Lacking Warrant Requirements",
-      "summary": "EFF condemns Speaker Johnson's Foreign Intelligence Accountability Act as inadequate reform that fails to require warrants for FBI searches of Americans' communications collected under Section 702 surveillance.",
-      "content_text": "Speaker Johnson introduced Foreign Intelligence Accountability Act days before Section 702 expires\n• Bill fails to require warrants for FBI searches of Americans' communications\n• Creates civil liberties officer to review queries after surveillance occurs\n• Prohibits targeting US persons but current law already does this\n• EFF calls it a 'fig leaf' and 'smokescreen' with no real privacy protections\n• Section 702 allows warrantless collection of Americans' communications as 'incidental'\n• Bill includes no new transparency requirements or meaningful accountability\n• EFF urges Congress to reject bill and demand real warrant requirements",
-      "date_published": "2026-05-02T09:00:54.068Z",
-      "date_modified": "2026-05-02T09:00:54.154Z",
-      "tags": [
-        "surveillance",
-        "privacy",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 85,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/04/congress-must-reject-new-insufficient-702-reauthorization-bill"
         ]
       }
     },
@@ -2086,122 +1300,6 @@
       }
     },
     {
-      "id": "cc7f6876-6ba9-4ce4-977d-a7451a32fef5",
-      "url": "https://libertas.fgu.tech/posts/freedom-house-dictators-increasingly-collaborate-on-cross-bo",
-      "title": "Freedom House: Dictators Increasingly Collaborate on Cross-Border Dissident Hunting",
-      "summary": "Freedom House reports growing collaboration between authoritarian regimes to track and suppress dissidents across borders, escalating the threat environment for activists worldwide.",
-      "content_text": "Freedom House documents increasing transnational repression campaigns by authoritarian governments\n• Multiple dictatorial regimes are collaborating to hunt dissidents who fled abroad\n• Cross-border cooperation enables surveillance and harassment of activists in third countries\n• Trend represents escalation from isolated domestic repression to coordinated international operations\n• Targets include journalists, human rights activists, and political dissidents living in exile\n• Validates threat models driving development of censorship-resistant communications tools\n• Demonstrates need for robust operational security and privacy-preserving technologies",
-      "date_published": "2026-05-02T09:05:25.341Z",
-      "date_modified": "2026-05-02T09:05:25.441Z",
-      "tags": [
-        "censorship-resistance",
-        "comms",
-        "activism",
-        "surveillance",
-        "privacy"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 75,
-        "credibility_score": 85,
-        "citations": [
-          "https://freedomhouse.org/article/dictators-increasingly-team-hunt-dissenters-abroad",
-          "https://www.washingtonpost.com/opinions/interactive/2026/04/16/transnational-repression-gets-worse-more-villainous-regimes-partner/",
-          "https://freedomhouse.org/article/leading-global-voices-call-renewed-solidarity-support-iranian-people"
-        ]
-      }
-    },
-    {
-      "id": "cd5dbdba-e625-49c4-9727-aee9964b879f",
-      "url": "https://libertas.fgu.tech/posts/digital-rights-movement-evolution-post-arab-spring-from-tech",
-      "title": "Digital Rights Movement Evolution Post-Arab Spring: From Tech Optimism to Sovereignty Focus",
-      "summary": "EFF analysis shows Middle East digital rights movement evolved from 2011 tech optimism to sophisticated focus on digital sovereignty, with organizations shifting from platform accountability to open source alternatives.",
-      "content_text": "Digital rights movement in MENA region expanded from handful of orgs in 2011 to dozens today\n• Key organizations include SMEX (Lebanon), 7amleh (Palestine), Nawaat (Tunisia), and Arab Digital Expression Foundation\n• Movement evolved through phases: initial social media advocacy → platform accountability → digital sovereignty focus\n• Organizations now questioning effectiveness of tech company engagement, pivoting to digital public goods\n• 7amleh documented Israeli government influence on Big Tech content moderation affecting Palestinian voices\n• Digital rights work has decentralized beyond specialists to mainstream civil society organizations\n• Regional collaboration strengthened through conferences like Bread and Net and coalition building\n• Current focus shifting toward open source adoption and reducing dependency on US-controlled platforms",
-      "date_published": "2026-05-02T09:00:54.067Z",
-      "date_modified": "2026-05-02T09:00:54.154Z",
-      "tags": [
-        "privacy",
-        "censorship-resistance",
-        "surveillance",
-        "activism",
-        "sovereignty"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/04/digital-hopes-real-power-connection-collective-action"
-        ]
-      }
-    },
-    {
-      "id": "cd656188-13e1-488f-b059-219417cff4dd",
-      "url": "https://libertas.fgu.tech/posts/nordic-countries-show-strongest-european-resistance-to-us-te",
-      "title": "Nordic Countries Show Strongest European Resistance to US Tech Surveillance",
-      "summary": "85% of Nordic citizens find Europe's reliance on US tech concerning, with geopolitical tensions driving preference for European alternatives to avoid NSA surveillance and FISA data collection.",
-      "content_text": "Proton survey of 4,000 Nordic citizens shows 83% believe Europe is reliant on US apps, 85% find this concerning\n• Higher resistance than UK/France/Germany (73%) amid Trump-Denmark tensions over Greenland\n• 64% of news-following respondents say US-Europe tensions changed their feelings about US tech\n• Key concerns include NSA data sharing via Five/Nine/Fourteen Eyes agreements\n• FISA Section 702 allows warrantless US surveillance of European communications since 2008\n• France dropping Windows, Germany pursuing digital sovereignty as part of broader trend\n• Data sovereignty and pro-European sentiment are strongest motivators for switching\n• Growing Nordic software industry focusing on specific industries rather than data collection",
-      "date_published": "2026-05-02T09:06:17.841Z",
-      "date_modified": "2026-05-02T09:06:17.949Z",
-      "tags": [
-        "surveillance",
-        "privacy"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 72,
-        "credibility_score": 80,
-        "citations": [
-          "https://proton.me/blog/nordic-alternative-us-tech-survey",
-          "https://proton.me/business/blog/meta-ai-training-employee-data"
-        ]
-      }
-    },
-    {
-      "id": "cd6cd25e-a0a9-41e5-8760-009ae984b01d",
-      "url": "https://libertas.fgu.tech/posts/china-s-ai-surveillance-model-goes-global-despite-security-f",
-      "title": "China's AI Surveillance Model Goes Global Despite Security Flaws",
-      "summary": "China's AI surveillance infrastructure serves as both blueprint and warning for global authoritarianism, with similar facial recognition and monitoring tools now deployed by democratic states despite ongoing security vulnerabilities.",
-      "content_text": "Spanish engineer found he could control 7,000 DJI smart vacuums and spy on homes via security flaw\n• China's AI surveillance combines facial recognition, social credit systems, and geolocation for population control\n• UK police deployed 50 AI facial recognition machines using Israeli intelligence technology\n• US authorities use AI for immigration enforcement and warfare operations\n• Chinese AI laws impose corporate duties but provide no restrictions on state surveillance power\n• Major 2025 data breach exposed billions of Chinese users' personal and financial records\n• Chinese citizens rapidly adopt new AI tools like OpenClaw despite privacy risks\n• Surveillance technology exports from China enable authoritarian control in other states",
-      "date_published": "2026-05-04T03:01:19.658Z",
-      "date_modified": "2026-05-04T03:01:19.844Z",
-      "tags": [
-        "surveillance",
-        "privacy",
-        "censorship-resistance",
-        "activism",
-        "sovereignty"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 85,
-        "credibility_score": 80,
-        "citations": [
-          "https://globalvoices.org/2026/04/30/the-chinese-lesson-on-the-human-rights-approach-to-ai/"
-        ]
-      }
-    },
-    {
-      "id": "d1dc94ae-9b6b-4847-82e6-5241ad8be728",
-      "url": "https://libertas.fgu.tech/posts/age-verification-expanding-across-platforms-os-and-governmen",
-      "title": "Age Verification Expanding Across Platforms, OS, and Government Digital ID Systems",
-      "summary": "Age verification is rapidly expanding from individual platforms to operating systems and national digital ID frameworks, creating pervasive identity-linked access control that threatens online anonymity and privacy.",
-      "content_text": "Age verification moving beyond platforms into operating systems and national digital identity frameworks\n• Apple implementing age verification features in UK iPhones due to regulatory pressure\n• Discord introducing global 'teen-by-default' verification with external identity providers\n• Security breaches already exposing government IDs: 70,000 leaked in Discord breach, EU app hacked in 2 minutes\n• UK proposing digital ID system for streamlined service access across government services\n• Australia implementing social media bans tied to identity verification requirements\n• Systems create high-value targets for attackers by centralizing sensitive identity data\n• Trend toward identity-linked access control affecting anonymous access to information",
-      "date_published": "2026-05-02T09:06:17.841Z",
-      "date_modified": "2026-05-02T09:06:17.949Z",
-      "tags": [
-        "privacy",
-        "surveillance",
-        "identity",
-        "censorship-resistance",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 88,
-        "credibility_score": 85,
-        "citations": [
-          "https://proton.me/blog/age-verification-explained",
-          "https://proton.me/blog/keep-age-verification-from-killing-anonymity-online"
-        ]
-      }
-    },
-    {
       "id": "d290a6f8-1993-4ede-bf98-2ec3f531cecc",
       "url": "https://libertas.fgu.tech/posts/tails-7-7-3-emergency-release-fixes-critical-kernel-vulnerab",
       "title": "Tails 7.7.3 Emergency Release Fixes Critical Kernel Vulnerability",
@@ -2242,29 +1340,6 @@
         "credibility_score": 95,
         "citations": [
           "https://www.eff.org/deeplinks/2026/05/eff-submission-uk-consultation-digital-id"
-        ]
-      }
-    },
-    {
-      "id": "d4bff282-e88e-40b8-9917-7c16d242eb69",
-      "url": "https://libertas.fgu.tech/posts/framework-for-human-rights-based-ai-governance-proposed",
-      "title": "Framework for Human Rights-Based AI Governance Proposed",
-      "summary": "Feminist technologist Rebecca Ryakitimbo proposes five non-negotiable rights for human-centered AI: life/liberty, equality, free speech, access to essentials, and privacy/data sovereignty.",
-      "content_text": "Article proposes framework grounding AI governance in human rights law dating back to ancient civilizations\n• Five core rights identified: life/liberty with human oversight, algorithmic fairness, free speech protection, equitable resource access, privacy/data sovereignty\n• Emphasizes AI should be 'of the people, by the people, and for the people' similar to democratic governance principles\n• Calls for technical safeguards including differential privacy, federated learning, bias audits, and 'right to be forgotten'\n• Author Rebecca Ryakitimbo works on AI/gender justice intersection through African Women School of AI and community connectivity initiatives\n• Framework addresses power imbalances in AI design from training data to compute access\n• Published as part of Global Voices series emphasizing human knowledge sharing over AI dependence",
-      "date_published": "2026-05-02T09:07:59.474Z",
-      "date_modified": "2026-05-02T09:07:59.572Z",
-      "tags": [
-        "censorship-resistance",
-        "surveillance",
-        "activism",
-        "privacy"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 85,
-        "citations": [
-          "https://globalvoices.org/2026/04/29/the-digital-crown-reclaiming-human-dignity-in-the-age-of-ai/",
-          "https://globalvoices.org/2026/04/30/before-the-algorithm-decides-queer-storytelling-as-resistance-in-nigeria/"
         ]
       }
     },
@@ -2330,26 +1405,6 @@
         "credibility_score": 95,
         "citations": [
           "https://www.eff.org/deeplinks/2026/04/dos-and-donts-eus-digital-fairness-act-effs-recommendation-regulating-digital"
-        ]
-      }
-    },
-    {
-      "id": "de61e279-6c5b-4193-9b81-a92f848b545a",
-      "url": "https://libertas.fgu.tech/posts/citizen-lab-exposes-how-ad-tech-data-enables-government-loca",
-      "title": "Citizen Lab Exposes How Ad-Tech Data Enables Government Location Surveillance",
-      "summary": "New Citizen Lab investigation reveals how Webloc surveillance system leverages ad-tech data to enable government tracking, with ICE using it to circumvent legal protections.",
-      "content_text": "Citizen Lab investigated Webloc, a geolocation surveillance system using ad-based data\n• System enables governments to access location data collected by advertising ecosystem\n• ICE reportedly uses this technology to circumvent legal protections for citizens\n• Ad-tech infrastructure creates vast surveillance opportunities for state actors\n• Current internet ecosystem designed around personal data collection for advertisers\n• Legal protections being bypassed through commercial data purchases\n• Disabling location sharing provides only partial protection from tracking",
-      "date_published": "2026-05-02T09:04:33.769Z",
-      "date_modified": "2026-05-02T09:04:33.864Z",
-      "tags": [
-        "surveillance",
-        "privacy"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 92,
-        "citations": [
-          "https://citizenlab.ca/a-new-study-shows-how-ad-based-technology-is-used-for-surveillance/"
         ]
       }
     },
@@ -2520,28 +1575,6 @@
         "credibility_score": 95,
         "citations": [
           "https://www.hrw.org/news/2026/05/05/uzbekistan-convicts-karakalpak-lawyer-again"
-        ]
-      }
-    },
-    {
-      "id": "f4cd0925-d6f1-4455-aa55-98b8be8ce041",
-      "url": "https://libertas.fgu.tech/posts/australian-digital-rights-leader-on-social-media-bans-and-po",
-      "title": "Australian Digital Rights Leader on Social Media Bans and Post-Pandemic Institutional Distrust",
-      "summary": "Digital Rights Watch founder Lizzie O'Shea discusses Australia's strict under-16 social media ban and how post-pandemic institutional distrust complicates balancing corporate power with democratic oversight.",
-      "content_text": "Australia enacted world's strictest social media restrictions for minors under 16\n• Policy framed as necessary protection from 'dangerous' platforms, excluding youth voices from debate\n• O'Shea argues tech debates are ancient power distribution questions, not novel problems\n• AI systems have become more opaque and concentrated since her 2019 book 'Future Histories'\n• Post-pandemic institutional distrust complicates government regulation of corporate tech power\n• Australia sits between US free speech absolutism and European regulatory approaches\n• Young people report using social media differently than adults assume, fear different risks",
-      "date_published": "2026-05-02T09:00:54.070Z",
-      "date_modified": "2026-05-02T09:00:54.154Z",
-      "tags": [
-        "censorship-resistance",
-        "privacy",
-        "sovereignty"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/04/speaking-freely-lizzie-oshea",
-          "https://www.eff.org/deeplinks/2026/04/eff-9th-circuit-again-app-stores-shouldnt-be-liable-processing-payments-user"
         ]
       }
     },
