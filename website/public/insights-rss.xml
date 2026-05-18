@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Mon, 18 May 2026 15:01:08 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 18 May 2026 21:02:00 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -74,17 +74,6 @@
     <category>privacy</category>
   </item>
   <item>
-    <title>EFF Issues EU Digital Fairness Act Recommendations Against Surveillance-Based Solutions</title>
-    <link>https://libertas.fgu.tech/posts/eff-issues-eu-digital-fairness-act-recommendations-against-s</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-issues-eu-digital-fairness-act-recommendations-against-s</guid>
-    <pubDate>Mon, 04 May 2026 21:00:46 GMT</pubDate>
-    <description>EFF advocates for EU Digital Fairness Act to ban dark patterns, tackle commercial surveillance, and strengthen user sovereignty rather than expanding platform control through age verification mandates.</description>
-    <category>privacy</category>
-    <category>surveillance</category>
-    <category>sovereignty</category>
-    <category>censorship-resistance</category>
-  </item>
-  <item>
     <title>DOJ Criminalizes FOIA Evasion in First-Ever Case Against Retired NIH Scientist</title>
     <link>https://libertas.fgu.tech/posts/doj-criminalizes-foia-evasion-in-first-ever-case-against-ret</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/doj-criminalizes-foia-evasion-in-first-ever-case-against-ret</guid>
@@ -93,6 +82,17 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>EFF Releases Guide to Combat Digital Surveillance Abuses in the Americas</title>
+    <link>https://libertas.fgu.tech/posts/eff-releases-guide-to-combat-digital-surveillance-abuses-in-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-releases-guide-to-combat-digital-surveillance-abuses-in-</guid>
+    <pubDate>Mon, 18 May 2026 21:01:32 GMT</pubDate>
+    <description>EFF published comprehensive guide outlining legal frameworks and institutional safeguards needed to curb systematic digital surveillance abuses across Latin America, leveraging Inter-American human rights law.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
+    <category>censorship-resistance</category>
   </item>
   <item>
     <title>Tunisia Expands Press Crackdown Beyond Criminal Charges to Financial Warfare</title>
@@ -378,16 +378,6 @@
     <category>censorship-resistance</category>
   </item>
   <item>
-    <title>DHS Used 1930s Trade Law to Force Google Data on Canadian Over Anti-ICE Posts</title>
-    <link>https://libertas.fgu.tech/posts/dhs-used-1930s-trade-law-to-force-google-data-on-canadian-ov</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/dhs-used-1930s-trade-law-to-force-google-data-on-canadian-ov</guid>
-    <pubDate>Mon, 04 May 2026 21:01:38 GMT</pubDate>
-    <description>DHS leveraged an obscure 1930s trade law to compel Google to surrender data on a Canadian citizen who criticized ICE killings on social media, despite him not entering the US in over a decade.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
-    <category>censorship-resistance</category>
-  </item>
-  <item>
     <title>China Mandates Chinese-Only Education in Tibetan Kindergartens to Erase Native Language</title>
     <link>https://libertas.fgu.tech/posts/china-mandates-chinese-only-education-in-tibetan-kindergarte</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/china-mandates-chinese-only-education-in-tibetan-kindergarte</guid>
@@ -543,17 +533,6 @@
     <category>activism</category>
   </item>
   <item>
-    <title>GUARD Act Would Mandate ID Checks for Basic Internet Use, EFF Warns</title>
-    <link>https://libertas.fgu.tech/posts/guard-act-would-mandate-id-checks-for-basic-internet-use-eff</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/guard-act-would-mandate-id-checks-for-basic-internet-use-eff</guid>
-    <pubDate>Mon, 04 May 2026 21:00:46 GMT</pubDate>
-    <description>The GUARD Act, moving quickly through Congress, would require age verification for AI-powered tools, effectively mandating ID checks for search engines, homework help, and customer service—eliminating anonymous internet use.</description>
-    <category>privacy</category>
-    <category>surveillance</category>
-    <category>censorship-resistance</category>
-    <category>identity</category>
-  </item>
-  <item>
     <title>Samourai Wallet Developer Seeks Presidential Pardon Amid Trump Clemency Considerations</title>
     <link>https://libertas.fgu.tech/posts/samourai-wallet-developer-seeks-presidential-pardon-amid-tru</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/samourai-wallet-developer-seeks-presidential-pardon-amid-tru</guid>
@@ -627,6 +606,16 @@
     <category>surveillance</category>
   </item>
   <item>
+    <title>White House to Announce Strategic Bitcoin Reserve Details After Legal Framework Completion</title>
+    <link>https://libertas.fgu.tech/posts/white-house-to-announce-strategic-bitcoin-reserve-details-af</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/white-house-to-announce-strategic-bitcoin-reserve-details-af</guid>
+    <pubDate>Mon, 18 May 2026 21:02:00 GMT</pubDate>
+    <description>U.S. officials say announcement on Strategic Bitcoin Reserve implementation is imminent after clearing legal hurdles for custody of 328,372 BTC held from law enforcement seizures.</description>
+    <category>bitcoin</category>
+    <category>sovereignty</category>
+    <category>payments</category>
+  </item>
+  <item>
     <title>Press Freedom Orgs Document Federal Targeting of Independent Journalists Under Trump</title>
     <link>https://libertas.fgu.tech/posts/press-freedom-orgs-document-federal-targeting-of-independent</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/press-freedom-orgs-document-federal-targeting-of-independent</guid>
@@ -646,17 +635,6 @@
     <category>censorship-resistance</category>
     <category>comms</category>
     <category>surveillance</category>
-  </item>
-  <item>
-    <title>EFF Opposes UK Digital ID Scheme, Cites Privacy and Coercion Concerns</title>
-    <link>https://libertas.fgu.tech/posts/eff-opposes-uk-digital-id-scheme-cites-privacy-and-coercion-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-opposes-uk-digital-id-scheme-cites-privacy-and-coercion-</guid>
-    <pubDate>Mon, 04 May 2026 21:00:46 GMT</pubDate>
-    <description>EFF submitted formal opposition to UK&apos;s proposed national digital ID system, highlighting mission creep, privacy violations, and coercive digital participation risks.</description>
-    <category>identity</category>
-    <category>privacy</category>
-    <category>surveillance</category>
-    <category>activism</category>
   </item>
   <item>
     <title>Tunisia Prosecutes Refugee Aid Workers, Shuts Down Civil Society Organizations</title>
