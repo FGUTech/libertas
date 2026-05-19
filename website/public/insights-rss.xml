@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Tue, 19 May 2026 15:03:09 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 19 May 2026 21:03:34 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -149,6 +149,16 @@
     <category>activism</category>
   </item>
   <item>
+    <title>EFF Reveals Meta&apos;s Strategic Timing for Privacy-Invasive Face Recognition Release</title>
+    <link>https://libertas.fgu.tech/posts/eff-reveals-meta-s-strategic-timing-for-privacy-invasive-fac</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-reveals-meta-s-strategic-timing-for-privacy-invasive-fac</guid>
+    <pubDate>Tue, 19 May 2026 21:01:05 GMT</pubDate>
+    <description>Internal Meta documents show the company planned to launch face recognition for smart glasses during periods when civil rights groups would be distracted by other political concerns.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>activism</category>
+  </item>
+  <item>
     <title>ICE Protesters Sue DHS/FBI Over Forced DNA Collection During Arrests</title>
     <link>https://libertas.fgu.tech/posts/ice-protesters-sue-dhs-fbi-over-forced-dna-collection-during</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/ice-protesters-sue-dhs-fbi-over-forced-dna-collection-during</guid>
@@ -232,6 +242,18 @@
     <category>censorship-resistance</category>
   </item>
   <item>
+    <title>How Journalists Navigate Internet Shutdowns Across Iran, India, Ethiopia, and Turkey</title>
+    <link>https://libertas.fgu.tech/posts/how-journalists-navigate-internet-shutdowns-across-iran-indi</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/how-journalists-navigate-internet-shutdowns-across-iran-indi</guid>
+    <pubDate>Tue, 19 May 2026 21:03:34 GMT</pubDate>
+    <description>Global Voices report documents how journalists work around government-imposed internet shutdowns and targeted censorship across multiple countries, with Iran&apos;s recent blackouts affecting thousands of protesters.</description>
+    <category>censorship-resistance</category>
+    <category>comms</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>privacy</category>
+  </item>
+  <item>
     <title>EFF Publishes Comprehensive Guide to Circumventing Internet Shutdowns</title>
     <link>https://libertas.fgu.tech/posts/eff-publishes-comprehensive-guide-to-circumventing-internet-</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-publishes-comprehensive-guide-to-circumventing-internet-</guid>
@@ -242,6 +264,16 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>sovereignty</category>
+  </item>
+  <item>
+    <title>Gulf States Launch Information Crackdown During Iran War, Target Journalists</title>
+    <link>https://libertas.fgu.tech/posts/gulf-states-launch-information-crackdown-during-iran-war-tar</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/gulf-states-launch-information-crackdown-during-iran-war-tar</guid>
+    <pubDate>Tue, 19 May 2026 21:02:45 GMT</pubDate>
+    <description>Gulf governments are systematically suppressing information about Iran war attacks, detaining journalists, revoking citizenships, and blocking social media accounts to control what populations can see and share.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
   </item>
   <item>
     <title>EFF Warns Federal SECURE Data Act Would Weaken Existing State Privacy Protections</title>
@@ -398,16 +430,6 @@
     <category>censorship-resistance</category>
     <category>activism</category>
     <category>privacy</category>
-    <category>surveillance</category>
-  </item>
-  <item>
-    <title>Utah Becomes First State to Regulate VPN Use for Age Verification Bypass</title>
-    <link>https://libertas.fgu.tech/posts/utah-becomes-first-state-to-regulate-vpn-use-for-age-verific</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/utah-becomes-first-state-to-regulate-vpn-use-for-age-verific</guid>
-    <pubDate>Tue, 05 May 2026 21:01:18 GMT</pubDate>
-    <description>Utah&apos;s new law, effective May 6, 2026, targets VPN usage to circumvent age verification, requiring companies to verify ages based on physical location regardless of VPN use and banning instruction sharing.</description>
-    <category>privacy</category>
-    <category>censorship-resistance</category>
     <category>surveillance</category>
   </item>
   <item>
