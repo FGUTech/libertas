@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Mon, 18 May 2026 21:02:00 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 19 May 2026 03:02:14 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -49,6 +49,17 @@
     <category>surveillance</category>
     <category>censorship-resistance</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Indonesia Plans Government Vetting System for Human Rights Defenders</title>
+    <link>https://libertas.fgu.tech/posts/indonesia-plans-government-vetting-system-for-human-rights-d</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/indonesia-plans-government-vetting-system-for-human-rights-d</guid>
+    <pubDate>Tue, 19 May 2026 03:02:14 GMT</pubDate>
+    <description>Indonesia&apos;s government announced plans to create an assessment team to determine who qualifies as a &apos;genuine&apos; human rights defender, following acid attack on activist Andrie Yunus by soldiers.</description>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>surveillance</category>
+    <category>sovereignty</category>
   </item>
   <item>
     <title>Myanmar Journalists Use Encrypted Networks to Bypass Junta Censorship</title>
@@ -378,17 +389,6 @@
     <category>censorship-resistance</category>
   </item>
   <item>
-    <title>China Mandates Chinese-Only Education in Tibetan Kindergartens to Erase Native Language</title>
-    <link>https://libertas.fgu.tech/posts/china-mandates-chinese-only-education-in-tibetan-kindergarte</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/china-mandates-chinese-only-education-in-tibetan-kindergarte</guid>
-    <pubDate>Tue, 05 May 2026 03:01:27 GMT</pubDate>
-    <description>China&apos;s 2021 &apos;Harmonization Plan&apos; mandates Mandarin-only instruction in Tibetan preschools, with surveillance of home language use, effectively erasing Tibetan language and culture starting at age 3-5.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>sovereignty</category>
-    <category>activism</category>
-  </item>
-  <item>
     <title>Canada&apos;s Bill C-22 Mandates Surveillance Backdoors, Threatens Encryption</title>
     <link>https://libertas.fgu.tech/posts/canada-s-bill-c-22-mandates-surveillance-backdoors-threatens</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/canada-s-bill-c-22-mandates-surveillance-backdoors-threatens</guid>
@@ -564,17 +564,6 @@
     <category>surveillance</category>
   </item>
   <item>
-    <title>Utah Becomes First State to Target VPN Use for Age Verification Bypass</title>
-    <link>https://libertas.fgu.tech/posts/utah-becomes-first-state-to-target-vpn-use-for-age-verificat</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/utah-becomes-first-state-to-target-vpn-use-for-age-verificat</guid>
-    <pubDate>Tue, 05 May 2026 03:00:42 GMT</pubDate>
-    <description>Utah&apos;s new law, effective May 6, 2026, holds companies liable for age verification of users physically in Utah regardless of VPN use, and bans sharing VPN circumvention instructions.</description>
-    <category>privacy</category>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
-  </item>
-  <item>
     <title>Meta Removes Instagram&apos;s End-to-End Encryption Feature, Cites Low Adoption</title>
     <link>https://libertas.fgu.tech/posts/meta-removes-instagram-s-end-to-end-encryption-feature-cites</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/meta-removes-instagram-s-end-to-end-encryption-feature-cites</guid>
@@ -737,17 +726,6 @@
     <category>censorship-resistance</category>
     <category>activism</category>
     <category>surveillance</category>
-  </item>
-  <item>
-    <title>Malaysia Launches Biometric Refugee Registration System Raising Surveillance Concerns</title>
-    <link>https://libertas.fgu.tech/posts/malaysia-launches-biometric-refugee-registration-system-rais</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/malaysia-launches-biometric-refugee-registration-system-rais</guid>
-    <pubDate>Tue, 05 May 2026 03:01:27 GMT</pubDate>
-    <description>Malaysia&apos;s new biometric refugee registration system lacks privacy safeguards and enables increased surveillance of 210,000+ refugees, replacing UN oversight with government control.</description>
-    <category>surveillance</category>
-    <category>identity</category>
-    <category>privacy</category>
-    <category>activism</category>
   </item>
   <item>
     <title>Tunisia Escalates Media Crackdown Beyond Individual Prosecutions to Target Infrastructure</title>
