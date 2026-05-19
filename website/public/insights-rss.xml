@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Tue, 19 May 2026 09:01:32 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 19 May 2026 15:03:09 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -27,16 +27,6 @@
     <description>Tunisia sentenced two refugee aid workers to 2 years prison for providing accommodation to asylum seekers, part of broader crackdown shutting down civil society groups.</description>
     <category>activism</category>
     <category>surveillance</category>
-    <category>censorship-resistance</category>
-  </item>
-  <item>
-    <title>Proton Mail Adds Post-Quantum Encryption to Protect Against Future Threats</title>
-    <link>https://libertas.fgu.tech/posts/proton-mail-adds-post-quantum-encryption-to-protect-against-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/proton-mail-adds-post-quantum-encryption-to-protect-against-</guid>
-    <pubDate>Tue, 05 May 2026 15:02:06 GMT</pubDate>
-    <description>Proton Mail launches optional post-quantum encryption for all users to protect encrypted emails against future quantum computer attacks that could break current cryptography.</description>
-    <category>privacy</category>
-    <category>comms</category>
     <category>censorship-resistance</category>
   </item>
   <item>
@@ -221,27 +211,6 @@
     <category>privacy</category>
   </item>
   <item>
-    <title>Portland AI Drone Targeting Firm Ships Hardware to Israeli Military Contractor</title>
-    <link>https://libertas.fgu.tech/posts/portland-ai-drone-targeting-firm-ships-hardware-to-israeli-m</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/portland-ai-drone-targeting-firm-ships-hardware-to-israeli-m</guid>
-    <pubDate>Tue, 05 May 2026 15:02:35 GMT</pubDate>
-    <description>Sightline Intelligence, a Portland-based AI targeting company, made 10+ shipments of surveillance hardware to Israeli weapons giant Elbit Systems, sparking local activist protests.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
-    <category>activism</category>
-  </item>
-  <item>
-    <title>EFF Coalition Opposes UK Age-Gating Requirements That Threaten Web Anonymity</title>
-    <link>https://libertas.fgu.tech/posts/eff-coalition-opposes-uk-age-gating-requirements-that-threat</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-coalition-opposes-uk-age-gating-requirements-that-threat</guid>
-    <pubDate>Tue, 05 May 2026 15:00:33 GMT</pubDate>
-    <description>EFF and 18 organizations warn UK policymakers that proposed age verification requirements would undermine internet privacy and anonymity while fragmenting the open web into restricted jurisdictions.</description>
-    <category>privacy</category>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>identity</category>
-  </item>
-  <item>
     <title>Trump Admin Targets &apos;Anti-Fascists&apos; as Terrorists in 2026 Counterterrorism Strategy</title>
     <link>https://libertas.fgu.tech/posts/trump-admin-targets-anti-fascists-as-terrorists-in-2026-coun</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/trump-admin-targets-anti-fascists-as-terrorists-in-2026-coun</guid>
@@ -337,16 +306,6 @@
     <category>censorship-resistance</category>
   </item>
   <item>
-    <title>DOJ Pursues Rare Federal Felony Charges Against Journalists Covering Minnesota Protest</title>
-    <link>https://libertas.fgu.tech/posts/doj-pursues-rare-federal-felony-charges-against-journalists-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/doj-pursues-rare-federal-felony-charges-against-journalists-</guid>
-    <pubDate>Tue, 05 May 2026 15:01:39 GMT</pubDate>
-    <description>Committee to Protect Journalists and 16 civil society groups urge DOJ to drop federal charges, including felony conspiracy, against four journalists arrested while covering immigration enforcement protest.</description>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-    <category>surveillance</category>
-  </item>
-  <item>
     <title>FBI Closed Investigation Into Student Activist While ICE Continued Detention</title>
     <link>https://libertas.fgu.tech/posts/fbi-closed-investigation-into-student-activist-while-ice-con</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/fbi-closed-investigation-into-student-activist-while-ice-con</guid>
@@ -420,6 +379,17 @@
     <category>privacy</category>
   </item>
   <item>
+    <title>Gulf States Expand Wartime Censorship Laws, Target Journalists for Routine Reporting</title>
+    <link>https://libertas.fgu.tech/posts/gulf-states-expand-wartime-censorship-laws-target-journalist</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/gulf-states-expand-wartime-censorship-laws-target-journalist</guid>
+    <pubDate>Tue, 19 May 2026 15:02:52 GMT</pubDate>
+    <description>Committee to Protect Journalists documents systematic crackdown on press freedom across Gulf states since Iran war began, with journalists detained for sharing verified public information under vague &apos;national security&apos; laws.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>comms</category>
+  </item>
+  <item>
     <title>Venezuelan Journalist Still Faces Charges Despite Post-Maduro Amnesty Law</title>
     <link>https://libertas.fgu.tech/posts/venezuelan-journalist-still-faces-charges-despite-post-madur</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/venezuelan-journalist-still-faces-charges-despite-post-madur</guid>
@@ -483,6 +453,17 @@
     <category>surveillance</category>
   </item>
   <item>
+    <title>Philippine Court Dismisses Terror Financing Charges Against NGO; Bank Accounts Remain Frozen</title>
+    <link>https://libertas.fgu.tech/posts/philippine-court-dismisses-terror-financing-charges-against-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/philippine-court-dismisses-terror-financing-charges-against-</guid>
+    <pubDate>Tue, 19 May 2026 15:03:09 GMT</pubDate>
+    <description>A Philippine court dismissed terrorism financing charges against NGO CERNET, but authorities continue weaponizing anti-money laundering laws against civil society despite being removed from FATF grey list.</description>
+    <category>payments</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>sovereignty</category>
+  </item>
+  <item>
     <title>Iran Launches Bitcoin-Settled Maritime Insurance for Strait of Hormuz Transit</title>
     <link>https://libertas.fgu.tech/posts/iran-launches-bitcoin-settled-maritime-insurance-for-strait-</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/iran-launches-bitcoin-settled-maritime-insurance-for-strait-</guid>
@@ -531,17 +512,6 @@
     <category>privacy</category>
     <category>sovereignty</category>
     <category>bitcoin</category>
-  </item>
-  <item>
-    <title>EFF Urges EU to Prioritize Privacy and User Sovereignty in Digital Fairness Act</title>
-    <link>https://libertas.fgu.tech/posts/eff-urges-eu-to-prioritize-privacy-and-user-sovereignty-in-d</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-urges-eu-to-prioritize-privacy-and-user-sovereignty-in-d</guid>
-    <pubDate>Tue, 05 May 2026 15:00:33 GMT</pubDate>
-    <description>EFF calls for EU&apos;s proposed Digital Fairness Act to ban dark patterns, tackle surveillance-based business models, and strengthen user control rather than expanding platform surveillance powers.</description>
-    <category>privacy</category>
-    <category>surveillance</category>
-    <category>sovereignty</category>
-    <category>censorship-resistance</category>
   </item>
   <item>
     <title>DR Congo Escalates Repression of Journalists, Activists Amid Constitutional Crisis</title>
@@ -593,16 +563,6 @@
     <category>bitcoin</category>
     <category>sovereignty</category>
     <category>payments</category>
-  </item>
-  <item>
-    <title>Press Freedom Orgs Document Federal Targeting of Independent Journalists Under Trump</title>
-    <link>https://libertas.fgu.tech/posts/press-freedom-orgs-document-federal-targeting-of-independent</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/press-freedom-orgs-document-federal-targeting-of-independent</guid>
-    <pubDate>Tue, 05 May 2026 15:01:39 GMT</pubDate>
-    <description>CPJ and Amnesty International highlight arrests of multiple independent journalists covering immigration enforcement protests, warning of systematic targeting by federal government.</description>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-    <category>surveillance</category>
   </item>
   <item>
     <title>Tails 7.7.3 Emergency Release Fixes Critical Kernel Vulnerability</title>
