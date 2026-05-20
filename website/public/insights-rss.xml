@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Wed, 20 May 2026 03:01:58 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 20 May 2026 09:00:59 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -293,6 +293,16 @@
     <category>censorship-resistance</category>
     <category>surveillance</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>South Carolina Bans CBDC Payments, Supports Crypto Mining</title>
+    <link>https://libertas.fgu.tech/posts/south-carolina-bans-cbdc-payments-supports-crypto-mining</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/south-carolina-bans-cbdc-payments-supports-crypto-mining</guid>
+    <pubDate>Wed, 20 May 2026 09:00:59 GMT</pubDate>
+    <description>South Carolina governor signed legislation banning state entities from accepting CBDCs and providing strong support for cryptocurrency mining operations.</description>
+    <category>bitcoin</category>
+    <category>sovereignty</category>
+    <category>payments</category>
   </item>
   <item>
     <title>EFF Warns Federal SECURE Data Act Would Weaken Existing State Privacy Protections</title>
