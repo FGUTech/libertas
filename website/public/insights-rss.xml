@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Wed, 20 May 2026 09:00:59 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 20 May 2026 15:02:42 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -28,6 +28,18 @@
     <category>activism</category>
     <category>surveillance</category>
     <category>censorship-resistance</category>
+  </item>
+  <item>
+    <title>Bitcoin and Freedom Tech Hub Launches in Nairobi with Infrastructure Focus</title>
+    <link>https://libertas.fgu.tech/posts/bitcoin-and-freedom-tech-hub-launches-in-nairobi-with-infras</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/bitcoin-and-freedom-tech-hub-launches-in-nairobi-with-infras</guid>
+    <pubDate>Wed, 20 May 2026 15:01:06 GMT</pubDate>
+    <description>Node NBO opens in Nairobi as Africa&apos;s first dedicated Bitcoin/freedom tech co-working space, featuring solar power, satellite internet paid in Bitcoin, and partnerships with HRF and key African Bitcoin companies.</description>
+    <category>bitcoin</category>
+    <category>sovereignty</category>
+    <category>comms</category>
+    <category>payments</category>
+    <category>activism</category>
   </item>
   <item>
     <title>Access Now Report: Data Privacy as Defense Against Electoral Disinformation in Latin America</title>
@@ -285,6 +297,16 @@
     <category>sovereignty</category>
   </item>
   <item>
+    <title>Trump Orders Fed to Review Crypto Access to U.S. Payment Rails</title>
+    <link>https://libertas.fgu.tech/posts/trump-orders-fed-to-review-crypto-access-to-u-s-payment-rail</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/trump-orders-fed-to-review-crypto-access-to-u-s-payment-rail</guid>
+    <pubDate>Wed, 20 May 2026 15:01:06 GMT</pubDate>
+    <description>Trump signed executive order directing Federal Reserve to audit regulations blocking crypto firms from master accounts and payment rails within 3 months, potentially opening direct access to core U.S. financial infrastructure.</description>
+    <category>bitcoin</category>
+    <category>payments</category>
+    <category>sovereignty</category>
+  </item>
+  <item>
     <title>Gulf States Launch Information Crackdown During Iran War, Target Journalists</title>
     <link>https://libertas.fgu.tech/posts/gulf-states-launch-information-crackdown-during-iran-war-tar</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/gulf-states-launch-information-crackdown-during-iran-war-tar</guid>
@@ -303,16 +325,6 @@
     <category>bitcoin</category>
     <category>sovereignty</category>
     <category>payments</category>
-  </item>
-  <item>
-    <title>EFF Warns Federal SECURE Data Act Would Weaken Existing State Privacy Protections</title>
-    <link>https://libertas.fgu.tech/posts/eff-warns-federal-secure-data-act-would-weaken-existing-stat</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-warns-federal-secure-data-act-would-weaken-existing-stat</guid>
-    <pubDate>Wed, 06 May 2026 15:00:55 GMT</pubDate>
-    <description>EFF says the Republican-backed SECURE Data Act would preempt dozens of state privacy laws while offering weaker consumer protections and no private enforcement rights.</description>
-    <category>privacy</category>
-    <category>surveillance</category>
-    <category>activism</category>
   </item>
   <item>
     <title>EFF Challenges Warrantless Border Device Searches in Fourth Circuit</title>
@@ -386,17 +398,6 @@
     <category>censorship-resistance</category>
     <category>surveillance</category>
     <category>activism</category>
-  </item>
-  <item>
-    <title>Access Now Hosts Digital Security Webinar Series for Civil Society in Conflict Zones</title>
-    <link>https://libertas.fgu.tech/posts/access-now-hosts-digital-security-webinar-series-for-civil-s</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/access-now-hosts-digital-security-webinar-series-for-civil-s</guid>
-    <pubDate>Wed, 06 May 2026 15:01:52 GMT</pubDate>
-    <description>Access Now&apos;s Digital Security Helpline is running a webinar series focusing on protecting civil society and human rights defenders from digital threats during armed conflicts and humanitarian crises.</description>
-    <category>privacy</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>censorship-resistance</category>
   </item>
   <item>
     <title>Canada&apos;s Bill C-22 Mandates Surveillance Backdoors, Threatens Encryption</title>
@@ -484,6 +485,16 @@
     <category>identity</category>
   </item>
   <item>
+    <title>Retired Cop Wins $835K Settlement After 37-Day Jail for Trump Meme</title>
+    <link>https://libertas.fgu.tech/posts/retired-cop-wins-835k-settlement-after-37-day-jail-for-trump</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/retired-cop-wins-835k-settlement-after-37-day-jail-for-trump</guid>
+    <pubDate>Wed, 20 May 2026 15:02:12 GMT</pubDate>
+    <description>Larry Bushart won $835,000 settlement after Tennessee sheriff jailed him 37 days for posting Trump meme on Facebook, establishing precedent for First Amendment violations.</description>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>surveillance</category>
+  </item>
+  <item>
     <title>US House Whip Pushes Anti-CBDC Act to Block Government Digital Currency</title>
     <link>https://libertas.fgu.tech/posts/us-house-whip-pushes-anti-cbdc-act-to-block-government-digit</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/us-house-whip-pushes-anti-cbdc-act-to-block-government-digit</guid>
@@ -566,6 +577,16 @@
     <category>activism</category>
   </item>
   <item>
+    <title>Rights Groups Demand Microsoft Disclose Israeli Military Surveillance Tech Review</title>
+    <link>https://libertas.fgu.tech/posts/rights-groups-demand-microsoft-disclose-israeli-military-sur</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/rights-groups-demand-microsoft-disclose-israeli-military-sur</guid>
+    <pubDate>Wed, 20 May 2026 15:02:42 GMT</pubDate>
+    <description>Digital rights coalition demands Microsoft publish findings of its review into Israeli military&apos;s use of Azure cloud and AI services for surveillance and targeting of Palestinians.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
+  </item>
+  <item>
     <title>Samourai Wallet Developer Seeks Presidential Pardon Amid Trump Clemency Considerations</title>
     <link>https://libertas.fgu.tech/posts/samourai-wallet-developer-seeks-presidential-pardon-amid-tru</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/samourai-wallet-developer-seeks-presidential-pardon-amid-tru</guid>
@@ -625,6 +646,16 @@
     <category>bitcoin</category>
     <category>sovereignty</category>
     <category>payments</category>
+  </item>
+  <item>
+    <title>Meta Blocks Human Rights Accounts in Saudi Arabia and UAE</title>
+    <link>https://libertas.fgu.tech/posts/meta-blocks-human-rights-accounts-in-saudi-arabia-and-uae</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/meta-blocks-human-rights-accounts-in-saudi-arabia-and-uae</guid>
+    <pubDate>Wed, 20 May 2026 15:02:42 GMT</pubDate>
+    <description>Meta has reportedly blocked human rights organizations&apos; accounts from reaching audiences in Saudi Arabia and UAE, demonstrating platform-level censorship in authoritarian regions.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
   </item>
   <item>
     <title>Tails 7.7.3 Emergency Release Fixes Critical Kernel Vulnerability</title>
@@ -728,6 +759,17 @@
     <category>activism</category>
     <category>surveillance</category>
     <category>sovereignty</category>
+  </item>
+  <item>
+    <title>South Carolina Enacts Comprehensive Bitcoin Law, Bans State CBDC Use</title>
+    <link>https://libertas.fgu.tech/posts/south-carolina-enacts-comprehensive-bitcoin-law-bans-state-c</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/south-carolina-enacts-comprehensive-bitcoin-law-bans-state-c</guid>
+    <pubDate>Wed, 20 May 2026 15:01:06 GMT</pubDate>
+    <description>South Carolina passed Senate Bill 163 with bipartisan support, protecting Bitcoin self-custody rights, preventing additional crypto taxes, and banning state entities from using CBDCs.</description>
+    <category>bitcoin</category>
+    <category>sovereignty</category>
+    <category>privacy</category>
+    <category>payments</category>
   </item>
   <item>
     <title>Uzbek Activist Lawyer Gets 18+ Years for Protests, Prison &apos;Disruption&apos;</title>

@@ -50,6 +50,29 @@
       }
     },
     {
+      "id": "09eb5514-85c6-4b3c-a28c-82f25bc5555d",
+      "url": "https://libertas.fgu.tech/posts/bitcoin-and-freedom-tech-hub-launches-in-nairobi-with-infras",
+      "title": "Bitcoin and Freedom Tech Hub Launches in Nairobi with Infrastructure Focus",
+      "summary": "Node NBO opens in Nairobi as Africa's first dedicated Bitcoin/freedom tech co-working space, featuring solar power, satellite internet paid in Bitcoin, and partnerships with HRF and key African Bitcoin companies.",
+      "content_text": "Node NBO launched May 16, 2026 in Nairobi's diplomatic district near UN headquarters\n• Houses Fedi, Gridless, BTrust, Human Rights Foundation and other freedom tech organizations\n• Features three labs: open-source energy, Bitcoin mining, and AI compute\n• Facility powered entirely by solar panels installed by Gridless\n• SateNet provides community-owned satellite internet paid with Bitcoin via Fedi app\n• Serves underserved communities including Kenya's Kibera and South Africa's Mossel Bay\n• Located near UN headquarters to showcase African Bitcoin projects to international visitors\n• Follows Kenyan communal decision-making culture for Bitcoin community coordination",
+      "date_published": "2026-05-20T15:01:06.172Z",
+      "date_modified": "2026-05-20T15:01:06.244Z",
+      "tags": [
+        "bitcoin",
+        "sovereignty",
+        "comms",
+        "payments",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://bitcoinmagazine.com/news/new-bitcoin-energy-and-compute-hub-node-nbo-opens-in-nairobi-kenya"
+        ]
+      }
+    },
+    {
       "id": "0bcb64b2-64b5-4dde-b337-fc7d19a26917",
       "url": "https://libertas.fgu.tech/posts/access-now-report-data-privacy-as-defense-against-electoral-",
       "title": "Access Now Report: Data Privacy as Defense Against Electoral Disinformation in Latin America",
@@ -571,6 +594,27 @@
       }
     },
     {
+      "id": "555b673e-c427-4c64-aac3-305d2d672451",
+      "url": "https://libertas.fgu.tech/posts/trump-orders-fed-to-review-crypto-access-to-u-s-payment-rail",
+      "title": "Trump Orders Fed to Review Crypto Access to U.S. Payment Rails",
+      "summary": "Trump signed executive order directing Federal Reserve to audit regulations blocking crypto firms from master accounts and payment rails within 3 months, potentially opening direct access to core U.S. financial infrastructure.",
+      "content_text": "Executive order 'Integrating Financial Technology Innovation into Regulatory Frameworks' targets Fed master account restrictions\n• Regulators have 3 months to audit rules that 'unduly impede' fintech partnerships with federally regulated institutions\n• Master accounts provide gateway to Fedwire and other payment rails handling high-value dollar settlement\n• Crypto firms currently forced to pursue costly banking charters for direct payment access\n• Kansas City Fed already approved limited account for Kraken's parent company Payward in March 2024\n• Order questions whether regional Fed banks can approve accounts independently without Board of Governors approval\n• Fed proposed 'skinny' master accounts in December - restricted access without interest or discount window features\n• Traditional banking groups oppose expanded access, citing regulatory gaps between banks and non-bank entities\n• 120-day deadline for Fed report transforms slow regulatory process into political pressure campaign",
+      "date_published": "2026-05-20T15:01:06.171Z",
+      "date_modified": "2026-05-20T15:01:06.244Z",
+      "tags": [
+        "bitcoin",
+        "payments",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 85,
+        "citations": [
+          "https://bitcoinmagazine.com/news/trump-orders-fed-to-review-crypto-access"
+        ]
+      }
+    },
+    {
       "id": "5844bccb-8326-41a4-9e2a-ccbfbf74c379",
       "url": "https://libertas.fgu.tech/posts/gulf-states-launch-information-crackdown-during-iran-war-tar",
       "title": "Gulf States Launch Information Crackdown During Iran War, Target Journalists",
@@ -610,27 +654,6 @@
         "citations": [
           "https://www.theblock.co/post/401965/south-carolina-governor-signs-pro-crypto-bill",
           "https://www.theblock.co/post/401965/south-carolina-governor-signs-pro-crypto-bill?utm_source=rss&amp;utm_medium=rss"
-        ]
-      }
-    },
-    {
-      "id": "5d623dbe-e96c-4b7f-8694-12df5a393c02",
-      "url": "https://libertas.fgu.tech/posts/eff-warns-federal-secure-data-act-would-weaken-existing-stat",
-      "title": "EFF Warns Federal SECURE Data Act Would Weaken Existing State Privacy Protections",
-      "summary": "EFF says the Republican-backed SECURE Data Act would preempt dozens of state privacy laws while offering weaker consumer protections and no private enforcement rights.",
-      "content_text": "House Republicans released SECURE Data Act draft without bipartisan support\n• Bill would preempt 21 existing state consumer privacy laws and potentially hundreds of related protections\n• No private right of action - only FTC and state AGs can enforce violations\n• Companies get 45-day 'cure period' with no penalties after being caught violating law\n• Requires opt-out rather than opt-in for invasive practices like targeted advertising\n• Would eliminate California's data broker deletion tool and automatic opt-out signals\n• Bill includes vague Commerce Secretary powers over 'international flow of personal data'\n• EFF assessment: weaker than previous federal proposals and most state laws",
-      "date_published": "2026-05-06T15:00:55.316Z",
-      "date_modified": "2026-05-06T15:00:55.380Z",
-      "tags": [
-        "privacy",
-        "surveillance",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 75,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/05/secure-data-act-not-serious-piece-privacy-legislation"
         ]
       }
     },
@@ -782,28 +805,6 @@
         "credibility_score": 85,
         "citations": [
           "https://www.hrw.org/news/2026/05/06/burkina-fasos-junta-escalates-attack-on-information"
-        ]
-      }
-    },
-    {
-      "id": "74ee2ae6-c096-4e89-af06-3765bdfebdcc",
-      "url": "https://libertas.fgu.tech/posts/access-now-hosts-digital-security-webinar-series-for-civil-s",
-      "title": "Access Now Hosts Digital Security Webinar Series for Civil Society in Conflict Zones",
-      "summary": "Access Now's Digital Security Helpline is running a webinar series focusing on protecting civil society and human rights defenders from digital threats during armed conflicts and humanitarian crises.",
-      "content_text": "Access Now hosting 'Safe and Strong' webinar series on digital security for civil society\n• May 19, 2026 session focuses on digital threats during armed conflict and humanitarian crises\n• Speakers include experts from WITNESS, Cloudflare, Oxfam, and Access Now's Digital Security Helpline\n• Series addresses spear-phishing attacks and advanced persistent threats against activists\n• Previous session covered spear-phishing prevention with Citizen Lab and Lookout researchers\n• Targets humanitarian organizations, human rights defenders, and support organizations\n• Recognizes digital harms as component of modern warfare and conflict",
-      "date_published": "2026-05-06T15:01:52.825Z",
-      "date_modified": "2026-05-06T15:01:52.888Z",
-      "tags": [
-        "privacy",
-        "surveillance",
-        "activism",
-        "censorship-resistance"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.accessnow.org/event/digital-security-webinars/"
         ]
       }
     },
@@ -981,6 +982,27 @@
       }
     },
     {
+      "id": "8c08a89e-26e3-44a4-a9b4-164515402128",
+      "url": "https://libertas.fgu.tech/posts/retired-cop-wins-835k-settlement-after-37-day-jail-for-trump",
+      "title": "Retired Cop Wins $835K Settlement After 37-Day Jail for Trump Meme",
+      "summary": "Larry Bushart won $835,000 settlement after Tennessee sheriff jailed him 37 days for posting Trump meme on Facebook, establishing precedent for First Amendment violations.",
+      "content_text": "Larry Bushart, retired Tennessee police officer, jailed 37 days for Facebook Trump meme post\n• Bushart sued county and sheriff claiming censorship and First Amendment violation\n• Settlement reached for $835,000 with lawsuit dismissal agreement\n• Foundation for Individual Rights and Expression (FIRE) represented Bushart\n• Case demonstrates legal remedies available for government speech suppression\n• Substantial financial penalty signals courts take social media censorship seriously\n• Precedent established for similar First Amendment violation cases",
+      "date_published": "2026-05-20T15:02:12.936Z",
+      "date_modified": "2026-05-20T15:02:12.993Z",
+      "tags": [
+        "censorship-resistance",
+        "activism",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://arstechnica.com/tech-policy/2026/05/man-wins-835k-after-sheriff-jailed-him-for-a-month-over-charlie-kirk-post/"
+        ]
+      }
+    },
+    {
       "id": "8ceaa732-d553-49f8-bfd8-66329cc6db07",
       "url": "https://libertas.fgu.tech/posts/us-house-whip-pushes-anti-cbdc-act-to-block-government-digit",
       "title": "US House Whip Pushes Anti-CBDC Act to Block Government Digital Currency",
@@ -1152,6 +1174,27 @@
       }
     },
     {
+      "id": "af7277ef-1dfa-43aa-ada2-768c74bd398c",
+      "url": "https://libertas.fgu.tech/posts/rights-groups-demand-microsoft-disclose-israeli-military-sur",
+      "title": "Rights Groups Demand Microsoft Disclose Israeli Military Surveillance Tech Review",
+      "summary": "Digital rights coalition demands Microsoft publish findings of its review into Israeli military's use of Azure cloud and AI services for surveillance and targeting of Palestinians.",
+      "content_text": "Access Now, EFF, Amnesty International and others demand Microsoft publish completed legal review findings\n• Microsoft Azure and AI services reportedly used by Israeli military for mass surveillance of Palestinians\n• Services allegedly processed intercepted Palestinian communications for lethal targeting operations in Gaza\n• Microsoft transferred Israeli branch management to Microsoft France amid scrutiny over defense contracts\n• Company announced restrictions on Unit 8200 (Israeli military intelligence) but hasn't disclosed specifics\n• Rights groups warn of potential civil and criminal liability for complicity in international law violations\n• Organizations demand suspension of services contributing to human rights abuses",
+      "date_published": "2026-05-20T15:02:42.462Z",
+      "date_modified": "2026-05-20T15:02:42.551Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://www.accessnow.org/press-release/microsoft-come-clean-about-your-ties-to-the-israeli-military/"
+        ]
+      }
+    },
+    {
       "id": "b07e87dd-9799-4c60-a2f7-f0103e9180f6",
       "url": "https://libertas.fgu.tech/posts/samourai-wallet-developer-seeks-presidential-pardon-amid-tru",
       "title": "Samourai Wallet Developer Seeks Presidential Pardon Amid Trump Clemency Considerations",
@@ -1277,6 +1320,27 @@
         "credibility_score": 85,
         "citations": [
           "https://bitcoinmagazine.com/news/white-house-strategic-bitcoin-reserve"
+        ]
+      }
+    },
+    {
+      "id": "cfda2430-432b-47c2-859f-60703cf19159",
+      "url": "https://libertas.fgu.tech/posts/meta-blocks-human-rights-accounts-in-saudi-arabia-and-uae",
+      "title": "Meta Blocks Human Rights Accounts in Saudi Arabia and UAE",
+      "summary": "Meta has reportedly blocked human rights organizations' accounts from reaching audiences in Saudi Arabia and UAE, demonstrating platform-level censorship in authoritarian regions.",
+      "content_text": "Meta blocked human rights accounts from reaching audiences in Saudi Arabia and UAE [Source]\n• Access Now published press release documenting the censorship [Source]\n• Demonstrates platform compliance with authoritarian government pressure\n• Highlights vulnerability of centralized social media for human rights advocacy\n• Pattern consistent with Meta's previous content restrictions in authoritarian regions\n• Underscores need for decentralized communication platforms for activists",
+      "date_published": "2026-05-20T15:02:42.461Z",
+      "date_modified": "2026-05-20T15:02:42.551Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 85,
+        "citations": [
+          "https://www.accessnow.org/press-release/meta-blocks-human-rights-accounts-from-reaching-audiences-in-saudi-arabia-and-the-uae/"
         ]
       }
     },
@@ -1491,6 +1555,28 @@
         "credibility_score": 82,
         "citations": [
           "https://globalvoices.org/2026/05/06/meta-removes-bangladeshi-community-archivists-pages-through-false-copyright-claims/"
+        ]
+      }
+    },
+    {
+      "id": "efd57edf-2b8a-4dad-9102-0d7a336c175b",
+      "url": "https://libertas.fgu.tech/posts/south-carolina-enacts-comprehensive-bitcoin-law-bans-state-c",
+      "title": "South Carolina Enacts Comprehensive Bitcoin Law, Bans State CBDC Use",
+      "summary": "South Carolina passed Senate Bill 163 with bipartisan support, protecting Bitcoin self-custody rights, preventing additional crypto taxes, and banning state entities from using CBDCs.",
+      "content_text": "Governor Henry McMaster signed Senate Bill 163 into law on May 19, 2025\n• Bill passed with overwhelming bipartisan support: 38-1 in Senate, 110-1 in House\n• Affirms right of individuals and businesses to use Bitcoin for commerce\n• Guarantees right to hold assets in self-hosted or hardware wallets\n• Prevents state and local governments from imposing additional taxes on crypto payments\n• Bars state agencies from accepting CBDCs or participating in Federal Reserve CBDC testing\n• Protects crypto mining operations from discriminatory local regulations\n• Exempts mining, node operation, and software development from money transmitter licensing\n• Part of broader state-level trend with Kentucky and Missouri pursuing similar measures",
+      "date_published": "2026-05-20T15:01:06.172Z",
+      "date_modified": "2026-05-20T15:01:06.244Z",
+      "tags": [
+        "bitcoin",
+        "sovereignty",
+        "privacy",
+        "payments"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://bitcoinmagazine.com/news/south-carolina-enacts-bitcoin-friendly-law"
         ]
       }
     },
