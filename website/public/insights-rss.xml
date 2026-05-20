@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Tue, 19 May 2026 21:03:34 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 20 May 2026 03:01:58 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -128,6 +128,15 @@
     <category>censorship-resistance</category>
   </item>
   <item>
+    <title>FBI Seeks Nationwide Real-Time License Plate Surveillance Network</title>
+    <link>https://libertas.fgu.tech/posts/fbi-seeks-nationwide-real-time-license-plate-surveillance-ne</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/fbi-seeks-nationwide-real-time-license-plate-surveillance-ne</guid>
+    <pubDate>Wed, 20 May 2026 03:01:33 GMT</pubDate>
+    <description>FBI published RFP for contractors to provide near real-time access to license plate readers covering 75% of US locations, creating nationwide vehicle tracking capability.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+  </item>
+  <item>
     <title>Why &apos;Anonymized&apos; Data Isn&apos;t Really Anonymous: 15 Data Points ID 99.98% of People</title>
     <link>https://libertas.fgu.tech/posts/why-anonymized-data-isn-t-really-anonymous-15-data-points-id</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/why-anonymized-data-isn-t-really-anonymous-15-data-points-id</guid>
@@ -219,6 +228,16 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>Mexican Journalist Targeted with Malware Surveillance Attacks</title>
+    <link>https://libertas.fgu.tech/posts/mexican-journalist-targeted-with-malware-surveillance-attack</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/mexican-journalist-targeted-with-malware-surveillance-attack</guid>
+    <pubDate>Wed, 20 May 2026 03:01:58 GMT</pubDate>
+    <description>Award-winning Mexican journalist Maria Teresa Montaño discovered malware compromise of her devices after investigating corruption, highlighting urgent need for digital security tools in hostile environments.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
   </item>
   <item>
     <title>Trump Admin Targets &apos;Anti-Fascists&apos; as Terrorists in 2026 Counterterrorism Strategy</title>
@@ -431,6 +450,17 @@
     <category>activism</category>
     <category>privacy</category>
     <category>surveillance</category>
+  </item>
+  <item>
+    <title>Microsoft Fires Israel Chief Over Human Rights Violations in Gaza Surveillance Ops</title>
+    <link>https://libertas.fgu.tech/posts/microsoft-fires-israel-chief-over-human-rights-violations-in</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/microsoft-fires-israel-chief-over-human-rights-violations-in</guid>
+    <pubDate>Wed, 20 May 2026 03:01:00 GMT</pubDate>
+    <description>Microsoft terminated its Israel Country General Manager after investigations revealed Azure cloud/AI services were used for mass surveillance and military targeting in Gaza, violating company human rights standards.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
+    <category>sovereignty</category>
   </item>
   <item>
     <title>GUARD Act Would End Anonymous Internet Use via Mandatory ID Checks for AI Tools</title>

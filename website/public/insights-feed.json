@@ -248,6 +248,26 @@
       }
     },
     {
+      "id": "2ce4285a-000b-4b4a-b7c7-ae62c0c39a88",
+      "url": "https://libertas.fgu.tech/posts/fbi-seeks-nationwide-real-time-license-plate-surveillance-ne",
+      "title": "FBI Seeks Nationwide Real-Time License Plate Surveillance Network",
+      "summary": "FBI published RFP for contractors to provide near real-time access to license plate readers covering 75% of US locations, creating nationwide vehicle tracking capability.",
+      "content_text": "FBI Directorate of Intelligence issued Request for Proposals for nationwide license plate reader access\n• System must cover 75% of US locations with near real-time data access\n• Contractors must provide both law enforcement and commercial LPR data through existing platforms\n• Search capabilities include vehicle descriptions, time/date, and geo-location criteria\n• System must offer search result notifications and query cameras across US territories\n• Represents massive expansion of federal surveillance infrastructure beyond current capabilities\n• Creates potential for tracking any vehicle's movements across the country in real-time",
+      "date_published": "2026-05-20T03:01:33.224Z",
+      "date_modified": "2026-05-20T03:01:33.314Z",
+      "tags": [
+        "surveillance",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 88,
+        "credibility_score": 95,
+        "citations": [
+          "https://arstechnica.com/tech-policy/2026/05/fbi-seeks-us-wide-access-to-license-plate-cameras-wants-data-in-near-real-time/"
+        ]
+      }
+    },
+    {
       "id": "2cea799a-0864-4356-a139-16af8708f74e",
       "url": "https://libertas.fgu.tech/posts/why-anonymized-data-isn-t-really-anonymous-15-data-points-id",
       "title": "Why 'Anonymized' Data Isn't Really Anonymous: 15 Data Points ID 99.98% of People",
@@ -436,6 +456,27 @@
         "credibility_score": 95,
         "citations": [
           "https://www.eff.org/deeplinks/2026/05/eff-launches-new-offline-campaign-saudi-wikipedian-osama-khalid"
+        ]
+      }
+    },
+    {
+      "id": "4993e282-fd8d-479e-b9dc-be109303a591",
+      "url": "https://libertas.fgu.tech/posts/mexican-journalist-targeted-with-malware-surveillance-attack",
+      "title": "Mexican Journalist Targeted with Malware Surveillance Attacks",
+      "summary": "Award-winning Mexican journalist Maria Teresa Montaño discovered malware compromise of her devices after investigating corruption, highlighting urgent need for digital security tools in hostile environments.",
+      "content_text": "Maria Teresa Montaño, 2023 CPJ International Press Freedom Award recipient, discovered unknown device connected to email and unrecognized files on laptop\n• Montaño founded The ObserverMX, investigating corruption and human rights abuses in Estado de México\n• Digital attacks followed suspicious email on April 13 asking about 'investigations into unknown fraudulent contracts'\n• Journalist previously kidnapped in 2021, currently enrolled in federal protection program\n• Mexico remains deadliest country for journalists in western hemisphere\n• Federal protection mechanism officials confirmed they will analyze the digital security incidents\n• Case demonstrates critical need for robust digital security tools for investigative journalists in repressive environments",
+      "date_published": "2026-05-20T03:01:58.186Z",
+      "date_modified": "2026-05-20T03:01:58.336Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 88,
+        "citations": [
+          "https://cpj.org/2026/05/mexican-journalist-ipfa-recipient-maria-teresa-montano-targeted-in-possible-malware-surveillance-attacks/"
         ]
       }
     },
@@ -870,6 +911,28 @@
         "credibility_score": 85,
         "citations": [
           "https://cpj.org/2026/05/venezuelan-journalist-details-complicated-fight-for-amnesty-post-maduro/"
+        ]
+      }
+    },
+    {
+      "id": "884cd1d5-94df-4117-83aa-89c1d3315692",
+      "url": "https://libertas.fgu.tech/posts/microsoft-fires-israel-chief-over-human-rights-violations-in",
+      "title": "Microsoft Fires Israel Chief Over Human Rights Violations in Gaza Surveillance Ops",
+      "summary": "Microsoft terminated its Israel Country General Manager after investigations revealed Azure cloud/AI services were used for mass surveillance and military targeting in Gaza, violating company human rights standards.",
+      "content_text": "Microsoft fired Israel chief amid ethical controversy over Gaza surveillance operations\n• Guardian report revealed Microsoft Azure used for mass surveillance and military targeting systems\n• Company suspended certain services in September 2025 after initial investigation\n• Civil society coalition demanded Microsoft release investigation findings and implement safeguards\n• EFF, Access Now, Amnesty pressed for suspension of business tied to human rights abuses\n• Microsoft distinguished itself from peers by taking accountability action rather than denial\n• Google and Amazon face similar criticism but haven't shown comparable responsiveness\n• Sets precedent that human rights violations can have employment consequences for tech leaders",
+      "date_published": "2026-05-20T03:01:00.630Z",
+      "date_modified": "2026-05-20T03:01:00.714Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/05/microsoft-took-step-toward-human-rights-accountability-google-and-amazon-and"
         ]
       }
     },
