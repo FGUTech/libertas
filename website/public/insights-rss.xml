@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Wed, 20 May 2026 15:02:42 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 20 May 2026 21:02:30 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -358,16 +358,6 @@
     <category>privacy</category>
   </item>
   <item>
-    <title>OONI Report: Internet Censorship Becoming More Sophisticated and Targeted</title>
-    <link>https://libertas.fgu.tech/posts/ooni-report-internet-censorship-becoming-more-sophisticated-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/ooni-report-internet-censorship-becoming-more-sophisticated-</guid>
-    <pubDate>Wed, 06 May 2026 21:02:57 GMT</pubDate>
-    <description>OONI&apos;s network measurement data reveals internet censorship is evolving toward more sophisticated, targeted, and intermittent blocks that are harder to detect globally.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>privacy</category>
-  </item>
-  <item>
     <title>US Congress Threatens to Criminalize Crypto Developers, Undermine Freedom Tech</title>
     <link>https://libertas.fgu.tech/posts/us-congress-threatens-to-criminalize-crypto-developers-under</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/us-congress-threatens-to-criminalize-crypto-developers-under</guid>
@@ -419,6 +409,17 @@
     <category>bitcoin</category>
     <category>censorship-resistance</category>
     <category>sovereignty</category>
+  </item>
+  <item>
+    <title>EFF Highlights End-to-End Encryption Advances in Apple-Android RCS Messaging</title>
+    <link>https://libertas.fgu.tech/posts/eff-highlights-end-to-end-encryption-advances-in-apple-andro</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-highlights-end-to-end-encryption-advances-in-apple-andro</guid>
+    <pubDate>Wed, 20 May 2026 21:00:41 GMT</pubDate>
+    <description>EFF&apos;s latest newsletter covers recent progress in encrypted messaging between Apple and Android devices, plus analysis of Canada&apos;s surveillance bill and social media restrictions.</description>
+    <category>privacy</category>
+    <category>comms</category>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
   </item>
   <item>
     <title>Human Rights Watch: EU Surveillance Tech Exports Enable Global Rights Violations</title>
@@ -516,14 +517,14 @@
     <category>censorship-resistance</category>
   </item>
   <item>
-    <title>EFF Warns of Government Censorship Disguised as Online Safety Measures</title>
-    <link>https://libertas.fgu.tech/posts/eff-warns-of-government-censorship-disguised-as-online-safet</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-warns-of-government-censorship-disguised-as-online-safet</guid>
-    <pubDate>Wed, 06 May 2026 21:01:20 GMT</pubDate>
-    <description>EFF&apos;s latest analysis reveals how governments are using &apos;child safety&apos; as pretext to implement dangerous censorship systems, including social media bans and VPN restrictions.</description>
+    <title>Turkish Journalist Arrested Under Disinformation Law for School Weapons Report</title>
+    <link>https://libertas.fgu.tech/posts/turkish-journalist-arrested-under-disinformation-law-for-sch</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/turkish-journalist-arrested-under-disinformation-law-for-sch</guid>
+    <pubDate>Wed, 20 May 2026 21:02:11 GMT</pubDate>
+    <description>Turkish journalist Yelis Ayaz arrested for reporting on politician&apos;s son allegedly bringing weapons to school, highlighting systematic use of disinformation law to prosecute media.</description>
     <category>censorship-resistance</category>
-    <category>privacy</category>
     <category>surveillance</category>
+    <category>activism</category>
   </item>
   <item>
     <title>Philippine Court Dismisses Terror Financing Charges Against NGO; Bank Accounts Remain Frozen</title>
@@ -556,6 +557,17 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>censorship-resistance</category>
+  </item>
+  <item>
+    <title>Tails 7.8 Fixes Critical Security Vulnerabilities That Could Enable Deanonymization</title>
+    <link>https://libertas.fgu.tech/posts/tails-7-8-fixes-critical-security-vulnerabilities-that-could</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/tails-7-8-fixes-critical-security-vulnerabilities-that-could</guid>
+    <pubDate>Wed, 20 May 2026 21:02:30 GMT</pubDate>
+    <description>Tails 7.8 patches critical Linux kernel vulnerabilities that could allow attackers to gain admin privileges and potentially deanonymize users, while removing pre-installed Thunderbird.</description>
+    <category>privacy</category>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>comms</category>
   </item>
   <item>
     <title>ICE Developing Smart Glasses with Facial Recognition Database Integration</title>
@@ -790,17 +802,6 @@
     <category>censorship-resistance</category>
     <category>surveillance</category>
     <category>activism</category>
-  </item>
-  <item>
-    <title>California Fast-Tracks Social Media Ban Requiring ID Verification for All Users</title>
-    <link>https://libertas.fgu.tech/posts/california-fast-tracks-social-media-ban-requiring-id-verific</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/california-fast-tracks-social-media-ban-requiring-id-verific</guid>
-    <pubDate>Wed, 06 May 2026 21:01:20 GMT</pubDate>
-    <description>California&apos;s A.B. 1709 would ban under-16s from social media and force all users to submit government IDs or biometrics for age verification, destroying online anonymity.</description>
-    <category>privacy</category>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>identity</category>
   </item>
   <item>
     <title>Signal Threatens Canada Exit Over Lawful Access Bill C-22</title>
