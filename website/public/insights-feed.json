@@ -73,6 +73,29 @@
       }
     },
     {
+      "id": "0a63acae-7f2b-4293-a0cd-08c60daf448e",
+      "url": "https://libertas.fgu.tech/posts/iran-s-83-day-internet-blackout-highlights-critical-need-for",
+      "title": "Iran's 83-Day Internet Blackout Highlights Critical Need for Censorship-Resistant Comms",
+      "summary": "Iran has imposed a record-breaking 83-day nationwide internet blackout to hide media crackdowns, creating an information vacuum that demonstrates the urgent need for mesh networks and satellite communications.",
+      "content_text": "Iran imposed 83-day nationwide internet blackout - longest and most severe ever recorded [NetBlocks]\n• Committee to Protect Journalists (CPJ) and Reporters Without Borders (RSF) issued joint warning\n• Blackout specifically targets press freedom, making secure communications impossible for journalists\n• Iranian-American journalist Reza Valizadeh detained in Evin Prison with unknown status\n• Information vacuum prevents verification of arrests and documentation of human rights abuses\n• Demonstrates real-world scenario where freedom tech tools become critical infrastructure\n• Press freedom groups calling for immediate restoration of internet access and journalist releases",
+      "date_published": "2026-05-21T09:01:52.319Z",
+      "date_modified": "2026-05-21T09:01:52.450Z",
+      "tags": [
+        "censorship-resistance",
+        "comms",
+        "surveillance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 95,
+        "credibility_score": 92,
+        "citations": [
+          "https://cpj.org/2026/05/cpj-rsf-warn-iran-using-83-day-blackout-to-hide-press-crackdown/"
+        ]
+      }
+    },
+    {
       "id": "0bcb64b2-64b5-4dde-b337-fc7d19a26917",
       "url": "https://libertas.fgu.tech/posts/access-now-report-data-privacy-as-defense-against-electoral-",
       "title": "Access Now Report: Data Privacy as Defense Against Electoral Disinformation in Latin America",
@@ -1346,6 +1369,28 @@
       }
     },
     {
+      "id": "ca55286e-dfe9-400e-8ef9-0306fbdfa7ec",
+      "url": "https://libertas.fgu.tech/posts/access-now-links-privacy-protection-to-disinformation-defens",
+      "title": "Access Now Links Privacy Protection to Disinformation Defense in Latin America",
+      "summary": "Digital rights org Access Now argues that strict data protection laws are key to reducing disinformation impact, especially during elections in Latin America where microtargeting exploits personal data for political manipulation.",
+      "content_text": "Access Now published analysis connecting data privacy enforcement to disinformation mitigation\n• Report focuses on Latin American electoral contexts (Argentina, Mexico, Brazil, Colombia, Peru)\n• Identifies microtargeting as primary vector: personal data enables targeted political manipulation\n• AI-generated deepfakes and bot networks amplify microtargeting effectiveness\n• Platform business models incentivize data collection that enables manipulation\n• Recommends data protection authorities coordinate with electoral authorities\n• Proposes disabling microtargeting tools during electoral periods\n• Calls for transparency requirements and algorithmic auditing mechanisms",
+      "date_published": "2026-05-21T09:01:18.213Z",
+      "date_modified": "2026-05-21T09:01:18.296Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "censorship-resistance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://www.accessnow.org/publication/vinculo-entre-desinformacion-y-privacidad/"
+        ]
+      }
+    },
+    {
       "id": "cb8b5132-1b13-473a-ab08-01a7fe030966",
       "url": "https://libertas.fgu.tech/posts/white-house-to-announce-strategic-bitcoin-reserve-details-af",
       "title": "White House to Announce Strategic Bitcoin Reserve Details After Legal Framework Completion",
@@ -1619,6 +1664,28 @@
         "credibility_score": 95,
         "citations": [
           "https://www.hrw.org/news/2026/05/05/uzbekistan-convicts-karakalpak-lawyer-again"
+        ]
+      }
+    },
+    {
+      "id": "f90b3bb7-5452-48b1-912f-8c09b3e4a555",
+      "url": "https://libertas.fgu.tech/posts/freedom-house-links-iran-s-internet-blackouts-to-historical-",
+      "title": "Freedom House Links Iran's Internet Blackouts to Historical Resistance Patterns",
+      "summary": "Freedom House draws parallels between Iran's ongoing internet blackouts and Poland's Solidarity movement, highlighting how authoritarian regimes use digital repression to fracture opposition before democratic movements can unify.",
+      "content_text": "Freedom House compares Iran's current situation to Poland's Solidarity movement under Soviet rule\n• Iran experiencing longest state-imposed internet blackout in history amid mass executions\n• Over 630 executions reported in Iran this year under cover of communications blackout\n• Regime using internet shutdowns, disinformation, and digital harassment to prevent opposition unity\n• Freedom House calls for restoring internet access as core freedom strategy\n• Iran ranked among world's lowest-trust societies according to World Values Survey\n• Authoritarian regimes engineer distrust through digital tools to maintain control\n• Historical precedent shows seemingly permanent authoritarian systems can collapse suddenly",
+      "date_published": "2026-05-21T09:02:09.904Z",
+      "date_modified": "2026-05-21T09:02:10.024Z",
+      "tags": [
+        "activism",
+        "censorship-resistance",
+        "surveillance",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://freedomhouse.org/article/gdansk-tehran-people-uniting-freedom-can-break-grip-tyranny"
         ]
       }
     },

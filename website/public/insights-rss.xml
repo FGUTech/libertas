@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 21 May 2026 03:01:38 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 21 May 2026 09:02:09 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -40,6 +40,18 @@
     <category>comms</category>
     <category>payments</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Iran&apos;s 83-Day Internet Blackout Highlights Critical Need for Censorship-Resistant Comms</title>
+    <link>https://libertas.fgu.tech/posts/iran-s-83-day-internet-blackout-highlights-critical-need-for</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/iran-s-83-day-internet-blackout-highlights-critical-need-for</guid>
+    <pubDate>Thu, 21 May 2026 09:01:52 GMT</pubDate>
+    <description>Iran has imposed a record-breaking 83-day nationwide internet blackout to hide media crackdowns, creating an information vacuum that demonstrates the urgent need for mesh networks and satellite communications.</description>
+    <category>censorship-resistance</category>
+    <category>comms</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>privacy</category>
   </item>
   <item>
     <title>Access Now Report: Data Privacy as Defense Against Electoral Disinformation in Latin America</title>
@@ -659,6 +671,17 @@
     <category>surveillance</category>
   </item>
   <item>
+    <title>Access Now Links Privacy Protection to Disinformation Defense in Latin America</title>
+    <link>https://libertas.fgu.tech/posts/access-now-links-privacy-protection-to-disinformation-defens</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/access-now-links-privacy-protection-to-disinformation-defens</guid>
+    <pubDate>Thu, 21 May 2026 09:01:18 GMT</pubDate>
+    <description>Digital rights org Access Now argues that strict data protection laws are key to reducing disinformation impact, especially during elections in Latin America where microtargeting exploits personal data for political manipulation.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+  </item>
+  <item>
     <title>White House to Announce Strategic Bitcoin Reserve Details After Legal Framework Completion</title>
     <link>https://libertas.fgu.tech/posts/white-house-to-announce-strategic-bitcoin-reserve-details-af</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/white-house-to-announce-strategic-bitcoin-reserve-details-af</guid>
@@ -790,6 +813,17 @@
     <category>censorship-resistance</category>
     <category>activism</category>
     <category>surveillance</category>
+  </item>
+  <item>
+    <title>Freedom House Links Iran&apos;s Internet Blackouts to Historical Resistance Patterns</title>
+    <link>https://libertas.fgu.tech/posts/freedom-house-links-iran-s-internet-blackouts-to-historical-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/freedom-house-links-iran-s-internet-blackouts-to-historical-</guid>
+    <pubDate>Thu, 21 May 2026 09:02:09 GMT</pubDate>
+    <description>Freedom House draws parallels between Iran&apos;s ongoing internet blackouts and Poland&apos;s Solidarity movement, highlighting how authoritarian regimes use digital repression to fracture opposition before democratic movements can unify.</description>
+    <category>activism</category>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>sovereignty</category>
   </item>
   <item>
     <title>Tunisia Escalates Media Crackdown Beyond Individual Prosecutions to Target Infrastructure</title>
