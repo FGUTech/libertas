@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 21 May 2026 09:02:09 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 21 May 2026 21:02:23 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -74,6 +74,18 @@
     <category>activism</category>
     <category>surveillance</category>
     <category>sovereignty</category>
+  </item>
+  <item>
+    <title>Access Now Fights to Uphold Court Injunction Against NSO Pegasus Targeting WhatsApp</title>
+    <link>https://libertas.fgu.tech/posts/access-now-fights-to-uphold-court-injunction-against-nso-peg</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/access-now-fights-to-uphold-court-injunction-against-nso-peg</guid>
+    <pubDate>Thu, 21 May 2026 21:01:50 GMT</pubDate>
+    <description>Access Now filed amicus brief urging Ninth Circuit to maintain permanent injunction preventing NSO Group from targeting WhatsApp users with Pegasus spyware that bypasses encryption protections.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>encryption</category>
+    <category>censorship-resistance</category>
+    <category>activism</category>
   </item>
   <item>
     <title>Myanmar Journalists Use Encrypted Networks to Bypass Junta Censorship</title>
@@ -403,14 +415,15 @@
     <category>activism</category>
   </item>
   <item>
-    <title>Major Bitcoin Mining Pools Join Stratum v2 Working Group for Mining Decentralization</title>
-    <link>https://libertas.fgu.tech/posts/major-bitcoin-mining-pools-join-stratum-v2-working-group-for</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/major-bitcoin-mining-pools-join-stratum-v2-working-group-for</guid>
-    <pubDate>Thu, 07 May 2026 15:01:02 GMT</pubDate>
-    <description>Seven major Bitcoin mining entities including ANTPOOL, Block Inc, and F2Pool joined the Stratum v2 Working Group to advance adoption of the protocol that improves mining decentralization and security.</description>
-    <category>bitcoin</category>
+    <title>CPJ Warns Journalists of Border Surveillance, Device Seizures at 2026 FIFA World Cup</title>
+    <link>https://libertas.fgu.tech/posts/cpj-warns-journalists-of-border-surveillance-device-seizures</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/cpj-warns-journalists-of-border-surveillance-device-seizures</guid>
+    <pubDate>Thu, 21 May 2026 21:02:23 GMT</pubDate>
+    <description>Committee to Protect Journalists warns 50,000 accredited World Cup journalists may face border questioning, device confiscation, and immigration enforcement targeting their reporting work.</description>
     <category>censorship-resistance</category>
-    <category>sovereignty</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>privacy</category>
   </item>
   <item>
     <title>EFF Highlights End-to-End Encryption Advances in Apple-Android RCS Messaging</title>
@@ -442,6 +455,16 @@
     <description>DHS will deploy autonomous drones and ground vehicles streaming battlefield intelligence over 5G networks along the US-Canada border in a bilateral experiment this fall.</description>
     <category>surveillance</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>Press Freedom Groups Urge New Guatemala AG to End Journalist Persecution</title>
+    <link>https://libertas.fgu.tech/posts/press-freedom-groups-urge-new-guatemala-ag-to-end-journalist</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/press-freedom-groups-urge-new-guatemala-ag-to-end-journalist</guid>
+    <pubDate>Thu, 21 May 2026 21:02:23 GMT</pubDate>
+    <description>Nine international organizations led by CPJ call on Guatemala&apos;s new attorney general to stop criminal prosecutions of journalists, with 20+ reporters fled the country in 2022-2023 due to systematic targeting.</description>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>surveillance</category>
   </item>
   <item>
     <title>Gulf States Expand Wartime Censorship Laws, Target Journalists for Routine Reporting</title>
@@ -509,16 +532,6 @@
     <category>payments</category>
   </item>
   <item>
-    <title>Proton Mail Rolls Out Post-Quantum Encryption to All Users</title>
-    <link>https://libertas.fgu.tech/posts/proton-mail-rolls-out-post-quantum-encryption-to-all-users</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/proton-mail-rolls-out-post-quantum-encryption-to-all-users</guid>
-    <pubDate>Thu, 07 May 2026 15:03:21 GMT</pubDate>
-    <description>Proton Mail now offers post-quantum cryptography protection against future quantum computer attacks, available free to all users with OpenPGP v6 support.</description>
-    <category>privacy</category>
-    <category>comms</category>
-    <category>censorship-resistance</category>
-  </item>
-  <item>
     <title>Turkish Journalist Arrested Under Disinformation Law for School Weapons Report</title>
     <link>https://libertas.fgu.tech/posts/turkish-journalist-arrested-under-disinformation-law-for-sch</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/turkish-journalist-arrested-under-disinformation-law-for-sch</guid>
@@ -570,15 +583,6 @@
     <category>censorship-resistance</category>
     <category>surveillance</category>
     <category>comms</category>
-  </item>
-  <item>
-    <title>ICE Developing Smart Glasses with Facial Recognition Database Integration</title>
-    <link>https://libertas.fgu.tech/posts/ice-developing-smart-glasses-with-facial-recognition-databas</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/ice-developing-smart-glasses-with-facial-recognition-databas</guid>
-    <pubDate>Thu, 07 May 2026 15:02:34 GMT</pubDate>
-    <description>U.S. Immigration and Customs Enforcement is developing smart glasses equipped with facial recognition capabilities tied to government databases, expanding pervasive surveillance infrastructure.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
   </item>
   <item>
     <title>Rights Groups Demand Microsoft Disclose Review of Azure Services to Israeli Military Surveillance</title>
@@ -803,16 +807,6 @@
     <category>sovereignty</category>
     <category>privacy</category>
     <category>payments</category>
-  </item>
-  <item>
-    <title>Uzbek Activist Lawyer Gets 18+ Years for Protests, Prison &apos;Disruption&apos;</title>
-    <link>https://libertas.fgu.tech/posts/uzbek-activist-lawyer-gets-18-years-for-protests-prison-disr</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/uzbek-activist-lawyer-gets-18-years-for-protests-prison-disr</guid>
-    <pubDate>Thu, 07 May 2026 15:03:04 GMT</pubDate>
-    <description>Karakalpak lawyer Dauletmurat Tazhimuratov received additional 5-year sentence for &apos;disrupting prison work,&apos; bringing total to 18.5 years for his role in 2022 protests.</description>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-    <category>surveillance</category>
   </item>
   <item>
     <title>Freedom House Links Iran&apos;s Internet Blackouts to Historical Resistance Patterns</title>
