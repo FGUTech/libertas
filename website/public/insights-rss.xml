@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Wed, 20 May 2026 21:02:30 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 21 May 2026 03:01:38 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -380,16 +380,6 @@
     <category>privacy</category>
   </item>
   <item>
-    <title>Burkina Faso Junta Bans TV5Monde, Escalates Information Control Campaign</title>
-    <link>https://libertas.fgu.tech/posts/burkina-faso-junta-bans-tv5monde-escalates-information-contr</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/burkina-faso-junta-bans-tv5monde-escalates-information-contr</guid>
-    <pubDate>Wed, 06 May 2026 21:03:20 GMT</pubDate>
-    <description>Burkina Faso&apos;s military government suspended French broadcaster TV5Monde for &apos;disinformation,&apos; continuing systematic media crackdown since 2022 coup including journalist disappearances and coordinated online propaganda.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
-  </item>
-  <item>
     <title>Canada&apos;s Bill C-22 Mandates Surveillance Backdoors, Threatens Encryption</title>
     <link>https://libertas.fgu.tech/posts/canada-s-bill-c-22-mandates-surveillance-backdoors-threatens</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/canada-s-bill-c-22-mandates-surveillance-backdoors-threatens</guid>
@@ -629,6 +619,25 @@
     <category>surveillance</category>
   </item>
   <item>
+    <title>Maldives Jails First Journalists Since 2008, Escalates Press Freedom Crackdown</title>
+    <link>https://libertas.fgu.tech/posts/maldives-jails-first-journalists-since-2008-escalates-press-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/maldives-jails-first-journalists-since-2008-escalates-press-</guid>
+    <pubDate>Thu, 21 May 2026 03:01:38 GMT</pubDate>
+    <description>Maldives authorities jailed two journalists for reporting on a gag order, marking the first criminal imprisonment of journalists since the country&apos;s 2008 democratic constitution, amid broader media suppression efforts.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+  </item>
+  <item>
+    <title>Bipartisan Amendment Would Ban Police License Plate Tracking Nationwide</title>
+    <link>https://libertas.fgu.tech/posts/bipartisan-amendment-would-ban-police-license-plate-tracking</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/bipartisan-amendment-would-ban-police-license-plate-tracking</guid>
+    <pubDate>Thu, 21 May 2026 03:00:57 GMT</pubDate>
+    <description>A bipartisan federal highway bill amendment would strip funding from cities and states that operate automated license plate tracking programs, effectively ending mass surveillance via ALPR technology.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+  </item>
+  <item>
     <title>EFF Highlights How Commercial Tracking Feeds Government Mass Surveillance</title>
     <link>https://libertas.fgu.tech/posts/eff-highlights-how-commercial-tracking-feeds-government-mass</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-highlights-how-commercial-tracking-feeds-government-mass</guid>
@@ -760,17 +769,6 @@
     <description>Apple&apos;s iOS 26.5 enables end-to-end encryption for RCS messages between iPhone and Android, making encrypted cross-platform messaging the default for billions of users.</description>
     <category>privacy</category>
     <category>comms</category>
-  </item>
-  <item>
-    <title>Meta Enables Coordinated Attacks on Bangladeshi Protest Archivists Through False Copyright Claims</title>
-    <link>https://libertas.fgu.tech/posts/meta-enables-coordinated-attacks-on-bangladeshi-protest-arch</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/meta-enables-coordinated-attacks-on-bangladeshi-protest-arch</guid>
-    <pubDate>Wed, 06 May 2026 21:04:11 GMT</pubDate>
-    <description>Coordinated attackers are exploiting Meta&apos;s copyright system with fake claims to remove Facebook pages documenting human rights violations from Bangladesh&apos;s July 2024 uprising, destroying evidence used in war crimes tribunals.</description>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-    <category>surveillance</category>
-    <category>sovereignty</category>
   </item>
   <item>
     <title>South Carolina Enacts Comprehensive Bitcoin Law, Bans State CBDC Use</title>
