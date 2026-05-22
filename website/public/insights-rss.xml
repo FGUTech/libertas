@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 22 May 2026 09:02:15 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 22 May 2026 15:01:50 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -171,16 +171,6 @@
     <description>FBI published RFP for contractors to provide near real-time access to license plate readers covering 75% of US locations, creating nationwide vehicle tracking capability.</description>
     <category>surveillance</category>
     <category>privacy</category>
-  </item>
-  <item>
-    <title>Why &apos;Anonymized&apos; Data Isn&apos;t Really Anonymous: 15 Data Points ID 99.98% of People</title>
-    <link>https://libertas.fgu.tech/posts/why-anonymized-data-isn-t-really-anonymous-15-data-points-id</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/why-anonymized-data-isn-t-really-anonymous-15-data-points-id</guid>
-    <pubDate>Fri, 08 May 2026 15:01:58 GMT</pubDate>
-    <description>Proton explains how anonymized data can still identify individuals with just 15 data points achieving 99.98% identification rates, and how AI is making re-identification faster and cheaper.</description>
-    <category>privacy</category>
-    <category>surveillance</category>
-    <category>identity</category>
   </item>
   <item>
     <title>China&apos;s New Xinjiang Secrecy Law Embeds AI Surveillance Into Social Governance</title>
@@ -349,16 +339,6 @@
     <category>privacy</category>
     <category>surveillance</category>
     <category>activism</category>
-  </item>
-  <item>
-    <title>Rwandan YouTuber Dies in Prison Hours Before Release After 5-Year Sentence</title>
-    <link>https://libertas.fgu.tech/posts/rwandan-youtuber-dies-in-prison-hours-before-release-after-5</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/rwandan-youtuber-dies-in-prison-hours-before-release-after-5</guid>
-    <pubDate>Fri, 08 May 2026 15:01:23 GMT</pubDate>
-    <description>Aimable Karasira Uzaramba, a Rwandan YouTube commentator who criticized the government, died of alleged overdose in state custody on his scheduled release day after 5 years imprisonment.</description>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-    <category>surveillance</category>
   </item>
   <item>
     <title>DRC: Secret Cyber Defense Unit Disappears Dissidents, HRW Documents Network of Detention Sites</title>
@@ -651,6 +631,17 @@
     <description>EFF details how widespread commercial tracking enables government surveillance, with data brokers selling personal info to FBI/CBP/ICE to bypass warrant requirements.</description>
     <category>privacy</category>
     <category>surveillance</category>
+    <category>activism</category>
+  </item>
+  <item>
+    <title>OONI Joins Quadratic Funding Campaign for Internet Freedom Projects</title>
+    <link>https://libertas.fgu.tech/posts/ooni-joins-quadratic-funding-campaign-for-internet-freedom-p</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/ooni-joins-quadratic-funding-campaign-for-internet-freedom-p</guid>
+    <pubDate>Fri, 22 May 2026 15:01:50 GMT</pubDate>
+    <description>OONI and 9 other internet freedom projects launched a quadratic funding campaign to secure decentralized funding, citing sustainability risks.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>privacy</category>
     <category>activism</category>
   </item>
   <item>
