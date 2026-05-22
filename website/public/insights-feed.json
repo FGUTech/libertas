@@ -401,27 +401,6 @@
       }
     },
     {
-      "id": "32fafe97-afdc-499b-a4d4-f0ee33765de8",
-      "url": "https://libertas.fgu.tech/posts/ice-protesters-sue-dhs-fbi-over-forced-dna-collection-during",
-      "title": "ICE Protesters Sue DHS/FBI Over Forced DNA Collection During Arrests",
-      "summary": "Four protesters filed suit against DHS and FBI for allegedly collecting DNA samples from Americans arrested during peaceful ICE protests in Chicago, claiming permanent storage in federal databases violates constitutional rights.",
-      "content_text": "Four protesters filed federal lawsuit in Illinois against DHS and FBI over DNA collection\n• Arrests occurred during 'Operation Midway Blitz' ICE enforcement action in Chicago\n• Lawsuit alleges DNA samples taken from peaceful protesters and uploaded to government databases\n• Protesters claim violations of First and Fourth Amendments plus Administrative Procedure Act\n• Government allegedly storing DNA samples and genetic profiles permanently in federal labs\n• Case highlights expansion of biometric surveillance targeting political activists\n• Represents potential chilling effect on First Amendment protest activities",
-      "date_published": "2026-05-08T03:00:38.672Z",
-      "date_modified": "2026-05-08T03:00:38.738Z",
-      "tags": [
-        "surveillance",
-        "privacy",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 85,
-        "citations": [
-          "https://arstechnica.com/tech-policy/2026/05/ice-protesters-sue-to-stop-dhs-from-seizing-dna-samples/"
-        ]
-      }
-    },
-    {
       "id": "33a23f28-b813-49aa-8580-915ec57327a7",
       "url": "https://libertas.fgu.tech/posts/microsoft-g42-data-center-in-kenya-raises-digital-sovereignt",
       "title": "Microsoft-G42 Data Center in Kenya Raises Digital Sovereignty Concerns",
@@ -747,13 +726,13 @@
       }
     },
     {
-      "id": "669ea1f2-da7e-4770-9d6e-0079abfdb0c2",
-      "url": "https://libertas.fgu.tech/posts/maldives-government-raids-independent-news-outlet-seizes-dig",
-      "title": "Maldives Government Raids Independent News Outlet, Seizes Digital Equipment",
-      "summary": "Maldives police raided Adhadhu News office, seizing laptops and hard drives over documentary alleging presidential misconduct, while imposing travel bans on journalists.",
-      "content_text": "Police raided Adhadhu News office in Malé on April 27, seizing journalists' laptops and hard drives\n• Raid connected to documentary 'Aisha' that allegedly documented presidential misconduct\n• Travel bans imposed on Adhadhu CEO Hussain Fiyaz Moosa and Managing Editor Hassan Mohamed\n• Authorities summoned senior staff for questioning following equipment seizure\n• Media regulator ordered Channel 13 to halt live broadcast of opposition protests\n• Committee to Protect Journalists and 6 other organizations called for return of seized materials\n• Case demonstrates real-world threats journalists face: equipment seizure, travel restrictions, censorship",
-      "date_published": "2026-05-08T09:01:09.447Z",
-      "date_modified": "2026-05-08T09:01:09.529Z",
+      "id": "682c432c-d3e8-4a52-a6be-bf436b8895d1",
+      "url": "https://libertas.fgu.tech/posts/drc-secret-cyber-defense-unit-disappears-dissidents-hrw-docu",
+      "title": "DRC: Secret Cyber Defense Unit Disappears Dissidents, HRW Documents Network of Detention Sites",
+      "summary": "Human Rights Watch documents systematic repression in DRC where National Cyber Defense Council arbitrarily arrests activists, holding them in secret locations without charges or legal access.",
+      "content_text": "National Cyber Defense Council (CNC) operates secret detention network in Kinshasa targeting dissidents\n• Activists and political opponents forcibly disappeared, held without formal charges or lawyer access\n• Families blindfolded when visiting detainees, locations kept secret from relatives\n• HRW Executive Director Philippe Bolopion met with PM Judith Suminwa and other officials May 17-21, 2026\n• Government claims detainees held in villas while investigations finalized before judicial transfer\n• Officials promise CNC reforms requiring judicial police presence for future arrests\n• Crackdown parallels Joseph Kabila era repression, violates Tshisekedi's pledges to end such practices\n• Broader context includes M23 occupation in eastern Congo and media/opposition crackdowns",
+      "date_published": "2026-05-22T09:01:17.661Z",
+      "date_modified": "2026-05-22T09:01:17.820Z",
       "tags": [
         "censorship-resistance",
         "surveillance",
@@ -761,10 +740,10 @@
         "privacy"
       ],
       "_libertas": {
-        "freedom_relevance_score": 78,
+        "freedom_relevance_score": 75,
         "credibility_score": 95,
         "citations": [
-          "https://cpj.org/2026/05/cpj-partners-urge-maldives-president-to-end-legal-action-against-adhadhu-news/"
+          "https://www.hrw.org/news/2026/05/22/dr-congo-renewed-repression-impunity-top-rights-concerns"
         ]
       }
     },
@@ -1714,6 +1693,29 @@
         "credibility_score": 95,
         "citations": [
           "https://citizenlab.ca/signal-warns-it-would-pull-out-of-canada-if-made-to-comply-with-lawful-access-bill/"
+        ]
+      }
+    },
+    {
+      "id": "fd693f76-7fd9-4617-8fa2-e21a5cee61bc",
+      "url": "https://libertas.fgu.tech/posts/african-govts-spend-2b-on-ai-surveillance-to-target-oppositi",
+      "title": "African Govts Spend $2B on AI Surveillance to Target Opposition, Not Crime",
+      "summary": "11 African governments spent over $2 billion on Chinese/Israeli AI surveillance systems strategically placed in opposition areas rather than high-crime zones, creating digital panopticon to suppress dissent before it forms.",
+      "content_text": "11 African governments spent $2+ billion on AI surveillance (Nigeria: $470M) according to IDS/African Digital Rights Network study\n• Systems include HD CCTV, facial recognition, plate readers, biometric ID supplied mainly by Chinese and Israeli firms\n• Camera placement targets opposition organizing areas, not high-crime neighborhoods per IDS mapping analysis\n• No evidence cameras reduce crime rates despite governments claiming public safety justification\n• AI converts decades of collected citizen data into queryable archives for real-time surveillance\n• Pre-emptive suppression: protests identified Saturday through metadata/facial recognition don't form Sunday\n• Administrative databases integrated into 'loyalty index' flagging citizens for associations and digital footprints\n• CIPESA documents measurable retreat of expression/assembly across 14 countries with surveillance infrastructure",
+      "date_published": "2026-05-22T09:02:15.255Z",
+      "date_modified": "2026-05-22T09:02:15.459Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism",
+        "censorship-resistance",
+        "identity"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 95,
+        "credibility_score": 85,
+        "citations": [
+          "https://globalvoices.org/2026/05/22/how-ai-is-upgrading-african-dictatorship/"
         ]
       }
     },

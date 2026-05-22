@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 21 May 2026 21:02:23 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 22 May 2026 09:02:15 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -204,16 +204,6 @@
     <category>activism</category>
   </item>
   <item>
-    <title>ICE Protesters Sue DHS/FBI Over Forced DNA Collection During Arrests</title>
-    <link>https://libertas.fgu.tech/posts/ice-protesters-sue-dhs-fbi-over-forced-dna-collection-during</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/ice-protesters-sue-dhs-fbi-over-forced-dna-collection-during</guid>
-    <pubDate>Fri, 08 May 2026 03:00:38 GMT</pubDate>
-    <description>Four protesters filed suit against DHS and FBI for allegedly collecting DNA samples from Americans arrested during peaceful ICE protests in Chicago, claiming permanent storage in federal databases violates constitutional rights.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
-    <category>activism</category>
-  </item>
-  <item>
     <title>Microsoft-G42 Data Center in Kenya Raises Digital Sovereignty Concerns</title>
     <link>https://libertas.fgu.tech/posts/microsoft-g42-data-center-in-kenya-raises-digital-sovereignt</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/microsoft-g42-data-center-in-kenya-raises-digital-sovereignt</guid>
@@ -371,11 +361,11 @@
     <category>surveillance</category>
   </item>
   <item>
-    <title>Maldives Government Raids Independent News Outlet, Seizes Digital Equipment</title>
-    <link>https://libertas.fgu.tech/posts/maldives-government-raids-independent-news-outlet-seizes-dig</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/maldives-government-raids-independent-news-outlet-seizes-dig</guid>
-    <pubDate>Fri, 08 May 2026 09:01:09 GMT</pubDate>
-    <description>Maldives police raided Adhadhu News office, seizing laptops and hard drives over documentary alleging presidential misconduct, while imposing travel bans on journalists.</description>
+    <title>DRC: Secret Cyber Defense Unit Disappears Dissidents, HRW Documents Network of Detention Sites</title>
+    <link>https://libertas.fgu.tech/posts/drc-secret-cyber-defense-unit-disappears-dissidents-hrw-docu</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/drc-secret-cyber-defense-unit-disappears-dissidents-hrw-docu</guid>
+    <pubDate>Fri, 22 May 2026 09:01:17 GMT</pubDate>
+    <description>Human Rights Watch documents systematic repression in DRC where National Cyber Defense Council arbitrarily arrests activists, holding them in secret locations without charges or legal access.</description>
     <category>censorship-resistance</category>
     <category>surveillance</category>
     <category>activism</category>
@@ -840,6 +830,18 @@
     <category>comms</category>
     <category>surveillance</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>African Govts Spend $2B on AI Surveillance to Target Opposition, Not Crime</title>
+    <link>https://libertas.fgu.tech/posts/african-govts-spend-2b-on-ai-surveillance-to-target-oppositi</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/african-govts-spend-2b-on-ai-surveillance-to-target-oppositi</guid>
+    <pubDate>Fri, 22 May 2026 09:02:15 GMT</pubDate>
+    <description>11 African governments spent over $2 billion on Chinese/Israeli AI surveillance systems strategically placed in opposition areas rather than high-crime zones, creating digital panopticon to suppress dissent before it forms.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
+    <category>censorship-resistance</category>
+    <category>identity</category>
   </item>
   <item>
     <title>Congress Narrows GUARD Act, But Privacy-Invasive Age Verification Requirements Remain</title>
