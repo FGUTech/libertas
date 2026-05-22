@@ -295,28 +295,6 @@
       }
     },
     {
-      "id": "246c84cf-7e16-482a-97bf-4fcdf8559aa5",
-      "url": "https://libertas.fgu.tech/posts/eff-launches-anti-surveillance-campaign-releases-rayhunter-i",
-      "title": "EFF Launches Anti-Surveillance Campaign, Releases Rayhunter IMSI Catcher Detection Tool",
-      "summary": "EFF launches 'Claw Back' campaign against mass surveillance as Congress considers Section 702 renewal, highlighting new open-source Rayhunter tool for detecting cell-site simulators used to track activists and journalists.",
-      "content_text": "EFF launches 'Claw Back' fundraising campaign to combat what NSA whistleblower William Binney called the 'turnkey totalitarian state'\n• Congress preparing to renew Section 702 international mass surveillance program affecting millions\n• EFF released Rayhunter, open-source tool for detecting cell-site simulators (IMSI catchers) that track protesters and journalists\n• Organization suing to stop warrantless searches of Automated License Plate Reader (ALPR) databases revealing driver movements\n• EFF published 'Selling Safety' report exposing misleading marketing claims by police surveillance technology companies\n• Privacy Badger browser extension continues blocking hidden trackers used by Big Tech and data brokers\n• Campaign emphasizes removing surveillance tools from government hands rather than just changing leadership",
-      "date_published": "2026-05-08T21:01:31.215Z",
-      "date_modified": "2026-05-08T21:01:31.269Z",
-      "tags": [
-        "surveillance",
-        "privacy",
-        "activism",
-        "censorship-resistance"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 85,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/04/claw-back"
-        ]
-      }
-    },
-    {
       "id": "2ce4285a-000b-4b4a-b7c7-ae62c0c39a88",
       "url": "https://libertas.fgu.tech/posts/fbi-seeks-nationwide-real-time-license-plate-surveillance-ne",
       "title": "FBI Seeks Nationwide Real-Time License Plate Surveillance Network",
@@ -683,6 +661,28 @@
       }
     },
     {
+      "id": "6260572f-52df-4ae0-9013-a5c8bf189209",
+      "url": "https://libertas.fgu.tech/posts/cpj-files-brief-to-protect-encryption-from-nso-s-pegasus-in-",
+      "title": "CPJ Files Brief to Protect Encryption from NSO's Pegasus in WhatsApp Case",
+      "summary": "Committee to Protect Journalists and 10 civil society orgs filed amicus brief supporting permanent injunction against NSO Group to protect WhatsApp encryption from Pegasus spyware targeting journalists.",
+      "content_text": "CPJ and 10 civil society organizations filed amicus brief in U.S. Ninth Circuit Court of Appeals\n• Brief supports permanent injunction preventing NSO Group from targeting WhatsApp encryption\n• NSO previously used WhatsApp servers to deliver Pegasus spyware to 1,400+ people across 20 countries\n• Multiple journalists among confirmed targets of the surveillance campaign\n• District Court ruled in favor of WhatsApp in 2025 after 6-year legal battle\n• Permanent injunction issued stopping NSO from targeting WhatsApp and its users\n• NSO's appeal to U.S. Supreme Court was unsuccessful\n• Brief argues encryption protection essential for journalist safety and human rights defenders",
+      "date_published": "2026-05-22T21:02:22.107Z",
+      "date_modified": "2026-05-22T21:02:22.224Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "activism",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://cpj.org/2026/05/cpj-partners-file-amicus-brief-to-project-encryption-from-pegasus-spyware/"
+        ]
+      }
+    },
+    {
       "id": "682c432c-d3e8-4a52-a6be-bf436b8895d1",
       "url": "https://libertas.fgu.tech/posts/drc-secret-cyber-defense-unit-disappears-dissidents-hrw-docu",
       "title": "DRC: Secret Cyber Defense Unit Disappears Dissidents, HRW Documents Network of Detention Sites",
@@ -940,28 +940,6 @@
         "credibility_score": 85,
         "citations": [
           "https://www.eff.org/deeplinks/2026/05/microsoft-took-step-toward-human-rights-accountability-google-and-amazon-and"
-        ]
-      }
-    },
-    {
-      "id": "885c5de5-2a4e-4d9d-b828-fddb4a476cc4",
-      "url": "https://libertas.fgu.tech/posts/guard-act-would-end-anonymous-internet-use-via-mandatory-id-",
-      "title": "GUARD Act Would End Anonymous Internet Use via Mandatory ID Checks for AI Tools",
-      "summary": "The GUARD Act, framed as AI safety for minors, would require government ID verification for all users of AI-powered tools including search engines, effectively ending anonymous internet use.",
-      "content_text": "Congress moving quickly on GUARD Act with key vote expected this week\n• Bill requires age verification using government IDs or biometric data for all AI-powered tools\n• Broad definitions would cover search engines, homework help tools, and customer service chatbots\n• Anyone under 18 would be blocked from 'AI companions' including basic conversational interfaces\n• Companies face $100,000 per violation penalties, incentivizing overblocking\n• Creates surveillance infrastructure requiring repeated identity verification\n• Would eliminate pseudonymous and anonymous use of common online tools\n• Smaller developers unable to absorb compliance costs would be pushed out",
-      "date_published": "2026-05-08T21:01:31.216Z",
-      "date_modified": "2026-05-08T21:01:31.269Z",
-      "tags": [
-        "privacy",
-        "surveillance",
-        "censorship-resistance",
-        "identity"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 85,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/04/guard-act-isnt-targeting-dangerous-ai-its-blocking-everyday-internet-use"
         ]
       }
     },
@@ -1456,28 +1434,6 @@
         "credibility_score": 95,
         "citations": [
           "https://www.eff.org/deeplinks/2026/05/congress-narrowed-guard-act-serious-problems-remain"
-        ]
-      }
-    },
-    {
-      "id": "e05dba53-982b-44a6-88d4-c8b7a0a6e209",
-      "url": "https://libertas.fgu.tech/posts/major-financial-firms-block-donations-to-splc-after-doj-indi",
-      "title": "Major Financial Firms Block Donations to SPLC After DOJ Indictment",
-      "summary": "Fidelity, Vanguard, and Schwab are blocking donor-advised fund donations to SPLC following Trump DOJ indictment, demonstrating financial censorship without due process.",
-      "content_text": "Fidelity Charitable, Vanguard Charitable, and DAFgiving360 (Schwab) blocking donations to Southern Poverty Law Center\n• Financial blockade follows Trump DOJ indictment that House whistleblowers say was 'rushed through' despite weak case\n• Donor-advised funds (DAFs) represent critical funding pipeline for nonprofits, managed by major financial firms\n• Pattern matches WikiLeaks 2010 financial blockade by Visa/Mastercard that eliminated 95% of revenue\n• No evidence of government pressure on financial firms - decisions based on internal terms of service\n• San Francisco Foundation continues SPLC funding, citing values over 'political winds'\n• Demonstrates how financial intermediaries can silence organizations without court proceedings\n• Trump previously signed executive order against 'politicized debanking' but SPLC now facing same treatment",
-      "date_published": "2026-05-08T21:03:05.897Z",
-      "date_modified": "2026-05-08T21:03:06.037Z",
-      "tags": [
-        "censorship-resistance",
-        "surveillance",
-        "activism",
-        "sovereignty"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 88,
-        "credibility_score": 85,
-        "citations": [
-          "https://theintercept.com/2026/05/08/splc-donations-banks-censorship/"
         ]
       }
     },

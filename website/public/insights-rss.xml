@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 22 May 2026 15:01:50 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 22 May 2026 21:02:22 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -151,17 +151,6 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
-  </item>
-  <item>
-    <title>EFF Launches Anti-Surveillance Campaign, Releases Rayhunter IMSI Catcher Detection Tool</title>
-    <link>https://libertas.fgu.tech/posts/eff-launches-anti-surveillance-campaign-releases-rayhunter-i</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-launches-anti-surveillance-campaign-releases-rayhunter-i</guid>
-    <pubDate>Fri, 08 May 2026 21:01:31 GMT</pubDate>
-    <description>EFF launches &apos;Claw Back&apos; campaign against mass surveillance as Congress considers Section 702 renewal, highlighting new open-source Rayhunter tool for detecting cell-site simulators used to track activists and journalists.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
-    <category>activism</category>
-    <category>censorship-resistance</category>
   </item>
   <item>
     <title>FBI Seeks Nationwide Real-Time License Plate Surveillance Network</title>
@@ -341,6 +330,17 @@
     <category>activism</category>
   </item>
   <item>
+    <title>CPJ Files Brief to Protect Encryption from NSO&apos;s Pegasus in WhatsApp Case</title>
+    <link>https://libertas.fgu.tech/posts/cpj-files-brief-to-protect-encryption-from-nso-s-pegasus-in-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/cpj-files-brief-to-protect-encryption-from-nso-s-pegasus-in-</guid>
+    <pubDate>Fri, 22 May 2026 21:02:22 GMT</pubDate>
+    <description>Committee to Protect Journalists and 10 civil society orgs filed amicus brief supporting permanent injunction against NSO Group to protect WhatsApp encryption from Pegasus spyware targeting journalists.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>censorship-resistance</category>
+  </item>
+  <item>
     <title>DRC: Secret Cyber Defense Unit Disappears Dissidents, HRW Documents Network of Detention Sites</title>
     <link>https://libertas.fgu.tech/posts/drc-secret-cyber-defense-unit-disappears-dissidents-hrw-docu</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/drc-secret-cyber-defense-unit-disappears-dissidents-hrw-docu</guid>
@@ -468,17 +468,6 @@
     <category>privacy</category>
     <category>activism</category>
     <category>sovereignty</category>
-  </item>
-  <item>
-    <title>GUARD Act Would End Anonymous Internet Use via Mandatory ID Checks for AI Tools</title>
-    <link>https://libertas.fgu.tech/posts/guard-act-would-end-anonymous-internet-use-via-mandatory-id-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/guard-act-would-end-anonymous-internet-use-via-mandatory-id-</guid>
-    <pubDate>Fri, 08 May 2026 21:01:31 GMT</pubDate>
-    <description>The GUARD Act, framed as AI safety for minors, would require government ID verification for all users of AI-powered tools including search engines, effectively ending anonymous internet use.</description>
-    <category>privacy</category>
-    <category>surveillance</category>
-    <category>censorship-resistance</category>
-    <category>identity</category>
   </item>
   <item>
     <title>Retired Cop Wins $835K Settlement After 37-Day Jail for Trump Meme</title>
@@ -717,17 +706,6 @@
     <category>privacy</category>
     <category>surveillance</category>
     <category>censorship-resistance</category>
-  </item>
-  <item>
-    <title>Major Financial Firms Block Donations to SPLC After DOJ Indictment</title>
-    <link>https://libertas.fgu.tech/posts/major-financial-firms-block-donations-to-splc-after-doj-indi</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/major-financial-firms-block-donations-to-splc-after-doj-indi</guid>
-    <pubDate>Fri, 08 May 2026 21:03:05 GMT</pubDate>
-    <description>Fidelity, Vanguard, and Schwab are blocking donor-advised fund donations to SPLC following Trump DOJ indictment, demonstrating financial censorship without due process.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>sovereignty</category>
   </item>
   <item>
     <title>Senate Confirms Bitcoin-Friendly Kevin Warsh to Fed Board</title>
