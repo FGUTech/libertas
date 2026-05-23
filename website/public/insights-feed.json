@@ -7,28 +7,6 @@
   "language": "en-US",
   "items": [
     {
-      "id": "059f7194-9b1c-4894-8ed0-cc87cca0b086",
-      "url": "https://libertas.fgu.tech/posts/bukele-admin-escalates-financial-censorship-against-el-faro-",
-      "title": "Bukele Admin Escalates Financial Censorship Against El Faro, Freezes Personal Assets",
-      "summary": "El Salvador's government froze personal bank accounts and property of El Faro shareholders, escalating financial warfare against independent media that previously faced Pegasus surveillance.",
-      "content_text": "Salvadoran government placed 'preventative annotations' on El Faro shareholders' personal assets Feb-Apr 2026\n• Measures target bank accounts and real estate of Trípode S.A. de C.V. partners under alleged tax debt claims\n• Escalation follows years of harassment including Pegasus spyware surveillance and forced operational exile\n• El Faro relocated administrative operations to Costa Rica in 2023 citing lack of judicial independence\n• Asset freezes coincide with release of 'The Deal' documentary exposing alleged govt-gang pacts\n• Timing also follows deputy editor's testimony before U.S. Congress Human Rights Commission\n• Demonstrates evolution from digital surveillance to financial censorship targeting media ownership structures",
-      "date_published": "2026-05-09T03:02:44.710Z",
-      "date_modified": "2026-05-09T03:02:44.834Z",
-      "tags": [
-        "surveillance",
-        "censorship-resistance",
-        "activism",
-        "sovereignty"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 88,
-        "citations": [
-          "https://cpj.org/2026/05/bukele-administration-freezes-salvadoran-news-outlets-assets-in-latest-act-of-retaliation/"
-        ]
-      }
-    },
-    {
       "id": "074ccd11-dbd4-4b96-8680-ef1d020aa155",
       "url": "https://libertas.fgu.tech/posts/tunisia-prosecutes-refugee-aid-workers-under-travel-document",
       "title": "Tunisia Prosecutes Refugee Aid Workers Under Travel Document Laws",
@@ -354,27 +332,6 @@
         "credibility_score": 85,
         "citations": [
           "https://www.eff.org/deeplinks/2026/05/your-privacy-shouldnt-be-corporate-decision"
-        ]
-      }
-    },
-    {
-      "id": "33a23f28-b813-49aa-8580-915ec57327a7",
-      "url": "https://libertas.fgu.tech/posts/microsoft-g42-data-center-in-kenya-raises-digital-sovereignt",
-      "title": "Microsoft-G42 Data Center in Kenya Raises Digital Sovereignty Concerns",
-      "summary": "Microsoft and G42's $1B data center project in Kenya mirrors historical exploitation patterns, raising concerns about foreign control of national infrastructure, tax avoidance, and digital colonialism.",
-      "content_text": "Microsoft and G42 building $1B data center in Naivasha, Kenya on KenGen land\n• Project parallels 1980s greenhouse boom that led to worker exploitation and environmental issues\n• Foreign entities (US-based Microsoft, UAE-based G42) will control sensitive national data infrastructure\n• Kenya-UAE Double Taxation Agreement allows profit shifting from 30% Kenyan tax to 9% UAE rate\n• Questions raised about land rates, water/electricity burden on taxpayers vs corporations\n• Location at Olkaria geothermal fields provides renewable energy but concentrates infrastructure control\n• Activists warn of potential digital colonialism and erosion of economic sovereignty",
-      "date_published": "2026-05-08T21:03:26.314Z",
-      "date_modified": "2026-05-08T21:03:26.469Z",
-      "tags": [
-        "sovereignty",
-        "privacy",
-        "surveillance"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 72,
-        "credibility_score": 85,
-        "citations": [
-          "https://globalvoices.org/2026/05/08/from-blooms-to-bytes-will-kenyas-data-center-boom-repeat-the-greenhouse-effect/"
         ]
       }
     },
@@ -1160,6 +1117,29 @@
       }
     },
     {
+      "id": "b1dfcba9-4f82-46ac-8ab3-0ba0804cc1c9",
+      "url": "https://libertas.fgu.tech/posts/binance-denies-wsj-report-on-850m-iran-linked-transactions",
+      "title": "Binance Denies WSJ Report on $850M Iran-Linked Transactions",
+      "summary": "Binance CEO Richard Teng denied Wall Street Journal allegations that $850 million in Iran-linked transactions flowed through the exchange to the IRGC.",
+      "content_text": "Wall Street Journal reported $850 million in Iran-linked transactions through Binance\n• Transactions allegedly connected to Iran's Islamic Revolutionary Guard Corps (IRGC)\n• Binance CEO Richard Teng publicly denied the allegations\n• Highlights ongoing tensions between crypto exchanges and sanctions compliance\n• Iran faces extensive financial sanctions, making crypto a potential workaround\n• Unverified claims - conflicting statements between WSJ reporting and Binance denial\n• Demonstrates continued scrutiny of crypto's role in sanctions circumvention",
+      "date_published": "2026-05-23T15:01:13.520Z",
+      "date_modified": "2026-05-23T15:01:13.597Z",
+      "tags": [
+        "bitcoin",
+        "payments",
+        "censorship-resistance",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 60,
+        "citations": [
+          "https://cointelegraph.com/news/binance-denies-new-wsj-report-alleging-850m-in-iran-linked-transactions",
+          "https://cointelegraph.com/news/binance-denies-new-wsj-report-alleging-850m-in-iran-linked-transactions?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+        ]
+      }
+    },
+    {
       "id": "b4220af4-9cad-42f2-8fce-aa44702b9d88",
       "url": "https://libertas.fgu.tech/posts/dr-congo-escalates-repression-of-journalists-activists-amid-",
       "title": "DR Congo Escalates Repression of Journalists, Activists Amid Constitutional Crisis",
@@ -1413,27 +1393,6 @@
         "credibility_score": 95,
         "citations": [
           "https://www.hrw.org/news/2026/05/11/tunisia-end-abusive-prosecution-of-refugee-aid-workers"
-        ]
-      }
-    },
-    {
-      "id": "d78b7215-5f52-4fb2-adaf-3efc7c38e210",
-      "url": "https://libertas.fgu.tech/posts/eff-revised-guard-act-still-threatens-privacy-despite-narrow",
-      "title": "EFF: Revised GUARD Act Still Threatens Privacy Despite Narrowed Scope",
-      "summary": "Congress narrowed the GUARD Act to focus on AI companions rather than all AI systems, but EFF warns mandatory age verification still creates serious privacy, speech, and access concerns.",
-      "content_text": "GUARD Act revised to target 'AI companions' instead of broadly applying to all AI-powered tools\n• Bill still requires identity-linked age verification for AI companion services\n• Penalties increased dramatically from $100K to $250K per violation\n• Age verification systems exclude millions without government ID or bank accounts\n• Vague definitions could still capture customer service chatbots and other conversational AI\n• Creates incentives for developers to over-restrict access or avoid building certain tools\n• EFF maintains opposition, citing ongoing privacy, speech, and security concerns",
-      "date_published": "2026-05-09T03:01:14.991Z",
-      "date_modified": "2026-05-09T03:01:15.035Z",
-      "tags": [
-        "privacy",
-        "surveillance",
-        "censorship-resistance"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/05/congress-narrowed-guard-act-serious-problems-remain"
         ]
       }
     },

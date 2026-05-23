@@ -5,20 +5,9 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 22 May 2026 21:02:22 GMT</lastBuildDate>
+  <lastBuildDate>Sat, 23 May 2026 15:01:13 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
-  <item>
-    <title>Bukele Admin Escalates Financial Censorship Against El Faro, Freezes Personal Assets</title>
-    <link>https://libertas.fgu.tech/posts/bukele-admin-escalates-financial-censorship-against-el-faro-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/bukele-admin-escalates-financial-censorship-against-el-faro-</guid>
-    <pubDate>Sat, 09 May 2026 03:02:44 GMT</pubDate>
-    <description>El Salvador&apos;s government froze personal bank accounts and property of El Faro shareholders, escalating financial warfare against independent media that previously faced Pegasus surveillance.</description>
-    <category>surveillance</category>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-    <category>sovereignty</category>
-  </item>
   <item>
     <title>Tunisia Prosecutes Refugee Aid Workers Under Travel Document Laws</title>
     <link>https://libertas.fgu.tech/posts/tunisia-prosecutes-refugee-aid-workers-under-travel-document</link>
@@ -181,16 +170,6 @@
     <category>privacy</category>
     <category>surveillance</category>
     <category>activism</category>
-  </item>
-  <item>
-    <title>Microsoft-G42 Data Center in Kenya Raises Digital Sovereignty Concerns</title>
-    <link>https://libertas.fgu.tech/posts/microsoft-g42-data-center-in-kenya-raises-digital-sovereignt</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/microsoft-g42-data-center-in-kenya-raises-digital-sovereignt</guid>
-    <pubDate>Fri, 08 May 2026 21:03:26 GMT</pubDate>
-    <description>Microsoft and G42&apos;s $1B data center project in Kenya mirrors historical exploitation patterns, raising concerns about foreign control of national infrastructure, tax avoidance, and digital colonialism.</description>
-    <category>sovereignty</category>
-    <category>privacy</category>
-    <category>surveillance</category>
   </item>
   <item>
     <title>El Salvador Detains Anti-Corruption Lawyer for One Year, Triggers Mass Exodus of Rights Groups</title>
@@ -574,6 +553,17 @@
     <category>bitcoin</category>
   </item>
   <item>
+    <title>Binance Denies WSJ Report on $850M Iran-Linked Transactions</title>
+    <link>https://libertas.fgu.tech/posts/binance-denies-wsj-report-on-850m-iran-linked-transactions</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/binance-denies-wsj-report-on-850m-iran-linked-transactions</guid>
+    <pubDate>Sat, 23 May 2026 15:01:13 GMT</pubDate>
+    <description>Binance CEO Richard Teng denied Wall Street Journal allegations that $850 million in Iran-linked transactions flowed through the exchange to the IRGC.</description>
+    <category>bitcoin</category>
+    <category>payments</category>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+  </item>
+  <item>
     <title>DR Congo Escalates Repression of Journalists, Activists Amid Constitutional Crisis</title>
     <link>https://libertas.fgu.tech/posts/dr-congo-escalates-repression-of-journalists-activists-amid-</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/dr-congo-escalates-repression-of-journalists-activists-amid-</guid>
@@ -696,16 +686,6 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>sovereignty</category>
-  </item>
-  <item>
-    <title>EFF: Revised GUARD Act Still Threatens Privacy Despite Narrowed Scope</title>
-    <link>https://libertas.fgu.tech/posts/eff-revised-guard-act-still-threatens-privacy-despite-narrow</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-revised-guard-act-still-threatens-privacy-despite-narrow</guid>
-    <pubDate>Sat, 09 May 2026 03:01:14 GMT</pubDate>
-    <description>Congress narrowed the GUARD Act to focus on AI companions rather than all AI systems, but EFF warns mandatory age verification still creates serious privacy, speech, and access concerns.</description>
-    <category>privacy</category>
-    <category>surveillance</category>
-    <category>censorship-resistance</category>
   </item>
   <item>
     <title>Senate Confirms Bitcoin-Friendly Kevin Warsh to Fed Board</title>
