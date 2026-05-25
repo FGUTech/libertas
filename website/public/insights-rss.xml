@@ -5,19 +5,9 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Mon, 25 May 2026 09:01:16 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 25 May 2026 21:01:25 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
-  <item>
-    <title>Tunisia Prosecutes Refugee Aid Workers Under Travel Document Laws</title>
-    <link>https://libertas.fgu.tech/posts/tunisia-prosecutes-refugee-aid-workers-under-travel-document</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/tunisia-prosecutes-refugee-aid-workers-under-travel-document</guid>
-    <pubDate>Mon, 11 May 2026 15:01:53 GMT</pubDate>
-    <description>Tunisia sentenced two refugee aid workers to 2 years prison for providing accommodation to asylum seekers, part of broader crackdown shutting down civil society groups.</description>
-    <category>activism</category>
-    <category>surveillance</category>
-    <category>censorship-resistance</category>
-  </item>
   <item>
     <title>Bitcoin and Freedom Tech Hub Launches in Nairobi with Infrastructure Focus</title>
     <link>https://libertas.fgu.tech/posts/bitcoin-and-freedom-tech-hub-launches-in-nairobi-with-infras</link>
@@ -86,17 +76,6 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>comms</category>
-    <category>privacy</category>
-  </item>
-  <item>
-    <title>RightsCon 2026 Canceled After Chinese Government Pressure on Zambia</title>
-    <link>https://libertas.fgu.tech/posts/rightscon-2026-canceled-after-chinese-government-pressure-on</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/rightscon-2026-canceled-after-chinese-government-pressure-on</guid>
-    <pubDate>Mon, 11 May 2026 21:01:18 GMT</pubDate>
-    <description>The world&apos;s largest digital rights conference was abruptly canceled in Zambia after Chinese government pressure to exclude Taiwanese participants and moderate discussions, reflecting growing transnational repression of civil society.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
     <category>privacy</category>
   </item>
   <item>
@@ -299,16 +278,6 @@
     <category>payments</category>
   </item>
   <item>
-    <title>EFF Challenges Warrantless Border Device Searches in Fourth Circuit</title>
-    <link>https://libertas.fgu.tech/posts/eff-challenges-warrantless-border-device-searches-in-fourth-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-challenges-warrantless-border-device-searches-in-fourth-</guid>
-    <pubDate>Mon, 11 May 2026 21:01:18 GMT</pubDate>
-    <description>EFF filed amicus brief in U.S. v. Belmonte Cardozo urging Fourth Circuit to require warrants for all electronic device searches at borders, as CBP conducted 55,318 warrantless device searches in FY2025.</description>
-    <category>privacy</category>
-    <category>surveillance</category>
-    <category>activism</category>
-  </item>
-  <item>
     <title>CPJ Files Brief to Protect Encryption from NSO&apos;s Pegasus in WhatsApp Case</title>
     <link>https://libertas.fgu.tech/posts/cpj-files-brief-to-protect-encryption-from-nso-s-pegasus-in-</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/cpj-files-brief-to-protect-encryption-from-nso-s-pegasus-in-</guid>
@@ -353,17 +322,6 @@
     <category>privacy</category>
   </item>
   <item>
-    <title>Canada&apos;s Bill C-22 Mandates Surveillance Backdoors, Threatens Encryption</title>
-    <link>https://libertas.fgu.tech/posts/canada-s-bill-c-22-mandates-surveillance-backdoors-threatens</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/canada-s-bill-c-22-mandates-surveillance-backdoors-threatens</guid>
-    <pubDate>Mon, 11 May 2026 21:01:18 GMT</pubDate>
-    <description>Canada&apos;s Bill C-22 would force tech companies to build surveillance backdoors, retain metadata for a year, and could ban strong encryption despite vague &apos;systemic vulnerability&apos; exceptions.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-  </item>
-  <item>
     <title>CPJ Warns Journalists of Border Surveillance, Device Seizures at 2026 FIFA World Cup</title>
     <link>https://libertas.fgu.tech/posts/cpj-warns-journalists-of-border-surveillance-device-seizures</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/cpj-warns-journalists-of-border-surveillance-device-seizures</guid>
@@ -373,6 +331,16 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>Tunisia Escalates Media Crackdown with New Journalist Convictions</title>
+    <link>https://libertas.fgu.tech/posts/tunisia-escalates-media-crackdown-with-new-journalist-convic</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/tunisia-escalates-media-crackdown-with-new-journalist-convic</guid>
+    <pubDate>Mon, 25 May 2026 21:01:25 GMT</pubDate>
+    <description>Tunisia convicted lawyer-commentator Sonia Dahmani under cybercrime law for criticizing prison conditions, part of systematic repression targeting journalists and blocking protest coverage.</description>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>surveillance</category>
   </item>
   <item>
     <title>EFF Highlights End-to-End Encryption Advances in Apple-Android RCS Messaging</title>
@@ -478,6 +446,16 @@
     <category>censorship-resistance</category>
     <category>surveillance</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Canada&apos;s Bill C-22 Could Enable US Real-Time Surveillance via CLOUD Act Agreement</title>
+    <link>https://libertas.fgu.tech/posts/canada-s-bill-c-22-could-enable-us-real-time-surveillance-vi</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/canada-s-bill-c-22-could-enable-us-real-time-surveillance-vi</guid>
+    <pubDate>Mon, 25 May 2026 21:01:05 GMT</pubDate>
+    <description>Canada&apos;s proposed Bill C-22 would compel tech providers to build surveillance capabilities and enable a CLOUD Act agreement giving US agencies like the FBI power for real-time surveillance including wiretaps in Canada.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>censorship-resistance</category>
   </item>
   <item>
     <title>Russia Drafts &apos;Civic Death&apos; Law to Cut Digital Services for Exiled Critics</title>
@@ -721,15 +699,6 @@
     <category>sovereignty</category>
   </item>
   <item>
-    <title>US Senate Banking Committee to Vote on Crypto Clarity Act Despite Opposition</title>
-    <link>https://libertas.fgu.tech/posts/us-senate-banking-committee-to-vote-on-crypto-clarity-act-de</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/us-senate-banking-committee-to-vote-on-crypto-clarity-act-de</guid>
-    <pubDate>Mon, 11 May 2026 21:01:50 GMT</pubDate>
-    <description>Senate Banking Committee will vote Thursday on crypto regulation bill facing pushback from banks and Democrats, potentially impacting financial sovereignty landscape.</description>
-    <category>bitcoin</category>
-    <category>sovereignty</category>
-  </item>
-  <item>
     <title>CPJ Urges Trump to Secure Jimmy Lai&apos;s Release in Xi Meeting</title>
     <link>https://libertas.fgu.tech/posts/cpj-urges-trump-to-secure-jimmy-lai-s-release-in-xi-meeting</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/cpj-urges-trump-to-secure-jimmy-lai-s-release-in-xi-meeting</guid>
@@ -825,17 +794,6 @@
     <category>activism</category>
     <category>censorship-resistance</category>
     <category>identity</category>
-  </item>
-  <item>
-    <title>Congress Narrows GUARD Act, But Privacy-Invasive Age Verification Requirements Remain</title>
-    <link>https://libertas.fgu.tech/posts/congress-narrows-guard-act-but-privacy-invasive-age-verifica</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/congress-narrows-guard-act-but-privacy-invasive-age-verifica</guid>
-    <pubDate>Mon, 11 May 2026 21:01:18 GMT</pubDate>
-    <description>Congress revised the GUARD Act to target AI companions rather than all AI systems, but still mandates identity-linked age verification and increases penalties to $250K per violation.</description>
-    <category>privacy</category>
-    <category>censorship-resistance</category>
-    <category>identity</category>
-    <category>surveillance</category>
   </item>
 </channel>
 </rss>
