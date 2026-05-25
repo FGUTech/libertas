@@ -966,6 +966,29 @@
       }
     },
     {
+      "id": "981dc36a-83ef-4a12-8b13-a723d3c9b782",
+      "url": "https://libertas.fgu.tech/posts/russia-drafts-civic-death-law-to-cut-digital-services-for-ex",
+      "title": "Russia Drafts 'Civic Death' Law to Cut Digital Services for Exiled Critics",
+      "summary": "Russia's parliament reviews draft law denying exiled critics access to digital government services, banking, and consular support - creating urgent need for sovereign identity solutions.",
+      "content_text": "Russian State Duma scheduled to review law targeting exiled critics on May 26\n• Draft targets critics convicted of 'discrediting armed forces,' foreign agent violations, or 'disrespecting' the state\n• Exiled Russians would lose access to digital government services, passport renewal, and notary services\n• Bank accounts, assets, and online banking in Russia would be frozen\n• Officials explicitly aim to make exiles' lives 'not better than in prison'\n• Belarus already implements similar passport restrictions on overseas nationals\n• Demonstrates urgent need for self-sovereign identity and censorship-resistant financial systems",
+      "date_published": "2026-05-25T09:01:16.666Z",
+      "date_modified": "2026-05-25T09:01:16.766Z",
+      "tags": [
+        "identity",
+        "surveillance",
+        "censorship-resistance",
+        "sovereignty",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.hrw.org/news/2026/05/25/russia-plans-civic-death-law-for-exiled-critics"
+        ]
+      }
+    },
+    {
       "id": "9da9f477-2a2a-45d1-af96-af257e1e07e2",
       "url": "https://libertas.fgu.tech/posts/philippine-court-dismisses-terror-financing-charges-against-",
       "title": "Philippine Court Dismisses Terror Financing Charges Against NGO; Bank Accounts Remain Frozen",
@@ -1397,6 +1420,28 @@
       }
     },
     {
+      "id": "e0e849b4-8333-4c77-98e0-f0f4374e8f9b",
+      "url": "https://libertas.fgu.tech/posts/drc-drones-target-radio-station-in-escalation-of-tech-enable",
+      "title": "DRC Drones Target Radio Station in Escalation of Tech-Enabled Media Suppression",
+      "summary": "Military drones struck Radio Tuungane twice in DRC's South Kivu province, with militia threatening journalists over coverage of atrocities. Pattern shows weaponization of surveillance tech against independent media.",
+      "content_text": "Radio Tuungane in DRC's Minembwe commune hit by drone strikes on March 3 and 26, 2026\n• Government-allied Wazalendo militia made calls threatening station over atrocity reporting\n• Strikes damaged solar panels, batteries, and broadcasting equipment but staff escaped\n• Over 60 journalists and media workers killed by drones globally since 2023 [CPJ]\n• Journalists using YouTube-based platforms like Mukirambi TV1 to bypass traditional media constraints\n• Multiple reporters in South Kivu forced into hiding due to surveillance and death threats\n• National Intelligence Agency (ANR) summoning journalists for 'intelligence purposes'\n• Demonstrates escalation from digital censorship to kinetic attacks on media infrastructure",
+      "date_published": "2026-05-25T09:00:59.366Z",
+      "date_modified": "2026-05-25T09:00:59.491Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "comms"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 88,
+        "citations": [
+          "https://cpj.org/2026/05/drones-strike-radio-station-in-rebel-held-drc-with-threat-to-kill-next-time/"
+        ]
+      }
+    },
+    {
       "id": "e3762de1-4af5-4fa7-a1a1-5e0b370b612f",
       "url": "https://libertas.fgu.tech/posts/senate-confirms-bitcoin-friendly-kevin-warsh-to-fed-board",
       "title": "Senate Confirms Bitcoin-Friendly Kevin Warsh to Fed Board",
@@ -1520,6 +1565,28 @@
         "credibility_score": 85,
         "citations": [
           "https://bitcoinmagazine.com/news/south-carolina-enacts-bitcoin-friendly-law"
+        ]
+      }
+    },
+    {
+      "id": "f59973cf-d464-4dd2-888d-17a8128a17a3",
+      "url": "https://libertas.fgu.tech/posts/drc-uses-cyber-defense-council-for-secret-detention-of-dissi",
+      "title": "DRC Uses Cyber Defense Council for Secret Detention of Dissidents",
+      "summary": "Congo's National Cyber Defense Council is arbitrarily arresting activists and holding them in secret locations without charges, marking return to Kabila-era repression tactics.",
+      "content_text": "Human Rights Watch documented cases where National Cyber Defense Council (CNC) forcibly disappeared dissidents\n• Victims held in secret detention sites without formal charges or lawyer access\n• CNC operates as presidential agency outside judicial oversight\n• Families allowed weekly visits while blindfolded to unknown locations\n• Government claims detainees held in 'villas' pending investigation completion\n• Crackdown targets journalists, activists, and political opposition members\n• Officials promise CNC reforms requiring judicial police presence for arrests\n• Pattern mirrors Joseph Kabila era repression methods",
+      "date_published": "2026-05-25T09:01:16.667Z",
+      "date_modified": "2026-05-25T09:01:16.766Z",
+      "tags": [
+        "surveillance",
+        "censorship-resistance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.hrw.org/news/2026/05/22/dr-congo-renewed-repression-impunity-top-rights-concerns"
         ]
       }
     },

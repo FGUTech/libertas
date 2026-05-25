@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Mon, 25 May 2026 03:00:53 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 25 May 2026 09:01:16 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -480,6 +480,18 @@
     <category>activism</category>
   </item>
   <item>
+    <title>Russia Drafts &apos;Civic Death&apos; Law to Cut Digital Services for Exiled Critics</title>
+    <link>https://libertas.fgu.tech/posts/russia-drafts-civic-death-law-to-cut-digital-services-for-ex</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/russia-drafts-civic-death-law-to-cut-digital-services-for-ex</guid>
+    <pubDate>Mon, 25 May 2026 09:01:16 GMT</pubDate>
+    <description>Russia&apos;s parliament reviews draft law denying exiled critics access to digital government services, banking, and consular support - creating urgent need for sovereign identity solutions.</description>
+    <category>identity</category>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>sovereignty</category>
+    <category>activism</category>
+  </item>
+  <item>
     <title>Philippine Court Dismisses Terror Financing Charges Against NGO; Bank Accounts Remain Frozen</title>
     <link>https://libertas.fgu.tech/posts/philippine-court-dismisses-terror-financing-charges-against-</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/philippine-court-dismisses-terror-financing-charges-against-</guid>
@@ -688,6 +700,17 @@
     <category>sovereignty</category>
   </item>
   <item>
+    <title>DRC Drones Target Radio Station in Escalation of Tech-Enabled Media Suppression</title>
+    <link>https://libertas.fgu.tech/posts/drc-drones-target-radio-station-in-escalation-of-tech-enable</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/drc-drones-target-radio-station-in-escalation-of-tech-enable</guid>
+    <pubDate>Mon, 25 May 2026 09:00:59 GMT</pubDate>
+    <description>Military drones struck Radio Tuungane twice in DRC&apos;s South Kivu province, with militia threatening journalists over coverage of atrocities. Pattern shows weaponization of surveillance tech against independent media.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>comms</category>
+  </item>
+  <item>
     <title>Senate Confirms Bitcoin-Friendly Kevin Warsh to Fed Board</title>
     <link>https://libertas.fgu.tech/posts/senate-confirms-bitcoin-friendly-kevin-warsh-to-fed-board</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/senate-confirms-bitcoin-friendly-kevin-warsh-to-fed-board</guid>
@@ -746,6 +769,17 @@
     <category>sovereignty</category>
     <category>privacy</category>
     <category>payments</category>
+  </item>
+  <item>
+    <title>DRC Uses Cyber Defense Council for Secret Detention of Dissidents</title>
+    <link>https://libertas.fgu.tech/posts/drc-uses-cyber-defense-council-for-secret-detention-of-dissi</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/drc-uses-cyber-defense-council-for-secret-detention-of-dissi</guid>
+    <pubDate>Mon, 25 May 2026 09:01:16 GMT</pubDate>
+    <description>Congo&apos;s National Cyber Defense Council is arbitrarily arresting activists and holding them in secret locations without charges, marking return to Kabila-era repression tactics.</description>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>privacy</category>
   </item>
   <item>
     <title>Freedom House Links Iran&apos;s Internet Blackouts to Historical Resistance Patterns</title>
