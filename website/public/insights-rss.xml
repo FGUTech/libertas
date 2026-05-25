@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Sat, 23 May 2026 15:01:13 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 25 May 2026 03:00:53 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -100,16 +100,6 @@
     <category>privacy</category>
   </item>
   <item>
-    <title>DOJ Criminalizes FOIA Evasion in First-Ever Case Against Retired NIH Scientist</title>
-    <link>https://libertas.fgu.tech/posts/doj-criminalizes-foia-evasion-in-first-ever-case-against-ret</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/doj-criminalizes-foia-evasion-in-first-ever-case-against-ret</guid>
-    <pubDate>Sat, 09 May 2026 15:02:00 GMT</pubDate>
-    <description>Trump DOJ charged retired NIH scientist David Morens with felony crimes for using personal email to evade FOIA requests, marking unprecedented criminalization of transparency law violations.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
-    <category>activism</category>
-  </item>
-  <item>
     <title>EFF Releases Guide to Combat Digital Surveillance Abuses in the Americas</title>
     <link>https://libertas.fgu.tech/posts/eff-releases-guide-to-combat-digital-surveillance-abuses-in-</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-releases-guide-to-combat-digital-surveillance-abuses-in-</guid>
@@ -201,6 +191,16 @@
     <category>censorship-resistance</category>
     <category>privacy</category>
     <category>surveillance</category>
+  </item>
+  <item>
+    <title>Venezuelan Mother Dies After 16-Month Search for Secretly Dead Political Prisoner Son</title>
+    <link>https://libertas.fgu.tech/posts/venezuelan-mother-dies-after-16-month-search-for-secretly-de</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/venezuelan-mother-dies-after-16-month-search-for-secretly-de</guid>
+    <pubDate>Mon, 25 May 2026 03:00:53 GMT</pubDate>
+    <description>Carmen Navas, 82, died after learning her son Víctor was secretly dead in state custody for 10 months while she searched for him. Case highlights Venezuela&apos;s enforced disappearances of political prisoners.</description>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>censorship-resistance</category>
   </item>
   <item>
     <title>EFF Campaigns for Saudi Wikipedian Imprisoned 14 Years for Human Rights Edits</title>

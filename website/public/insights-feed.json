@@ -186,27 +186,6 @@
       }
     },
     {
-      "id": "16936a1a-c084-4192-a2dc-dd02c5371a8f",
-      "url": "https://libertas.fgu.tech/posts/doj-criminalizes-foia-evasion-in-first-ever-case-against-ret",
-      "title": "DOJ Criminalizes FOIA Evasion in First-Ever Case Against Retired NIH Scientist",
-      "summary": "Trump DOJ charged retired NIH scientist David Morens with felony crimes for using personal email to evade FOIA requests, marking unprecedented criminalization of transparency law violations.",
-      "content_text": "David Morens, 78, arrested and charged with up to 45 years in prison for allegedly evading FOIA using personal Gmail accounts\n• Former NIAID senior adviser reportedly deleted emails and wrote about making records 'disappear' before FOIA searches\n• Justice Department historically treated FOIA violations as civil matters, not criminal - this represents major precedent shift\n• Requests came from Heritage Foundation, Judicial Watch, and U.S. Right to Know regarding Covid research communications\n• Selective enforcement concern: unclear if same charges would apply to violations involving progressive requesters\n• Broader context: Trump admin has gutted FOIA offices, removed public health data from websites, fired FOIA officials\n• HHS Secretary RFK Jr. has hollowed out department FOIA offices, with 1,100+ backlogged requests at Morens' former bureau\n• Creates dangerous precedent where FOIA compliance may depend on political alignment of requesters",
-      "date_published": "2026-05-09T15:02:00.819Z",
-      "date_modified": "2026-05-09T15:02:01.017Z",
-      "tags": [
-        "surveillance",
-        "privacy",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 85,
-        "citations": [
-          "https://theintercept.com/2026/05/09/david-morens-foia-arrest-trump/"
-        ]
-      }
-    },
-    {
       "id": "1b8d2cad-fd55-4d4e-a5a6-d9eec31fa5dc",
       "url": "https://libertas.fgu.tech/posts/eff-releases-guide-to-combat-digital-surveillance-abuses-in-",
       "title": "EFF Releases Guide to Combat Digital Surveillance Abuses in the Americas",
@@ -396,6 +375,27 @@
         "credibility_score": 85,
         "citations": [
           "https://www.eff.org/deeplinks/2026/05/science-not-settled-how-weak-evidence-fueling-national-push-ban-social-media-youth"
+        ]
+      }
+    },
+    {
+      "id": "40f1dd53-8f1f-48c3-bb0a-4f608276112a",
+      "url": "https://libertas.fgu.tech/posts/venezuelan-mother-dies-after-16-month-search-for-secretly-de",
+      "title": "Venezuelan Mother Dies After 16-Month Search for Secretly Dead Political Prisoner Son",
+      "summary": "Carmen Navas, 82, died after learning her son Víctor was secretly dead in state custody for 10 months while she searched for him. Case highlights Venezuela's enforced disappearances of political prisoners.",
+      "content_text": "Carmen Teresa Navas, 82, died May 17, 2026, days after learning her son Víctor Hugo Quero Navas died in state custody July 2025\n• Víctor was detained January 2025 on terrorism charges, classified as forcibly disappeared political prisoner by Foro Penal NGO\n• Navas spent 16 months searching courthouses, prisons, and attending protests while authorities denied having her son\n• State buried Víctor in mass grave claiming 'no family visits requested' while concealing his death from his mother\n• Tribunal denied Víctor amnesty in May 2026 - 10 months after his death - exposing systemic dysfunction\n• UN Working Group on Enforced Disappearances expressed 'grave concern' and called for independent investigation\n• At least 10 Venezuelan state institutions concealed information or misinformed authorities about the case\n• Four other mothers of disappeared political prisoners died this year without learning their children's fate\n• Over 400 political prisoners remain at risk under interim administration of Delcy Rodríguez",
+      "date_published": "2026-05-25T03:00:53.980Z",
+      "date_modified": "2026-05-25T03:00:54.125Z",
+      "tags": [
+        "surveillance",
+        "activism",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 85,
+        "citations": [
+          "https://globalvoices.org/2026/05/25/the-death-of-a-relentless-mother-reopens-the-wound-of-venezuelas-political-repression/"
         ]
       }
     },
