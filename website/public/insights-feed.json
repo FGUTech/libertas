@@ -989,6 +989,27 @@
       }
     },
     {
+      "id": "a205c188-49aa-42a5-b8f1-dba416e56e89",
+      "url": "https://libertas.fgu.tech/posts/mexican-journalists-jailed-under-new-ai-manipulation-laws-af",
+      "title": "Mexican Journalists Jailed Under New AI Manipulation Laws After Gov Corruption Coverage",
+      "summary": "Mexican journalists arrested on charges of 'illegal use of AI' after reporting on governor corruption video that official claimed was deepfaked, highlighting weaponization of AI laws against press.",
+      "content_text": "Journalists Eréndira Reyes and Alejandra Hermosillo arrested May 21 in San Luis Potosí, Mexico\n• Charged with 'deliberate and illegal manipulation of digital identity' under new AI-related laws\n• Arrests connected to Facebook video alleging Gov. Ricardo Gallardo corruption, which he claimed was AI-manipulated\n• San Luis Potosí amended penal code in 2025 to criminalize AI-manipulated images with up to 3 years prison\n• Committee to Protect Journalists calls charges 'vague' and arrests appear retaliatory for critical reporting\n• Arrest warrants reportedly exist for several other journalists on same charges\n• Both journalists remain detained at La Pila state penitentiary according to National Registry of Detentions\n• Case demonstrates how AI/deepfake laws can be weaponized to suppress journalism and dissent",
+      "date_published": "2026-05-26T03:01:24.853Z",
+      "date_modified": "2026-05-26T03:01:25.063Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 88,
+        "citations": [
+          "https://cpj.org/2026/05/journalists-in-mexican-state-of-san-luis-potosi-jailed-indicted-over-ai-related-charges/"
+        ]
+      }
+    },
+    {
       "id": "a3772463-46e1-4fd0-bd33-8736d88fb8e5",
       "url": "https://libertas.fgu.tech/posts/trump-admin-counterterrorism-strategy-targets-anti-fascist-a",
       "title": "Trump Admin Counterterrorism Strategy Targets Anti-Fascist Activists, Domestic Dissent",
@@ -1182,6 +1203,27 @@
       }
     },
     {
+      "id": "bbf75e1f-238e-4104-a49a-f40ca91d95b4",
+      "url": "https://libertas.fgu.tech/posts/116k-dark-web-exposures-found-for-major-us-media-organizatio",
+      "title": "116K Dark Web Exposures Found for Major US Media Organizations",
+      "summary": "Proton's research found over 116,000 dark web exposures tied to NY Times, Washington Post, and WSJ email addresses, including 12,000+ plaintext passwords, creating cybersecurity risks for journalists and sources.",
+      "content_text": "Proton analyzed dark web marketplaces and found 116,000+ exposures across 35,000+ email addresses from three major US media outlets\n• Leaked data includes over 12,000 plaintext passwords and 61,000+ pieces of personally identifiable information\n• Exposures primarily result from third-party breaches (LinkedIn, Adobe, Dropbox, etc.) rather than direct attacks on media companies\n• Over 2,500 email addresses were exposed ten or more times, indicating persistent vulnerability\n• Leaks create risks for targeted cyberattacks, blackmail, social engineering, and source exposure\n• US ranks 64th on World Press Freedom Index, facing growing legal and political pressure on journalists\n• Proton followed responsible disclosure, notifying affected publications before publication",
+      "date_published": "2026-05-26T03:01:51.849Z",
+      "date_modified": "2026-05-26T03:01:51.986Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "journalism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 85,
+        "citations": [
+          "https://proton.me/blog/journalist-data-leaks"
+        ]
+      }
+    },
+    {
       "id": "bfaa3ffd-2d98-414f-8229-75cdcde6c76a",
       "url": "https://libertas.fgu.tech/posts/bipartisan-amendment-would-ban-police-license-plate-tracking",
       "title": "Bipartisan Amendment Would Ban Police License Plate Tracking Nationwide",
@@ -1328,28 +1370,6 @@
         "credibility_score": 85,
         "citations": [
           "https://www.accessnow.org/press-release/meta-blocks-human-rights-accounts-from-reaching-audiences-in-saudi-arabia-and-the-uae/"
-        ]
-      }
-    },
-    {
-      "id": "d290a6f8-1993-4ede-bf98-2ec3f531cecc",
-      "url": "https://libertas.fgu.tech/posts/tails-7-7-3-emergency-release-fixes-critical-kernel-vulnerab",
-      "title": "Tails 7.7.3 Emergency Release Fixes Critical Kernel Vulnerability",
-      "summary": "Tails released emergency update fixing 'Dirty Frag' kernel vulnerability that could allow privilege escalation and user deanonymization, plus Tor Browser and client security patches.",
-      "content_text": "Emergency Tails 7.7.3 release addresses critical security vulnerabilities\n• Linux kernel updated to 6.12.86 to fix 'Dirty Frag' vulnerability\n• Dirty Frag could allow applications to gain admin privileges in Tails\n• If exploited with other vulnerabilities, could lead to full system compromise and deanonymization\n• Tor Browser updated to version 15.0.12 with security fixes\n• Tor client updated to 0.4.9.8 addressing additional vulnerabilities\n• Tails team reports no known exploitation of vulnerability in practice\n• Automatic upgrades available from Tails 7.0 or later",
-      "date_published": "2026-05-11T21:02:52.003Z",
-      "date_modified": "2026-05-11T21:02:52.118Z",
-      "tags": [
-        "privacy",
-        "censorship-resistance",
-        "comms",
-        "surveillance"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 75,
-        "credibility_score": 95,
-        "citations": [
-          "https://tails.net/news/version_7.7.3/"
         ]
       }
     },

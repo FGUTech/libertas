@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Mon, 25 May 2026 21:01:25 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 26 May 2026 03:01:51 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -492,6 +492,16 @@
     <category>censorship-resistance</category>
   </item>
   <item>
+    <title>Mexican Journalists Jailed Under New AI Manipulation Laws After Gov Corruption Coverage</title>
+    <link>https://libertas.fgu.tech/posts/mexican-journalists-jailed-under-new-ai-manipulation-laws-af</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/mexican-journalists-jailed-under-new-ai-manipulation-laws-af</guid>
+    <pubDate>Tue, 26 May 2026 03:01:24 GMT</pubDate>
+    <description>Mexican journalists arrested on charges of &apos;illegal use of AI&apos; after reporting on governor corruption video that official claimed was deepfaked, highlighting weaponization of AI laws against press.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+  </item>
+  <item>
     <title>Trump Admin Counterterrorism Strategy Targets Anti-Fascist Activists, Domestic Dissent</title>
     <link>https://libertas.fgu.tech/posts/trump-admin-counterterrorism-strategy-targets-anti-fascist-a</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/trump-admin-counterterrorism-strategy-targets-anti-fascist-a</guid>
@@ -584,6 +594,16 @@
     <category>activism</category>
   </item>
   <item>
+    <title>116K Dark Web Exposures Found for Major US Media Organizations</title>
+    <link>https://libertas.fgu.tech/posts/116k-dark-web-exposures-found-for-major-us-media-organizatio</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/116k-dark-web-exposures-found-for-major-us-media-organizatio</guid>
+    <pubDate>Tue, 26 May 2026 03:01:51 GMT</pubDate>
+    <description>Proton&apos;s research found over 116,000 dark web exposures tied to NY Times, Washington Post, and WSJ email addresses, including 12,000+ plaintext passwords, creating cybersecurity risks for journalists and sources.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>journalism</category>
+  </item>
+  <item>
     <title>Bipartisan Amendment Would Ban Police License Plate Tracking Nationwide</title>
     <link>https://libertas.fgu.tech/posts/bipartisan-amendment-would-ban-police-license-plate-tracking</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/bipartisan-amendment-would-ban-police-license-plate-tracking</guid>
@@ -654,17 +674,6 @@
     <category>censorship-resistance</category>
     <category>surveillance</category>
     <category>activism</category>
-  </item>
-  <item>
-    <title>Tails 7.7.3 Emergency Release Fixes Critical Kernel Vulnerability</title>
-    <link>https://libertas.fgu.tech/posts/tails-7-7-3-emergency-release-fixes-critical-kernel-vulnerab</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/tails-7-7-3-emergency-release-fixes-critical-kernel-vulnerab</guid>
-    <pubDate>Mon, 11 May 2026 21:02:52 GMT</pubDate>
-    <description>Tails released emergency update fixing &apos;Dirty Frag&apos; kernel vulnerability that could allow privilege escalation and user deanonymization, plus Tor Browser and client security patches.</description>
-    <category>privacy</category>
-    <category>censorship-resistance</category>
-    <category>comms</category>
-    <category>surveillance</category>
   </item>
   <item>
     <title>Tunisia Prosecutes Refugee Aid Workers, Shuts Down Civil Society Organizations</title>
