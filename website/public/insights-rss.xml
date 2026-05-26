@@ -5,9 +5,18 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Tue, 26 May 2026 09:01:34 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 26 May 2026 21:02:39 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
+  <item>
+    <title>WiFi Signals Can Now Identify People Through Radio Wave Analysis</title>
+    <link>https://libertas.fgu.tech/posts/wifi-signals-can-now-identify-people-through-radio-wave-anal</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/wifi-signals-can-now-identify-people-through-radio-wave-anal</guid>
+    <pubDate>Tue, 26 May 2026 21:02:19 GMT</pubDate>
+    <description>Researchers demonstrate WiFi sensing technology that identifies individuals by analyzing how WiFi signals interact with their bodies, creating surveillance capabilities from existing infrastructure.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+  </item>
   <item>
     <title>Bitcoin and Freedom Tech Hub Launches in Nairobi with Infrastructure Focus</title>
     <link>https://libertas.fgu.tech/posts/bitcoin-and-freedom-tech-hub-launches-in-nairobi-with-infras</link>
@@ -31,6 +40,16 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>Iran Internet Connectivity Returns After 3-Month Government Blackout</title>
+    <link>https://libertas.fgu.tech/posts/iran-internet-connectivity-returns-after-3-month-government-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/iran-internet-connectivity-returns-after-3-month-government-</guid>
+    <pubDate>Tue, 26 May 2026 21:02:03 GMT</pubDate>
+    <description>Internet connectivity is partially returning to Iran after nearly 90 days of government-imposed blackout, though permanence of reconnection remains uncertain.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
   </item>
   <item>
     <title>Access Now Report: Data Privacy as Defense Against Electoral Disinformation in Latin America</title>
@@ -88,17 +107,6 @@
     <category>privacy</category>
     <category>activism</category>
     <category>censorship-resistance</category>
-  </item>
-  <item>
-    <title>Tunisia Expands Press Crackdown Beyond Criminal Charges to Financial Warfare</title>
-    <link>https://libertas.fgu.tech/posts/tunisia-expands-press-crackdown-beyond-criminal-charges-to-f</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/tunisia-expands-press-crackdown-beyond-criminal-charges-to-f</guid>
-    <pubDate>Tue, 12 May 2026 21:02:51 GMT</pubDate>
-    <description>Tunisia&apos;s government is systematically dismantling independent media through financial crime charges, banking freezes, and dissolution proceedings against outlets like Inkyfada, beyond traditional prosecutions.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>privacy</category>
-    <category>activism</category>
   </item>
   <item>
     <title>Citizen Lab Director Warns OSCE About Unregulated Surveillance Marketplace</title>
@@ -182,17 +190,6 @@
     <category>censorship-resistance</category>
   </item>
   <item>
-    <title>EFF Campaigns for Saudi Wikipedian Imprisoned 14 Years for Human Rights Edits</title>
-    <link>https://libertas.fgu.tech/posts/eff-campaigns-for-saudi-wikipedian-imprisoned-14-years-for-h</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-campaigns-for-saudi-wikipedian-imprisoned-14-years-for-h</guid>
-    <pubDate>Tue, 12 May 2026 21:01:10 GMT</pubDate>
-    <description>Saudi authorities imprisoned Wikipedia contributor Osama Khalid for 14 years after he documented human rights abuses and criticized government surveillance on encrypted platforms.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>privacy</category>
-  </item>
-  <item>
     <title>Mexican Journalist Targeted with Malware Surveillance Attacks</title>
     <link>https://libertas.fgu.tech/posts/mexican-journalist-targeted-with-malware-surveillance-attack</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/mexican-journalist-targeted-with-malware-surveillance-attack</guid>
@@ -234,18 +231,6 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>privacy</category>
-  </item>
-  <item>
-    <title>EFF Publishes Comprehensive Guide to Circumventing Internet Shutdowns</title>
-    <link>https://libertas.fgu.tech/posts/eff-publishes-comprehensive-guide-to-circumventing-internet-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-publishes-comprehensive-guide-to-circumventing-internet-</guid>
-    <pubDate>Tue, 12 May 2026 21:01:10 GMT</pubDate>
-    <description>EFF released a practical guide covering mesh networks, peer-to-peer messaging, ham radio, and satellite internet for maintaining communications during government shutdowns and disasters.</description>
-    <category>censorship-resistance</category>
-    <category>comms</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>sovereignty</category>
   </item>
   <item>
     <title>Trump Orders Fed to Review Crypto Access to U.S. Payment Rails</title>
@@ -300,28 +285,6 @@
     <category>privacy</category>
   </item>
   <item>
-    <title>US Congress Threatens to Criminalize Crypto Developers, Undermine Freedom Tech</title>
-    <link>https://libertas.fgu.tech/posts/us-congress-threatens-to-criminalize-crypto-developers-under</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/us-congress-threatens-to-criminalize-crypto-developers-under</guid>
-    <pubDate>Tue, 12 May 2026 21:01:41 GMT</pubDate>
-    <description>Critical developer protections in the BRCA could be stripped from market structure legislation, leaving non-custodial software creators facing criminal prosecution like Tornado Cash and Samourai Wallet developers.</description>
-    <category>privacy</category>
-    <category>bitcoin</category>
-    <category>sovereignty</category>
-    <category>censorship-resistance</category>
-  </item>
-  <item>
-    <title>FBI Closed Investigation Into Student Activist While ICE Continued Detention</title>
-    <link>https://libertas.fgu.tech/posts/fbi-closed-investigation-into-student-activist-while-ice-con</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/fbi-closed-investigation-into-student-activist-while-ice-con</guid>
-    <pubDate>Tue, 12 May 2026 21:03:20 GMT</pubDate>
-    <description>FBI documents reveal the agency closed investigation into Palestinian activist Mahmoud Khalil after determining he posed no threat, yet ICE continued detention based on anonymous tip claiming Hamas support.</description>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>censorship-resistance</category>
-    <category>privacy</category>
-  </item>
-  <item>
     <title>CPJ Warns Journalists of Border Surveillance, Device Seizures at 2026 FIFA World Cup</title>
     <link>https://libertas.fgu.tech/posts/cpj-warns-journalists-of-border-surveillance-device-seizures</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/cpj-warns-journalists-of-border-surveillance-device-seizures</guid>
@@ -354,17 +317,6 @@
     <category>surveillance</category>
   </item>
   <item>
-    <title>Human Rights Watch: EU Surveillance Tech Exports Enable Global Rights Violations</title>
-    <link>https://libertas.fgu.tech/posts/human-rights-watch-eu-surveillance-tech-exports-enable-globa</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/human-rights-watch-eu-surveillance-tech-exports-enable-globa</guid>
-    <pubDate>Tue, 12 May 2026 09:02:18 GMT</pubDate>
-    <description>Human Rights Watch report reveals EU&apos;s 2021 Dual-Use Regulation is failing to prevent surveillance technology exports to governments that use them to spy on activists and journalists.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
-    <category>activism</category>
-    <category>censorship-resistance</category>
-  </item>
-  <item>
     <title>DHS Testing Autonomous Surveillance Drones on US-Canada Border</title>
     <link>https://libertas.fgu.tech/posts/dhs-testing-autonomous-surveillance-drones-on-us-canada-bord</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/dhs-testing-autonomous-surveillance-drones-on-us-canada-bord</guid>
@@ -395,17 +347,6 @@
     <category>comms</category>
   </item>
   <item>
-    <title>Venezuelan Journalist Still Faces Charges Despite Post-Maduro Amnesty Law</title>
-    <link>https://libertas.fgu.tech/posts/venezuelan-journalist-still-faces-charges-despite-post-madur</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/venezuelan-journalist-still-faces-charges-despite-post-madur</guid>
-    <pubDate>Tue, 12 May 2026 21:02:51 GMT</pubDate>
-    <description>Venezuelan journalist Rory Branker was released after Maduro&apos;s ouster but denied amnesty, highlighting inconsistent application of freedom protections and ongoing press censorship via website blocking requiring VPNs.</description>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-    <category>privacy</category>
-    <category>surveillance</category>
-  </item>
-  <item>
     <title>Microsoft Fires Israel Chief Over Human Rights Violations in Gaza Surveillance Ops</title>
     <link>https://libertas.fgu.tech/posts/microsoft-fires-israel-chief-over-human-rights-violations-in</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/microsoft-fires-israel-chief-over-human-rights-violations-in</guid>
@@ -425,6 +366,17 @@
     <category>censorship-resistance</category>
     <category>activism</category>
     <category>surveillance</category>
+  </item>
+  <item>
+    <title>Freedom House Links Iran&apos;s Internet Blackouts to State Repression Strategy</title>
+    <link>https://libertas.fgu.tech/posts/freedom-house-links-iran-s-internet-blackouts-to-state-repre</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/freedom-house-links-iran-s-internet-blackouts-to-state-repre</guid>
+    <pubDate>Tue, 26 May 2026 21:02:39 GMT</pubDate>
+    <description>Freedom House connects Iran&apos;s ongoing internet blackouts and digital repression to broader authoritarian strategy of engineering distrust and fracturing opposition movements.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>sovereignty</category>
   </item>
   <item>
     <title>US House Whip Pushes Anti-CBDC Act to Block Government Digital Currency</title>
@@ -564,16 +516,6 @@
     <category>surveillance</category>
   </item>
   <item>
-    <title>DR Congo Escalates Repression of Journalists, Activists Amid Constitutional Crisis</title>
-    <link>https://libertas.fgu.tech/posts/dr-congo-escalates-repression-of-journalists-activists-amid-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/dr-congo-escalates-repression-of-journalists-activists-amid-</guid>
-    <pubDate>Tue, 12 May 2026 09:02:18 GMT</pubDate>
-    <description>Congo authorities increasingly detaining journalists, activists, and opposition members amid constitutional amendment tensions and M23 conflict, with intelligence agencies conducting enforced disappearances and arbitrary arrests.</description>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-    <category>surveillance</category>
-  </item>
-  <item>
     <title>Meta Removes Instagram&apos;s End-to-End Encryption Feature, Cites Low Adoption</title>
     <link>https://libertas.fgu.tech/posts/meta-removes-instagram-s-end-to-end-encryption-feature-cites</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/meta-removes-instagram-s-end-to-end-encryption-feature-cites</guid>
@@ -676,6 +618,16 @@
     <category>activism</category>
   </item>
   <item>
+    <title>UK Sanctions HTX Exchange Over Alleged Russia Sanction Circumvention</title>
+    <link>https://libertas.fgu.tech/posts/uk-sanctions-htx-exchange-over-alleged-russia-sanction-circu</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/uk-sanctions-htx-exchange-over-alleged-russia-sanction-circu</guid>
+    <pubDate>Tue, 26 May 2026 21:01:35 GMT</pubDate>
+    <description>The UK sanctioned HTX (formerly Huobi Global) crypto exchange, claiming it&apos;s being exploited by Russia to bypass existing financial sanctions.</description>
+    <category>payments</category>
+    <category>censorship-resistance</category>
+    <category>sovereignty</category>
+  </item>
+  <item>
     <title>Tunisia Prosecutes Refugee Aid Workers, Shuts Down Civil Society Organizations</title>
     <link>https://libertas.fgu.tech/posts/tunisia-prosecutes-refugee-aid-workers-shuts-down-civil-soci</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/tunisia-prosecutes-refugee-aid-workers-shuts-down-civil-soci</guid>
@@ -708,16 +660,6 @@
     <category>comms</category>
   </item>
   <item>
-    <title>Senate Confirms Bitcoin-Friendly Kevin Warsh to Fed Board</title>
-    <link>https://libertas.fgu.tech/posts/senate-confirms-bitcoin-friendly-kevin-warsh-to-fed-board</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/senate-confirms-bitcoin-friendly-kevin-warsh-to-fed-board</guid>
-    <pubDate>Tue, 12 May 2026 21:01:41 GMT</pubDate>
-    <description>Senate confirmed Kevin Warsh to Fed Board 51-45, clearing path to replace Jerome Powell as Fed Chair. Warsh calls bitcoin &apos;important asset&apos; and &apos;good policeman for policy.&apos;</description>
-    <category>bitcoin</category>
-    <category>payments</category>
-    <category>sovereignty</category>
-  </item>
-  <item>
     <title>DOJ Launches Criminal Investigation Into Trans Youth Healthcare Providers</title>
     <link>https://libertas.fgu.tech/posts/doj-launches-criminal-investigation-into-trans-youth-healthc</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/doj-launches-criminal-investigation-into-trans-youth-healthc</guid>
@@ -726,15 +668,6 @@
     <category>privacy</category>
     <category>surveillance</category>
     <category>activism</category>
-  </item>
-  <item>
-    <title>Apple &amp; Google Deploy E2E Encrypted Cross-Platform Messaging via RCS</title>
-    <link>https://libertas.fgu.tech/posts/apple-google-deploy-e2e-encrypted-cross-platform-messaging-v</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/apple-google-deploy-e2e-encrypted-cross-platform-messaging-v</guid>
-    <pubDate>Tue, 12 May 2026 21:01:10 GMT</pubDate>
-    <description>Apple&apos;s iOS 26.5 enables end-to-end encryption for RCS messages between iPhone and Android, making encrypted cross-platform messaging the default for billions of users.</description>
-    <category>privacy</category>
-    <category>comms</category>
   </item>
   <item>
     <title>South Carolina Enacts Comprehensive Bitcoin Law, Bans State CBDC Use</title>
