@@ -1396,6 +1396,27 @@
       }
     },
     {
+      "id": "df61da9b-4f42-41b5-85dc-165b75be88d1",
+      "url": "https://libertas.fgu.tech/posts/116k-dark-web-exposures-found-tied-to-major-us-news-organiza",
+      "title": "116K Dark Web Exposures Found Tied to Major US News Organizations",
+      "summary": "Proton's research found over 116,000 dark web exposures linked to NYT, Washington Post, and WSJ employee emails, including 12,000+ plaintext passwords and 61,000+ pieces of PII.",
+      "content_text": "Proton analyzed dark web marketplaces and found 116,000+ exposures across 35,000+ email addresses from three major US news outlets\n• Data includes over 12,000 plaintext passwords and 61,000+ pieces of personally identifiable information\n• Exposures primarily from third-party breaches (retailers, software providers) rather than direct attacks on news organizations\n• Over 2,500 email addresses exposed ten or more times, creating persistent vulnerability\n• Research conducted with Constella Intelligence using responsible disclosure practices\n• Leaked credentials create risks for targeted attacks, blackmail, social engineering, and source exposure\n• US ranks 64th on World Press Freedom Index, facing growing legal and political pressure on journalists",
+      "date_published": "2026-05-26T09:01:34.665Z",
+      "date_modified": "2026-05-26T09:01:34.835Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "identity"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 72,
+        "credibility_score": 85,
+        "citations": [
+          "https://proton.me/blog/journalist-data-leaks"
+        ]
+      }
+    },
+    {
       "id": "e0e849b4-8333-4c77-98e0-f0f4374e8f9b",
       "url": "https://libertas.fgu.tech/posts/drc-drones-target-radio-station-in-escalation-of-tech-enable",
       "title": "DRC Drones Target Radio Station in Escalation of Tech-Enabled Media Suppression",
@@ -1435,28 +1456,6 @@
         "credibility_score": 85,
         "citations": [
           "https://bitcoinmagazine.com/news/senate-confirms-bitcoin-kevin-warsh"
-        ]
-      }
-    },
-    {
-      "id": "e68ca109-81ca-4365-92f5-ba71d985921f",
-      "url": "https://libertas.fgu.tech/posts/cpj-urges-trump-to-secure-jimmy-lai-s-release-in-xi-meeting",
-      "title": "CPJ Urges Trump to Secure Jimmy Lai's Release in Xi Meeting",
-      "summary": "Committee to Protect Journalists calls on Trump to prioritize jailed Hong Kong publisher Jimmy Lai's release during diplomatic talks with Xi Jinping, highlighting broader press freedom concerns.",
-      "content_text": "CPJ urges Trump to demand Jimmy Lai's immediate release during May 14-15 Beijing meeting with Xi Jinping\n• Lai, 78, sentenced to 20 years for 'collusion with foreign forces' - effectively a life sentence\n• Apple Daily founder has been jailed since 2020, much in solitary confinement with declining health\n• Case emblematic of Hong Kong press freedom crackdown since National Security Law imposed in 2020\n• Over 100 US lawmakers sent letter urging Trump to prioritize Lai's release due to health concerns\n• CPJ calls for conditioning trade talks on concrete human rights commitments from Beijing\n• Trump previously raised Lai's case with Xi in October 2025, promised to 'save' him during trial\n• Situation impacts US interests: Hong Kong hosts 60,000+ US citizens and 1,400+ US companies",
-      "date_published": "2026-05-12T09:01:47.519Z",
-      "date_modified": "2026-05-12T09:01:47.781Z",
-      "tags": [
-        "censorship-resistance",
-        "activism",
-        "surveillance",
-        "sovereignty"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 85,
-        "credibility_score": 95,
-        "citations": [
-          "https://cpj.org/2026/05/cpj-urges-trump-to-prioritize-jimmy-lais-release-in-meeting-with-xi-jinping/"
         ]
       }
     },

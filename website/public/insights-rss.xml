@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Tue, 26 May 2026 03:01:51 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 26 May 2026 09:01:34 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -687,6 +687,16 @@
     <category>sovereignty</category>
   </item>
   <item>
+    <title>116K Dark Web Exposures Found Tied to Major US News Organizations</title>
+    <link>https://libertas.fgu.tech/posts/116k-dark-web-exposures-found-tied-to-major-us-news-organiza</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/116k-dark-web-exposures-found-tied-to-major-us-news-organiza</guid>
+    <pubDate>Tue, 26 May 2026 09:01:34 GMT</pubDate>
+    <description>Proton&apos;s research found over 116,000 dark web exposures linked to NYT, Washington Post, and WSJ employee emails, including 12,000+ plaintext passwords and 61,000+ pieces of PII.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>identity</category>
+  </item>
+  <item>
     <title>DRC Drones Target Radio Station in Escalation of Tech-Enabled Media Suppression</title>
     <link>https://libertas.fgu.tech/posts/drc-drones-target-radio-station-in-escalation-of-tech-enable</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/drc-drones-target-radio-station-in-escalation-of-tech-enable</guid>
@@ -705,17 +715,6 @@
     <description>Senate confirmed Kevin Warsh to Fed Board 51-45, clearing path to replace Jerome Powell as Fed Chair. Warsh calls bitcoin &apos;important asset&apos; and &apos;good policeman for policy.&apos;</description>
     <category>bitcoin</category>
     <category>payments</category>
-    <category>sovereignty</category>
-  </item>
-  <item>
-    <title>CPJ Urges Trump to Secure Jimmy Lai&apos;s Release in Xi Meeting</title>
-    <link>https://libertas.fgu.tech/posts/cpj-urges-trump-to-secure-jimmy-lai-s-release-in-xi-meeting</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/cpj-urges-trump-to-secure-jimmy-lai-s-release-in-xi-meeting</guid>
-    <pubDate>Tue, 12 May 2026 09:01:47 GMT</pubDate>
-    <description>Committee to Protect Journalists calls on Trump to prioritize jailed Hong Kong publisher Jimmy Lai&apos;s release during diplomatic talks with Xi Jinping, highlighting broader press freedom concerns.</description>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-    <category>surveillance</category>
     <category>sovereignty</category>
   </item>
   <item>
