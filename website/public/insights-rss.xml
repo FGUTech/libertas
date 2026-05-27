@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Wed, 27 May 2026 03:00:53 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 27 May 2026 15:02:29 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -668,6 +668,17 @@
     <category>payments</category>
   </item>
   <item>
+    <title>Freedom House Links Iran&apos;s Internet Blackouts to Historical Resistance Patterns</title>
+    <link>https://libertas.fgu.tech/posts/freedom-house-links-iran-s-internet-blackouts-to-historical-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/freedom-house-links-iran-s-internet-blackouts-to-historical-</guid>
+    <pubDate>Wed, 27 May 2026 15:02:29 GMT</pubDate>
+    <description>Freedom House draws parallels between Poland&apos;s Solidarity movement and Iran&apos;s current struggle, highlighting the regime&apos;s use of internet blackouts and digital repression to fracture opposition movements.</description>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>surveillance</category>
+    <category>sovereignty</category>
+  </item>
+  <item>
     <title>DRC Uses Cyber Defense Council for Secret Detention of Dissidents</title>
     <link>https://libertas.fgu.tech/posts/drc-uses-cyber-defense-council-for-secret-detention-of-dissi</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/drc-uses-cyber-defense-council-for-secret-detention-of-dissi</guid>
@@ -688,16 +699,6 @@
     <category>censorship-resistance</category>
     <category>surveillance</category>
     <category>sovereignty</category>
-  </item>
-  <item>
-    <title>Tunisia Escalates Media Crackdown Beyond Individual Prosecutions to Target Infrastructure</title>
-    <link>https://libertas.fgu.tech/posts/tunisia-escalates-media-crackdown-beyond-individual-prosecut</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/tunisia-escalates-media-crackdown-beyond-individual-prosecut</guid>
-    <pubDate>Wed, 13 May 2026 09:01:54 GMT</pubDate>
-    <description>Tunisia is dismantling independent media infrastructure through banking freezes, dissolution proceedings, and financial crime charges while continuing to jail journalists under Decree-Law 54.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
   </item>
   <item>
     <title>Signal Threatens Canada Exit Over Lawful Access Bill C-22</title>
