@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Tue, 26 May 2026 21:02:39 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 27 May 2026 03:00:53 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -84,18 +84,6 @@
     <category>encryption</category>
     <category>censorship-resistance</category>
     <category>activism</category>
-  </item>
-  <item>
-    <title>Myanmar Journalists Use Encrypted Networks to Bypass Junta Censorship</title>
-    <link>https://libertas.fgu.tech/posts/myanmar-journalists-use-encrypted-networks-to-bypass-junta-c</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/myanmar-journalists-use-encrypted-networks-to-bypass-junta-c</guid>
-    <pubDate>Tue, 12 May 2026 21:03:53 GMT</pubDate>
-    <description>Myanmar journalists in exile and inside the country use encrypted communications and underground networks to continue reporting despite systematic media crackdowns, forming a distributed newsroom across borders.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>comms</category>
-    <category>privacy</category>
   </item>
   <item>
     <title>EFF Releases Guide to Combat Digital Surveillance Abuses in the Americas</title>
@@ -282,6 +270,15 @@
     <category>censorship-resistance</category>
     <category>surveillance</category>
     <category>activism</category>
+    <category>privacy</category>
+  </item>
+  <item>
+    <title>EFF Exposes Mass ALPR Mission Creep: School Checks, Employment Screening</title>
+    <link>https://libertas.fgu.tech/posts/eff-exposes-mass-alpr-mission-creep-school-checks-employment</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-exposes-mass-alpr-mission-creep-school-checks-employment</guid>
+    <pubDate>Wed, 27 May 2026 03:00:53 GMT</pubDate>
+    <description>EFF analysis of millions of Flock Safety ALPR searches reveals police using license plate surveillance for school residency verification and employment background checks, far beyond original crime-fighting purpose.</description>
+    <category>surveillance</category>
     <category>privacy</category>
   </item>
   <item>
@@ -513,16 +510,6 @@
     <category>bitcoin</category>
     <category>payments</category>
     <category>censorship-resistance</category>
-    <category>surveillance</category>
-  </item>
-  <item>
-    <title>Meta Removes Instagram&apos;s End-to-End Encryption Feature, Cites Low Adoption</title>
-    <link>https://libertas.fgu.tech/posts/meta-removes-instagram-s-end-to-end-encryption-feature-cites</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/meta-removes-instagram-s-end-to-end-encryption-feature-cites</guid>
-    <pubDate>Wed, 13 May 2026 03:00:56 GMT</pubDate>
-    <description>Instagram ended its opt-in end-to-end encryption feature, breaking Meta&apos;s promise to encrypt DMs by default and eliminating privacy protections on a major platform.</description>
-    <category>privacy</category>
-    <category>comms</category>
     <category>surveillance</category>
   </item>
   <item>

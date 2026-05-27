@@ -161,29 +161,6 @@
       }
     },
     {
-      "id": "0f435e84-3430-48d5-ab79-73f44297703b",
-      "url": "https://libertas.fgu.tech/posts/myanmar-journalists-use-encrypted-networks-to-bypass-junta-c",
-      "title": "Myanmar Journalists Use Encrypted Networks to Bypass Junta Censorship",
-      "summary": "Myanmar journalists in exile and inside the country use encrypted communications and underground networks to continue reporting despite systematic media crackdowns, forming a distributed newsroom across borders.",
-      "content_text": "Myanmar journalists operate distributed newsroom across borders following 2021 coup\n• Reporters rely on encrypted communication and underground networks for story verification\n• Myanmar remains among world's leading jailers of journalists according to CPJ\n• Exiled journalists face disconnection challenges while frontline reporters risk imprisonment or death\n• Inside reporters provide firsthand accounts; exiled journalists amplify and verify for global reach\n• Financial instability and uncertain legal status compound operational security challenges\n• Exile Hub's 'Only My Voice Left' campaign documents resistance through journalist testimonies\n• Shows real-world application of freedom tech tools under extreme authoritarian pressure",
-      "date_published": "2026-05-12T21:03:53.242Z",
-      "date_modified": "2026-05-12T21:03:53.377Z",
-      "tags": [
-        "censorship-resistance",
-        "surveillance",
-        "activism",
-        "comms",
-        "privacy"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 85,
-        "credibility_score": 88,
-        "citations": [
-          "https://globalvoices.org/2026/05/12/only-our-voices-left-myanmar-journalists-across-borders-speak-for-truth/"
-        ]
-      }
-    },
-    {
       "id": "1b8d2cad-fd55-4d4e-a5a6-d9eec31fa5dc",
       "url": "https://libertas.fgu.tech/posts/eff-releases-guide-to-combat-digital-surveillance-abuses-in-",
       "title": "EFF Releases Guide to Combat Digital Surveillance Abuses in the Americas",
@@ -567,6 +544,26 @@
         "credibility_score": 95,
         "citations": [
           "https://www.hrw.org/news/2026/05/22/dr-congo-renewed-repression-impunity-top-rights-concerns"
+        ]
+      }
+    },
+    {
+      "id": "6f1a9acf-7014-484e-9b69-b562da9d3ec5",
+      "url": "https://libertas.fgu.tech/posts/eff-exposes-mass-alpr-mission-creep-school-checks-employment",
+      "title": "EFF Exposes Mass ALPR Mission Creep: School Checks, Employment Screening",
+      "summary": "EFF analysis of millions of Flock Safety ALPR searches reveals police using license plate surveillance for school residency verification and employment background checks, far beyond original crime-fighting purpose.",
+      "content_text": "EFF analyzed millions of Flock Safety ALPR database searches by law enforcement\n• Police using license plate surveillance for school residency verification, employment background checks, and noise complaints\n• Buford City Schools ran 375+ searches for residency verification in 15 months, accessing 5,800+ networks nationwide\n• Single searches reveal comprehensive movement patterns: medical visits, worship, travel, personal activities\n• Multiple agencies across 9 states documented using ALPR for non-criminal investigations\n• No warrant requirement enables unrestricted access to sensitive location data\n• Demonstrates systematic mission creep from crime-fighting tool to universal movement tracker\n• Agencies share data broadly in nationwide pools, amplifying surveillance reach",
+      "date_published": "2026-05-27T03:00:53.657Z",
+      "date_modified": "2026-05-27T03:00:53.716Z",
+      "tags": [
+        "surveillance",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/05/more-license-plate-reader-mission-creep-school-residency-verification-background"
         ]
       }
     },
@@ -1043,27 +1040,6 @@
         "citations": [
           "https://cointelegraph.com/news/binance-denies-new-wsj-report-alleging-850m-in-iran-linked-transactions",
           "https://cointelegraph.com/news/binance-denies-new-wsj-report-alleging-850m-in-iran-linked-transactions?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-        ]
-      }
-    },
-    {
-      "id": "bb3b99af-8f59-4812-8127-ff990d265b06",
-      "url": "https://libertas.fgu.tech/posts/meta-removes-instagram-s-end-to-end-encryption-feature-cites",
-      "title": "Meta Removes Instagram's End-to-End Encryption Feature, Cites Low Adoption",
-      "summary": "Instagram ended its opt-in end-to-end encryption feature, breaking Meta's promise to encrypt DMs by default and eliminating privacy protections on a major platform.",
-      "content_text": "Instagram discontinued its end-to-end encryption feature for direct messages [EFF]\n• Meta broke 2022-2023 public promises to implement E2EE by default across platforms\n• Company blamed low adoption rates, ignoring that feature required 4-step opt-in process\n• Meta directs users to WhatsApp for encrypted messaging instead of fixing Instagram\n• Removal comes as competitors like Google/Apple advance E2EE implementation in RCS\n• Facebook Messenger group chat encryption promises also remain undelivered\n• Demonstrates how opt-in privacy features fail without default implementation",
-      "date_published": "2026-05-13T03:00:56.571Z",
-      "date_modified": "2026-05-13T03:00:56.614Z",
-      "tags": [
-        "privacy",
-        "comms",
-        "surveillance"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 75,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/05/broken-promises-rip-instagrams-end-end-encrypted-dms"
         ]
       }
     },
