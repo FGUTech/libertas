@@ -139,6 +139,28 @@
       }
     },
     {
+      "id": "14efa997-c1b9-4481-aece-65b2fe3c81c5",
+      "url": "https://libertas.fgu.tech/posts/russia-bans-9-lgbt-rights-groups-as-extremist-creating-deman",
+      "title": "Russia Bans 9 LGBT Rights Groups as 'Extremist,' Creating Demand for Secure Comms",
+      "summary": "Russian courts banned 9 LGBT support organizations as 'extremist' with up to 12-year prison penalties, forcing groups to seek censorship-resistant tools to continue operations.",
+      "content_text": "Russian courts banned 9 LGBT rights groups across 7 regions as 'extremist' between March-May 2026\n• Criminal penalties include up to 12 years for leading banned groups, 6 years for participation, 8 years for donations\n• Even displaying rainbow flags or organization logos now carries up to 4 years prison under extremism laws\n• Groups like Coming Out, Russian LGBT Network, and Centre T pledged to continue work despite bans\n• At least 9 people already convicted on criminal charges, 25+ facing charges under 'LGBT extremism' designation\n• Courts cited 'expert assessments' claiming groups 'belittled Russian spiritual values' and created 'anti-state hierarchy'\n• Organizations forced underground creates direct demand for secure communications and anonymous coordination tools\n• Pattern demonstrates systematic criminalization of civil society requiring operational security solutions",
+      "date_published": "2026-05-28T15:02:52.272Z",
+      "date_modified": "2026-05-28T15:02:52.404Z",
+      "tags": [
+        "censorship-resistance",
+        "activism",
+        "surveillance",
+        "comms"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.hrw.org/news/2026/05/28/russia-lgbt-rights-groups-further-criminalized"
+        ]
+      }
+    },
+    {
       "id": "1b8d2cad-fd55-4d4e-a5a6-d9eec31fa5dc",
       "url": "https://libertas.fgu.tech/posts/eff-releases-guide-to-combat-digital-surveillance-abuses-in-",
       "title": "EFF Releases Guide to Combat Digital Surveillance Abuses in the Americas",
@@ -783,6 +805,27 @@
         "credibility_score": 95,
         "citations": [
           "https://www.hrw.org/news/2026/05/25/russia-plans-civic-death-law-for-exiled-critics"
+        ]
+      }
+    },
+    {
+      "id": "9c4fa842-cc0c-445f-b8d8-4953a1f164fd",
+      "url": "https://libertas.fgu.tech/posts/kazakhstan-forces-anti-war-orthodox-priest-into-psychiatric-",
+      "title": "Kazakhstan Forces Anti-War Orthodox Priest Into Psychiatric Detention",
+      "summary": "Kazakhstan authorities transferred activist priest Yakov Vorontsov to psychiatric facility on dubious drug charges, following years of pressure over his anti-war stance and efforts to establish independent Orthodox community.",
+      "content_text": "Yakov Vorontsov, defrocked Orthodox priest, forcibly transferred to psychiatric facility on May 25, 2026\n• Originally arrested February 13 on drug charges that he claims were fabricated with planted evidence\n• Targeted for opposing Russia's Ukraine war and attempting to register independent Orthodox community\n• Court ordered psychiatric detention as 'security measure' without defendant or lawyer present\n• Authorities denied family visits, confiscated religious materials, forcibly shaved head/beard\n• Pattern follows previous criminal investigation for 'inciting religious discord' closed for lack of evidence\n• UN experts raised concerns about the case in March 31 communication to Kazakhstan government\n• HRW documents this as part of Kazakhstan's growing use of psychiatric detention for political repression",
+      "date_published": "2026-05-28T15:02:52.273Z",
+      "date_modified": "2026-05-28T15:02:52.404Z",
+      "tags": [
+        "surveillance",
+        "activism",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.hrw.org/news/2026/05/28/kazakhstan-psychiatric-detention-of-activist-priest"
         ]
       }
     },
