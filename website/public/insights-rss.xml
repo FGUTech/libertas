@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 28 May 2026 15:02:52 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 28 May 2026 21:01:22 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -260,6 +260,17 @@
     <description>EFF analysis of millions of Flock Safety ALPR searches reveals police using license plate surveillance for school residency verification and employment background checks, far beyond original crime-fighting purpose.</description>
     <category>surveillance</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>EFF Warns Age Verification Creates Mass Surveillance Infrastructure</title>
+    <link>https://libertas.fgu.tech/posts/eff-warns-age-verification-creates-mass-surveillance-infrast</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-warns-age-verification-creates-mass-surveillance-infrast</guid>
+    <pubDate>Thu, 28 May 2026 21:01:22 GMT</pubDate>
+    <description>EFF highlights how age verification mandates force users to submit sensitive personal data to third parties, creating centralized honeypots that have already been breached multiple times.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>identity</category>
   </item>
   <item>
     <title>CPJ Warns Journalists of Border Surveillance, Device Seizures at 2026 FIFA World Cup</title>
@@ -619,16 +630,6 @@
     <category>comms</category>
   </item>
   <item>
-    <title>DOJ Launches Criminal Investigation Into Trans Youth Healthcare Providers</title>
-    <link>https://libertas.fgu.tech/posts/doj-launches-criminal-investigation-into-trans-youth-healthc</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/doj-launches-criminal-investigation-into-trans-youth-healthc</guid>
-    <pubDate>Thu, 14 May 2026 21:02:45 GMT</pubDate>
-    <description>Trump DOJ issued criminal grand jury subpoenas to hospitals including NYU Langone demanding records of trans youth patients and medical staff, escalating from previous civil investigations.</description>
-    <category>privacy</category>
-    <category>surveillance</category>
-    <category>activism</category>
-  </item>
-  <item>
     <title>NASA Satellites Can Detect GPS Jammers from Space, Raising Privacy Concerns</title>
     <link>https://libertas.fgu.tech/posts/nasa-satellites-can-detect-gps-jammers-from-space-raising-pr</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/nasa-satellites-can-detect-gps-jammers-from-space-raising-pr</guid>
@@ -680,18 +681,6 @@
     <category>censorship-resistance</category>
     <category>surveillance</category>
     <category>sovereignty</category>
-  </item>
-  <item>
-    <title>Signal Threatens Canada Exit Over Lawful Access Bill C-22</title>
-    <link>https://libertas.fgu.tech/posts/signal-threatens-canada-exit-over-lawful-access-bill-c-22</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/signal-threatens-canada-exit-over-lawful-access-bill-c-22</guid>
-    <pubDate>Thu, 14 May 2026 21:01:54 GMT</pubDate>
-    <description>Signal and Meta oppose Canada&apos;s Bill C-22, which could mandate metadata collection for messaging apps. Signal threatens to pull out of Canada if forced to comply with the surveillance requirements.</description>
-    <category>privacy</category>
-    <category>censorship-resistance</category>
-    <category>comms</category>
-    <category>surveillance</category>
-    <category>activism</category>
   </item>
   <item>
     <title>African Govts Spend $2B on AI Surveillance to Target Opposition, Not Crime</title>
