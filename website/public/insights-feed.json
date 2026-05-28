@@ -742,6 +742,28 @@
       }
     },
     {
+      "id": "96db48a3-2e30-4c98-b0ae-34ba0fe04185",
+      "url": "https://libertas.fgu.tech/posts/china-pressures-zambia-to-cancel-major-digital-rights-confer",
+      "title": "China Pressures Zambia to Cancel Major Digital Rights Conference RightsCon",
+      "summary": "Chinese government pressure forced cancellation of RightsCon 2026 in Zambia after officials objected to planned discussions of China's digital authoritarianism and Taiwanese activist participation.",
+      "content_text": "Access Now cancelled RightsCon conference in Lusaka, Zambia (May 5-8) due to Chinese government pressure\n• 2,600+ participants from 100+ countries were expected at premier digital rights gathering\n• Chinese officials objected to discussions of China's digital authoritarian practices\n• China also demanded exclusion of Taiwanese activists from participation\n• Zambian officials backtracked on hosting commitment under diplomatic pressure\n• Access Now refused to moderate topics or exclude at-risk communities including Taiwanese participants\n• Freedom House categorizes this as malign foreign influence targeting transnational civil society\n• Pattern includes similar incidents: Uganda rendered 36 activists from Kenya leadership seminar\n• Tanzania deported Kenyan officials monitoring opposition leader's trial in 2025\n• Event cancellation disrupts critical coordination on digital rights issues globally",
+      "date_published": "2026-05-28T09:01:50.730Z",
+      "date_modified": "2026-05-28T09:01:50.912Z",
+      "tags": [
+        "censorship-resistance",
+        "activism",
+        "sovereignty",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 88,
+        "citations": [
+          "https://freedomhouse.org/article/tnr-watch-canceling-rightscon-not-transnational-repression-it-attack-transnational-civil"
+        ]
+      }
+    },
+    {
       "id": "981dc36a-83ef-4a12-8b13-a723d3c9b782",
       "url": "https://libertas.fgu.tech/posts/russia-drafts-civic-death-law-to-cut-digital-services-for-ex",
       "title": "Russia Drafts 'Civic Death' Law to Cut Digital Services for Exiled Critics",
@@ -911,28 +933,6 @@
         "credibility_score": 85,
         "citations": [
           "https://www.accessnow.org/press-release/microsoft-come-clean-about-your-ties-to-the-israeli-military/"
-        ]
-      }
-    },
-    {
-      "id": "b07e87dd-9799-4c60-a2f7-f0103e9180f6",
-      "url": "https://libertas.fgu.tech/posts/samourai-wallet-developer-seeks-presidential-pardon-amid-tru",
-      "title": "Samourai Wallet Developer Seeks Presidential Pardon Amid Trump Clemency Considerations",
-      "summary": "Developer behind privacy-focused Samourai Wallet crypto mixer seeks presidential pardon as Trump weighs 250 clemency decisions, highlighting legal pressure on Bitcoin privacy tools.",
-      "content_text": "Samourai Wallet developer publicly seeking presidential pardon from Trump\n• Trump reportedly considering up to 250 pardons before leaving office\n• Samourai Wallet is a Bitcoin mixing protocol for transaction privacy\n• Request highlights ongoing legal pressure on financial privacy tools\n• FTX founder Sam Bankman-Fried also reportedly seeking clemency\n• Outcome could set precedent for how privacy-enhancing crypto tools are treated legally\n• Demonstrates intersection of political transitions and crypto regulatory enforcement",
-      "date_published": "2026-05-14T09:01:25.488Z",
-      "date_modified": "2026-05-14T09:01:25.542Z",
-      "tags": [
-        "privacy",
-        "sovereignty",
-        "bitcoin"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 72,
-        "citations": [
-          "https://cointelegraph.com/news/trump-weighs-250-pardons-as-crypto-founders-seek-clemency",
-          "https://cointelegraph.com/news/trump-weighs-250-pardons-as-crypto-founders-seek-clemency?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
         ]
       }
     },

@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 28 May 2026 03:01:43 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 28 May 2026 09:01:50 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -367,6 +367,17 @@
     <category>censorship-resistance</category>
   </item>
   <item>
+    <title>China Pressures Zambia to Cancel Major Digital Rights Conference RightsCon</title>
+    <link>https://libertas.fgu.tech/posts/china-pressures-zambia-to-cancel-major-digital-rights-confer</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/china-pressures-zambia-to-cancel-major-digital-rights-confer</guid>
+    <pubDate>Thu, 28 May 2026 09:01:50 GMT</pubDate>
+    <description>Chinese government pressure forced cancellation of RightsCon 2026 in Zambia after officials objected to planned discussions of China&apos;s digital authoritarianism and Taiwanese activist participation.</description>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>sovereignty</category>
+    <category>surveillance</category>
+  </item>
+  <item>
     <title>Russia Drafts &apos;Civic Death&apos; Law to Cut Digital Services for Exiled Critics</title>
     <link>https://libertas.fgu.tech/posts/russia-drafts-civic-death-law-to-cut-digital-services-for-ex</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/russia-drafts-civic-death-law-to-cut-digital-services-for-ex</guid>
@@ -450,16 +461,6 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
-  </item>
-  <item>
-    <title>Samourai Wallet Developer Seeks Presidential Pardon Amid Trump Clemency Considerations</title>
-    <link>https://libertas.fgu.tech/posts/samourai-wallet-developer-seeks-presidential-pardon-amid-tru</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/samourai-wallet-developer-seeks-presidential-pardon-amid-tru</guid>
-    <pubDate>Thu, 14 May 2026 09:01:25 GMT</pubDate>
-    <description>Developer behind privacy-focused Samourai Wallet crypto mixer seeks presidential pardon as Trump weighs 250 clemency decisions, highlighting legal pressure on Bitcoin privacy tools.</description>
-    <category>privacy</category>
-    <category>sovereignty</category>
-    <category>bitcoin</category>
   </item>
   <item>
     <title>Binance Denies WSJ Report on $850M Iran-Linked Transactions</title>
