@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Wed, 27 May 2026 15:02:29 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 28 May 2026 03:01:43 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -52,17 +52,6 @@
     <category>activism</category>
   </item>
   <item>
-    <title>Access Now Report: Data Privacy as Defense Against Electoral Disinformation in Latin America</title>
-    <link>https://libertas.fgu.tech/posts/access-now-report-data-privacy-as-defense-against-electoral-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/access-now-report-data-privacy-as-defense-against-electoral-</guid>
-    <pubDate>Thu, 14 May 2026 03:01:45 GMT</pubDate>
-    <description>Access Now analysis shows personal data collection fuels political microtargeting and disinformation, recommending strict data protection enforcement during elections across Latin America.</description>
-    <category>privacy</category>
-    <category>surveillance</category>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-  </item>
-  <item>
     <title>Indonesia Plans Government Vetting System for Human Rights Defenders</title>
     <link>https://libertas.fgu.tech/posts/indonesia-plans-government-vetting-system-for-human-rights-d</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/indonesia-plans-government-vetting-system-for-human-rights-d</guid>
@@ -95,16 +84,6 @@
     <category>privacy</category>
     <category>activism</category>
     <category>censorship-resistance</category>
-  </item>
-  <item>
-    <title>Citizen Lab Director Warns OSCE About Unregulated Surveillance Marketplace</title>
-    <link>https://libertas.fgu.tech/posts/citizen-lab-director-warns-osce-about-unregulated-surveillan</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/citizen-lab-director-warns-osce-about-unregulated-surveillan</guid>
-    <pubDate>Wed, 13 May 2026 21:02:52 GMT</pubDate>
-    <description>Ron Deibert told OSCE that mercenary spyware is just the tip of a massive, unregulated surveillance economy targeting civil society.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
-    <category>activism</category>
   </item>
   <item>
     <title>FBI Seeks Nationwide Real-Time License Plate Surveillance Network</title>
@@ -156,16 +135,6 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
-  </item>
-  <item>
-    <title>EFF Challenges Weak Science Behind State Social Media Bans for Youth</title>
-    <link>https://libertas.fgu.tech/posts/eff-challenges-weak-science-behind-state-social-media-bans-f</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-challenges-weak-science-behind-state-social-media-bans-f</guid>
-    <pubDate>Wed, 13 May 2026 21:01:27 GMT</pubDate>
-    <description>EFF argues that state legislatures are rushing to ban youth social media access based on flawed research and &apos;pop psychology&apos; rather than settled science, threatening constitutional rights.</description>
-    <category>censorship-resistance</category>
-    <category>privacy</category>
-    <category>surveillance</category>
   </item>
   <item>
     <title>Venezuelan Mother Dies After 16-Month Search for Secretly Dead Political Prisoner Son</title>
@@ -312,15 +281,6 @@
     <category>comms</category>
     <category>censorship-resistance</category>
     <category>surveillance</category>
-  </item>
-  <item>
-    <title>DHS Testing Autonomous Surveillance Drones on US-Canada Border</title>
-    <link>https://libertas.fgu.tech/posts/dhs-testing-autonomous-surveillance-drones-on-us-canada-bord</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/dhs-testing-autonomous-surveillance-drones-on-us-canada-bord</guid>
-    <pubDate>Wed, 13 May 2026 21:02:35 GMT</pubDate>
-    <description>DHS will deploy autonomous drones and ground vehicles streaming battlefield intelligence over 5G networks along the US-Canada border in a bilateral experiment this fall.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
   </item>
   <item>
     <title>Press Freedom Groups Urge New Guatemala AG to End Journalist Persecution</title>
@@ -542,16 +502,6 @@
     <category>privacy</category>
   </item>
   <item>
-    <title>EFF Highlights How Commercial Tracking Feeds Government Mass Surveillance</title>
-    <link>https://libertas.fgu.tech/posts/eff-highlights-how-commercial-tracking-feeds-government-mass</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-highlights-how-commercial-tracking-feeds-government-mass</guid>
-    <pubDate>Wed, 13 May 2026 21:01:27 GMT</pubDate>
-    <description>EFF details how widespread commercial tracking enables government surveillance, with data brokers selling personal info to FBI/CBP/ICE to bypass warrant requirements.</description>
-    <category>privacy</category>
-    <category>surveillance</category>
-    <category>activism</category>
-  </item>
-  <item>
     <title>OONI Joins Quadratic Funding Campaign for Internet Freedom Projects</title>
     <link>https://libertas.fgu.tech/posts/ooni-joins-quadratic-funding-campaign-for-internet-freedom-p</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/ooni-joins-quadratic-funding-campaign-for-internet-freedom-p</guid>
@@ -655,6 +605,15 @@
     <category>privacy</category>
     <category>surveillance</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>NASA Satellites Can Detect GPS Jammers from Space, Raising Privacy Concerns</title>
+    <link>https://libertas.fgu.tech/posts/nasa-satellites-can-detect-gps-jammers-from-space-raising-pr</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/nasa-satellites-can-detect-gps-jammers-from-space-raising-pr</guid>
+    <pubDate>Thu, 28 May 2026 03:01:43 GMT</pubDate>
+    <description>NASA satellites originally designed for weather monitoring can now locate GPS jammers within several kilometers, potentially enabling state surveillance of privacy tools used by activists and dissidents.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
   </item>
   <item>
     <title>South Carolina Enacts Comprehensive Bitcoin Law, Bans State CBDC Use</title>

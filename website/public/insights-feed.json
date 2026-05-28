@@ -94,28 +94,6 @@
       }
     },
     {
-      "id": "0bcb64b2-64b5-4dde-b337-fc7d19a26917",
-      "url": "https://libertas.fgu.tech/posts/access-now-report-data-privacy-as-defense-against-electoral-",
-      "title": "Access Now Report: Data Privacy as Defense Against Electoral Disinformation in Latin America",
-      "summary": "Access Now analysis shows personal data collection fuels political microtargeting and disinformation, recommending strict data protection enforcement during elections across Latin America.",
-      "content_text": "Access Now published analysis linking data collection to disinformation campaigns targeting Latin American elections\n• Report identifies microtargeting as key threat: using personal data to deliver manipulative political content\n• Generative AI has reduced costs and technical barriers for creating deepfakes and bot networks\n• Social media algorithms use personal data profiles to enable political manipulation and voter suppression\n• Recommends data protection authorities collaborate with electoral authorities to combat coordinated disinformation\n• Proposes disabling microtargeting tools for political content during election periods\n• Calls for algorithmic impact laboratories to monitor platform compliance with recommendations",
-      "date_published": "2026-05-14T03:01:45.143Z",
-      "date_modified": "2026-05-14T03:01:45.228Z",
-      "tags": [
-        "privacy",
-        "surveillance",
-        "censorship-resistance",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 75,
-        "credibility_score": 85,
-        "citations": [
-          "https://www.accessnow.org/publication/vinculo-entre-desinformacion-y-privacidad/"
-        ]
-      }
-    },
-    {
       "id": "0e22e2ff-e53a-41e1-a52f-292fdc977c71",
       "url": "https://libertas.fgu.tech/posts/indonesia-plans-government-vetting-system-for-human-rights-d",
       "title": "Indonesia Plans Government Vetting System for Human Rights Defenders",
@@ -179,27 +157,6 @@
         "credibility_score": 95,
         "citations": [
           "https://www.eff.org/deeplinks/2026/05/we-must-not-normalize-digital-surveillance-abuses-effs-new-guide-underlines"
-        ]
-      }
-    },
-    {
-      "id": "22c9bf37-df6c-4f80-8d93-cac8b40d321d",
-      "url": "https://libertas.fgu.tech/posts/citizen-lab-director-warns-osce-about-unregulated-surveillan",
-      "title": "Citizen Lab Director Warns OSCE About Unregulated Surveillance Marketplace",
-      "summary": "Ron Deibert told OSCE that mercenary spyware is just the tip of a massive, unregulated surveillance economy targeting civil society.",
-      "content_text": "Citizen Lab director Ron Deibert addressed OSCE meeting on digital civil space protection\n• Warned that spyware is 'sharp point of the spear' in broader surveillance marketplace\n• Called out personal data surveillance economy as foundation for authoritarian tools\n• Criticized governments using national security excuses to avoid accountability\n• Urged liberal democracies to take concrete action protecting civil society\n• Emphasized need to protect those vulnerable to spreading authoritarianism\n• Speech delivered at official OSCE human rights forum, indicating institutional recognition of threat",
-      "date_published": "2026-05-13T21:02:52.666Z",
-      "date_modified": "2026-05-13T21:02:52.753Z",
-      "tags": [
-        "surveillance",
-        "privacy",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 75,
-        "credibility_score": 95,
-        "citations": [
-          "https://citizenlab.ca/ron-deibert-speaks-at-the-osce-supplementary-human-dimension-meeting-ii/"
         ]
       }
     },
@@ -306,27 +263,6 @@
         "credibility_score": 85,
         "citations": [
           "https://www.accessnow.org/press-release/microsoft-come-clean-about-your-ties-to-the-israeli-military/"
-        ]
-      }
-    },
-    {
-      "id": "3bfe6356-cdf6-4c23-ac4c-ac84ff1c7f20",
-      "url": "https://libertas.fgu.tech/posts/eff-challenges-weak-science-behind-state-social-media-bans-f",
-      "title": "EFF Challenges Weak Science Behind State Social Media Bans for Youth",
-      "summary": "EFF argues that state legislatures are rushing to ban youth social media access based on flawed research and 'pop psychology' rather than settled science, threatening constitutional rights.",
-      "content_text": "Multiple states including California, Massachusetts, and Minnesota advancing social media bans for minors\n• EFF argues legislation based on statistically flawed studies and 'pop psychology' narratives\n• Research claiming social media causes teen mental health crisis described as 'mixed, blurry, and contradictory'\n• Independent researchers from UC Irvine and Brown University dispute 'great rewiring' theory\n• Large-scale meta-analyses fail to show consistent association between social media and declining well-being\n• Studies often ignore alternative factors like pandemic isolation, school violence, economic stress\n• Legislative push heavily relies on Jonathan Haidt's 'The Anxious Generation' despite his lack of clinical psychology credentials\n• EFF frames issue as constitutional rights violation affecting youth free speech and privacy",
-      "date_published": "2026-05-13T21:01:27.337Z",
-      "date_modified": "2026-05-13T21:01:27.387Z",
-      "tags": [
-        "censorship-resistance",
-        "privacy",
-        "surveillance"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 75,
-        "credibility_score": 85,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/05/science-not-settled-how-weak-evidence-fueling-national-push-ban-social-media-youth"
         ]
       }
     },
@@ -629,26 +565,6 @@
         "credibility_score": 95,
         "citations": [
           "https://www.eff.org/deeplinks/2026/05/encrypted-apple-android-texts-effector-3810"
-        ]
-      }
-    },
-    {
-      "id": "826595b9-761c-46ac-b331-dded4870953a",
-      "url": "https://libertas.fgu.tech/posts/dhs-testing-autonomous-surveillance-drones-on-us-canada-bord",
-      "title": "DHS Testing Autonomous Surveillance Drones on US-Canada Border",
-      "summary": "DHS will deploy autonomous drones and ground vehicles streaming battlefield intelligence over 5G networks along the US-Canada border in a bilateral experiment this fall.",
-      "content_text": "Department of Homeland Security conducting autonomous drone surveillance experiment\n• Test involves both aerial drones and ground-based autonomous vehicles\n• Systems will stream 'battlefield intelligence' over 5G networks\n• Operation targets US-Canada border region\n• Bilateral experiment suggests Canadian government participation\n• Deployment scheduled for fall 2024\n• Represents escalation in automated border surveillance capabilities\n• Could establish precedent for expanded autonomous surveillance programs",
-      "date_published": "2026-05-13T21:02:35.836Z",
-      "date_modified": "2026-05-13T21:02:35.891Z",
-      "tags": [
-        "surveillance",
-        "privacy"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 75,
-        "credibility_score": 85,
-        "citations": [
-          "https://www.wired.com/story/dhs-plans-experiment-running-reconnaissance-drones-along-the-us-canada-border/"
         ]
       }
     },
@@ -1106,27 +1022,6 @@
       }
     },
     {
-      "id": "c00fac28-bbca-48f1-b299-a5530cfa88c4",
-      "url": "https://libertas.fgu.tech/posts/eff-highlights-how-commercial-tracking-feeds-government-mass",
-      "title": "EFF Highlights How Commercial Tracking Feeds Government Mass Surveillance",
-      "summary": "EFF details how widespread commercial tracking enables government surveillance, with data brokers selling personal info to FBI/CBP/ICE to bypass warrant requirements.",
-      "content_text": "Commercial online tracking enables government surveillance by feeding data broker ecosystem\n• Data brokers sell harvested personal data to law enforcement agencies including FBI, CBP, and ICE\n• Government exploits this system to buy sensitive information like location data without warrants\n• EFF's Privacy Badger browser extension blocks hidden trackers at the source\n• EFF advocating for stronger privacy laws and consumer rights in courts\n• Weak privacy laws allow this surveillance-industrial complex to operate legally\n• Mass surveillance used to control and intimidate people, according to EFF",
-      "date_published": "2026-05-13T21:01:27.337Z",
-      "date_modified": "2026-05-13T21:01:27.387Z",
-      "tags": [
-        "privacy",
-        "surveillance",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/05/online-tracking-isnt-just-unethical-its-dangerous"
-        ]
-      }
-    },
-    {
       "id": "c2b0ba73-623f-4b46-b436-142bc9794b74",
       "url": "https://libertas.fgu.tech/posts/ooni-joins-quadratic-funding-campaign-for-internet-freedom-p",
       "title": "OONI Joins Quadratic Funding Campaign for Internet Freedom Projects",
@@ -1340,6 +1235,27 @@
         "credibility_score": 85,
         "citations": [
           "https://theintercept.com/2026/05/14/nyu-langone-subpoena-transgender-health-care/"
+        ]
+      }
+    },
+    {
+      "id": "ef2021e7-b443-49c3-963b-44fe51c1171d",
+      "url": "https://libertas.fgu.tech/posts/nasa-satellites-can-detect-gps-jammers-from-space-raising-pr",
+      "title": "NASA Satellites Can Detect GPS Jammers from Space, Raising Privacy Concerns",
+      "summary": "NASA satellites originally designed for weather monitoring can now locate GPS jammers within several kilometers, potentially enabling state surveillance of privacy tools used by activists and dissidents.",
+      "content_text": "NASA satellites detected GPS jammer location in Iran within several kilometers in experimental test\n• Technology repurposes weather satellites designed for cyclone and ice sheet monitoring\n• Sean Gorman of Zephr.xyz demonstrated capability using two different NASA satellite systems\n• Cannot provide real-time monitoring or pinpoint exact locations currently\n• Dual-use implications: beneficial for navigation safety but enables surveillance of privacy tools\n• GPS jammers sometimes used legitimately by activists to avoid tracking\n• Could help authorities identify 'high risk areas' for aircraft and maritime shipping\n• Technology still experimental with significant limitations on precision and timing",
+      "date_published": "2026-05-28T03:01:43.890Z",
+      "date_modified": "2026-05-28T03:01:43.943Z",
+      "tags": [
+        "privacy",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 72,
+        "credibility_score": 85,
+        "citations": [
+          "https://arstechnica.com/gadgets/2026/05/nasa-satellites-can-spot-gps-jammers-on-earth/",
+          "https://arstechnica.com/security/2026/05/websites-have-a-new-way-to-spy-on-visitors-analyzing-their-ssd-activity/"
         ]
       }
     },
