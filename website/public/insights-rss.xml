@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 28 May 2026 21:01:22 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 29 May 2026 03:01:05 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -73,6 +73,15 @@
     <category>encryption</category>
     <category>censorship-resistance</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Treasury Nominee Bessent Reiterates Opposition to CBDC, Pushes Crypto Clarity Act</title>
+    <link>https://libertas.fgu.tech/posts/treasury-nominee-bessent-reiterates-opposition-to-cbdc-pushe</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/treasury-nominee-bessent-reiterates-opposition-to-cbdc-pushe</guid>
+    <pubDate>Fri, 29 May 2026 03:01:05 GMT</pubDate>
+    <description>Treasury Secretary nominee Scott Bessent reaffirmed opposition to a U.S. central bank digital currency and urged Congress to pass cryptocurrency regulatory clarity legislation.</description>
+    <category>sovereignty</category>
+    <category>payments</category>
   </item>
   <item>
     <title>Russia Bans 9 LGBT Rights Groups as &apos;Extremist,&apos; Creating Demand for Secure Comms</title>
