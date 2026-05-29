@@ -224,6 +224,28 @@
       }
     },
     {
+      "id": "2e772a3b-3b25-4844-a9ba-5c2926727221",
+      "url": "https://libertas.fgu.tech/posts/jpmorgan-ceo-dimon-declares-war-on-crypto-clarity-act-attack",
+      "title": "JPMorgan CEO Dimon Declares War on Crypto Clarity Act, Attacks Coinbase",
+      "summary": "JPMorgan's Jamie Dimon vows to fight the Clarity Act, claiming it lets crypto firms operate like banks without regulatory obligations, while calling Coinbase CEO Armstrong 'full of sh*t'.",
+      "content_text": "JPMorgan CEO Jamie Dimon publicly opposes the pending Clarity Act crypto legislation\n• Claims the Act allows crypto firms to pay interest on stablecoins without banking protections\n• Argues crypto platforms need full banking regulations: AML, BSA, FDIC insurance, capital requirements\n• Warns stablecoin rewards will accelerate deposit flight from traditional banks\n• Calls Coinbase CEO Brian Armstrong 'full of sh*t' for lobbying efforts in Washington\n• American Bankers Association and community banks aligned against current bill form\n• Dimon frames this as existential fight for traditional banking model",
+      "date_published": "2026-05-29T21:00:39.687Z",
+      "date_modified": "2026-05-29T21:00:39.754Z",
+      "tags": [
+        "bitcoin",
+        "payments",
+        "sovereignty",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://bitcoinmagazine.com/news/jpmorgan-chase-ceo-dimon-declares-war"
+        ]
+      }
+    },
+    {
       "id": "30c2a417-bbf4-425e-a705-77f351a2b112",
       "url": "https://libertas.fgu.tech/posts/china-s-new-xinjiang-secrecy-law-embeds-ai-surveillance-into",
       "title": "China's New Xinjiang Secrecy Law Embeds AI Surveillance Into Social Governance",
@@ -370,28 +392,6 @@
         "credibility_score": 88,
         "citations": [
           "https://cpj.org/2026/05/mexican-journalist-ipfa-recipient-maria-teresa-montano-targeted-in-possible-malware-surveillance-attacks/"
-        ]
-      }
-    },
-    {
-      "id": "4c6d92fb-637b-4f8f-b692-2825a7823fd0",
-      "url": "https://libertas.fgu.tech/posts/law-firm-seeks-to-redistribute-344m-frozen-usdt-from-iran-re",
-      "title": "Law Firm Seeks to Redistribute $344M Frozen USDT from Iran-Related Seizure",
-      "summary": "US law firm Gerstein Harrow is attempting to claim $344M in frozen USDT for clients with unrelated judgments, demonstrating how seized crypto assets become targets for redistribution.",
-      "content_text": "Gerstein Harrow LLP filing motion to claim $344M in frozen USDT\n• Funds appear to be Iran-related seizure, likely sanctions enforcement\n• Law firm seeking redistribution to clients with decades-old unrelated judgments\n• Case demonstrates how seized crypto becomes pool for various claimants\n• Highlights government's expanded reach over digital assets\n• Shows stablecoin seizure mechanisms are actively being used\n• Creates precedent for crypto asset redistribution beyond original cases",
-      "date_published": "2026-05-15T21:01:30.547Z",
-      "date_modified": "2026-05-15T21:01:30.626Z",
-      "tags": [
-        "payments",
-        "sovereignty",
-        "censorship-resistance"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 75,
-        "credibility_score": 80,
-        "citations": [
-          "https://cointelegraph.com/news/us-law-firm-motion-redistribution-344m-usdt-iran",
-          "https://cointelegraph.com/news/us-law-firm-motion-redistribution-344m-usdt-iran?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
         ]
       }
     },
@@ -544,6 +544,27 @@
         "credibility_score": 95,
         "citations": [
           "https://www.hrw.org/news/2026/05/22/dr-congo-renewed-repression-impunity-top-rights-concerns"
+        ]
+      }
+    },
+    {
+      "id": "6a03abf8-7006-4067-a72d-01a3900a574d",
+      "url": "https://libertas.fgu.tech/posts/citizen-lab-exposes-mobile-networks-as-covert-surveillance-p",
+      "title": "Citizen Lab Exposes Mobile Networks as Covert Surveillance Platforms",
+      "summary": "New Citizen Lab research reveals how weaknesses in mobile network technology and governance enable sophisticated surveillance campaigns targeting users.",
+      "content_text": "Citizen Lab researchers documented surveillance campaigns exploiting mobile network vulnerabilities\n• Study co-authored by Swantje Lange and Gary Miller exposes governance and technical weaknesses\n• Mobile networks described as 'highly opaque and extremely complex' enabling covert surveillance\n• Research shows how network infrastructure can be weaponized for espionage operations\n• Findings highlight systemic privacy risks in telecommunications infrastructure\n• Academic validation of mobile network surveillance threats from established research institution",
+      "date_published": "2026-05-29T21:01:45.200Z",
+      "date_modified": "2026-05-29T21:01:45.275Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "comms"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://citizenlab.ca/researchers-uncover-espionage-in-mobile-networks/"
         ]
       }
     },
@@ -977,6 +998,29 @@
         "credibility_score": 95,
         "citations": [
           "https://tails.net/news/version_7.8/"
+        ]
+      }
+    },
+    {
+      "id": "a5e3acf5-d607-4058-a396-49867ff615a1",
+      "url": "https://libertas.fgu.tech/posts/us-treasury-seizes-nearly-1b-in-iranian-crypto-assets",
+      "title": "US Treasury Seizes Nearly $1B in Iranian Crypto Assets",
+      "summary": "Treasury Secretary Scott Bessent disclosed the U.S. has seized nearly $1 billion in cryptocurrency assets from Iran, demonstrating state capacity for large-scale crypto confiscation.",
+      "content_text": "US Treasury has seized nearly $1 billion in Iranian cryptocurrency assets\n• Treasury Secretary Scott Bessent made the disclosure publicly\n• Seizure represents significant escalation from earlier $500 million figure reported this year\n• Demonstrates state capacity to confiscate digital assets at scale\n• Likely tied to sanctions enforcement against Iranian entities\n• Highlights vulnerability of centralized exchange custody\n• Shows importance of self-custody and privacy-preserving tools",
+      "date_published": "2026-05-29T21:01:00.221Z",
+      "date_modified": "2026-05-29T21:01:00.294Z",
+      "tags": [
+        "bitcoin",
+        "sovereignty",
+        "sanctions",
+        "seizure"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 80,
+        "citations": [
+          "https://www.theblock.co/post/403075/us-has-seized-nearly-1-billion-in-crypto-from-iran-bessent-says",
+          "https://www.theblock.co/post/403075/us-has-seized-nearly-1-billion-in-crypto-from-iran-bessent-says?utm_source=rss&amp;utm_medium=rss"
         ]
       }
     },

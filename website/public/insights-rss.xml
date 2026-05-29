@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 29 May 2026 15:02:27 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 29 May 2026 21:01:45 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -115,6 +115,17 @@
     <category>privacy</category>
   </item>
   <item>
+    <title>JPMorgan CEO Dimon Declares War on Crypto Clarity Act, Attacks Coinbase</title>
+    <link>https://libertas.fgu.tech/posts/jpmorgan-ceo-dimon-declares-war-on-crypto-clarity-act-attack</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/jpmorgan-ceo-dimon-declares-war-on-crypto-clarity-act-attack</guid>
+    <pubDate>Fri, 29 May 2026 21:00:39 GMT</pubDate>
+    <description>JPMorgan&apos;s Jamie Dimon vows to fight the Clarity Act, claiming it lets crypto firms operate like banks without regulatory obligations, while calling Coinbase CEO Armstrong &apos;full of sh*t&apos;.</description>
+    <category>bitcoin</category>
+    <category>payments</category>
+    <category>sovereignty</category>
+    <category>censorship-resistance</category>
+  </item>
+  <item>
     <title>China&apos;s New Xinjiang Secrecy Law Embeds AI Surveillance Into Social Governance</title>
     <link>https://libertas.fgu.tech/posts/china-s-new-xinjiang-secrecy-law-embeds-ai-surveillance-into</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/china-s-new-xinjiang-secrecy-law-embeds-ai-surveillance-into</guid>
@@ -186,16 +197,6 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
-  </item>
-  <item>
-    <title>Law Firm Seeks to Redistribute $344M Frozen USDT from Iran-Related Seizure</title>
-    <link>https://libertas.fgu.tech/posts/law-firm-seeks-to-redistribute-344m-frozen-usdt-from-iran-re</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/law-firm-seeks-to-redistribute-344m-frozen-usdt-from-iran-re</guid>
-    <pubDate>Fri, 15 May 2026 21:01:30 GMT</pubDate>
-    <description>US law firm Gerstein Harrow is attempting to claim $344M in frozen USDT for clients with unrelated judgments, demonstrating how seized crypto assets become targets for redistribution.</description>
-    <category>payments</category>
-    <category>sovereignty</category>
-    <category>censorship-resistance</category>
   </item>
   <item>
     <title>How Journalists Navigate Internet Shutdowns Across Iran, India, Ethiopia, and Turkey</title>
@@ -270,6 +271,16 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>Citizen Lab Exposes Mobile Networks as Covert Surveillance Platforms</title>
+    <link>https://libertas.fgu.tech/posts/citizen-lab-exposes-mobile-networks-as-covert-surveillance-p</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/citizen-lab-exposes-mobile-networks-as-covert-surveillance-p</guid>
+    <pubDate>Fri, 29 May 2026 21:01:45 GMT</pubDate>
+    <description>New Citizen Lab research reveals how weaknesses in mobile network technology and governance enable sophisticated surveillance campaigns targeting users.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>comms</category>
   </item>
   <item>
     <title>EFF Exposes Mass ALPR Mission Creep: School Checks, Employment Screening</title>
@@ -482,6 +493,17 @@
     <category>censorship-resistance</category>
     <category>surveillance</category>
     <category>comms</category>
+  </item>
+  <item>
+    <title>US Treasury Seizes Nearly $1B in Iranian Crypto Assets</title>
+    <link>https://libertas.fgu.tech/posts/us-treasury-seizes-nearly-1b-in-iranian-crypto-assets</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/us-treasury-seizes-nearly-1b-in-iranian-crypto-assets</guid>
+    <pubDate>Fri, 29 May 2026 21:01:00 GMT</pubDate>
+    <description>Treasury Secretary Scott Bessent disclosed the U.S. has seized nearly $1 billion in cryptocurrency assets from Iran, demonstrating state capacity for large-scale crypto confiscation.</description>
+    <category>bitcoin</category>
+    <category>sovereignty</category>
+    <category>sanctions</category>
+    <category>seizure</category>
   </item>
   <item>
     <title>Rights Groups Demand Microsoft Disclose Review of Azure Services to Israeli Military Surveillance</title>
