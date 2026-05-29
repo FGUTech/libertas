@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 29 May 2026 03:01:05 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 29 May 2026 15:02:27 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -147,6 +147,17 @@
     <category>sovereignty</category>
   </item>
   <item>
+    <title>Schneier: Systematic Chilling Effects as Government Strategy Against Dissent</title>
+    <link>https://libertas.fgu.tech/posts/schneier-systematic-chilling-effects-as-government-strategy-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/schneier-systematic-chilling-effects-as-government-strategy-</guid>
+    <pubDate>Fri, 29 May 2026 15:02:27 GMT</pubDate>
+    <description>Bruce Schneier and Jon Penney analyze how surveillance, threats, and abuse of power create systematic chilling effects that suppress dissent and activism, arguing this represents a deliberate strategy rather than incidental government overreach.</description>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>privacy</category>
+  </item>
+  <item>
     <title>Rights Groups Demand Microsoft Disclose Review of Israeli Military AI/Cloud Services</title>
     <link>https://libertas.fgu.tech/posts/rights-groups-demand-microsoft-disclose-review-of-israeli-mi</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/rights-groups-demand-microsoft-disclose-review-of-israeli-mi</guid>
@@ -175,17 +186,6 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
-  </item>
-  <item>
-    <title>Trump Admin Targets &apos;Anti-Fascists&apos; as Terrorists in 2026 Counterterrorism Strategy</title>
-    <link>https://libertas.fgu.tech/posts/trump-admin-targets-anti-fascists-as-terrorists-in-2026-coun</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/trump-admin-targets-anti-fascists-as-terrorists-in-2026-coun</guid>
-    <pubDate>Fri, 15 May 2026 15:03:20 GMT</pubDate>
-    <description>Trump&apos;s new counterterrorism strategy formally classifies &apos;Violent Left-Wing Extremists, including Anti-Fascists&apos; as major terror threats alongside ISIS and cartels, while omitting right-wing groups.</description>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>censorship-resistance</category>
-    <category>sovereignty</category>
   </item>
   <item>
     <title>Law Firm Seeks to Redistribute $344M Frozen USDT from Iran-Related Seizure</title>
@@ -228,6 +228,16 @@
     <category>censorship-resistance</category>
     <category>surveillance</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Texas Forms Bitcoin Reserve Committee, Moves to Direct BTC Custody</title>
+    <link>https://libertas.fgu.tech/posts/texas-forms-bitcoin-reserve-committee-moves-to-direct-btc-cu</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/texas-forms-bitcoin-reserve-committee-moves-to-direct-btc-cu</guid>
+    <pubDate>Fri, 29 May 2026 15:01:15 GMT</pubDate>
+    <description>Texas announced a 5-member advisory committee for its Strategic Bitcoin Reserve and issued RFP for crypto custodian to transition from ETF exposure to direct Bitcoin custody.</description>
+    <category>bitcoin</category>
+    <category>sovereignty</category>
+    <category>payments</category>
   </item>
   <item>
     <title>South Carolina Bans CBDC Payments, Supports Crypto Mining</title>
@@ -463,16 +473,6 @@
     <category>activism</category>
   </item>
   <item>
-    <title>Trump Admin Counterterrorism Strategy Targets Anti-Fascist Activists, Domestic Dissent</title>
-    <link>https://libertas.fgu.tech/posts/trump-admin-counterterrorism-strategy-targets-anti-fascist-a</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/trump-admin-counterterrorism-strategy-targets-anti-fascist-a</guid>
-    <pubDate>Fri, 15 May 2026 15:03:20 GMT</pubDate>
-    <description>New 16-page Trump counterterrorism strategy explicitly targets anti-fascist activists alongside ISIS, with &apos;find you and kill you&apos; language, expanding surveillance powers against domestic dissent.</description>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>censorship-resistance</category>
-  </item>
-  <item>
     <title>Tails 7.8 Fixes Critical Security Vulnerabilities That Could Enable Deanonymization</title>
     <link>https://libertas.fgu.tech/posts/tails-7-8-fixes-critical-security-vulnerabilities-that-could</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/tails-7-8-fixes-critical-security-vulnerabilities-that-could</guid>
@@ -555,17 +555,6 @@
     <category>activism</category>
   </item>
   <item>
-    <title>Signal Threatens to Exit Canada Over Encryption-Breaking Bill C-22</title>
-    <link>https://libertas.fgu.tech/posts/signal-threatens-to-exit-canada-over-encryption-breaking-bil</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/signal-threatens-to-exit-canada-over-encryption-breaking-bil</guid>
-    <pubDate>Fri, 15 May 2026 09:00:40 GMT</pubDate>
-    <description>Signal&apos;s VP of Strategy says the encrypted messaging app would rather leave Canada than comply with Bill C-22, which could force backdoors into end-to-end encryption.</description>
-    <category>privacy</category>
-    <category>comms</category>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-  </item>
-  <item>
     <title>Access Now Links Privacy Protection to Disinformation Defense in Latin America</title>
     <link>https://libertas.fgu.tech/posts/access-now-links-privacy-protection-to-disinformation-defens</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/access-now-links-privacy-protection-to-disinformation-defens</guid>
@@ -604,17 +593,6 @@
     <description>The UK sanctioned HTX (formerly Huobi Global) crypto exchange, claiming it&apos;s being exploited by Russia to bypass existing financial sanctions.</description>
     <category>payments</category>
     <category>censorship-resistance</category>
-    <category>sovereignty</category>
-  </item>
-  <item>
-    <title>Tunisia Prosecutes Refugee Aid Workers, Shuts Down Civil Society Organizations</title>
-    <link>https://libertas.fgu.tech/posts/tunisia-prosecutes-refugee-aid-workers-shuts-down-civil-soci</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/tunisia-prosecutes-refugee-aid-workers-shuts-down-civil-soci</guid>
-    <pubDate>Fri, 15 May 2026 15:02:23 GMT</pubDate>
-    <description>Tunisia sentenced two refugee aid workers to prison for humanitarian work, shut down their organization, and froze accounts as part of broader crackdown on civil society groups.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
     <category>sovereignty</category>
   </item>
   <item>
