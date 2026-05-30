@@ -7,6 +7,28 @@
   "language": "en-US",
   "items": [
     {
+      "id": "0931a1c8-15cd-4809-96e2-30c55c0ad172",
+      "url": "https://libertas.fgu.tech/posts/california-expands-age-gating-to-browsers-websites-exempts-o",
+      "title": "California Expands Age-Gating to Browsers/Websites, Exempts Open Source",
+      "summary": "CA's AB 1856 exempts open-source OS from age verification while expanding mandatory age-bracketing from OS/app stores to all browsers and websites.",
+      "content_text": "AB 1856 amends last year's AB 1043 Digital Age Assurance Act with mixed results\n• New exemption excludes open-source operating systems from age-bracketing requirements\n• Bill expands age verification mandates to cover all web browsers and websites\n• Open-source exemption applies to software with copy/redistribute/modify rights\n• EFF warns expansion creates 'nearly impossible' barrier to avoiding age gates\n• Age-bracketing pressures companies toward ID checks and biometric scanning\n• Bill passed Assembly 68-1, now moves to California Senate for consideration\n• Ambiguity remains on commercial products incorporating open-source components",
+      "date_published": "2026-05-30T03:00:29.575Z",
+      "date_modified": "2026-05-30T03:00:29.652Z",
+      "tags": [
+        "privacy",
+        "censorship-resistance",
+        "surveillance",
+        "identity"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/05/one-step-forward-two-steps-back-cas-ab-1856-exempts-open-source-expands-age-gating"
+        ]
+      }
+    },
+    {
       "id": "09418b42-cdc4-4e3b-b57d-de2a28b44504",
       "url": "https://libertas.fgu.tech/posts/wifi-signals-can-now-identify-people-through-radio-wave-anal",
       "title": "WiFi Signals Can Now Identify People Through Radio Wave Analysis",

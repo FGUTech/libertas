@@ -5,9 +5,20 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 29 May 2026 21:01:45 GMT</lastBuildDate>
+  <lastBuildDate>Sat, 30 May 2026 03:00:29 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
+  <item>
+    <title>California Expands Age-Gating to Browsers/Websites, Exempts Open Source</title>
+    <link>https://libertas.fgu.tech/posts/california-expands-age-gating-to-browsers-websites-exempts-o</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/california-expands-age-gating-to-browsers-websites-exempts-o</guid>
+    <pubDate>Sat, 30 May 2026 03:00:29 GMT</pubDate>
+    <description>CA&apos;s AB 1856 exempts open-source OS from age verification while expanding mandatory age-bracketing from OS/app stores to all browsers and websites.</description>
+    <category>privacy</category>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>identity</category>
+  </item>
   <item>
     <title>WiFi Signals Can Now Identify People Through Radio Wave Analysis</title>
     <link>https://libertas.fgu.tech/posts/wifi-signals-can-now-identify-people-through-radio-wave-anal</link>
