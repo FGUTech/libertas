@@ -1068,6 +1068,28 @@
       }
     },
     {
+      "id": "aa8c36df-4544-47db-b29f-c954ecc4b2cf",
+      "url": "https://libertas.fgu.tech/posts/court-order-freezes-12-6m-in-zama-s-confidential-usdc-contra",
+      "title": "Court Order Freezes $12.6M in Zama's Confidential USDC Contract",
+      "summary": "Circle froze $12.6M in Zama's confidential USDC contract following a court order related to Overnight Finance lawsuit, highlighting vulnerability of privacy tech to state intervention.",
+      "content_text": "Court-ordered freeze trapped $12.6 million in Zama's confidential USDC smart contract\n• Circle executed the freeze as part of lawsuit involving Overnight Finance\n• Zama CEO Rand Hindi says protocol was \"caught in crossfire\" of legal dispute\n• Demonstrates centralized stablecoin vulnerability even within privacy-preserving protocols\n• Zama focuses on confidential computing and encrypted blockchain transactions\n• Incident exposes tension between financial privacy tech and traditional legal systems\n• Team investigating the freeze but limited recourse due to Circle's centralized control",
+      "date_published": "2026-05-30T15:00:24.469Z",
+      "date_modified": "2026-05-30T15:00:24.507Z",
+      "tags": [
+        "privacy",
+        "zk",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://www.theblock.co/post/403091/court-ordered-circle-freeze-traps-12-6-million-in-zama-cusdc-contract-amid-overnight-finance-suit",
+          "https://www.theblock.co/post/403091/court-ordered-circle-freeze-traps-12-6-million-in-zama-cusdc-contract-amid-overnight-finance-suit?utm_source=rss&amp;utm_medium=rss"
+        ]
+      }
+    },
+    {
       "id": "af7277ef-1dfa-43aa-ada2-768c74bd398c",
       "url": "https://libertas.fgu.tech/posts/rights-groups-demand-microsoft-disclose-israeli-military-sur",
       "title": "Rights Groups Demand Microsoft Disclose Israeli Military Surveillance Tech Review",

@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Sat, 30 May 2026 03:00:29 GMT</lastBuildDate>
+  <lastBuildDate>Sat, 30 May 2026 15:00:24 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -525,6 +525,16 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Court Order Freezes $12.6M in Zama&apos;s Confidential USDC Contract</title>
+    <link>https://libertas.fgu.tech/posts/court-order-freezes-12-6m-in-zama-s-confidential-usdc-contra</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/court-order-freezes-12-6m-in-zama-s-confidential-usdc-contra</guid>
+    <pubDate>Sat, 30 May 2026 15:00:24 GMT</pubDate>
+    <description>Circle froze $12.6M in Zama&apos;s confidential USDC contract following a court order related to Overnight Finance lawsuit, highlighting vulnerability of privacy tech to state intervention.</description>
+    <category>privacy</category>
+    <category>zk</category>
+    <category>censorship-resistance</category>
   </item>
   <item>
     <title>Rights Groups Demand Microsoft Disclose Israeli Military Surveillance Tech Review</title>
