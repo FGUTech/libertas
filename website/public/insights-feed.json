@@ -311,6 +311,27 @@
       }
     },
     {
+      "id": "3339e8d9-976c-4564-8350-abe7508592eb",
+      "url": "https://libertas.fgu.tech/posts/circle-freezes-12-6m-usdc-linked-to-privacy-protocol-zama",
+      "title": "Circle Freezes $12.6M USDC Linked to Privacy Protocol Zama",
+      "summary": "Circle froze $12.6M USDC connected to privacy protocol Zama, reportedly due to unrelated civil court case, highlighting centralized stablecoin control risks.",
+      "content_text": "Circle froze $12.6 million USDC associated with privacy protocol Zama\n• Freeze reportedly connected to ongoing civil court case unrelated to Zama itself\n• Information comes from blockchain analyst ZachXBT's investigation\n• Demonstrates centralized control mechanisms in major stablecoin infrastructure\n• Highlights surveillance risks for privacy-focused protocols using traditional crypto rails\n• Zama is known for fully homomorphic encryption (FHE) blockchain solutions\n• Incident underscores importance of censorship-resistant payment alternatives",
+      "date_published": "2026-05-30T21:00:56.615Z",
+      "date_modified": "2026-05-30T21:00:56.673Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "payments"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 72,
+        "citations": [
+          "https://cointelegraph.com/news/circle-freezes-126m-of-usdc-linked-to-privacy-protocol-zama?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+        ]
+      }
+    },
+    {
       "id": "35ed624c-8583-4afe-9245-da6a5c37ef87",
       "url": "https://libertas.fgu.tech/posts/el-salvador-detains-anti-corruption-lawyer-for-one-year-trig",
       "title": "El Salvador Detains Anti-Corruption Lawyer for One Year, Triggers Mass Exodus of Rights Groups",

@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Sat, 30 May 2026 15:00:24 GMT</lastBuildDate>
+  <lastBuildDate>Sat, 30 May 2026 21:00:56 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -156,6 +156,16 @@
     <category>privacy</category>
     <category>surveillance</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Circle Freezes $12.6M USDC Linked to Privacy Protocol Zama</title>
+    <link>https://libertas.fgu.tech/posts/circle-freezes-12-6m-usdc-linked-to-privacy-protocol-zama</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/circle-freezes-12-6m-usdc-linked-to-privacy-protocol-zama</guid>
+    <pubDate>Sat, 30 May 2026 21:00:56 GMT</pubDate>
+    <description>Circle froze $12.6M USDC connected to privacy protocol Zama, reportedly due to unrelated civil court case, highlighting centralized stablecoin control risks.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>payments</category>
   </item>
   <item>
     <title>El Salvador Detains Anti-Corruption Lawyer for One Year, Triggers Mass Exodus of Rights Groups</title>
