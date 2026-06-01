@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Sat, 30 May 2026 21:00:56 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 01 Jun 2026 15:03:43 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -137,17 +137,6 @@
     <category>censorship-resistance</category>
   </item>
   <item>
-    <title>China&apos;s New Xinjiang Secrecy Law Embeds AI Surveillance Into Social Governance</title>
-    <link>https://libertas.fgu.tech/posts/china-s-new-xinjiang-secrecy-law-embeds-ai-surveillance-into</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/china-s-new-xinjiang-secrecy-law-embeds-ai-surveillance-into</guid>
-    <pubDate>Mon, 18 May 2026 09:02:46 GMT</pubDate>
-    <description>China&apos;s new state secrets regulation for Xinjiang uses AI monitoring and grassroots reporting to control information flows, making everyday communication subject to security evaluation and creating a &apos;structure of silence.&apos;</description>
-    <category>surveillance</category>
-    <category>censorship-resistance</category>
-    <category>privacy</category>
-    <category>activism</category>
-  </item>
-  <item>
     <title>EFF Reveals Meta&apos;s Strategic Timing for Privacy-Invasive Face Recognition Release</title>
     <link>https://libertas.fgu.tech/posts/eff-reveals-meta-s-strategic-timing-for-privacy-invasive-fac</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-reveals-meta-s-strategic-timing-for-privacy-invasive-fac</guid>
@@ -168,17 +157,6 @@
     <category>payments</category>
   </item>
   <item>
-    <title>El Salvador Detains Anti-Corruption Lawyer for One Year, Triggers Mass Exodus of Rights Groups</title>
-    <link>https://libertas.fgu.tech/posts/el-salvador-detains-anti-corruption-lawyer-for-one-year-trig</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/el-salvador-detains-anti-corruption-lawyer-for-one-year-trig</guid>
-    <pubDate>Mon, 18 May 2026 09:02:04 GMT</pubDate>
-    <description>Salvadoran authorities have held prominent anti-corruption lawyer Ruth López in sealed pretrial detention for one year, sparking wider crackdown that forced 140+ activists and journalists into exile.</description>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-    <category>surveillance</category>
-    <category>sovereignty</category>
-  </item>
-  <item>
     <title>Schneier: Systematic Chilling Effects as Government Strategy Against Dissent</title>
     <link>https://libertas.fgu.tech/posts/schneier-systematic-chilling-effects-as-government-strategy-</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/schneier-systematic-chilling-effects-as-government-strategy-</guid>
@@ -190,16 +168,6 @@
     <category>privacy</category>
   </item>
   <item>
-    <title>Rights Groups Demand Microsoft Disclose Review of Israeli Military AI/Cloud Services</title>
-    <link>https://libertas.fgu.tech/posts/rights-groups-demand-microsoft-disclose-review-of-israeli-mi</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/rights-groups-demand-microsoft-disclose-review-of-israeli-mi</guid>
-    <pubDate>Mon, 18 May 2026 09:01:39 GMT</pubDate>
-    <description>Five major rights organizations are pressuring Microsoft to publish findings of its review into Israeli military use of Azure and AI services for surveillance and targeting of Palestinians.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
-    <category>activism</category>
-  </item>
-  <item>
     <title>Venezuelan Mother Dies After 16-Month Search for Secretly Dead Political Prisoner Son</title>
     <link>https://libertas.fgu.tech/posts/venezuelan-mother-dies-after-16-month-search-for-secretly-de</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/venezuelan-mother-dies-after-16-month-search-for-secretly-de</guid>
@@ -208,6 +176,17 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>censorship-resistance</category>
+  </item>
+  <item>
+    <title>EFF Names Nicole Ozer as New Executive Director</title>
+    <link>https://libertas.fgu.tech/posts/eff-names-nicole-ozer-as-new-executive-director</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-names-nicole-ozer-as-new-executive-director</guid>
+    <pubDate>Mon, 01 Jun 2026 15:00:48 GMT</pubDate>
+    <description>Electronic Frontier Foundation announces Nicole Ozer as new Executive Director, bringing two decades of privacy legislation and surveillance oversight experience including authoring California&apos;s warrant requirement for electronic data access.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>activism</category>
   </item>
   <item>
     <title>Mexican Journalist Targeted with Malware Surveillance Attacks</title>
@@ -388,6 +367,17 @@
     <category>sovereignty</category>
   </item>
   <item>
+    <title>US Fusion Centers Surveilling AI Critics on Social Media</title>
+    <link>https://libertas.fgu.tech/posts/us-fusion-centers-surveilling-ai-critics-on-social-media</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/us-fusion-centers-surveilling-ai-critics-on-social-media</guid>
+    <pubDate>Mon, 01 Jun 2026 15:03:43 GMT</pubDate>
+    <description>Philadelphia fusion center is monitoring Americans&apos; social media posts critical of AI data centers, labeling routine First Amendment activity as potential domestic violent extremism.</description>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>privacy</category>
+    <category>censorship-resistance</category>
+  </item>
+  <item>
     <title>Retired Cop Wins $835K Settlement After 37-Day Jail for Trump Meme</title>
     <link>https://libertas.fgu.tech/posts/retired-cop-wins-835k-settlement-after-37-day-jail-for-trump</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/retired-cop-wins-835k-settlement-after-37-day-jail-for-trump</guid>
@@ -484,17 +474,6 @@
     <category>sovereignty</category>
   </item>
   <item>
-    <title>Iran Launches Bitcoin-Settled Maritime Insurance for Strait of Hormuz Transit</title>
-    <link>https://libertas.fgu.tech/posts/iran-launches-bitcoin-settled-maritime-insurance-for-strait-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/iran-launches-bitcoin-settled-maritime-insurance-for-strait-</guid>
-    <pubDate>Mon, 18 May 2026 15:01:08 GMT</pubDate>
-    <description>Iran launched Hormuz Safe, a Bitcoin-settled maritime insurance platform for Strait of Hormuz shipping, projecting $10B revenue while leveraging Bitcoin&apos;s censorship resistance under US sanctions.</description>
-    <category>bitcoin</category>
-    <category>payments</category>
-    <category>sovereignty</category>
-    <category>censorship-resistance</category>
-  </item>
-  <item>
     <title>Mexican Journalists Jailed Under New AI Manipulation Laws After Gov Corruption Coverage</title>
     <link>https://libertas.fgu.tech/posts/mexican-journalists-jailed-under-new-ai-manipulation-laws-af</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/mexican-journalists-jailed-under-new-ai-manipulation-laws-af</guid>
@@ -527,16 +506,6 @@
     <category>seizure</category>
   </item>
   <item>
-    <title>Rights Groups Demand Microsoft Disclose Review of Azure Services to Israeli Military Surveillance</title>
-    <link>https://libertas.fgu.tech/posts/rights-groups-demand-microsoft-disclose-review-of-azure-serv</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/rights-groups-demand-microsoft-disclose-review-of-azure-serv</guid>
-    <pubDate>Mon, 18 May 2026 09:01:39 GMT</pubDate>
-    <description>Access Now and coalition demand Microsoft publicly release findings of investigation into Azure cloud services used by Israeli military units for mass surveillance and AI-assisted targeting of Palestinians.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
-    <category>activism</category>
-  </item>
-  <item>
     <title>Court Order Freezes $12.6M in Zama&apos;s Confidential USDC Contract</title>
     <link>https://libertas.fgu.tech/posts/court-order-freezes-12-6m-in-zama-s-confidential-usdc-contra</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/court-order-freezes-12-6m-in-zama-s-confidential-usdc-contra</guid>
@@ -566,6 +535,17 @@
     <category>payments</category>
     <category>censorship-resistance</category>
     <category>surveillance</category>
+  </item>
+  <item>
+    <title>China Intensifies Tiananmen Censorship with Advanced Algorithmic Filtering</title>
+    <link>https://libertas.fgu.tech/posts/china-intensifies-tiananmen-censorship-with-advanced-algorit</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/china-intensifies-tiananmen-censorship-with-advanced-algorit</guid>
+    <pubDate>Mon, 01 Jun 2026 15:02:40 GMT</pubDate>
+    <description>Chinese authorities are deploying sophisticated censorship algorithms that can flag indirect references like &apos;one banana and four apples&apos; as Tiananmen symbols, while expanding surveillance to license plates and social gatherings.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>privacy</category>
   </item>
   <item>
     <title>Maldives Jails First Journalists Since 2008, Escalates Press Freedom Crackdown</title>
@@ -688,6 +668,17 @@
     <category>sovereignty</category>
     <category>privacy</category>
     <category>payments</category>
+  </item>
+  <item>
+    <title>Ethiopia Election: Systematic Press Censorship and Phone Searches Target Journalists</title>
+    <link>https://libertas.fgu.tech/posts/ethiopia-election-systematic-press-censorship-and-phone-sear</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/ethiopia-election-systematic-press-censorship-and-phone-sear</guid>
+    <pubDate>Mon, 01 Jun 2026 15:02:17 GMT</pubDate>
+    <description>Ethiopian authorities are detaining journalists, searching their phones, and revoking media licenses ahead of June elections, creating what reporters call a climate of fear that has crippled independent election coverage.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>privacy</category>
   </item>
   <item>
     <title>Freedom House Links Iran&apos;s Internet Blackouts to Historical Resistance Patterns</title>
