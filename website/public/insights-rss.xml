@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Mon, 01 Jun 2026 15:03:43 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 01 Jun 2026 21:02:06 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -106,15 +106,15 @@
     <category>comms</category>
   </item>
   <item>
-    <title>EFF Releases Guide to Combat Digital Surveillance Abuses in the Americas</title>
-    <link>https://libertas.fgu.tech/posts/eff-releases-guide-to-combat-digital-surveillance-abuses-in-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-releases-guide-to-combat-digital-surveillance-abuses-in-</guid>
-    <pubDate>Mon, 18 May 2026 21:01:32 GMT</pubDate>
-    <description>EFF published comprehensive guide outlining legal frameworks and institutional safeguards needed to curb systematic digital surveillance abuses across Latin America, leveraging Inter-American human rights law.</description>
+    <title>Researchers Document &apos;Chilling Effect&apos; of Government Surveillance on Free Speech</title>
+    <link>https://libertas.fgu.tech/posts/researchers-document-chilling-effect-of-government-surveilla</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/researchers-document-chilling-effect-of-government-surveilla</guid>
+    <pubDate>Mon, 01 Jun 2026 21:01:19 GMT</pubDate>
+    <description>Citizen Lab researchers argue that surveillance and government threats are causing widespread self-censorship among Americans, creating a chilling effect that extends far beyond campus protests.</description>
     <category>surveillance</category>
-    <category>privacy</category>
-    <category>activism</category>
     <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>privacy</category>
   </item>
   <item>
     <title>FBI Seeks Nationwide Real-Time License Plate Surveillance Network</title>
@@ -281,6 +281,17 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>comms</category>
+  </item>
+  <item>
+    <title>Fusion Centers Monitor Social Media for AI Data Center Critics, Labeling Speech as Terror Risk</title>
+    <link>https://libertas.fgu.tech/posts/fusion-centers-monitor-social-media-for-ai-data-center-criti</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/fusion-centers-monitor-social-media-for-ai-data-center-criti</guid>
+    <pubDate>Mon, 01 Jun 2026 21:02:06 GMT</pubDate>
+    <description>Philadelphia fusion center surveillance bulletin obtained by The Intercept shows police monitoring social media posts critical of AI data centers, classifying &quot;disruptive First Amendment activity&quot; as domestic terrorism indicators.</description>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>privacy</category>
+    <category>censorship-resistance</category>
   </item>
   <item>
     <title>EFF Exposes Mass ALPR Mission Creep: School Checks, Employment Screening</title>
@@ -597,16 +608,6 @@
     <category>surveillance</category>
     <category>censorship-resistance</category>
     <category>activism</category>
-  </item>
-  <item>
-    <title>White House to Announce Strategic Bitcoin Reserve Details After Legal Framework Completion</title>
-    <link>https://libertas.fgu.tech/posts/white-house-to-announce-strategic-bitcoin-reserve-details-af</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/white-house-to-announce-strategic-bitcoin-reserve-details-af</guid>
-    <pubDate>Mon, 18 May 2026 21:02:00 GMT</pubDate>
-    <description>U.S. officials say announcement on Strategic Bitcoin Reserve implementation is imminent after clearing legal hurdles for custody of 328,372 BTC held from law enforcement seizures.</description>
-    <category>bitcoin</category>
-    <category>sovereignty</category>
-    <category>payments</category>
   </item>
   <item>
     <title>Meta Blocks Human Rights Accounts in Saudi Arabia and UAE</title>

@@ -204,24 +204,24 @@
       }
     },
     {
-      "id": "1b8d2cad-fd55-4d4e-a5a6-d9eec31fa5dc",
-      "url": "https://libertas.fgu.tech/posts/eff-releases-guide-to-combat-digital-surveillance-abuses-in-",
-      "title": "EFF Releases Guide to Combat Digital Surveillance Abuses in the Americas",
-      "summary": "EFF published comprehensive guide outlining legal frameworks and institutional safeguards needed to curb systematic digital surveillance abuses across Latin America, leveraging Inter-American human rights law.",
-      "content_text": "EFF released 'Tackling Arbitrary Digital Surveillance in the Americas' guide addressing systematic surveillance abuses\n• Guide compiles privacy and data protection guarantees from Inter-American Human Rights System\n• Provides actionable framework for governments to implement surveillance safeguards and oversight mechanisms\n• Addresses normalization of pervasive digital surveillance by security forces across the region\n• Emphasizes that arbitrary surveillance undermines rather than enhances actual security\n• Outlines eight core requirements including judicial authorization, independent oversight, and victim remedies\n• Most Latin American states bound by American Convention on Human Rights obligations\n• Calls for civil society mobilization against surveillance abuse normalization",
-      "date_published": "2026-05-18T21:01:32.933Z",
-      "date_modified": "2026-05-18T21:01:32.989Z",
+      "id": "15114414-1f79-47ba-adc6-8d28025be064",
+      "url": "https://libertas.fgu.tech/posts/researchers-document-chilling-effect-of-government-surveilla",
+      "title": "Researchers Document 'Chilling Effect' of Government Surveillance on Free Speech",
+      "summary": "Citizen Lab researchers argue that surveillance and government threats are causing widespread self-censorship among Americans, creating a chilling effect that extends far beyond campus protests.",
+      "content_text": "Citizen Lab's Jon Penney and Bruce Schneier published op-ed on surveillance-driven self-censorship\n• Researchers observe fewer protests despite strong opposition to current administration\n• Define 'chilling effect' as behavioral tendency to self-censor due to perceived threats\n• U.S. government systematically employs surveillance, personal threats, and power abuse\n• Self-censorship pattern extends beyond campuses to broader population\n• Authors argue resisting self-censorship must become the norm, not exception\n• Analysis published in The Conversation, republished by Salon and McClatchy Media Group",
+      "date_published": "2026-06-01T21:01:19.076Z",
+      "date_modified": "2026-06-01T21:01:19.171Z",
       "tags": [
         "surveillance",
-        "privacy",
+        "censorship-resistance",
         "activism",
-        "censorship-resistance"
+        "privacy"
       ],
       "_libertas": {
-        "freedom_relevance_score": 85,
-        "credibility_score": 95,
+        "freedom_relevance_score": 72,
+        "credibility_score": 85,
         "citations": [
-          "https://www.eff.org/deeplinks/2026/05/we-must-not-normalize-digital-surveillance-abuses-effs-new-guide-underlines"
+          "https://citizenlab.ca/chilling-effects-of-trumps-war-on-free-speech-extend-far-beyond-campus-walls-and-thats-the-point/"
         ]
       }
     },
@@ -565,6 +565,28 @@
         "credibility_score": 95,
         "citations": [
           "https://citizenlab.ca/researchers-uncover-espionage-in-mobile-networks/"
+        ]
+      }
+    },
+    {
+      "id": "6e5487ca-946e-4d0f-b77c-a7642a527a15",
+      "url": "https://libertas.fgu.tech/posts/fusion-centers-monitor-social-media-for-ai-data-center-criti",
+      "title": "Fusion Centers Monitor Social Media for AI Data Center Critics, Labeling Speech as Terror Risk",
+      "summary": "Philadelphia fusion center surveillance bulletin obtained by The Intercept shows police monitoring social media posts critical of AI data centers, classifying \"disruptive First Amendment activity\" as domestic terrorism indicators.",
+      "content_text": "Delaware Valley Intelligence Center issued December bulletin warning of 'domestic violent extremist' threat to AI data centers\n• Fusion center monitored social media posts, memes, and blog posts critical of data center construction\n• Document acknowledges 'lack of specific information on plans to target AI data centers' but warns of three planned facilities\n• Examples include hyperbolic posts about 'burning down' data centers and Dune science fiction references\n• Report classifies 'disruptive First Amendment activity' as terrorism indicator despite constitutional protections\n• Bulletin distributed through national fusion center network to state, local, and federal agencies\n• Civil rights lawyers warn this criminalizes legitimate political opposition to infrastructure projects\n• Pattern matches previous fusion center surveillance of BLM protesters and pipeline opponents\n• Gallup poll shows 70% of Americans oppose data centers as neighbors, indicating mainstream opposition",
+      "date_published": "2026-06-01T21:02:06.314Z",
+      "date_modified": "2026-06-01T21:02:06.452Z",
+      "tags": [
+        "surveillance",
+        "activism",
+        "privacy",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 88,
+        "citations": [
+          "https://theintercept.com/2026/06/01/ai-data-center-protest-police-surveillance/"
         ]
       }
     },
@@ -1215,27 +1237,6 @@
         "credibility_score": 85,
         "citations": [
           "https://www.accessnow.org/publication/vinculo-entre-desinformacion-y-privacidad/"
-        ]
-      }
-    },
-    {
-      "id": "cb8b5132-1b13-473a-ab08-01a7fe030966",
-      "url": "https://libertas.fgu.tech/posts/white-house-to-announce-strategic-bitcoin-reserve-details-af",
-      "title": "White House to Announce Strategic Bitcoin Reserve Details After Legal Framework Completion",
-      "summary": "U.S. officials say announcement on Strategic Bitcoin Reserve implementation is imminent after clearing legal hurdles for custody of 328,372 BTC held from law enforcement seizures.",
-      "content_text": "Patrick Witt (Executive Director, President's Council of Advisors for Digital Assets) says SBR announcement coming soon\n• Administration has completed legal framework for custody and reporting infrastructure across federal agencies\n• Reserve currently holds 328,372 BTC (~1.6% of global supply) from law enforcement seizures including Silk Road\n• Executive order from March 6, 2025 bars Treasury from selling any Bitcoin holdings\n• $70M+ in cryptocurrency thefts from U.S. Marshals Service highlighted need for proper custody solutions\n• Two Congressional bills (BITCOIN Act/ARMA and Lummis bill) would codify reserve into law\n• Proposed legislation would authorize Treasury to purchase 200,000 BTC annually for five years\n• If passed, U.S. would become first nation to actively accumulate Bitcoin as strategic reserve asset",
-      "date_published": "2026-05-18T21:02:00.906Z",
-      "date_modified": "2026-05-18T21:02:00.976Z",
-      "tags": [
-        "bitcoin",
-        "sovereignty",
-        "payments"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 75,
-        "credibility_score": 85,
-        "citations": [
-          "https://bitcoinmagazine.com/news/white-house-strategic-bitcoin-reserve"
         ]
       }
     },
