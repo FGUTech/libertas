@@ -5,9 +5,20 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Tue, 02 Jun 2026 15:02:08 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 02 Jun 2026 21:03:19 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
+  <item>
+    <title>US Treasury Sanctions Iran&apos;s Largest Crypto Exchange Nobitex</title>
+    <link>https://libertas.fgu.tech/posts/us-treasury-sanctions-iran-s-largest-crypto-exchange-nobitex</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/us-treasury-sanctions-iran-s-largest-crypto-exchange-nobitex</guid>
+    <pubDate>Tue, 02 Jun 2026 21:01:11 GMT</pubDate>
+    <description>US Treasury sanctioned Nobitex, which handled over half of Iran&apos;s crypto inflows in 2023, as part of broader crackdown on Iranian cryptocurrency infrastructure.</description>
+    <category>bitcoin</category>
+    <category>payments</category>
+    <category>sanctions</category>
+    <category>sovereignty</category>
+  </item>
   <item>
     <title>California Expands Age-Gating to Browsers/Websites, Exempts Open Source</title>
     <link>https://libertas.fgu.tech/posts/california-expands-age-gating-to-browsers-websites-exempts-o</link>
@@ -126,16 +137,6 @@
     <category>censorship-resistance</category>
   </item>
   <item>
-    <title>EFF Reveals Meta&apos;s Strategic Timing for Privacy-Invasive Face Recognition Release</title>
-    <link>https://libertas.fgu.tech/posts/eff-reveals-meta-s-strategic-timing-for-privacy-invasive-fac</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-reveals-meta-s-strategic-timing-for-privacy-invasive-fac</guid>
-    <pubDate>Tue, 19 May 2026 21:01:05 GMT</pubDate>
-    <description>Internal Meta documents show the company planned to launch face recognition for smart glasses during periods when civil rights groups would be distracted by other political concerns.</description>
-    <category>privacy</category>
-    <category>surveillance</category>
-    <category>activism</category>
-  </item>
-  <item>
     <title>Circle Freezes $12.6M USDC Linked to Privacy Protocol Zama</title>
     <link>https://libertas.fgu.tech/posts/circle-freezes-12-6m-usdc-linked-to-privacy-protocol-zama</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/circle-freezes-12-6m-usdc-linked-to-privacy-protocol-zama</guid>
@@ -188,18 +189,6 @@
     <category>activism</category>
   </item>
   <item>
-    <title>How Journalists Navigate Internet Shutdowns Across Iran, India, Ethiopia, and Turkey</title>
-    <link>https://libertas.fgu.tech/posts/how-journalists-navigate-internet-shutdowns-across-iran-indi</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/how-journalists-navigate-internet-shutdowns-across-iran-indi</guid>
-    <pubDate>Tue, 19 May 2026 21:03:34 GMT</pubDate>
-    <description>Global Voices report documents how journalists work around government-imposed internet shutdowns and targeted censorship across multiple countries, with Iran&apos;s recent blackouts affecting thousands of protesters.</description>
-    <category>censorship-resistance</category>
-    <category>comms</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>privacy</category>
-  </item>
-  <item>
     <title>Trump Orders Fed to Review Crypto Access to U.S. Payment Rails</title>
     <link>https://libertas.fgu.tech/posts/trump-orders-fed-to-review-crypto-access-to-u-s-payment-rail</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/trump-orders-fed-to-review-crypto-access-to-u-s-payment-rail</guid>
@@ -219,16 +208,6 @@
     <category>censorship-resistance</category>
     <category>activism</category>
     <category>privacy</category>
-  </item>
-  <item>
-    <title>Gulf States Launch Information Crackdown During Iran War, Target Journalists</title>
-    <link>https://libertas.fgu.tech/posts/gulf-states-launch-information-crackdown-during-iran-war-tar</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/gulf-states-launch-information-crackdown-during-iran-war-tar</guid>
-    <pubDate>Tue, 19 May 2026 21:02:45 GMT</pubDate>
-    <description>Gulf governments are systematically suppressing information about Iran war attacks, detaining journalists, revoking citizenships, and blocking social media accounts to control what populations can see and share.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
   </item>
   <item>
     <title>Texas Forms Bitcoin Reserve Committee, Moves to Direct BTC Custody</title>
@@ -314,6 +293,16 @@
     <category>identity</category>
   </item>
   <item>
+    <title>Pentagon Uses AI-Generated Content Mill to Spread Propaganda in Latin America</title>
+    <link>https://libertas.fgu.tech/posts/pentagon-uses-ai-generated-content-mill-to-spread-propaganda</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/pentagon-uses-ai-generated-content-mill-to-spread-propaganda</guid>
+    <pubDate>Tue, 02 Jun 2026 21:03:19 GMT</pubDate>
+    <description>Investigation reveals U.S. military operates La Tilde, an AI-powered propaganda site targeting Latin American audiences with pro-Pentagon content disguised as independent journalism.</description>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>propaganda</category>
+  </item>
+  <item>
     <title>CPJ Warns Journalists of Border Surveillance, Device Seizures at 2026 FIFA World Cup</title>
     <link>https://libertas.fgu.tech/posts/cpj-warns-journalists-of-border-surveillance-device-seizures</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/cpj-warns-journalists-of-border-surveillance-device-seizures</guid>
@@ -354,17 +343,6 @@
     <category>censorship-resistance</category>
     <category>activism</category>
     <category>surveillance</category>
-  </item>
-  <item>
-    <title>Gulf States Expand Wartime Censorship Laws, Target Journalists for Routine Reporting</title>
-    <link>https://libertas.fgu.tech/posts/gulf-states-expand-wartime-censorship-laws-target-journalist</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/gulf-states-expand-wartime-censorship-laws-target-journalist</guid>
-    <pubDate>Tue, 19 May 2026 15:02:52 GMT</pubDate>
-    <description>Committee to Protect Journalists documents systematic crackdown on press freedom across Gulf states since Iran war began, with journalists detained for sharing verified public information under vague &apos;national security&apos; laws.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>comms</category>
   </item>
   <item>
     <title>Microsoft Fires Israel Chief Over Human Rights Violations in Gaza Surveillance Ops</title>
@@ -474,17 +452,6 @@
     <category>censorship-resistance</category>
   </item>
   <item>
-    <title>Philippine Court Dismisses Terror Financing Charges Against NGO; Bank Accounts Remain Frozen</title>
-    <link>https://libertas.fgu.tech/posts/philippine-court-dismisses-terror-financing-charges-against-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/philippine-court-dismisses-terror-financing-charges-against-</guid>
-    <pubDate>Tue, 19 May 2026 15:03:09 GMT</pubDate>
-    <description>A Philippine court dismissed terrorism financing charges against NGO CERNET, but authorities continue weaponizing anti-money laundering laws against civil society despite being removed from FATF grey list.</description>
-    <category>payments</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>sovereignty</category>
-  </item>
-  <item>
     <title>Mexican Journalists Jailed Under New AI Manipulation Laws After Gov Corruption Coverage</title>
     <link>https://libertas.fgu.tech/posts/mexican-journalists-jailed-under-new-ai-manipulation-laws-af</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/mexican-journalists-jailed-under-new-ai-manipulation-laws-af</guid>
@@ -524,6 +491,17 @@
     <description>Circle froze $12.6M in Zama&apos;s confidential USDC contract following a court order related to Overnight Finance lawsuit, highlighting vulnerability of privacy tech to state intervention.</description>
     <category>privacy</category>
     <category>zk</category>
+    <category>censorship-resistance</category>
+  </item>
+  <item>
+    <title>EFF Defends Anti-Surveillance Site Against Flock Safety Legal Threats</title>
+    <link>https://libertas.fgu.tech/posts/eff-defends-anti-surveillance-site-against-flock-safety-lega</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-defends-anti-surveillance-site-against-flock-safety-lega</guid>
+    <pubDate>Tue, 02 Jun 2026 21:00:39 GMT</pubDate>
+    <description>EFF successfully defended DeFlock.me, a grassroots website tracking ALPR surveillance cameras, against cease-and-desist threats from police tech company Flock Safety.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
     <category>censorship-resistance</category>
   </item>
   <item>
@@ -618,6 +596,18 @@
     <category>surveillance</category>
     <category>censorship-resistance</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Bitcoin Book Excerpt Illustrates Inflation&apos;s Impact on Purchasing Power Over 40 Years</title>
+    <link>https://libertas.fgu.tech/posts/bitcoin-book-excerpt-illustrates-inflation-s-impact-on-purch</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/bitcoin-book-excerpt-illustrates-inflation-s-impact-on-purch</guid>
+    <pubDate>Tue, 02 Jun 2026 21:00:58 GMT</pubDate>
+    <description>New book excerpt uses German ice cream prices to demonstrate how inflation destroyed 80% of purchasing power over 40 years, positioning Bitcoin&apos;s fixed supply as alternative.</description>
+    <category>bitcoin</category>
+    <category>payments</category>
+    <category>censorship-resistance</category>
+    <category>sovereignty</category>
+    <category>surveillance</category>
   </item>
   <item>
     <title>Meta Blocks Human Rights Accounts in Saudi Arabia and UAE</title>
