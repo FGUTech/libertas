@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Tue, 02 Jun 2026 09:01:03 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 02 Jun 2026 15:02:08 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -420,6 +420,17 @@
     <category>activism</category>
   </item>
   <item>
+    <title>Bangladesh&apos;s Cycle of Press Repression Continues Under New Government</title>
+    <link>https://libertas.fgu.tech/posts/bangladesh-s-cycle-of-press-repression-continues-under-new-g</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/bangladesh-s-cycle-of-press-repression-continues-under-new-g</guid>
+    <pubDate>Tue, 02 Jun 2026 15:02:08 GMT</pubDate>
+    <description>After 100 days in office, PM Tarique Rahman&apos;s government continues systematic persecution of journalists through detention, surveillance, and repressive cyber laws despite election pledges to protect press freedom.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>privacy</category>
+  </item>
+  <item>
     <title>Canada&apos;s Bill C-22 Could Enable US Real-Time Surveillance via CLOUD Act Agreement</title>
     <link>https://libertas.fgu.tech/posts/canada-s-bill-c-22-could-enable-us-real-time-surveillance-vi</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/canada-s-bill-c-22-could-enable-us-real-time-surveillance-vi</guid>
@@ -586,6 +597,16 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>Microsoft Threatens Legal Action Against Researcher Who Broke BitLocker</title>
+    <link>https://libertas.fgu.tech/posts/microsoft-threatens-legal-action-against-researcher-who-brok</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/microsoft-threatens-legal-action-against-researcher-who-brok</guid>
+    <pubDate>Tue, 02 Jun 2026 15:01:42 GMT</pubDate>
+    <description>Anonymous security researcher &apos;Nightmare Eclipse&apos; published exploits breaking Microsoft BitLocker encryption, prompting Microsoft to threaten legal action against the disclosure.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
   </item>
   <item>
     <title>Access Now Links Privacy Protection to Disinformation Defense in Latin America</title>

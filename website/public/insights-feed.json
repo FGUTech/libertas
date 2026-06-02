@@ -849,6 +849,28 @@
       }
     },
     {
+      "id": "9528f1fe-7660-44ad-b100-09b4d97b3e50",
+      "url": "https://libertas.fgu.tech/posts/bangladesh-s-cycle-of-press-repression-continues-under-new-g",
+      "title": "Bangladesh's Cycle of Press Repression Continues Under New Government",
+      "summary": "After 100 days in office, PM Tarique Rahman's government continues systematic persecution of journalists through detention, surveillance, and repressive cyber laws despite election pledges to protect press freedom.",
+      "content_text": "Committee to Protect Journalists criticizes PM Tarique Rahman's government after 100 days for failing to break cycle of press persecution\n• 282 journalists currently face politically motivated cases, with dozens detained since August 2024 [Source: CPJ]\n• Police conducting background checks and profiling journalists across Bangladesh [Source: The Daily Star]\n• International Crimes Tribunal being weaponized against 25+ journalists for editorial work, charging them with genocide/crimes against humanity\n• Cyber Protection Act 2026 retains vague definitions enabling press repression from previous cyber laws\n• Major newsrooms Prothom Alo and The Daily Star attacked and set on fire during December 2025 unrest\n• Pattern of criminalizing journalists persists across three government transitions since August 2024",
+      "date_published": "2026-06-02T15:02:08.398Z",
+      "date_modified": "2026-06-02T15:02:08.571Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 85,
+        "citations": [
+          "https://cpj.org/2026/06/100-days-on-cpj-urges-bangladeshs-tarique-rahman-to-break-the-cycle-of-press-repression/"
+        ]
+      }
+    },
+    {
       "id": "952c2385-ba35-4075-8cea-7fb802f61644",
       "url": "https://libertas.fgu.tech/posts/canada-s-bill-c-22-could-enable-us-real-time-surveillance-vi",
       "title": "Canada's Bill C-22 Could Enable US Real-Time Surveillance via CLOUD Act Agreement",
@@ -1192,6 +1214,27 @@
         "credibility_score": 95,
         "citations": [
           "https://ooni.org/post/2026-support-ooni-internet-freedom-quadratic-funding-campaign/"
+        ]
+      }
+    },
+    {
+      "id": "c3eeca3a-c300-45b5-a697-c1bdac880a95",
+      "url": "https://libertas.fgu.tech/posts/microsoft-threatens-legal-action-against-researcher-who-brok",
+      "title": "Microsoft Threatens Legal Action Against Researcher Who Broke BitLocker",
+      "summary": "Anonymous security researcher 'Nightmare Eclipse' published exploits breaking Microsoft BitLocker encryption, prompting Microsoft to threaten legal action against the disclosure.",
+      "content_text": "Security researcher 'Nightmare Eclipse' published series of Windows exploits\n• One exploit reportedly breaks BitLocker disk encryption\n• Microsoft threatened legal action against the anonymous researcher\n• BitLocker bypass represents significant privacy/surveillance threat\n• Legal threats against security researchers raise censorship concerns\n• Dispute involves back-and-forth recriminations between parties\n• Pattern of corporate intimidation tactics against vulnerability disclosure",
+      "date_published": "2026-06-02T15:01:42.198Z",
+      "date_modified": "2026-06-02T15:01:42.308Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://www.schneier.com/blog/archives/2026/06/microsoft-threatening-security-researcher.html"
         ]
       }
     },
