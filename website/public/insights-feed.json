@@ -227,26 +227,6 @@
       }
     },
     {
-      "id": "2ce4285a-000b-4b4a-b7c7-ae62c0c39a88",
-      "url": "https://libertas.fgu.tech/posts/fbi-seeks-nationwide-real-time-license-plate-surveillance-ne",
-      "title": "FBI Seeks Nationwide Real-Time License Plate Surveillance Network",
-      "summary": "FBI published RFP for contractors to provide near real-time access to license plate readers covering 75% of US locations, creating nationwide vehicle tracking capability.",
-      "content_text": "FBI Directorate of Intelligence issued Request for Proposals for nationwide license plate reader access\n• System must cover 75% of US locations with near real-time data access\n• Contractors must provide both law enforcement and commercial LPR data through existing platforms\n• Search capabilities include vehicle descriptions, time/date, and geo-location criteria\n• System must offer search result notifications and query cameras across US territories\n• Represents massive expansion of federal surveillance infrastructure beyond current capabilities\n• Creates potential for tracking any vehicle's movements across the country in real-time",
-      "date_published": "2026-05-20T03:01:33.224Z",
-      "date_modified": "2026-05-20T03:01:33.314Z",
-      "tags": [
-        "surveillance",
-        "privacy"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 88,
-        "credibility_score": 95,
-        "citations": [
-          "https://arstechnica.com/tech-policy/2026/05/fbi-seeks-us-wide-access-to-license-plate-cameras-wants-data-in-near-real-time/"
-        ]
-      }
-    },
-    {
       "id": "2e772a3b-3b25-4844-a9ba-5c2926727221",
       "url": "https://libertas.fgu.tech/posts/jpmorgan-ceo-dimon-declares-war-on-crypto-clarity-act-attack",
       "title": "JPMorgan CEO Dimon Declares War on Crypto Clarity Act, Attacks Coinbase",
@@ -355,27 +335,6 @@
       }
     },
     {
-      "id": "4993e282-fd8d-479e-b9dc-be109303a591",
-      "url": "https://libertas.fgu.tech/posts/mexican-journalist-targeted-with-malware-surveillance-attack",
-      "title": "Mexican Journalist Targeted with Malware Surveillance Attacks",
-      "summary": "Award-winning Mexican journalist Maria Teresa Montaño discovered malware compromise of her devices after investigating corruption, highlighting urgent need for digital security tools in hostile environments.",
-      "content_text": "Maria Teresa Montaño, 2023 CPJ International Press Freedom Award recipient, discovered unknown device connected to email and unrecognized files on laptop\n• Montaño founded The ObserverMX, investigating corruption and human rights abuses in Estado de México\n• Digital attacks followed suspicious email on April 13 asking about 'investigations into unknown fraudulent contracts'\n• Journalist previously kidnapped in 2021, currently enrolled in federal protection program\n• Mexico remains deadliest country for journalists in western hemisphere\n• Federal protection mechanism officials confirmed they will analyze the digital security incidents\n• Case demonstrates critical need for robust digital security tools for investigative journalists in repressive environments",
-      "date_published": "2026-05-20T03:01:58.186Z",
-      "date_modified": "2026-05-20T03:01:58.336Z",
-      "tags": [
-        "surveillance",
-        "privacy",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 88,
-        "citations": [
-          "https://cpj.org/2026/05/mexican-journalist-ipfa-recipient-maria-teresa-montano-targeted-in-possible-malware-surveillance-attacks/"
-        ]
-      }
-    },
-    {
       "id": "555b673e-c427-4c64-aac3-305d2d672451",
       "url": "https://libertas.fgu.tech/posts/trump-orders-fed-to-review-crypto-access-to-u-s-payment-rail",
       "title": "Trump Orders Fed to Review Crypto Access to U.S. Payment Rails",
@@ -436,28 +395,6 @@
         "credibility_score": 85,
         "citations": [
           "https://bitcoinmagazine.com/news/texas-names-bitcoin-reserve-committee"
-        ]
-      }
-    },
-    {
-      "id": "5cf34222-bb78-41cf-9720-c220c64597ef",
-      "url": "https://libertas.fgu.tech/posts/south-carolina-bans-cbdc-payments-supports-crypto-mining",
-      "title": "South Carolina Bans CBDC Payments, Supports Crypto Mining",
-      "summary": "South Carolina governor signed legislation banning state entities from accepting CBDCs and providing strong support for cryptocurrency mining operations.",
-      "content_text": "South Carolina governor signed pro-cryptocurrency legislation into law\n• New law prohibits state entities from accepting or requiring CBDC payments\n• Legislation includes provisions supporting cryptocurrency mining operations\n• Represents state-level resistance to federal digital currency initiatives\n• Adds South Carolina to growing list of states rejecting CBDCs\n• Mining support could attract Bitcoin infrastructure investment to the state\n• Policy creates regulatory clarity for crypto businesses in South Carolina",
-      "date_published": "2026-05-20T09:00:59.900Z",
-      "date_modified": "2026-05-20T09:00:59.953Z",
-      "tags": [
-        "bitcoin",
-        "sovereignty",
-        "payments"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 85,
-        "citations": [
-          "https://www.theblock.co/post/401965/south-carolina-governor-signs-pro-crypto-bill",
-          "https://www.theblock.co/post/401965/south-carolina-governor-signs-pro-crypto-bill?utm_source=rss&amp;utm_medium=rss"
         ]
       }
     },
@@ -698,24 +635,23 @@
       }
     },
     {
-      "id": "884cd1d5-94df-4117-83aa-89c1d3315692",
-      "url": "https://libertas.fgu.tech/posts/microsoft-fires-israel-chief-over-human-rights-violations-in",
-      "title": "Microsoft Fires Israel Chief Over Human Rights Violations in Gaza Surveillance Ops",
-      "summary": "Microsoft terminated its Israel Country General Manager after investigations revealed Azure cloud/AI services were used for mass surveillance and military targeting in Gaza, violating company human rights standards.",
-      "content_text": "Microsoft fired Israel chief amid ethical controversy over Gaza surveillance operations\n• Guardian report revealed Microsoft Azure used for mass surveillance and military targeting systems\n• Company suspended certain services in September 2025 after initial investigation\n• Civil society coalition demanded Microsoft release investigation findings and implement safeguards\n• EFF, Access Now, Amnesty pressed for suspension of business tied to human rights abuses\n• Microsoft distinguished itself from peers by taking accountability action rather than denial\n• Google and Amazon face similar criticism but haven't shown comparable responsiveness\n• Sets precedent that human rights violations can have employment consequences for tech leaders",
-      "date_published": "2026-05-20T03:01:00.630Z",
-      "date_modified": "2026-05-20T03:01:00.714Z",
+      "id": "84927adc-540f-48fe-bbd1-deff77a5cc7c",
+      "url": "https://libertas.fgu.tech/posts/bangladesh-deploys-ai-traffic-cameras-for-automated-surveill",
+      "title": "Bangladesh Deploys AI Traffic Cameras for Automated Surveillance and Case Filing in Dhaka",
+      "summary": "Bangladesh launched AI-powered traffic cameras in Dhaka that automatically scan license plates, file cases, and send prosecution notices without human involvement—marking the country's first fully automated digital enforcement system.",
+      "content_text": "Dhaka Metropolitan Police deployed AI cameras at major intersections starting May 7, 2026\n• System automatically scans plates, cross-references BRTA database, and files cases for violations\n• Over 1,000 automated cases generated in first 10 days of operation\n• Plans to expand to 500 camera locations across Dhaka within six months\n• Cases filed against vehicle owners regardless of who was driving\n• System cannot detect unregistered vehicles like battery-powered rickshaws with no plates\n• Raises concerns about comprehensive vehicle tracking and removal of human discretion in enforcement",
+      "date_published": "2026-06-03T09:01:36.519Z",
+      "date_modified": "2026-06-03T09:01:36.640Z",
       "tags": [
         "surveillance",
         "privacy",
-        "activism",
-        "sovereignty"
+        "activism"
       ],
       "_libertas": {
-        "freedom_relevance_score": 78,
+        "freedom_relevance_score": 75,
         "credibility_score": 85,
         "citations": [
-          "https://www.eff.org/deeplinks/2026/05/microsoft-took-step-toward-human-rights-accountability-google-and-amazon-and"
+          "https://globalvoices.org/2026/06/03/ai-cameras-are-surveilling-the-roads-in-dhaka-bangladesh/"
         ]
       }
     },

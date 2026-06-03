@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Tue, 02 Jun 2026 21:03:19 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 03 Jun 2026 09:01:36 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -117,15 +117,6 @@
     <category>privacy</category>
   </item>
   <item>
-    <title>FBI Seeks Nationwide Real-Time License Plate Surveillance Network</title>
-    <link>https://libertas.fgu.tech/posts/fbi-seeks-nationwide-real-time-license-plate-surveillance-ne</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/fbi-seeks-nationwide-real-time-license-plate-surveillance-ne</guid>
-    <pubDate>Wed, 20 May 2026 03:01:33 GMT</pubDate>
-    <description>FBI published RFP for contractors to provide near real-time access to license plate readers covering 75% of US locations, creating nationwide vehicle tracking capability.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
-  </item>
-  <item>
     <title>JPMorgan CEO Dimon Declares War on Crypto Clarity Act, Attacks Coinbase</title>
     <link>https://libertas.fgu.tech/posts/jpmorgan-ceo-dimon-declares-war-on-crypto-clarity-act-attack</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/jpmorgan-ceo-dimon-declares-war-on-crypto-clarity-act-attack</guid>
@@ -179,16 +170,6 @@
     <category>activism</category>
   </item>
   <item>
-    <title>Mexican Journalist Targeted with Malware Surveillance Attacks</title>
-    <link>https://libertas.fgu.tech/posts/mexican-journalist-targeted-with-malware-surveillance-attack</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/mexican-journalist-targeted-with-malware-surveillance-attack</guid>
-    <pubDate>Wed, 20 May 2026 03:01:58 GMT</pubDate>
-    <description>Award-winning Mexican journalist Maria Teresa Montaño discovered malware compromise of her devices after investigating corruption, highlighting urgent need for digital security tools in hostile environments.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
-    <category>activism</category>
-  </item>
-  <item>
     <title>Trump Orders Fed to Review Crypto Access to U.S. Payment Rails</title>
     <link>https://libertas.fgu.tech/posts/trump-orders-fed-to-review-crypto-access-to-u-s-payment-rail</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/trump-orders-fed-to-review-crypto-access-to-u-s-payment-rail</guid>
@@ -215,16 +196,6 @@
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/texas-forms-bitcoin-reserve-committee-moves-to-direct-btc-cu</guid>
     <pubDate>Fri, 29 May 2026 15:01:15 GMT</pubDate>
     <description>Texas announced a 5-member advisory committee for its Strategic Bitcoin Reserve and issued RFP for crypto custodian to transition from ETF exposure to direct Bitcoin custody.</description>
-    <category>bitcoin</category>
-    <category>sovereignty</category>
-    <category>payments</category>
-  </item>
-  <item>
-    <title>South Carolina Bans CBDC Payments, Supports Crypto Mining</title>
-    <link>https://libertas.fgu.tech/posts/south-carolina-bans-cbdc-payments-supports-crypto-mining</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/south-carolina-bans-cbdc-payments-supports-crypto-mining</guid>
-    <pubDate>Wed, 20 May 2026 09:00:59 GMT</pubDate>
-    <description>South Carolina governor signed legislation banning state entities from accepting CBDCs and providing strong support for cryptocurrency mining operations.</description>
     <category>bitcoin</category>
     <category>sovereignty</category>
     <category>payments</category>
@@ -345,15 +316,14 @@
     <category>surveillance</category>
   </item>
   <item>
-    <title>Microsoft Fires Israel Chief Over Human Rights Violations in Gaza Surveillance Ops</title>
-    <link>https://libertas.fgu.tech/posts/microsoft-fires-israel-chief-over-human-rights-violations-in</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/microsoft-fires-israel-chief-over-human-rights-violations-in</guid>
-    <pubDate>Wed, 20 May 2026 03:01:00 GMT</pubDate>
-    <description>Microsoft terminated its Israel Country General Manager after investigations revealed Azure cloud/AI services were used for mass surveillance and military targeting in Gaza, violating company human rights standards.</description>
+    <title>Bangladesh Deploys AI Traffic Cameras for Automated Surveillance and Case Filing in Dhaka</title>
+    <link>https://libertas.fgu.tech/posts/bangladesh-deploys-ai-traffic-cameras-for-automated-surveill</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/bangladesh-deploys-ai-traffic-cameras-for-automated-surveill</guid>
+    <pubDate>Wed, 03 Jun 2026 09:01:36 GMT</pubDate>
+    <description>Bangladesh launched AI-powered traffic cameras in Dhaka that automatically scan license plates, file cases, and send prosecution notices without human involvement—marking the country&apos;s first fully automated digital enforcement system.</description>
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
-    <category>sovereignty</category>
   </item>
   <item>
     <title>US Fusion Centers Surveilling AI Critics on Social Media</title>
