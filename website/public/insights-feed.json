@@ -204,6 +204,30 @@
       }
     },
     {
+      "id": "20f74488-e1f7-434c-b202-fbe22f5ccd8f",
+      "url": "https://libertas.fgu.tech/posts/speculative-2036-bitcoin-vision-global-settlement-layer-for-",
+      "title": "Speculative 2036 Bitcoin Vision: Global Settlement Layer for Stablecoins and AI Commerce",
+      "summary": "Bitcoin Magazine piece envisions 2036 scenario where Bitcoin serves as invisible settlement infrastructure for stablecoins and AI agent transactions, with self-custody becoming default through better wallet design.",
+      "content_text": "Speculative article by David Marcus describes fictional 2036 where Bitcoin functions as 'TCP/IP of money'\n• Envisions trillions moving daily on Bitcoin rails via stablecoins pegged to local currencies\n• Describes 'Spark' wallet enabling single-address custody of dollars, bitcoin, and local currencies\n• Claims self-custody becomes dominant when convenience matches traditional banking\n• Predicts AI agents converge on Bitcoin for cross-jurisdictional settlements\n• Suggests people save in Bitcoin by default, spend in stablecoins on same infrastructure\n• Pure speculation presented as future fact with no verification or evidence\n• Note: This is entirely fictional future scenario, not current development",
+      "date_published": "2026-06-03T21:01:02.006Z",
+      "date_modified": "2026-06-03T21:01:02.079Z",
+      "tags": [
+        "bitcoin",
+        "sovereignty",
+        "censorship-resistance",
+        "payments",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 88,
+        "credibility_score": 82,
+        "citations": [
+          "https://bitcoinmagazine.com/print/the-2036-issue-nobody-even-noticed",
+          "https://bitcoinmagazine.com/markets/bitcoin-atms-the-canary-in-the-coal-mine"
+        ]
+      }
+    },
+    {
       "id": "2e772a3b-3b25-4844-a9ba-5c2926727221",
       "url": "https://libertas.fgu.tech/posts/jpmorgan-ceo-dimon-declares-war-on-crypto-clarity-act-attack",
       "title": "JPMorgan CEO Dimon Declares War on Crypto Clarity Act, Attacks Coinbase",
@@ -548,28 +572,6 @@
       }
     },
     {
-      "id": "7f175256-87c6-464b-85f3-6df145cfa4b4",
-      "url": "https://libertas.fgu.tech/posts/eff-highlights-end-to-end-encryption-advances-in-apple-andro",
-      "title": "EFF Highlights End-to-End Encryption Advances in Apple-Android RCS Messaging",
-      "summary": "EFF's latest newsletter covers recent progress in encrypted messaging between Apple and Android devices, plus analysis of Canada's surveillance bill and social media restrictions.",
-      "content_text": "EFF released newsletter covering end-to-end encryption developments for cross-platform messaging\n• Apple and Android now support encrypted RCS (Rich Communication Services) messaging\n• Newsletter also addresses Canada's surveillance Bill C-22 and social media age verification\n• EFF Senior Security Activist Thorin Klosowski discusses encryption progress and setbacks\n• Content now available as podcast on major platforms for broader accessibility\n• Focus on practical tools for protecting private communications from surveillance\n• Educational resource for understanding encryption deployment and policy threats",
-      "date_published": "2026-05-20T21:00:41.284Z",
-      "date_modified": "2026-05-20T21:00:41.326Z",
-      "tags": [
-        "privacy",
-        "comms",
-        "censorship-resistance",
-        "surveillance"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 75,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/05/encrypted-apple-android-texts-effector-3810"
-        ]
-      }
-    },
-    {
       "id": "836b8830-c740-48f2-a6f8-61f5c4c251e3",
       "url": "https://libertas.fgu.tech/posts/press-freedom-groups-urge-new-guatemala-ag-to-end-journalist",
       "title": "Press Freedom Groups Urge New Guatemala AG to End Journalist Persecution",
@@ -652,27 +654,6 @@
         "credibility_score": 85,
         "citations": [
           "https://freedomhouse.org/article/gdansk-tehran-people-uniting-freedom-can-break-grip-tyranny"
-        ]
-      }
-    },
-    {
-      "id": "93e5f1ff-edb4-4d68-8d1e-7d1bd0e53962",
-      "url": "https://libertas.fgu.tech/posts/turkish-journalist-arrested-under-disinformation-law-for-sch",
-      "title": "Turkish Journalist Arrested Under Disinformation Law for School Weapons Report",
-      "summary": "Turkish journalist Yelis Ayaz arrested for reporting on politician's son allegedly bringing weapons to school, highlighting systematic use of disinformation law to prosecute media.",
-      "content_text": "Yelis Ayaz, editor-in-chief of Aydınpost newspaper, arrested May 15 for 'publicly spreading disinformation'\n• Report concerned allegations that AKP deputy's underage son brought knife and gun to school\n• Ayaz claims multiple parents filed complaints about the student; prosecutor says it was toy gun\n• Turkey's 2022 disinformation law carries 1-3 year sentences for false information causing 'concern, fear, or panic'\n• Committee to Protect Journalists reports disinformation law has become 'most frequently used' against media\n• Case demonstrates legal framework being weaponized to suppress investigative reporting\n• Pattern shows state using ambiguous 'disinformation' definitions to control information flow",
-      "date_published": "2026-05-20T21:02:11.867Z",
-      "date_modified": "2026-05-20T21:02:11.942Z",
-      "tags": [
-        "censorship-resistance",
-        "surveillance",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 95,
-        "citations": [
-          "https://cpj.org/2026/05/journalist-yelis-ayaz-arrested-in-turkey-for-spreading-disinformation/"
         ]
       }
     },
@@ -807,28 +788,6 @@
       }
     },
     {
-      "id": "a4dac4b3-7076-4c80-8f11-55b906771402",
-      "url": "https://libertas.fgu.tech/posts/tails-7-8-fixes-critical-security-vulnerabilities-that-could",
-      "title": "Tails 7.8 Fixes Critical Security Vulnerabilities That Could Enable Deanonymization",
-      "summary": "Tails 7.8 patches critical Linux kernel vulnerabilities that could allow attackers to gain admin privileges and potentially deanonymize users, while removing pre-installed Thunderbird.",
-      "content_text": "Tails 7.8 fixes multiple security vulnerabilities in Linux kernel and haveged that could allow privilege escalation\n• Vulnerabilities could enable attackers to gain full control of Tails system and deanonymize users\n• Updates Tor Browser to version 15.0.14\n• Removes pre-installed Thunderbird email client to address security update lag issues\n• Thunderbird can still be installed as additional software for automatic updates\n• Users with Persistent Storage automatically get Thunderbird added to additional software list\n• Automatic upgrades available from Tails 7.0 or later versions",
-      "date_published": "2026-05-20T21:02:30.782Z",
-      "date_modified": "2026-05-20T21:02:30.889Z",
-      "tags": [
-        "privacy",
-        "censorship-resistance",
-        "surveillance",
-        "comms"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 75,
-        "credibility_score": 95,
-        "citations": [
-          "https://tails.net/news/version_7.8/"
-        ]
-      }
-    },
-    {
       "id": "a5e3acf5-d607-4058-a396-49867ff615a1",
       "url": "https://libertas.fgu.tech/posts/us-treasury-seizes-nearly-1b-in-iranian-crypto-assets",
       "title": "US Treasury Seizes Nearly $1B in Iranian Crypto Assets",
@@ -892,27 +851,6 @@
         "credibility_score": 95,
         "citations": [
           "https://www.eff.org/deeplinks/2026/06/get-flock-out-here"
-        ]
-      }
-    },
-    {
-      "id": "af7277ef-1dfa-43aa-ada2-768c74bd398c",
-      "url": "https://libertas.fgu.tech/posts/rights-groups-demand-microsoft-disclose-israeli-military-sur",
-      "title": "Rights Groups Demand Microsoft Disclose Israeli Military Surveillance Tech Review",
-      "summary": "Digital rights coalition demands Microsoft publish findings of its review into Israeli military's use of Azure cloud and AI services for surveillance and targeting of Palestinians.",
-      "content_text": "Access Now, EFF, Amnesty International and others demand Microsoft publish completed legal review findings\n• Microsoft Azure and AI services reportedly used by Israeli military for mass surveillance of Palestinians\n• Services allegedly processed intercepted Palestinian communications for lethal targeting operations in Gaza\n• Microsoft transferred Israeli branch management to Microsoft France amid scrutiny over defense contracts\n• Company announced restrictions on Unit 8200 (Israeli military intelligence) but hasn't disclosed specifics\n• Rights groups warn of potential civil and criminal liability for complicity in international law violations\n• Organizations demand suspension of services contributing to human rights abuses",
-      "date_published": "2026-05-20T15:02:42.462Z",
-      "date_modified": "2026-05-20T15:02:42.551Z",
-      "tags": [
-        "surveillance",
-        "privacy",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 85,
-        "citations": [
-          "https://www.accessnow.org/press-release/microsoft-come-clean-about-your-ties-to-the-israeli-military/"
         ]
       }
     },
@@ -1109,27 +1047,6 @@
         "citations": [
           "https://bitcoinmagazine.com/bitcoin-books/a-little-story-about-inflation-an-excerpt-from-bitcoin-the-honest-money",
           "https://bitcoinmagazine.com/news/u-s-treasury-sanctions-irans-crypto"
-        ]
-      }
-    },
-    {
-      "id": "cfda2430-432b-47c2-859f-60703cf19159",
-      "url": "https://libertas.fgu.tech/posts/meta-blocks-human-rights-accounts-in-saudi-arabia-and-uae",
-      "title": "Meta Blocks Human Rights Accounts in Saudi Arabia and UAE",
-      "summary": "Meta has reportedly blocked human rights organizations' accounts from reaching audiences in Saudi Arabia and UAE, demonstrating platform-level censorship in authoritarian regions.",
-      "content_text": "Meta blocked human rights accounts from reaching audiences in Saudi Arabia and UAE [Source]\n• Access Now published press release documenting the censorship [Source]\n• Demonstrates platform compliance with authoritarian government pressure\n• Highlights vulnerability of centralized social media for human rights advocacy\n• Pattern consistent with Meta's previous content restrictions in authoritarian regions\n• Underscores need for decentralized communication platforms for activists",
-      "date_published": "2026-05-20T15:02:42.461Z",
-      "date_modified": "2026-05-20T15:02:42.551Z",
-      "tags": [
-        "censorship-resistance",
-        "surveillance",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 75,
-        "credibility_score": 85,
-        "citations": [
-          "https://www.accessnow.org/press-release/meta-blocks-human-rights-accounts-from-reaching-audiences-in-saudi-arabia-and-the-uae/"
         ]
       }
     },

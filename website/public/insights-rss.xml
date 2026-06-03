@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Wed, 03 Jun 2026 15:01:10 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 03 Jun 2026 21:01:02 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -103,6 +103,18 @@
     <category>censorship-resistance</category>
     <category>activism</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>Speculative 2036 Bitcoin Vision: Global Settlement Layer for Stablecoins and AI Commerce</title>
+    <link>https://libertas.fgu.tech/posts/speculative-2036-bitcoin-vision-global-settlement-layer-for-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/speculative-2036-bitcoin-vision-global-settlement-layer-for-</guid>
+    <pubDate>Wed, 03 Jun 2026 21:01:02 GMT</pubDate>
+    <description>Bitcoin Magazine piece envisions 2036 scenario where Bitcoin serves as invisible settlement infrastructure for stablecoins and AI agent transactions, with self-custody becoming default through better wallet design.</description>
+    <category>bitcoin</category>
+    <category>sovereignty</category>
+    <category>censorship-resistance</category>
+    <category>payments</category>
+    <category>surveillance</category>
   </item>
   <item>
     <title>JPMorgan CEO Dimon Declares War on Crypto Clarity Act, Attacks Coinbase</title>
@@ -273,17 +285,6 @@
     <category>surveillance</category>
   </item>
   <item>
-    <title>EFF Highlights End-to-End Encryption Advances in Apple-Android RCS Messaging</title>
-    <link>https://libertas.fgu.tech/posts/eff-highlights-end-to-end-encryption-advances-in-apple-andro</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-highlights-end-to-end-encryption-advances-in-apple-andro</guid>
-    <pubDate>Wed, 20 May 2026 21:00:41 GMT</pubDate>
-    <description>EFF&apos;s latest newsletter covers recent progress in encrypted messaging between Apple and Android devices, plus analysis of Canada&apos;s surveillance bill and social media restrictions.</description>
-    <category>privacy</category>
-    <category>comms</category>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-  </item>
-  <item>
     <title>Press Freedom Groups Urge New Guatemala AG to End Journalist Persecution</title>
     <link>https://libertas.fgu.tech/posts/press-freedom-groups-urge-new-guatemala-ag-to-end-journalist</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/press-freedom-groups-urge-new-guatemala-ag-to-end-journalist</guid>
@@ -324,16 +325,6 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>sovereignty</category>
-  </item>
-  <item>
-    <title>Turkish Journalist Arrested Under Disinformation Law for School Weapons Report</title>
-    <link>https://libertas.fgu.tech/posts/turkish-journalist-arrested-under-disinformation-law-for-sch</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/turkish-journalist-arrested-under-disinformation-law-for-sch</guid>
-    <pubDate>Wed, 20 May 2026 21:02:11 GMT</pubDate>
-    <description>Turkish journalist Yelis Ayaz arrested for reporting on politician&apos;s son allegedly bringing weapons to school, highlighting systematic use of disinformation law to prosecute media.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
   </item>
   <item>
     <title>Bangladesh&apos;s Cycle of Press Repression Continues Under New Government</title>
@@ -400,17 +391,6 @@
     <category>activism</category>
   </item>
   <item>
-    <title>Tails 7.8 Fixes Critical Security Vulnerabilities That Could Enable Deanonymization</title>
-    <link>https://libertas.fgu.tech/posts/tails-7-8-fixes-critical-security-vulnerabilities-that-could</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/tails-7-8-fixes-critical-security-vulnerabilities-that-could</guid>
-    <pubDate>Wed, 20 May 2026 21:02:30 GMT</pubDate>
-    <description>Tails 7.8 patches critical Linux kernel vulnerabilities that could allow attackers to gain admin privileges and potentially deanonymize users, while removing pre-installed Thunderbird.</description>
-    <category>privacy</category>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>comms</category>
-  </item>
-  <item>
     <title>US Treasury Seizes Nearly $1B in Iranian Crypto Assets</title>
     <link>https://libertas.fgu.tech/posts/us-treasury-seizes-nearly-1b-in-iranian-crypto-assets</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/us-treasury-seizes-nearly-1b-in-iranian-crypto-assets</guid>
@@ -441,16 +421,6 @@
     <category>privacy</category>
     <category>activism</category>
     <category>censorship-resistance</category>
-  </item>
-  <item>
-    <title>Rights Groups Demand Microsoft Disclose Israeli Military Surveillance Tech Review</title>
-    <link>https://libertas.fgu.tech/posts/rights-groups-demand-microsoft-disclose-israeli-military-sur</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/rights-groups-demand-microsoft-disclose-israeli-military-sur</guid>
-    <pubDate>Wed, 20 May 2026 15:02:42 GMT</pubDate>
-    <description>Digital rights coalition demands Microsoft publish findings of its review into Israeli military&apos;s use of Azure cloud and AI services for surveillance and targeting of Palestinians.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
-    <category>activism</category>
   </item>
   <item>
     <title>Binance Denies WSJ Report on $850M Iran-Linked Transactions</title>
@@ -546,16 +516,6 @@
     <category>censorship-resistance</category>
     <category>sovereignty</category>
     <category>surveillance</category>
-  </item>
-  <item>
-    <title>Meta Blocks Human Rights Accounts in Saudi Arabia and UAE</title>
-    <link>https://libertas.fgu.tech/posts/meta-blocks-human-rights-accounts-in-saudi-arabia-and-uae</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/meta-blocks-human-rights-accounts-in-saudi-arabia-and-uae</guid>
-    <pubDate>Wed, 20 May 2026 15:02:42 GMT</pubDate>
-    <description>Meta has reportedly blocked human rights organizations&apos; accounts from reaching audiences in Saudi Arabia and UAE, demonstrating platform-level censorship in authoritarian regions.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
   </item>
   <item>
     <title>UK Sanctions HTX Exchange Over Alleged Russia Sanction Circumvention</title>
