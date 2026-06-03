@@ -72,29 +72,6 @@
       }
     },
     {
-      "id": "09eb5514-85c6-4b3c-a28c-82f25bc5555d",
-      "url": "https://libertas.fgu.tech/posts/bitcoin-and-freedom-tech-hub-launches-in-nairobi-with-infras",
-      "title": "Bitcoin and Freedom Tech Hub Launches in Nairobi with Infrastructure Focus",
-      "summary": "Node NBO opens in Nairobi as Africa's first dedicated Bitcoin/freedom tech co-working space, featuring solar power, satellite internet paid in Bitcoin, and partnerships with HRF and key African Bitcoin companies.",
-      "content_text": "Node NBO launched May 16, 2026 in Nairobi's diplomatic district near UN headquarters\n• Houses Fedi, Gridless, BTrust, Human Rights Foundation and other freedom tech organizations\n• Features three labs: open-source energy, Bitcoin mining, and AI compute\n• Facility powered entirely by solar panels installed by Gridless\n• SateNet provides community-owned satellite internet paid with Bitcoin via Fedi app\n• Serves underserved communities including Kenya's Kibera and South Africa's Mossel Bay\n• Located near UN headquarters to showcase African Bitcoin projects to international visitors\n• Follows Kenyan communal decision-making culture for Bitcoin community coordination",
-      "date_published": "2026-05-20T15:01:06.172Z",
-      "date_modified": "2026-05-20T15:01:06.244Z",
-      "tags": [
-        "bitcoin",
-        "sovereignty",
-        "comms",
-        "payments",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 85,
-        "citations": [
-          "https://bitcoinmagazine.com/news/new-bitcoin-energy-and-compute-hub-node-nbo-opens-in-nairobi-kenya"
-        ]
-      }
-    },
-    {
       "id": "0a63acae-7f2b-4293-a0cd-08c60daf448e",
       "url": "https://libertas.fgu.tech/posts/iran-s-83-day-internet-blackout-highlights-critical-need-for",
       "title": "Iran's 83-Day Internet Blackout Highlights Critical Need for Censorship-Resistant Comms",
@@ -331,27 +308,6 @@
         "credibility_score": 95,
         "citations": [
           "https://www.eff.org/deeplinks/2026/05/welcome-new-eff-executive-director-nicole-ozer"
-        ]
-      }
-    },
-    {
-      "id": "555b673e-c427-4c64-aac3-305d2d672451",
-      "url": "https://libertas.fgu.tech/posts/trump-orders-fed-to-review-crypto-access-to-u-s-payment-rail",
-      "title": "Trump Orders Fed to Review Crypto Access to U.S. Payment Rails",
-      "summary": "Trump signed executive order directing Federal Reserve to audit regulations blocking crypto firms from master accounts and payment rails within 3 months, potentially opening direct access to core U.S. financial infrastructure.",
-      "content_text": "Executive order 'Integrating Financial Technology Innovation into Regulatory Frameworks' targets Fed master account restrictions\n• Regulators have 3 months to audit rules that 'unduly impede' fintech partnerships with federally regulated institutions\n• Master accounts provide gateway to Fedwire and other payment rails handling high-value dollar settlement\n• Crypto firms currently forced to pursue costly banking charters for direct payment access\n• Kansas City Fed already approved limited account for Kraken's parent company Payward in March 2024\n• Order questions whether regional Fed banks can approve accounts independently without Board of Governors approval\n• Fed proposed 'skinny' master accounts in December - restricted access without interest or discount window features\n• Traditional banking groups oppose expanded access, citing regulatory gaps between banks and non-bank entities\n• 120-day deadline for Fed report transforms slow regulatory process into political pressure campaign",
-      "date_published": "2026-05-20T15:01:06.171Z",
-      "date_modified": "2026-05-20T15:01:06.244Z",
-      "tags": [
-        "bitcoin",
-        "payments",
-        "sovereignty"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 75,
-        "credibility_score": 85,
-        "citations": [
-          "https://bitcoinmagazine.com/news/trump-orders-fed-to-review-crypto-access"
         ]
       }
     },
@@ -674,27 +630,6 @@
         "credibility_score": 90,
         "citations": [
           "https://theintercept.com/2026/06/01/ai-data-center-protest-police-surveillance/"
-        ]
-      }
-    },
-    {
-      "id": "8c08a89e-26e3-44a4-a9b4-164515402128",
-      "url": "https://libertas.fgu.tech/posts/retired-cop-wins-835k-settlement-after-37-day-jail-for-trump",
-      "title": "Retired Cop Wins $835K Settlement After 37-Day Jail for Trump Meme",
-      "summary": "Larry Bushart won $835,000 settlement after Tennessee sheriff jailed him 37 days for posting Trump meme on Facebook, establishing precedent for First Amendment violations.",
-      "content_text": "Larry Bushart, retired Tennessee police officer, jailed 37 days for Facebook Trump meme post\n• Bushart sued county and sheriff claiming censorship and First Amendment violation\n• Settlement reached for $835,000 with lawsuit dismissal agreement\n• Foundation for Individual Rights and Expression (FIRE) represented Bushart\n• Case demonstrates legal remedies available for government speech suppression\n• Substantial financial penalty signals courts take social media censorship seriously\n• Precedent established for similar First Amendment violation cases",
-      "date_published": "2026-05-20T15:02:12.936Z",
-      "date_modified": "2026-05-20T15:02:12.993Z",
-      "tags": [
-        "censorship-resistance",
-        "activism",
-        "surveillance"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 85,
-        "citations": [
-          "https://arstechnica.com/tech-policy/2026/05/man-wins-835k-after-sheriff-jailed-him-for-a-month-over-charlie-kirk-post/"
         ]
       }
     },
@@ -1264,6 +1199,28 @@
       }
     },
     {
+      "id": "e5b883ee-f7e8-41dc-a4b5-9d65052aeaf5",
+      "url": "https://libertas.fgu.tech/posts/russian-ruble-stablecoin-processes-110b-despite-western-sanc",
+      "title": "Russian Ruble Stablecoin Processes $110B Despite Western Sanctions",
+      "summary": "Russian ruble-backed stablecoin A7A5 has processed over $110 billion in transactions, demonstrating effective circumvention of Western financial sanctions through cryptocurrency infrastructure.",
+      "content_text": "A7A5 ruble-backed stablecoin processed over $110 billion in transactions according to CertiK analysis\n• Transaction volume occurred despite comprehensive Western sanctions on Russian financial system\n• Demonstrates real-world effectiveness of stablecoins for sanctions circumvention\n• Shows cryptocurrency infrastructure maintaining financial sovereignty under pressure\n• CertiK blockchain analytics firm provided transaction data verification\n• Represents significant scale of alternative payment rails outside traditional banking\n• Evidence of resilient financial infrastructure built on decentralized protocols",
+      "date_published": "2026-06-03T15:01:10.510Z",
+      "date_modified": "2026-06-03T15:01:10.556Z",
+      "tags": [
+        "payments",
+        "sovereignty",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 75,
+        "citations": [
+          "https://cointelegraph.com/news/russian-ruble-stablecoin-growing-western-sanctions-report",
+          "https://cointelegraph.com/news/russian-ruble-stablecoin-growing-western-sanctions-report?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+        ]
+      }
+    },
+    {
       "id": "ef2021e7-b443-49c3-963b-44fe51c1171d",
       "url": "https://libertas.fgu.tech/posts/nasa-satellites-can-detect-gps-jammers-from-space-raising-pr",
       "title": "NASA Satellites Can Detect GPS Jammers from Space, Raising Privacy Concerns",
@@ -1281,28 +1238,6 @@
         "citations": [
           "https://arstechnica.com/gadgets/2026/05/nasa-satellites-can-spot-gps-jammers-on-earth/",
           "https://arstechnica.com/security/2026/05/websites-have-a-new-way-to-spy-on-visitors-analyzing-their-ssd-activity/"
-        ]
-      }
-    },
-    {
-      "id": "efd57edf-2b8a-4dad-9102-0d7a336c175b",
-      "url": "https://libertas.fgu.tech/posts/south-carolina-enacts-comprehensive-bitcoin-law-bans-state-c",
-      "title": "South Carolina Enacts Comprehensive Bitcoin Law, Bans State CBDC Use",
-      "summary": "South Carolina passed Senate Bill 163 with bipartisan support, protecting Bitcoin self-custody rights, preventing additional crypto taxes, and banning state entities from using CBDCs.",
-      "content_text": "Governor Henry McMaster signed Senate Bill 163 into law on May 19, 2025\n• Bill passed with overwhelming bipartisan support: 38-1 in Senate, 110-1 in House\n• Affirms right of individuals and businesses to use Bitcoin for commerce\n• Guarantees right to hold assets in self-hosted or hardware wallets\n• Prevents state and local governments from imposing additional taxes on crypto payments\n• Bars state agencies from accepting CBDCs or participating in Federal Reserve CBDC testing\n• Protects crypto mining operations from discriminatory local regulations\n• Exempts mining, node operation, and software development from money transmitter licensing\n• Part of broader state-level trend with Kentucky and Missouri pursuing similar measures",
-      "date_published": "2026-05-20T15:01:06.172Z",
-      "date_modified": "2026-05-20T15:01:06.244Z",
-      "tags": [
-        "bitcoin",
-        "sovereignty",
-        "privacy",
-        "payments"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 85,
-        "citations": [
-          "https://bitcoinmagazine.com/news/south-carolina-enacts-bitcoin-friendly-law"
         ]
       }
     },

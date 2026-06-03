@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Wed, 03 Jun 2026 09:01:36 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 03 Jun 2026 15:01:10 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -38,18 +38,6 @@
     <description>Researchers demonstrate WiFi sensing technology that identifies individuals by analyzing how WiFi signals interact with their bodies, creating surveillance capabilities from existing infrastructure.</description>
     <category>surveillance</category>
     <category>privacy</category>
-  </item>
-  <item>
-    <title>Bitcoin and Freedom Tech Hub Launches in Nairobi with Infrastructure Focus</title>
-    <link>https://libertas.fgu.tech/posts/bitcoin-and-freedom-tech-hub-launches-in-nairobi-with-infras</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/bitcoin-and-freedom-tech-hub-launches-in-nairobi-with-infras</guid>
-    <pubDate>Wed, 20 May 2026 15:01:06 GMT</pubDate>
-    <description>Node NBO opens in Nairobi as Africa&apos;s first dedicated Bitcoin/freedom tech co-working space, featuring solar power, satellite internet paid in Bitcoin, and partnerships with HRF and key African Bitcoin companies.</description>
-    <category>bitcoin</category>
-    <category>sovereignty</category>
-    <category>comms</category>
-    <category>payments</category>
-    <category>activism</category>
   </item>
   <item>
     <title>Iran&apos;s 83-Day Internet Blackout Highlights Critical Need for Censorship-Resistant Comms</title>
@@ -168,16 +156,6 @@
     <category>surveillance</category>
     <category>censorship-resistance</category>
     <category>activism</category>
-  </item>
-  <item>
-    <title>Trump Orders Fed to Review Crypto Access to U.S. Payment Rails</title>
-    <link>https://libertas.fgu.tech/posts/trump-orders-fed-to-review-crypto-access-to-u-s-payment-rail</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/trump-orders-fed-to-review-crypto-access-to-u-s-payment-rail</guid>
-    <pubDate>Wed, 20 May 2026 15:01:06 GMT</pubDate>
-    <description>Trump signed executive order directing Federal Reserve to audit regulations blocking crypto firms from master accounts and payment rails within 3 months, potentially opening direct access to core U.S. financial infrastructure.</description>
-    <category>bitcoin</category>
-    <category>payments</category>
-    <category>sovereignty</category>
   </item>
   <item>
     <title>Bangladesh: Police Profile Journalists as Persecution Cycle Continues Under New Government</title>
@@ -335,16 +313,6 @@
     <category>activism</category>
     <category>privacy</category>
     <category>censorship-resistance</category>
-  </item>
-  <item>
-    <title>Retired Cop Wins $835K Settlement After 37-Day Jail for Trump Meme</title>
-    <link>https://libertas.fgu.tech/posts/retired-cop-wins-835k-settlement-after-37-day-jail-for-trump</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/retired-cop-wins-835k-settlement-after-37-day-jail-for-trump</guid>
-    <pubDate>Wed, 20 May 2026 15:02:12 GMT</pubDate>
-    <description>Larry Bushart won $835,000 settlement after Tennessee sheriff jailed him 37 days for posting Trump meme on Facebook, establishing precedent for First Amendment violations.</description>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-    <category>surveillance</category>
   </item>
   <item>
     <title>Freedom House Links Iran&apos;s Internet Blackouts to State Repression Strategy</title>
@@ -621,6 +589,16 @@
     <category>comms</category>
   </item>
   <item>
+    <title>Russian Ruble Stablecoin Processes $110B Despite Western Sanctions</title>
+    <link>https://libertas.fgu.tech/posts/russian-ruble-stablecoin-processes-110b-despite-western-sanc</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/russian-ruble-stablecoin-processes-110b-despite-western-sanc</guid>
+    <pubDate>Wed, 03 Jun 2026 15:01:10 GMT</pubDate>
+    <description>Russian ruble-backed stablecoin A7A5 has processed over $110 billion in transactions, demonstrating effective circumvention of Western financial sanctions through cryptocurrency infrastructure.</description>
+    <category>payments</category>
+    <category>sovereignty</category>
+    <category>censorship-resistance</category>
+  </item>
+  <item>
     <title>NASA Satellites Can Detect GPS Jammers from Space, Raising Privacy Concerns</title>
     <link>https://libertas.fgu.tech/posts/nasa-satellites-can-detect-gps-jammers-from-space-raising-pr</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/nasa-satellites-can-detect-gps-jammers-from-space-raising-pr</guid>
@@ -628,17 +606,6 @@
     <description>NASA satellites originally designed for weather monitoring can now locate GPS jammers within several kilometers, potentially enabling state surveillance of privacy tools used by activists and dissidents.</description>
     <category>privacy</category>
     <category>surveillance</category>
-  </item>
-  <item>
-    <title>South Carolina Enacts Comprehensive Bitcoin Law, Bans State CBDC Use</title>
-    <link>https://libertas.fgu.tech/posts/south-carolina-enacts-comprehensive-bitcoin-law-bans-state-c</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/south-carolina-enacts-comprehensive-bitcoin-law-bans-state-c</guid>
-    <pubDate>Wed, 20 May 2026 15:01:06 GMT</pubDate>
-    <description>South Carolina passed Senate Bill 163 with bipartisan support, protecting Bitcoin self-custody rights, preventing additional crypto taxes, and banning state entities from using CBDCs.</description>
-    <category>bitcoin</category>
-    <category>sovereignty</category>
-    <category>privacy</category>
-    <category>payments</category>
   </item>
   <item>
     <title>Ethiopia Election: Systematic Press Censorship and Phone Searches Target Journalists</title>
