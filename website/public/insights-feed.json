@@ -72,29 +72,6 @@
       }
     },
     {
-      "id": "0a63acae-7f2b-4293-a0cd-08c60daf448e",
-      "url": "https://libertas.fgu.tech/posts/iran-s-83-day-internet-blackout-highlights-critical-need-for",
-      "title": "Iran's 83-Day Internet Blackout Highlights Critical Need for Censorship-Resistant Comms",
-      "summary": "Iran has imposed a record-breaking 83-day nationwide internet blackout to hide media crackdowns, creating an information vacuum that demonstrates the urgent need for mesh networks and satellite communications.",
-      "content_text": "Iran imposed 83-day nationwide internet blackout - longest and most severe ever recorded [NetBlocks]\n• Committee to Protect Journalists (CPJ) and Reporters Without Borders (RSF) issued joint warning\n• Blackout specifically targets press freedom, making secure communications impossible for journalists\n• Iranian-American journalist Reza Valizadeh detained in Evin Prison with unknown status\n• Information vacuum prevents verification of arrests and documentation of human rights abuses\n• Demonstrates real-world scenario where freedom tech tools become critical infrastructure\n• Press freedom groups calling for immediate restoration of internet access and journalist releases",
-      "date_published": "2026-05-21T09:01:52.319Z",
-      "date_modified": "2026-05-21T09:01:52.450Z",
-      "tags": [
-        "censorship-resistance",
-        "comms",
-        "surveillance",
-        "activism",
-        "privacy"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 95,
-        "credibility_score": 92,
-        "citations": [
-          "https://cpj.org/2026/05/cpj-rsf-warn-iran-using-83-day-blackout-to-hide-press-crackdown/"
-        ]
-      }
-    },
-    {
       "id": "0a6ee3e3-f881-418d-aa2e-edfe7705a363",
       "url": "https://libertas.fgu.tech/posts/iran-internet-connectivity-returns-after-3-month-government-",
       "title": "Iran Internet Connectivity Returns After 3-Month Government Blackout",
@@ -397,6 +374,28 @@
         "credibility_score": 95,
         "citations": [
           "https://cpj.org/2026/05/cpj-partners-file-amicus-brief-to-project-encryption-from-pegasus-spyware/"
+        ]
+      }
+    },
+    {
+      "id": "662cee97-f294-4ae4-a349-714571e1044a",
+      "url": "https://libertas.fgu.tech/posts/tails-7-8-1-emergency-release-fixes-critical-privilege-escal",
+      "title": "Tails 7.8.1 Emergency Release Fixes Critical Privilege Escalation Vulnerability",
+      "summary": "Tails released emergency update fixing serious Linux kernel vulnerability (CVE-2026-43503) that could allow privilege escalation and complete system compromise, plus Tor client security fixes.",
+      "content_text": "Emergency Tails 7.8.1 release addresses critical security vulnerabilities\n• Linux kernel updated to 6.12.90-2 fixing CVE-2026-43503 privilege escalation flaw\n• Vulnerability could allow applications to gain admin privileges and compromise anonymity\n• Tor client updated to 0.4.9.9 addressing multiple security issues\n• Attack vector requires chaining with other exploits but could enable full system control\n• Automatic upgrades available from Tails 7.0+, manual upgrade option provided\n• Tails team notes attack unlikely but possible by advanced adversaries like governments",
+      "date_published": "2026-06-04T15:02:38.075Z",
+      "date_modified": "2026-06-04T15:02:38.228Z",
+      "tags": [
+        "privacy",
+        "censorship-resistance",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 95,
+        "citations": [
+          "https://tails.net/news/version_7.8.1/"
         ]
       }
     },
@@ -900,27 +899,6 @@
       }
     },
     {
-      "id": "bbd3c162-8cc7-46c7-bc69-f8041d643862",
-      "url": "https://libertas.fgu.tech/posts/maldives-jails-first-journalists-since-2008-escalates-press-",
-      "title": "Maldives Jails First Journalists Since 2008, Escalates Press Freedom Crackdown",
-      "summary": "Maldives authorities jailed two journalists for reporting on a gag order, marking the first criminal imprisonment of journalists since the country's 2008 democratic constitution, amid broader media suppression efforts.",
-      "content_text": "Two Adhadhu journalists sentenced to 10-15 days prison for reporting on court gag order regarding presidential misconduct documentary\n• Authorities raided news outlet offices, seized laptops and hard drives, imposed travel bans on media executives\n• Government charged outlet leaders under Islamic law for 'false accusation of adultery' (up to 19 months prison, 80 lashes)\n• New Media and Broadcasting Regulation Bill (Sept 2025) grants government broad discretionary powers over media control\n• Police attacked protesters supporting press freedom; 13 outlets staged coordinated media blackout in protest\n• Secret trials conducted without lawyers despite criminal justice system backlog, indicating prioritized persecution\n• Pattern matches digital-age censorship: device seizures, travel restrictions, and coordinated legal/technical suppression",
-      "date_published": "2026-05-21T03:01:38.114Z",
-      "date_modified": "2026-05-21T03:01:38.268Z",
-      "tags": [
-        "censorship-resistance",
-        "surveillance",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 75,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.hrw.org/news/2026/05/21/maldives-attacks-on-media-escalate"
-        ]
-      }
-    },
-    {
       "id": "bbf75e1f-238e-4104-a49a-f40ca91d95b4",
       "url": "https://libertas.fgu.tech/posts/116k-dark-web-exposures-found-for-major-us-media-organizatio",
       "title": "116K Dark Web Exposures Found for Major US Media Organizations",
@@ -938,26 +916,6 @@
         "credibility_score": 85,
         "citations": [
           "https://proton.me/blog/journalist-data-leaks"
-        ]
-      }
-    },
-    {
-      "id": "bfaa3ffd-2d98-414f-8229-75cdcde6c76a",
-      "url": "https://libertas.fgu.tech/posts/bipartisan-amendment-would-ban-police-license-plate-tracking",
-      "title": "Bipartisan Amendment Would Ban Police License Plate Tracking Nationwide",
-      "summary": "A bipartisan federal highway bill amendment would strip funding from cities and states that operate automated license plate tracking programs, effectively ending mass surveillance via ALPR technology.",
-      "content_text": "Bipartisan amendment targets automated license plate reader (ALPR) surveillance programs\n• Would strip federal highway funding from jurisdictions operating plate tracking systems\n• Exception carved out for toll collection systems only\n• Represents rare bipartisan agreement on surveillance limits\n• Would effectively end widespread police use of ALPR mass surveillance\n• Uses federal funding leverage to enforce privacy protections nationwide\n• Could eliminate databases tracking billions of location records annually",
-      "date_published": "2026-05-21T03:00:57.811Z",
-      "date_modified": "2026-05-21T03:00:57.908Z",
-      "tags": [
-        "surveillance",
-        "privacy"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 88,
-        "citations": [
-          "https://www.wired.com/story/a-bipartisan-amendment-would-end-police-license-plate-tracking-nationwide/"
         ]
       }
     },
@@ -1001,28 +959,6 @@
         "credibility_score": 85,
         "citations": [
           "https://www.schneier.com/blog/archives/2026/06/microsoft-threatening-security-researcher.html"
-        ]
-      }
-    },
-    {
-      "id": "ca55286e-dfe9-400e-8ef9-0306fbdfa7ec",
-      "url": "https://libertas.fgu.tech/posts/access-now-links-privacy-protection-to-disinformation-defens",
-      "title": "Access Now Links Privacy Protection to Disinformation Defense in Latin America",
-      "summary": "Digital rights org Access Now argues that strict data protection laws are key to reducing disinformation impact, especially during elections in Latin America where microtargeting exploits personal data for political manipulation.",
-      "content_text": "Access Now published analysis connecting data privacy enforcement to disinformation mitigation\n• Report focuses on Latin American electoral contexts (Argentina, Mexico, Brazil, Colombia, Peru)\n• Identifies microtargeting as primary vector: personal data enables targeted political manipulation\n• AI-generated deepfakes and bot networks amplify microtargeting effectiveness\n• Platform business models incentivize data collection that enables manipulation\n• Recommends data protection authorities coordinate with electoral authorities\n• Proposes disabling microtargeting tools during electoral periods\n• Calls for transparency requirements and algorithmic auditing mechanisms",
-      "date_published": "2026-05-21T09:01:18.213Z",
-      "date_modified": "2026-05-21T09:01:18.296Z",
-      "tags": [
-        "privacy",
-        "surveillance",
-        "censorship-resistance",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 85,
-        "citations": [
-          "https://www.accessnow.org/publication/vinculo-entre-desinformacion-y-privacidad/"
         ]
       }
     },
@@ -1221,28 +1157,6 @@
         "credibility_score": 95,
         "citations": [
           "https://www.hrw.org/news/2026/05/22/dr-congo-renewed-repression-impunity-top-rights-concerns"
-        ]
-      }
-    },
-    {
-      "id": "f90b3bb7-5452-48b1-912f-8c09b3e4a555",
-      "url": "https://libertas.fgu.tech/posts/freedom-house-links-iran-s-internet-blackouts-to-historical-",
-      "title": "Freedom House Links Iran's Internet Blackouts to Historical Resistance Patterns",
-      "summary": "Freedom House draws parallels between Iran's ongoing internet blackouts and Poland's Solidarity movement, highlighting how authoritarian regimes use digital repression to fracture opposition before democratic movements can unify.",
-      "content_text": "Freedom House compares Iran's current situation to Poland's Solidarity movement under Soviet rule\n• Iran experiencing longest state-imposed internet blackout in history amid mass executions\n• Over 630 executions reported in Iran this year under cover of communications blackout\n• Regime using internet shutdowns, disinformation, and digital harassment to prevent opposition unity\n• Freedom House calls for restoring internet access as core freedom strategy\n• Iran ranked among world's lowest-trust societies according to World Values Survey\n• Authoritarian regimes engineer distrust through digital tools to maintain control\n• Historical precedent shows seemingly permanent authoritarian systems can collapse suddenly",
-      "date_published": "2026-05-21T09:02:09.904Z",
-      "date_modified": "2026-05-21T09:02:10.024Z",
-      "tags": [
-        "activism",
-        "censorship-resistance",
-        "surveillance",
-        "sovereignty"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 85,
-        "citations": [
-          "https://freedomhouse.org/article/gdansk-tehran-people-uniting-freedom-can-break-grip-tyranny"
         ]
       }
     },

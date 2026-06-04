@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Wed, 03 Jun 2026 21:01:02 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 04 Jun 2026 15:02:38 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -37,18 +37,6 @@
     <pubDate>Tue, 26 May 2026 21:02:19 GMT</pubDate>
     <description>Researchers demonstrate WiFi sensing technology that identifies individuals by analyzing how WiFi signals interact with their bodies, creating surveillance capabilities from existing infrastructure.</description>
     <category>surveillance</category>
-    <category>privacy</category>
-  </item>
-  <item>
-    <title>Iran&apos;s 83-Day Internet Blackout Highlights Critical Need for Censorship-Resistant Comms</title>
-    <link>https://libertas.fgu.tech/posts/iran-s-83-day-internet-blackout-highlights-critical-need-for</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/iran-s-83-day-internet-blackout-highlights-critical-need-for</guid>
-    <pubDate>Thu, 21 May 2026 09:01:52 GMT</pubDate>
-    <description>Iran has imposed a record-breaking 83-day nationwide internet blackout to hide media crackdowns, creating an information vacuum that demonstrates the urgent need for mesh networks and satellite communications.</description>
-    <category>censorship-resistance</category>
-    <category>comms</category>
-    <category>surveillance</category>
-    <category>activism</category>
     <category>privacy</category>
   </item>
   <item>
@@ -200,6 +188,17 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>censorship-resistance</category>
+  </item>
+  <item>
+    <title>Tails 7.8.1 Emergency Release Fixes Critical Privilege Escalation Vulnerability</title>
+    <link>https://libertas.fgu.tech/posts/tails-7-8-1-emergency-release-fixes-critical-privilege-escal</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/tails-7-8-1-emergency-release-fixes-critical-privilege-escal</guid>
+    <pubDate>Thu, 04 Jun 2026 15:02:38 GMT</pubDate>
+    <description>Tails released emergency update fixing serious Linux kernel vulnerability (CVE-2026-43503) that could allow privilege escalation and complete system compromise, plus Tor client security fixes.</description>
+    <category>privacy</category>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
   </item>
   <item>
     <title>DRC: Secret Cyber Defense Unit Disappears Dissidents, HRW Documents Network of Detention Sites</title>
@@ -445,16 +444,6 @@
     <category>privacy</category>
   </item>
   <item>
-    <title>Maldives Jails First Journalists Since 2008, Escalates Press Freedom Crackdown</title>
-    <link>https://libertas.fgu.tech/posts/maldives-jails-first-journalists-since-2008-escalates-press-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/maldives-jails-first-journalists-since-2008-escalates-press-</guid>
-    <pubDate>Thu, 21 May 2026 03:01:38 GMT</pubDate>
-    <description>Maldives authorities jailed two journalists for reporting on a gag order, marking the first criminal imprisonment of journalists since the country&apos;s 2008 democratic constitution, amid broader media suppression efforts.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
-  </item>
-  <item>
     <title>116K Dark Web Exposures Found for Major US Media Organizations</title>
     <link>https://libertas.fgu.tech/posts/116k-dark-web-exposures-found-for-major-us-media-organizatio</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/116k-dark-web-exposures-found-for-major-us-media-organizatio</guid>
@@ -463,15 +452,6 @@
     <category>privacy</category>
     <category>surveillance</category>
     <category>journalism</category>
-  </item>
-  <item>
-    <title>Bipartisan Amendment Would Ban Police License Plate Tracking Nationwide</title>
-    <link>https://libertas.fgu.tech/posts/bipartisan-amendment-would-ban-police-license-plate-tracking</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/bipartisan-amendment-would-ban-police-license-plate-tracking</guid>
-    <pubDate>Thu, 21 May 2026 03:00:57 GMT</pubDate>
-    <description>A bipartisan federal highway bill amendment would strip funding from cities and states that operate automated license plate tracking programs, effectively ending mass surveillance via ALPR technology.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
   </item>
   <item>
     <title>OONI Joins Quadratic Funding Campaign for Internet Freedom Projects</title>
@@ -493,17 +473,6 @@
     <category>privacy</category>
     <category>surveillance</category>
     <category>censorship-resistance</category>
-  </item>
-  <item>
-    <title>Access Now Links Privacy Protection to Disinformation Defense in Latin America</title>
-    <link>https://libertas.fgu.tech/posts/access-now-links-privacy-protection-to-disinformation-defens</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/access-now-links-privacy-protection-to-disinformation-defens</guid>
-    <pubDate>Thu, 21 May 2026 09:01:18 GMT</pubDate>
-    <description>Digital rights org Access Now argues that strict data protection laws are key to reducing disinformation impact, especially during elections in Latin America where microtargeting exploits personal data for political manipulation.</description>
-    <category>privacy</category>
-    <category>surveillance</category>
-    <category>censorship-resistance</category>
-    <category>activism</category>
   </item>
   <item>
     <title>Bitcoin Book Excerpt Illustrates Inflation&apos;s Impact on Purchasing Power Over 40 Years</title>
@@ -599,17 +568,6 @@
     <category>censorship-resistance</category>
     <category>activism</category>
     <category>privacy</category>
-  </item>
-  <item>
-    <title>Freedom House Links Iran&apos;s Internet Blackouts to Historical Resistance Patterns</title>
-    <link>https://libertas.fgu.tech/posts/freedom-house-links-iran-s-internet-blackouts-to-historical-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/freedom-house-links-iran-s-internet-blackouts-to-historical-</guid>
-    <pubDate>Thu, 21 May 2026 09:02:09 GMT</pubDate>
-    <description>Freedom House draws parallels between Iran&apos;s ongoing internet blackouts and Poland&apos;s Solidarity movement, highlighting how authoritarian regimes use digital repression to fracture opposition before democratic movements can unify.</description>
-    <category>activism</category>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>sovereignty</category>
   </item>
   <item>
     <title>African Govts Spend $2B on AI Surveillance to Target Opposition, Not Crime</title>
