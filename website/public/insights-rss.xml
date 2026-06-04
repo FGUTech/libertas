@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 04 Jun 2026 15:02:38 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 04 Jun 2026 21:02:23 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -50,18 +50,6 @@
     <category>activism</category>
   </item>
   <item>
-    <title>Access Now Fights to Uphold Court Injunction Against NSO Pegasus Targeting WhatsApp</title>
-    <link>https://libertas.fgu.tech/posts/access-now-fights-to-uphold-court-injunction-against-nso-peg</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/access-now-fights-to-uphold-court-injunction-against-nso-peg</guid>
-    <pubDate>Thu, 21 May 2026 21:01:50 GMT</pubDate>
-    <description>Access Now filed amicus brief urging Ninth Circuit to maintain permanent injunction preventing NSO Group from targeting WhatsApp users with Pegasus spyware that bypasses encryption protections.</description>
-    <category>privacy</category>
-    <category>surveillance</category>
-    <category>encryption</category>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-  </item>
-  <item>
     <title>Treasury Nominee Bessent Reiterates Opposition to CBDC, Pushes Crypto Clarity Act</title>
     <link>https://libertas.fgu.tech/posts/treasury-nominee-bessent-reiterates-opposition-to-cbdc-pushe</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/treasury-nominee-bessent-reiterates-opposition-to-cbdc-pushe</guid>
@@ -91,6 +79,26 @@
     <category>censorship-resistance</category>
     <category>activism</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>EFF Warns Congress: AI-Powered Government Surveillance Threatens Constitutional Rights</title>
+    <link>https://libertas.fgu.tech/posts/eff-warns-congress-ai-powered-government-surveillance-threat</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-warns-congress-ai-powered-government-surveillance-threat</guid>
+    <pubDate>Thu, 04 Jun 2026 21:00:55 GMT</pubDate>
+    <description>EFF testified to Congress that government adoption of AI for mass surveillance would supercharge unconstitutional civil liberties violations, calling for strong safeguards before deployment.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
+  </item>
+  <item>
+    <title>White House Frames Crypto Clarity Act as &apos;Pro-Enforcement&apos; Bill</title>
+    <link>https://libertas.fgu.tech/posts/white-house-frames-crypto-clarity-act-as-pro-enforcement-bil</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/white-house-frames-crypto-clarity-act-as-pro-enforcement-bil</guid>
+    <pubDate>Thu, 04 Jun 2026 21:01:34 GMT</pubDate>
+    <description>White House crypto adviser Patrick Witt defends the Clarity Act as a &apos;pro-enforcement bill&apos; despite industry pushback, as lawmakers rush to pass the legislation.</description>
+    <category>bitcoin</category>
+    <category>sovereignty</category>
+    <category>surveillance</category>
   </item>
   <item>
     <title>Speculative 2036 Bitcoin Vision: Global Settlement Layer for Stablecoins and AI Commerce</title>
@@ -263,32 +271,11 @@
     <category>propaganda</category>
   </item>
   <item>
-    <title>CPJ Warns Journalists of Border Surveillance, Device Seizures at 2026 FIFA World Cup</title>
-    <link>https://libertas.fgu.tech/posts/cpj-warns-journalists-of-border-surveillance-device-seizures</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/cpj-warns-journalists-of-border-surveillance-device-seizures</guid>
-    <pubDate>Thu, 21 May 2026 21:02:23 GMT</pubDate>
-    <description>Committee to Protect Journalists warns 50,000 accredited World Cup journalists may face border questioning, device confiscation, and immigration enforcement targeting their reporting work.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>privacy</category>
-  </item>
-  <item>
     <title>Tunisia Escalates Media Crackdown with New Journalist Convictions</title>
     <link>https://libertas.fgu.tech/posts/tunisia-escalates-media-crackdown-with-new-journalist-convic</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/tunisia-escalates-media-crackdown-with-new-journalist-convic</guid>
     <pubDate>Mon, 25 May 2026 21:01:25 GMT</pubDate>
     <description>Tunisia convicted lawyer-commentator Sonia Dahmani under cybercrime law for criticizing prison conditions, part of systematic repression targeting journalists and blocking protest coverage.</description>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-    <category>surveillance</category>
-  </item>
-  <item>
-    <title>Press Freedom Groups Urge New Guatemala AG to End Journalist Persecution</title>
-    <link>https://libertas.fgu.tech/posts/press-freedom-groups-urge-new-guatemala-ag-to-end-journalist</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/press-freedom-groups-urge-new-guatemala-ag-to-end-journalist</guid>
-    <pubDate>Thu, 21 May 2026 21:02:23 GMT</pubDate>
-    <description>Nine international organizations led by CPJ call on Guatemala&apos;s new attorney general to stop criminal prosecutions of journalists, with 20+ reporters fled the country in 2022-2023 due to systematic targeting.</description>
     <category>censorship-resistance</category>
     <category>activism</category>
     <category>surveillance</category>
@@ -324,6 +311,16 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>sovereignty</category>
+  </item>
+  <item>
+    <title>Meta Smart Glasses Hide Unreleased Face Recognition System</title>
+    <link>https://libertas.fgu.tech/posts/meta-smart-glasses-hide-unreleased-face-recognition-system</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/meta-smart-glasses-hide-unreleased-face-recognition-system</guid>
+    <pubDate>Thu, 04 Jun 2026 21:02:06 GMT</pubDate>
+    <description>Code review reveals Meta embedded unreleased face-recognition system in smart glasses that identifies people using biometric data stored on users&apos; phones.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>identity</category>
   </item>
   <item>
     <title>Bangladesh&apos;s Cycle of Press Repression Continues Under New Government</title>
@@ -497,6 +494,15 @@
     <category>sovereignty</category>
   </item>
   <item>
+    <title>Meta Deploys Hidden Facial Recognition in Always-On Smart Glasses</title>
+    <link>https://libertas.fgu.tech/posts/meta-deploys-hidden-facial-recognition-in-always-on-smart-gl</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/meta-deploys-hidden-facial-recognition-in-always-on-smart-gl</guid>
+    <pubDate>Thu, 04 Jun 2026 21:00:55 GMT</pubDate>
+    <description>Meta has secretly deployed facial recognition code to millions of Ray-Ban smart glasses, creating a distributed surveillance network that converts faces into biometric faceprints for identification.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+  </item>
+  <item>
     <title>116K Dark Web Exposures Found Tied to Major US News Organizations</title>
     <link>https://libertas.fgu.tech/posts/116k-dark-web-exposures-found-tied-to-major-us-news-organiza</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/116k-dark-web-exposures-found-tied-to-major-us-news-organiza</guid>
@@ -516,6 +522,17 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>comms</category>
+  </item>
+  <item>
+    <title>Access Now Report: Data Privacy as Defense Against Electoral Disinformation in Latin America</title>
+    <link>https://libertas.fgu.tech/posts/access-now-report-data-privacy-as-defense-against-electoral-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/access-now-report-data-privacy-as-defense-against-electoral-</guid>
+    <pubDate>Thu, 04 Jun 2026 21:02:23 GMT</pubDate>
+    <description>Access Now analysis shows how mass data collection enables personalized disinformation campaigns and proposes privacy law enforcement as key defense for upcoming Latin American elections.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>activism</category>
   </item>
   <item>
     <title>Russian Ruble Stablecoin Processes $110B Despite Western Sanctions</title>
