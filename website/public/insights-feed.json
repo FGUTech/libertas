@@ -179,6 +179,28 @@
       }
     },
     {
+      "id": "1f8706a2-95f6-4411-9c06-e9c297e5f726",
+      "url": "https://libertas.fgu.tech/posts/rwanda-arrests-youtube-journalists-for-exposing-secret-deten",
+      "title": "Rwanda Arrests YouTube Journalists for Exposing Secret Detention Facility",
+      "summary": "Two journalists from YouTube channel Imbarutso ya Demokarasi were arrested and charged for reporting on Kwa Kabuga, an unofficial detention center in Kigali where authorities hold 'undesirable' people.",
+      "content_text": "Augustin Nsanzimana and Emmanuel Niyonshuti arrested for YouTube reporting on Kwa Kabuga detention facility\n• Charged with 'publishing rumors that may incite fear' - a vague offense used to suppress criticism\n• Denied legal counsel for first six days of detention, confirmed in pre-trial detention June 2\n• Rwanda Investigation Bureau agents reportedly entered Nsanzimana's home May 1 before arrests\n• Their YouTube video alleged detainee deaths inside the unofficial detention center\n• Human Rights Watch has documented arbitrary detention and ill treatment at Kwa Kabuga facility\n• Part of broader crackdown targeting YouTube journalists and opposition voices in Rwanda\n• Academic YouTuber Aimable Karasira died in prison under questionable circumstances in May",
+      "date_published": "2026-06-05T09:01:22.952Z",
+      "date_modified": "2026-06-05T09:01:23.062Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.hrw.org/news/2026/06/04/two-more-journalists-arrested-in-rwanda"
+        ]
+      }
+    },
+    {
       "id": "200d0cc5-b969-4aa6-bda0-ee79d2aacc34",
       "url": "https://libertas.fgu.tech/posts/white-house-frames-crypto-clarity-act-as-pro-enforcement-bil",
       "title": "White House Frames Crypto Clarity Act as 'Pro-Enforcement' Bill",
@@ -311,6 +333,29 @@
       }
     },
     {
+      "id": "405fe114-d0b1-407d-9901-4b0199ba0187",
+      "url": "https://libertas.fgu.tech/posts/londa-2025-report-africa-s-digital-rights-show-mixed-progres",
+      "title": "LONDA 2025 Report: Africa's Digital Rights Show Mixed Progress Amid Authoritarian Pushback",
+      "summary": "Paradigm Initiative's LONDA 2025 report reveals stark digital rights divide across 29 African countries, with some nations enacting progressive privacy laws while others intensify internet shutdowns, surveillance, and activist arrests.",
+      "content_text": "LONDA 2025 report evaluated digital rights across 29 African countries using 12-indicator scoring system out of 60 points\n• Botswana emerged as success story, jumping from 28 to 35 points after implementing Data Protection Act and maintaining zero internet shutdowns\n• Multiple countries deployed internet shutdowns during political tension: Cameroon (Oct-Nov elections), Tanzania (October elections with 1,700+ arrests)\n• ECOWAS Court condemned Senegal's 2023 internet blackouts, establishing legal precedent that kept Senegal's internet open in 2025\n• Zambian government cancelled RightsCon 2026 less than a week before event, demonstrating how quickly digital rights progress can be reversed\n• Governments weaponize cybercrime laws against dissent: Benin arrested newspaper editors, Somalia targeted journalists, Ghana misapplied Electronic Communications Act\n• Technology-facilitated gender-based violence rising, with gendered disinformation campaigns in Benin targeting women politicians\n• African Commission passed Resolution 630 in 2025 guiding tech companies on information integrity and human rights assessments\n• Surveillance expansion in Zimbabwe, Lesotho, and Togo lacks judicial oversight, forcing self-censorship among journalists and activists",
+      "date_published": "2026-06-05T09:02:11.227Z",
+      "date_modified": "2026-06-05T09:02:11.383Z",
+      "tags": [
+        "surveillance",
+        "censorship-resistance",
+        "privacy",
+        "activism",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 88,
+        "credibility_score": 85,
+        "citations": [
+          "https://globalvoices.org/2026/06/05/the-signal-we-cannot-ignore-what-the-londa-2025-report-reveals-about-africas-digital-rights/"
+        ]
+      }
+    },
+    {
       "id": "40f1dd53-8f1f-48c3-bb0a-4f608276112a",
       "url": "https://libertas.fgu.tech/posts/venezuelan-mother-dies-after-16-month-search-for-secretly-de",
       "title": "Venezuelan Mother Dies After 16-Month Search for Secretly Dead Political Prisoner Son",
@@ -437,28 +482,6 @@
         "credibility_score": 95,
         "citations": [
           "https://tails.net/news/version_7.8.1/"
-        ]
-      }
-    },
-    {
-      "id": "682c432c-d3e8-4a52-a6be-bf436b8895d1",
-      "url": "https://libertas.fgu.tech/posts/drc-secret-cyber-defense-unit-disappears-dissidents-hrw-docu",
-      "title": "DRC: Secret Cyber Defense Unit Disappears Dissidents, HRW Documents Network of Detention Sites",
-      "summary": "Human Rights Watch documents systematic repression in DRC where National Cyber Defense Council arbitrarily arrests activists, holding them in secret locations without charges or legal access.",
-      "content_text": "National Cyber Defense Council (CNC) operates secret detention network in Kinshasa targeting dissidents\n• Activists and political opponents forcibly disappeared, held without formal charges or lawyer access\n• Families blindfolded when visiting detainees, locations kept secret from relatives\n• HRW Executive Director Philippe Bolopion met with PM Judith Suminwa and other officials May 17-21, 2026\n• Government claims detainees held in villas while investigations finalized before judicial transfer\n• Officials promise CNC reforms requiring judicial police presence for future arrests\n• Crackdown parallels Joseph Kabila era repression, violates Tshisekedi's pledges to end such practices\n• Broader context includes M23 occupation in eastern Congo and media/opposition crackdowns",
-      "date_published": "2026-05-22T09:01:17.661Z",
-      "date_modified": "2026-05-22T09:01:17.820Z",
-      "tags": [
-        "censorship-resistance",
-        "surveillance",
-        "activism",
-        "privacy"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 75,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.hrw.org/news/2026/05/22/dr-congo-renewed-repression-impunity-top-rights-concerns"
         ]
       }
     },
@@ -1260,29 +1283,6 @@
         "credibility_score": 95,
         "citations": [
           "https://www.eff.org/deeplinks/2026/06/pulte-appointment-underscores-need-reform-section-702-spying"
-        ]
-      }
-    },
-    {
-      "id": "fd693f76-7fd9-4617-8fa2-e21a5cee61bc",
-      "url": "https://libertas.fgu.tech/posts/african-govts-spend-2b-on-ai-surveillance-to-target-oppositi",
-      "title": "African Govts Spend $2B on AI Surveillance to Target Opposition, Not Crime",
-      "summary": "11 African governments spent over $2 billion on Chinese/Israeli AI surveillance systems strategically placed in opposition areas rather than high-crime zones, creating digital panopticon to suppress dissent before it forms.",
-      "content_text": "11 African governments spent $2+ billion on AI surveillance (Nigeria: $470M) according to IDS/African Digital Rights Network study\n• Systems include HD CCTV, facial recognition, plate readers, biometric ID supplied mainly by Chinese and Israeli firms\n• Camera placement targets opposition organizing areas, not high-crime neighborhoods per IDS mapping analysis\n• No evidence cameras reduce crime rates despite governments claiming public safety justification\n• AI converts decades of collected citizen data into queryable archives for real-time surveillance\n• Pre-emptive suppression: protests identified Saturday through metadata/facial recognition don't form Sunday\n• Administrative databases integrated into 'loyalty index' flagging citizens for associations and digital footprints\n• CIPESA documents measurable retreat of expression/assembly across 14 countries with surveillance infrastructure",
-      "date_published": "2026-05-22T09:02:15.255Z",
-      "date_modified": "2026-05-22T09:02:15.459Z",
-      "tags": [
-        "surveillance",
-        "privacy",
-        "activism",
-        "censorship-resistance",
-        "identity"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 95,
-        "credibility_score": 85,
-        "citations": [
-          "https://globalvoices.org/2026/05/22/how-ai-is-upgrading-african-dictatorship/"
         ]
       }
     }

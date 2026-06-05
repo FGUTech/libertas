@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 05 Jun 2026 03:00:57 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 05 Jun 2026 09:02:11 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -91,6 +91,17 @@
     <category>activism</category>
   </item>
   <item>
+    <title>Rwanda Arrests YouTube Journalists for Exposing Secret Detention Facility</title>
+    <link>https://libertas.fgu.tech/posts/rwanda-arrests-youtube-journalists-for-exposing-secret-deten</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/rwanda-arrests-youtube-journalists-for-exposing-secret-deten</guid>
+    <pubDate>Fri, 05 Jun 2026 09:01:22 GMT</pubDate>
+    <description>Two journalists from YouTube channel Imbarutso ya Demokarasi were arrested and charged for reporting on Kwa Kabuga, an unofficial detention center in Kigali where authorities hold &apos;undesirable&apos; people.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>privacy</category>
+  </item>
+  <item>
     <title>White House Frames Crypto Clarity Act as &apos;Pro-Enforcement&apos; Bill</title>
     <link>https://libertas.fgu.tech/posts/white-house-frames-crypto-clarity-act-as-pro-enforcement-bil</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/white-house-frames-crypto-clarity-act-as-pro-enforcement-bil</guid>
@@ -155,6 +166,18 @@
     <category>privacy</category>
   </item>
   <item>
+    <title>LONDA 2025 Report: Africa&apos;s Digital Rights Show Mixed Progress Amid Authoritarian Pushback</title>
+    <link>https://libertas.fgu.tech/posts/londa-2025-report-africa-s-digital-rights-show-mixed-progres</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/londa-2025-report-africa-s-digital-rights-show-mixed-progres</guid>
+    <pubDate>Fri, 05 Jun 2026 09:02:11 GMT</pubDate>
+    <description>Paradigm Initiative&apos;s LONDA 2025 report reveals stark digital rights divide across 29 African countries, with some nations enacting progressive privacy laws while others intensify internet shutdowns, surveillance, and activist arrests.</description>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>privacy</category>
+    <category>activism</category>
+    <category>sovereignty</category>
+  </item>
+  <item>
     <title>Venezuelan Mother Dies After 16-Month Search for Secretly Dead Political Prisoner Son</title>
     <link>https://libertas.fgu.tech/posts/venezuelan-mother-dies-after-16-month-search-for-secretly-de</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/venezuelan-mother-dies-after-16-month-search-for-secretly-de</guid>
@@ -217,17 +240,6 @@
     <category>censorship-resistance</category>
     <category>surveillance</category>
     <category>activism</category>
-  </item>
-  <item>
-    <title>DRC: Secret Cyber Defense Unit Disappears Dissidents, HRW Documents Network of Detention Sites</title>
-    <link>https://libertas.fgu.tech/posts/drc-secret-cyber-defense-unit-disappears-dissidents-hrw-docu</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/drc-secret-cyber-defense-unit-disappears-dissidents-hrw-docu</guid>
-    <pubDate>Fri, 22 May 2026 09:01:17 GMT</pubDate>
-    <description>Human Rights Watch documents systematic repression in DRC where National Cyber Defense Council arbitrarily arrests activists, holding them in secret locations without charges or legal access.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>privacy</category>
   </item>
   <item>
     <title>Citizen Lab Exposes Mobile Networks as Covert Surveillance Platforms</title>
@@ -615,18 +627,6 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
-  </item>
-  <item>
-    <title>African Govts Spend $2B on AI Surveillance to Target Opposition, Not Crime</title>
-    <link>https://libertas.fgu.tech/posts/african-govts-spend-2b-on-ai-surveillance-to-target-oppositi</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/african-govts-spend-2b-on-ai-surveillance-to-target-oppositi</guid>
-    <pubDate>Fri, 22 May 2026 09:02:15 GMT</pubDate>
-    <description>11 African governments spent over $2 billion on Chinese/Israeli AI surveillance systems strategically placed in opposition areas rather than high-crime zones, creating digital panopticon to suppress dissent before it forms.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
-    <category>activism</category>
-    <category>censorship-resistance</category>
-    <category>identity</category>
   </item>
 </channel>
 </rss>
