@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 04 Jun 2026 21:02:23 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 05 Jun 2026 03:00:57 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -111,6 +111,16 @@
     <category>censorship-resistance</category>
     <category>payments</category>
     <category>surveillance</category>
+  </item>
+  <item>
+    <title>California&apos;s A.B. 412 Would Create Impossible AI Compliance Burden, Crush Open Source</title>
+    <link>https://libertas.fgu.tech/posts/california-s-a-b-412-would-create-impossible-ai-compliance-b</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/california-s-a-b-412-would-create-impossible-ai-compliance-b</guid>
+    <pubDate>Fri, 05 Jun 2026 03:00:57 GMT</pubDate>
+    <description>California&apos;s A.B. 412 demands AI developers identify all copyrighted training data, but EFF warns this is technically impossible and would lock in Big Tech monopolies while crushing small developers and open-source projects.</description>
+    <category>censorship-resistance</category>
+    <category>sovereignty</category>
+    <category>privacy</category>
   </item>
   <item>
     <title>JPMorgan CEO Dimon Declares War on Crypto Clarity Act, Attacks Coinbase</title>
@@ -545,6 +555,16 @@
     <category>censorship-resistance</category>
   </item>
   <item>
+    <title>EFF Warns Congress Against AI-Powered Mass Government Surveillance</title>
+    <link>https://libertas.fgu.tech/posts/eff-warns-congress-against-ai-powered-mass-government-survei</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-warns-congress-against-ai-powered-mass-government-survei</guid>
+    <pubDate>Fri, 05 Jun 2026 03:00:57 GMT</pubDate>
+    <description>EFF testified to Congress that government adoption of AI without strong safeguards would supercharge unconstitutional mass surveillance and civil liberties violations.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
+  </item>
+  <item>
     <title>NASA Satellites Can Detect GPS Jammers from Space, Raising Privacy Concerns</title>
     <link>https://libertas.fgu.tech/posts/nasa-satellites-can-detect-gps-jammers-from-space-raising-pr</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/nasa-satellites-can-detect-gps-jammers-from-space-raising-pr</guid>
@@ -585,6 +605,16 @@
     <category>censorship-resistance</category>
     <category>activism</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>Trump Appoints Unqualified Acting DNI as Section 702 Surveillance Powers Face Renewal</title>
+    <link>https://libertas.fgu.tech/posts/trump-appoints-unqualified-acting-dni-as-section-702-surveil</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/trump-appoints-unqualified-acting-dni-as-section-702-surveil</guid>
+    <pubDate>Fri, 05 Jun 2026 03:00:57 GMT</pubDate>
+    <description>Trump appointed Bill Pulte, who lacks intelligence experience but has weaponized government data against political foes, as acting DNI as Congress debates renewing Section 702 warrantless surveillance powers.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
   </item>
   <item>
     <title>African Govts Spend $2B on AI Surveillance to Target Opposition, Not Crime</title>

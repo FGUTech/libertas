@@ -225,6 +225,27 @@
       }
     },
     {
+      "id": "29ac1361-22bd-45b4-b721-03f7b7322a76",
+      "url": "https://libertas.fgu.tech/posts/california-s-a-b-412-would-create-impossible-ai-compliance-b",
+      "title": "California's A.B. 412 Would Create Impossible AI Compliance Burden, Crush Open Source",
+      "summary": "California's A.B. 412 demands AI developers identify all copyrighted training data, but EFF warns this is technically impossible and would lock in Big Tech monopolies while crushing small developers and open-source projects.",
+      "content_text": "A.B. 412 requires AI developers to identify and disclose all copyrighted works used in training\n• EFF filed opposition letter calling the requirements practically impossible to implement\n• No machine-readable list of copyrighted works exists at U.S. Copyright Office\n• Bill covers any developer making AI models available to Californians, not just Big Tech\n• Large companies can hire compliance teams; small developers and open-source projects cannot\n• Federal courts are already adjudicating AI fair use questions with some ruling in favor of training\n• Bill would discourage innovation while cementing dominance of largest AI companies\n• Rights holders already have powerful federal copyright protections available",
+      "date_published": "2026-06-05T03:00:57.397Z",
+      "date_modified": "2026-06-05T03:00:57.446Z",
+      "tags": [
+        "censorship-resistance",
+        "sovereignty",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/06/californias-ab-412-still-demands-developers-do-impossible"
+        ]
+      }
+    },
+    {
       "id": "2e772a3b-3b25-4844-a9ba-5c2926727221",
       "url": "https://libertas.fgu.tech/posts/jpmorgan-ceo-dimon-declares-war-on-crypto-clarity-act-attack",
       "title": "JPMorgan CEO Dimon Declares War on Crypto Clarity Act, Attacks Coinbase",
@@ -1114,6 +1135,27 @@
       }
     },
     {
+      "id": "eedd1f28-e3fe-4a55-8326-24f511668550",
+      "url": "https://libertas.fgu.tech/posts/eff-warns-congress-against-ai-powered-mass-government-survei",
+      "title": "EFF Warns Congress Against AI-Powered Mass Government Surveillance",
+      "summary": "EFF testified to Congress that government adoption of AI without strong safeguards would supercharge unconstitutional mass surveillance and civil liberties violations.",
+      "content_text": "EFF Senior Policy Analyst Dr. Matthew Guariglia testified to House Homeland Security Subcommittee\n• Warned that generative AI for mass government surveillance would supercharge civil liberties violations\n• Highlighted government secrecy combined with proprietary AI prevents oversight of AI mistakes\n• Cited AI errors including DHS training failures and false legal citations as examples\n• Emphasized need for strong Constitutional safeguards before government AI adoption\n• Guariglia stated the real issue is 'reining in agencies that would unleash AI on the American public'\n• Testimony addresses cybersecurity and critical infrastructure protection contexts",
+      "date_published": "2026-06-05T03:00:57.398Z",
+      "date_modified": "2026-06-05T03:00:57.446Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/06/eff-testifies-congress-protecting-americans-rights-government-ai"
+        ]
+      }
+    },
+    {
       "id": "ef2021e7-b443-49c3-963b-44fe51c1171d",
       "url": "https://libertas.fgu.tech/posts/nasa-satellites-can-detect-gps-jammers-from-space-raising-pr",
       "title": "NASA Satellites Can Detect GPS Jammers from Space, Raising Privacy Concerns",
@@ -1197,6 +1239,27 @@
         "credibility_score": 95,
         "citations": [
           "https://www.hrw.org/news/2026/05/22/dr-congo-renewed-repression-impunity-top-rights-concerns"
+        ]
+      }
+    },
+    {
+      "id": "f72533d1-054c-4c1c-a6d4-a703d80c09d5",
+      "url": "https://libertas.fgu.tech/posts/trump-appoints-unqualified-acting-dni-as-section-702-surveil",
+      "title": "Trump Appoints Unqualified Acting DNI as Section 702 Surveillance Powers Face Renewal",
+      "summary": "Trump appointed Bill Pulte, who lacks intelligence experience but has weaponized government data against political foes, as acting DNI as Congress debates renewing Section 702 warrantless surveillance powers.",
+      "content_text": "Trump named Bill Pulte, current FHFA director, as acting Director of National Intelligence replacing Tulsi Gabbard\n• Pulte lacks required intelligence, military, or congressional experience per 2004 DNI creation law\n• As FHFA director, Pulte used private mortgage data to accuse Trump political opponents of fraud without evidence\n• Accusations against Letitia James, Adam Schiff, and others led to failed prosecutions or no charges\n• Congress faces June 12 deadline to reauthorize Section 702 warrantless surveillance program\n• Section 702 allows NSA to collect Americans' communications and FBI to query without warrants\n• Acting appointment bypasses Senate confirmation; Pulte could serve ~7 months under Vacancies Act\n• EFF warns unqualified, politically motivated DNI poses threat to civil liberties with access to classified data",
+      "date_published": "2026-06-05T03:00:57.398Z",
+      "date_modified": "2026-06-05T03:00:57.446Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/06/pulte-appointment-underscores-need-reform-section-702-spying"
         ]
       }
     },
