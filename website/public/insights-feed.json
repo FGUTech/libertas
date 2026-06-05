@@ -699,6 +699,28 @@
       }
     },
     {
+      "id": "90c0a68f-a3e7-4277-a82d-a6ed7c57a0d9",
+      "url": "https://libertas.fgu.tech/posts/iranian-american-journalist-reports-torture-from-evin-prison",
+      "title": "Iranian-American Journalist Reports Torture from Evin Prison in Smuggled Recording",
+      "summary": "Jailed Iranian-American journalist Reza Valizadeh smuggled out voice memo from Evin Prison detailing physical torture, psychological abuse, and medical neglect, highlighting risks faced by press freedom advocates.",
+      "content_text": "Reza Valizadeh, former Radio Farda journalist, recorded voice memo from Tehran's Evin Prison describing torture and medical neglect\n• Recording obtained and aired by CBS News, providing rare firsthand account of prison conditions\n• Valizadeh sentenced to 10 years in prison on charges linked to his journalistic work since September 2024\n• Reports 'physical pressure and mental torture' and denial of medical services for chronic asthma\n• Prison conditions worsened after Israeli military strikes on Evin facility in June 2025\n• Committee to Protect Journalists calls for urgent US diplomatic intervention\n• Case demonstrates successful information smuggling from high-security detention facility",
+      "date_published": "2026-06-05T15:01:57.423Z",
+      "date_modified": "2026-06-05T15:01:57.508Z",
+      "tags": [
+        "surveillance",
+        "censorship-resistance",
+        "activism",
+        "comms"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 88,
+        "citations": [
+          "https://cpj.org/2026/06/cpj-alarmed-by-new-prison-recording-from-reza-valizadeh-in-irans-evin-prison/"
+        ]
+      }
+    },
+    {
       "id": "9528f1fe-7660-44ad-b100-09b4d97b3e50",
       "url": "https://libertas.fgu.tech/posts/bangladesh-s-cycle-of-press-repression-continues-under-new-g",
       "title": "Bangladesh's Cycle of Press Repression Continues Under New Government",
@@ -958,28 +980,6 @@
         "credibility_score": 85,
         "citations": [
           "https://proton.me/blog/journalist-data-leaks"
-        ]
-      }
-    },
-    {
-      "id": "c2b0ba73-623f-4b46-b436-142bc9794b74",
-      "url": "https://libertas.fgu.tech/posts/ooni-joins-quadratic-funding-campaign-for-internet-freedom-p",
-      "title": "OONI Joins Quadratic Funding Campaign for Internet Freedom Projects",
-      "summary": "OONI and 9 other internet freedom projects launched a quadratic funding campaign to secure decentralized funding, citing sustainability risks.",
-      "content_text": "OONI joined 10 like-minded projects in new quadratic funding campaign for internet freedom\n• Campaign hosted by Tor Project at internetfreedom.torproject.org\n• OONI states their ability to continue work is \"at risk\" without funding\n• Quadratic funding allows small donations to have amplified impact through matching\n• Represents shift toward decentralized funding models for freedom tech projects\n• Campaign targets crypto-native funding community for internet freedom tools\n• Highlights ongoing sustainability challenges facing critical infrastructure projects",
-      "date_published": "2026-05-22T15:01:50.190Z",
-      "date_modified": "2026-05-22T15:01:50.302Z",
-      "tags": [
-        "censorship-resistance",
-        "surveillance",
-        "privacy",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 75,
-        "credibility_score": 95,
-        "citations": [
-          "https://ooni.org/post/2026-support-ooni-internet-freedom-quadratic-funding-campaign/"
         ]
       }
     },
