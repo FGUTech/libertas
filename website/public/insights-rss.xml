@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 05 Jun 2026 15:01:57 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 05 Jun 2026 21:01:30 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -494,6 +494,17 @@
     <category>censorship-resistance</category>
   </item>
   <item>
+    <title>Global Age Verification Mandates Create Massive Surveillance Infrastructure</title>
+    <link>https://libertas.fgu.tech/posts/global-age-verification-mandates-create-massive-surveillance</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/global-age-verification-mandates-create-massive-surveillance</guid>
+    <pubDate>Fri, 05 Jun 2026 21:00:31 GMT</pubDate>
+    <description>Governments worldwide are implementing age verification systems requiring identity checks to access online platforms, creating unprecedented surveillance infrastructure that threatens privacy and anonymity for all users.</description>
+    <category>privacy</category>
+    <category>censorship-resistance</category>
+    <category>identity</category>
+    <category>surveillance</category>
+  </item>
+  <item>
     <title>Bitcoin Book Excerpt Illustrates Inflation&apos;s Impact on Purchasing Power Over 40 Years</title>
     <link>https://libertas.fgu.tech/posts/bitcoin-book-excerpt-illustrates-inflation-s-impact-on-purch</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/bitcoin-book-excerpt-illustrates-inflation-s-impact-on-purch</guid>
@@ -514,6 +525,17 @@
     <category>payments</category>
     <category>censorship-resistance</category>
     <category>sovereignty</category>
+  </item>
+  <item>
+    <title>Russian Journalist Detained for Telegram Comments, Faces 7 Years in Prison</title>
+    <link>https://libertas.fgu.tech/posts/russian-journalist-detained-for-telegram-comments-faces-7-ye</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/russian-journalist-detained-for-telegram-comments-faces-7-ye</guid>
+    <pubDate>Fri, 05 Jun 2026 21:01:30 GMT</pubDate>
+    <description>Russian authorities detained journalist Aleksey Seregin for &apos;justifying terrorism&apos; over a 2024 Telegram comment about Chechen independence, highlighting risks of using mainstream platforms under authoritarian regimes.</description>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>surveillance</category>
+    <category>comms</category>
   </item>
   <item>
     <title>Meta Deploys Hidden Facial Recognition in Always-On Smart Glasses</title>

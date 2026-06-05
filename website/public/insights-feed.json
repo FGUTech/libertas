@@ -1005,6 +1005,28 @@
       }
     },
     {
+      "id": "c7e46d73-58cb-4026-b1fd-c9eeb095f64c",
+      "url": "https://libertas.fgu.tech/posts/global-age-verification-mandates-create-massive-surveillance",
+      "title": "Global Age Verification Mandates Create Massive Surveillance Infrastructure",
+      "summary": "Governments worldwide are implementing age verification systems requiring identity checks to access online platforms, creating unprecedented surveillance infrastructure that threatens privacy and anonymity for all users.",
+      "content_text": "Australia banned under-16s from social media with $32M USD fines for non-compliant platforms\n• UK's Online Safety Act mandates age checks for any service with content deemed harmful to children\n• Indonesia, Malaysia following with similar under-16 bans on major platforms\n• Brazil's new law requires age verification for any service that could be accessed by minors\n• EU developing interoperable age verification 'app' for continent-wide implementation\n• Major platforms (Meta, Google, X, TikTok) complying by implementing identity verification systems\n• Reddit challenging Australia's law on constitutional grounds in court\n• Age verification technically requires collecting identity data from all users, not just minors",
+      "date_published": "2026-06-05T21:00:31.293Z",
+      "date_modified": "2026-06-05T21:00:31.345Z",
+      "tags": [
+        "privacy",
+        "censorship-resistance",
+        "identity",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/06/internet-age-gates-are-growing-global-threat"
+        ]
+      }
+    },
+    {
       "id": "ce663d3b-b7ec-4467-9aec-446f2d91911b",
       "url": "https://libertas.fgu.tech/posts/bitcoin-book-excerpt-illustrates-inflation-s-impact-on-purch",
       "title": "Bitcoin Book Excerpt Illustrates Inflation's Impact on Purchasing Power Over 40 Years",
@@ -1047,6 +1069,28 @@
         "citations": [
           "https://cointelegraph.com/news/uk-sanctions-htx-huobi-russia-support",
           "https://cointelegraph.com/news/uk-sanctions-htx-huobi-russia-support?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+        ]
+      }
+    },
+    {
+      "id": "da1db543-eda8-46f5-b84f-feea35237018",
+      "url": "https://libertas.fgu.tech/posts/russian-journalist-detained-for-telegram-comments-faces-7-ye",
+      "title": "Russian Journalist Detained for Telegram Comments, Faces 7 Years in Prison",
+      "summary": "Russian authorities detained journalist Aleksey Seregin for 'justifying terrorism' over a 2024 Telegram comment about Chechen independence, highlighting risks of using mainstream platforms under authoritarian regimes.",
+      "content_text": "Aleksey Seregin detained in Mari El Republic after beating, phone confiscation, and home search\n• Charged with 'justifying terrorism' for 2024 Telegram chat comment about Chechen independence leader\n• Faces up to 7 years under Article 205.2 of Russia's Criminal Code\n• Runs Telegram channel 'Nothing Will Happen in Mari El' covering local corruption and human rights\n• Previously designated 'foreign agent' by Russian Ministry of Justice in November 2024\n• Only active independent journalist in Mari El Republic covering sensitive local issues\n• Russia currently holds at least 29 journalists in connection with their work\n• Case demonstrates risks of using non-encrypted platforms for sensitive communications",
+      "date_published": "2026-06-05T21:01:30.197Z",
+      "date_modified": "2026-06-05T21:01:30.286Z",
+      "tags": [
+        "censorship-resistance",
+        "activism",
+        "surveillance",
+        "comms"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 95,
+        "citations": [
+          "https://cpj.org/2026/06/journalist-aleksey-seregin-detained-in-russias-mari-el-republic/"
         ]
       }
     },
