@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 05 Jun 2026 21:01:30 GMT</lastBuildDate>
+  <lastBuildDate>Sat, 06 Jun 2026 15:00:55 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -220,17 +220,6 @@
     <category>payments</category>
   </item>
   <item>
-    <title>CPJ Files Brief to Protect Encryption from NSO&apos;s Pegasus in WhatsApp Case</title>
-    <link>https://libertas.fgu.tech/posts/cpj-files-brief-to-protect-encryption-from-nso-s-pegasus-in-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/cpj-files-brief-to-protect-encryption-from-nso-s-pegasus-in-</guid>
-    <pubDate>Fri, 22 May 2026 21:02:22 GMT</pubDate>
-    <description>Committee to Protect Journalists and 10 civil society orgs filed amicus brief supporting permanent injunction against NSO Group to protect WhatsApp encryption from Pegasus spyware targeting journalists.</description>
-    <category>privacy</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>censorship-resistance</category>
-  </item>
-  <item>
     <title>Tails 7.8.1 Emergency Release Fixes Critical Privilege Escalation Vulnerability</title>
     <link>https://libertas.fgu.tech/posts/tails-7-8-1-emergency-release-fixes-critical-privilege-escal</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/tails-7-8-1-emergency-release-fixes-critical-privilege-escal</guid>
@@ -429,6 +418,17 @@
     <category>sovereignty</category>
     <category>sanctions</category>
     <category>seizure</category>
+  </item>
+  <item>
+    <title>Anthropic Takes Funding from UAE Surveillance State While Condemning AI Authoritarianism</title>
+    <link>https://libertas.fgu.tech/posts/anthropic-takes-funding-from-uae-surveillance-state-while-co</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/anthropic-takes-funding-from-uae-surveillance-state-while-co</guid>
+    <pubDate>Sat, 06 Jun 2026 15:00:55 GMT</pubDate>
+    <description>Anthropic raised $95B from UAE&apos;s MGX fund while publishing anti-authoritarian AI policy, exposing double standards as UAE uses AI for surveillance and repression.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
+    <category>censorship-resistance</category>
   </item>
   <item>
     <title>Court Order Freezes $12.6M in Zama&apos;s Confidential USDC Contract</title>

@@ -442,28 +442,6 @@
       }
     },
     {
-      "id": "6260572f-52df-4ae0-9013-a5c8bf189209",
-      "url": "https://libertas.fgu.tech/posts/cpj-files-brief-to-protect-encryption-from-nso-s-pegasus-in-",
-      "title": "CPJ Files Brief to Protect Encryption from NSO's Pegasus in WhatsApp Case",
-      "summary": "Committee to Protect Journalists and 10 civil society orgs filed amicus brief supporting permanent injunction against NSO Group to protect WhatsApp encryption from Pegasus spyware targeting journalists.",
-      "content_text": "CPJ and 10 civil society organizations filed amicus brief in U.S. Ninth Circuit Court of Appeals\n• Brief supports permanent injunction preventing NSO Group from targeting WhatsApp encryption\n• NSO previously used WhatsApp servers to deliver Pegasus spyware to 1,400+ people across 20 countries\n• Multiple journalists among confirmed targets of the surveillance campaign\n• District Court ruled in favor of WhatsApp in 2025 after 6-year legal battle\n• Permanent injunction issued stopping NSO from targeting WhatsApp and its users\n• NSO's appeal to U.S. Supreme Court was unsuccessful\n• Brief argues encryption protection essential for journalist safety and human rights defenders",
-      "date_published": "2026-05-22T21:02:22.107Z",
-      "date_modified": "2026-05-22T21:02:22.224Z",
-      "tags": [
-        "privacy",
-        "surveillance",
-        "activism",
-        "censorship-resistance"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 85,
-        "credibility_score": 95,
-        "citations": [
-          "https://cpj.org/2026/05/cpj-partners-file-amicus-brief-to-project-encryption-from-pegasus-spyware/"
-        ]
-      }
-    },
-    {
       "id": "662cee97-f294-4ae4-a349-714571e1044a",
       "url": "https://libertas.fgu.tech/posts/tails-7-8-1-emergency-release-fixes-critical-privilege-escal",
       "title": "Tails 7.8.1 Emergency Release Fixes Critical Privilege Escalation Vulnerability",
@@ -870,6 +848,28 @@
         "citations": [
           "https://www.theblock.co/post/403075/us-has-seized-nearly-1-billion-in-crypto-from-iran-bessent-says",
           "https://www.theblock.co/post/403075/us-has-seized-nearly-1-billion-in-crypto-from-iran-bessent-says?utm_source=rss&amp;utm_medium=rss"
+        ]
+      }
+    },
+    {
+      "id": "a9c5cd9f-70a0-4f2d-846c-2a203af365b6",
+      "url": "https://libertas.fgu.tech/posts/anthropic-takes-funding-from-uae-surveillance-state-while-co",
+      "title": "Anthropic Takes Funding from UAE Surveillance State While Condemning AI Authoritarianism",
+      "summary": "Anthropic raised $95B from UAE's MGX fund while publishing anti-authoritarian AI policy, exposing double standards as UAE uses AI for surveillance and repression.",
+      "content_text": "Anthropic raised $30B in February and $65B in May from MGX, UAE's sovereign wealth fund\n• Company published policy paper claiming 'democracies must lead AI development' to prevent authoritarianism\n• UAE receives 18/100 freedom score, outlaws political parties, free press, and assembly\n• MGX chair Sheikh Tahnoun bin Zayed Al Nahyan linked to surveillance campaigns against dissidents\n• Tahnoun connected to ToTok messaging app used for covert government surveillance [Source]\n• G42 (Tahnoun's AI firm) allegedly analyzed all ToTok voice, video, text chats with AI for 'suspicious activity'\n• Anthropic's valuation now at $965B with authoritarian funding while condemning Chinese AI surveillance\n• Exposes contradiction between stated democratic values and willingness to accept authoritarian capital",
+      "date_published": "2026-06-06T15:00:55.222Z",
+      "date_modified": "2026-06-06T15:00:55.375Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://theintercept.com/2026/06/06/anthropic-ai-investor-abu-dhabi-china/"
         ]
       }
     },
