@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Sat, 06 Jun 2026 15:00:55 GMT</lastBuildDate>
+  <lastBuildDate>Sun, 07 Jun 2026 03:01:09 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -452,17 +452,6 @@
     <category>censorship-resistance</category>
   </item>
   <item>
-    <title>Binance Denies WSJ Report on $850M Iran-Linked Transactions</title>
-    <link>https://libertas.fgu.tech/posts/binance-denies-wsj-report-on-850m-iran-linked-transactions</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/binance-denies-wsj-report-on-850m-iran-linked-transactions</guid>
-    <pubDate>Sat, 23 May 2026 15:01:13 GMT</pubDate>
-    <description>Binance CEO Richard Teng denied Wall Street Journal allegations that $850 million in Iran-linked transactions flowed through the exchange to the IRGC.</description>
-    <category>bitcoin</category>
-    <category>payments</category>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-  </item>
-  <item>
     <title>China Intensifies Tiananmen Censorship with Advanced Algorithmic Filtering</title>
     <link>https://libertas.fgu.tech/posts/china-intensifies-tiananmen-censorship-with-advanced-algorit</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/china-intensifies-tiananmen-censorship-with-advanced-algorit</guid>
@@ -525,6 +514,15 @@
     <category>payments</category>
     <category>censorship-resistance</category>
     <category>sovereignty</category>
+  </item>
+  <item>
+    <title>Scientists Ejected from Diabetes Conference for Distributing Critical Editorial</title>
+    <link>https://libertas.fgu.tech/posts/scientists-ejected-from-diabetes-conference-for-distributing</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/scientists-ejected-from-diabetes-conference-for-distributing</guid>
+    <pubDate>Sun, 07 Jun 2026 03:01:09 GMT</pubDate>
+    <description>Five prominent diabetes researchers were physically removed from the American Diabetes Association conference for distributing copies of a published editorial criticizing Trump administration attacks on scientific research.</description>
+    <category>censorship-resistance</category>
+    <category>activism</category>
   </item>
   <item>
     <title>Russian Journalist Detained for Telegram Comments, Faces 7 Years in Prison</title>

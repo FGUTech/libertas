@@ -918,29 +918,6 @@
       }
     },
     {
-      "id": "b1dfcba9-4f82-46ac-8ab3-0ba0804cc1c9",
-      "url": "https://libertas.fgu.tech/posts/binance-denies-wsj-report-on-850m-iran-linked-transactions",
-      "title": "Binance Denies WSJ Report on $850M Iran-Linked Transactions",
-      "summary": "Binance CEO Richard Teng denied Wall Street Journal allegations that $850 million in Iran-linked transactions flowed through the exchange to the IRGC.",
-      "content_text": "Wall Street Journal reported $850 million in Iran-linked transactions through Binance\n• Transactions allegedly connected to Iran's Islamic Revolutionary Guard Corps (IRGC)\n• Binance CEO Richard Teng publicly denied the allegations\n• Highlights ongoing tensions between crypto exchanges and sanctions compliance\n• Iran faces extensive financial sanctions, making crypto a potential workaround\n• Unverified claims - conflicting statements between WSJ reporting and Binance denial\n• Demonstrates continued scrutiny of crypto's role in sanctions circumvention",
-      "date_published": "2026-05-23T15:01:13.520Z",
-      "date_modified": "2026-05-23T15:01:13.597Z",
-      "tags": [
-        "bitcoin",
-        "payments",
-        "censorship-resistance",
-        "surveillance"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 75,
-        "credibility_score": 60,
-        "citations": [
-          "https://cointelegraph.com/news/binance-denies-new-wsj-report-alleging-850m-in-iran-linked-transactions",
-          "https://cointelegraph.com/news/binance-denies-new-wsj-report-alleging-850m-in-iran-linked-transactions?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-        ]
-      }
-    },
-    {
       "id": "b90e362d-9387-4659-a0ef-1aeb2f6cf07c",
       "url": "https://libertas.fgu.tech/posts/china-intensifies-tiananmen-censorship-with-advanced-algorit",
       "title": "China Intensifies Tiananmen Censorship with Advanced Algorithmic Filtering",
@@ -1069,6 +1046,26 @@
         "citations": [
           "https://cointelegraph.com/news/uk-sanctions-htx-huobi-russia-support",
           "https://cointelegraph.com/news/uk-sanctions-htx-huobi-russia-support?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+        ]
+      }
+    },
+    {
+      "id": "d300b534-5882-4fc0-aa20-e9f3671d8b54",
+      "url": "https://libertas.fgu.tech/posts/scientists-ejected-from-diabetes-conference-for-distributing",
+      "title": "Scientists Ejected from Diabetes Conference for Distributing Critical Editorial",
+      "summary": "Five prominent diabetes researchers were physically removed from the American Diabetes Association conference for distributing copies of a published editorial criticizing Trump administration attacks on scientific research.",
+      "content_text": "Five leading scientists ejected from American Diabetes Association annual meeting in New Orleans\n• Scientists were distributing reprints of editorial published in Diabetes Care criticizing Trump administration's attacks on research\n• Those removed included journal editor-in-chief Steven Kahn and former ADA president Desmond Schatz\n• Incident occurred outside room where NIH director Jay Bhattacharya was scheduled to speak (he cancelled)\n• Conference organizers physically removed scientists and revoked their credentials\n• Scientists characterize incident as censorship of legitimate academic discourse\n• Demonstrates concerning precedent for suppression of dissenting voices in scientific community",
+      "date_published": "2026-06-07T03:01:09.547Z",
+      "date_modified": "2026-06-07T03:01:09.600Z",
+      "tags": [
+        "censorship-resistance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 72,
+        "credibility_score": 85,
+        "citations": [
+          "https://arstechnica.com/science/2026/06/scientists-ejected-from-diabetes-conference-for-distributing-journal-reprints/"
         ]
       }
     },
