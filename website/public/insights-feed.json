@@ -852,6 +852,50 @@
       }
     },
     {
+      "id": "a72e22cc-87e2-4418-a8f3-8896dc9ecfe7",
+      "url": "https://libertas.fgu.tech/posts/eff-warns-congress-about-ai-powered-mass-government-surveill",
+      "title": "EFF Warns Congress About AI-Powered Mass Government Surveillance Risks",
+      "summary": "EFF testified to Congress that government adoption of AI for mass surveillance would supercharge unconstitutional civil liberties violations, citing AI errors and lack of transparency.",
+      "content_text": "EFF's Dr. Matthew Guariglia testified to House Homeland Security Subcommittee on AI surveillance risks\n• Warned that generative AI for mass government surveillance would supercharge constitutional violations\n• Highlighted AI error track record, including DHS training mistake that sent recruits to field improperly\n• Government secrecy plus proprietary AI black boxes prevent accountability for mistakes\n• AI errors could seriously impact critical infrastructure cybersecurity and individual lives\n• Emphasized need for strong safeguards before government AI adoption\n• Framed issue as reining in agencies that would 'unleash AI on the American public'",
+      "date_published": "2026-06-07T21:00:31.817Z",
+      "date_modified": "2026-06-07T21:00:31.853Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/06/eff-testifies-congress-protecting-americans-rights-government-ai"
+        ]
+      }
+    },
+    {
+      "id": "a843c84e-7635-47d9-8da8-4b20e22299cb",
+      "url": "https://libertas.fgu.tech/posts/ny-court-case-challenges-state-claims-to-lost-bitcoin-wallet",
+      "title": "NY Court Case Challenges State Claims to 'Lost' Bitcoin Wallets",
+      "summary": "New York lawsuit seeks ownership of nearly 40,000 Bitcoin wallets; amicus brief argues state lost-and-found laws can't claim assets controlled by private keys.",
+      "content_text": "NY court case involves attempted state seizure of nearly 40,000 Bitcoin wallets\n• Amicus brief filed by attorney Ian R. Cohen challenges the legal basis\n• Brief argues NY lost-and-found statute cannot apply to Bitcoin controlled by private keys\n• Core principle at stake: private key control equals ownership\n• July hearing scheduled to consider the amicus brief\n• Case could set important precedent for Bitcoin self-custody rights\n• Challenges government attempts to claim 'abandoned' cryptocurrency",
+      "date_published": "2026-06-07T21:00:45.394Z",
+      "date_modified": "2026-06-07T21:00:45.441Z",
+      "tags": [
+        "bitcoin",
+        "sovereignty",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 85,
+        "citations": [
+          "https://www.theblock.co/post/403910/ny-judge-stays-lawsuit-seeking-ownership-of-nearly-40000-bitcoin-wallets-sets-july-hearing-on-proposed-amicus-brief",
+          "https://www.theblock.co/post/403910/ny-judge-stays-lawsuit-seeking-ownership-of-nearly-40000-bitcoin-wallets-sets-july-hearing-on-proposed-amicus-brief?utm_source=rss&amp;utm_medium=rss"
+        ]
+      }
+    },
+    {
       "id": "a9c5cd9f-70a0-4f2d-846c-2a203af365b6",
       "url": "https://libertas.fgu.tech/posts/anthropic-takes-funding-from-uae-surveillance-state-while-co",
       "title": "Anthropic Takes Funding from UAE Surveillance State While Condemning AI Authoritarianism",
