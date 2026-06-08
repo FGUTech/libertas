@@ -7,6 +7,28 @@
   "language": "en-US",
   "items": [
     {
+      "id": "004a70aa-1840-4b95-8d79-cfddbca29e30",
+      "url": "https://libertas.fgu.tech/posts/blm-activist-vanishes-from-prison-system-after-organizing-ag",
+      "title": "BLM Activist Vanishes from Prison System After Organizing Against Solitary Confinement",
+      "summary": "Incarcerated BLM protester Malik Muhammad disappeared from tracking systems before surfacing 3,000 miles away in South Carolina, allegedly in retaliation for organizing a class-action lawsuit against Oregon's solitary confinement practices.",
+      "content_text": "Malik Muhammad, serving longest federal sentence of any 2020 BLM protester, vanished from Oregon prison tracking systems in March\n• Muhammad later surfaced at Kirkland Correctional Institute in South Carolina after weeks at 'confidential location'\n• Transfer violated plea agreement guaranteeing service in Oregon near support network\n• Muhammad had been organizing fellow inmates for class-action lawsuit against Oregon's solitary confinement abuses\n• Attorney Lauren Regan cannot provide privileged representation across state lines, severely impeding legal defense\n• South Carolina corrections initially denied having Muhammad in custody, creating 'living ghost' status\n• Pattern demonstrates how prison system can be weaponized to isolate and punish political dissidents\n• Case highlights broader issue of people routinely disappearing within U.S. carceral system",
+      "date_published": "2026-06-08T21:03:29.412Z",
+      "date_modified": "2026-06-08T21:03:29.528Z",
+      "tags": [
+        "surveillance",
+        "activism",
+        "censorship-resistance",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://theintercept.com/2026/06/08/malik-muhammad-prison-oregon-south-carolina/"
+        ]
+      }
+    },
+    {
       "id": "03a74cb0-005e-44b4-a15d-f8f1dfca3785",
       "url": "https://libertas.fgu.tech/posts/hungary-drops-charges-against-pride-organizers-following-eu-",
       "title": "Hungary Drops Charges Against Pride Organizers Following EU Court Ruling",
@@ -593,6 +615,28 @@
       }
     },
     {
+      "id": "72746750-4f74-4ce3-b6d2-53c4100aef11",
+      "url": "https://libertas.fgu.tech/posts/us-congress-moves-to-permanently-integrate-israeli-ai-survei",
+      "title": "US Congress Moves to Permanently Integrate Israeli AI Surveillance Tech Into Military",
+      "summary": "House defense bill includes Section 224 creating permanent framework to integrate Israeli AI, autonomous systems, and surveillance tech into US military operations, raising concerns about domestic surveillance capabilities.",
+      "content_text": "National Defense Authorization Act Section 224 would permanently integrate US-Israeli defense technology cooperation\n• Framework covers AI, autonomous systems, cyberwarfare, biotechnology, and surveillance technologies\n• Military experts warn Israeli AI surveillance systems used against Palestinians could target US citizens\n• Unlike traditional aid, creates integrated research, procurement, and manufacturing processes\n• Bipartisan opposition from Reps. Thomas Massie (R-KY) and Ro Khanna (D-CA) failed in committee\n• Section mirrors failed FUTURES Act backed by AIPAC and pro-Israel lobby groups\n• Pentagon refuses to comment amid reports of Israeli espionage concerns\n• Designed to replace $3.8 billion annual military aid with technology partnership model",
+      "date_published": "2026-06-08T21:03:29.411Z",
+      "date_modified": "2026-06-08T21:03:29.528Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://theintercept.com/2026/06/08/us-israel-224-ai-defense-budget/"
+        ]
+      }
+    },
+    {
       "id": "76b95f78-3c4e-425e-ae3f-ad8a96f031f6",
       "url": "https://libertas.fgu.tech/posts/pentagon-uses-ai-generated-content-mill-to-spread-propaganda",
       "title": "Pentagon Uses AI-Generated Content Mill to Spread Propaganda in Latin America",
@@ -610,27 +654,6 @@
         "credibility_score": 88,
         "citations": [
           "https://theintercept.com/2026/06/02/la-tilde-propaganda-latin-america-pentagon/"
-        ]
-      }
-    },
-    {
-      "id": "7c84d285-7db0-456a-aeaa-e6f3316c6d3e",
-      "url": "https://libertas.fgu.tech/posts/tunisia-escalates-media-crackdown-with-new-journalist-convic",
-      "title": "Tunisia Escalates Media Crackdown with New Journalist Convictions",
-      "summary": "Tunisia convicted lawyer-commentator Sonia Dahmani under cybercrime law for criticizing prison conditions, part of systematic repression targeting journalists and blocking protest coverage.",
-      "content_text": "Sonia Dahmani sentenced to 2 years for 'spreading false news' under Decree Law 54 over 2023 prison criticism\n• Dahmani previously jailed 18 months, faces five separate cases for public commentary\n• Pattern of escalating repression under President Kais Saied includes multiple journalist prosecutions\n• Authorities recently sentenced journalists Mourad Zghidi and Borhen Bsaies, continuing harassment of others\n• Police prevented journalists from covering Tunisian Bar Association protest on May 19\n• Government using cybercrime law to systematically prosecute critical voices\n• Demonstrates urgent need for secure communications and censorship-resistant reporting tools in Tunisia",
-      "date_published": "2026-05-25T21:01:25.745Z",
-      "date_modified": "2026-05-25T21:01:25.936Z",
-      "tags": [
-        "censorship-resistance",
-        "activism",
-        "surveillance"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 95,
-        "citations": [
-          "https://cpj.org/2026/05/cpj-condemns-tunisias-judicial-harassment-of-sonia-dahmani-after-fresh-conviction/"
         ]
       }
     },
@@ -761,27 +784,6 @@
         "credibility_score": 85,
         "citations": [
           "https://cpj.org/2026/06/100-days-on-cpj-urges-bangladeshs-tarique-rahman-to-break-the-cycle-of-press-repression/"
-        ]
-      }
-    },
-    {
-      "id": "952c2385-ba35-4075-8cea-7fb802f61644",
-      "url": "https://libertas.fgu.tech/posts/canada-s-bill-c-22-could-enable-us-real-time-surveillance-vi",
-      "title": "Canada's Bill C-22 Could Enable US Real-Time Surveillance via CLOUD Act Agreement",
-      "summary": "Canada's proposed Bill C-22 would compel tech providers to build surveillance capabilities and enable a CLOUD Act agreement giving US agencies like the FBI power for real-time surveillance including wiretaps in Canada.",
-      "content_text": "Bill C-22 would grant Canadian government broad powers to compel technology providers to build surveillance capabilities into their systems\n• Legislation would facilitate a CLOUD Act agreement with the United States, currently being negotiated behind closed doors\n• CLOUD Act agreement could give FBI and other US agencies power to conduct real-time surveillance, wiretaps, and phone hacking in Canada\n• Citizen Lab researcher Kate Robertson warns of 'serious threat' to rule of law, but Canadian government shows no reluctance to proceed\n• Surveillance law reform has been a top US priority in trade negotiations with Canada\n• Canadian government has not explained why US is pressuring Canada to pass these reforms\n• Negotiations lack public transparency, forcing observers to 'read between the lines'",
-      "date_published": "2026-05-25T21:01:05.576Z",
-      "date_modified": "2026-05-25T21:01:05.685Z",
-      "tags": [
-        "surveillance",
-        "privacy",
-        "censorship-resistance"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 85,
-        "credibility_score": 90,
-        "citations": [
-          "https://citizenlab.ca/trump-wants-to-tap-your-phone-ottawa-might-let-him/"
         ]
       }
     },
@@ -1047,6 +1049,28 @@
       }
     },
     {
+      "id": "be25fa2f-caed-4cb7-acc1-059a08853730",
+      "url": "https://libertas.fgu.tech/posts/200-crypto-companies-push-senate-to-vote-on-digital-asset-cl",
+      "title": "200+ Crypto Companies Push Senate to Vote on Digital Asset Clarity Act",
+      "summary": "Coalition of 200+ companies including Coinbase, Circle, and a16z urge Senate leaders to bring the Digital Asset Market Clarity Act to floor vote, seeking regulatory framework to define SEC vs CFTC jurisdiction over digital assets.",
+      "content_text": "Stand With Crypto and 200+ companies sent letter to Senate leaders Thune and Schumer on June 7\n• Coalition includes Coinbase, Circle, Ripple, Kraken, Andreessen Horowitz, Binance.US, and Uniswap Labs\n• Digital Asset Market Clarity Act passed House 294-134, cleared Senate Banking Committee 15-9\n• Bill aims to resolve SEC/CFTC regulatory jurisdiction dispute with clear token definitions\n• Remaining obstacles include DeFi provisions, ethics language, and anti-money laundering concerns\n• Galaxy Digital estimates 60% chance of becoming law but notes tight timeline before August recess\n• Coalition frames as test of American leadership vs offshore jurisdictions with weaker protections",
+      "date_published": "2026-06-08T21:01:31.874Z",
+      "date_modified": "2026-06-08T21:01:31.925Z",
+      "tags": [
+        "bitcoin",
+        "sovereignty",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://bitcoinmagazine.com/news/crypto-coalition-200-companies-clarity-act",
+          "https://bitcoinmagazine.com/news/full-of-strategic-bitcoin-reserve-bill"
+        ]
+      }
+    },
+    {
       "id": "c3eeca3a-c300-45b5-a697-c1bdac880a95",
       "url": "https://libertas.fgu.tech/posts/microsoft-threatens-legal-action-against-researcher-who-brok",
       "title": "Microsoft Threatens Legal Action Against Researcher Who Broke BitLocker",
@@ -1174,6 +1198,27 @@
         "credibility_score": 95,
         "citations": [
           "https://cpj.org/2026/06/journalist-aleksey-seregin-detained-in-russias-mari-el-republic/"
+        ]
+      }
+    },
+    {
+      "id": "db47dae8-b0d5-4223-89ad-ac71deaf71bc",
+      "url": "https://libertas.fgu.tech/posts/us-health-aid-tied-to-surveillance-access-and-pathogen-data-",
+      "title": "US Health Aid Tied to Surveillance Access and Pathogen Data Extraction",
+      "summary": "Human Rights Watch reveals US bilateral health agreements condition aid on broad surveillance access to health data and extractive rights to pathogen samples, raising major privacy and sovereignty concerns.",
+      "content_text": "US signed health agreements with 7 African countries requiring surveillance access to health systems data as aid condition\n• Agreements allow unannounced inspections of health facilities and broad data collection without proper privacy safeguards\n• Countries must share biological pathogen samples and data with no guarantee of equitable access to resulting treatments\n• Aid can be withdrawn with 180 days notice if surveillance compliance fails, creating coercive leverage\n• Multiple countries (Ghana, Zimbabwe) withdrew from negotiations citing data access concerns\n• No prohibition on sharing private health data with US pharmaceutical companies without patient consent\n• Agreements negotiated after US shuttered USAID in 2025, creating health crisis leverage\n• Civil society organizations across Africa oppose agreements as 'dangerous' to human rights",
+      "date_published": "2026-06-08T21:02:59.466Z",
+      "date_modified": "2026-06-08T21:02:59.568Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 88,
+        "citations": [
+          "https://www.hrw.org/news/2026/06/08/us-global-health-aid-tied-to-harmful-conditions"
         ]
       }
     },

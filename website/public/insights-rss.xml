@@ -5,9 +5,20 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Mon, 08 Jun 2026 15:02:31 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 08 Jun 2026 21:03:29 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
+  <item>
+    <title>BLM Activist Vanishes from Prison System After Organizing Against Solitary Confinement</title>
+    <link>https://libertas.fgu.tech/posts/blm-activist-vanishes-from-prison-system-after-organizing-ag</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/blm-activist-vanishes-from-prison-system-after-organizing-ag</guid>
+    <pubDate>Mon, 08 Jun 2026 21:03:29 GMT</pubDate>
+    <description>Incarcerated BLM protester Malik Muhammad disappeared from tracking systems before surfacing 3,000 miles away in South Carolina, allegedly in retaliation for organizing a class-action lawsuit against Oregon&apos;s solitary confinement practices.</description>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>censorship-resistance</category>
+    <category>sovereignty</category>
+  </item>
   <item>
     <title>Hungary Drops Charges Against Pride Organizers Following EU Court Ruling</title>
     <link>https://libertas.fgu.tech/posts/hungary-drops-charges-against-pride-organizers-following-eu-</link>
@@ -294,6 +305,17 @@
     <category>identity</category>
   </item>
   <item>
+    <title>US Congress Moves to Permanently Integrate Israeli AI Surveillance Tech Into Military</title>
+    <link>https://libertas.fgu.tech/posts/us-congress-moves-to-permanently-integrate-israeli-ai-survei</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/us-congress-moves-to-permanently-integrate-israeli-ai-survei</guid>
+    <pubDate>Mon, 08 Jun 2026 21:03:29 GMT</pubDate>
+    <description>House defense bill includes Section 224 creating permanent framework to integrate Israeli AI, autonomous systems, and surveillance tech into US military operations, raising concerns about domestic surveillance capabilities.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
+    <category>sovereignty</category>
+  </item>
+  <item>
     <title>Pentagon Uses AI-Generated Content Mill to Spread Propaganda in Latin America</title>
     <link>https://libertas.fgu.tech/posts/pentagon-uses-ai-generated-content-mill-to-spread-propaganda</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/pentagon-uses-ai-generated-content-mill-to-spread-propaganda</guid>
@@ -302,16 +324,6 @@
     <category>surveillance</category>
     <category>censorship-resistance</category>
     <category>propaganda</category>
-  </item>
-  <item>
-    <title>Tunisia Escalates Media Crackdown with New Journalist Convictions</title>
-    <link>https://libertas.fgu.tech/posts/tunisia-escalates-media-crackdown-with-new-journalist-convic</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/tunisia-escalates-media-crackdown-with-new-journalist-convic</guid>
-    <pubDate>Mon, 25 May 2026 21:01:25 GMT</pubDate>
-    <description>Tunisia convicted lawyer-commentator Sonia Dahmani under cybercrime law for criticizing prison conditions, part of systematic repression targeting journalists and blocking protest coverage.</description>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-    <category>surveillance</category>
   </item>
   <item>
     <title>Bangladesh Deploys AI Traffic Cameras for Automated Surveillance and Case Filing in Dhaka</title>
@@ -376,16 +388,6 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>privacy</category>
-  </item>
-  <item>
-    <title>Canada&apos;s Bill C-22 Could Enable US Real-Time Surveillance via CLOUD Act Agreement</title>
-    <link>https://libertas.fgu.tech/posts/canada-s-bill-c-22-could-enable-us-real-time-surveillance-vi</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/canada-s-bill-c-22-could-enable-us-real-time-surveillance-vi</guid>
-    <pubDate>Mon, 25 May 2026 21:01:05 GMT</pubDate>
-    <description>Canada&apos;s proposed Bill C-22 would compel tech providers to build surveillance capabilities and enable a CLOUD Act agreement giving US agencies like the FBI power for real-time surveillance including wiretaps in Canada.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
-    <category>censorship-resistance</category>
   </item>
   <item>
     <title>China Pressures Zambia to Cancel Major Digital Rights Conference RightsCon</title>
@@ -514,6 +516,16 @@
     <category>journalism</category>
   </item>
   <item>
+    <title>200+ Crypto Companies Push Senate to Vote on Digital Asset Clarity Act</title>
+    <link>https://libertas.fgu.tech/posts/200-crypto-companies-push-senate-to-vote-on-digital-asset-cl</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/200-crypto-companies-push-senate-to-vote-on-digital-asset-cl</guid>
+    <pubDate>Mon, 08 Jun 2026 21:01:31 GMT</pubDate>
+    <description>Coalition of 200+ companies including Coinbase, Circle, and a16z urge Senate leaders to bring the Digital Asset Market Clarity Act to floor vote, seeking regulatory framework to define SEC vs CFTC jurisdiction over digital assets.</description>
+    <category>bitcoin</category>
+    <category>sovereignty</category>
+    <category>surveillance</category>
+  </item>
+  <item>
     <title>Microsoft Threatens Legal Action Against Researcher Who Broke BitLocker</title>
     <link>https://libertas.fgu.tech/posts/microsoft-threatens-legal-action-against-researcher-who-brok</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/microsoft-threatens-legal-action-against-researcher-who-brok</guid>
@@ -575,6 +587,16 @@
     <category>activism</category>
     <category>surveillance</category>
     <category>comms</category>
+  </item>
+  <item>
+    <title>US Health Aid Tied to Surveillance Access and Pathogen Data Extraction</title>
+    <link>https://libertas.fgu.tech/posts/us-health-aid-tied-to-surveillance-access-and-pathogen-data-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/us-health-aid-tied-to-surveillance-access-and-pathogen-data-</guid>
+    <pubDate>Mon, 08 Jun 2026 21:02:59 GMT</pubDate>
+    <description>Human Rights Watch reveals US bilateral health agreements condition aid on broad surveillance access to health data and extractive rights to pathogen samples, raising major privacy and sovereignty concerns.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>sovereignty</category>
   </item>
   <item>
     <title>Meta Deploys Hidden Facial Recognition in Always-On Smart Glasses</title>
