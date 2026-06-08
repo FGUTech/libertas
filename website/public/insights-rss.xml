@@ -5,9 +5,19 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Sun, 07 Jun 2026 21:00:45 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 08 Jun 2026 15:02:31 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
+  <item>
+    <title>Hungary Drops Charges Against Pride Organizers Following EU Court Ruling</title>
+    <link>https://libertas.fgu.tech/posts/hungary-drops-charges-against-pride-organizers-following-eu-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/hungary-drops-charges-against-pride-organizers-following-eu-</guid>
+    <pubDate>Mon, 08 Jun 2026 15:02:02 GMT</pubDate>
+    <description>Hungarian prosecutors dropped charges against Pride event organizers after European Court of Justice ruled Hungary&apos;s 2021 anti-LGBT law incompatible with EU law, signaling restoration of rule of law.</description>
+    <category>activism</category>
+    <category>censorship-resistance</category>
+    <category>sovereignty</category>
+  </item>
   <item>
     <title>US Treasury Sanctions Iran&apos;s Largest Crypto Exchange Nobitex</title>
     <link>https://libertas.fgu.tech/posts/us-treasury-sanctions-iran-s-largest-crypto-exchange-nobitex</link>
@@ -178,14 +188,15 @@
     <category>sovereignty</category>
   </item>
   <item>
-    <title>Venezuelan Mother Dies After 16-Month Search for Secretly Dead Political Prisoner Son</title>
-    <link>https://libertas.fgu.tech/posts/venezuelan-mother-dies-after-16-month-search-for-secretly-de</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/venezuelan-mother-dies-after-16-month-search-for-secretly-de</guid>
-    <pubDate>Mon, 25 May 2026 03:00:53 GMT</pubDate>
-    <description>Carmen Navas, 82, died after learning her son Víctor was secretly dead in state custody for 10 months while she searched for him. Case highlights Venezuela&apos;s enforced disappearances of political prisoners.</description>
+    <title>BLM Activist Vanishes in Prison System After Cross-Country Transfer</title>
+    <link>https://libertas.fgu.tech/posts/blm-activist-vanishes-in-prison-system-after-cross-country-t</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/blm-activist-vanishes-in-prison-system-after-cross-country-t</guid>
+    <pubDate>Mon, 08 Jun 2026 15:02:31 GMT</pubDate>
+    <description>Incarcerated activist Malik Muhammad disappeared from tracking systems for weeks before surfacing 3,000 miles away in South Carolina, allegedly as retaliation for prison organizing efforts.</description>
     <category>surveillance</category>
     <category>activism</category>
     <category>censorship-resistance</category>
+    <category>sovereignty</category>
   </item>
   <item>
     <title>EFF Names Nicole Ozer as New Executive Director</title>
@@ -218,6 +229,17 @@
     <category>bitcoin</category>
     <category>sovereignty</category>
     <category>payments</category>
+  </item>
+  <item>
+    <title>Russia Labels OVD-Info Rights Group &apos;Extremist&apos; for Helping Protesters</title>
+    <link>https://libertas.fgu.tech/posts/russia-labels-ovd-info-rights-group-extremist-for-helping-pr</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/russia-labels-ovd-info-rights-group-extremist-for-helping-pr</guid>
+    <pubDate>Mon, 08 Jun 2026 15:02:02 GMT</pubDate>
+    <description>Russia designated OVD-Info, a prominent rights group that provides legal aid to protesters and documents police abuses, as &apos;extremist&apos; alongside 35 other organizations on June 4, 2026.</description>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>privacy</category>
   </item>
   <item>
     <title>Tails 7.8.1 Emergency Release Fixes Critical Privilege Escalation Vulnerability</title>
@@ -377,18 +399,6 @@
     <category>surveillance</category>
   </item>
   <item>
-    <title>Russia Drafts &apos;Civic Death&apos; Law to Cut Digital Services for Exiled Critics</title>
-    <link>https://libertas.fgu.tech/posts/russia-drafts-civic-death-law-to-cut-digital-services-for-ex</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/russia-drafts-civic-death-law-to-cut-digital-services-for-ex</guid>
-    <pubDate>Mon, 25 May 2026 09:01:16 GMT</pubDate>
-    <description>Russia&apos;s parliament reviews draft law denying exiled critics access to digital government services, banking, and consular support - creating urgent need for sovereign identity solutions.</description>
-    <category>identity</category>
-    <category>surveillance</category>
-    <category>censorship-resistance</category>
-    <category>sovereignty</category>
-    <category>activism</category>
-  </item>
-  <item>
     <title>Kazakhstan Forces Anti-War Orthodox Priest Into Psychiatric Detention</title>
     <link>https://libertas.fgu.tech/posts/kazakhstan-forces-anti-war-orthodox-priest-into-psychiatric-</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/kazakhstan-forces-anti-war-orthodox-priest-into-psychiatric-</guid>
@@ -470,6 +480,16 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
+    <category>censorship-resistance</category>
+  </item>
+  <item>
+    <title>Zimbabwe Opposition Activist Freed After 7 Months Detention, Torture</title>
+    <link>https://libertas.fgu.tech/posts/zimbabwe-opposition-activist-freed-after-7-months-detention-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/zimbabwe-opposition-activist-freed-after-7-months-detention-</guid>
+    <pubDate>Mon, 08 Jun 2026 15:02:02 GMT</pubDate>
+    <description>Zimbabwe court acquitted opposition activist Godfrey Karembera after 7 months detention on protest charges, following abduction, torture, and repeated bail denials by authorities.</description>
+    <category>activism</category>
+    <category>surveillance</category>
     <category>censorship-resistance</category>
   </item>
   <item>
@@ -566,6 +586,16 @@
     <category>privacy</category>
   </item>
   <item>
+    <title>UK&apos;s New Crime and Policing Act 2026 Introduces &apos;Cumulative Disruption&apos; Protest Restrictions</title>
+    <link>https://libertas.fgu.tech/posts/uk-s-new-crime-and-policing-act-2026-introduces-cumulative-d</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/uk-s-new-crime-and-policing-act-2026-introduces-cumulative-d</guid>
+    <pubDate>Mon, 08 Jun 2026 15:02:02 GMT</pubDate>
+    <description>UK&apos;s Crime and Policing Act 2026 allows police to restrict protests based on &apos;cumulative disruption&apos; from unrelated previous protests, threatening sustained activism and civil society accountability mechanisms.</description>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>surveillance</category>
+  </item>
+  <item>
     <title>116K Dark Web Exposures Found Tied to Major US News Organizations</title>
     <link>https://libertas.fgu.tech/posts/116k-dark-web-exposures-found-tied-to-major-us-news-organiza</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/116k-dark-web-exposures-found-tied-to-major-us-news-organiza</guid>
@@ -574,17 +604,6 @@
     <category>privacy</category>
     <category>surveillance</category>
     <category>identity</category>
-  </item>
-  <item>
-    <title>DRC Drones Target Radio Station in Escalation of Tech-Enabled Media Suppression</title>
-    <link>https://libertas.fgu.tech/posts/drc-drones-target-radio-station-in-escalation-of-tech-enable</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/drc-drones-target-radio-station-in-escalation-of-tech-enable</guid>
-    <pubDate>Mon, 25 May 2026 09:00:59 GMT</pubDate>
-    <description>Military drones struck Radio Tuungane twice in DRC&apos;s South Kivu province, with militia threatening journalists over coverage of atrocities. Pattern shows weaponization of surveillance tech against independent media.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>comms</category>
   </item>
   <item>
     <title>Access Now Report: Data Privacy as Defense Against Electoral Disinformation in Latin America</title>
@@ -647,17 +666,6 @@
     <category>activism</category>
     <category>surveillance</category>
     <category>sovereignty</category>
-  </item>
-  <item>
-    <title>DRC Uses Cyber Defense Council for Secret Detention of Dissidents</title>
-    <link>https://libertas.fgu.tech/posts/drc-uses-cyber-defense-council-for-secret-detention-of-dissi</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/drc-uses-cyber-defense-council-for-secret-detention-of-dissi</guid>
-    <pubDate>Mon, 25 May 2026 09:01:16 GMT</pubDate>
-    <description>Congo&apos;s National Cyber Defense Council is arbitrarily arresting activists and holding them in secret locations without charges, marking return to Kabila-era repression tactics.</description>
-    <category>surveillance</category>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-    <category>privacy</category>
   </item>
   <item>
     <title>Trump Appoints Unqualified Acting DNI as Section 702 Surveillance Powers Face Renewal</title>
