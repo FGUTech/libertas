@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Mon, 08 Jun 2026 21:03:29 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 09 Jun 2026 03:01:53 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -274,6 +274,15 @@
     <category>comms</category>
   </item>
   <item>
+    <title>EFF Challenges State Social Media Bans for Youth Based on &apos;Shockingly Shaky Science&apos;</title>
+    <link>https://libertas.fgu.tech/posts/eff-challenges-state-social-media-bans-for-youth-based-on-sh</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-challenges-state-social-media-bans-for-youth-based-on-sh</guid>
+    <pubDate>Tue, 09 Jun 2026 03:01:17 GMT</pubDate>
+    <description>Electronic Frontier Foundation argues that multiple states rushing to ban youth social media access are relying on flawed research and &apos;pop psychology&apos; rather than settled science, threatening constitutional rights.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+  </item>
+  <item>
     <title>Fusion Centers Monitor Social Media for AI Data Center Critics, Labeling Speech as Terror Risk</title>
     <link>https://libertas.fgu.tech/posts/fusion-centers-monitor-social-media-for-ai-data-center-criti</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/fusion-centers-monitor-social-media-for-ai-data-center-criti</guid>
@@ -314,6 +323,16 @@
     <category>privacy</category>
     <category>activism</category>
     <category>sovereignty</category>
+  </item>
+  <item>
+    <title>Meta Accuses NSO of Violating Court Injunction with New WhatsApp Attacks</title>
+    <link>https://libertas.fgu.tech/posts/meta-accuses-nso-of-violating-court-injunction-with-new-what</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/meta-accuses-nso-of-violating-court-injunction-with-new-what</guid>
+    <pubDate>Tue, 09 Jun 2026 03:01:53 GMT</pubDate>
+    <description>Meta claims NSO Group violated a permanent injunction by conducting new spear phishing attacks on WhatsApp users, seeking contempt charges against the blacklisted spyware company.</description>
+    <category>surveillance</category>
+    <category>sovereignty</category>
+    <category>activism</category>
   </item>
   <item>
     <title>Pentagon Uses AI-Generated Content Mill to Spread Propaganda in Latin America</title>
@@ -411,16 +430,6 @@
     <category>censorship-resistance</category>
   </item>
   <item>
-    <title>Mexican Journalists Jailed Under New AI Manipulation Laws After Gov Corruption Coverage</title>
-    <link>https://libertas.fgu.tech/posts/mexican-journalists-jailed-under-new-ai-manipulation-laws-af</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/mexican-journalists-jailed-under-new-ai-manipulation-laws-af</guid>
-    <pubDate>Tue, 26 May 2026 03:01:24 GMT</pubDate>
-    <description>Mexican journalists arrested on charges of &apos;illegal use of AI&apos; after reporting on governor corruption video that official claimed was deepfaked, highlighting weaponization of AI laws against press.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
-  </item>
-  <item>
     <title>US Treasury Seizes Nearly $1B in Iranian Crypto Assets</title>
     <link>https://libertas.fgu.tech/posts/us-treasury-seizes-nearly-1b-in-iranian-crypto-assets</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/us-treasury-seizes-nearly-1b-in-iranian-crypto-assets</guid>
@@ -506,14 +515,14 @@
     <category>privacy</category>
   </item>
   <item>
-    <title>116K Dark Web Exposures Found for Major US Media Organizations</title>
-    <link>https://libertas.fgu.tech/posts/116k-dark-web-exposures-found-for-major-us-media-organizatio</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/116k-dark-web-exposures-found-for-major-us-media-organizatio</guid>
-    <pubDate>Tue, 26 May 2026 03:01:51 GMT</pubDate>
-    <description>Proton&apos;s research found over 116,000 dark web exposures tied to NY Times, Washington Post, and WSJ email addresses, including 12,000+ plaintext passwords, creating cybersecurity risks for journalists and sources.</description>
-    <category>privacy</category>
+    <title>Meta Removes Facial Recognition from Smart Glasses After EFF Exposes Surveillance Code</title>
+    <link>https://libertas.fgu.tech/posts/meta-removes-facial-recognition-from-smart-glasses-after-eff</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/meta-removes-facial-recognition-from-smart-glasses-after-eff</guid>
+    <pubDate>Tue, 09 Jun 2026 03:01:17 GMT</pubDate>
+    <description>Meta quietly removed facial recognition code from its smart glasses app after EFF and WIRED exposed the surveillance capability that could identify strangers in public.</description>
     <category>surveillance</category>
-    <category>journalism</category>
+    <category>privacy</category>
+    <category>activism</category>
   </item>
   <item>
     <title>200+ Crypto Companies Push Senate to Vote on Digital Asset Clarity Act</title>
