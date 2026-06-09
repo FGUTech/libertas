@@ -1286,27 +1286,6 @@
       }
     },
     {
-      "id": "df61da9b-4f42-41b5-85dc-165b75be88d1",
-      "url": "https://libertas.fgu.tech/posts/116k-dark-web-exposures-found-tied-to-major-us-news-organiza",
-      "title": "116K Dark Web Exposures Found Tied to Major US News Organizations",
-      "summary": "Proton's research found over 116,000 dark web exposures linked to NYT, Washington Post, and WSJ employee emails, including 12,000+ plaintext passwords and 61,000+ pieces of PII.",
-      "content_text": "Proton analyzed dark web marketplaces and found 116,000+ exposures across 35,000+ email addresses from three major US news outlets\n• Data includes over 12,000 plaintext passwords and 61,000+ pieces of personally identifiable information\n• Exposures primarily from third-party breaches (retailers, software providers) rather than direct attacks on news organizations\n• Over 2,500 email addresses exposed ten or more times, creating persistent vulnerability\n• Research conducted with Constella Intelligence using responsible disclosure practices\n• Leaked credentials create risks for targeted attacks, blackmail, social engineering, and source exposure\n• US ranks 64th on World Press Freedom Index, facing growing legal and political pressure on journalists",
-      "date_published": "2026-05-26T09:01:34.665Z",
-      "date_modified": "2026-05-26T09:01:34.835Z",
-      "tags": [
-        "privacy",
-        "surveillance",
-        "identity"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 72,
-        "credibility_score": 85,
-        "citations": [
-          "https://proton.me/blog/journalist-data-leaks"
-        ]
-      }
-    },
-    {
       "id": "e0fbc74a-db6a-4d79-b002-d79dde0da0ca",
       "url": "https://libertas.fgu.tech/posts/access-now-report-data-privacy-as-defense-against-electoral-",
       "title": "Access Now Report: Data Privacy as Defense Against Electoral Disinformation in Latin America",
@@ -1347,6 +1326,27 @@
         "citations": [
           "https://cointelegraph.com/news/russian-ruble-stablecoin-growing-western-sanctions-report",
           "https://cointelegraph.com/news/russian-ruble-stablecoin-growing-western-sanctions-report?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+        ]
+      }
+    },
+    {
+      "id": "ee8b64a9-fa73-4d45-9abb-e20078e402f2",
+      "url": "https://libertas.fgu.tech/posts/jordan-uses-cybercrime-law-to-prosecute-facebook-posts-criti",
+      "title": "Jordan Uses Cybercrime Law to Prosecute Facebook Posts Criticizing Israel Relations",
+      "summary": "Jordanian activist Ayman Sandouka sentenced to 5 years for peaceful Facebook post criticizing King's Israel policy, highlighting systematic use of 2023 cybercrime law to suppress online dissent.",
+      "content_text": "Ayman Sandouka sentenced to 5 years by State Security Court for October 2023 Facebook post addressed to King Abdullah II about Israeli relations\n• Charged under article 149 (undermining political regime) and article 15 of 2023 cybercrime law for 'fake news targeting national security'\n• Cybercrime patrols flagged the post on December 18, 2023; military prosecutor ordered arrest three days later\n• Court of Cassation ruled charge should be lesser offense of insulting king, but State Security Court reissued original ruling\n• Article 15 carries minimum 3-month sentence and fines up to $28,200 for content deemed threatening national security\n• Pattern of systematic prosecution of Palestine solidarity activists since October 2023 using cybercrime law\n• Case demonstrates how vague cybercrime provisions enable surveillance and persecution of peaceful political expression",
+      "date_published": "2026-06-09T15:02:32.088Z",
+      "date_modified": "2026-06-09T15:02:32.288Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 88,
+        "citations": [
+          "https://www.hrw.org/news/2026/06/09/jordan-new-application-to-challenge-abusive-conviction"
         ]
       }
     },

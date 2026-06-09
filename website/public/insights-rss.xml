@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Tue, 09 Jun 2026 03:01:53 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 09 Jun 2026 15:02:32 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -627,16 +627,6 @@
     <category>surveillance</category>
   </item>
   <item>
-    <title>116K Dark Web Exposures Found Tied to Major US News Organizations</title>
-    <link>https://libertas.fgu.tech/posts/116k-dark-web-exposures-found-tied-to-major-us-news-organiza</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/116k-dark-web-exposures-found-tied-to-major-us-news-organiza</guid>
-    <pubDate>Tue, 26 May 2026 09:01:34 GMT</pubDate>
-    <description>Proton&apos;s research found over 116,000 dark web exposures linked to NYT, Washington Post, and WSJ employee emails, including 12,000+ plaintext passwords and 61,000+ pieces of PII.</description>
-    <category>privacy</category>
-    <category>surveillance</category>
-    <category>identity</category>
-  </item>
-  <item>
     <title>Access Now Report: Data Privacy as Defense Against Electoral Disinformation in Latin America</title>
     <link>https://libertas.fgu.tech/posts/access-now-report-data-privacy-as-defense-against-electoral-</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/access-now-report-data-privacy-as-defense-against-electoral-</guid>
@@ -656,6 +646,16 @@
     <category>payments</category>
     <category>sovereignty</category>
     <category>censorship-resistance</category>
+  </item>
+  <item>
+    <title>Jordan Uses Cybercrime Law to Prosecute Facebook Posts Criticizing Israel Relations</title>
+    <link>https://libertas.fgu.tech/posts/jordan-uses-cybercrime-law-to-prosecute-facebook-posts-criti</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/jordan-uses-cybercrime-law-to-prosecute-facebook-posts-criti</guid>
+    <pubDate>Tue, 09 Jun 2026 15:02:32 GMT</pubDate>
+    <description>Jordanian activist Ayman Sandouka sentenced to 5 years for peaceful Facebook post criticizing King&apos;s Israel policy, highlighting systematic use of 2023 cybercrime law to suppress online dissent.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
   </item>
   <item>
     <title>EFF Warns Congress Against AI-Powered Mass Government Surveillance</title>
