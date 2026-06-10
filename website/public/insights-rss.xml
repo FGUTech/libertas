@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Tue, 09 Jun 2026 15:02:32 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 10 Jun 2026 15:04:12 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -52,25 +52,6 @@
     <category>identity</category>
   </item>
   <item>
-    <title>WiFi Signals Can Now Identify People Through Radio Wave Analysis</title>
-    <link>https://libertas.fgu.tech/posts/wifi-signals-can-now-identify-people-through-radio-wave-anal</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/wifi-signals-can-now-identify-people-through-radio-wave-anal</guid>
-    <pubDate>Tue, 26 May 2026 21:02:19 GMT</pubDate>
-    <description>Researchers demonstrate WiFi sensing technology that identifies individuals by analyzing how WiFi signals interact with their bodies, creating surveillance capabilities from existing infrastructure.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
-  </item>
-  <item>
-    <title>Iran Internet Connectivity Returns After 3-Month Government Blackout</title>
-    <link>https://libertas.fgu.tech/posts/iran-internet-connectivity-returns-after-3-month-government-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/iran-internet-connectivity-returns-after-3-month-government-</guid>
-    <pubDate>Tue, 26 May 2026 21:02:03 GMT</pubDate>
-    <description>Internet connectivity is partially returning to Iran after nearly 90 days of government-imposed blackout, though permanence of reconnection remains uncertain.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
-  </item>
-  <item>
     <title>Treasury Nominee Bessent Reiterates Opposition to CBDC, Pushes Crypto Clarity Act</title>
     <link>https://libertas.fgu.tech/posts/treasury-nominee-bessent-reiterates-opposition-to-cbdc-pushe</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/treasury-nominee-bessent-reiterates-opposition-to-cbdc-pushe</guid>
@@ -100,6 +81,16 @@
     <category>censorship-resistance</category>
     <category>activism</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>NSO Group Caught Violating Court Order by Targeting WhatsApp Users</title>
+    <link>https://libertas.fgu.tech/posts/nso-group-caught-violating-court-order-by-targeting-whatsapp</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/nso-group-caught-violating-court-order-by-targeting-whatsapp</guid>
+    <pubDate>Wed, 10 Jun 2026 15:03:34 GMT</pubDate>
+    <description>WhatsApp detected NSO Group conducting phishing attacks against its users despite existing court orders prohibiting such activities, highlighting continued state-level surveillance threats.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>censorship-resistance</category>
   </item>
   <item>
     <title>EFF Warns Congress: AI-Powered Government Surveillance Threatens Constitutional Rights</title>
@@ -294,15 +285,6 @@
     <category>censorship-resistance</category>
   </item>
   <item>
-    <title>EFF Exposes Mass ALPR Mission Creep: School Checks, Employment Screening</title>
-    <link>https://libertas.fgu.tech/posts/eff-exposes-mass-alpr-mission-creep-school-checks-employment</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-exposes-mass-alpr-mission-creep-school-checks-employment</guid>
-    <pubDate>Wed, 27 May 2026 03:00:53 GMT</pubDate>
-    <description>EFF analysis of millions of Flock Safety ALPR searches reveals police using license plate surveillance for school residency verification and employment background checks, far beyond original crime-fighting purpose.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
-  </item>
-  <item>
     <title>EFF Warns Age Verification Creates Mass Surveillance Infrastructure</title>
     <link>https://libertas.fgu.tech/posts/eff-warns-age-verification-creates-mass-surveillance-infrast</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-warns-age-verification-creates-mass-surveillance-infrast</guid>
@@ -355,6 +337,16 @@
     <category>activism</category>
   </item>
   <item>
+    <title>Mali Arrests Journalists Under Cybercrime Law for Factual Reporting</title>
+    <link>https://libertas.fgu.tech/posts/mali-arrests-journalists-under-cybercrime-law-for-factual-re</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/mali-arrests-journalists-under-cybercrime-law-for-factual-re</guid>
+    <pubDate>Wed, 10 Jun 2026 15:04:12 GMT</pubDate>
+    <description>Mali&apos;s military junta arrested two journalists under cybercrime laws for stating basic facts - one for criticizing misuse of cyber legislation, another for reporting territorial control by armed groups.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+  </item>
+  <item>
     <title>US Fusion Centers Surveilling AI Critics on Social Media</title>
     <link>https://libertas.fgu.tech/posts/us-fusion-centers-surveilling-ai-critics-on-social-media</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/us-fusion-centers-surveilling-ai-critics-on-social-media</guid>
@@ -364,17 +356,6 @@
     <category>activism</category>
     <category>privacy</category>
     <category>censorship-resistance</category>
-  </item>
-  <item>
-    <title>Freedom House Links Iran&apos;s Internet Blackouts to State Repression Strategy</title>
-    <link>https://libertas.fgu.tech/posts/freedom-house-links-iran-s-internet-blackouts-to-state-repre</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/freedom-house-links-iran-s-internet-blackouts-to-state-repre</guid>
-    <pubDate>Tue, 26 May 2026 21:02:39 GMT</pubDate>
-    <description>Freedom House connects Iran&apos;s ongoing internet blackouts and digital repression to broader authoritarian strategy of engineering distrust and fracturing opposition movements.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>sovereignty</category>
   </item>
   <item>
     <title>Meta Smart Glasses Hide Unreleased Face Recognition System</title>
@@ -568,16 +549,6 @@
     <category>surveillance</category>
   </item>
   <item>
-    <title>UK Sanctions HTX Exchange Over Alleged Russia Sanction Circumvention</title>
-    <link>https://libertas.fgu.tech/posts/uk-sanctions-htx-exchange-over-alleged-russia-sanction-circu</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/uk-sanctions-htx-exchange-over-alleged-russia-sanction-circu</guid>
-    <pubDate>Tue, 26 May 2026 21:01:35 GMT</pubDate>
-    <description>The UK sanctioned HTX (formerly Huobi Global) crypto exchange, claiming it&apos;s being exploited by Russia to bypass existing financial sanctions.</description>
-    <category>payments</category>
-    <category>censorship-resistance</category>
-    <category>sovereignty</category>
-  </item>
-  <item>
     <title>Scientists Ejected from Diabetes Conference for Distributing Critical Editorial</title>
     <link>https://libertas.fgu.tech/posts/scientists-ejected-from-diabetes-conference-for-distributing</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/scientists-ejected-from-diabetes-conference-for-distributing</guid>
@@ -686,17 +657,6 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>privacy</category>
-  </item>
-  <item>
-    <title>Freedom House Links Iran&apos;s Internet Blackouts to Historical Resistance Patterns</title>
-    <link>https://libertas.fgu.tech/posts/freedom-house-links-iran-s-internet-blackouts-to-historical-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/freedom-house-links-iran-s-internet-blackouts-to-historical-</guid>
-    <pubDate>Wed, 27 May 2026 15:02:29 GMT</pubDate>
-    <description>Freedom House draws parallels between Poland&apos;s Solidarity movement and Iran&apos;s current struggle, highlighting the regime&apos;s use of internet blackouts and digital repression to fracture opposition movements.</description>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-    <category>surveillance</category>
-    <category>sovereignty</category>
   </item>
   <item>
     <title>Trump Appoints Unqualified Acting DNI as Section 702 Surveillance Powers Face Renewal</title>

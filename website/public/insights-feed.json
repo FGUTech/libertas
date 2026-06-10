@@ -95,47 +95,6 @@
       }
     },
     {
-      "id": "09418b42-cdc4-4e3b-b57d-de2a28b44504",
-      "url": "https://libertas.fgu.tech/posts/wifi-signals-can-now-identify-people-through-radio-wave-anal",
-      "title": "WiFi Signals Can Now Identify People Through Radio Wave Analysis",
-      "summary": "Researchers demonstrate WiFi sensing technology that identifies individuals by analyzing how WiFi signals interact with their bodies, creating surveillance capabilities from existing infrastructure.",
-      "content_text": "WiFi sensing technology uses radio wave propagation analysis to identify people in physical spaces\n• Method analyzes how WiFi signals are reflected, scattered, or absorbed by human bodies\n• Technology works similar to cameras but uses radio waves instead of light waves\n• Research led by KIT professor Thorsten Strufe demonstrates practical implementation\n• Technique leverages existing WiFi infrastructure without requiring additional hardware\n• Creates new surveillance vector that operates without user knowledge or consent\n• Potentially undermines location privacy and anonymity in WiFi-enabled spaces",
-      "date_published": "2026-05-26T21:02:19.419Z",
-      "date_modified": "2026-05-26T21:02:19.487Z",
-      "tags": [
-        "surveillance",
-        "privacy"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.schneier.com/blog/archives/2026/05/identifying-people-using-wi-fi-routers.html"
-        ]
-      }
-    },
-    {
-      "id": "0a6ee3e3-f881-418d-aa2e-edfe7705a363",
-      "url": "https://libertas.fgu.tech/posts/iran-internet-connectivity-returns-after-3-month-government-",
-      "title": "Iran Internet Connectivity Returns After 3-Month Government Blackout",
-      "summary": "Internet connectivity is partially returning to Iran after nearly 90 days of government-imposed blackout, though permanence of reconnection remains uncertain.",
-      "content_text": "Iran experiencing partial internet restoration after ~90-day complete blackout\n• Web monitoring groups confirming connectivity returning but scope unclear\n• Blackout duration represents one of longest sustained internet shutdowns globally\n• Uncertainty around whether reconnection is permanent or temporary measure\n• Shutdown likely connected to ongoing civil unrest and government control efforts\n• Pattern demonstrates extreme information warfare tactics against civilian population\n• Return suggests either reduced threat perception or unsustainable economic costs",
-      "date_published": "2026-05-26T21:02:03.465Z",
-      "date_modified": "2026-05-26T21:02:03.569Z",
-      "tags": [
-        "censorship-resistance",
-        "surveillance",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 85,
-        "credibility_score": 90,
-        "citations": [
-          "https://www.wired.com/story/internet-in-iran-starts-to-return-after-3-month-blackout/"
-        ]
-      }
-    },
-    {
       "id": "132b283a-d9e0-4623-b0b9-406c805f8201",
       "url": "https://libertas.fgu.tech/posts/treasury-nominee-bessent-reiterates-opposition-to-cbdc-pushe",
       "title": "Treasury Nominee Bessent Reiterates Opposition to CBDC, Pushes Crypto Clarity Act",
@@ -197,6 +156,27 @@
         "credibility_score": 85,
         "citations": [
           "https://citizenlab.ca/chilling-effects-of-trumps-war-on-free-speech-extend-far-beyond-campus-walls-and-thats-the-point/"
+        ]
+      }
+    },
+    {
+      "id": "17fc618b-8107-4e18-ae50-cb410c81b218",
+      "url": "https://libertas.fgu.tech/posts/nso-group-caught-violating-court-order-by-targeting-whatsapp",
+      "title": "NSO Group Caught Violating Court Order by Targeting WhatsApp Users",
+      "summary": "WhatsApp detected NSO Group conducting phishing attacks against its users despite existing court orders prohibiting such activities, highlighting continued state-level surveillance threats.",
+      "content_text": "WhatsApp identified NSO Group conducting phishing attacks targeting its users\n• Attacks occurred in direct violation of existing court orders against NSO Group\n• NSO Group is Israeli spyware company known for Pegasus surveillance tools\n• WhatsApp previously sued NSO Group for exploiting its platform in 2019\n• Violation demonstrates ongoing cat-and-mouse game between spyware vendors and platforms\n• Court order violations could lead to additional legal consequences for NSO Group\n• Highlights persistent threat to activists, journalists, and dissidents using WhatsApp",
+      "date_published": "2026-06-10T15:03:34.368Z",
+      "date_modified": "2026-06-10T15:03:34.504Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 90,
+        "citations": [
+          "https://www.schneier.com/blog/archives/2026/06/nso-group-hacking-whatsapp-despite-court-order.html"
         ]
       }
     },
@@ -594,26 +574,6 @@
       }
     },
     {
-      "id": "6f1a9acf-7014-484e-9b69-b562da9d3ec5",
-      "url": "https://libertas.fgu.tech/posts/eff-exposes-mass-alpr-mission-creep-school-checks-employment",
-      "title": "EFF Exposes Mass ALPR Mission Creep: School Checks, Employment Screening",
-      "summary": "EFF analysis of millions of Flock Safety ALPR searches reveals police using license plate surveillance for school residency verification and employment background checks, far beyond original crime-fighting purpose.",
-      "content_text": "EFF analyzed millions of Flock Safety ALPR database searches by law enforcement\n• Police using license plate surveillance for school residency verification, employment background checks, and noise complaints\n• Buford City Schools ran 375+ searches for residency verification in 15 months, accessing 5,800+ networks nationwide\n• Single searches reveal comprehensive movement patterns: medical visits, worship, travel, personal activities\n• Multiple agencies across 9 states documented using ALPR for non-criminal investigations\n• No warrant requirement enables unrestricted access to sensitive location data\n• Demonstrates systematic mission creep from crime-fighting tool to universal movement tracker\n• Agencies share data broadly in nationwide pools, amplifying surveillance reach",
-      "date_published": "2026-05-27T03:00:53.657Z",
-      "date_modified": "2026-05-27T03:00:53.716Z",
-      "tags": [
-        "surveillance",
-        "privacy"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/05/more-license-plate-reader-mission-creep-school-residency-verification-background"
-        ]
-      }
-    },
-    {
       "id": "71970f4f-1e1c-4e66-aba2-7c8a3bbbd4b3",
       "url": "https://libertas.fgu.tech/posts/eff-warns-age-verification-creates-mass-surveillance-infrast",
       "title": "EFF Warns Age Verification Creates Mass Surveillance Infrastructure",
@@ -722,6 +682,27 @@
       }
     },
     {
+      "id": "8750423b-88a5-4eaa-9aba-312b2fab5bd2",
+      "url": "https://libertas.fgu.tech/posts/mali-arrests-journalists-under-cybercrime-law-for-factual-re",
+      "title": "Mali Arrests Journalists Under Cybercrime Law for Factual Reporting",
+      "summary": "Mali's military junta arrested two journalists under cybercrime laws for stating basic facts - one for criticizing misuse of cyber legislation, another for reporting territorial control by armed groups.",
+      "content_text": "Journalists Chahana Takiou and Abdramane Keïta arrested in Mali on June 8-9, 2026\n• Takiou charged with 'undermining state credibility' for criticizing cybercrime law misuse at media forum\n• Keïta charged with 'regionalist offense' for stating JNIM controls northern city of Kidal\n• Both prosecuted under cybercrime unit rather than press laws, bypassing journalist protections\n• Mali's 2019 cybercrime law criminalizes vague online 'threats' and 'insults' with up to 10-year penalties\n• Pattern follows broader crackdown since 2020 military coup including media bans and civil society dissolution\n• Demonstrates how authoritarian regimes weaponize digital legislation against factual reporting",
+      "date_published": "2026-06-10T15:04:12.142Z",
+      "date_modified": "2026-06-10T15:04:12.395Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.hrw.org/news/2026/06/10/jailed-for-calling-a-fact-a-fact-in-mali"
+        ]
+      }
+    },
+    {
       "id": "8a7161f0-a2fb-43f3-b780-05e3269d953e",
       "url": "https://libertas.fgu.tech/posts/us-fusion-centers-surveilling-ai-critics-on-social-media",
       "title": "US Fusion Centers Surveilling AI Critics on Social Media",
@@ -740,28 +721,6 @@
         "credibility_score": 90,
         "citations": [
           "https://theintercept.com/2026/06/01/ai-data-center-protest-police-surveillance/"
-        ]
-      }
-    },
-    {
-      "id": "8caccae3-f441-40c7-90b5-99520e51167d",
-      "url": "https://libertas.fgu.tech/posts/freedom-house-links-iran-s-internet-blackouts-to-state-repre",
-      "title": "Freedom House Links Iran's Internet Blackouts to State Repression Strategy",
-      "summary": "Freedom House connects Iran's ongoing internet blackouts and digital repression to broader authoritarian strategy of engineering distrust and fracturing opposition movements.",
-      "content_text": "Iran conducting longest state-imposed internet blackout in history to cover accelerating executions\n• Over 630 people executed in Iran in 2026 amid mass slaughter of protesters estimated in tens of thousands\n• Regime using digital harassment, disinformation, and smear campaigns to fracture opposition movements\n• World Values Survey identifies Iran among lowest-trust societies globally\n• Freedom House launched Iran initiative focusing on restoring internet access and countering propaganda\n• Authoritarian regimes survive by engineering distrust through digital tools, not just physical repression\n• Historical parallel drawn to Polish Solidarity movement's success through unity over factionalism",
-      "date_published": "2026-05-26T21:02:39.558Z",
-      "date_modified": "2026-05-26T21:02:39.648Z",
-      "tags": [
-        "censorship-resistance",
-        "surveillance",
-        "activism",
-        "sovereignty"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 75,
-        "credibility_score": 85,
-        "citations": [
-          "https://freedomhouse.org/article/gdansk-tehran-people-uniting-freedom-can-break-grip-tyranny"
         ]
       }
     },
@@ -1160,28 +1119,6 @@
       }
     },
     {
-      "id": "d13ffd8d-df89-4c85-b799-7acfd45b8675",
-      "url": "https://libertas.fgu.tech/posts/uk-sanctions-htx-exchange-over-alleged-russia-sanction-circu",
-      "title": "UK Sanctions HTX Exchange Over Alleged Russia Sanction Circumvention",
-      "summary": "The UK sanctioned HTX (formerly Huobi Global) crypto exchange, claiming it's being exploited by Russia to bypass existing financial sanctions.",
-      "content_text": "UK government imposed sanctions on HTX cryptocurrency exchange (formerly Huobi Global)\n• Authorities claim the exchange is being exploited by Russia to circumvent UK sanctions\n• Part of broader UK crackdown on companies allegedly facilitating sanctions evasion\n• Demonstrates real-world use of crypto infrastructure for financial sovereignty\n• Government action confirms effectiveness of crypto for bypassing traditional financial controls\n• Sets precedent for sanctioning crypto exchanges based on usage patterns rather than direct violations\n• Highlights ongoing tension between permissionless finance and state financial controls",
-      "date_published": "2026-05-26T21:01:35.414Z",
-      "date_modified": "2026-05-26T21:01:35.472Z",
-      "tags": [
-        "payments",
-        "censorship-resistance",
-        "sovereignty"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 72,
-        "credibility_score": 80,
-        "citations": [
-          "https://cointelegraph.com/news/uk-sanctions-htx-huobi-russia-support",
-          "https://cointelegraph.com/news/uk-sanctions-htx-huobi-russia-support?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-        ]
-      }
-    },
-    {
       "id": "d300b534-5882-4fc0-aa20-e9f3671d8b54",
       "url": "https://libertas.fgu.tech/posts/scientists-ejected-from-diabetes-conference-for-distributing",
       "title": "Scientists Ejected from Diabetes Conference for Distributing Critical Editorial",
@@ -1411,28 +1348,6 @@
         "credibility_score": 85,
         "citations": [
           "https://cpj.org/2026/05/under-the-shadow-of-fear-censorship-is-ethiopias-real-election-story-journalists-say/"
-        ]
-      }
-    },
-    {
-      "id": "f43ac861-9f69-4e13-ba06-7f2479bbdc72",
-      "url": "https://libertas.fgu.tech/posts/freedom-house-links-iran-s-internet-blackouts-to-historical-",
-      "title": "Freedom House Links Iran's Internet Blackouts to Historical Resistance Patterns",
-      "summary": "Freedom House draws parallels between Poland's Solidarity movement and Iran's current struggle, highlighting the regime's use of internet blackouts and digital repression to fracture opposition movements.",
-      "content_text": "Actor and human rights advocate Nazanin Boniadi spoke at Freedom House's 85th anniversary event\n• Drew historical parallels between Poland's Solidarity movement (1981) and Iran's current resistance\n• Iran experiencing 'longest state-imposed internet blackout in history' amid mass protests\n• Over 630 executions reported in Iran this year during ongoing internet restrictions\n• Regime using 'disinformation, smear campaigns, and digital harassment' to fracture opposition\n• Iran ranks among lowest-trust societies globally according to World Values Survey\n• Freedom House calls for 'restoring internet access' as part of Iran support strategy\n• Emphasizes that dictatorships engineer distrust through information control",
-      "date_published": "2026-05-27T15:02:29.835Z",
-      "date_modified": "2026-05-27T15:02:30.038Z",
-      "tags": [
-        "censorship-resistance",
-        "activism",
-        "surveillance",
-        "sovereignty"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 85,
-        "citations": [
-          "https://freedomhouse.org/article/gdansk-tehran-people-uniting-freedom-can-break-grip-tyranny"
         ]
       }
     },
