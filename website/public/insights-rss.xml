@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Wed, 10 Jun 2026 15:04:12 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 10 Jun 2026 21:03:33 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -27,6 +27,17 @@
     <description>Hungarian prosecutors dropped charges against Pride event organizers after European Court of Justice ruled Hungary&apos;s 2021 anti-LGBT law incompatible with EU law, signaling restoration of rule of law.</description>
     <category>activism</category>
     <category>censorship-resistance</category>
+    <category>sovereignty</category>
+  </item>
+  <item>
+    <title>EFF Demands Warrant Requirement for Section 702 Surveillance or Full Expiration</title>
+    <link>https://libertas.fgu.tech/posts/eff-demands-warrant-requirement-for-section-702-surveillance</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-demands-warrant-requirement-for-section-702-surveillance</guid>
+    <pubDate>Wed, 10 Jun 2026 21:00:35 GMT</pubDate>
+    <description>EFF is taking a hardline stance on Section 702 renewal: either require warrants for FBI queries of Americans&apos; communications or let the mass surveillance authority expire entirely.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
     <category>sovereignty</category>
   </item>
   <item>
@@ -212,6 +223,17 @@
     <category>activism</category>
   </item>
   <item>
+    <title>Senate Dems Block NSA Surveillance Renewal Over Trump Intel Chief Pick</title>
+    <link>https://libertas.fgu.tech/posts/senate-dems-block-nsa-surveillance-renewal-over-trump-intel-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/senate-dems-block-nsa-surveillance-renewal-over-trump-intel-</guid>
+    <pubDate>Wed, 10 Jun 2026 21:03:33 GMT</pubDate>
+    <description>Senate Democrats united to block renewal of NSA&apos;s Section 702 surveillance program after Trump appointed Bill Pulte, who allegedly misused government databases for political vendettas, as intel chief.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
+    <category>sovereignty</category>
+  </item>
+  <item>
     <title>Bangladesh: Police Profile Journalists as Persecution Cycle Continues Under New Government</title>
     <link>https://libertas.fgu.tech/posts/bangladesh-police-profile-journalists-as-persecution-cycle-c</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/bangladesh-police-profile-journalists-as-persecution-cycle-c</guid>
@@ -231,6 +253,17 @@
     <category>bitcoin</category>
     <category>sovereignty</category>
     <category>payments</category>
+  </item>
+  <item>
+    <title>Azerbaijan Seeks 16-Year Prison Terms for Independent Media Workers Over Foreign Funding</title>
+    <link>https://libertas.fgu.tech/posts/azerbaijan-seeks-16-year-prison-terms-for-independent-media-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/azerbaijan-seeks-16-year-prison-terms-for-independent-media-</guid>
+    <pubDate>Wed, 10 Jun 2026 21:02:17 GMT</pubDate>
+    <description>Azerbaijani prosecutors seek up to 16 years in prison for 9 journalists and media workers from Toplum TV and affiliated organizations, charged with using Western donor funds in violation of local laws.</description>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>surveillance</category>
+    <category>sovereignty</category>
   </item>
   <item>
     <title>Russia Labels OVD-Info Rights Group &apos;Extremist&apos; for Helping Protesters</title>
@@ -496,6 +529,15 @@
     <category>privacy</category>
   </item>
   <item>
+    <title>EFF Exposes ALPR Mission Creep: License Plate Cameras Now Track Noise Complaints</title>
+    <link>https://libertas.fgu.tech/posts/eff-exposes-alpr-mission-creep-license-plate-cameras-now-tra</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-exposes-alpr-mission-creep-license-plate-cameras-now-tra</guid>
+    <pubDate>Wed, 10 Jun 2026 21:00:35 GMT</pubDate>
+    <description>EFF reports widespread surveillance expansion as automated license plate readers, originally for safety, now track citizens for minor infractions like noise complaints.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+  </item>
+  <item>
     <title>Meta Removes Facial Recognition from Smart Glasses After EFF Exposes Surveillance Code</title>
     <link>https://libertas.fgu.tech/posts/meta-removes-facial-recognition-from-smart-glasses-after-eff</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/meta-removes-facial-recognition-from-smart-glasses-after-eff</guid>
@@ -598,6 +640,16 @@
     <category>surveillance</category>
   </item>
   <item>
+    <title>Citizen Lab Director Details Greek Predator Spyware Scandal Investigation</title>
+    <link>https://libertas.fgu.tech/posts/citizen-lab-director-details-greek-predator-spyware-scandal-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/citizen-lab-director-details-greek-predator-spyware-scandal-</guid>
+    <pubDate>Wed, 10 Jun 2026 21:01:54 GMT</pubDate>
+    <description>Citizen Lab&apos;s Ron Deibert spoke about exposing Intellexa&apos;s Predator spyware use against Greek journalists and politicians, triggering national and EU investigations.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
+  </item>
+  <item>
     <title>Access Now Report: Data Privacy as Defense Against Electoral Disinformation in Latin America</title>
     <link>https://libertas.fgu.tech/posts/access-now-report-data-privacy-as-defense-against-electoral-</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/access-now-report-data-privacy-as-defense-against-electoral-</guid>
@@ -667,6 +719,17 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>EFF Launches Enshittification Merch to Fund Digital Rights Work</title>
+    <link>https://libertas.fgu.tech/posts/eff-launches-enshittification-merch-to-fund-digital-rights-w</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-launches-enshittification-merch-to-fund-digital-rights-w</guid>
+    <pubDate>Wed, 10 Jun 2026 21:00:35 GMT</pubDate>
+    <description>EFF releases merchandise featuring Cory Doctorow&apos;s &apos;enshittification&apos; emoji under Creative Commons license, with proceeds funding digital rights advocacy against surveillance capitalism and tech monopolies.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
+    <category>sovereignty</category>
   </item>
 </channel>
 </rss>

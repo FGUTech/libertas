@@ -50,6 +50,28 @@
       }
     },
     {
+      "id": "06a48575-9035-4d22-812d-26613d1e513e",
+      "url": "https://libertas.fgu.tech/posts/eff-demands-warrant-requirement-for-section-702-surveillance",
+      "title": "EFF Demands Warrant Requirement for Section 702 Surveillance or Full Expiration",
+      "summary": "EFF is taking a hardline stance on Section 702 renewal: either require warrants for FBI queries of Americans' communications or let the mass surveillance authority expire entirely.",
+      "content_text": "EFF demands warrant requirement before FBI can access Americans' communications collected under Section 702\n• Current law allows FBI to query NSA-collected communications without warrants through 'backdoor' searches\n• Congress has repeatedly delayed Section 702 expiration while negotiations remain at impasse\n• Trump appointed Bill Pulte as DNI, who has history of weaponizing private government data against political opponents\n• Democrats vow to block 702 renewal unless Pulte removed, EFF says they should demand warrant requirement\n• If 702 expires, NSA can continue operations until March 2027 under existing court certifications\n• Government would likely revert to Executive Order 12333 for overseas surveillance after expiration\n• EFF argues letting 702 expire could create transparency opportunities and legal challenges to alternative authorities",
+      "date_published": "2026-06-10T21:00:35.282Z",
+      "date_modified": "2026-06-10T21:00:35.353Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 88,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/06/702-ultimatum-warrant-requirement-or-bust"
+        ]
+      }
+    },
+    {
       "id": "06d6297b-329a-4aef-ab37-67c85b388c02",
       "url": "https://libertas.fgu.tech/posts/us-treasury-sanctions-iran-s-largest-crypto-exchange-nobitex",
       "title": "US Treasury Sanctions Iran's Largest Crypto Exchange Nobitex",
@@ -423,6 +445,28 @@
       }
     },
     {
+      "id": "49729460-ffce-48db-9b8a-4dd3a2e336cc",
+      "url": "https://libertas.fgu.tech/posts/senate-dems-block-nsa-surveillance-renewal-over-trump-intel-",
+      "title": "Senate Dems Block NSA Surveillance Renewal Over Trump Intel Chief Pick",
+      "summary": "Senate Democrats united to block renewal of NSA's Section 702 surveillance program after Trump appointed Bill Pulte, who allegedly misused government databases for political vendettas, as intel chief.",
+      "content_text": "Senate Democrats (except Fetterman) voted against advancing Section 702 FISA renewal last week\n• Opposition triggered by Trump's appointment of Bill Pulte as Director of National Intelligence\n• Pulte accused of misusing confidential government databases to target Trump's political enemies including Adam Schiff and Letitia James\n• Section 702 allows FBI/agencies to search Americans' communications collected abroad without warrants\n• Courts have found widespread violations of existing safeguards against targeting Americans\n• Civil liberties advocates push for warrant requirement; centrists like Warner historically opposed\n• Program expires Friday; Pulte's accelerated appointment to June 19 complicates renewal negotiations\n• Sen. Wyden reports unprecedented bipartisan support for surveillance reform\n• Privacy advocates see program expiration as opportunity for meaningful reform",
+      "date_published": "2026-06-10T21:03:33.036Z",
+      "date_modified": "2026-06-10T21:03:33.177Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 88,
+        "citations": [
+          "https://theintercept.com/2026/06/10/nsa-surveillance-fisa-renewal-bill-pulte/"
+        ]
+      }
+    },
+    {
       "id": "57b792ce-e006-4c1e-bef3-0b95d68ec503",
       "url": "https://libertas.fgu.tech/posts/bangladesh-police-profile-journalists-as-persecution-cycle-c",
       "title": "Bangladesh: Police Profile Journalists as Persecution Cycle Continues Under New Government",
@@ -462,6 +506,28 @@
         "credibility_score": 85,
         "citations": [
           "https://bitcoinmagazine.com/news/texas-names-bitcoin-reserve-committee"
+        ]
+      }
+    },
+    {
+      "id": "5b516a28-aa32-41e4-9841-ea9ba6f07b62",
+      "url": "https://libertas.fgu.tech/posts/azerbaijan-seeks-16-year-prison-terms-for-independent-media-",
+      "title": "Azerbaijan Seeks 16-Year Prison Terms for Independent Media Workers Over Foreign Funding",
+      "summary": "Azerbaijani prosecutors seek up to 16 years in prison for 9 journalists and media workers from Toplum TV and affiliated organizations, charged with using Western donor funds in violation of local laws.",
+      "content_text": "Nine defendants linked to Toplum TV face 13-16 year prison sentences on financial crime charges\n• Accused of forming 'organized criminal group' to obtain Western donor funds for four organizations including Toplum TV and fact-checking platform Fakt Yoxla\n• Part of broader crackdown following Azerbaijan's 2023 Nagorno-Karabakh military campaign, targeting dozens of journalists and civil society groups\n• Azerbaijani law requires state approval for foreign grants, but independent experts say authorities refuse to register independent organizations\n• European Court of Human Rights ruled similar violations should carry fines, not criminal sanctions\n• Azerbaijan ranks as world's 6th-worst jailer of journalists with at least 24 currently detained\n• Previous cases saw 6 Abzas Media journalists sentenced to 7.5-9 years on similar charges\n• Demonstrates weaponization of financial regulations to suppress independent media and civil society",
+      "date_published": "2026-06-10T21:02:17.799Z",
+      "date_modified": "2026-06-10T21:02:17.897Z",
+      "tags": [
+        "censorship-resistance",
+        "activism",
+        "surveillance",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 88,
+        "citations": [
+          "https://cpj.org/2026/06/azerbaijani-prosecutors-seek-up-to-16-years-in-prison-for-defendants-in-toplum-tv-case/"
         ]
       }
     },
@@ -1009,6 +1075,26 @@
       }
     },
     {
+      "id": "bbd9ce42-6d51-4f7a-9ccd-a6571d5afd5c",
+      "url": "https://libertas.fgu.tech/posts/eff-exposes-alpr-mission-creep-license-plate-cameras-now-tra",
+      "title": "EFF Exposes ALPR Mission Creep: License Plate Cameras Now Track Noise Complaints",
+      "summary": "EFF reports widespread surveillance expansion as automated license plate readers, originally for safety, now track citizens for minor infractions like noise complaints.",
+      "content_text": "Tens of thousands of ALPR cameras form nationwide surveillance network across US\n• Mission creep: systems originally sold for safety now used for noise complaints and minor violations\n• EFF documented new examples including school residency verification and background checks\n• Meta removed facial recognition code from smart glasses app after public pressure\n• EFF testified to Congress about AI surveillance concerns and government overreach\n• ALPR networks function as 'universal people-trackers' beyond stated purposes\n• Pattern demonstrates how surveillance infrastructure expands once deployed",
+      "date_published": "2026-06-10T21:00:35.287Z",
+      "date_modified": "2026-06-10T21:00:35.353Z",
+      "tags": [
+        "surveillance",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/06/mass-surveillance-loud-music-effector-3811"
+        ]
+      }
+    },
+    {
       "id": "bbfaebe7-7829-4700-94af-457a9948b88e",
       "url": "https://libertas.fgu.tech/posts/meta-removes-facial-recognition-from-smart-glasses-after-eff",
       "title": "Meta Removes Facial Recognition from Smart Glasses After EFF Exposes Surveillance Code",
@@ -1223,6 +1309,27 @@
       }
     },
     {
+      "id": "e0f2ce07-20b8-41da-aea0-a3a3a428fa2d",
+      "url": "https://libertas.fgu.tech/posts/citizen-lab-director-details-greek-predator-spyware-scandal-",
+      "title": "Citizen Lab Director Details Greek Predator Spyware Scandal Investigation",
+      "summary": "Citizen Lab's Ron Deibert spoke about exposing Intellexa's Predator spyware use against Greek journalists and politicians, triggering national and EU investigations.",
+      "content_text": "Ron Deibert gave keynote at Athens event about Greek spyware scandal investigation\n• Citizen Lab exposed use of Intellexa's Predator spyware against Greek journalists and political figures\n• Investigation triggered both national and European Union investigations\n• Deibert credited investigative journalists as 'real heroes' for exposing closed-door surveillance\n• Case demonstrates commercial spyware threat to press freedom and democratic institutions\n• Event hosted by Eteron think tank highlights ongoing European concern over surveillance overreach\n• Represents successful model for technical research organizations supporting investigative journalism",
+      "date_published": "2026-06-10T21:01:54.810Z",
+      "date_modified": "2026-06-10T21:01:54.918Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://citizenlab.ca/ron-deibert-speaks-about-greek-watergate/"
+        ]
+      }
+    },
+    {
       "id": "e0fbc74a-db6a-4d79-b002-d79dde0da0ca",
       "url": "https://libertas.fgu.tech/posts/access-now-report-data-privacy-as-defense-against-electoral-",
       "title": "Access Now Report: Data Privacy as Defense Against Electoral Disinformation in Latin America",
@@ -1369,6 +1476,28 @@
         "credibility_score": 95,
         "citations": [
           "https://www.eff.org/deeplinks/2026/06/pulte-appointment-underscores-need-reform-section-702-spying"
+        ]
+      }
+    },
+    {
+      "id": "faa17602-a94e-49ce-a1d2-352b22192d90",
+      "url": "https://libertas.fgu.tech/posts/eff-launches-enshittification-merch-to-fund-digital-rights-w",
+      "title": "EFF Launches Enshittification Merch to Fund Digital Rights Work",
+      "summary": "EFF releases merchandise featuring Cory Doctorow's 'enshittification' emoji under Creative Commons license, with proceeds funding digital rights advocacy against surveillance capitalism and tech monopolies.",
+      "content_text": "EFF launches official enshittification emoji merchandise (stickers $5, pins $10)\n• Design by Devin Washburn released under Creative Commons Attribution 4.0 license\n• Cory Doctorow released high-res files on Wikimedia Commons, Flickr, and Internet Archive\n• All merchandise proceeds go directly to EFF's digital rights work\n• Enshittification framework addresses surveillance business models and privacy erosion\n• Visual serves as organizing tool and signal for understanding internet decay\n• CC license allows anyone to create derivative works commercially with attribution",
+      "date_published": "2026-06-10T21:00:35.287Z",
+      "date_modified": "2026-06-10T21:00:35.353Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 72,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/06/enshittification-merch-actually-fights-enshittification"
         ]
       }
     }
