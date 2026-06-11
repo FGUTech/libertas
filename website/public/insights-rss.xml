@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 11 Jun 2026 03:00:23 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 11 Jun 2026 09:01:32 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -234,6 +234,17 @@
     <category>sovereignty</category>
   </item>
   <item>
+    <title>Gulf States Deploy Mass Phone Surveillance Against Migrant Workers During Regional Conflict</title>
+    <link>https://libertas.fgu.tech/posts/gulf-states-deploy-mass-phone-surveillance-against-migrant-w</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/gulf-states-deploy-mass-phone-surveillance-against-migrant-w</guid>
+    <pubDate>Thu, 11 Jun 2026 09:01:32 GMT</pubDate>
+    <description>Human Rights Watch documents systematic mobile phone surveillance in GCC countries, with random police checks, fines up to $3,200, and arrests for conflict-related content, silencing migrant worker communications.</description>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>comms</category>
+    <category>activism</category>
+  </item>
+  <item>
     <title>Bangladesh: Police Profile Journalists as Persecution Cycle Continues Under New Government</title>
     <link>https://libertas.fgu.tech/posts/bangladesh-police-profile-journalists-as-persecution-cycle-c</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/bangladesh-police-profile-journalists-as-persecution-cycle-c</guid>
@@ -421,17 +432,6 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>privacy</category>
-  </item>
-  <item>
-    <title>China Pressures Zambia to Cancel Major Digital Rights Conference RightsCon</title>
-    <link>https://libertas.fgu.tech/posts/china-pressures-zambia-to-cancel-major-digital-rights-confer</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/china-pressures-zambia-to-cancel-major-digital-rights-confer</guid>
-    <pubDate>Thu, 28 May 2026 09:01:50 GMT</pubDate>
-    <description>Chinese government pressure forced cancellation of RightsCon 2026 in Zambia after officials objected to planned discussions of China&apos;s digital authoritarianism and Taiwanese activist participation.</description>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-    <category>sovereignty</category>
-    <category>surveillance</category>
   </item>
   <item>
     <title>Kazakhstan Forces Anti-War Orthodox Priest Into Psychiatric Detention</title>
@@ -701,15 +701,6 @@
     <category>activism</category>
   </item>
   <item>
-    <title>NASA Satellites Can Detect GPS Jammers from Space, Raising Privacy Concerns</title>
-    <link>https://libertas.fgu.tech/posts/nasa-satellites-can-detect-gps-jammers-from-space-raising-pr</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/nasa-satellites-can-detect-gps-jammers-from-space-raising-pr</guid>
-    <pubDate>Thu, 28 May 2026 03:01:43 GMT</pubDate>
-    <description>NASA satellites originally designed for weather monitoring can now locate GPS jammers within several kilometers, potentially enabling state surveillance of privacy tools used by activists and dissidents.</description>
-    <category>privacy</category>
-    <category>surveillance</category>
-  </item>
-  <item>
     <title>Ethiopia Election: Systematic Press Censorship and Phone Searches Target Journalists</title>
     <link>https://libertas.fgu.tech/posts/ethiopia-election-systematic-press-censorship-and-phone-sear</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/ethiopia-election-systematic-press-censorship-and-phone-sear</guid>
@@ -719,6 +710,17 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>Hungary&apos;s New Government Faces EU Pressure to Reverse Orbán&apos;s Media Capture and Spyware Use</title>
+    <link>https://libertas.fgu.tech/posts/hungary-s-new-government-faces-eu-pressure-to-reverse-orb-n-</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/hungary-s-new-government-faces-eu-pressure-to-reverse-orb-n-</guid>
+    <pubDate>Thu, 11 Jun 2026 09:01:10 GMT</pubDate>
+    <description>After defeating Orbán, Hungary&apos;s new PM Péter Magyar must dismantle 16 years of media capture and surveillance. CPJ urges EU to push for press freedom reforms and end spyware targeting of journalists.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
   </item>
   <item>
     <title>Trump Appoints Unqualified Acting DNI as Section 702 Surveillance Powers Face Renewal</title>

@@ -467,6 +467,28 @@
       }
     },
     {
+      "id": "4eb428ee-e24f-4d4f-8416-696f8011d97e",
+      "url": "https://libertas.fgu.tech/posts/gulf-states-deploy-mass-phone-surveillance-against-migrant-w",
+      "title": "Gulf States Deploy Mass Phone Surveillance Against Migrant Workers During Regional Conflict",
+      "summary": "Human Rights Watch documents systematic mobile phone surveillance in GCC countries, with random police checks, fines up to $3,200, and arrests for conflict-related content, silencing migrant worker communications.",
+      "content_text": "Police in Kuwait, Bahrain, UAE, and Qatar conduct random mobile phone checks of migrant workers\n• Workers face fines up to $3,200 and imprisonment for photos/videos of conflict-related content\n• Over 1,000 arrests documented across GCC states for sharing online content during regional conflict\n• Employers warn workers to delete content and avoid social media posting about working conditions\n• Surveillance extends to scrolling through phones during routine checks for banned content\n• Climate of fear prevents workers from reporting labor abuses to human rights organizations\n• Self-censorship now affects private communications, not just public posts\n• Journalists report sources refusing to speak even anonymously due to surveillance fears",
+      "date_published": "2026-06-11T09:01:32.157Z",
+      "date_modified": "2026-06-11T09:01:32.289Z",
+      "tags": [
+        "surveillance",
+        "censorship-resistance",
+        "comms",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 88,
+        "citations": [
+          "https://www.hrw.org/news/2026/06/11/gulf-states-repression-of-migrant-workers-during-conflict"
+        ]
+      }
+    },
+    {
       "id": "57b792ce-e006-4c1e-bef3-0b95d68ec503",
       "url": "https://libertas.fgu.tech/posts/bangladesh-police-profile-journalists-as-persecution-cycle-c",
       "title": "Bangladesh: Police Profile Journalists as Persecution Cycle Continues Under New Government",
@@ -852,28 +874,6 @@
         "credibility_score": 85,
         "citations": [
           "https://cpj.org/2026/06/100-days-on-cpj-urges-bangladeshs-tarique-rahman-to-break-the-cycle-of-press-repression/"
-        ]
-      }
-    },
-    {
-      "id": "96db48a3-2e30-4c98-b0ae-34ba0fe04185",
-      "url": "https://libertas.fgu.tech/posts/china-pressures-zambia-to-cancel-major-digital-rights-confer",
-      "title": "China Pressures Zambia to Cancel Major Digital Rights Conference RightsCon",
-      "summary": "Chinese government pressure forced cancellation of RightsCon 2026 in Zambia after officials objected to planned discussions of China's digital authoritarianism and Taiwanese activist participation.",
-      "content_text": "Access Now cancelled RightsCon conference in Lusaka, Zambia (May 5-8) due to Chinese government pressure\n• 2,600+ participants from 100+ countries were expected at premier digital rights gathering\n• Chinese officials objected to discussions of China's digital authoritarian practices\n• China also demanded exclusion of Taiwanese activists from participation\n• Zambian officials backtracked on hosting commitment under diplomatic pressure\n• Access Now refused to moderate topics or exclude at-risk communities including Taiwanese participants\n• Freedom House categorizes this as malign foreign influence targeting transnational civil society\n• Pattern includes similar incidents: Uganda rendered 36 activists from Kenya leadership seminar\n• Tanzania deported Kenyan officials monitoring opposition leader's trial in 2025\n• Event cancellation disrupts critical coordination on digital rights issues globally",
-      "date_published": "2026-05-28T09:01:50.730Z",
-      "date_modified": "2026-05-28T09:01:50.912Z",
-      "tags": [
-        "censorship-resistance",
-        "activism",
-        "sovereignty",
-        "surveillance"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 85,
-        "credibility_score": 88,
-        "citations": [
-          "https://freedomhouse.org/article/tnr-watch-canceling-rightscon-not-transnational-repression-it-attack-transnational-civil"
         ]
       }
     },
@@ -1437,27 +1437,6 @@
       }
     },
     {
-      "id": "ef2021e7-b443-49c3-963b-44fe51c1171d",
-      "url": "https://libertas.fgu.tech/posts/nasa-satellites-can-detect-gps-jammers-from-space-raising-pr",
-      "title": "NASA Satellites Can Detect GPS Jammers from Space, Raising Privacy Concerns",
-      "summary": "NASA satellites originally designed for weather monitoring can now locate GPS jammers within several kilometers, potentially enabling state surveillance of privacy tools used by activists and dissidents.",
-      "content_text": "NASA satellites detected GPS jammer location in Iran within several kilometers in experimental test\n• Technology repurposes weather satellites designed for cyclone and ice sheet monitoring\n• Sean Gorman of Zephr.xyz demonstrated capability using two different NASA satellite systems\n• Cannot provide real-time monitoring or pinpoint exact locations currently\n• Dual-use implications: beneficial for navigation safety but enables surveillance of privacy tools\n• GPS jammers sometimes used legitimately by activists to avoid tracking\n• Could help authorities identify 'high risk areas' for aircraft and maritime shipping\n• Technology still experimental with significant limitations on precision and timing",
-      "date_published": "2026-05-28T03:01:43.890Z",
-      "date_modified": "2026-05-28T03:01:43.943Z",
-      "tags": [
-        "privacy",
-        "surveillance"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 72,
-        "credibility_score": 85,
-        "citations": [
-          "https://arstechnica.com/gadgets/2026/05/nasa-satellites-can-spot-gps-jammers-on-earth/",
-          "https://arstechnica.com/security/2026/05/websites-have-a-new-way-to-spy-on-visitors-analyzing-their-ssd-activity/"
-        ]
-      }
-    },
-    {
       "id": "f0bb46a1-1df7-483f-a4c7-72765e7e1b7d",
       "url": "https://libertas.fgu.tech/posts/ethiopia-election-systematic-press-censorship-and-phone-sear",
       "title": "Ethiopia Election: Systematic Press Censorship and Phone Searches Target Journalists",
@@ -1476,6 +1455,28 @@
         "credibility_score": 85,
         "citations": [
           "https://cpj.org/2026/05/under-the-shadow-of-fear-censorship-is-ethiopias-real-election-story-journalists-say/"
+        ]
+      }
+    },
+    {
+      "id": "f5f9011a-c435-424e-bcab-4a222a749d26",
+      "url": "https://libertas.fgu.tech/posts/hungary-s-new-government-faces-eu-pressure-to-reverse-orb-n-",
+      "title": "Hungary's New Government Faces EU Pressure to Reverse Orbán's Media Capture and Spyware Use",
+      "summary": "After defeating Orbán, Hungary's new PM Péter Magyar must dismantle 16 years of media capture and surveillance. CPJ urges EU to push for press freedom reforms and end spyware targeting of journalists.",
+      "content_text": "Péter Magyar's Tisza party defeated Viktor Orbán's Fidesz in April 2026 elections after 16 years in power\n• Committee to Protect Journalists (CPJ) calls on EU to pressure new government for media freedom reforms\n• Orbán administration turned Hungarian media into 'de facto propaganda mouthpieces' through systematic capture\n• Previous government deployed spyware against investigative reporters, undermining source confidentiality\n• EU's European Media Freedom Act and anti-SLAPP Directive provide framework for media reform\n• New government committed to rule-of-law reforms required to unblock frozen EU funds\n• Independent journalists endured 'massive psychological and financial pressure' under Orbán regime\n• European Parliament's PEGA Committee previously documented spyware abuses for 'national security' claims",
+      "date_published": "2026-06-11T09:01:10.725Z",
+      "date_modified": "2026-06-11T09:01:10.856Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 88,
+        "citations": [
+          "https://cpj.org/2026/06/cpj-calls-on-eu-to-support-press-freedom-reform-in-hungary/"
         ]
       }
     },
