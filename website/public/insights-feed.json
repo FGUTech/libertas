@@ -1181,6 +1181,27 @@
       }
     },
     {
+      "id": "cb3f8a25-cad6-4bc6-b41a-1918d4a0efff",
+      "url": "https://libertas.fgu.tech/posts/house-rushes-through-copyright-office-overhaul-that-threaten",
+      "title": "House Rushes Through Copyright Office Overhaul That Threatens Digital Rights",
+      "summary": "House passed H.R. 6028 restructuring the Copyright Office, making it more political and concentrating power in a presidential appointee, threatening fair use and circumvention rights.",
+      "content_text": "House passed H.R. 6028 via voice vote, removing Library of Congress oversight over Copyright Office\n• Bill makes Register of Copyrights a presidential appointee confirmed by Senate\n• Transfers DMCA Section 1201 rulemaking authority from Librarian to Register of Copyrights\n• Copyright Office historically supported SOPA and consistently favors industry over public interest\n• Section 1201 rulemaking determines when public can bypass digital locks for security research, repair, accessibility\n• EFF and coalition urged against fast-tracking but Congress moved forward without hearings\n• Changes politicize office that already wields significant influence over tech policy and digital rights\n• Bill now goes to Senate where EFF urges rejection",
+      "date_published": "2026-06-11T03:00:23.635Z",
+      "date_modified": "2026-06-11T03:00:23.679Z",
+      "tags": [
+        "censorship-resistance",
+        "privacy",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 88,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/06/congress-just-rushed-through-disastrous-copyright-office-overhaul"
+        ]
+      }
+    },
+    {
       "id": "ce663d3b-b7ec-4467-9aec-446f2d91911b",
       "url": "https://libertas.fgu.tech/posts/bitcoin-book-excerpt-illustrates-inflation-s-impact-on-purch",
       "title": "Bitcoin Book Excerpt Illustrates Inflation's Impact on Purchasing Power Over 40 Years",

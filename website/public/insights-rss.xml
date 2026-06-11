@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Wed, 10 Jun 2026 21:03:33 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 11 Jun 2026 03:00:23 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -576,6 +576,16 @@
     <category>privacy</category>
     <category>censorship-resistance</category>
     <category>identity</category>
+    <category>surveillance</category>
+  </item>
+  <item>
+    <title>House Rushes Through Copyright Office Overhaul That Threatens Digital Rights</title>
+    <link>https://libertas.fgu.tech/posts/house-rushes-through-copyright-office-overhaul-that-threaten</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/house-rushes-through-copyright-office-overhaul-that-threaten</guid>
+    <pubDate>Thu, 11 Jun 2026 03:00:23 GMT</pubDate>
+    <description>House passed H.R. 6028 restructuring the Copyright Office, making it more political and concentrating power in a presidential appointee, threatening fair use and circumvention rights.</description>
+    <category>censorship-resistance</category>
+    <category>privacy</category>
     <category>surveillance</category>
   </item>
   <item>
