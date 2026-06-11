@@ -683,28 +683,6 @@
       }
     },
     {
-      "id": "71970f4f-1e1c-4e66-aba2-7c8a3bbbd4b3",
-      "url": "https://libertas.fgu.tech/posts/eff-warns-age-verification-creates-mass-surveillance-infrast",
-      "title": "EFF Warns Age Verification Creates Mass Surveillance Infrastructure",
-      "summary": "EFF highlights how age verification mandates force users to submit sensitive personal data to third parties, creating centralized honeypots that have already been breached multiple times.",
-      "content_text": "Age verification schemes require users to submit personal data to third parties just to access web content\n• Centralized identity databases become immediate targets for hackers and data thieves\n• Multiple age verification companies have already been breached, exposing user documents and personal info\n• Lawmakers using 'child safety' rhetoric to justify expanded government censorship and surveillance powers\n• EFF fighting age verification proposals globally through policy work and public education\n• Pattern shows these powers are consistently abused once granted to authorities\n• Creates infrastructure that can be repurposed for broader population monitoring and control",
-      "date_published": "2026-05-28T21:01:22.424Z",
-      "date_modified": "2026-05-28T21:01:22.470Z",
-      "tags": [
-        "privacy",
-        "surveillance",
-        "censorship-resistance",
-        "identity"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 85,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/05/age-verification-privacy-nightmare"
-        ]
-      }
-    },
-    {
       "id": "72746750-4f74-4ce3-b6d2-53c4100aef11",
       "url": "https://libertas.fgu.tech/posts/us-congress-moves-to-permanently-integrate-israeli-ai-survei",
       "title": "US Congress Moves to Permanently Integrate Israeli AI Surveillance Tech Into Military",
@@ -830,6 +808,27 @@
         "credibility_score": 90,
         "citations": [
           "https://theintercept.com/2026/06/01/ai-data-center-protest-police-surveillance/"
+        ]
+      }
+    },
+    {
+      "id": "8b9184a0-6a87-4eeb-87f1-2b308dc7e702",
+      "url": "https://libertas.fgu.tech/posts/us-senators-introduce-jawbone-act-to-combat-government-censo",
+      "title": "US Senators Introduce JAWBONE Act to Combat Government Censorship Pressure",
+      "summary": "Bipartisan JAWBONE Act would prohibit federal agencies from coercing tech platforms and broadcasters into restricting speech, creating legal remedies for victims of government 'jawboning' tactics.",
+      "content_text": "Senators Ted Cruz (R-TX) and Ron Wyden (D-OR) introduced the Justice Against Weaponized Bureaucratic Overreach to Networked Expression Act\n• Bill prohibits federal agencies from coercing broadcasters, online services, or AI services to change content\n• Creates private right of action allowing victims to recover compensatory damages in court\n• Targets government pressure on social media firms, AI chatbot makers, and broadcasters\n• Could apply to FCC Chairman Brendan Carr's pressure campaigns against TV networks\n• Enables enforcement by both individuals and state attorneys general through civil actions\n• Addresses 'jawboning' - indirect government censorship through pressure rather than direct regulation",
+      "date_published": "2026-06-11T21:01:21.013Z",
+      "date_modified": "2026-06-11T21:01:21.069Z",
+      "tags": [
+        "censorship-resistance",
+        "activism",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 88,
+        "citations": [
+          "https://arstechnica.com/tech-policy/2026/06/ted-cruz-and-ron-wyden-try-to-fight-censorship-with-bipartisan-jawbone-act/"
         ]
       }
     },
@@ -1477,6 +1476,27 @@
         "credibility_score": 85,
         "citations": [
           "https://cpj.org/2026/05/under-the-shadow-of-fear-censorship-is-ethiopias-real-election-story-journalists-say/"
+        ]
+      }
+    },
+    {
+      "id": "f3b6b58a-c54a-4daf-8851-cb3db13b99aa",
+      "url": "https://libertas.fgu.tech/posts/house-democrats-block-fisa-extension-over-trump-s-controvers",
+      "title": "House Democrats Block FISA Extension Over Trump's Controversial Intel Nominee",
+      "summary": "Democratic leaders rallied members to defeat a short-term FISA Section 702 extension, citing concerns over Trump's appointment of unqualified Bill Pulte as intelligence chief.",
+      "content_text": "House defeated short-term FISA Section 702 extension 218-198 after Democratic leadership opposition\n• 42 Democrats who previously supported 'clean' renewal in April switched positions to oppose extension\n• Opposition triggered by Trump's appointment of Bill Pulte as Director of National Intelligence\n• Section 702 allows warrantless surveillance of domestic communications, expires Friday\n• Civil liberties groups demand warrant requirement for searches of American communications\n• Only 7 Democrats voted for extension, compared to 42 who supported clean renewal in April\n• Trump nominated Jay Clayton as replacement after Tulsi Gabbard's resignation\n• Privacy advocates warn against supporting any extension without major reforms",
+      "date_published": "2026-06-11T21:02:28.041Z",
+      "date_modified": "2026-06-11T21:02:28.179Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 90,
+        "citations": [
+          "https://theintercept.com/2026/06/11/democrats-pulte-fisa-surveillance/"
         ]
       }
     },

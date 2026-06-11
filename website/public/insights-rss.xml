@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 11 Jun 2026 15:02:55 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 11 Jun 2026 21:02:28 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -339,17 +339,6 @@
     <category>censorship-resistance</category>
   </item>
   <item>
-    <title>EFF Warns Age Verification Creates Mass Surveillance Infrastructure</title>
-    <link>https://libertas.fgu.tech/posts/eff-warns-age-verification-creates-mass-surveillance-infrast</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-warns-age-verification-creates-mass-surveillance-infrast</guid>
-    <pubDate>Thu, 28 May 2026 21:01:22 GMT</pubDate>
-    <description>EFF highlights how age verification mandates force users to submit sensitive personal data to third parties, creating centralized honeypots that have already been breached multiple times.</description>
-    <category>privacy</category>
-    <category>surveillance</category>
-    <category>censorship-resistance</category>
-    <category>identity</category>
-  </item>
-  <item>
     <title>US Congress Moves to Permanently Integrate Israeli AI Surveillance Tech Into Military</title>
     <link>https://libertas.fgu.tech/posts/us-congress-moves-to-permanently-integrate-israeli-ai-survei</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/us-congress-moves-to-permanently-integrate-israeli-ai-survei</guid>
@@ -410,6 +399,16 @@
     <category>activism</category>
     <category>privacy</category>
     <category>censorship-resistance</category>
+  </item>
+  <item>
+    <title>US Senators Introduce JAWBONE Act to Combat Government Censorship Pressure</title>
+    <link>https://libertas.fgu.tech/posts/us-senators-introduce-jawbone-act-to-combat-government-censo</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/us-senators-introduce-jawbone-act-to-combat-government-censo</guid>
+    <pubDate>Thu, 11 Jun 2026 21:01:21 GMT</pubDate>
+    <description>Bipartisan JAWBONE Act would prohibit federal agencies from coercing tech platforms and broadcasters into restricting speech, creating legal remedies for victims of government &apos;jawboning&apos; tactics.</description>
+    <category>censorship-resistance</category>
+    <category>activism</category>
+    <category>sovereignty</category>
   </item>
   <item>
     <title>Meta Smart Glasses Hide Unreleased Face Recognition System</title>
@@ -721,6 +720,16 @@
     <category>surveillance</category>
     <category>activism</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>House Democrats Block FISA Extension Over Trump&apos;s Controversial Intel Nominee</title>
+    <link>https://libertas.fgu.tech/posts/house-democrats-block-fisa-extension-over-trump-s-controvers</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/house-democrats-block-fisa-extension-over-trump-s-controvers</guid>
+    <pubDate>Thu, 11 Jun 2026 21:02:28 GMT</pubDate>
+    <description>Democratic leaders rallied members to defeat a short-term FISA Section 702 extension, citing concerns over Trump&apos;s appointment of unqualified Bill Pulte as intelligence chief.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
   </item>
   <item>
     <title>Hungary&apos;s New Government Faces EU Pressure to Reverse Orbán&apos;s Media Capture and Spyware Use</title>
