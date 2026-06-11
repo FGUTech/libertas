@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 11 Jun 2026 09:01:32 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 11 Jun 2026 15:02:55 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -18,6 +18,16 @@
     <category>activism</category>
     <category>censorship-resistance</category>
     <category>sovereignty</category>
+  </item>
+  <item>
+    <title>Indonesian Authorities Disrupt Documentary Screenings, Allegedly Coerce Featured Activist</title>
+    <link>https://libertas.fgu.tech/posts/indonesian-authorities-disrupt-documentary-screenings-allege</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/indonesian-authorities-disrupt-documentary-screenings-allege</guid>
+    <pubDate>Thu, 11 Jun 2026 15:02:55 GMT</pubDate>
+    <description>Indonesian police and military systematically disrupted screenings of &apos;Pig Feast&apos; documentary criticizing government Papua policies, while activist Yasinta Moiwend disappeared then filed complaint against filmmakers alongside intelligence officials.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
   </item>
   <item>
     <title>Hungary Drops Charges Against Pride Organizers Following EU Court Ruling</title>
@@ -70,17 +80,6 @@
     <description>Treasury Secretary nominee Scott Bessent reaffirmed opposition to a U.S. central bank digital currency and urged Congress to pass cryptocurrency regulatory clarity legislation.</description>
     <category>sovereignty</category>
     <category>payments</category>
-  </item>
-  <item>
-    <title>Russia Bans 9 LGBT Rights Groups as &apos;Extremist,&apos; Creating Demand for Secure Comms</title>
-    <link>https://libertas.fgu.tech/posts/russia-bans-9-lgbt-rights-groups-as-extremist-creating-deman</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/russia-bans-9-lgbt-rights-groups-as-extremist-creating-deman</guid>
-    <pubDate>Thu, 28 May 2026 15:02:52 GMT</pubDate>
-    <description>Russian courts banned 9 LGBT support organizations as &apos;extremist&apos; with up to 12-year prison penalties, forcing groups to seek censorship-resistant tools to continue operations.</description>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-    <category>surveillance</category>
-    <category>comms</category>
   </item>
   <item>
     <title>Researchers Document &apos;Chilling Effect&apos; of Government Surveillance on Free Speech</title>
@@ -210,6 +209,17 @@
     <category>activism</category>
     <category>censorship-resistance</category>
     <category>sovereignty</category>
+  </item>
+  <item>
+    <title>Signal Alumni Launch Encrypted Spaces for Private Collaboration Apps</title>
+    <link>https://libertas.fgu.tech/posts/signal-alumni-launch-encrypted-spaces-for-private-collaborat</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/signal-alumni-launch-encrypted-spaces-for-private-collaborat</guid>
+    <pubDate>Thu, 11 Jun 2026 15:01:09 GMT</pubDate>
+    <description>Signal alumni released Encrypted Spaces, an open-source framework for building surveillance-resistant collaboration apps that could replace Slack, Discord, and Google Docs with encrypted alternatives.</description>
+    <category>privacy</category>
+    <category>comms</category>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
   </item>
   <item>
     <title>EFF Names Nicole Ozer as New Executive Director</title>
@@ -434,16 +444,6 @@
     <category>privacy</category>
   </item>
   <item>
-    <title>Kazakhstan Forces Anti-War Orthodox Priest Into Psychiatric Detention</title>
-    <link>https://libertas.fgu.tech/posts/kazakhstan-forces-anti-war-orthodox-priest-into-psychiatric-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/kazakhstan-forces-anti-war-orthodox-priest-into-psychiatric-</guid>
-    <pubDate>Thu, 28 May 2026 15:02:52 GMT</pubDate>
-    <description>Kazakhstan authorities transferred activist priest Yakov Vorontsov to psychiatric facility on dubious drug charges, following years of pressure over his anti-war stance and efforts to establish independent Orthodox community.</description>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>censorship-resistance</category>
-  </item>
-  <item>
     <title>US Treasury Seizes Nearly $1B in Iranian Crypto Assets</title>
     <link>https://libertas.fgu.tech/posts/us-treasury-seizes-nearly-1b-in-iranian-crypto-assets</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/us-treasury-seizes-nearly-1b-in-iranian-crypto-assets</guid>
@@ -506,6 +506,17 @@
     <category>privacy</category>
     <category>activism</category>
     <category>censorship-resistance</category>
+  </item>
+  <item>
+    <title>OONI Documents Women on Web Blocked in 7 Countries, Corporate Firewalls in 4 More</title>
+    <link>https://libertas.fgu.tech/posts/ooni-documents-women-on-web-blocked-in-7-countries-corporate</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/ooni-documents-women-on-web-blocked-in-7-countries-corporate</guid>
+    <pubDate>Thu, 11 Jun 2026 15:01:49 GMT</pubDate>
+    <description>OONI research reveals systematic blocking of Women on Web abortion information sites across 7 countries, plus corporate firewall blocks in 4 others, documenting global censorship of reproductive health resources.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>privacy</category>
   </item>
   <item>
     <title>Zimbabwe Opposition Activist Freed After 7 Months Detention, Torture</title>
@@ -742,6 +753,15 @@
     <category>privacy</category>
     <category>activism</category>
     <category>sovereignty</category>
+  </item>
+  <item>
+    <title>Surveillance Firm Plans Bluetooth Tracking Addition to License Plate Readers</title>
+    <link>https://libertas.fgu.tech/posts/surveillance-firm-plans-bluetooth-tracking-addition-to-licen</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/surveillance-firm-plans-bluetooth-tracking-addition-to-licen</guid>
+    <pubDate>Thu, 11 Jun 2026 15:02:05 GMT</pubDate>
+    <description>Leonardo&apos;s SignalTrace technology would add Bluetooth device detection to ALPR cameras, enabling tracking of specific individuals via their phones and wearables, not just vehicles.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
   </item>
 </channel>
 </rss>

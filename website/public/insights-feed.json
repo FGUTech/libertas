@@ -29,6 +29,27 @@
       }
     },
     {
+      "id": "02bc9db6-845e-4f07-b2fb-ea919e5f5a4f",
+      "url": "https://libertas.fgu.tech/posts/indonesian-authorities-disrupt-documentary-screenings-allege",
+      "title": "Indonesian Authorities Disrupt Documentary Screenings, Allegedly Coerce Featured Activist",
+      "summary": "Indonesian police and military systematically disrupted screenings of 'Pig Feast' documentary criticizing government Papua policies, while activist Yasinta Moiwend disappeared then filed complaint against filmmakers alongside intelligence officials.",
+      "content_text": "Activist Yasinta Moiwend went missing May 23 from her home in Merauke, South Papua\n• She reappeared May 29 in Jakarta filing police complaint against 'Pig Feast' documentary featuring her\n• Moiwend appeared alongside State Intelligence Agency and ruling Gerindra Party members\n• Family believes she was coerced and manipulated into filing the complaint [Source]\n• Indonesian military and police banned dozens of documentary screenings since April\n• Documentary criticizes government's Papua land grab policies and deforestation projects\n• Military chief cited 'security considerations' for disrupting screenings across multiple regions\n• Pattern shows coordinated government response to suppress critical documentary content",
+      "date_published": "2026-06-11T15:02:55.521Z",
+      "date_modified": "2026-06-11T15:02:55.672Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 90,
+        "citations": [
+          "https://www.hrw.org/news/2026/06/11/indonesian-authorities-intensify-crackdown-on-documentary"
+        ]
+      }
+    },
+    {
       "id": "03a74cb0-005e-44b4-a15d-f8f1dfca3785",
       "url": "https://libertas.fgu.tech/posts/hungary-drops-charges-against-pride-organizers-following-eu-",
       "title": "Hungary Drops Charges Against Pride Organizers Following EU Court Ruling",
@@ -134,28 +155,6 @@
         "citations": [
           "https://www.theblock.co/post/402971/scott-bessent-reiterates-no-cbdc",
           "https://www.theblock.co/post/402971/scott-bessent-reiterates-no-cbdc?utm_source=rss&amp;utm_medium=rss"
-        ]
-      }
-    },
-    {
-      "id": "14efa997-c1b9-4481-aece-65b2fe3c81c5",
-      "url": "https://libertas.fgu.tech/posts/russia-bans-9-lgbt-rights-groups-as-extremist-creating-deman",
-      "title": "Russia Bans 9 LGBT Rights Groups as 'Extremist,' Creating Demand for Secure Comms",
-      "summary": "Russian courts banned 9 LGBT support organizations as 'extremist' with up to 12-year prison penalties, forcing groups to seek censorship-resistant tools to continue operations.",
-      "content_text": "Russian courts banned 9 LGBT rights groups across 7 regions as 'extremist' between March-May 2026\n• Criminal penalties include up to 12 years for leading banned groups, 6 years for participation, 8 years for donations\n• Even displaying rainbow flags or organization logos now carries up to 4 years prison under extremism laws\n• Groups like Coming Out, Russian LGBT Network, and Centre T pledged to continue work despite bans\n• At least 9 people already convicted on criminal charges, 25+ facing charges under 'LGBT extremism' designation\n• Courts cited 'expert assessments' claiming groups 'belittled Russian spiritual values' and created 'anti-state hierarchy'\n• Organizations forced underground creates direct demand for secure communications and anonymous coordination tools\n• Pattern demonstrates systematic criminalization of civil society requiring operational security solutions",
-      "date_published": "2026-05-28T15:02:52.272Z",
-      "date_modified": "2026-05-28T15:02:52.404Z",
-      "tags": [
-        "censorship-resistance",
-        "activism",
-        "surveillance",
-        "comms"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.hrw.org/news/2026/05/28/russia-lgbt-rights-groups-further-criminalized"
         ]
       }
     },
@@ -419,6 +418,28 @@
         "credibility_score": 85,
         "citations": [
           "https://theintercept.com/2026/06/08/malik-muhammad-prison-oregon-south-carolina/"
+        ]
+      }
+    },
+    {
+      "id": "4283b847-8e6a-4f34-8933-f2f7617c99d0",
+      "url": "https://libertas.fgu.tech/posts/signal-alumni-launch-encrypted-spaces-for-private-collaborat",
+      "title": "Signal Alumni Launch Encrypted Spaces for Private Collaboration Apps",
+      "summary": "Signal alumni released Encrypted Spaces, an open-source framework for building surveillance-resistant collaboration apps that could replace Slack, Discord, and Google Docs with encrypted alternatives.",
+      "content_text": "Signal alumni launched Encrypted Spaces, a new open-source project\n• Framework enables building private collaboration applications\n• Targets features comparable to Slack, Discord, and Google Docs\n• Built-in protection against surveillance from ground up\n• Open-source model allows community development and auditing\n• Could enable decentralized alternatives to mainstream collaboration platforms\n• Represents potential shift toward privacy-first workplace tools",
+      "date_published": "2026-06-11T15:01:09.456Z",
+      "date_modified": "2026-06-11T15:01:09.542Z",
+      "tags": [
+        "privacy",
+        "comms",
+        "surveillance",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://www.wired.com/story/signal-alums-release-encrypted-spaces-a-new-system-for-building-private-collaboration-apps/"
         ]
       }
     },
@@ -878,27 +899,6 @@
       }
     },
     {
-      "id": "9c4fa842-cc0c-445f-b8d8-4953a1f164fd",
-      "url": "https://libertas.fgu.tech/posts/kazakhstan-forces-anti-war-orthodox-priest-into-psychiatric-",
-      "title": "Kazakhstan Forces Anti-War Orthodox Priest Into Psychiatric Detention",
-      "summary": "Kazakhstan authorities transferred activist priest Yakov Vorontsov to psychiatric facility on dubious drug charges, following years of pressure over his anti-war stance and efforts to establish independent Orthodox community.",
-      "content_text": "Yakov Vorontsov, defrocked Orthodox priest, forcibly transferred to psychiatric facility on May 25, 2026\n• Originally arrested February 13 on drug charges that he claims were fabricated with planted evidence\n• Targeted for opposing Russia's Ukraine war and attempting to register independent Orthodox community\n• Court ordered psychiatric detention as 'security measure' without defendant or lawyer present\n• Authorities denied family visits, confiscated religious materials, forcibly shaved head/beard\n• Pattern follows previous criminal investigation for 'inciting religious discord' closed for lack of evidence\n• UN experts raised concerns about the case in March 31 communication to Kazakhstan government\n• HRW documents this as part of Kazakhstan's growing use of psychiatric detention for political repression",
-      "date_published": "2026-05-28T15:02:52.273Z",
-      "date_modified": "2026-05-28T15:02:52.404Z",
-      "tags": [
-        "surveillance",
-        "activism",
-        "censorship-resistance"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 75,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.hrw.org/news/2026/05/28/kazakhstan-psychiatric-detention-of-activist-priest"
-        ]
-      }
-    },
-    {
       "id": "a5e3acf5-d607-4058-a396-49867ff615a1",
       "url": "https://libertas.fgu.tech/posts/us-treasury-seizes-nearly-1b-in-iranian-crypto-assets",
       "title": "US Treasury Seizes Nearly $1B in Iranian Crypto Assets",
@@ -1028,6 +1028,28 @@
         "credibility_score": 95,
         "citations": [
           "https://www.eff.org/deeplinks/2026/06/get-flock-out-here"
+        ]
+      }
+    },
+    {
+      "id": "b38cf455-565f-4929-bba3-2514e1d76b0f",
+      "url": "https://libertas.fgu.tech/posts/ooni-documents-women-on-web-blocked-in-7-countries-corporate",
+      "title": "OONI Documents Women on Web Blocked in 7 Countries, Corporate Firewalls in 4 More",
+      "summary": "OONI research reveals systematic blocking of Women on Web abortion information sites across 7 countries, plus corporate firewall blocks in 4 others, documenting global censorship of reproductive health resources.",
+      "content_text": "OONI analyzed global data from November 2025 to April 2026 documenting Women on Web domain blocking\n• 7 countries showing government-level blocks: Iran, Türkiye, Philippines, South Korea, Spain, Kuwait, Argentina\n• 4 additional countries with corporate firewall blocks: Poland, Kenya, Pakistan, Georgia\n• Women on Web provides self-managed abortion information and pill access in restrictive jurisdictions\n• OONI updated Citizen Lab test lists to include reproductive health domains for ongoing monitoring\n• Research documents censorship beyond website blocks including social media and search engine suppression\n• Women on Web developed 'The A-Line' digital resilience strategy to counter censorship\n• Study shows intersection of government censorship with reproductive rights restrictions\n• Corporate-level filtering adds additional layer of access restrictions beyond state censorship\n• Report demonstrates how technical measurement can expose systematic rights violations",
+      "date_published": "2026-06-11T15:01:49.748Z",
+      "date_modified": "2026-06-11T15:01:49.866Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://ooni.org/post/2026-women-on-web-blocked/"
         ]
       }
     },
@@ -1520,6 +1542,26 @@
         "credibility_score": 95,
         "citations": [
           "https://www.eff.org/deeplinks/2026/06/enshittification-merch-actually-fights-enshittification"
+        ]
+      }
+    },
+    {
+      "id": "fd884771-203d-416f-a2c9-6b88dc280ac3",
+      "url": "https://libertas.fgu.tech/posts/surveillance-firm-plans-bluetooth-tracking-addition-to-licen",
+      "title": "Surveillance Firm Plans Bluetooth Tracking Addition to License Plate Readers",
+      "summary": "Leonardo's SignalTrace technology would add Bluetooth device detection to ALPR cameras, enabling tracking of specific individuals via their phones and wearables, not just vehicles.",
+      "content_text": "Leonardo developing SignalTrace to add Bluetooth sensors to automatic license plate readers (ALPRs)\n• Technology would capture unique identifiers from mobile phones, wearables, and other Bluetooth devices in vehicles\n• Transforms ALPR systems from vehicle tracking to individual person tracking capabilities\n• Would enable law enforcement to identify specific drivers and passengers through their devices\n• ALPR cameras already widely deployed across the United States infrastructure\n• Represents significant expansion of mass surveillance capabilities using existing camera networks\n• Schneier notes smartphone data collection already exceeds this level of surveillance [Source]",
+      "date_published": "2026-06-11T15:02:05.182Z",
+      "date_modified": "2026-06-11T15:02:05.283Z",
+      "tags": [
+        "surveillance",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.schneier.com/blog/archives/2026/06/enhanced-license-plate-tracking.html"
         ]
       }
     }
