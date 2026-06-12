@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 12 Jun 2026 09:01:04 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 12 Jun 2026 15:02:05 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -18,6 +18,17 @@
     <category>activism</category>
     <category>censorship-resistance</category>
     <category>sovereignty</category>
+  </item>
+  <item>
+    <title>Pakistani Journalist Detained Again Under Cybercrime Laws for Kashmir Reporting</title>
+    <link>https://libertas.fgu.tech/posts/pakistani-journalist-detained-again-under-cybercrime-laws-fo</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/pakistani-journalist-detained-again-under-cybercrime-laws-fo</guid>
+    <pubDate>Fri, 12 Jun 2026 15:02:05 GMT</pubDate>
+    <description>Pakistani authorities re-arrested journalist Sohrab Barkat for YouTube reports on Kashmir protests, seizing devices and charging him under cybercrime laws that criminalize &apos;false information.&apos;</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
+    <category>privacy</category>
   </item>
   <item>
     <title>Indonesian Authorities Disrupt Documentary Screenings, Allegedly Coerce Featured Activist</title>
@@ -168,17 +179,6 @@
     <category>payments</category>
   </item>
   <item>
-    <title>Schneier: Systematic Chilling Effects as Government Strategy Against Dissent</title>
-    <link>https://libertas.fgu.tech/posts/schneier-systematic-chilling-effects-as-government-strategy-</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/schneier-systematic-chilling-effects-as-government-strategy-</guid>
-    <pubDate>Fri, 29 May 2026 15:02:27 GMT</pubDate>
-    <description>Bruce Schneier and Jon Penney analyze how surveillance, threats, and abuse of power create systematic chilling effects that suppress dissent and activism, arguing this represents a deliberate strategy rather than incidental government overreach.</description>
-    <category>surveillance</category>
-    <category>censorship-resistance</category>
-    <category>activism</category>
-    <category>privacy</category>
-  </item>
-  <item>
     <title>FISA Section 702 Mass Surveillance Authority Expires After Congress Blocks Renewal</title>
     <link>https://libertas.fgu.tech/posts/fisa-section-702-mass-surveillance-authority-expires-after-c</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/fisa-section-702-mass-surveillance-authority-expires-after-c</guid>
@@ -277,16 +277,6 @@
     <category>censorship-resistance</category>
     <category>activism</category>
     <category>privacy</category>
-  </item>
-  <item>
-    <title>Texas Forms Bitcoin Reserve Committee, Moves to Direct BTC Custody</title>
-    <link>https://libertas.fgu.tech/posts/texas-forms-bitcoin-reserve-committee-moves-to-direct-btc-cu</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/texas-forms-bitcoin-reserve-committee-moves-to-direct-btc-cu</guid>
-    <pubDate>Fri, 29 May 2026 15:01:15 GMT</pubDate>
-    <description>Texas announced a 5-member advisory committee for its Strategic Bitcoin Reserve and issued RFP for crypto custodian to transition from ETF exposure to direct Bitcoin custody.</description>
-    <category>bitcoin</category>
-    <category>sovereignty</category>
-    <category>payments</category>
   </item>
   <item>
     <title>Azerbaijan Seeks 16-Year Prison Terms for Independent Media Workers Over Foreign Funding</title>
@@ -443,6 +433,16 @@
     <category>censorship-resistance</category>
     <category>activism</category>
     <category>comms</category>
+  </item>
+  <item>
+    <title>Citizen Lab Researcher Details State Surveillance Abuse Across Latin America</title>
+    <link>https://libertas.fgu.tech/posts/citizen-lab-researcher-details-state-surveillance-abuse-acro</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/citizen-lab-researcher-details-state-surveillance-abuse-acro</guid>
+    <pubDate>Fri, 12 Jun 2026 15:01:40 GMT</pubDate>
+    <description>Citizen Lab&apos;s Luis Fernando García presented on government abuse of spyware, mass surveillance, and advertising intelligence targeting civil society across Latin America.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
   </item>
   <item>
     <title>Bangladesh&apos;s Cycle of Press Repression Continues Under New Government</title>
