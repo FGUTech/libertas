@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Thu, 11 Jun 2026 21:02:28 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 12 Jun 2026 03:01:30 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -71,15 +71,6 @@
     <category>censorship-resistance</category>
     <category>surveillance</category>
     <category>identity</category>
-  </item>
-  <item>
-    <title>Treasury Nominee Bessent Reiterates Opposition to CBDC, Pushes Crypto Clarity Act</title>
-    <link>https://libertas.fgu.tech/posts/treasury-nominee-bessent-reiterates-opposition-to-cbdc-pushe</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/treasury-nominee-bessent-reiterates-opposition-to-cbdc-pushe</guid>
-    <pubDate>Fri, 29 May 2026 03:01:05 GMT</pubDate>
-    <description>Treasury Secretary nominee Scott Bessent reaffirmed opposition to a U.S. central bank digital currency and urged Congress to pass cryptocurrency regulatory clarity legislation.</description>
-    <category>sovereignty</category>
-    <category>payments</category>
   </item>
   <item>
     <title>Researchers Document &apos;Chilling Effect&apos; of Government Surveillance on Free Speech</title>
@@ -186,6 +177,17 @@
     <category>censorship-resistance</category>
     <category>activism</category>
     <category>privacy</category>
+  </item>
+  <item>
+    <title>FISA Section 702 Mass Surveillance Authority Expires After Congress Blocks Renewal</title>
+    <link>https://libertas.fgu.tech/posts/fisa-section-702-mass-surveillance-authority-expires-after-c</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/fisa-section-702-mass-surveillance-authority-expires-after-c</guid>
+    <pubDate>Fri, 12 Jun 2026 03:01:30 GMT</pubDate>
+    <description>Congress blocked renewal of FISA Section 702, the warrantless surveillance program that sweeps up Americans&apos; communications, after bipartisan coalition demanded warrant requirements.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>censorship-resistance</category>
+    <category>activism</category>
   </item>
   <item>
     <title>LONDA 2025 Report: Africa&apos;s Digital Rights Show Mixed Progress Amid Authoritarian Pushback</title>

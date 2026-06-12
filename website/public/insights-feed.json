@@ -138,27 +138,6 @@
       }
     },
     {
-      "id": "132b283a-d9e0-4623-b0b9-406c805f8201",
-      "url": "https://libertas.fgu.tech/posts/treasury-nominee-bessent-reiterates-opposition-to-cbdc-pushe",
-      "title": "Treasury Nominee Bessent Reiterates Opposition to CBDC, Pushes Crypto Clarity Act",
-      "summary": "Treasury Secretary nominee Scott Bessent reaffirmed opposition to a U.S. central bank digital currency and urged Congress to pass cryptocurrency regulatory clarity legislation.",
-      "content_text": "Scott Bessent reiterated 'no CBDC' stance during Thursday press briefing\n• Urged House and Senate to advance the Clarity Act to completion\n• Signals Trump administration's continued opposition to central bank digital currency\n• Clarity Act would provide regulatory framework for cryptocurrency industry\n• Position aligns with concerns about CBDC enabling financial surveillance\n• Congressional action needed to formalize crypto regulatory approach",
-      "date_published": "2026-05-29T03:01:05.334Z",
-      "date_modified": "2026-05-29T03:01:05.389Z",
-      "tags": [
-        "sovereignty",
-        "payments"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 75,
-        "credibility_score": 85,
-        "citations": [
-          "https://www.theblock.co/post/402971/scott-bessent-reiterates-no-cbdc",
-          "https://www.theblock.co/post/402971/scott-bessent-reiterates-no-cbdc?utm_source=rss&amp;utm_medium=rss"
-        ]
-      }
-    },
-    {
       "id": "15114414-1f79-47ba-adc6-8d28025be064",
       "url": "https://libertas.fgu.tech/posts/researchers-document-chilling-effect-of-government-surveilla",
       "title": "Researchers Document 'Chilling Effect' of Government Surveillance on Free Speech",
@@ -373,6 +352,28 @@
         "credibility_score": 90,
         "citations": [
           "https://www.schneier.com/blog/archives/2026/05/chilling-effects.html"
+        ]
+      }
+    },
+    {
+      "id": "3eff42dc-6ad2-4c63-a43a-5e1e827ced63",
+      "url": "https://libertas.fgu.tech/posts/fisa-section-702-mass-surveillance-authority-expires-after-c",
+      "title": "FISA Section 702 Mass Surveillance Authority Expires After Congress Blocks Renewal",
+      "summary": "Congress blocked renewal of FISA Section 702, the warrantless surveillance program that sweeps up Americans' communications, after bipartisan coalition demanded warrant requirements.",
+      "content_text": "House rejected Section 702 extension 218-198, Senate Democrats also blocked parallel effort\n• Section 702 allows warrantless collection of foreign communications but routinely captures Americans' data\n• Bipartisan coalition finally had enough votes to demand warrant requirement before renewal\n• Surveillance continues through March 2027 under existing court orders, but some carriers may stop cooperating\n• 2024 warrant amendment failed by just 3 votes (212-212 tie), showing growing reform momentum\n• Intelligence agencies and telecoms face legal uncertainty without active statutory authority\n• Historical pattern: both parties expand surveillance when in power, oppose when out of power",
+      "date_published": "2026-06-12T03:01:30.604Z",
+      "date_modified": "2026-06-12T03:01:30.756Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "censorship-resistance",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 88,
+        "citations": [
+          "https://proton.me/blog/fisa-702-expiring-surveillance-reform"
         ]
       }
     },
