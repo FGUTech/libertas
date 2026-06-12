@@ -445,6 +445,28 @@
       }
     },
     {
+      "id": "4686fdfa-a767-4808-8f84-5608795cf3b4",
+      "url": "https://libertas.fgu.tech/posts/proton-releases-journalist-security-guide-for-2026-fifa-worl",
+      "title": "Proton Releases Journalist Security Guide for 2026 FIFA World Cup Coverage",
+      "summary": "Proton published comprehensive security guidance for 50,000 journalists covering the 2026 World Cup, addressing US travel bans, warrantless device searches, and digital protection strategies.",
+      "content_text": "Guide targets estimated 50,000 journalists covering 2026 FIFA World Cup across US, Mexico, and Canada\n• US travel bans affect citizens from 12+ countries including Iran, Libya, Somalia, Sudan, and Yemen\n• CBP can search devices without warrants at borders, creating surveillance risks for journalists\n• Committee to Protect Journalists warns of 'unpredictable environment' with inconsistent enforcement\n• Recommended protections include end-to-end encryption, password managers, 2FA, and cloud backups\n• Legal resources provided: CPJ emergency hotline (1-206-590-6191) and Press Freedom Tracker\n• $625 million in federal security funding allocated to 11 US host cities\n• Proton offers business discounts to news organizations for enhanced protection",
+      "date_published": "2026-06-12T09:01:04.120Z",
+      "date_modified": "2026-06-12T09:01:04.255Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "comms",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 72,
+        "credibility_score": 85,
+        "citations": [
+          "https://proton.me/blog/journalist-safety-guide-2026-fifa-world-cup"
+        ]
+      }
+    },
+    {
       "id": "49316e2d-a440-4bbb-9be8-1fce2e235471",
       "url": "https://libertas.fgu.tech/posts/eff-names-nicole-ozer-as-new-executive-director",
       "title": "EFF Names Nicole Ozer as New Executive Director",

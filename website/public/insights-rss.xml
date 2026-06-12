@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 12 Jun 2026 03:01:30 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 12 Jun 2026 09:01:04 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -221,6 +221,17 @@
     <category>privacy</category>
     <category>comms</category>
     <category>surveillance</category>
+    <category>censorship-resistance</category>
+  </item>
+  <item>
+    <title>Proton Releases Journalist Security Guide for 2026 FIFA World Cup Coverage</title>
+    <link>https://libertas.fgu.tech/posts/proton-releases-journalist-security-guide-for-2026-fifa-worl</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/proton-releases-journalist-security-guide-for-2026-fifa-worl</guid>
+    <pubDate>Fri, 12 Jun 2026 09:01:04 GMT</pubDate>
+    <description>Proton published comprehensive security guidance for 50,000 journalists covering the 2026 World Cup, addressing US travel bans, warrantless device searches, and digital protection strategies.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>comms</category>
     <category>censorship-resistance</category>
   </item>
   <item>
