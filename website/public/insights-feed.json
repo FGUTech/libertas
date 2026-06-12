@@ -313,28 +313,6 @@
       }
     },
     {
-      "id": "2e772a3b-3b25-4844-a9ba-5c2926727221",
-      "url": "https://libertas.fgu.tech/posts/jpmorgan-ceo-dimon-declares-war-on-crypto-clarity-act-attack",
-      "title": "JPMorgan CEO Dimon Declares War on Crypto Clarity Act, Attacks Coinbase",
-      "summary": "JPMorgan's Jamie Dimon vows to fight the Clarity Act, claiming it lets crypto firms operate like banks without regulatory obligations, while calling Coinbase CEO Armstrong 'full of sh*t'.",
-      "content_text": "JPMorgan CEO Jamie Dimon publicly opposes the pending Clarity Act crypto legislation\n• Claims the Act allows crypto firms to pay interest on stablecoins without banking protections\n• Argues crypto platforms need full banking regulations: AML, BSA, FDIC insurance, capital requirements\n• Warns stablecoin rewards will accelerate deposit flight from traditional banks\n• Calls Coinbase CEO Brian Armstrong 'full of sh*t' for lobbying efforts in Washington\n• American Bankers Association and community banks aligned against current bill form\n• Dimon frames this as existential fight for traditional banking model",
-      "date_published": "2026-05-29T21:00:39.687Z",
-      "date_modified": "2026-05-29T21:00:39.754Z",
-      "tags": [
-        "bitcoin",
-        "payments",
-        "sovereignty",
-        "censorship-resistance"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 85,
-        "citations": [
-          "https://bitcoinmagazine.com/news/jpmorgan-chase-ceo-dimon-declares-war"
-        ]
-      }
-    },
-    {
       "id": "3339e8d9-976c-4564-8350-abe7508592eb",
       "url": "https://libertas.fgu.tech/posts/circle-freezes-12-6m-usdc-linked-to-privacy-protocol-zama",
       "title": "Circle Freezes $12.6M USDC Linked to Privacy Protocol Zama",
@@ -621,27 +599,6 @@
       }
     },
     {
-      "id": "6a03abf8-7006-4067-a72d-01a3900a574d",
-      "url": "https://libertas.fgu.tech/posts/citizen-lab-exposes-mobile-networks-as-covert-surveillance-p",
-      "title": "Citizen Lab Exposes Mobile Networks as Covert Surveillance Platforms",
-      "summary": "New Citizen Lab research reveals how weaknesses in mobile network technology and governance enable sophisticated surveillance campaigns targeting users.",
-      "content_text": "Citizen Lab researchers documented surveillance campaigns exploiting mobile network vulnerabilities\n• Study co-authored by Swantje Lange and Gary Miller exposes governance and technical weaknesses\n• Mobile networks described as 'highly opaque and extremely complex' enabling covert surveillance\n• Research shows how network infrastructure can be weaponized for espionage operations\n• Findings highlight systemic privacy risks in telecommunications infrastructure\n• Academic validation of mobile network surveillance threats from established research institution",
-      "date_published": "2026-05-29T21:01:45.200Z",
-      "date_modified": "2026-05-29T21:01:45.275Z",
-      "tags": [
-        "surveillance",
-        "privacy",
-        "comms"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 95,
-        "citations": [
-          "https://citizenlab.ca/researchers-uncover-espionage-in-mobile-networks/"
-        ]
-      }
-    },
-    {
       "id": "6d398b04-1d6a-4d47-946f-1d5dc08b1f48",
       "url": "https://libertas.fgu.tech/posts/eff-challenges-state-social-media-bans-for-youth-based-on-sh",
       "title": "EFF Challenges State Social Media Bans for Youth Based on 'Shockingly Shaky Science'",
@@ -921,25 +878,25 @@
       }
     },
     {
-      "id": "a5e3acf5-d607-4058-a396-49867ff615a1",
-      "url": "https://libertas.fgu.tech/posts/us-treasury-seizes-nearly-1b-in-iranian-crypto-assets",
-      "title": "US Treasury Seizes Nearly $1B in Iranian Crypto Assets",
-      "summary": "Treasury Secretary Scott Bessent disclosed the U.S. has seized nearly $1 billion in cryptocurrency assets from Iran, demonstrating state capacity for large-scale crypto confiscation.",
-      "content_text": "US Treasury has seized nearly $1 billion in Iranian cryptocurrency assets\n• Treasury Secretary Scott Bessent made the disclosure publicly\n• Seizure represents significant escalation from earlier $500 million figure reported this year\n• Demonstrates state capacity to confiscate digital assets at scale\n• Likely tied to sanctions enforcement against Iranian entities\n• Highlights vulnerability of centralized exchange custody\n• Shows importance of self-custody and privacy-preserving tools",
-      "date_published": "2026-05-29T21:01:00.221Z",
-      "date_modified": "2026-05-29T21:01:00.294Z",
+      "id": "a2367cfc-26bd-4cdd-9c1a-2d559e5b3266",
+      "url": "https://libertas.fgu.tech/posts/azerbaijan-uses-legal-manipulation-to-re-arrest-exiled-journ",
+      "title": "Azerbaijan Uses Legal Manipulation to Re-Arrest Exiled Journalist After Forced Return",
+      "summary": "Azerbaijani journalist Afgan Sadigov was re-arrested after authorities terminated then revived criminal charges to facilitate his forced deportation from Georgia, illustrating sophisticated transnational repression tactics.",
+      "content_text": "Afgan Sadigov, editor-in-chief of Azel.TV, detained by masked men in Baku on June 8, 2026\n• Azerbaijan initially terminated criminal case in April 2026 to bypass European Court of Human Rights protection order\n• Georgia deported Sadigov despite binding European Court interim measure protecting him from transfer\n• Azerbaijani authorities then revived the same criminal case to justify re-arrest after his return\n• Pattern demonstrates coordinated legal manipulation between Azerbaijan and Georgia to silence exile critic\n• European Court's interim measures proved ineffective against administrative deportation workaround\n• Case illustrates how authoritarian states coordinate across borders to target independent media",
+      "date_published": "2026-06-12T21:02:05.040Z",
+      "date_modified": "2026-06-12T21:02:05.162Z",
       "tags": [
-        "bitcoin",
-        "sovereignty",
-        "sanctions",
-        "seizure"
+        "censorship-resistance",
+        "surveillance",
+        "activism",
+        "sovereignty"
       ],
       "_libertas": {
-        "freedom_relevance_score": 85,
-        "credibility_score": 80,
+        "freedom_relevance_score": 75,
+        "credibility_score": 95,
         "citations": [
-          "https://www.theblock.co/post/403075/us-has-seized-nearly-1-billion-in-crypto-from-iran-bessent-says",
-          "https://www.theblock.co/post/403075/us-has-seized-nearly-1-billion-in-crypto-from-iran-bessent-says?utm_source=rss&amp;utm_medium=rss"
+          "https://www.hrw.org/news/2026/06/12/azerbaijan-rearrests-journalist-forcibly-returned-from-georgia",
+          "https://www.hrw.org/news/2026/06/12/belarus-crackdown-on-an-independent-university"
         ]
       }
     },
@@ -1435,6 +1392,29 @@
         "citations": [
           "https://cointelegraph.com/news/russian-ruble-stablecoin-growing-western-sanctions-report",
           "https://cointelegraph.com/news/russian-ruble-stablecoin-growing-western-sanctions-report?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+        ]
+      }
+    },
+    {
+      "id": "e64c8c22-1ec2-4980-b17b-a97fdf2228c5",
+      "url": "https://libertas.fgu.tech/posts/egyptian-lgbtq-community-faces-digital-surveillance-and-onli",
+      "title": "Egyptian LGBTQ+ Community Faces Digital Surveillance and Online Harassment",
+      "summary": "LGBTQ+ individuals in Egypt navigate severe digital risks from state surveillance via cybercrime laws and coordinated anti-LGBTQ+ campaigns, forcing community isolation and adoption of encrypted communications.",
+      "content_text": "Egypt criminalizes same-sex relations under prostitution and cybercrime laws enforced through Economic Courts\n• LGBTQ+ Egyptians face state surveillance, far-right targeting, and online harassment forcing digital isolation\n• Organized 'Fetrah' campaign launched coordinated anti-LGBTQ+ attacks across Twitter, Instagram, Facebook, and Telegram\n• Community members teach digital security practices including Signal/Wire encryption and operational security\n• Cybercrime laws increasingly applied to target LGBTQ+ individuals online since 2019\n• Many queer Egyptians delete social media accounts and rebuild identities for safety\n• Threats come from multiple vectors: state actors, religious groups, and even within LGBTQ+ community\n• Digital safety practices include avoiding personal information sharing, location masking, and two-factor authentication",
+      "date_published": "2026-06-12T21:02:47.910Z",
+      "date_modified": "2026-06-12T21:02:48.056Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "censorship-resistance",
+        "comms",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 82,
+        "credibility_score": 85,
+        "citations": [
+          "https://globalvoices.org/2026/06/12/for-lgbtq-people-in-egypt-the-internet-is-both-a-lifeline-and-a-trap/"
         ]
       }
     },

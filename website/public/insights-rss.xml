@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 12 Jun 2026 15:02:05 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 12 Jun 2026 21:02:47 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -158,17 +158,6 @@
     <category>privacy</category>
   </item>
   <item>
-    <title>JPMorgan CEO Dimon Declares War on Crypto Clarity Act, Attacks Coinbase</title>
-    <link>https://libertas.fgu.tech/posts/jpmorgan-ceo-dimon-declares-war-on-crypto-clarity-act-attack</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/jpmorgan-ceo-dimon-declares-war-on-crypto-clarity-act-attack</guid>
-    <pubDate>Fri, 29 May 2026 21:00:39 GMT</pubDate>
-    <description>JPMorgan&apos;s Jamie Dimon vows to fight the Clarity Act, claiming it lets crypto firms operate like banks without regulatory obligations, while calling Coinbase CEO Armstrong &apos;full of sh*t&apos;.</description>
-    <category>bitcoin</category>
-    <category>payments</category>
-    <category>sovereignty</category>
-    <category>censorship-resistance</category>
-  </item>
-  <item>
     <title>Circle Freezes $12.6M USDC Linked to Privacy Protocol Zama</title>
     <link>https://libertas.fgu.tech/posts/circle-freezes-12-6m-usdc-linked-to-privacy-protocol-zama</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/circle-freezes-12-6m-usdc-linked-to-privacy-protocol-zama</guid>
@@ -312,16 +301,6 @@
     <category>activism</category>
   </item>
   <item>
-    <title>Citizen Lab Exposes Mobile Networks as Covert Surveillance Platforms</title>
-    <link>https://libertas.fgu.tech/posts/citizen-lab-exposes-mobile-networks-as-covert-surveillance-p</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/citizen-lab-exposes-mobile-networks-as-covert-surveillance-p</guid>
-    <pubDate>Fri, 29 May 2026 21:01:45 GMT</pubDate>
-    <description>New Citizen Lab research reveals how weaknesses in mobile network technology and governance enable sophisticated surveillance campaigns targeting users.</description>
-    <category>surveillance</category>
-    <category>privacy</category>
-    <category>comms</category>
-  </item>
-  <item>
     <title>EFF Challenges State Social Media Bans for Youth Based on &apos;Shockingly Shaky Science&apos;</title>
     <link>https://libertas.fgu.tech/posts/eff-challenges-state-social-media-bans-for-youth-based-on-sh</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-challenges-state-social-media-bans-for-youth-based-on-sh</guid>
@@ -456,15 +435,15 @@
     <category>privacy</category>
   </item>
   <item>
-    <title>US Treasury Seizes Nearly $1B in Iranian Crypto Assets</title>
-    <link>https://libertas.fgu.tech/posts/us-treasury-seizes-nearly-1b-in-iranian-crypto-assets</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/us-treasury-seizes-nearly-1b-in-iranian-crypto-assets</guid>
-    <pubDate>Fri, 29 May 2026 21:01:00 GMT</pubDate>
-    <description>Treasury Secretary Scott Bessent disclosed the U.S. has seized nearly $1 billion in cryptocurrency assets from Iran, demonstrating state capacity for large-scale crypto confiscation.</description>
-    <category>bitcoin</category>
+    <title>Azerbaijan Uses Legal Manipulation to Re-Arrest Exiled Journalist After Forced Return</title>
+    <link>https://libertas.fgu.tech/posts/azerbaijan-uses-legal-manipulation-to-re-arrest-exiled-journ</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/azerbaijan-uses-legal-manipulation-to-re-arrest-exiled-journ</guid>
+    <pubDate>Fri, 12 Jun 2026 21:02:05 GMT</pubDate>
+    <description>Azerbaijani journalist Afgan Sadigov was re-arrested after authorities terminated then revived criminal charges to facilitate his forced deportation from Georgia, illustrating sophisticated transnational repression tactics.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>activism</category>
     <category>sovereignty</category>
-    <category>sanctions</category>
-    <category>seizure</category>
   </item>
   <item>
     <title>EFF Warns Congress About AI-Powered Mass Government Surveillance Risks</title>
@@ -702,6 +681,18 @@
     <category>payments</category>
     <category>sovereignty</category>
     <category>censorship-resistance</category>
+  </item>
+  <item>
+    <title>Egyptian LGBTQ+ Community Faces Digital Surveillance and Online Harassment</title>
+    <link>https://libertas.fgu.tech/posts/egyptian-lgbtq-community-faces-digital-surveillance-and-onli</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/egyptian-lgbtq-community-faces-digital-surveillance-and-onli</guid>
+    <pubDate>Fri, 12 Jun 2026 21:02:47 GMT</pubDate>
+    <description>LGBTQ+ individuals in Egypt navigate severe digital risks from state surveillance via cybercrime laws and coordinated anti-LGBTQ+ campaigns, forcing community isolation and adoption of encrypted communications.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>censorship-resistance</category>
+    <category>comms</category>
+    <category>activism</category>
   </item>
   <item>
     <title>Jordan Uses Cybercrime Law to Prosecute Facebook Posts Criticizing Israel Relations</title>
