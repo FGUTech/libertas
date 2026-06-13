@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 12 Jun 2026 21:02:47 GMT</lastBuildDate>
+  <lastBuildDate>Sat, 13 Jun 2026 03:01:02 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -71,17 +71,6 @@
     <category>payments</category>
     <category>sanctions</category>
     <category>sovereignty</category>
-  </item>
-  <item>
-    <title>California Expands Age-Gating to Browsers/Websites, Exempts Open Source</title>
-    <link>https://libertas.fgu.tech/posts/california-expands-age-gating-to-browsers-websites-exempts-o</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/california-expands-age-gating-to-browsers-websites-exempts-o</guid>
-    <pubDate>Sat, 30 May 2026 03:00:29 GMT</pubDate>
-    <description>CA&apos;s AB 1856 exempts open-source OS from age verification while expanding mandatory age-bracketing from OS/app stores to all browsers and websites.</description>
-    <category>privacy</category>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>identity</category>
   </item>
   <item>
     <title>Researchers Document &apos;Chilling Effect&apos; of Government Surveillance on Free Speech</title>
@@ -244,6 +233,16 @@
     <category>privacy</category>
     <category>activism</category>
     <category>sovereignty</category>
+  </item>
+  <item>
+    <title>Section 702 FISA Mass Surveillance Authority Expires After Congressional Deadlock</title>
+    <link>https://libertas.fgu.tech/posts/section-702-fisa-mass-surveillance-authority-expires-after-c</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/section-702-fisa-mass-surveillance-authority-expires-after-c</guid>
+    <pubDate>Sat, 13 Jun 2026 03:01:02 GMT</pubDate>
+    <description>Section 702 of FISA, which allows warrantless collection of Americans&apos; communications, has expired after Congress failed to reauthorize it due to concerns over Trump&apos;s DNI nominee Bill Pulte.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
   </item>
   <item>
     <title>Gulf States Deploy Mass Phone Surveillance Against Migrant Workers During Regional Conflict</title>

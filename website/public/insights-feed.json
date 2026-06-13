@@ -138,28 +138,6 @@
       }
     },
     {
-      "id": "0931a1c8-15cd-4809-96e2-30c55c0ad172",
-      "url": "https://libertas.fgu.tech/posts/california-expands-age-gating-to-browsers-websites-exempts-o",
-      "title": "California Expands Age-Gating to Browsers/Websites, Exempts Open Source",
-      "summary": "CA's AB 1856 exempts open-source OS from age verification while expanding mandatory age-bracketing from OS/app stores to all browsers and websites.",
-      "content_text": "AB 1856 amends last year's AB 1043 Digital Age Assurance Act with mixed results\n• New exemption excludes open-source operating systems from age-bracketing requirements\n• Bill expands age verification mandates to cover all web browsers and websites\n• Open-source exemption applies to software with copy/redistribute/modify rights\n• EFF warns expansion creates 'nearly impossible' barrier to avoiding age gates\n• Age-bracketing pressures companies toward ID checks and biometric scanning\n• Bill passed Assembly 68-1, now moves to California Senate for consideration\n• Ambiguity remains on commercial products incorporating open-source components",
-      "date_published": "2026-05-30T03:00:29.575Z",
-      "date_modified": "2026-05-30T03:00:29.652Z",
-      "tags": [
-        "privacy",
-        "censorship-resistance",
-        "surveillance",
-        "identity"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/05/one-step-forward-two-steps-back-cas-ab-1856-exempts-open-source-expands-age-gating"
-        ]
-      }
-    },
-    {
       "id": "15114414-1f79-47ba-adc6-8d28025be064",
       "url": "https://libertas.fgu.tech/posts/researchers-document-chilling-effect-of-government-surveilla",
       "title": "Researchers Document 'Chilling Effect' of Government Surveillance on Free Speech",
@@ -485,6 +463,27 @@
         "credibility_score": 88,
         "citations": [
           "https://theintercept.com/2026/06/10/nsa-surveillance-fisa-renewal-bill-pulte/"
+        ]
+      }
+    },
+    {
+      "id": "4e487ad6-81a7-4edf-9991-192760f5ba8d",
+      "url": "https://libertas.fgu.tech/posts/section-702-fisa-mass-surveillance-authority-expires-after-c",
+      "title": "Section 702 FISA Mass Surveillance Authority Expires After Congressional Deadlock",
+      "summary": "Section 702 of FISA, which allows warrantless collection of Americans' communications, has expired after Congress failed to reauthorize it due to concerns over Trump's DNI nominee Bill Pulte.",
+      "content_text": "Section 702 FISA authority expired midnight June 12, 2026 after months of temporary extensions\n• Program allows US intelligence agencies to collect foreigners' communications abroad without warrant\n• Routinely sweeps up Americans' emails, messages, and calls in the process\n• Congressional deadlock caused by Trump's nomination of Bill Pulte as DNI to replace Tulsi Gabbard\n• Senate Democrats refused to move forward citing Pulte's lack of intelligence/military experience\n• House also refused to approve even short-term renewal of the program\n• EFF has consistently demanded warrant requirement for backdoor searches of Americans' data\n• Bipartisan appetite for reform stronger than ever according to EFF assessment",
+      "date_published": "2026-06-13T03:01:02.002Z",
+      "date_modified": "2026-06-13T03:01:02.057Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.eff.org/deeplinks/2026/06/victory-702-has-expired"
         ]
       }
     },
