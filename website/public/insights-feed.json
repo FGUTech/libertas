@@ -291,27 +291,6 @@
       }
     },
     {
-      "id": "3339e8d9-976c-4564-8350-abe7508592eb",
-      "url": "https://libertas.fgu.tech/posts/circle-freezes-12-6m-usdc-linked-to-privacy-protocol-zama",
-      "title": "Circle Freezes $12.6M USDC Linked to Privacy Protocol Zama",
-      "summary": "Circle froze $12.6M USDC connected to privacy protocol Zama, reportedly due to unrelated civil court case, highlighting centralized stablecoin control risks.",
-      "content_text": "Circle froze $12.6 million USDC associated with privacy protocol Zama\n• Freeze reportedly connected to ongoing civil court case unrelated to Zama itself\n• Information comes from blockchain analyst ZachXBT's investigation\n• Demonstrates centralized control mechanisms in major stablecoin infrastructure\n• Highlights surveillance risks for privacy-focused protocols using traditional crypto rails\n• Zama is known for fully homomorphic encryption (FHE) blockchain solutions\n• Incident underscores importance of censorship-resistant payment alternatives",
-      "date_published": "2026-05-30T21:00:56.615Z",
-      "date_modified": "2026-05-30T21:00:56.673Z",
-      "tags": [
-        "privacy",
-        "surveillance",
-        "payments"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 72,
-        "citations": [
-          "https://cointelegraph.com/news/circle-freezes-126m-of-usdc-linked-to-privacy-protocol-zama?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-        ]
-      }
-    },
-    {
       "id": "3eff42dc-6ad2-4c63-a43a-5e1e827ced63",
       "url": "https://libertas.fgu.tech/posts/fisa-section-702-mass-surveillance-authority-expires-after-c",
       "title": "FISA Section 702 Mass Surveillance Authority Expires After Congress Blocks Renewal",
@@ -944,6 +923,28 @@
       }
     },
     {
+      "id": "a8c7b016-92e0-4777-94d9-701bfd080408",
+      "url": "https://libertas.fgu.tech/posts/uk-court-sets-precedent-palestine-activists-sentenced-as-ter",
+      "title": "UK Court Sets Precedent: Palestine Activists Sentenced as Terrorists for Property Damage",
+      "summary": "Four UK activists received terrorism sentences for damaging Elbit Systems military equipment, marking first time criminal damage has been classified as terrorism without terrorist convictions.",
+      "content_text": "Four Palestine Action activists sentenced as terrorists for damaging Elbit Systems UK factory equipment in 2024\n• First UK case where terrorism enhancements applied without terrorist convictions - only criminal damage charges\n• Justice Jeremy Johnson banned defendants from mentioning Gaza genocide or Elbit's role to jury\n• Activists face 5+ years prison plus 15 years of terrorist notification requirements (travel/financial monitoring)\n• Palestine Action group proscribed under Terrorism Act - 3,000 arrested for holding support signs\n• Contrast: violent anti-immigrant rioters received lighter sentences without terrorism labels\n• High Court ruled Palestine Action proscription unlawful but government appealing to maintain ban\n• Sets dangerous precedent expanding terrorism definitions to criminalize property damage during protests",
+      "date_published": "2026-06-13T21:01:31.614Z",
+      "date_modified": "2026-06-13T21:01:31.754Z",
+      "tags": [
+        "activism",
+        "surveillance",
+        "censorship-resistance",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 88,
+        "citations": [
+          "https://theintercept.com/2026/06/13/elbit-protest-palestine-action-uk-filton-25-terrorism-enhancement/"
+        ]
+      }
+    },
+    {
       "id": "a9c5cd9f-70a0-4f2d-846c-2a203af365b6",
       "url": "https://libertas.fgu.tech/posts/anthropic-takes-funding-from-uae-surveillance-state-while-co",
       "title": "Anthropic Takes Funding from UAE Surveillance State While Condemning AI Authoritarianism",
@@ -962,28 +963,6 @@
         "credibility_score": 85,
         "citations": [
           "https://theintercept.com/2026/06/06/anthropic-ai-investor-abu-dhabi-china/"
-        ]
-      }
-    },
-    {
-      "id": "aa8c36df-4544-47db-b29f-c954ecc4b2cf",
-      "url": "https://libertas.fgu.tech/posts/court-order-freezes-12-6m-in-zama-s-confidential-usdc-contra",
-      "title": "Court Order Freezes $12.6M in Zama's Confidential USDC Contract",
-      "summary": "Circle froze $12.6M in Zama's confidential USDC contract following a court order related to Overnight Finance lawsuit, highlighting vulnerability of privacy tech to state intervention.",
-      "content_text": "Court-ordered freeze trapped $12.6 million in Zama's confidential USDC smart contract\n• Circle executed the freeze as part of lawsuit involving Overnight Finance\n• Zama CEO Rand Hindi says protocol was \"caught in crossfire\" of legal dispute\n• Demonstrates centralized stablecoin vulnerability even within privacy-preserving protocols\n• Zama focuses on confidential computing and encrypted blockchain transactions\n• Incident exposes tension between financial privacy tech and traditional legal systems\n• Team investigating the freeze but limited recourse due to Circle's centralized control",
-      "date_published": "2026-05-30T15:00:24.469Z",
-      "date_modified": "2026-05-30T15:00:24.507Z",
-      "tags": [
-        "privacy",
-        "zk",
-        "censorship-resistance"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 85,
-        "citations": [
-          "https://www.theblock.co/post/403091/court-ordered-circle-freeze-traps-12-6-million-in-zama-cusdc-contract-amid-overnight-finance-suit",
-          "https://www.theblock.co/post/403091/court-ordered-circle-freeze-traps-12-6-million-in-zama-cusdc-contract-amid-overnight-finance-suit?utm_source=rss&amp;utm_medium=rss"
         ]
       }
     },
