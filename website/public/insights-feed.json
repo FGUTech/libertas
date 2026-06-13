@@ -1053,6 +1053,28 @@
       }
     },
     {
+      "id": "b8b70312-4030-44ef-9061-75f505e8c171",
+      "url": "https://libertas.fgu.tech/posts/netherlands-blocks-us-takeover-of-national-id-infrastructure",
+      "title": "Netherlands Blocks US Takeover of National ID Infrastructure on Digital Sovereignty Grounds",
+      "summary": "Dutch government blocked €100M acquisition of Solvinity (DigiD infrastructure provider) by US firm Kyndryl, citing CLOUD Act risks and marking first American takeover rejection on public interest grounds.",
+      "content_text": "Netherlands blocked Kyndryl's €100M takeover of Solvinity on May 25, 2026\n• Solvinity manages cloud infrastructure for DigiD national ID system used for tax, medical, pension access\n• Primary concern: US CLOUD Act would subject Dutch citizen data to American jurisdiction bypassing GDPR\n• Bureau for Investment Screening ruled takeover posed 'risk to public interest' - first US rejection\n• Decision follows months of opposition from citizens, journalists, privacy activists\n• Part of broader EU digital sovereignty movement - Netherlands investing in STACKIT and KPN-Thales sovereign clouds\n• Demonstrates concrete government action to protect critical digital infrastructure from foreign control\n• Proton research shows 81% of Dutch public companies depend on American tech services",
+      "date_published": "2026-06-13T09:01:42.934Z",
+      "date_modified": "2026-06-13T09:01:43.082Z",
+      "tags": [
+        "sovereignty",
+        "privacy",
+        "identity",
+        "surveillance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://proton.me/blog/in-win-for-digital-sovereignty-netherlands-blocks-takeover-of-id-service-by-us-firm"
+        ]
+      }
+    },
+    {
       "id": "b90e362d-9387-4659-a0ef-1aeb2f6cf07c",
       "url": "https://libertas.fgu.tech/posts/china-intensifies-tiananmen-censorship-with-advanced-algorit",
       "title": "China Intensifies Tiananmen Censorship with Advanced Algorithmic Filtering",
@@ -1242,6 +1264,27 @@
         "credibility_score": 85,
         "citations": [
           "https://arstechnica.com/science/2026/06/scientists-ejected-from-diabetes-conference-for-distributing-journal-reprints/"
+        ]
+      }
+    },
+    {
+      "id": "d64d34ec-720a-4cc0-8e93-ec54e252b04e",
+      "url": "https://libertas.fgu.tech/posts/us-govt-forces-anthropic-to-shut-down-ai-models-over-jailbre",
+      "title": "US Govt Forces Anthropic to Shut Down AI Models Over Jailbreak Concerns",
+      "summary": "Anthropic immediately shut down its newly launched Mythos 5 and Fable 5 AI models after receiving a Commerce Department directive citing export control concerns and reported jailbreaks bypassing safety measures.",
+      "content_text": "Anthropic shut off Mythos 5 and Fable 5 models Friday night after Commerce Department directive\n• Models were subject to new export controls restricting use outside the United States\n• Administration cited concerns over jailbreaks bypassing safeguards for cybersecurity, chemistry, and biology prompts\n• Government requested pause to allow 'national security apparatus' to be 'hardened' against threats\n• Other Anthropic models remain accessible and unaffected by the shutdown\n• Timeline for resolution suggested as 'next few weeks' according to administration sources\n• Demonstrates government's ability to rapidly restrict AI tools deemed security risks",
+      "date_published": "2026-06-13T09:01:07.430Z",
+      "date_modified": "2026-06-13T09:01:07.516Z",
+      "tags": [
+        "censorship-resistance",
+        "surveillance",
+        "sovereignty"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 78,
+        "credibility_score": 85,
+        "citations": [
+          "https://arstechnica.com/ai/2026/06/anthropic-shuts-down-fable-mythos-models-following-trump-admin-directive/"
         ]
       }
     },

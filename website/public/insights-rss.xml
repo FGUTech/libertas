@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Sat, 13 Jun 2026 03:01:02 GMT</lastBuildDate>
+  <lastBuildDate>Sat, 13 Jun 2026 09:01:42 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -519,6 +519,17 @@
     <category>censorship-resistance</category>
   </item>
   <item>
+    <title>Netherlands Blocks US Takeover of National ID Infrastructure on Digital Sovereignty Grounds</title>
+    <link>https://libertas.fgu.tech/posts/netherlands-blocks-us-takeover-of-national-id-infrastructure</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/netherlands-blocks-us-takeover-of-national-id-infrastructure</guid>
+    <pubDate>Sat, 13 Jun 2026 09:01:42 GMT</pubDate>
+    <description>Dutch government blocked €100M acquisition of Solvinity (DigiD infrastructure provider) by US firm Kyndryl, citing CLOUD Act risks and marking first American takeover rejection on public interest grounds.</description>
+    <category>sovereignty</category>
+    <category>privacy</category>
+    <category>identity</category>
+    <category>surveillance</category>
+  </item>
+  <item>
     <title>China Intensifies Tiananmen Censorship with Advanced Algorithmic Filtering</title>
     <link>https://libertas.fgu.tech/posts/china-intensifies-tiananmen-censorship-with-advanced-algorit</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/china-intensifies-tiananmen-censorship-with-advanced-algorit</guid>
@@ -609,6 +620,16 @@
     <description>Five prominent diabetes researchers were physically removed from the American Diabetes Association conference for distributing copies of a published editorial criticizing Trump administration attacks on scientific research.</description>
     <category>censorship-resistance</category>
     <category>activism</category>
+  </item>
+  <item>
+    <title>US Govt Forces Anthropic to Shut Down AI Models Over Jailbreak Concerns</title>
+    <link>https://libertas.fgu.tech/posts/us-govt-forces-anthropic-to-shut-down-ai-models-over-jailbre</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/us-govt-forces-anthropic-to-shut-down-ai-models-over-jailbre</guid>
+    <pubDate>Sat, 13 Jun 2026 09:01:07 GMT</pubDate>
+    <description>Anthropic immediately shut down its newly launched Mythos 5 and Fable 5 AI models after receiving a Commerce Department directive citing export control concerns and reported jailbreaks bypassing safety measures.</description>
+    <category>censorship-resistance</category>
+    <category>surveillance</category>
+    <category>sovereignty</category>
   </item>
   <item>
     <title>Russian Journalist Detained for Telegram Comments, Faces 7 Years in Prison</title>
