@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Sat, 13 Jun 2026 21:01:31 GMT</lastBuildDate>
+  <lastBuildDate>Sun, 14 Jun 2026 09:01:17 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -287,6 +287,18 @@
     <category>privacy</category>
     <category>censorship-resistance</category>
     <category>surveillance</category>
+    <category>activism</category>
+  </item>
+  <item>
+    <title>Report Documents Systematic Palestinian Exclusion From Digital Payment Systems and Infrastructure</title>
+    <link>https://libertas.fgu.tech/posts/report-documents-systematic-palestinian-exclusion-from-digit</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/report-documents-systematic-palestinian-exclusion-from-digit</guid>
+    <pubDate>Sun, 14 Jun 2026 09:01:17 GMT</pubDate>
+    <description>7amleh research reveals Palestinians face structural barriers to digital economy participation, including PayPal exclusion, restricted telecom infrastructure, and deliberate destruction of Gaza&apos;s networks.</description>
+    <category>surveillance</category>
+    <category>censorship-resistance</category>
+    <category>payments</category>
+    <category>sovereignty</category>
     <category>activism</category>
   </item>
   <item>

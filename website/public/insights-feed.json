@@ -577,6 +577,29 @@
       }
     },
     {
+      "id": "6ba9b449-4d0a-4dc2-9671-2aa52f254daa",
+      "url": "https://libertas.fgu.tech/posts/report-documents-systematic-palestinian-exclusion-from-digit",
+      "title": "Report Documents Systematic Palestinian Exclusion From Digital Payment Systems and Infrastructure",
+      "summary": "7amleh research reveals Palestinians face structural barriers to digital economy participation, including PayPal exclusion, restricted telecom infrastructure, and deliberate destruction of Gaza's networks.",
+      "content_text": "7amleh published comprehensive report testing 30+ digital platforms for Palestinian accessibility\n• PayPal operates freely for Israeli settlers but excludes Palestinians in West Bank and Gaza\n• Palestinians restricted to 2G/3G infrastructure while Israelis access 4G/5G networks\n• 81% of Gaza's telecommunications network destroyed by April 2026, per EU/UN assessment\n• Palestinian ICT sector employed 9,000 people across 700 companies before October 2023\n• Digital workers in Gaza resort to solar-powered coworking spaces and long walks for connectivity\n• Platform exclusion forces reliance on costly intermediaries and informal payment systems\n• Infrastructure control prevents Palestinian sovereignty over critical digital networks",
+      "date_published": "2026-06-14T09:01:17.184Z",
+      "date_modified": "2026-06-14T09:01:17.347Z",
+      "tags": [
+        "surveillance",
+        "censorship-resistance",
+        "payments",
+        "sovereignty",
+        "activism"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 88,
+        "citations": [
+          "https://globalvoices.org/2026/06/14/palestinians-are-being-locked-out-of-the-digital-economy/"
+        ]
+      }
+    },
+    {
       "id": "6d398b04-1d6a-4d47-946f-1d5dc08b1f48",
       "url": "https://libertas.fgu.tech/posts/eff-challenges-state-social-media-bans-for-youth-based-on-sh",
       "title": "EFF Challenges State Social Media Bans for Youth Based on 'Shockingly Shaky Science'",
