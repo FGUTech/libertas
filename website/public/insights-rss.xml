@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Mon, 15 Jun 2026 09:01:47 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 15 Jun 2026 15:01:45 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -212,17 +212,6 @@
     <category>surveillance</category>
     <category>comms</category>
     <category>censorship-resistance</category>
-  </item>
-  <item>
-    <title>EFF Names Nicole Ozer as New Executive Director</title>
-    <link>https://libertas.fgu.tech/posts/eff-names-nicole-ozer-as-new-executive-director</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-names-nicole-ozer-as-new-executive-director</guid>
-    <pubDate>Mon, 01 Jun 2026 15:00:48 GMT</pubDate>
-    <description>Electronic Frontier Foundation announces Nicole Ozer as new Executive Director, bringing two decades of privacy legislation and surveillance oversight experience including authoring California&apos;s warrant requirement for electronic data access.</description>
-    <category>privacy</category>
-    <category>surveillance</category>
-    <category>censorship-resistance</category>
-    <category>activism</category>
   </item>
   <item>
     <title>Senate Dems Block NSA Surveillance Renewal Over Trump Intel Chief Pick</title>
@@ -511,6 +500,17 @@
     <category>censorship-resistance</category>
   </item>
   <item>
+    <title>FCC Proposes Rule to Kill Burner Phones by Mandating ID Collection</title>
+    <link>https://libertas.fgu.tech/posts/fcc-proposes-rule-to-kill-burner-phones-by-mandating-id-coll</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/fcc-proposes-rule-to-kill-burner-phones-by-mandating-id-coll</guid>
+    <pubDate>Mon, 15 Jun 2026 15:01:45 GMT</pubDate>
+    <description>FCC proposes forcing US telecoms to collect government ID and personal data from all phone customers, effectively eliminating burner phones and creating a national surveillance database.</description>
+    <category>privacy</category>
+    <category>surveillance</category>
+    <category>identity</category>
+    <category>censorship-resistance</category>
+  </item>
+  <item>
     <title>EFF Defends Anti-Surveillance Site Against Flock Safety Legal Threats</title>
     <link>https://libertas.fgu.tech/posts/eff-defends-anti-surveillance-site-against-flock-safety-lega</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/eff-defends-anti-surveillance-site-against-flock-safety-lega</guid>
@@ -739,6 +739,15 @@
     <category>activism</category>
   </item>
   <item>
+    <title>Meta Used CIA/FBI-Linked Contractor for Smart Glasses Face Recognition Development</title>
+    <link>https://libertas.fgu.tech/posts/meta-used-cia-fbi-linked-contractor-for-smart-glasses-face-r</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/meta-used-cia-fbi-linked-contractor-for-smart-glasses-face-r</guid>
+    <pubDate>Mon, 15 Jun 2026 15:00:52 GMT</pubDate>
+    <description>Meta partnered with Rank One Computing, a facial recognition firm with former CIA and FBI leadership, for internal development of smart glasses capabilities.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+  </item>
+  <item>
     <title>Jordan Uses Cybercrime Law to Prosecute Facebook Posts Criticizing Israel Relations</title>
     <link>https://libertas.fgu.tech/posts/jordan-uses-cybercrime-law-to-prosecute-facebook-posts-criti</link>
     <guid isPermaLink="true">https://libertas.fgu.tech/posts/jordan-uses-cybercrime-law-to-prosecute-facebook-posts-criti</guid>
@@ -757,17 +766,6 @@
     <category>surveillance</category>
     <category>privacy</category>
     <category>activism</category>
-  </item>
-  <item>
-    <title>Ethiopia Election: Systematic Press Censorship and Phone Searches Target Journalists</title>
-    <link>https://libertas.fgu.tech/posts/ethiopia-election-systematic-press-censorship-and-phone-sear</link>
-    <guid isPermaLink="true">https://libertas.fgu.tech/posts/ethiopia-election-systematic-press-censorship-and-phone-sear</guid>
-    <pubDate>Mon, 01 Jun 2026 15:02:17 GMT</pubDate>
-    <description>Ethiopian authorities are detaining journalists, searching their phones, and revoking media licenses ahead of June elections, creating what reporters call a climate of fear that has crippled independent election coverage.</description>
-    <category>censorship-resistance</category>
-    <category>surveillance</category>
-    <category>activism</category>
-    <category>privacy</category>
   </item>
   <item>
     <title>House Democrats Block FISA Extension Over Trump&apos;s Controversial Intel Nominee</title>

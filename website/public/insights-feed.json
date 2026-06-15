@@ -424,28 +424,6 @@
       }
     },
     {
-      "id": "49316e2d-a440-4bbb-9be8-1fce2e235471",
-      "url": "https://libertas.fgu.tech/posts/eff-names-nicole-ozer-as-new-executive-director",
-      "title": "EFF Names Nicole Ozer as New Executive Director",
-      "summary": "Electronic Frontier Foundation announces Nicole Ozer as new Executive Director, bringing two decades of privacy legislation and surveillance oversight experience including authoring California's warrant requirement for electronic data access.",
-      "content_text": "Nicole Ozer becomes EFF's new Executive Director, succeeding Cindy Cohn\n• Previously served as founding director of ACLU Northern California's Technology and Civil Liberties Program (2004-2025)\n• Spearheaded California Electronic Communications Privacy Act requiring warrants for government access to electronic information\n• Created model law for democratic oversight of surveillance systems, inspiring 25 laws protecting 17+ million people\n• Co-authored Reader Privacy Act requiring 'super warrants' for government access to reading records\n• Litigated civil liberties cases including NSA surveillance cases alongside EFF\n• Led campaigns against social media surveillance and facial recognition by major tech companies\n• Transition represents continuity in EFF's digital rights leadership during critical policy period",
-      "date_published": "2026-06-01T15:00:48.985Z",
-      "date_modified": "2026-06-01T15:00:49.031Z",
-      "tags": [
-        "privacy",
-        "surveillance",
-        "censorship-resistance",
-        "activism"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 75,
-        "credibility_score": 95,
-        "citations": [
-          "https://www.eff.org/deeplinks/2026/05/welcome-new-eff-executive-director-nicole-ozer"
-        ]
-      }
-    },
-    {
       "id": "49729460-ffce-48db-9b8a-4dd3a2e336cc",
       "url": "https://libertas.fgu.tech/posts/senate-dems-block-nsa-surveillance-renewal-over-trump-intel-",
       "title": "Senate Dems Block NSA Surveillance Renewal Over Trump Intel Chief Pick",
@@ -1033,6 +1011,28 @@
       }
     },
     {
+      "id": "ab30bb05-c982-44af-a41e-6fb9b37783a2",
+      "url": "https://libertas.fgu.tech/posts/fcc-proposes-rule-to-kill-burner-phones-by-mandating-id-coll",
+      "title": "FCC Proposes Rule to Kill Burner Phones by Mandating ID Collection",
+      "summary": "FCC proposes forcing US telecoms to collect government ID and personal data from all phone customers, effectively eliminating burner phones and creating a national surveillance database.",
+      "content_text": "FCC proposes rule requiring telecoms to collect government ID and physical addresses from all phone customers\n• Would effectively eliminate burner phones - anonymous mobile phone accounts\n• Telecoms must also collect IP addresses and intended use cases for business/foreign customers\n• Ostensibly aimed at combating scammers, but FCC lists broad law enforcement applications\n• Privacy advocates compare measures to authoritarian surveillance systems\n• Rule would apply to both new customers and existing customers at renewal\n• Creates comprehensive national database linking phone numbers to government identities\n• Significant threat to anonymity tools used by activists, journalists, and vulnerable populations",
+      "date_published": "2026-06-15T15:01:45.638Z",
+      "date_modified": "2026-06-15T15:01:45.759Z",
+      "tags": [
+        "privacy",
+        "surveillance",
+        "identity",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 95,
+        "citations": [
+          "https://www.schneier.com/blog/archives/2026/06/the-fcc-wants-to-eliminate-burner-phones.html"
+        ]
+      }
+    },
+    {
       "id": "ab700ddc-9f79-4d76-8627-9b55dd5b7791",
       "url": "https://libertas.fgu.tech/posts/eff-defends-anti-surveillance-site-against-flock-safety-lega",
       "title": "EFF Defends Anti-Surveillance Site Against Flock Safety Legal Threats",
@@ -1506,6 +1506,26 @@
       }
     },
     {
+      "id": "e6d26593-6d9d-481d-80b6-acb8aa7528c1",
+      "url": "https://libertas.fgu.tech/posts/meta-used-cia-fbi-linked-contractor-for-smart-glasses-face-r",
+      "title": "Meta Used CIA/FBI-Linked Contractor for Smart Glasses Face Recognition Development",
+      "summary": "Meta partnered with Rank One Computing, a facial recognition firm with former CIA and FBI leadership, for internal development of smart glasses capabilities.",
+      "content_text": "Meta contracted Rank One Computing for face recognition technology development\n• Rank One's board includes former CIA deputy director and former FBI science chief\n• Technology being developed for Meta's smart glasses application\n• Partnership represents convergence of consumer tech and intelligence community capabilities\n• Raises concerns about normalization of surveillance in everyday devices\n• Meta's smart glasses could enable widespread facial recognition deployment\n• Intelligence community connections suggest potential dual-use applications",
+      "date_published": "2026-06-15T15:00:52.718Z",
+      "date_modified": "2026-06-15T15:00:52.793Z",
+      "tags": [
+        "surveillance",
+        "privacy"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 75,
+        "credibility_score": 85,
+        "citations": [
+          "https://www.wired.com/story/meta-rank-one-computing-face-recognition-smart-glasses/"
+        ]
+      }
+    },
+    {
       "id": "ee8b64a9-fa73-4d45-9abb-e20078e402f2",
       "url": "https://libertas.fgu.tech/posts/jordan-uses-cybercrime-law-to-prosecute-facebook-posts-criti",
       "title": "Jordan Uses Cybercrime Law to Prosecute Facebook Posts Criticizing Israel Relations",
@@ -1544,28 +1564,6 @@
         "credibility_score": 95,
         "citations": [
           "https://www.eff.org/deeplinks/2026/06/eff-testifies-congress-protecting-americans-rights-government-ai"
-        ]
-      }
-    },
-    {
-      "id": "f0bb46a1-1df7-483f-a4c7-72765e7e1b7d",
-      "url": "https://libertas.fgu.tech/posts/ethiopia-election-systematic-press-censorship-and-phone-sear",
-      "title": "Ethiopia Election: Systematic Press Censorship and Phone Searches Target Journalists",
-      "summary": "Ethiopian authorities are detaining journalists, searching their phones, and revoking media licenses ahead of June elections, creating what reporters call a climate of fear that has crippled independent election coverage.",
-      "content_text": "Journalist Bewket Abebe detained for 3 days after authorities searched his phone and found photos from contested territory\n• Security personnel searched journalist's device without warrant in northern border town of Humera\n• Addis Standard managing editor Million Beyene forcibly disappeared for nearly two weeks by unidentified men\n• Multiple media outlets had licenses revoked, including Addis Standard and threats to The Reporter Magazine\n• Journalists report phone surveillance, informal warnings, and pressure from regional officials\n• CPJ interviewed 11 journalists documenting systematic intimidation ahead of June 1 election\n• Press freedom restrictions concentrated in conflict zones of Tigray, Amhara, and Oromia regions\n• Many journalists now working from home or have fled the profession entirely",
-      "date_published": "2026-06-01T15:02:17.336Z",
-      "date_modified": "2026-06-01T15:02:17.442Z",
-      "tags": [
-        "censorship-resistance",
-        "surveillance",
-        "activism",
-        "privacy"
-      ],
-      "_libertas": {
-        "freedom_relevance_score": 78,
-        "credibility_score": 85,
-        "citations": [
-          "https://cpj.org/2026/05/under-the-shadow-of-fear-censorship-is-ethiopias-real-election-story-journalists-say/"
         ]
       }
     },
