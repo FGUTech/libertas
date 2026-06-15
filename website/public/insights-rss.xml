@@ -5,7 +5,7 @@
   <link>https://libertas.fgu.tech</link>
   <description>Curated insights on freedom technology: Bitcoin, privacy tools, censorship resistance, and digital sovereignty.</description>
   <language>en-us</language>
-  <lastBuildDate>Mon, 15 Jun 2026 03:01:08 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 15 Jun 2026 09:01:47 GMT</lastBuildDate>
   <atom:link href="https://libertas.fgu.tech/insights-rss.xml" rel="self" type="application/rss+xml"/>
   <generator>Libertas n8n Workflow</generator>
   <item>
@@ -71,6 +71,17 @@
     <category>payments</category>
     <category>sanctions</category>
     <category>sovereignty</category>
+  </item>
+  <item>
+    <title>FISA Section 702 Expires as Congress Blocks Extension Without Warrant Requirements</title>
+    <link>https://libertas.fgu.tech/posts/fisa-section-702-expires-as-congress-blocks-extension-withou</link>
+    <guid isPermaLink="true">https://libertas.fgu.tech/posts/fisa-section-702-expires-as-congress-blocks-extension-withou</guid>
+    <pubDate>Mon, 15 Jun 2026 09:01:47 GMT</pubDate>
+    <description>US warrantless surveillance program Section 702 expired after House rejected extension 218-198. Bipartisan coalition demanded warrant requirements, marking first time reform bloc had votes to block renewal.</description>
+    <category>surveillance</category>
+    <category>privacy</category>
+    <category>activism</category>
+    <category>censorship-resistance</category>
   </item>
   <item>
     <title>Researchers Document &apos;Chilling Effect&apos; of Government Surveillance on Free Speech</title>

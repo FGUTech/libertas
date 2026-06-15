@@ -138,6 +138,28 @@
       }
     },
     {
+      "id": "09efa804-a050-4d37-8f7d-516762b8cfb3",
+      "url": "https://libertas.fgu.tech/posts/fisa-section-702-expires-as-congress-blocks-extension-withou",
+      "title": "FISA Section 702 Expires as Congress Blocks Extension Without Warrant Requirements",
+      "summary": "US warrantless surveillance program Section 702 expired after House rejected extension 218-198. Bipartisan coalition demanded warrant requirements, marking first time reform bloc had votes to block renewal.",
+      "content_text": "Section 702 of FISA expired over weekend after House rejected extension in 218-198 vote\n• Senate Democrats blocked parallel extension effort hours later\n• Bipartisan coalition demanded warrant requirement before agreeing to renewal\n• Program allows collection of foreigners' communications, routinely captures Americans' data\n• Surveillance continues temporarily through March 2027 under existing court authorizations\n• Some telecom carriers may stop cooperating due to legal liability concerns\n• Warrant requirement failed by single vote (212-212) in 2024, reform bloc now has majority\n• Historical pattern: both parties expand surveillance when in power, oppose when out of power",
+      "date_published": "2026-06-15T09:01:47.264Z",
+      "date_modified": "2026-06-15T09:01:47.388Z",
+      "tags": [
+        "surveillance",
+        "privacy",
+        "activism",
+        "censorship-resistance"
+      ],
+      "_libertas": {
+        "freedom_relevance_score": 85,
+        "credibility_score": 88,
+        "citations": [
+          "https://proton.me/blog/fisa-702-expiring-surveillance-reform"
+        ]
+      }
+    },
+    {
       "id": "15114414-1f79-47ba-adc6-8d28025be064",
       "url": "https://libertas.fgu.tech/posts/researchers-document-chilling-effect-of-government-surveilla",
       "title": "Researchers Document 'Chilling Effect' of Government Surveillance on Free Speech",
